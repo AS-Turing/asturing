@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <h1 class="underline">Test Title</h1>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
+<script setup>
+
+</script>

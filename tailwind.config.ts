@@ -3,8 +3,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable import/unambiguous */
 module.exports = {
-    daisyui: {
-        logs: false,
+    content: [
+        './assets/css/app.css',
+        './components/**/*.{vue,js,ts}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './app.vue',
+        './assets/**/*.{css,vue,js,ts}',
+    ],
+    theme: {
+        extend: {},
     },
-    plugins: [require('daisyui')],
 }

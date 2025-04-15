@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: ['~/assets/css/app.css'],
   colorMode: {
-    dataValue: 'theme', // activate data-theme in <html>
-    preference: 'light', // default theme
+    dataValue: 'theme',
+    classSuffix: '',
+    preference: 'asturing',
+    fallback: 'asturing',
   },
   devtools: {
     enabled: true,
@@ -11,35 +14,33 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  i18n: {
-    defaultLocale: 'fr',
-    detectBrowserLanguage: false,
-    langDir: 'lang',
-    lazy: true,
-    locales: [
-      {
-        code: 'en',
-        dir: 'ltr',
-        file: 'en-EN.json',
-        iso: 'en-EN',
-        name: 'English',
-      },
-      {
-        code: 'fr',
-        dir: 'ltr',
-        file: 'fr-FR.json',
-        iso: 'fr-FR',
-        name: 'Français',
-      },
-    ],
-    vueI18n: './i18n.config.ts',
-  },
+  // i18n: {
+  //   defaultLocale: 'fr',
+  //   detectBrowserLanguage: false,
+  //   langDir: 'lang',
+  //   lazy: true,
+  //   locales: [
+  //     {
+  //       code: 'en',
+  //       dir: 'ltr',
+  //       file: 'en-EN.json',
+  //       name: 'English',
+  //     },
+  //     {
+  //       code: 'fr',
+  //       dir: 'ltr',
+  //       file: 'fr-FR.json',
+  //       name: 'Français',
+  //     },
+  //   ],
+  //   vueI18n: './i18n.config.ts',
+  // },
   modules: [
+    '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@vee-validate/nuxt',
     '@hebilicious/vue-query-nuxt',
-    '@nuxtjs/i18n',
     'nuxt-svgo',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
@@ -49,4 +50,5 @@ export default defineNuxtConfig({
     editorSupport: { autocompleteUtil: { as: 'tailwindClasses' }, generateConfig: true },
   },
   typescript: { typeCheck: true },
+  compatibilityDate: '2025-04-13',
 })
