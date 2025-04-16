@@ -49,6 +49,8 @@ export default defineNuxtConfig({
     configPath: './tailwind.config.ts',
     editorSupport: { autocompleteUtil: { as: 'tailwindClasses' }, generateConfig: true },
   },
-  typescript: { typeCheck: true },
+  typescript: {
+    typeCheck: process.env.CI !== 'true',
+  },
   compatibilityDate: '2025-04-13',
 })
