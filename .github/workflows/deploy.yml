@@ -26,9 +26,6 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      - name: Debug secrets env (alt method)
-        run: env | grep SSH
-
       - name: Debug secrets (temp)
         run: |
           echo "Host value = ${{ secrets.SSH_HOST }}"
