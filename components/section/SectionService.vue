@@ -61,10 +61,9 @@ const items = [
             <div class="p-6">
               <h3 class="text-xl min-h-20 font-semibold text-primary hover:dark:text-secondary dark:text-white mb-2">
                 <Icon :name="item.icon" class="w-5 h-5 dark:text-secondary" />
-
                 {{ item.title }}
               </h3>
-              <p class="text-secondary dark:text-gray-400 text-base leading-relaxed">
+              <p class="dark:text-gray-200 text-base leading-relaxed">
                 {{ item.description }}
               </p>
             </div>
