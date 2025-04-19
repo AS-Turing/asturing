@@ -52,5 +52,9 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: process.env.CI !== 'true',
   },
+  ssr: true,
+  nitro: {
+    preset: 'static'
+  },
   compatibilityDate: '2025-04-13',
 })

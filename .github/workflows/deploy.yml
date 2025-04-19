@@ -32,6 +32,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: ".output/public" # 🟢 prend le dossier complet
+          source: ".output/public/**"
           target: ${{ secrets.DEPLOY_PATH }}
-          strip_components: 2      # 🟢 enlève `.output/public/` de la structure
+          strip_components: 2
