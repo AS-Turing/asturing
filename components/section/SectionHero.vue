@@ -19,15 +19,12 @@ const scrollToElement = (id: string) => {
         class="absolute w-full z-10 min-h-[80vh] grid max-w-screen-xl px-2 py-8 mx-auto lg:gap-8 xl:gap-0 lg:px-24 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-12">
         <h1 class="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight text-white leading-relaxed">
-          Notre objectif ?<br> Vous aider à réaliser vos envie Numériques
+          Mon objectif ?<br> Vous aider à réaliser vos envie Numériques
         </h1>
         <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
-          Chez <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span> nous vous aidons à concrétiser vos projets
-          numérique.
+          Chez <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span> je vous aide à concrétiser vos projets numérique.
           <br>
-          Un site ?
-          Un conseil ?
-          Une formation? Nous sommes à votre disposition pour vous accompagner au mieux dans l'univers du web.
+          Un site ? Un conseil ? Une formation? Je suis à votre disposition pour vous accompagner au mieux dans l'univers du web.
         </p>
         <a
            @click="scrollToElement('contact-form')"
