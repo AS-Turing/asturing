@@ -1,13 +1,25 @@
 <script setup lang="ts">
+const scrollToElement = (id: string) => {
+  const targetElement = document.getElementById(id)
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: 'smooth', // Ajoute l'effet de défilement fluide
+      block: 'start',     // Définit l'alignement du défilement (ici, au début de l'élément)
+    })
+  } else {
+    console.warn(`L'élément avec l'id "${id}" est introuvable.`)
+  }
+}
 
 </script>
 
 <template>
-  <section class="w-10/12 m-auto bg-white relative dark:bg-gray-900 min-h-[60vh] py-12">
-    <h2 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-back text-center">
-      À propos de <span class="font-bold">&lt;AS-Turing /&gt;</span>
+  <section class="m-auto bg-white relative dark:bg-gray-900 min-h-[60vh] py-16">
+    <h2
+        class="mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-back text-center dark:text-white ">
+      À propos de <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span>
     </h2>
-    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+    <div class="w-10/12 max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
       <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
         <div class="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
           <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
@@ -32,6 +44,7 @@
             </p>
           </div>
           <button
+              @click="scrollToElement('contact-form')"
               class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex"
           >
             <span class="px-1.5 text-white text-sm font-medium leading-6">
