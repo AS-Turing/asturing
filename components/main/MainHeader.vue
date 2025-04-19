@@ -1,16 +1,64 @@
 <script setup lang="ts">
-const colorMode = useColorMode()
-
 import LogoSvg from '~/public/images/logo.svg?raw';
+const colorMode = useColorMode()
+const mobileMenuOpen = ref(false)
+
 </script>
 <template>
   <header
       class="flex text-primary items-center justify-between px-6 py-4 border-b bg-white dark:bg-primary dark:text-white sticky top-0 shadow z-50 w-full">
-    <button class="md:hidden p-2">
+    <button class="md:hidden p-2" @click="mobileMenuOpen = !mobileMenuOpen">
       <span class="sr-only">Ouvrir le menu</span>
-      <!-- Remplace par une icône si tu veux -->
-      ☰
+      <span v-if="!mobileMenuOpen">☰</span>
+      <span v-else>✕</span>
     </button>
+    <!-- Menu mobile -->
+    <nav
+        v-if="mobileMenuOpen"
+        class="md:hidden flex flex-col gap-2 absolute top-full left-0 w-full bg-white dark:bg-primary text-primary dark:text-white shadow z-40 px-6 py-4"
+    >
+      <NuxtLink to="/services" class="font-semibold hover:underline">Services</NuxtLink>
+      <div class="ml-4 text-sm space-y-1">
+        <NuxtLink @click="mobileMenuOpen = false"
+                  to="/services/creation-site-internet"
+                  class="block hover:underline"
+        >
+          Création de site internet
+        </NuxtLink>
+        <NuxtLink @click="mobileMenuOpen = false"
+                  to="/services/conseil-accompagnement-digital"
+                  class="block hover:underline"
+        >
+          Conseil & accompagnement
+        </NuxtLink>
+        <NuxtLink @click="mobileMenuOpen = false"
+                  to="/services/developpement-sur-mesure"
+                  class="block hover:underline"
+        >
+          Développement sur mesure
+        </NuxtLink>
+        <NuxtLink @click="mobileMenuOpen = false"
+                  to="/services/maintenance-support-technique"
+                  class="block hover:underline"
+        >
+          Maintenance & support
+        </NuxtLink>
+        <NuxtLink @click="mobileMenuOpen = false"
+                  to="/services/integration-solutions-externes"
+                  class="block hover:underline"
+        >
+          Intégration de solutions
+        </NuxtLink>
+        <NuxtLink @click="mobileMenuOpen = false"
+                  to="/services/formation-vulgarisation"
+                  class="block hover:underline"
+        >
+          Formation et vulgarisation
+        </NuxtLink>
+      </div>
+      <NuxtLink to="/about" class="hover:underline">À propos</NuxtLink>
+      <NuxtLink to="/contact" class="hover:underline">Contact</NuxtLink>
+    </nav>
     <!-- Logo -->
     <NuxtLink to="/" class="dark:text-white hover:dark:text-secondary hover:scale-110 transition ease-in-out duration-700">
     <div v-html="LogoSvg" class="fill-current"></div>
