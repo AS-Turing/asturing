@@ -26,7 +26,7 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      - name: Deploy via SSH
+      - name: Deploy via SSH (just content of public)
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -34,3 +34,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "./.output/public/**"
           target: ${{ secrets.DEPLOY_PATH }}
+          strip_components: 3
