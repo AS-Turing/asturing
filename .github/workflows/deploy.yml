@@ -32,6 +32,10 @@ jobs:
           echo "NUXT_COLOR_MODE=dark" >> .env.production
           echo "NUXT_PUBLIC_API_URL=https://api.example.com" >> .env.production
 
+      - name: Inject env vars for production
+        run: |
+          mv .env.production .env
+
       - name: 🛠 Build project
         run: pnpm run build
 
