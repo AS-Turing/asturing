@@ -1,8 +1,9 @@
 <template>
-  <section class="bg-white dark:bg-gray-950 py-16 px-4 sm:px-8">
+  <section class="bg-white dark:bg-primary py-16 px-4 sm:px-8">
     <div class="max-w-4xl p-12 rounded-2xl border border-gray-200  mx-auto relative z-10">
       <div id="contact-form" class="text-center mb-12">
-        <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Prenons contact</h2>
+        <h2
+            class="text-4xl sm:text-5xl font-bold text-primary dark:text-white mb-4 underline underline-offset-8">Prenons contact</h2>
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
           Un projet, une idée, une question ? Discutons ensemble pour concrétiser vos ambitions numériques.
         </p>
@@ -47,7 +48,7 @@
 
         <div class="sm:col-span-2 mt-6">
           <button type="submit"
-                  class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md transition-all">
+                  class="w-full bg-primary hover:text-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-all">
             Envoyer le message
           </button>
         </div>
