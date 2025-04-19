@@ -23,6 +23,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Create .env.production
+        run: |
+          echo "NUXT_ENV_PRESET=static" >> .env.production
+          echo "NUXT_COLOR_MODE=dark" >> .env.production
+
+      - name: Verify .env.production
+        run: |
+          ls -la .env.production
+          cat .env.production
+
       - name: Build project
         run: pnpm run build
 
@@ -36,12 +46,4 @@ jobs:
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 2
 
-      - name: Create .env.production
-        run: |
-          echo "NUXT_ENV_PRESET=static" >> .env.production
-          echo "NUXT_COLOR_MODE=dark" >> .env.production
 
-      - name: Verify .env.production
-        run: |
-          ls -la .env.production
-          cat .env.production
