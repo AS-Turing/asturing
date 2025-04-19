@@ -1,5 +1,15 @@
 <script setup lang="ts">
-
+const scrollToElement = (id: string) => {
+  const targetElement = document.getElementById(id)
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: 'smooth', // Ajoute l'effet de défilement fluide
+      block: 'start',     // Définit l'alignement du défilement (ici, au début de l'élément)
+    })
+  } else {
+    console.warn(`L'élément avec l'id "${id}" est introuvable.`)
+  }
+}
 </script>
 
 <template>
@@ -19,7 +29,8 @@
           Un conseil ?
           Une formation? Nous sommes à votre disposition pour vous accompagner au mieux dans l'univers du web.
         </p>
-        <a href="#"
+        <a
+           @click="scrollToElement('contact-form')"
            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:text-black hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
           Travaillons ensemble
         </a>
