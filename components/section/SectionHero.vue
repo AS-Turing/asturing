@@ -18,7 +18,7 @@ const scrollToElement = (id: string) => {
     <div
         class="absolute w-full z-10 min-h-[80vh] grid max-w-screen-xl px-2 py-8 mx-auto lg:gap-8 xl:gap-0 lg:px-24 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-12">
-        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight text-white leading-relaxed">
           Notre objectif ?<br> Vous aider à réaliser vos envie Numériques
         </h1>
         <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
@@ -31,7 +31,7 @@ const scrollToElement = (id: string) => {
         </p>
         <a
            @click="scrollToElement('contact-form')"
-           class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:text-black hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+           class="inline-flex bg-primary items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:cursor-pointer hover:text-primary hover:bg-secondary focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-secondary dark:focus:ring-gray-800">
           Travaillons ensemble
         </a>
       </div>

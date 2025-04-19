@@ -1,11 +1,11 @@
 <template>
-  <footer class="pt-16 px-4 md:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-t">
+  <footer class="pt-16 px-4 md:px-8 bg-white dark:bg-primary text-primary dark:text-white border-t">
     <!-- Conteneur principal -->
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-8">
 
       <!-- Logo -->
       <div class=" flex justify-center items-center md:justify-start">
-        <NuxtLink to="/">
+        <NuxtLink to="/" class="dark:text-white hover:dark:text-secondary hover:scale-110 transition ease-in-out duration-700">
           <div v-html="LogoSvg" class="w-full flex justify-center h-auto fill-current transform:scale-125"></div>
         </NuxtLink>
       </div>
@@ -18,37 +18,37 @@
             <ul class="mt-1 space-y-1 text-sm ggroup-hover:block">
               <li>
                 <NuxtLink to="/services/creation-site-internet"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
                   Création de site internet
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/conseil-accompagnement-digital"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
                   Conseil & accompagnement digital
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/developpement-sur-mesure"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
                   Développement sur mesure
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/maintenance-support-technique"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
                   Maintenance & support technique
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/integration-solutions-externes"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
                   Intégration de solutions externes
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/formation-vulgarisation"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
                   Formation et vulgarisation
                 </NuxtLink>
               </li>
@@ -63,10 +63,10 @@
       <div class="flex flex-col items-center md:items-end space-y-4 text-center md:text-right">
         <h2 class="text-xl font-semibold">Suivez-moi</h2>
         <div class="flex gap-6 justify-center md:justify-end">
-          <NuxtLink to="https://github.com/Chadowww" aria-label="GitHub" class="hover:text-indigo-500">
+          <NuxtLink to="https://github.com/Chadowww" aria-label="GitHub" class="hover:text-secondary">
             <Icon name="mdi:github" class="w-12 h-12" />
           </NuxtLink>
-          <NuxtLink to="https://www.linkedin.com/in/alexandresale/" aria-label="LinkedIn" class="hover:text-indigo-500">
+          <NuxtLink to="https://www.linkedin.com/in/alexandresale/" aria-label="LinkedIn" class="hover:text-secondary">
             <Icon name="mdi:linkedin" class="w-12 h-12" />
           </NuxtLink>
         </div>

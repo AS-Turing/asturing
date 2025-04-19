@@ -9,9 +9,9 @@ const skills = [
 </script>
 
 <template>
-  <section class="bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+  <section class="bg-white dark:bg-primary py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 dark:text-white mb-12">
+      <h2 class="text-4xl sm:text-5xl font-bold text-center text-primary dark:text-white mb-12 underline underline-offset-8">
         Mes compétences
       </h2>
 
@@ -31,7 +31,7 @@ const skills = [
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
             <div
-                class="bg-indigo-600 h-3 transition-all duration-700 ease-in-out"
+                class="bg-secondary h-3 transition-all duration-700 ease-in-out"
                 :style="{ width: skill.level + '%' }"
             ></div>
           </div>
