@@ -5,15 +5,16 @@ export default defineNuxtConfig({
   colorMode: {
     dataValue: 'theme',
     classSuffix: '',
-    preference: 'asturing',
-    fallback: 'asturing',
+    preference: process.env.NUXT_COLOR_MODE || 'light',
+    fallback: 'light',
   },
   devtools: {
-    enabled: true,
+    enabled: process.env.NODE_ENV !== 'production',
     timeline: {
-      enabled: true,
+      enabled: process.env.NODE_ENV !== 'production',
     },
   },
+
   // i18n: {
   //   defaultLocale: 'fr',
   //   detectBrowserLanguage: false,
@@ -54,7 +55,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   nitro: {
-    preset: 'static'
+    preset: process.env.NUXT_ENV_PRESET || 'node-server',
   },
   compatibilityDate: '2025-04-13',
 })

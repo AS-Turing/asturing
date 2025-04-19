@@ -35,3 +35,13 @@ jobs:
           source: ".output/public/**"
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 2
+
+      - name: Create .env.production
+        run: |
+          echo "NUXT_ENV_PRESET=static" >> .env.production
+          echo "NUXT_COLOR_MODE=dark" >> .env.production
+
+      - name: Verify .env.production
+        run: |
+          ls -la .env.production
+          cat .env.production
