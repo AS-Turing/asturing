@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
+import LogoSvg from '~/public/images/logo.svg?raw';
 </script>
 <template>
-  <header class="flex items-center justify-between px-6 py-4 border-b bg-white dark:bg-gray-900">
+  <header class="flex items-center justify-between px-6 py-4 border-b bg-white dark:bg-gray-900 dark:text-white ">
     <!-- Logo -->
-    <div class="text-2xl font-bold text-primary jetbrains-mono-800">&lt; AS-Turing /&gt;</div>
+<!--    <div class="text-4xl font-bold text-primary jetbrains-mono-800">&lt; AS-Turing /&gt;</div>-->
+    <div v-html="LogoSvg" class="fill-current"></div>
 
     <!-- Liens navigation -->
     <nav class="hidden md:flex gap-6">
@@ -18,12 +20,32 @@ const colorMode = useColorMode()
 
         <!-- Sous-menu -->
         <div
-            class="absolute left-0 mt-2 w-40 rounded-md bg-white dark:bg-gray-800 shadow-lg p-2 space-y-2 text-sm z-50
-                 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition"
+            class="absolute left-0  w-40 rounded-md bg-white dark:bg-gray-800 shadow-lg p-2 space-y-2 text-sm z-50
+                 hidden group-hover:block pointer-events-none group-hover:pointer-events-auto transition"
         >
-          <NuxtLink to="/services/audit" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Audit</NuxtLink>
-          <NuxtLink to="/services/formation" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Formation</NuxtLink>
-          <NuxtLink to="/services/dev" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Développement</NuxtLink>
+          <NuxtLink to="/services/creation-site-internet" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+            Création de site internet
+          </NuxtLink>
+
+          <NuxtLink to="/services/conseil-accompagnement-digital" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+            Conseil & accompagnement digital
+          </NuxtLink>
+
+          <NuxtLink to="/services/developpement-sur-mesure" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+            Développement sur mesure
+          </NuxtLink>
+
+          <NuxtLink to="/services/maintenance-support-technique" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+            Maintenance & support technique
+          </NuxtLink>
+
+          <NuxtLink to="/services/integration-solutions-externes" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+            Intégration de solutions externes
+          </NuxtLink>
+
+          <NuxtLink to="/services/formation-vulgarisation" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+            Formation et vulgarisation
+          </NuxtLink>
         </div>
       </div>
       <NuxtLink to="/about" class="text-sm font-medium hover:underline">À propos</NuxtLink>
@@ -48,7 +70,12 @@ const colorMode = useColorMode()
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 .jetbrains-mono-800 {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 </style>
