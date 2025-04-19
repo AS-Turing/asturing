@@ -2,41 +2,40 @@ name: Deploy to OVH
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
   deploy:
+    name: 🚀 Deploy Nuxt App
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
-      - name: Checkout code
+      - name: ⏬ Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: 📦 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install pnpm
+      - name: 📥 Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: pnpm install
 
-      - name: Create .env.production
+      - name: ⚙️ Create .env.production
         run: |
           echo "NUXT_ENV_PRESET=static" >> .env.production
           echo "NUXT_COLOR_MODE=dark" >> .env.production
+          echo "NUXT_PUBLIC_API_URL=https://api.example.com" >> .env.production
 
-      - name: Verify .env.production
-        run: |
-          ls -la .env.production
-          cat .env.production
-
-      - name: Build project
+      - name: 🛠 Build project
         run: pnpm run build
 
-      - name: 🚀 Deploy via SCP (fixed structure)
+      - name: 🚀 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -46,4 +45,5 @@ jobs:
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 2
 
-
+      - name: ✅ Done
+        run: echo "🚀 Deployment complete!"
