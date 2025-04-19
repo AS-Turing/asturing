@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 const skills = [
   { title: "HTML", level: 90 },
@@ -10,25 +9,32 @@ const skills = [
 </script>
 
 <template>
-  <section class="bg-white dark:bg-gray-900 min-h-[60vh] py-12">
-    <h2 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-back text-center">
-      Mes compétences
-    </h2>
-    <div class="space-y-6">
-      <div
-          v-for="skill in skills"
-          :key="skill.title"
-          class="space-y-2"
-      >
-        <div class="flex justify-between">
-          <h4 class="text-lg font-semibold">{{ skill.title }}</h4>
-          <span class="text-sm text-gray-600">{{ skill.level }}%</span>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full h-2.5">
-          <div
-              class="bg-blue-500 h-2.5 rounded-full"
-              :style="{ width: skill.level + '%' }"
-          ></div>
+  <section class="bg-white dark:bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 dark:text-white mb-12">
+        Mes compétences
+      </h2>
+
+      <div class="space-y-8">
+        <div
+            v-for="skill in skills"
+            :key="skill.title"
+            class="space-y-2"
+        >
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white">
+              {{ skill.title }}
+            </h3>
+            <span class="text-sm font-medium text-gray-500 dark:text-gray-400">
+              {{ skill.level }}%
+            </span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+            <div
+                class="bg-indigo-600 h-3 transition-all duration-700 ease-in-out"
+                :style="{ width: skill.level + '%' }"
+            ></div>
+          </div>
         </div>
       </div>
     </div>

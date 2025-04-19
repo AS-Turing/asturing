@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section class="bg-white relative dark:bg-gray-900 min-h-[60vh] py-12">
+  <section class="w-10/12 m-auto bg-white relative dark:bg-gray-900 min-h-[60vh] py-12">
     <h2 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-back text-center">
       À propos de <span class="font-bold">&lt;AS-Turing /&gt;</span>
     </h2>
@@ -11,19 +11,44 @@
       <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
         <div class="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
           <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
-            <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Building Stronger Communities through Collaboration and Empowerment</h2>
-            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">Through collaborationperse perspectives and strengths are leveraged to create inclusive environments where everyone has the opportunity to thrive. This approach not only fosters personal growth and achievement but also strengthens the fabric of society.</p>
+            <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+              Une expertise technique, un accompagnement humain
+            </h2>
+            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              À l’origine d’AS-Turing, il y a une envie d’autonomie, un retour aux sources… et une bonne dose de passion pour le web.
+            </p>
+            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              Je m'appelle Alexandre, développeur web basé à Libourne, et après une reconversion dans le développement, quelques expériences enrichissantes à droite à gauche — notamment chez Motion4Ever à Nantes — j’ai décidé de créer mon propre studio.
+            </p>
+            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              Mon objectif ? Permettre à chacun — particulier ou pro — de concrétiser ses projets numériques, sans jargon, sans prise de tête, et surtout avec un accompagnement humain.
+            </p>
+            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              AS-Turing, c’est des sites web créés sur mesure, du conseil digital accessible, de la maintenance quand vous en avez besoin, et de l'écoute en continu.
+            </p>
+            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              Que vous ayez une idée un peu floue ou un cahier des charges béton, je suis là pour vous aider à faire le pont entre l’envie et la réalisation.
+
+            </p>
           </div>
-          <button class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
-            <span class="px-1.5 text-white text-sm font-medium leading-6">Get Started</span>
+          <button
+              class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex"
+          >
+            <span class="px-1.5 text-white text-sm font-medium leading-6">
+              👉 Envie d’échanger sur votre projet ?
+            </span>
           </button>
         </div>
-        <img class="lg:mx-0 mx-auto h-full rounded-3xl object-cover" src="https://pagedone.io/asset/uploads/1717751272.png" alt="about Us image" />
+        <img
+            class="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
+            src="https://pagedone.io/asset/uploads/1717751272.png"
+            alt="about us"
+        />
       </div>
     </div>
   </section>
-
 </template>
+
 
 <style scoped>
 
