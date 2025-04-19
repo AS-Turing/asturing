@@ -29,7 +29,8 @@ const scrollToElement = (id: string) => {
         <a
            @click="scrollToElement('contact-form')"
            class="inline-flex bg-primary items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:cursor-pointer hover:text-primary hover:bg-secondary focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-secondary dark:focus:ring-gray-800">
-          Travaillons ensemble
+          <Icon name="lucide:handshake" class="w-5 h-5" />
+          &nbsp;Travaillons ensemble
         </a>
       </div>
     </div>

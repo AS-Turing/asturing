@@ -47,10 +47,11 @@
         </div>
 
         <div class="sm:col-span-2 mt-6">
-          <button type="submit"
-                  class="w-full bg-primary hover:text-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-all">
+          <button type="submit" class="w-full bg-primary hover:text-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-all flex items-center justify-center gap-2">
+            <Icon name="lucide:send" class="w-5 h-5" />
             Envoyer le message
           </button>
+
         </div>
       </form>
     </div>
