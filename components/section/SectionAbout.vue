@@ -31,7 +31,8 @@ const scrollToElement = (id: string) => {
               À l’origine d’AS-Turing, il y a une envie d’autonomie, un retour aux sources… et une bonne dose de passion pour le web.
             </p>
             <p class="dark:text-gray-200 text-base font-normal leading-relaxed lg:text-start text-center">
-              Je m'appelle Alexandre, développeur web basé à Libourne, et après une reconversion dans le développement, quelques expériences enrichissantes à droite à gauche — notamment chez Motion4Ever à Nantes — j’ai décidé de créer mon propre studio.
+              Je m'appelle Alexandre, développeur web basé à Libourne et ses environs, après une reconversion dans
+              le développement, quelques expériences enrichissantes à droite à gauche — notamment chez Motion4Ever à Nantes — j’ai décidé de créer mon propre studio.
             </p>
             <p class="dark:text-gray-200 text-base font-normal leading-relaxed lg:text-start text-center">
               Mon objectif ? Permettre à chacun — particulier ou pro — de concrétiser ses projets numériques, sans jargon, sans prise de tête, et surtout avec un accompagnement humain.
@@ -41,7 +42,6 @@ const scrollToElement = (id: string) => {
             </p>
             <p class="dark:text-gray-200 text-base font-normal leading-relaxed lg:text-start text-center">
               Que vous ayez une idée un peu floue ou un cahier des charges béton, je suis là pour vous aider à faire le pont entre l’envie et la réalisation.
-
             </p>
           </div>
           <button
