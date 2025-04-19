@@ -46,7 +46,7 @@ const scrollToElement = (id: string) => {
           </div>
           <button
               @click="scrollToElement('contact-form')"
-              class="sm:w-fit w-full px-3.5 py-2 bg-primary hover:text-primary hover:bg-secondary transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex"
+              class="sm:w-fit w-full px-3.5 py-2 bg-primary hover:text-primary hover:bg-secondary transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex dark:border dark:border-white hover:border-secondary"
           >
             <span class="px-1.5 text-white hover:text-primary text-sm font-medium leading-6">
               👉 Envie d’échanger sur votre projet ?

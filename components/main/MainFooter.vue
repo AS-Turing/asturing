@@ -14,51 +14,51 @@
       <div class="w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
         <ul class="space-y-2 flex flex-col md:flex-row  w-full">
           <li class="relative group mt-2 lg:w-4/12">
-            <NuxtLink to="/services" class="hover:underline font-medium block pl-2">Services</NuxtLink>
+            <NuxtLink to="/services" class="hover:underline font-medium block pl-2 hover:dark:text-secondary">Services</NuxtLink>
             <ul class="mt-1 space-y-1 text-sm ggroup-hover:block">
               <li>
                 <NuxtLink to="/services/creation-site-internet"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
                   Création de site internet
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/conseil-accompagnement-digital"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
                   Conseil & accompagnement digital
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/developpement-sur-mesure"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
                   Développement sur mesure
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/maintenance-support-technique"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
                   Maintenance & support technique
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/integration-solutions-externes"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
                   Intégration de solutions externes
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/formation-vulgarisation"
-                          class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
                   Formation et vulgarisation
                 </NuxtLink>
               </li>
             </ul>
           </li>
           <li
-              class="lg:w-4/12 text-center"><NuxtLink to="/about" class="hover:underline font-medium">À
+              class="lg:w-4/12 text-center"><NuxtLink to="/about" class="hover:underline font-medium hover:dark:text-secondary">À
             propos</NuxtLink></li>
           <li
-              class="lg:w-4/12 text-center"><NuxtLink to="/contact" class="hover:underline font-medium">Contact
+              class="lg:w-4/12 text-center"><NuxtLink to="/contact" class="hover:underline font-medium hover:dark:text-secondary">Contact
           </NuxtLink></li>
         </ul>
       </div>

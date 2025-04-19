@@ -31,38 +31,38 @@ import LogoSvg from '~/public/images/logo.svg?raw';
                  hidden group-hover:block pointer-events-none group-hover:pointer-events-auto transition"
         >
           <NuxtLink to="/services/creation-site-internet"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
             Création de site internet
           </NuxtLink>
 
           <NuxtLink to="/services/conseil-accompagnement-digital"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
             Conseil & accompagnement digital
           </NuxtLink>
 
           <NuxtLink to="/services/developpement-sur-mesure"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
             Développement sur mesure
           </NuxtLink>
 
           <NuxtLink to="/services/maintenance-support-technique"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
             Maintenance & support technique
           </NuxtLink>
 
           <NuxtLink to="/services/integration-solutions-externes"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
             Intégration de solutions externes
           </NuxtLink>
 
           <NuxtLink to="/services/formation-vulgarisation"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline">
+                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
             Formation et vulgarisation
           </NuxtLink>
         </div>
       </div>
-      <NuxtLink to="/about" class="text-sm font-medium hover:underline">À propos</NuxtLink>
-      <NuxtLink to="/contact" class="text-sm font-medium hover:underline">Contact</NuxtLink>
+      <NuxtLink to="/about" class="text-sm font-medium hover:underline hover:dark:text-secondary">À propos</NuxtLink>
+      <NuxtLink to="/contact" class="text-sm font-medium hover:underline hover:dark:text-secondary">Contact</NuxtLink>
     </nav>
     <!-- Toggle thème -->
     <button
