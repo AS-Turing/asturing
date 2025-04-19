@@ -1,11 +1,13 @@
 <template>
-  <footer class="pt-16 px-4 md:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+  <footer class="pt-16 px-4 md:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-t">
     <!-- Conteneur principal -->
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-8">
 
       <!-- Logo -->
       <div class=" flex justify-center items-center md:justify-start">
-        <div v-html="LogoSvg" class="w-full flex justify-center h-auto fill-current transform:scale-125"></div>
+        <NuxtLink to="/">
+          <div v-html="LogoSvg" class="w-full flex justify-center h-auto fill-current transform:scale-125"></div>
+        </NuxtLink>
       </div>
 
       <!-- Navigation -->
