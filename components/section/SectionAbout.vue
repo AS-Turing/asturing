@@ -55,7 +55,7 @@ const scrollToElement = (id: string) => {
         </div>
         <img
             class="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
-            src="https://pagedone.io/asset/uploads/1717751272.png"
+            src="public/images/form-contact-img.png"
             alt="about us"
         />
       </div>

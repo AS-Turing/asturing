@@ -5,6 +5,11 @@ import LogoSvg from '~/public/images/logo.svg?raw';
 </script>
 <template>
   <header class="flex items-center justify-between px-6 py-4 border-b bg-white dark:bg-gray-900 dark:text-white ">
+    <button class="md:hidden p-2">
+      <span class="sr-only">Ouvrir le menu</span>
+      <!-- Remplace par une icône si tu veux -->
+      ☰
+    </button>
     <!-- Logo -->
     <NuxtLink to="/">
     <div v-html="LogoSvg" class="fill-current"></div>
@@ -61,11 +66,7 @@ import LogoSvg from '~/public/images/logo.svg?raw';
       <span v-if="colorMode.preference === 'dark'">🌞</span>
       <span v-else>🌙</span></button>
     <!-- Menu mobile (icône) -->
-    <button class="md:hidden p-2">
-      <span class="sr-only">Ouvrir le menu</span>
-      <!-- Remplace par une icône si tu veux -->
-      ☰
-    </button>
+
   </header>
 </template>
 
