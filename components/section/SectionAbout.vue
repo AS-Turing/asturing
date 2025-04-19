@@ -16,14 +16,15 @@ const scrollToElement = (id: string) => {
 <template>
   <section class="m-auto bg-white relative dark:bg-gray-900 min-h-[60vh] py-16">
     <h2
-        class="mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-back text-center dark:text-white ">
+        class="mb-4 lg:mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-back text-center dark:text-white ">
       À propos de <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span>
     </h2>
     <div class="w-10/12 max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
       <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
         <div class="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
           <div class="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
-            <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+            <h2
+                class="text-gray-900 dark:text-white text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
               Une expertise technique, un accompagnement humain
             </h2>
             <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">

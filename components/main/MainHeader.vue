@@ -6,8 +6,9 @@ import LogoSvg from '~/public/images/logo.svg?raw';
 <template>
   <header class="flex items-center justify-between px-6 py-4 border-b bg-white dark:bg-gray-900 dark:text-white ">
     <!-- Logo -->
-<!--    <div class="text-4xl font-bold text-primary jetbrains-mono-800">&lt; AS-Turing /&gt;</div>-->
+    <NuxtLink to="/">
     <div v-html="LogoSvg" class="fill-current"></div>
+    </NuxtLink>
 
     <!-- Liens navigation -->
     <nav class="hidden md:flex gap-6">
