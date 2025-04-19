@@ -22,7 +22,8 @@ const scrollToElement = (id: string) => {
           Mon objectif ?<br> Vous aider à réaliser vos envie Numériques
         </h1>
         <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
-          Chez <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span> je vous aide à concrétiser vos projets numérique.
+          Chez <span class="font-bold jetbrains-mono-800">&lt; AS-Turing /&gt;</span> je vous aide à concrétiser vos
+          projets numérique.
           <br>
           Un site ? Un conseil ? Une formation? Je suis à votre disposition pour vous accompagner au mieux dans l'univers du web.
         </p>
