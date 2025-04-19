@@ -118,8 +118,9 @@ const mobileMenuOpen = ref(false)
         class="p-2 rounded  hover:bg-gray-100 dark:hover:bg-gray-800 transition"
         aria-label="Changer le thème"
     >
-      <span v-if="colorMode.preference === 'dark'">🌞</span>
-      <span v-else>🌙</span></button>
+      <Icon :name="colorMode.preference === 'dark' ? 'heroicons:sun' : 'heroicons:moon'" class="w-5 h-5" />
+
+    </button>
     <!-- Menu mobile (icône) -->
 
   </header>
