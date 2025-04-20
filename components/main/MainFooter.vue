@@ -54,12 +54,21 @@
               </li>
             </ul>
           </li>
-          <li
-              class="lg:w-4/12 text-center"><NuxtLink to="/about" class="hover:underline font-medium hover:dark:text-secondary">À
-            propos</NuxtLink></li>
-          <li
-              class="lg:w-4/12 text-center"><NuxtLink to="/contact" class="hover:underline font-medium hover:dark:text-secondary">Contact
-          </NuxtLink></li>
+          <li class="lg:w-4/12 text-center">
+            <NuxtLink to="/about" class="hover:underline font-medium hover:dark:text-secondary">
+              À propos
+            </NuxtLink>
+          </li>
+          <li class="lg:w-4/12 text-center">
+            <NuxtLink to="/contact" class="hover:underline font-medium hover:dark:text-secondary">
+              Contact
+            </NuxtLink>
+          </li>
+          <li class="lg:w-4/12 text-center">
+            <NuxtLink to="/conditions-generales-de-ventes" class="hover:underline font-medium hover:dark:text-secondary">
+              Conditions générales de ventes
+            </NuxtLink>
+          </li>
         </ul>
       </div>
 
