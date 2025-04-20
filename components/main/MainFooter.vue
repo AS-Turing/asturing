@@ -1,7 +1,7 @@
 <template>
   <footer class="pt-16 px-4 md:px-8 bg-white dark:bg-primary text-primary dark:text-white border-t">
     <!-- Conteneur principal -->
-    <div class="max-w-7xl mx-auto flex flex-col items-center md:items-start md:flex-row gap-12 md:gap-8">
+    <div class="max-w-7xl mx-auto flex flex-col items-center md:items-start md:justify-between md:flex-row gap-12 md:gap-8">
 
       <!-- Logo -->
       <div class=" flex md:justify-start">
