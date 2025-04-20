@@ -2,8 +2,7 @@
   <section class="bg-white dark:bg-primary py-16 px-4 sm:px-8">
     <div class="max-w-4xl p-12 rounded-2xl border border-gray-200  mx-auto relative z-10">
       <div id="contact-form" class="text-center mb-12">
-        <h2
-            class="text-4xl sm:text-5xl font-bold text-primary dark:text-white mb-4 underline underline-offset-8">Prenons contact</h2>
+        <h2 class="text-4xl sm:text-5xl font-bold text-primary dark:text-white mb-4 underline underline-offset-8">Prenons contact</h2>
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
           Un projet, une idée, une question ? Discutons ensemble pour concrétiser vos ambitions numériques.
         </p>

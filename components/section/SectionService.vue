@@ -59,7 +59,7 @@ const items = [
             <img :src="item.image" alt="Illustration service"
                  class="w-full h-64ChatGPT Image Apr 19, 2025, 05_23_19 PM.png object-cover group-hover:scale-105 transition-transform duration-300" />
             <div class="p-6">
-              <h3 class="text-xl min-h-20 font-semibold text-primary hover:dark:text-secondary dark:text-white mb-2">
+              <h3 class="text-xl min-h-16 font-semibold text-primary hover:dark:text-secondary dark:text-white mb-2">
                 <Icon :name="item.icon" class="w-5 h-5 dark:text-secondary" />
                 {{ item.title }}
               </h3>
