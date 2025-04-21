@@ -38,6 +38,11 @@ jobs:
       - name: 🛠 Build project
         run: pnpm run export
 
+      - name: 📦 Install PHP dependencies for mailer
+        run: |
+          cd php-api
+          composer install --no-dev --optimize-autoloader
+
       - name: 🧩 Rename .output/public → output
         run: |
           rm -rf output
