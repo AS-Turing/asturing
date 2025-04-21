@@ -11,7 +11,7 @@
       </div>
 
       <!-- Navigation -->
-      <div class="w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+      <div class="w-3/4 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
         <ul class="space-y-2 flex flex-col md:flex-row  w-full">
           <li class="relative group mt-2 lg:w-4/12">
             <NuxtLink to="/services" class="hover:underline font-medium block pl-2 hover:dark:text-secondary">Services</NuxtLink>
@@ -65,10 +65,19 @@
             </NuxtLink>
           </li>
           <li class="lg:w-4/12 text-center">
-            <NuxtLink to="/conditions-generales-de-ventes" class="hover:underline font-medium hover:dark:text-secondary">
+            <p>
+              <NuxtLink to="/conditions-generales-de-ventes"
+                       class="hover:underline font-medium hover:dark:text-secondary">
               Conditions générales de ventes
             </NuxtLink>
+            </p>
+            <p>
+            <NuxtLink to="/engagements" class="hover:underline font-medium hover:dark:text-secondary">
+              La charte d'engagement d'AS-Turing
+            </NuxtLink>
+            </p>
           </li>
+
         </ul>
       </div>
 

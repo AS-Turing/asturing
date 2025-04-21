@@ -3,8 +3,8 @@ const scrollToElement = (id: string) => {
   const targetElement = document.getElementById(id)
   if (targetElement) {
     targetElement.scrollIntoView({
-      behavior: 'smooth', // Ajoute l'effet de défilement fluide
-      block: 'start',     // Définit l'alignement du défilement (ici, au début de l'élément)
+      behavior: 'smooth',
+      block: 'start',
     })
   } else {
     console.warn(`L'élément avec l'id "${id}" est introuvable.`)
@@ -14,9 +14,9 @@ const scrollToElement = (id: string) => {
 </script>
 
 <template>
-  <section class="m-auto bg-white relative dark:bg-primary min-h-[60vh] py-16">
+  <section class="m-auto bg-white dark:bg-gray-900 min-h-[60vh] py-16">
     <h2
-        class="mb-4 lg:mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-primary text-center dark:text-white underline underline-offset-8">
+        class="mb-4 lg:mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-primary text-center dark:text-white underline dark:decoration-secondary underline-offset-8">
       À propos de <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span>
     </h2>
     <div class="w-10/12 max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
