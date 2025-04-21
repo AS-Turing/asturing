@@ -9,7 +9,7 @@ const skills = [
 </script>
 
 <template>
-  <section class="bg-white dark:bg-primary py-16 px-4 sm:px-6 lg:px-8">
+  <section class="bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl sm:text-5xl font-bold text-center text-primary dark:text-white mb-12 underline underline-offset-8">
         Mes compétences
