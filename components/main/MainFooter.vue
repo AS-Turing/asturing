@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import LogoSvg from '~/public/images/logo.svg?raw';
+</script>
+
 <template>
   <footer class="pt-16 px-4 md:px-8 bg-white dark:bg-primary text-primary dark:text-white border-t">
     <!-- Conteneur principal -->
@@ -101,7 +105,3 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-import LogoSvg from '~/public/images/logo.svg?raw';
-</script>

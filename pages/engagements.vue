@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <section class="bg-white dark:bg-gray-900 py-16 px-4 sm:px-8 text-primary dark:text-white">
     <div class="max-w-6xl mx-auto">
@@ -89,9 +92,6 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-</script>
 
 <style scoped>
 </style>

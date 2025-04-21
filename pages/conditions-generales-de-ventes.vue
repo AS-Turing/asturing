@@ -1,3 +1,7 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <section class="w-full max-w-5xl mx-auto px-4 py-12 text-gray-800 dark:text-gray-100">
     <h1 class="text-4xl font-bold mb-8 underline underline-offset-8 dark:decoration-secondary">Conditions Générales de 
@@ -107,5 +111,3 @@
   </section>
 </template>
 
-<script setup lang="ts">
-</script>

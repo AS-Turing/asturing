@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["es6"],
+    "types": ["nuxt"],
+    "lib": ["es6","esnext" , "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -10,7 +11,6 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
-
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -18,21 +18,39 @@
     "noUnusedParameters": true,
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
-
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-
-    "jsx": "react-native",
+    "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true,
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "exclude": ["./node_modules/**/*", "e2e/**/*.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.vue",
+    ".nuxt/types/imports.d.ts",
+    ".nuxt/types/imports.d.ts",
+    "types/**/*.d.ts",
+    "env.d.ts",
+    ".nuxt/types/imports.d.ts",
+    "types",
+    "imports.d.ts",
+    ".nuxt/types/**/*.d.ts",
+    ".nuxt/types/imports.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "e2e/**/*.ts",
+    ".nuxt",
+    ".output",
+    "dist",
+    "app.vue.js",
+    "**/*.js"
+  ]
 }
