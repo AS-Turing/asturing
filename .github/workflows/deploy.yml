@@ -43,6 +43,17 @@ jobs:
           cd php-api
           composer install --no-dev --optimize-autoloader
 
+      - name: 🛠 Create PHP .env.php config
+        run: |
+          mkdir -p php-api
+          echo "<?php" > php-api/.env.php
+          echo "return [" >> php-api/.env.php
+          echo "  'SMTP_HOST' => 'ssl0.ovh.net'," >> php-api/.env.php
+          echo "  'SMTP_USERNAME' => '${{ secrets.SMTP_USER }}'," >> php-api/.env.php
+          echo "  'SMTP_PASSWORD' => '${{ secrets.SMTP_PASS }}'," >> php-api/.env.php
+          echo "  'SMTP_PORT' => 465" >> php-api/.env.php
+          echo "];" >> php-api/.env.php
+
       - name: 🧩 Rename .output/public → output
         run: |
           rm -rf output
