@@ -30,3 +30,5 @@ logs
 *.orig
 *.rej
 *.~*
+
+vendor
