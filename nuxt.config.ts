@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   nitro: {
-    preset: process.env.NUXT_ENV_PRESET || 'node-server',
+    preset: process.env.NUXT_ENV_PRESET || 'static',
   },
   mail: {
     message: {
