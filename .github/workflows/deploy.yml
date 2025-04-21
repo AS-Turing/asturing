@@ -38,6 +38,9 @@ jobs:
       - name: 🛠 Build project
         run: pnpm run export
 
+      - name: 📥 Copy send.php
+        run: cp send.php .output/public/send.php
+
       - name: 🧩 Rename .output/public → output
         run: |
           rm -rf output

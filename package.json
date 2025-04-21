@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "export": "pnpm build && pnpm run move-output",
+    "export": "pnpm build && pnpm run copy-send && pnpm run move-output",
+    "copy-send": "cp php/send.php .output/public/send.php",
     "move-output": "rm -rf output && mkdir output && cp -r .output/public/* output/",
     "clean": "rm -rf .nuxt .output dist app.vue.js",
     "check": "pnpm install && echo install success && pnpm lint && pnpm build && pnpm test && echo check success",
