@@ -18,12 +18,12 @@
           <li class="mb-10 ml-6">
             <div class="absolute w-3 h-3 bg-primary rounded-full -left-1.5 border border-white dark:border-gray-900"></div>
             <h3 class="text-lg font-medium text-gray-900 dark:text-white">🎓 Reconversion 2023</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Formation intensive en développement web, premières bases solides en HTML, CSS, JS, Vue.js…</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Formation intensive en développement web, premières bases solides en HTML, CSS, PHP, Symfony, JS …</p>
           </li>
           <li class="mb-10 ml-6">
             <div class="absolute w-3 h-3 bg-primary rounded-full -left-1.5 border border-white dark:border-gray-900"></div>
             <h3 class="text-lg font-medium text-gray-900 dark:text-white">🧪 Premiers projets freelance 2024</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Création de petits projets web pour associations, amis et clients locaux. Lancement d’AS-Turing.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Création de petits projets web pour associations, amis et clients locaux. Création d’AS-Turing.</p>
           </li>
           <li class="mb-10 ml-6">
             <div class="absolute w-3 h-3 bg-primary rounded-full -left-1.5 border border-white dark:border-gray-900"></div>
