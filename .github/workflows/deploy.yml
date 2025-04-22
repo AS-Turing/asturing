@@ -37,6 +37,8 @@ jobs:
 
       - name: 🛠 Build project
         run: pnpm run export
+      - name: verif build
+        run: ls -la
 
       - name: 📦 Install PHP dependencies for mailer
         run: |
