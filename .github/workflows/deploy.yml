@@ -1,4 +1,4 @@
-name: Deploy Nuxt SSR to OVH
+name: 🚀 Deploy Nuxt SSR to OVH
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     environment: production
 
     steps:
-      - name: ⏬ Checkout repo
+      - name: ⏬ Checkout repository
         uses: actions/checkout@v3
 
       - name: 📦 Setup Node.js
@@ -32,44 +32,24 @@ jobs:
           echo "NUXT_COLOR_MODE=dark" >> .env.production
           echo "NUXT_PUBLIC_API_URL=https://api.example.com" >> .env.production
 
-      - name: Inject env vars for production
+      - name: 🧬 Inject .env.production as .env
         run: mv .env.production .env
 
       - name: 🛠 Build project
-        run: pnpm run export
-      - name: verif build
-        run: ls -la
+        run: pnpm run build
 
-      - name: 📦 Install PHP dependencies for mailer
-        run: |
-          cd php-api
-          composer install --no-dev --optimize-autoloader
+      - name: 🔗 Create symlink dist → .output/public
+        run: ln -sfn .output/public dist
 
-      - name: 🛠 Create PHP .env.php config
-        run: |
-          mkdir -p php-api
-          echo "<?php" > php-api/.env.php
-          echo "return [" >> php-api/.env.php
-          echo "  'SMTP_HOST' => 'ssl0.ovh.net'," >> php-api/.env.php
-          echo "  'SMTP_USERNAME' => '${{ secrets.SMTP_USER }}'," >> php-api/.env.php
-          echo "  'SMTP_PASSWORD' => '${{ secrets.SMTP_PASS }}'," >> php-api/.env.php
-          echo "  'SMTP_PORT' => 465" >> php-api/.env.php
-          echo "];" >> php-api/.env.php
-
-      - name: 🧩 Rename .output/public → output
-        run: |
-          rm -rf output
-          mv .output/public output
-
-      - name: 🚀 Deploy via SCP
+      - name: 📂 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "output/**"
+          source: ".output/**"
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 1
 
       - name: ✅ Done
-        run: echo "🚀 Deployment complete!"
+        run: echo "🚀 Deployment to OVH complete!"
