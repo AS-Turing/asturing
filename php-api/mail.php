@@ -40,14 +40,16 @@ $body .= "Téléphone : $phone\n";
 $body .= "Message :\n$message";
 
 try {
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->CharSet = 'UTF-8';
+    $mail->Encoding = 'base64';//Enable verbose debug output
     $mail->isSMTP();
     $mail->Host       = $config['SMTP_HOST'];
     $mail->Username   = $config['SMTP_USERNAME'];
     $mail->Password   = $config['SMTP_PASSWORD'];
-    $mail->Port       = $config['SMTP_PORT'];//Send using SMTP
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = $config['SMTP_PORT'];
+    $mail->SMTPAuth   = true;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
     $mail->addAddress('alexandre@as-turing.fr');
     $mail->addReplyTo($email, "$firstname $lastname");

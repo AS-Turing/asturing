@@ -44,6 +44,9 @@ jobs:
       - name: 📂 Copy php-api to output
         run: cp -r php-api .output/public/
 
+      - name: 📁 Verify final output content
+        run: ls -la .output/public/php-api
+
       - name: 📂 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
