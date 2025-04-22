@@ -4,42 +4,42 @@ const items = [
     title: "Création de site internet",
     icon: "lucide:layout-template", // ou "mdi:web"
     description: "Voyons ensemble comment créer votre identité numérique.",
-    image: "images/crea-web.png",
+    image: "/images/crea-web.png",
     link: "services/creation-site-internet"
   },
   {
     title: "Conseil & accompagnement digital",
     icon: "lucide:messages-square", // ou "mdi:account-question"
     description: "Besoin d'aide sur votre site ou besoin d'un avis ? Parlons-en !",
-    image: "images/cons-accomp.png",
+    image: "/images/cons-accomp.png",
     link: "services/conseil-accompagnement-digital"
   },
   {
     title: "Développement sur mesure",
     icon: "lucide:code-2", // ou "mdi:xml"
     description: "Un développement spécifique ? Un algorithme ? Créons le code qui vous convient.",
-    image: "images/dev-surmesur.png",
+    image: "/images/dev-surmesur.png",
     link: "services/developpement-sur-mesure"
   },
   {
     title: "Maintenance & support technique",
     icon: "lucide:settings", // ou "mdi:tools"
     description: "Besoin de corriger un bug ? Une montée de version de votre site ? Tout est faisable.",
-    image: "images/maint-st.png",
+    image: "/images/maint-st.png",
     link: "services/maintenance-support-technique"
   },
   {
     title: "Intégration de solutions externes",
     icon: "lucide:plug", // ou "mdi:puzzle"
     description: "Vous souhaitez intégrer un nouveau module à votre site ? Voyons si c’est faisable.",
-    image: "images/inte-ext.png",
+    image: "/images/inte-ext.png",
     link: "services/integration-solutions-externes"
   },
   {
     title: "Formation et vulgarisation",
     icon: "lucide:book-open-check", // ou "mdi:school"
     description: "Vous souhaitez vous sensibiliser au domaine du web ? Prenons rendez-vous.",
-    image: "images/form-vulga.png",
+    image: "/images/form-vulga.png",
     link: "services/formation-vulgarisation"
   }
 ];
