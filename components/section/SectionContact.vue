@@ -103,7 +103,9 @@ async function sendMail() {
     const formData = new FormData()
     formData.append('firstname', mailContent.value.firstname)
     formData.append('lastname', mailContent.value.lastname)
+    formData.append('company', mailContent.value.company)
     formData.append('mail', mailContent.value.mail)
+    formData.append('phone', mailContent.value.phone)
     formData.append('message', mailContent.value.message)
 
     const response = await fetch('https://as-turing.fr/php-api/mail.php', {
