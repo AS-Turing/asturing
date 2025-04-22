@@ -1,4 +1,6 @@
-export const maintenanceSupport = {
+import {Service} from "../../types/services";
+
+export const maintenanceSupport:Service = {
     slug: "maintenance-support-technique",
     title: "Maintenance & support technique",
     description:

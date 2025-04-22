@@ -1,4 +1,6 @@
-export const integrationSolutionsExternes = {
+import {Service} from "../../types/services";
+
+export const integrationSolutionsExternes:Service = {
     slug: "integration-solutions-externes",
     title: "Intégration de solutions externes",
     description:

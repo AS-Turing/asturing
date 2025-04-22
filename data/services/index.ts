@@ -1,16 +1,16 @@
 // data/services/index.ts
-import { creationSiteInternet } from './creation'
 import { conseilAccompagnementDigital } from './conseil'
+import { creationSiteInternet } from './creation'
 import { developpementSurMesure } from './developpement'
-import { maintenanceSupport } from './maintenance'
-import { integrationSolutionsExternes } from './integration'
 import { formationVulgarisation } from './formation'
+import { integrationSolutionsExternes } from './integration'
+import { maintenanceSupport } from './maintenance'
 
 export default [
-    creationSiteInternet,
     conseilAccompagnementDigital,
+    creationSiteInternet,
     developpementSurMesure,
-    maintenanceSupport,
+    formationVulgarisation,
     integrationSolutionsExternes,
-    formationVulgarisation
+    maintenanceSupport,
 ]

@@ -1,4 +1,6 @@
-export const formationVulgarisation = {
+import {Service} from "../../types/services";
+
+export const formationVulgarisation:Service = {
     slug: 'formation-vulgarisation',
     title: "Formation et vulgarisation",
     description:

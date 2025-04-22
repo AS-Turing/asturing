@@ -1,4 +1,6 @@
-export const conseilAccompagnementDigital = {
+import {Service} from "../../types/services";
+
+export const conseilAccompagnementDigital:Service = {
     slug: 'conseil-accompagnement-digital',
     title: "Conseil & accompagnement digital",
     description:
