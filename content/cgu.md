@@ -16,7 +16,7 @@ Mise à jour : Avril 2025
 
   ---
 
-## 2. Prestations de services
+## 2. Prestations de creation
 
 AS-Turing propose les prestations suivantes :
 - Création de site internet
