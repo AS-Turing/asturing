@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".output/**"
-          target: ${{ secrets.NUXT_DEPLOY_PATH }}
+          target: ${{ secrets.BUILD_DEPLOY_PATH }}
           strip_components: 1
 
       - name: ✅ Done
