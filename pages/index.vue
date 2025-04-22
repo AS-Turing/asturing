@@ -1,6 +1,7 @@
 <script setup lang="ts">
-
+useSeo()
 </script>
+
 
 <template>
   <SectionHero />

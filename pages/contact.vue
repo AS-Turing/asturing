@@ -1,5 +1,10 @@
 <script setup lang="ts">
-
+useHead({
+  title: 'Contact - AS Turing',
+  meta: [
+    { name: 'description', content: 'Prenez contact avec AS Turing pour vos besoins digitaux ou pour toute question.' }
+  ]
+})
 </script>
 
 <template>
