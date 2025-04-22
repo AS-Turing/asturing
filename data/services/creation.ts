@@ -1,4 +1,6 @@
-export const creationSiteInternet = {
+import {Service} from "../../types/services";
+
+export const creationSiteInternet:Service = {
     slug: 'creation-site-internet',
     title: 'Création de site internet',
     description: 'Un site à votre image, rapide, élégant et optimisé, pour donner à votre projet digital la visibilité qu’il mérite.',

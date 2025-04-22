@@ -1,4 +1,6 @@
-export const developpementSurMesure = {
+import {Service} from "../../types/services";
+
+export const developpementSurMesure:Service = {
     slug: 'developpement-sur-mesure',
     title: "Développement sur mesure",
     description:

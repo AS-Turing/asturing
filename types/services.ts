@@ -1,7 +1,7 @@
 export interface Tarification {
-    formule: string
-    inclus: string[]
-    prix: string
+    name: string
+    includes: string[]
+    price: string
 }
 
 export interface FAQ {
@@ -10,9 +10,10 @@ export interface FAQ {
 }
 
 export interface Service {
+    slug: string
     title: string
     description: string
     microServices: string[]
-    tarifs: Tarification[]
+    prices: Tarification[]
     faq: FAQ[]
 }
