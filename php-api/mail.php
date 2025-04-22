@@ -42,7 +42,7 @@ $body .= "Message :\n$message";
 try {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->CharSet = 'UTF-8';
-    $mail->Encoding = 'base64';//Enable verbose debug output
+    $mail->Encoding = 'base64';
     $mail->isSMTP();
     $mail->Host       = $config['SMTP_HOST'];
     $mail->Username   = $config['SMTP_USERNAME'];
