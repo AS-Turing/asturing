@@ -41,6 +41,9 @@ jobs:
       - name: 🔗 Create symlink dist → .output/public
         run: ln -sfn .output/public dist
 
+      - name: 📂 Copy php-api to output
+        run: cp -r php-api .output/public/
+
       - name: 📂 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -50,9 +53,6 @@ jobs:
           source: ".output/**"
           target: ${{ secrets.BUILD_DEPLOY_PATH }}
           strip_components: 1
-
-      - name: 📂 Copy php-api to output
-        run: cp -r php-api .output/public/
 
       - name: ✅ Done
         run: echo "🚀 Deployment to OVH complete!"
