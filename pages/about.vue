@@ -1,5 +1,10 @@
 <script setup lang="ts">
-
+useHead({
+  title: 'À propos - AS Turing',
+  meta: [
+    { name: 'description', content: 'Découvrez l’histoire, la mission et l’équipe derrière AS Turing.' }
+  ]
+})
 </script>
 
 <template>

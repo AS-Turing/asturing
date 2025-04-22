@@ -1,4 +1,10 @@
 <script setup lang="ts">
+useHead({
+  title: 'Nos engagements - AS Turing',
+  meta: [
+    { name: 'description', content: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.' }
+  ]
+})
 </script>
 
 <template>
