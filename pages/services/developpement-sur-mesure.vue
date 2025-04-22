@@ -1,3 +1,13 @@
 <template>
-  <h1>Développement sur mesure</h1>
+  <ServiceLayout :service="service!" />
 </template>
+
+<script setup lang="ts">
+import services from '@/data/services'
+import ServiceLayout from '@/components/service/ServiceLayout.vue'
+
+const service = services.find(s => s.slug === 'developpement-sur-mesure')
+</script>
+
+<style scoped>
+</style>

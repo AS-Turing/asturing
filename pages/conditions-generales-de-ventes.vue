@@ -24,7 +24,7 @@
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold mb-2 underline dark:decoration-secondary underline-offset-8">2. Prestations de services</h2>
+        <h2 class="text-2xl font-semibold mb-2 underline dark:decoration-secondary underline-offset-8">2. Prestations de creation</h2>
         <p>AS-Turing propose les prestations suivantes :</p>
         <ul class="list-disc list-inside space-y-1">
           <li>Création de site internet</li>
@@ -83,7 +83,7 @@
 
       <div>
         <h2 class="text-2xl font-semibold mb-2 underline dark:decoration-secondary underline-offset-8">11. Limitation de responsabilité</h2>
-        <p>AS-Turing ne saurait être tenu responsable en cas de défaillance de services tiers (hébergement, plugin, module externe...) utilisés dans le cadre du projet.</p>
+        <p>AS-Turing ne saurait être tenu responsable en cas de défaillance de creation tiers (hébergement, plugin, module externe...) utilisés dans le cadre du projet.</p>
       </div>
 
       <div>

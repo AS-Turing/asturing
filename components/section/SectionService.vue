@@ -50,7 +50,7 @@ const items = [
   <section class="bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl sm:text-5xl font-bold text-center text-primary dark:text-white mb-12 underline dark:decoration-secondary underline-offset-8">
-        Mes services
+        Mes creation
       </h2>
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
