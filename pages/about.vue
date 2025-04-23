@@ -77,11 +77,11 @@ useHead({
       </div>
 
       <div class="text-center">
-        <a href="/CV_FULL_SATCK_Alexandre_Salé.pdf" download
+        <NuxtLink href="/CV_FULL_SATCK_Alexandre_Salé.pdf" download
            class="inline-flex items-center px-6 py-3 mt-4 text-white bg-primary rounded-lg hover:bg-secondary transition">
           <Icon name="lucide:download" class="w-5 h-5 mr-2" />
           Télécharger mon CV
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </section>
