@@ -1,1 +1,12 @@
+# robots.txt for https://www.as-turing.fr
+
+User-agent: *
+Disallow: /node_modules/
+Disallow: /php-api/
+Disallow: /server/
+Disallow: /private/
+
+Allow: /
+
+Sitemap: https://www.as-turing.fr/sitemap.xml
 
