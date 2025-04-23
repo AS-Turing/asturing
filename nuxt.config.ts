@@ -15,24 +15,32 @@ export default defineNuxtConfig({
       enabled: process.env.NODE_ENV !== 'production',
     },
   },
+  site: {
+    url: 'https://www.as-turing.fr'
+  },
   sitemap: {
     siteUrl: 'https://www.as-turing.fr',
     trailingSlash: true,
     gzip: true,
-    routes: async () => {
-      return [
-        '/',
-        '/services',
-        '/services/creation-site-internet',
-        '/services/conseil-accompagnement-digital',
-        '/services/developpement-sur-mesure',
-        '/services/maintenance-support-technique',
-        '/services/integration-solutions-externes',
-        '/services/formation-vulgarisation',
-        '/about',
-        '/contact',
-      ]
-    }
+    autoLastmod: true,
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.8,
+    },
+    routes: async () => [
+      '/',
+      '/services',
+      '/services/creation-site-internet',
+      '/services/conseil-accompagnement-digital',
+      '/services/developpement-sur-mesure',
+      '/services/maintenance-support-technique',
+      '/services/integration-solutions-externes',
+      '/services/formation-vulgarisation',
+      '/about',
+      '/contact',
+      '/conditions-generales-de-ventes',
+      '/engagements'
+    ]
   },
   nitro: {
     preset: process.env.NUXT_ENV_PRESET || 'static',
