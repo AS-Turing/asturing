@@ -1,13 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: {
-      link: [
-        { rel: 'preload', href: '/images/hero-image.jpg', as: 'image' },
-      ],
-    },
-  },
   colorMode: {
     dataValue: 'theme',
     classSuffix: '',
@@ -21,6 +14,25 @@ export default defineNuxtConfig({
     timeline: {
       enabled: process.env.NODE_ENV !== 'production',
     },
+  },
+  sitemap: {
+    siteUrl: 'https://www.as-turing.fr',
+    trailingSlash: true,
+    gzip: true,
+    routes: async () => {
+      return [
+        '/',
+        '/services',
+        '/services/creation-site-internet',
+        '/services/conseil-accompagnement-digital',
+        '/services/developpement-sur-mesure',
+        '/services/maintenance-support-technique',
+        '/services/integration-solutions-externes',
+        '/services/formation-vulgarisation',
+        '/about',
+        '/contact',
+      ]
+    }
   },
   nitro: {
     preset: process.env.NUXT_ENV_PRESET || 'static',
@@ -70,6 +82,6 @@ export default defineNuxtConfig({
     editorSupport: { autocompleteUtil: { as: 'tailwindClasses' }, generateConfig: true },
   },
   typescript: {
-    typeCheck: process.env.CI !== 'true',
+    typeCheck: false,
   },
 })

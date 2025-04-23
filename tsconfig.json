@@ -34,14 +34,12 @@
   "include": [
     "**/*.ts",
     "**/*.vue",
-    ".nuxt/types/imports.d.ts",
-    ".nuxt/types/imports.d.ts",
     "types/**/*.d.ts",
     "env.d.ts",
-    ".nuxt/types/imports.d.ts",
     "types",
     "imports.d.ts",
     ".nuxt/types/**/*.d.ts",
+    ".nuxt/types/imports.d.ts",
     ".nuxt/types/imports.d.ts"
   ],
   "exclude": [
