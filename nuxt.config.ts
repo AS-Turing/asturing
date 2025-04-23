@@ -59,6 +59,7 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
+    '@nuxtjs/sitemap'
   ],
   runtimeConfig: {
     mail: {
