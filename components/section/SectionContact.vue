@@ -77,7 +77,7 @@
         </p>
 
         <div class="sm:col-span-2 mt-6 flex justify-center">
-          <a
+          <button
               @click="sendMail"
               class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
              text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
@@ -89,7 +89,7 @@
             <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
               Envie d’échanger sur votre projet ?
             </span>
-          </a>
+          </button>
         </div>
       </form>
     </div>
