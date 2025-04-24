@@ -16,4 +16,11 @@ export interface Service {
     microServices: string[]
     prices: Tarification[]
     faq: FAQ[]
+    seo: {
+        title: string,
+        description: string,
+        ogTitle: string,
+        ogDescription: string,
+        ogUrl: string,
+    }
 }

@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import type { Service } from '@/data/services'
-defineProps<{ service: Service }>()
+
+const props = defineProps<{ service: Service }>()
+
+useSeoMeta({
+  title: props.service.seo.title,
+  description: props.service.seo.description,
+  ogTitle: props.service.seo.ogTitle,
+  ogDescription: props.service.seo.ogDescription,
+  ogUrl: props.service.seo.ogUrl,
+})
 </script>
 
 <template>

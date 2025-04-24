@@ -1,6 +1,6 @@
-import {Service} from "../../types/services";
+import { Service } from "../../types/services";
 
-export const integrationSolutionsExternes:Service = {
+export const integrationSolutionsExternes: Service = {
     slug: "integration-solutions-externes",
     title: "Intégration de solutions externes",
     description:
@@ -61,5 +61,12 @@ export const integrationSolutionsExternes:Service = {
             answer:
                 "Non, les éventuels frais d’abonnement aux outils restent à votre charge. Mais je peux vous conseiller des solutions gratuites ou open source quand c’est possible."
         }
-    ]
+    ],
+    seo: {
+        title: "Intégration d'API & outils externes | AS-Turing",
+        description: "Connectez votre site à des services tiers (CRM, analytics, paiement...) pour automatiser et enrichir votre expérience digitale.",
+        ogTitle: "Intégration de solutions externes web | AS-Turing",
+        ogDescription: "Automatisez, synchronisez, connectez : intégration d’outils sur mesure (Stripe, Mailchimp, Google Maps, etc.) pour votre site web.",
+        ogUrl: "https://www.as-turing.fr/services/integration-solutions-externes"
+    }
 }

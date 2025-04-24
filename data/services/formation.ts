@@ -1,6 +1,6 @@
-import {Service} from "../../types/services";
+import { Service } from "../../types/services";
 
-export const formationVulgarisation:Service = {
+export const formationVulgarisation: Service = {
     slug: 'formation-vulgarisation',
     title: "Formation et vulgarisation",
     description:
@@ -61,5 +61,12 @@ export const formationVulgarisation:Service = {
             answer:
                 "Oui, des sessions groupées ou en individuel sont possibles. Contactez-moi pour définir un format adapté à votre équipe."
         }
-    ]
+    ],
+    seo: {
+        title: 'Formation web et vulgarisation numérique | AS-Turing',
+        description: 'Formations sur mesure au web, HTML/CSS, JavaScript, CMS, gestion de projet… à Libourne ou en visio. Vulgarisation technique accessible à tous.',
+        ogTitle: 'Formation au numérique pour tous | AS-Turing',
+        ogDescription: 'Apprenez à votre rythme avec un formateur pédagogue : web, outils, projet digital. Sessions à distance ou en entreprise.',
+        ogUrl: 'https://www.as-turing.fr/services/formation-vulgarisation'
+    }
 }
