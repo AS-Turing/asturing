@@ -77,11 +77,19 @@
         </p>
 
         <div class="sm:col-span-2 mt-6">
-          <button @click="sendMail" class="w-full bg-primary hover:text-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-all flex items-center justify-center gap-2">
-            <Icon name="lucide:send" class="w-5 h-5" />
-            Envoyer le message
-          </button>
-
+          <a
+              @click="sendMail"
+              class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
+             text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
+             dark:text-primary dark:bg-secondary dark:hover:text-secondary dark:hover:bg-primary dark:border-gray-700    dark:focus:ring-gray-800
+             hover:scale-105 transition-all duration-700 ease-in-out transform focus:ring-4 focus:ring-gray-100 hover:cursor-pointer"
+          >
+            <Icon name="lucide:send"
+                  class="w-5 h-5 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
+            <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
+              Envie d’échanger sur votre projet ?
+            </span>
+          </a>
         </div>
       </form>
     </div>

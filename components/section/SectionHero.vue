@@ -28,10 +28,17 @@ const scrollToElement = (id: string) => {
           Un site ? Un conseil ? Une formation? Je suis à votre disposition pour vous accompagner au mieux dans l'univers du web.
         </p>
         <a
-           @click="scrollToElement('contact-form')"
-           class="inline-flex bg-primary items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:cursor-pointer hover:text-primary hover:bg-secondary focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-secondary dark:focus:ring-gray-800">
-          <Icon name="lucide:handshake" class="w-5 h-5" />
-          &nbsp;Travaillons ensemble
+            @click="scrollToElement('contact-form')"
+            class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
+             text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
+             dark:text-primary dark:bg-secondary dark:hover:text-secondary dark:hover:bg-primary dark:border-gray-700    dark:focus:ring-gray-800
+             hover:scale-105 transition-all duration-700 ease-in-out transform focus:ring-4 focus:ring-gray-100 hover:cursor-pointer"
+        >
+          <Icon name="lucide:handshake"
+                class="w-5 h-5 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
+          <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
+            Travaillons ensemble
+          </span>
         </a>
       </div>
     </div>
