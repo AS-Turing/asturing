@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".output/public/**"
           target: ${{ secrets.BUILD_DEPLOY_PATH }}
-          strip_components: 2
+          strip_components: 1
 
       - name: ✅ Done
         run: echo "🚀 Deployment complete!"
