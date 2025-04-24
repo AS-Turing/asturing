@@ -12,7 +12,7 @@ jobs:
     environment: production
 
     steps:
-      - name: ⏬ Checkout repo
+      - name: ⏬ Checkout repository
         uses: actions/checkout@v3
 
       - name: 📦 Setup Node.js
@@ -38,16 +38,11 @@ jobs:
       - name: 🛠 Generate static site
         run: pnpm run generate
 
-      - name: 📁 Sync generated files to output/public
-        run: |
-          mkdir -p output/public
-          rsync -av --delete .output/public/ output/public/
+      - name: 📂 Copy php-api to .output/public/php-api
+        run: rsync -av php-api/ .output/public/php-api/
 
-      - name: 📂 Copy php-api to output/public
-        run: rsync -av php-api/ output/public/php-api/
-
-      - name: 🧪 Final check
-        run: ls -la output/public
+      - name: 🔍 Final check
+        run: ls -la .output/public
 
       - name: 🚀 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
@@ -55,9 +50,9 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "output/public/**"
+          source: ".output/public/**"
           target: ${{ secrets.BUILD_DEPLOY_PATH }}
-          strip_components: 0
+          strip_components: 1
 
       - name: ✅ Done
         run: echo "🚀 Deployment complete!"
