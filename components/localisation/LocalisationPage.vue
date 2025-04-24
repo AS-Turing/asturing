@@ -40,6 +40,17 @@
         </div>
       </div>
     </section>
+    <section class="flex justify-center">
+      <iframe
+          :src="props.data.map"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">Pourquoi {{ props.data.ville }} ?</h2>

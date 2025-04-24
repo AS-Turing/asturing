@@ -103,6 +103,18 @@ import LogoSvg from '~/public/images/logo.svg?raw';
                   Développeur Web à Saint-Émilion
                 </NuxtLink>
               </li>
+              <li>
+                <NuxtLink to="/localisation/developpeur-web-sauveterre-de-guyenne"
+                          class="hover:underline font-medium hover:dark:text-secondary">
+                  Développeur Web à Sauveterre-de-Guyenne
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/localisation/developpeur-web-creon"
+                          class="hover:underline font-medium hover:dark:text-secondary">
+                  Développeur Web à Créon
+                </NuxtLink>
+              </li>
             </ul>
           </li>
         </ul>
