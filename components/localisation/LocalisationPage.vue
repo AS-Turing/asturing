@@ -1,8 +1,9 @@
 <template>
   <div class="px-4 py-10 sm:px-10 max-w-5xl mx-auto space-y-12 text-primary dark:text-white">
-    <h1 class="text-4xl font-bold ">Développeur Web à Libourne</h1>
+    <h1 class="text-4xl font-bold ">Développeur Web à {{ props.data.ville }}</h1>
     <p class="text-lg">
-      Vous êtes une entreprise, une association ou un indépendant basé à Libourne ? Je vous accompagne dans la création ou la refonte de votre site web. Performance, design, référencement local : faisons rayonner votre activité en ligne.
+      Vous êtes une entreprise, une association ou un indépendant basé à {{ props.data.ville }} ? Je vous accompagne
+      dans la création ou la refonte de votre site web. Performance, design, référencement local : faisons rayonner votre activité en ligne.
     </p>
 
     <section>
@@ -41,7 +42,7 @@
     </section>
 
     <section>
-      <h2 class="text-2xl font-semibold mb-4">Pourquoi Libourne ?</h2>
+      <h2 class="text-2xl font-semibold mb-4">Pourquoi {{ props.data.ville }} ?</h2>
       <p class="">
         Basé en Nouvelle-Aquitaine, je connais bien les enjeux numériques des entreprises locales. Je privilégie les échanges simples, humains, et surtout efficaces.
       </p>
@@ -55,18 +56,27 @@
         Me contacter
       </NuxtLink>
     </div>
-  </div>
-</template>
+  </div></template>
 
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Développeur Web Freelance à Libourne | Création de site internet & SEO | AS-Turing',
-  description: 'Développeur web à Libourne : création de sites internet vitrine sur mesure, optimisation SEO local, accompagnement digital pour PME, artisans et indépendants.',
-  ogTitle: 'Création de Site Internet à Libourne | Développeur Web Freelance | AS-Turing',
-  ogDescription: 'AS-Turing, freelance spécialisé NuxtJS à Libourne, conçoit des sites internet rapides, modernes et bien référencés. Devis gratuit, services adaptés aux pros.',
-  ogUrl: 'https://www.as-turing.fr/developpeur-web-libourne',
-  ogImage: 'https://www.as-turing.fr/images/og-as-turing.jpg',
-  twitterCard: 'summary_large_image',
-})
+const props = defineProps<{
+  data: {
+    ville: string
+    title: string
+    description: string
+    ogTitle: string
+    ogDescription: string
+    ogUrl: string
+  }
+}>()
 
+
+
+useSeoMeta({
+  title: props.data.title,
+  description: props.data.description,
+  ogTitle: props.data.ogTitle,
+  ogDescription: props.data.ogDescription,
+  ogUrl: props.data.ogUrl,
+})
 </script>
