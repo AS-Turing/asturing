@@ -44,14 +44,19 @@ const scrollToElement = (id: string) => {
               Que vous ayez une idée un peu floue ou un cahier des charges béton, je suis là pour vous aider à faire le pont entre l’envie et la réalisation.
             </p>
           </div>
-          <button
+          <a
               @click="scrollToElement('contact-form')"
-              class="sm:w-fit w-full px-3.5 py-2 bg-primary hover:text-primary hover:bg-secondary transition-all duration-700 ease-in-out rounded-lg shadow-md justify-center items-center flex dark:border dark:border-white hover:border-secondary"
+              class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
+             text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
+             dark:text-primary dark:bg-secondary dark:hover:text-secondary dark:hover:bg-primary dark:border-gray-700    dark:focus:ring-gray-800
+             hover:scale-105 transition-all duration-700 ease-in-out transform focus:ring-4 focus:ring-gray-100 hover:cursor-pointer"
           >
-            <span class="px-1.5 text-white hover:text-primary text-sm font-medium leading-6">
-              👉 Envie d’échanger sur votre projet ?
+            <Icon name="lucide:pointer"
+                  class="w-5 h-5 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
+            <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
+              Envie d’échanger sur votre projet ?
             </span>
-          </button>
+          </a>
         </div>
         <img
             class="lg:mx-0 mx-auto h-full rounded-3xl object-cover"

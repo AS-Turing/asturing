@@ -78,10 +78,18 @@ useSeoMeta({
       </div>
 
       <div class="text-center">
-        <a href="/CV_FULL_SATCK_Alexandre_Salé.pdf" download
-           class="inline-flex items-center px-6 py-3 mt-4 text-white bg-primary rounded-lg hover:bg-secondary transition">
-          <Icon name="lucide:download" class="w-5 h-5 mr-2" />
+        <a
+            href="/CV_FULL_SATCK_Alexandre_Salé.pdf" download
+            class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
+             text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
+             dark:text-primary dark:bg-secondary dark:hover:text-secondary dark:hover:bg-primary dark:border-gray-700    dark:focus:ring-gray-800
+             hover:scale-105 transition-all duration-700 ease-in-out transform focus:ring-4 focus:ring-gray-100 hover:cursor-pointer"
+        >
+          <Icon name="lucide:download"
+                class="w-5 h-5 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
+          <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
           Télécharger mon CV
+          </span>
         </a>
       </div>
     </div>
