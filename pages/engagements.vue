@@ -1,9 +1,10 @@
 <script setup lang="ts">
-useHead({
+useSeoMeta({
   title: 'Nos engagements - AS Turing',
-  meta: [
-    { name: 'description', content: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.' }
-  ]
+  description: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.',
+  ogUrl: 'https://www.as-turing.fr/engagements',
+  ogTitle: 'Mes engagements',
+  ogDescription: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.'
 })
 </script>
 

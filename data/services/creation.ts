@@ -1,6 +1,6 @@
-import {Service} from "../../types/services";
+import { Service } from "../../types/services";
 
-export const creationSiteInternet:Service = {
+export const creationSiteInternet: Service = {
     slug: 'creation-site-internet',
     title: 'Création de site internet',
     description: 'Un site à votre image, rapide, élégant et optimisé, pour donner à votre projet digital la visibilité qu’il mérite.',
@@ -50,5 +50,12 @@ export const creationSiteInternet:Service = {
             question: 'Puis-je modifier mon site moi-même ?',
             answer: 'Oui, une formation est incluse pour vous permettre de mettre à jour le contenu si besoin.'
         }
-    ]
-};
+    ],
+    seo: {
+        title: 'Création de site internet sur mesure | AS-Turing',
+        description: 'Création de site vitrine ou site web sur mesure à Libourne et Bordeaux. Responsive, optimisé SEO et personnalisé pour votre activité.',
+        ogTitle: 'Création de site vitrine performant | AS-Turing',
+        ogDescription: 'Développeur freelance à Libourne, je conçois des sites web élégants, rapides et optimisés pour votre visibilité.',
+        ogUrl: 'https://www.as-turing.fr/services/creation-site-internet'
+    }
+}

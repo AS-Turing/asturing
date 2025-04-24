@@ -5,6 +5,13 @@ useHead({
     { name: 'description', content: 'Prenez contact avec AS Turing pour vos besoins digitaux ou pour toute question.' }
   ]
 })
+useSeoMeta({
+  title: 'Contact | AS-Turing',
+  description: 'Prenez contact avec AS Turing pour vos besoins digitaux ou pour toute question.',
+  ogUrl: 'https://www.as-turing.fr/contact',
+  ogTitle: 'CGV - AS-Turing',
+  ogDescription: 'Prenez contact avec AS Turing pour vos besoins digitaux ou pour toute question.'
+})
 </script>
 
 <template>

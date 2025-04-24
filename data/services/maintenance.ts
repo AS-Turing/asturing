@@ -1,6 +1,6 @@
-import {Service} from "../../types/services";
+import { Service } from "../../types/services";
 
-export const maintenanceSupport:Service = {
+export const maintenanceSupport: Service = {
     slug: "maintenance-support-technique",
     title: "Maintenance & support technique",
     description:
@@ -62,5 +62,14 @@ export const maintenanceSupport:Service = {
             answer:
                 "Les interventions non utilisées ne sont pas reportées, mais je vous propose toujours des améliorations ou petites évolutions à faire pour en profiter pleinement."
         }
-    ]
+    ],
+    seo: {
+        title: "Maintenance site web & support technique | AS-Turing",
+        description:
+            "Gardez votre site web sécurisé, rapide et fonctionnel. Maintenance préventive, dépannage, sauvegardes et assistance sur mesure.",
+        ogTitle: "Support technique & maintenance web | AS-Turing",
+        ogDescription:
+            "Confiez-moi la maintenance de votre site : mises à jour, monitoring, sécurité et support technique dédié.",
+        ogUrl: "https://www.as-turing.fr/services/maintenance-support-technique"
+    }
 }

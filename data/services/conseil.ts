@@ -1,6 +1,6 @@
-import {Service} from "../../types/services";
+import { Service } from "../../types/services";
 
-export const conseilAccompagnementDigital:Service = {
+export const conseilAccompagnementDigital: Service = {
     slug: 'conseil-accompagnement-digital',
     title: "Conseil & accompagnement digital",
     description:
@@ -60,5 +60,14 @@ export const conseilAccompagnementDigital:Service = {
             answer:
                 "Ce service est orienté conseil, mais peut être complété par une prestation de développement si besoin, sur devis personnalisé."
         }
-    ]
+    ],
+    seo: {
+        title: 'Conseil & accompagnement digital | AS-Turing',
+        description:
+            'Audit, stratégie, choix techniques et suivi de projet — bénéficiez de conseils personnalisés pour faire les bons choix digitaux avec AS-Turing.',
+        ogTitle: 'Conseil digital sur mesure | AS-Turing',
+        ogDescription:
+            'Freelance web à Libourne, j’accompagne les professionnels dans leurs décisions techniques, stratégiques et organisationnelles.',
+        ogUrl: 'https://www.as-turing.fr/services/conseil-accompagnement-digital'
+    }
 }

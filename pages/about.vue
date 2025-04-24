@@ -1,9 +1,10 @@
 <script setup lang="ts">
-useHead({
+useSeoMeta({
   title: 'À propos - AS Turing',
-  meta: [
-    { name: 'description', content: 'Découvrez l’histoire, la mission et l’équipe derrière AS Turing.' }
-  ]
+  description: 'Découvrez l’histoire, la mission et l’équipe derrière AS Turing.',
+  ogUrl: 'https://www.as-turing.fr/about',
+  ogTitle: 'À propos de AS-Turing',
+  ogDescription: 'Découvrez l’histoire, la mission et l’équipe derrière AS Turing.'
 })
 </script>
 

@@ -1,6 +1,6 @@
-import {Service} from "../../types/services";
+import { Service } from "../../types/services";
 
-export const developpementSurMesure:Service = {
+export const developpementSurMesure: Service = {
     slug: 'developpement-sur-mesure',
     title: "Développement sur mesure",
     description:
@@ -61,5 +61,12 @@ export const developpementSurMesure:Service = {
             answer:
                 "Une période de support est incluse (variable selon la prestation). Vous pouvez également souscrire à une offre de maintenance pour un suivi plus long."
         }
-    ]
+    ],
+    seo: {
+        title: 'Développement sur mesure à Libourne | AS-Turing',
+        description: 'Besoin d’une fonctionnalité web spécifique ? Développement sur mesure, API, automatisation, back-office... par un freelance expert à Libourne.',
+        ogTitle: 'Développement spécifique & API | AS-Turing',
+        ogDescription: 'Conception technique avancée, intégrations, algorithmes, back-office : confiez votre projet à un développeur freelance expérimenté.',
+        ogUrl: 'https://www.as-turing.fr/services/developpement-sur-mesure'
+    }
 }
