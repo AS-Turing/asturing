@@ -1,7 +1,23 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 const mobileMenuOpen = ref(false)
+const isOpen = ref(false)
 
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value
+}
+
+const closeMenu = () => {
+  isOpen.value = false
+}
+const subServices = [
+  { label: 'Création de site internet', href: '/services/creation-site-internet' },
+  { label: 'Conseil & accompagnement digital', href: '/services/conseil-accompagnement-digital' },
+  { label: 'Développement sur mesure', href: '/services/developpement-sur-mesure' },
+  { label: 'Maintenance & support technique', href: '/services/maintenance-support-technique' },
+  { label: 'Intégration de solutions externes', href: '/services/integration-solutions-externes' },
+  { label: 'Formation et vulgarisation', href: '/services/formation-vulgarisation' }
+]
 </script>
 <template>
   <header
@@ -70,49 +86,36 @@ const mobileMenuOpen = ref(false)
     <!-- Liens navigation -->
     <nav class="hidden md:flex gap-6">
       <!-- Menu déroulant -->
-      <div class="relative group">
-        <button class="hover:underline inline-flex items-center gap-1">
-          <NuxtLink to="/services" class="">Services</NuxtLink>
-          <span class="text-xs">▼</span>
+      <div class="relative">
+        <button
+            @click="toggleMenu"
+            class="text-white focus:outline-none"
+            aria-label="Ouvrir le menu"
+        >
+          Services
+          <Icon name="lucide:chevron-down" class="w-5 h-5 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
         </button>
 
-        <!-- Sous-menu -->
-        <div
-            class="absolute left-0  w-40 rounded-md bg-white dark:bg-gray-800 shadow-lg p-2 space-y-2 text-sm z-50
-                 hidden group-hover:block pointer-events-none group-hover:pointer-events-auto transition"
+        <Transition
+            name="dropdown"
+            @after-leave="closeMenu"
         >
-          <NuxtLink to="/services/creation-site-internet"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
-            Création de site internet
-          </NuxtLink>
-
-          <NuxtLink to="/services/conseil-accompagnement-digital"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
-            Conseil & accompagnement digital
-          </NuxtLink>
-
-          <NuxtLink to="/services/developpement-sur-mesure"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
-            Développement sur mesure
-          </NuxtLink>
-
-          <NuxtLink to="/services/maintenance-support-technique"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
-            Maintenance & support technique
-          </NuxtLink>
-
-          <NuxtLink to="/services/integration-solutions-externes"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
-            Intégration de solutions externes
-          </NuxtLink>
-
-          <NuxtLink to="/services/formation-vulgarisation"
-                    class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded hover:underline hover:dark:text-secondary">
-            Formation et vulgarisation
-          </NuxtLink>
-        </div>
-      </div>
-      <NuxtLink to="/about" class="text-sm font-medium hover:underline hover:dark:text-secondary">À propos</NuxtLink>
+          <div
+              v-if="isOpen"
+              @mouseleave="closeMenu"
+              class="absolute mt-2 bg-white dark:bg-gray-800 shadow-lg rounded p-4 z-50"
+          >
+            <NuxtLink
+                v-for="(item, index) in subServices"
+                :key="index"
+                :to="item.href"
+                class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 hover:underline hover:dark:text-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+            >
+              {{ item.label }}
+            </NuxtLink>
+          </div>
+        </Transition>
+      </div>      <NuxtLink to="/about" class="text-sm font-medium hover:underline hover:dark:text-secondary">À propos</NuxtLink>
       <NuxtLink to="/contact" class="text-sm font-medium hover:underline hover:dark:text-secondary">Contact</NuxtLink>
     </nav>
     <!-- Toggle thème -->
@@ -138,5 +141,24 @@ const mobileMenuOpen = ref(false)
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
+}
+.dropdown-enter-active, .dropdown-leave-active {
+  transition: all 0.3s ease;
+}
+.dropdown-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.dropdown-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dropdown-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 </style>
