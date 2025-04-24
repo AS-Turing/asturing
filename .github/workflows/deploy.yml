@@ -35,8 +35,8 @@ jobs:
       - name: 🧬 Inject .env.production as .env
         run: mv .env.production .env
 
-      - name: 🛠 Generate Nuxt static site
-        run: pnpm run generate
+      - name: 🛠 Export Nuxt site
+        run: pnpm run build
 
       - name: 📁 Debug .output/public content
         run: ls -la .output/public
