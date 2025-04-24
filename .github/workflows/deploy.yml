@@ -41,7 +41,7 @@ jobs:
       - name: 📁 Prepare output for OVH (move .output/public → output)
         run: |
           rm -rf output
-          mv .output/public output
+          mv .output/ output
 
       - name: 📂 Copy php-api to output
         run: cp -r php-api output/
