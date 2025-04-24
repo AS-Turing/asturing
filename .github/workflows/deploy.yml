@@ -35,20 +35,19 @@ jobs:
       - name: 🧬 Inject .env.production as .env
         run: mv .env.production .env
 
-      - name: 🛠 Build project
-        run: pnpm run build
+      - name: 🛠 Export static site
+        run: pnpm run export
 
-      - name: 📁 Prepare output for OVH (copy from .output/public → output/public)
+      - name: 📁 Prepare output for OVH (move .output/public → output)
         run: |
           rm -rf output
-          mkdir -p output/public
-          cp -r .output/public/* output/public/
+          mv .output/public output
 
       - name: 📂 Copy php-api to output
-        run: cp -r php-api output/public/
+        run: cp -r php-api output/
 
       - name: 📁 Verify final output content
-        run: ls -la output/public/
+        run: ls -la output/
 
       - name: 📂 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
