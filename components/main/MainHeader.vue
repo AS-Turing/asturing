@@ -61,7 +61,8 @@ const mobileMenuOpen = ref(false)
     </nav>
     <!-- Logo -->
     <NuxtLink to="/" class="dark:text-white hover:dark:text-secondary hover:scale-110 transition ease-in-out duration-700">
-    <div v-html="LogoSvg" class="fill-current"></div>
+      <span class="hidden">as-turing</span>
+      <div v-html="LogoSvg" class="fill-current"></div>
     </NuxtLink>
 
     <!-- Liens navigation -->

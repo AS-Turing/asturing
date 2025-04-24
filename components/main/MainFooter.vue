@@ -69,16 +69,26 @@ import LogoSvg from '~/public/images/logo.svg?raw';
             </NuxtLink>
           </li>
           <li class="lg:w-4/12 text-center">
+            <ul>
+              <li>
+                <NuxtLink to="/conditions-generales-de-ventes"
+                          class="hover:underline font-medium hover:dark:text-secondary">
+                  Conditions générales de ventes
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/engagements" class="hover:underline font-medium hover:dark:text-secondary">
+                  La charte d'engagement d'AS-Turing
+                </NuxtLink>
+              </li>
+            </ul>
+          </li>
+          <li class="lg:w-4/12 text-center">
             <p>
-              <NuxtLink to="/conditions-generales-de-ventes"
-                       class="hover:underline font-medium hover:dark:text-secondary">
-              Conditions générales de ventes
-            </NuxtLink>
-            </p>
-            <p>
-            <NuxtLink to="/engagements" class="hover:underline font-medium hover:dark:text-secondary">
-              La charte d'engagement d'AS-Turing
-            </NuxtLink>
+              <NuxtLink to="/developpeur-web-libourne"
+                        class="hover:underline font-medium hover:dark:text-secondary">
+                Développeur Web à Libourne
+              </NuxtLink>
             </p>
           </li>
 
