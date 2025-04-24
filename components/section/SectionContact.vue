@@ -76,7 +76,7 @@
           <a href="mailto:alexandre@as-turing.fr" class="underline hover:text-primary">alexandre@as-turing.fr</a>.
         </p>
 
-        <div class="sm:col-span-2 mt-6">
+        <div class="sm:col-span-2 mt-6 flex justify-center">
           <a
               @click="sendMail"
               class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
