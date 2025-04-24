@@ -4,8 +4,6 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "export": "pnpm build && pnpm run copy-php",
-    "copy-php": "cp php-api/mail.php .output/public/mail.php",
     "clean": "rm -rf .nuxt .output dist app.vue.js",
     "check": "pnpm install && echo install success && pnpm lint && pnpm build && pnpm test && echo check success",
     "dev": "nuxt dev",

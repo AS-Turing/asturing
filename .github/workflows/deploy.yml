@@ -35,22 +35,22 @@ jobs:
       - name: 🧬 Inject .env.production as .env
         run: mv .env.production .env
 
-      - name: 🛠 Export static site
-        run: pnpm run export
+      - name: 🛠 Build Nuxt static site
+        run: pnpm run build
 
       - name: 📁 Sync Nuxt output to output/public
         run: |
           mkdir -p output/public
           rsync -av --delete .output/public/ output/public/
 
-      - name: 📁 Sync php-api into output/public/php-api
+      - name: 📁 Sync php-api to output/public/php-api
         run: |
           rsync -av php-api/ output/public/php-api/
 
-      - name: 📁 Verify final output content
-        run: ls -la output/
+      - name: 📁 Verify output content
+        run: ls -la output/public
 
-      - name: 📂 Deploy via SCP
+      - name: 📂 Deploy via SCP to OVH
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
