@@ -38,6 +38,9 @@ jobs:
       - name: 🛠 Build Nuxt static site
         run: pnpm run build
 
+      - name: 📁 Debug .output/public content
+        run: ls -la .output/public
+
       - name: 📁 Sync Nuxt output to output/public
         run: |
           mkdir -p output/public
