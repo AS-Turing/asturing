@@ -38,15 +38,14 @@ jobs:
       - name: 🛠 Export static site
         run: pnpm run export
 
-      - name: 📁 Sync Nuxt output to output/public (excluding php-api)
+      - name: 📁 Sync Nuxt output to output/public
         run: |
           mkdir -p output/public
-          rsync -av --delete \
-            --exclude 'php-api/' \
-            .output/public/ output/public/
+          rsync -av --delete .output/public/ output/public/
 
-      - name: 📂 Copy php-api to output
-        run: cp -r php-api output/
+      - name: 📁 Sync php-api into output/public/php-api
+        run: |
+          rsync -av php-api/ output/public/php-api/
 
       - name: 📁 Verify final output content
         run: ls -la output/
