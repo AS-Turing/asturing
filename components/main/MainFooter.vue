@@ -97,6 +97,12 @@ import LogoSvg from '~/public/images/logo.svg?raw';
                   Développeur Web à Bordeaux
                 </NuxtLink>
               </li>
+              <li>
+                <NuxtLink to="/localisation/developpeur-web-saint-emilion"
+                          class="hover:underline font-medium hover:dark:text-secondary">
+                  Développeur Web à Saint-Émilion
+                </NuxtLink>
+              </li>
             </ul>
           </li>
         </ul>
