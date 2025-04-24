@@ -85,18 +85,18 @@ import LogoSvg from '~/public/images/logo.svg?raw';
           </li>
           <li class="lg:w-4/12 text-center">
             <ul>
-              <p>
+              <li>
                 <NuxtLink to="/localisation/developpeur-web-libourne"
                           class="hover:underline font-medium hover:dark:text-secondary">
                   Développeur Web à Libourne
                 </NuxtLink>
-              </p>
-              <p>
+              </li>
+              <li>
                 <NuxtLink to="/localisation/developpeur-web-bordeaux"
                           class="hover:underline font-medium hover:dark:text-secondary">
                   Développeur Web à Bordeaux
                 </NuxtLink>
-              </p>
+              </li>
             </ul>
           </li>
         </ul>
