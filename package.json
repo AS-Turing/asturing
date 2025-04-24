@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "export": "pnpm build && pnpm run copy-php && pnpm run move-output",
     "copy-php": "cp php-api/mail.php .output/public/mail.php",
-    "move-output": "rm -rf output && mkdir output && cp -r .output/public/* output/ && cp -r php-api output/php",
+    "move-output": "rm -rf output && mkdir -p output/public && cp -r .output/public/* output/public/ && cp -r php-api output/public/php-api",
     "clean": "rm -rf .nuxt .output dist app.vue.js",
     "check": "pnpm install && echo install success && pnpm lint && pnpm build && pnpm test && echo check success",
     "dev": "nuxt dev",
