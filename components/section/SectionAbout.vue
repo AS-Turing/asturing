@@ -44,7 +44,7 @@ const scrollToElement = (id: string) => {
               Que vous ayez une idée un peu floue ou un cahier des charges béton, je suis là pour vous aider à faire le pont entre l’envie et la réalisation.
             </p>
           </div>
-          <a
+          <button
               @click="scrollToElement('contact-form')"
               class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
              text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
@@ -56,7 +56,7 @@ const scrollToElement = (id: string) => {
             <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
               Envie d’échanger sur votre projet ?
             </span>
-          </a>
+          </button>
         </div>
         <img
             class="lg:mx-0 mx-auto h-full rounded-3xl object-cover"

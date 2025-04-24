@@ -27,7 +27,7 @@ const scrollToElement = (id: string) => {
           <br>
           Un site ? Un conseil ? Une formation? Je suis à votre disposition pour vous accompagner au mieux dans l'univers du web.
         </p>
-        <a
+        <button
             @click="scrollToElement('contact-form')"
             class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
              text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
@@ -39,7 +39,7 @@ const scrollToElement = (id: string) => {
           <span class="ml-2 transition-all duration-700 group-hover:translate-x-1  font-bold">
             Travaillons ensemble
           </span>
-        </a>
+        </button>
       </div>
     </div>
   </section>
