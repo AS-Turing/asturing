@@ -18,53 +18,55 @@ import LogoSvg from '~/public/images/logo.svg?raw';
       <div class="w-3/4 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
         <ul class="space-y-2 flex flex-col md:flex-row  w-full">
           <li class="relative group mt-2 lg:w-4/12">
-            <NuxtLink to="/services" class="hover:underline font-medium block pl-2 hover:dark:text-secondary">Services</NuxtLink>
+            <NuxtLink to="/services" class="hover:underline font-medium block pl-2 hover:dark:text-secondary" title="Services">
+              Services
+            </NuxtLink>
             <ul class="mt-1 space-y-1 text-sm ggroup-hover:block">
               <li>
                 <NuxtLink to="/services/creation-site-internet"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Création de site internet">
                   Création de site internet
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/conseil-accompagnement-digital"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Conseil & accompagnement digital">
                   Conseil & accompagnement digital
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/developpement-sur-mesure"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Développement sur mesure">
                   Développement sur mesure
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/maintenance-support-technique"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Maintenance & support technique">
                   Maintenance & support technique
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/integration-solutions-externes"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Intégration de solutions externes">
                   Intégration de solutions externes
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/services/formation-vulgarisation"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary">
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Formation et vulgarisation">
                   Formation et vulgarisation
                 </NuxtLink>
               </li>
             </ul>
           </li>
           <li class="lg:w-4/12 text-center">
-            <NuxtLink to="/about" class="hover:underline font-medium hover:dark:text-secondary">
+            <NuxtLink to="/about" class="hover:underline font-medium hover:dark:text-secondary" title="À propos">
               À propos
             </NuxtLink>
           </li>
           <li class="lg:w-4/12 text-center">
-            <NuxtLink to="/contact" class="hover:underline font-medium hover:dark:text-secondary">
+            <NuxtLink to="/contact" class="hover:underline font-medium hover:dark:text-secondary" title="Contact">
               Contact
             </NuxtLink>
           </li>
@@ -87,31 +89,36 @@ import LogoSvg from '~/public/images/logo.svg?raw';
             <ul>
               <li>
                 <NuxtLink to="/localisation/developpeur-web-libourne"
-                          class="hover:underline font-medium hover:dark:text-secondary">
+                          class="hover:underline font-medium hover:dark:text-secondary"
+                          title="Développeur Web freelance à Libourne">
                   Développeur Web à Libourne
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/localisation/developpeur-web-bordeaux"
-                          class="hover:underline font-medium hover:dark:text-secondary">
+                          class="hover:underline font-medium hover:dark:text-secondary"
+                          title="Développeur Web freelance à Bordeaux">
                   Développeur Web à Bordeaux
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/localisation/developpeur-web-saint-emilion"
-                          class="hover:underline font-medium hover:dark:text-secondary">
+                          class="hover:underline font-medium hover:dark:text-secondary"
+                          title="Développeur Web freelance à Saint-Émilion">
                   Développeur Web à Saint-Émilion
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/localisation/developpeur-web-sauveterre-de-guyenne"
-                          class="hover:underline font-medium hover:dark:text-secondary">
+                          class="hover:underline font-medium hover:dark:text-secondary"
+                          title="Développeur Web freelance à Sauveterre-de-Guyenne">
                   Développeur Web à Sauveterre-de-Guyenne
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/localisation/developpeur-web-creon"
-                          class="hover:underline font-medium hover:dark:text-secondary">
+                          class="hover:underline font-medium hover:dark:text-secondary"
+                          title="Développeur Web freelance à Créon">
                   Développeur Web à Créon
                 </NuxtLink>
               </li>
