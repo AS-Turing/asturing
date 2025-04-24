@@ -96,7 +96,11 @@ export default defineNuxtConfig({
       '/contact',
       '/conditions-generales-de-ventes',
       '/engagements',
-      'developpeur-web-Libourne'
+      '/localisation/developpeur-web-libourne',
+      '/localisation/developpeur-web-bordeaux',
+      '/localisation/developpeur-web-saint-emilion',
+      '/localisation/developpeur-web-creon',
+      '/localisation/developpeur-web-sauveterre-de-guyenne'
     ]
   },
   ssr: true,
