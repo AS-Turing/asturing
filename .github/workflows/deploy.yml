@@ -38,10 +38,12 @@ jobs:
       - name: 🛠 Export static site
         run: pnpm run export
 
-      - name: 📁 Prepare output for OVH (move .output/public → output)
+      - name: 📁 Sync Nuxt output to output/public (excluding php-api)
         run: |
-          rm -rf output
-          mv .output/ output
+          mkdir -p output/public
+          rsync -av --delete \
+            --exclude 'php-api/' \
+            .output/public/ output/public/
 
       - name: 📂 Copy php-api to output
         run: cp -r php-api output/
