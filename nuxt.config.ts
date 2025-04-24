@@ -1,6 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        { rel: 'canonical', href: 'https://www.as-turing.fr' }
+      ]
+    }
+  },
   colorMode: {
     dataValue: 'theme',
     classSuffix: '',
@@ -88,7 +95,8 @@ export default defineNuxtConfig({
       '/about',
       '/contact',
       '/conditions-generales-de-ventes',
-      '/engagements'
+      '/engagements',
+      'developpeur-web-Libourne'
     ]
   },
   ssr: true,
