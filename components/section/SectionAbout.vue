@@ -61,6 +61,7 @@ const scrollToElement = (id: string) => {
         <img
             class="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
             src="public/images/form-contact-img.png"
+            loading="lazy"
             alt="about us"
         />
       </div>
