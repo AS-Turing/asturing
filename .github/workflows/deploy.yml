@@ -59,9 +59,9 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "output/**"
+          source: "output/public/**"
           target: ${{ secrets.BUILD_DEPLOY_PATH }}
-          strip_components: 1
+          strip_components: 0
 
       - name: ✅ Done
         run: echo "🚀 Deployment to OVH complete!"
