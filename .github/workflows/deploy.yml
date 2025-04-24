@@ -7,12 +7,12 @@ on:
 
 jobs:
   deploy:
-    name: 🚀 Deploy Nuxt App
+    name: 🚀 Deploy Nuxt Static
     runs-on: ubuntu-latest
     environment: production
 
     steps:
-      - name: ⏬ Checkout repository
+      - name: ⏬ Checkout repo
         uses: actions/checkout@v3
 
       - name: 📦 Setup Node.js
@@ -35,25 +35,21 @@ jobs:
       - name: 🧬 Inject .env.production as .env
         run: mv .env.production .env
 
-      - name: 🛠 Export Nuxt site
-        run: pnpm run build
+      - name: 🛠 Generate static site
+        run: pnpm run generate
 
-      - name: 📁 Debug .output/public content
-        run: ls -la .output/public
-
-      - name: 📁 Sync Nuxt output to output/public
+      - name: 📁 Sync generated files to output/public
         run: |
           mkdir -p output/public
           rsync -av --delete .output/public/ output/public/
 
-      - name: 📁 Sync php-api to output/public/php-api
-        run: |
-          rsync -av php-api/ output/public/php-api/
+      - name: 📂 Copy php-api to output/public
+        run: rsync -av php-api/ output/public/php-api/
 
-      - name: 📁 Verify output content
+      - name: 🧪 Final check
         run: ls -la output/public
 
-      - name: 📂 Deploy via SCP to OVH
+      - name: 🚀 Deploy via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -64,4 +60,4 @@ jobs:
           strip_components: 0
 
       - name: ✅ Done
-        run: echo "🚀 Deployment to OVH complete!"
+        run: echo "🚀 Deployment complete!"
