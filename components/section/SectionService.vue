@@ -58,6 +58,7 @@ const items = [
           <div
               class="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-primary shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
             <img :src="item.image" alt="Illustration service"
+                 loading="lazy"
                  class="w-full h-64ChatGPT Image Apr 19, 2025, 05_23_19 PM.png object-cover group-hover:scale-105 transition-transform duration-300" />
             <div class="p-6">
               <h3 class="text-xl min-h-16 font-semibold text-primary hover:dark:text-secondary dark:text-white mb-2">
