@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-white  dark:bg-gray-900 py-16 px-4 sm:px-8">
-    <div class="max-w-4xl p-12 rounded-2xl border border-gray-200 dark:bg-primary  mx-auto relative z-10">
+  <section class="bg-white  dark:bg-gray-900 py-8 md:py-16 md:px-4 sm:px-8">
+    <div class="max-w-4xl p-6 md:p-12 rounded-2xl border border-gray-200 dark:bg-primary  mx-auto relative z-10">
       <div id="contact-form" class="text-center mb-12">
         <h2 class="text-4xl sm:text-5xl font-bold text-primary dark:text-white mb-4 underline dark:decoration-secondary underline-offset-8">Prenons contact</h2>
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
