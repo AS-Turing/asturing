@@ -16,7 +16,7 @@ useSeoMeta({
 
 <template>
   <div class="w-full bg-white dark:bg-gray-900">
-    <div class="w-10/12 mx-auto flex flex-col lg:flex-row gap-10">
+    <div class="w-11/12 mx-auto flex flex-col lg:flex-row gap-10">
       <div class="w-full lg:w-1/2">
         <SectionEntreprise />
       </div>
