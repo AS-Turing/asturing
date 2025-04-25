@@ -46,6 +46,32 @@ export const conseilAccompagnementDigital: Service = {
     ],
     faq: [
         {
+            question: "Proposez-vous des sites internet adaptés aux mobiles ?",
+            answer:
+                "Oui, tous les sites que je développe sont conçus pour être 100 % responsives, afin d’offrir une expérience optimale sur mobile, tablette et ordinateur."
+        },
+        {
+            question: "Est-ce que vous travaillez uniquement avec des entreprises locales ?",
+            answer:
+                "Je suis basé à Libourne, mais j’accompagne des clients partout en France. Un échange à distance ou" +
+                " en présentiel est toujours possible selon vos besoins."
+        },
+        {
+            question: "Le référencement est-il inclus dans la prestation ?",
+            answer:
+                "Oui, un socle d’optimisation SEO est intégré à chaque projet : structure propre, balises bien configurées, performance, etc. Pour aller plus loin, un accompagnement dédié est possible."
+        },
+        {
+            question: "Puis-je gérer le contenu de mon site moi-même ?",
+            answer:
+                "Bien sûr ! Je propose une formation après la livraison pour vous apprendre à modifier votre site en toute autonomie."
+        },
+        {
+            question: "Quels types de sites réalisez-vous ?",
+            answer:
+                "Site vitrine, blog, landing page, site institutionnel ou sur mesure : je m’adapte à vos objectifs pour proposer un site adapté à vos attentes."
+        },
+        {
             question: "À qui s’adresse ce service ?",
             answer:
                 "Ce service est conçu pour les porteurs de projets, freelances, TPE ou associations qui ont besoin d’y voir plus clair dans leurs choix digitaux."
