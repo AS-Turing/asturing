@@ -18,62 +18,68 @@ const subServices = [
   { label: 'Intégration de solutions externes', href: '/services/integration-solutions-externes' },
   { label: 'Formation et vulgarisation', href: '/services/formation-vulgarisation' }
 ]
+
+const beforeEnter = (el) => {
+  el.style.opacity = 0
+  el.style.transform = "translateY(-10px)"
+}
+const enter = (el, done) => {
+  el.style.transition = "all 0.3s ease"
+  el.style.opacity = 1
+  el.style.transform = "translateY(0)"
+  setTimeout(done, 300)
+}
+const leave = (el, done) => {
+  el.style.transition = "all 0.2s ease"
+  el.style.opacity = 0
+  el.style.transform = "translateY(-10px)"
+  setTimeout(done, 200)
+}
 </script>
 <template>
-  <header
-      class="flex text-primary items-center justify-between px-6 py-4 border-b bg-white dark:bg-primary dark:text-white sticky top-0 shadow z-50 w-full">
+  <header class="flex text-primary items-center justify-between px-6 py-4 border-b bg-white dark:bg-primary dark:text-white sticky top-0 shadow z-50 w-full">
     <button class="md:hidden p-2" @click="mobileMenuOpen = !mobileMenuOpen">
       <span class="sr-only">Ouvrir le menu</span>
-      <span v-if="!mobileMenuOpen">☰</span>
-      <span v-else>✕</span>
+      <span v-if="!mobileMenuOpen" class="text-3xl">☰</span>
+      <span v-else  class="text-2xl">✕</span>
     </button>
     <!-- Menu mobile -->
-    <nav
-        v-if="mobileMenuOpen"
-        class="md:hidden flex flex-col gap-2 absolute top-full left-0 w-full bg-white dark:bg-primary text-primary dark:text-white shadow z-40 px-6 py-4"
+    <Transition
+        name="slide-fade"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @leave="leave"
     >
-      <NuxtLink to="/services" class="font-semibold hover:underline">Services</NuxtLink>
-      <div class="ml-4 text-sm space-y-1">
-        <NuxtLink @click="mobileMenuOpen = false"
-                  to="/services/creation-site-internet"
-                  class="block hover:underline"
-        >
-          Création de site internet
-        </NuxtLink>
-        <NuxtLink @click="mobileMenuOpen = false"
-                  to="/services/conseil-accompagnement-digital"
-                  class="block hover:underline"
-        >
-          Conseil & accompagnement
-        </NuxtLink>
-        <NuxtLink @click="mobileMenuOpen = false"
-                  to="/services/developpement-sur-mesure"
-                  class="block hover:underline"
-        >
-          Développement sur mesure
-        </NuxtLink>
-        <NuxtLink @click="mobileMenuOpen = false"
-                  to="/services/maintenance-support-technique"
-                  class="block hover:underline"
-        >
-          Maintenance & support
-        </NuxtLink>
-        <NuxtLink @click="mobileMenuOpen = false"
-                  to="/services/integration-solutions-externes"
-                  class="block hover:underline"
-        >
-          Intégration de solutions
-        </NuxtLink>
-        <NuxtLink @click="mobileMenuOpen = false"
-                  to="/services/formation-vulgarisation"
-                  class="block hover:underline"
-        >
-          Formation et vulgarisation
-        </NuxtLink>
-      </div>
-      <NuxtLink to="/about" class="hover:underline">À propos</NuxtLink>
-      <NuxtLink to="/contact" class="hover:underline">Contact</NuxtLink>
-    </nav>
+      <nav
+          v-if="mobileMenuOpen"
+          class="md:hidden flex flex-col gap-3 absolute top-full left-0 w-full bg-white dark:bg-primary text-primary dark:text-white shadow-lg z-40 px-6 py-6 rounded-b-2xl"
+      >
+        <NuxtLink to="/services" class="font-bold text-lg hover:text-secondary transition">Services</NuxtLink>
+
+        <div class="ml-2 pl-2 border-l border-primary/30 dark:border-white/20 space-y-2 text-sm">
+          <NuxtLink
+              v-for="(item, index) in subServices"
+              :key="index"
+              @click="mobileMenuOpen = false"
+              :to="item.href"
+              class="block hover:text-secondary transition"
+          >
+            {{ item.label }}
+          </NuxtLink>
+        </div>
+
+        <hr class="border-t border-primary/10 dark:border-white/10 my-3" />
+
+        <NuxtLink
+            to="/about"
+            @click="mobileMenuOpen = false"
+            class="hover:text-secondary transition">À propos</NuxtLink>
+        <NuxtLink
+            to="/contact"
+            @click="mobileMenuOpen = false"
+            class="hover:text-secondary transition">Contact</NuxtLink>
+      </nav>
+    </Transition>
     <!-- Logo -->
     <NuxtLink
         to="/"
@@ -115,7 +121,8 @@ const subServices = [
             </NuxtLink>
           </div>
         </Transition>
-      </div>      <NuxtLink to="/about" class="text-sm font-medium hover:underline hover:dark:text-secondary">À propos</NuxtLink>
+      </div>
+      <NuxtLink to="/about" class="text-sm font-medium hover:underline hover:dark:text-secondary">À propos</NuxtLink>
       <NuxtLink to="/contact" class="text-sm font-medium hover:underline hover:dark:text-secondary">Contact</NuxtLink>
     </nav>
     <!-- Toggle thème -->
@@ -149,6 +156,16 @@ const subServices = [
   transform: translateY(0);
 }
 .dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
 }
