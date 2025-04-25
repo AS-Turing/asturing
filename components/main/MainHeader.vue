@@ -89,7 +89,7 @@ const subServices = [
       <div class="relative">
         <button
             @click="toggleMenu"
-            class="text-white focus:outline-none"
+            class=" focus:outline-none"
             aria-label="Ouvrir le menu"
         >
           Services
@@ -133,15 +133,6 @@ const subServices = [
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
-.jetbrains-mono-800 {
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-}
 .dropdown-enter-active, .dropdown-leave-active {
   transition: all 0.3s ease;
 }
