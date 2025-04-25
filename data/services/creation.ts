@@ -44,11 +44,23 @@ export const creationSiteInternet: Service = {
     faq: [
         {
             question: 'Quel CMS est utilisé ?',
-            answer: 'Aucun CMS imposé, tout est codé sur mesure en NuxtJS pour garantir performance et flexibilité.'
+            answer: 'Aucun CMS imposé, les technologies utilisées sont choisi par rapport à vos besoin.'
         },
         {
             question: 'Puis-je modifier mon site moi-même ?',
             answer: 'Oui, une formation est incluse pour vous permettre de mettre à jour le contenu si besoin.'
+        },
+        {
+            question: 'Quel est le délai moyen pour la livraison d’un site ?',
+            answer: 'Cela dépend de la formule. En général : 1 à 2 semaines pour l’Essentiel, 2 à 3 pour la Standard, et sur mesure selon complexité.'
+        },
+        {
+            question: 'Puis-je faire évoluer mon site plus tard ?',
+            answer: 'Oui ! Tous les sites sont conçus pour être maintenus et enrichis facilement dans le temps.'
+        },
+        {
+            question: 'Faut-il fournir les textes et images ?',
+            answer: 'Idéalement oui, mais je peux vous accompagner à la rédaction ou proposer des ressources libres de droits si besoin.'
         }
     ],
     seo: {

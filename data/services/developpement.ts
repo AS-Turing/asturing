@@ -15,12 +15,13 @@ export const developpementSurMesure: Service = {
     ],
     prices: [
         {
-            name: "Fonctionnalité unique",
+            name: "Fonctionnalité simple",
             includes: [
-                "Analyse du besoin",
-                "Conception technique",
-                "Développement d'une fonctionnalité clé",
-                "Recette avec vous"
+                "Analyse rapide du besoin (échange + cadrage léger)",
+                "Développement d’une fonctionnalité simple (formulaire, calcul, affichage spécifique…)",
+                "Petite intégration ou interaction avec un service/API existant",
+                "Recette technique et retour client",
+                "Livraison documentée (si nécessaire)"
             ],
             price: "à partir de 250€ TTC"
         },
@@ -60,7 +61,17 @@ export const developpementSurMesure: Service = {
             question: "Comment se passe le suivi après livraison ?",
             answer:
                 "Une période de support est incluse (variable selon la prestation). Vous pouvez également souscrire à une offre de maintenance pour un suivi plus long."
-        }
+        },
+        {
+            question: "Quelle est la différence entre une fonctionnalité simple et un module métier ?",
+            answer:
+                "Une fonctionnalité simple correspond à un besoin unique et limité (ex : formulaire personnalisé), tandis qu’un module métier est une brique fonctionnelle plus complète avec plusieurs interactions (gestion d’utilisateurs, tableau de bord, etc.)."
+        },
+        {
+            question: "Je ne suis pas sûr de ce dont j’ai besoin, comment faire ?",
+            answer:
+                "Pas de souci ! On commence par un échange gratuit pour cerner votre besoin. Je vous guide ensuite vers la formule la plus adaptée (et évolutive)."
+        },
     ],
     seo: {
         title: 'Développement sur mesure à Libourne | AS-Turing',

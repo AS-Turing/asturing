@@ -17,8 +17,8 @@ export const maintenanceSupport: Service = {
         {
             name: "Assistance ponctuelle",
             includes: [
-                "Intervention à la demande",
-                "Correction de bugs ou ajout simple",
+                "Analyse rapide de la demande",
+                "Correction de bugs ou ajout simple si possible",
                 "Rapport d’intervention détaillé",
                 "Délais rapides selon disponibilité"
             ],
@@ -61,6 +61,14 @@ export const maintenanceSupport: Service = {
             question: "Que se passe-t-il si je ne consomme pas toutes les interventions ?",
             answer:
                 "Les interventions non utilisées ne sont pas reportées, mais je vous propose toujours des améliorations ou petites évolutions à faire pour en profiter pleinement."
+        },
+        {
+            question: "Mon site n’a pas été développé par vous, puis-je quand même vous confier la maintenance ?",
+            answer: "Oui, après un rapide audit technique pour m'assurer de pouvoir intervenir efficacement. Un devis spécifique peut être proposé si besoin."
+        },
+        {
+            question: "Est-ce que vous proposez des rapports de performance ?",
+            answer: "Oui, un suivi de la disponibilité, du temps de chargement et des erreurs peut être inclus dans les forfaits de maintenance standard ou premium."
         }
     ],
     seo: {
