@@ -1,54 +1,58 @@
 export const useSeo = () => {
     const route = useRoute()
 
+    const baseTitle = 'AS Turing'
+    const baseLocation = 'Libourne, Bordeaux, Créon, Saint-Émilion'
+    const mainKeywords = 'création de site internet, développeur web, création site web, transformation digitale'
+
     const seoMap: Record<string, { title: string; description: string }> = {
         '/': {
-            title: 'Accueil - AS Turing',
-            description: 'Bienvenue chez AS Turing, votre partenaire digital pour la création de valeur.'
+            title: `Création de site internet à ${baseLocation} - ${baseTitle}`,
+            description: `AS Turing, votre agence digitale à ${baseLocation}, spécialisée en ${mainKeywords}. Boostez votre présence en ligne avec nous.`
         },
         '/about': {
-            title: 'À propos - AS Turing',
-            description: 'Découvrez l’histoire, la mission et l’équipe derrière AS Turing.'
+            title: `À propos de votre agence web à ${baseLocation} - ${baseTitle}`,
+            description: `Découvrez AS Turing, votre partenaire en ${mainKeywords} basé à ${baseLocation}.`
         },
         '/contact': {
-            title: 'Contact - AS Turing',
-            description: 'Prenez contact avec AS Turing pour vos besoins digitaux ou pour toute question.'
+            title: `Contactez votre développeur web à ${baseLocation} - ${baseTitle}`,
+            description: `Besoin d'un site internet ou de conseils digitaux à ${baseLocation} ? Contactez AS Turing.`
         },
         '/engagements': {
-            title: 'Nos engagements - AS Turing',
-            description: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.'
+            title: `Nos engagements pour un numérique responsable à ${baseLocation} - ${baseTitle}`,
+            description: `AS Turing s'engage pour un numérique éthique et responsable à ${baseLocation}.`
         },
         '/conditions-generales-de-ventes': {
-            title: 'Conditions Générales de Vente - AS Turing',
-            description: 'Lisez les conditions générales de vente d’AS Turing pour comprendre nos engagements contractuels.'
+            title: `CGV - Services digitaux à ${baseLocation} - ${baseTitle}`,
+            description: `Consultez nos conditions générales de vente pour nos prestations de ${mainKeywords}.`
         },
         '/services': {
-            title: 'Nos services - AS Turing',
-            description: 'Explorez l’ensemble des services digitaux proposés par AS Turing.'
+            title: `Services de création de site internet à ${baseLocation} - ${baseTitle}`,
+            description: `Découvrez nos services : ${mainKeywords} pour booster votre activité en ligne à ${baseLocation}.`
         },
         '/services/conseil-accompagnement-digital': {
-            title: 'Conseil & Accompagnement Digital - AS Turing',
-            description: 'AS Turing vous guide dans votre transformation numérique grâce à un accompagnement sur mesure.'
+            title: `Conseil en transformation digitale à ${baseLocation} - ${baseTitle}`,
+            description: `AS Turing vous accompagne dans votre projet numérique à ${baseLocation} avec des conseils personnalisés.`
         },
         '/services/creation-site-internet': {
-            title: 'Création de site internet - AS Turing',
-            description: 'Sites vitrines, e-commerce ou sur mesure : boostez votre présence en ligne avec AS Turing.'
+            title: `Création de site internet à ${baseLocation} - ${baseTitle}`,
+            description: `Confiez la création de votre site vitrine ou e-commerce à nos experts basés à ${baseLocation}.`
         },
         '/services/developpement-sur-mesure': {
-            title: 'Développement sur mesure - AS Turing',
-            description: 'Des solutions digitales pensées pour vous : notre expertise en développement personnalisé.'
+            title: `Développement web sur mesure à ${baseLocation} - ${baseTitle}`,
+            description: `Des solutions digitales adaptées à vos besoins, réalisées depuis ${baseLocation} par AS Turing.`
         },
         '/services/formation-vulgarisation': {
-            title: 'Formation & Vulgarisation - AS Turing',
-            description: 'Formations accessibles pour tous : le numérique expliqué simplement par AS Turing.'
+            title: `Formations numériques à ${baseLocation} - ${baseTitle}`,
+            description: `Simplifiez votre compréhension du digital avec nos formations adaptées à tous niveaux à ${baseLocation}.`
         },
         '/services/integration-solutions-externes': {
-            title: 'Intégration de solutions externes - AS Turing',
-            description: 'Connectez vos outils et optimisez vos processus avec nos intégrations intelligentes.'
+            title: `Intégration de solutions digitales à ${baseLocation} - ${baseTitle}`,
+            description: `Optimisez vos outils digitaux grâce à l'intégration professionnelle d'AS Turing à ${baseLocation}.`
         },
         '/services/maintenance-support-technique': {
-            title: 'Maintenance & Support Technique - AS Turing',
-            description: 'Nous veillons sur vos solutions digitales avec un support et une maintenance réactifs.'
+            title: `Support technique et maintenance à ${baseLocation} - ${baseTitle}`,
+            description: `Garantissez la performance de vos solutions digitales avec notre support basé à ${baseLocation}.`
         }
     }
 
@@ -57,7 +61,12 @@ export const useSeo = () => {
     if (seo) {
         useHead({
             title: seo.title,
-            meta: [{ name: 'description', content: seo.description }]
+            meta: [
+                { name: 'description', content: seo.description },
+                { name: 'keywords', content: `${mainKeywords}, ${baseLocation}, site internet, développement web` },
+                { property: 'og:title', content: seo.title },
+                { property: 'og:description', content: seo.description }
+            ]
         })
     }
 }
