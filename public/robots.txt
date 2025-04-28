@@ -1,12 +1,17 @@
 # robots.txt for https://www.as-turing.fr
 
 User-agent: *
+# Directories to disallow
 Disallow: /node_modules/
 Disallow: /php-api/
 Disallow: /server/
 Disallow: /private/
 
+# Allow everything else
 Allow: /
 
-Sitemap: https://www.as-turing.fr/sitemap.xml
+# Preference for main domain
+Host: https://www.as-turing.fr
 
+# Sitemap location
+Sitemap: https://www.as-turing.fr/sitemap.xml
