@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".output/public/**"
           target: "/home/asturiq/www/"
-          strip_components: 0
+          strip_components: 2
 
       - name: ✅ Done
         run: echo "🚀 Deployment complete!"
