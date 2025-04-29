@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".output/public/**"
-          target: ${{ secrets.BUILD_DEPLOY_PATH }}
+          target: "/home/asturiq/www/"
           strip_components: 1
 
       - name: ✅ Done
