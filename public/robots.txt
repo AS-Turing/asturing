@@ -6,6 +6,7 @@ Disallow: /node_modules/
 Disallow: /php-api/
 Disallow: /server/
 Disallow: /private/
+Disallow: /_nuxt/
 
 # Allow everything else
 Allow: /
