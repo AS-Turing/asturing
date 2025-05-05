@@ -97,6 +97,8 @@
 </template>
 
 <script setup lang="ts">
+const { notifySuccess, notifyError } = useNotifications()
+
 const mailContent = ref({
   firstname: '',
   lastname: '',
@@ -106,7 +108,8 @@ const mailContent = ref({
   message: '',
 })
 
-async function sendMail() {
+async function sendMail(event: Event) {
+  event.preventDefault()
   try {
     const formData = new FormData()
     formData.append('firstname', mailContent.value.firstname)
@@ -125,8 +128,11 @@ async function sendMail() {
 
     if (response.ok) {
       console.log('Message envoyé !', text)
+      notifySuccess("Le message a bien été transmit<UNK> !");
+
     } else {
       console.error('Erreur lors de l’envoi :', text)
+      notifyError('Erreur lors de l\'envoie du message')
     }
   } catch (err) {
     console.error('Erreur réseau :', err)
