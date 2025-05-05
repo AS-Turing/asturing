@@ -128,11 +128,18 @@ async function sendMail(event: Event) {
 
     if (response.ok) {
       console.log('Message envoyé !', text)
-      notifySuccess("Le message a bien été transmit<UNK> !");
-
+      notifySuccess("Votre message a bien été transmis avec succès !");
+      mailContent.value = {
+        firstname: '',
+        lastname: '',
+        company: '',
+        mail: '',
+        phone: '',
+        message: '',
+      }
     } else {
       console.error('Erreur lors de l’envoi :', text)
-      notifyError('Erreur lors de l\'envoie du message')
+      notifyError("Une erreur est survenue, veuillez réessayer ou nous contacter directement.")
     }
   } catch (err) {
     console.error('Erreur réseau :', err)
