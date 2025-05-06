@@ -16,8 +16,8 @@ setTimeout(removeCurrentNotification, timeToWait)
 
 <template>
   <div
-    class="flex w-full items-center gap-3 p-2 shadow-md md:rounded-lg md:p-4 bg-primary text-secondary"
-    :class="notification?.type === 'error' ? `bg-error` : `bg-success`"
+    class="flex w-full items-center gap-3 p-2 shadow-md md:rounded-lg md:p-4 text-primary"
+    :class="notification?.type === 'error' ? `bg-red-500` : `bg-green-500`"
   >
     <span class="flex-1">{{ notification?.message }}</span>
     <button
