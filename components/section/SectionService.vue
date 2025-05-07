@@ -44,6 +44,38 @@ const items = [
   }
 ];
 
+const visibleCards = ref<number[]>([]); // On stocke les indices des Cards visibles
+
+const observeCards = () => {
+  const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute('data-index'));
+
+          if (entry.isIntersecting) {
+            // Ajoute s’il est visible
+            if (!visibleCards.value.includes(index)) {
+              visibleCards.value.push(index);
+            }
+          } else {
+            // Retire s’il sort de l’écran
+            const i = visibleCards.value.indexOf(index);
+            if (i !== -1) {
+              visibleCards.value.splice(i, 1);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+  );
+
+  const cardElements = document.querySelectorAll('.card-item');
+  cardElements.forEach((el) => observer.observe(el));
+};
+
+onMounted(() => {
+  observeCards();
+});
 </script>
 
 <template>
@@ -54,24 +86,48 @@ const items = [
       </h2>
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <NuxtLink v-for="(item, index) in items" :key="index" :to="item.link">
-          <div
-              class="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-primary shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-            <img :src="item.image" alt="Illustration service"
-                 loading="lazy"
-                 class="w-full h-64ChatGPT Image Apr 19, 2025, 05_23_19 PM.png object-cover group-hover:scale-105 transition-transform duration-300" />
-            <div class="p-6">
-              <h3 class="text-xl min-h-16 font-semibold text-primary hover:dark:text-secondary dark:text-white mb-2">
-                <Icon :name="item.icon" class="w-5 h-5 dark:text-secondary" />
-                {{ item.title }}
-              </h3>
-              <p class="dark:text-gray-200 text-base leading-relaxed">
-                {{ item.description }}
-              </p>
-            </div>
+        <NuxtLink
+          v-for="(item, index) in items"
+          :key="item.title + '-' + index"
+          :to="item.link"
+          class="card-item group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-primary shadow-sm hover:shadow-lg transition-all duration-500"
+          :data-index="index"
+          :class="{'animate-visible': visibleCards.includes(index)}"
+        >
+          <img
+            :src="item.image"
+            alt="Illustration service"
+            loading="lazy"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-6">
+            <h3 class="text-xl min-h-16 font-semibold text-primary hover:dark:text-secondary dark:text-white mb-2 flex items-center gap-2">
+              <Icon :name="item.icon" class="w-5 h-5 dark:text-secondary" />
+              {{ item.title }}
+            </h3>
+            <p class="dark:text-gray-200 text-base leading-relaxed">
+              {{ item.description }}
+            </p>
           </div>
         </NuxtLink>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.card-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card-item.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease-out;
+}
+
+.group:hover .card-item img {
+  transform: scale(1.05);
+}
+</style>

@@ -12,7 +12,7 @@ function addErrorNotification (message: string) {
 }
 
 function removeNotification (id: string) {
-  notifications.value = notifications.value.filter((notification) => notification.id !== id)
+  notifications.value = notifications.value.filter((notification: GlobalNotification) :boolean => notification.id !== id)
 }
 
 export function useNotifications () {
