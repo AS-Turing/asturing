@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import MainTitle from '../main/MainTitle.vue'
+
+// Array of texts to display in the typing animation
+const typingTexts = [
+  "d'un site interne ?",
+  "de conseils pour votre développement ?",
+  "de vous former ?",
+  "d'une solution sur mesure ?"
+]
+
 const scrollToElement = (id: string) => {
   const targetElement = document.getElementById(id)
   if (targetElement) {
@@ -19,14 +30,20 @@ const scrollToElement = (id: string) => {
       <Transition name="slide" appear>
         <div class="mr-auto place-self-center lg:col-span-12">
           <h1 class="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight text-white leading-relaxed">
-            Mon objectif ?<br> Vous aider à réaliser vos envie Numériques
+            Mon objectif ?
+            Vous aider à réaliser vos envies Numériques.
           </h1>
-          <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
+          <MainTitle
+              type="text"
+              :content="typingTexts"
+          />
+          <p class="max-w-2xl my-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
             Chez <span class="font-bold jetbrains-mono-800">&lt; AS-Turing /&gt;</span> je vous aide à concrétiser vos
             projets numérique.
             <br>
-            Un site ? Un conseil ? Une formation? Je suis à votre disposition pour vous accompagner au mieux dans l'univers du web.
+            Je suis à votre disposition pour vous accompagner au mieux dans l'univers du web.
           </p>
+
           <button
               @click="scrollToElement('contact-form')"
               class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg

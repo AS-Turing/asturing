@@ -56,9 +56,9 @@ async function sendMail(event: Event) {
     <div
         ref="formRef"
         :class="[
-        'transition-all duration-1000 ease-out transform mx-auto relative z-10',
-        showForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      ]"
+          'transition-all duration-1000 ease-out transform mx-auto relative z-10',
+          showForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        ]"
         class="max-w-4xl p-6 md:p-12 rounded-2xl border border-gray-200 dark:bg-primary"
     >
       <div id="contact-form" class="text-center mb-12">
