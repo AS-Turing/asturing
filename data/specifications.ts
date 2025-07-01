@@ -1,0 +1,602 @@
+type FieldOption = {
+    value: string;
+    label: string;
+};
+
+type FieldValidation = {
+    pattern?: string;
+    min?: number;
+    max?: number;
+    errorMessage?: string;
+};
+
+export type Specification = {
+    id: string;
+    label: string;
+    type: 'text' | 'email' | 'number' | 'date' | 'tel' | 'textarea' | 'select' | 'checkbox' | 'radio';
+    placeholder?: string;
+    required: boolean;
+    validation?: FieldValidation;
+    tooltip?: string;
+    category: string;
+    order: number;
+    options?: FieldOption[];
+};
+
+export const specifications: Specification[] = [
+    // === 1. INFORMATIONS PERSONNELLES ===
+    {
+        id: "prenom",
+        label: "Quel est votre prénom ?",
+        type: "text",
+        placeholder: "Entrez votre prénom",
+        required: true,
+        validation: {
+            pattern: "^[A-Za-zÀ-ÖØ-öø-ÿ\\s]{1,50}$",
+            errorMessage: "Veuillez entrer un prénom valide",
+        },
+        tooltip: "Votre prénom sera utilisé pour personnaliser nos échanges.",
+        category: "Informations personnelles",
+        order: 1,
+    },
+    {
+        id: "nom",
+        label: "Quel est votre nom de famille ?",
+        type: "text",
+        placeholder: "Entrez votre nom",
+        required: true,
+        validation: {
+            pattern: "^[A-Za-zÀ-ÖØ-öø-ÿ\\s'-]{1,50}$",
+            errorMessage: "Veuillez entrer un nom valide",
+        },
+        tooltip: "Utilisé pour l'identification dans le document final.",
+        category: "Informations personnelles",
+        order: 2,
+    },
+    {
+        id: "email",
+        label: "Quelle est votre adresse e-mail ?",
+        type: "email",
+        placeholder: "exemple@domaine.com",
+        required: true,
+        validation: {
+            pattern: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+            errorMessage: "Veuillez entrer une adresse e-mail valide",
+        },
+        tooltip: "Pour vous recontacter facilement.",
+        category: "Informations personnelles",
+        order: 3,
+    },
+    {
+        id: "telephone",
+        label: "Quel est votre numéro de téléphone ?",
+        type: "tel",
+        placeholder: "Ex: 0601020304",
+        required: false,
+        validation: {
+            pattern: "^\\+?\\d{7,15}$",
+            errorMessage: "Veuillez entrer un numéro de téléphone valide",
+        },
+        tooltip: "Pour un contact plus rapide si nécessaire.",
+        category: "Informations personnelles",
+        order: 4,
+    },
+
+    // === 2. ENTREPRISE / ORGANISATION ===
+    {
+        id: "nom_entreprise",
+        label: "Quel est le nom de votre entreprise ou organisation ?",
+        type: "text",
+        placeholder: "Nom de l’entreprise",
+        required: true,
+        tooltip: "Utilisé pour contextualiser le projet.",
+        category: "Entreprise",
+        order: 5,
+    },
+    {
+        id: "secteur_activite",
+        label: "Dans quel secteur d'activité évoluez-vous ?",
+        type: "text",
+        placeholder: "Ex : Restauration, Éducation, Industrie...",
+        required: true,
+        tooltip: "Permet d'adapter les recommandations à votre secteur.",
+        category: "Entreprise",
+        order: 6,
+    },
+    {
+        id: "taille_entreprise",
+        label: "Quelle est la taille de votre structure ?",
+        type: "select",
+        placeholder: "Sélectionnez",
+        required: true,
+        options: [
+            { value: "auto_entrepreneur", label: "Auto-entrepreneur" },
+            { value: "tpe", label: "TPE (1-10 personnes)" },
+            { value: "pme", label: "PME (10-250 personnes)" },
+            { value: "grande_entreprise", label: "Grande entreprise" },
+            { value: "association", label: "Association" },
+            { value: "collectivite", label: "Collectivité" },
+        ],
+        tooltip: "Nous permet d'estimer les ressources disponibles et l'organisation du projet.",
+        category: "Entreprise",
+        order: 7,
+    },
+
+    // === 3. OBJECTIFS DU PROJET ===
+    {
+        id: "objectif_principal",
+        label: "Quel est l'objectif principal de votre projet ?",
+        type: "textarea",
+        placeholder: "Décrivez votre but (vendre en ligne, présenter vos services, générer des leads...)",
+        required: true,
+        tooltip: "Un bon objectif permet d’orienter tout le reste du projet.",
+        category: "Objectifs du projet",
+        order: 8,
+    },
+    {
+        id: "objectifs_secondaires",
+        label: "Y a-t-il d'autres objectifs secondaires ?",
+        type: "textarea",
+        placeholder: "Ex : Améliorer l'image de marque, fidéliser les clients, etc.",
+        required: false,
+        tooltip: "Listez les objectifs annexes éventuels.",
+        category: "Objectifs du projet",
+        order: 9,
+    },
+    {
+        id: "problematique",
+        label: "Quelle problématique essayez-vous de résoudre avec ce projet ?",
+        type: "textarea",
+        placeholder: "Décrivez le problème que votre site web doit résoudre",
+        required: true,
+        tooltip: "Comprendre le problème nous aide à proposer la bonne solution.",
+        category: "Objectifs du projet",
+        order: 10,
+    },
+
+    // === 4. CIBLES & UTILISATEURS ===
+    {
+        id: "cibles",
+        label: "Qui sont vos cibles principales ?",
+        type: "textarea",
+        placeholder: "Ex : Particuliers, professionnels, étudiants...",
+        required: true,
+        tooltip: "Cela influencera fortement le design et le contenu.",
+        category: "Cibles & utilisateurs",
+        order: 11,
+    },
+    {
+        id: "besoins_utilisateurs",
+        label: "Quels sont leurs besoins spécifiques ?",
+        type: "textarea",
+        placeholder: "Décrivez ce que vos utilisateurs recherchent",
+        required: false,
+        tooltip: "Comprendre les besoins des utilisateurs est essentiel pour créer une expérience adaptée.",
+        category: "Cibles & utilisateurs",
+        order: 12,
+    },
+
+    // === 5. CONTENU ===
+    {
+        id: "contenu_disponible",
+        label: "Disposez-vous déjà de contenu (textes, images, vidéos...) ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "partiellement", label: "Partiellement" },
+            { value: "non", label: "Non" },
+        ],
+        tooltip: "Le contenu est souvent un point critique dans un projet.",
+        category: "Contenu",
+        order: 13,
+    },
+    {
+        id: "pages_souhaitees",
+        label: "Avez-vous déjà une idée du nombre et type de pages souhaitées ?",
+        type: "textarea",
+        placeholder: "Ex : Accueil, À propos, Contact, Blog, Boutique...",
+        required: false,
+        tooltip: "Donne une première estimation du périmètre.",
+        category: "Contenu",
+        order: 14,
+    },
+    {
+        id: "accompagnement_redaction",
+        label: "Souhaitez-vous un accompagnement à la rédaction ?",
+        type: "select",
+        placeholder: "Oui / Non / Je ne sais pas",
+        required: true,
+        options: [
+            { value: "Oui", label: "Oui" },
+            { value: "Non", label: "Non" },
+            { value: "À déterminer", label: "À déterminer"}
+        ],
+        tooltip: "",
+        category: "Contenu",
+        order: 15,
+    },
+    {
+        id: "import_contenu",
+        label: "Des contenus sont-ils déjà existants à importer ?",
+        type: "text",
+        placeholder: "",
+        required: false,
+        tooltip: "",
+        category: "Contenu",
+        order: 16,
+    },
+    {
+        id: "traduction",
+        label: "Y a-t-il un besoin de traduction ou multilingue ?",
+        type: "text",
+        placeholder: "Précisez les langues nécessaires",
+        required: false,
+        tooltip: "Important pour l'architecture du site et son référencement.",
+        category: "Contenu",
+        order: 17,
+    },
+
+    // === 6. DESIGN & EXPÉRIENCE UTILISATEUR ===
+    {
+        id: "charte_graphique",
+        label: "Avez-vous une charte graphique existante ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "en_cours", label: "En cours de création" },
+        ],
+        tooltip: "Permet de savoir s’il faut intégrer un travail graphique au projet.",
+        category: "Design & expérience utilisateur",
+        order: 18,
+    },
+    {
+        id: "design_type",
+        label: "Souhaitez-vous un design sur mesure ou basé sur un modèle ?",
+        type: "text",
+        placeholder: "Ex: sur mesure, modèle",
+        required: true,
+        tooltip: "",
+        category: "Design & expérience utilisateur",
+        order: 19,
+    },
+    {
+        id: "valeurs_design",
+        label: "Quelles émotions/valeurs voulez-vous que le design véhicule ?",
+        type: "text",
+        placeholder: "",
+        required: false,
+        tooltip: "",
+        category: "Design & expérience utilisateur",
+        order: 20,
+    },
+    {
+        id: "exemples_sites",
+        label: "Avez-vous des exemples de sites que vous aimez (ou détestez) ?",
+        type: "textarea",
+        placeholder: "Listez les URLs ou noms, avec un commentaire si possible.",
+        required: false,
+        tooltip: "Cela guide l’ergonomie et l’univers graphique.",
+        category: "Design & expérience utilisateur",
+        order: 21,
+    },
+    // === 7. FONCTIONNALITÉS ATTENDUES ===
+    {
+        id: "fonctionnalites",
+        label: "Quelles fonctionnalités souhaitez-vous intégrer ?",
+        type: "checkbox",
+        required: false,
+        options: [
+            { value: "blog", label: "Blog" },
+            { value: "ecommerce", label: "E-commerce" },
+            { value: "formulaire", label: "Formulaire de contact" },
+            { value: "reservation", label: "Système de réservation" },
+            { value: "compte_client", label: "Espace client / membre" },
+            { value: "multilingue", label: "Site multilingue" },
+            { value: "autre", label: "Autre (à préciser dans le champ suivant)" },
+        ],
+        tooltip: "C’est une base pour déterminer le périmètre technique.",
+        category: "Fonctionnalités attendues",
+        order: 22,
+    },
+    {
+        id: "fonctionnalites_mvp",
+        label: "Listez les fonctionnalités indispensables (MVP).",
+        type: "textarea",
+        placeholder: "Les fonctionnalités sans lesquelles le site ne peut pas être lancé",
+        required: true,
+        tooltip: "Ces fonctionnalités seront prioritaires dans le développement.",
+        category: "Fonctionnalités attendues",
+        order: 23,
+    },
+    {
+        id: "fonctionnalites_optionnelles",
+        label: "Quelles fonctionnalités seraient un plus mais pas vitales ?",
+        type: "textarea",
+        placeholder: "Fonctionnalités qui pourraient être développées dans un second temps",
+        required: false,
+        tooltip: "Nous aide à planifier les phases de développement.",
+        category: "Fonctionnalités attendues",
+        order: 24,
+    },
+    {
+        id: "fonctionnalites_techniques",
+        label: "Y a-t-il des fonctionnalités techniques précises à intégrer ?",
+        type: "text",
+        placeholder: "Ex: paiement, carte interactive...",
+        required: true,
+        tooltip: "Précisez les aspects techniques spécifiques nécessaires.",
+        category: "Fonctionnalités attendues",
+        order: 25,
+    },
+
+    // === 8. MARKETING & RÉFÉRENCEMENT ===
+    {
+        id: "seo",
+        label: "Souhaitez-vous optimiser le site pour le référencement naturel (SEO) ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "a_preciser", label: "À préciser" },
+        ],
+        tooltip: "Important pour la visibilité sur les moteurs de recherche.",
+        category: "Marketing & référencement",
+        order: 26,
+    },
+    {
+        id: "reseaux_sociaux",
+        label: "Souhaitez-vous intégrer des réseaux sociaux ?",
+        type: "checkbox",
+        required: false,
+        options: [
+            { value: "facebook", label: "Facebook" },
+            { value: "instagram", label: "Instagram" },
+            { value: "linkedin", label: "LinkedIn" },
+            { value: "x", label: "X / Twitter" },
+            { value: "tiktok", label: "TikTok" },
+        ],
+        tooltip: "Pour lier votre site à votre présence sociale.",
+        category: "Marketing & référencement",
+        order: 27,
+    },
+
+    // === 10. TECHNIQUE & INFRASTRUCTURE ===
+    {
+        id: "preferences_techno",
+        label: "Avez-vous une préférence technologique ou CMS ?",
+        type: "text",
+        placeholder: "Ex: WordPress, Shopify, développement sur mesure...",
+        required: false,
+        tooltip: "Nous aide à orienter les choix techniques.",
+        category: "Technique & infrastructure",
+        order: 28,
+    },
+    // === 11. SÉCURITÉ & CONFORMITÉ ===
+    {
+        id: "donnees_personnelles",
+        label: "Votre site collectera-t-il des données personnelles ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "je_ne_sais_pas", label: "Je ne sais pas" },
+        ],
+        tooltip: "Pour anticiper les obligations légales (RGPD).",
+        category: "Sécurité & conformité",
+        order: 29,
+    },
+    {
+        id: "rgpd_accompagnement",
+        label: "Souhaitez-vous un accompagnement sur la conformité RGPD ?",
+        type: "radio",
+        required: false,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+        ],
+        tooltip: "Nous pouvons vous aider à mettre en place les éléments nécessaires à la conformité.",
+        category: "Sécurité & conformité",
+        order: 30,
+    },
+    {
+        id: "accessibilite",
+        label: "Souhaitez-vous que le site soit conforme aux normes d'accessibilité (WCAG) ?",
+        type: "radio",
+        required: false,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "a_preciser", label: "À préciser" },
+        ],
+        tooltip: "Notamment pour les personnes en situation de handicap.",
+        category: "Sécurité & conformité",
+        order: 31,
+    },
+
+    // === 12. COLLABORATION & SUIVI ===
+    {
+        id: "equipe_projet",
+        label: "Avez-vous une équipe projet ou un interlocuteur dédié ?",
+        type: "text",
+        placeholder: "Précisez qui sera impliqué côté client",
+        required: true,
+        tooltip: "Nous aide à comprendre avec qui nous collaborerons.",
+        category: "Collaboration & suivi",
+        order: 32,
+    },
+    {
+        id: "redaction_contenu",
+        label: "Souhaitez-vous être accompagné pour la rédaction de contenu ?",
+        type: "radio",
+        required: false,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "partiellement", label: "Partiellement" },
+        ],
+        tooltip: "Textes optimisés SEO, storytelling, mise en page, etc.",
+        category: "Contenu",
+        order: 35,
+    },
+    {
+        id: "mots_cles",
+        label: "Quels mots-clés aimeriez-vous cibler pour votre référencement ?",
+        type: "textarea",
+        required: false,
+        placeholder: "Listez quelques expressions importantes pour votre activité.",
+        tooltip: "Aide à orienter la stratégie de contenu et de référencement.",
+        category: "Marketing & référencement",
+        order: 36,
+    },
+    {
+        id: "nom_domaine",
+        label: "Avez-vous déjà un nom de domaine ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "a_acheter", label: "Je souhaite que vous m’aidiez à en choisir un" },
+        ],
+        tooltip: "Élément essentiel pour la mise en ligne du site.",
+        category: "Technique & infrastructure",
+        order: 37,
+    },
+    {
+        id: "hebergement",
+        label: "Disposez-vous déjà d’un hébergement web ?",
+        type: "radio",
+        required: false,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "a_migrer", label: "Oui, mais je souhaite migrer" },
+        ],
+        tooltip: "Nécessaire pour la mise en ligne du site.",
+        category: "Technique & infrastructure",
+        order: 38,
+    },
+    {
+        id: "frequence_suivi",
+        label: "À quelle fréquence souhaitez-vous des points d’avancement ?",
+        type: "text",
+        placeholder: "Ex: hebdomadaire, bi-mensuel...",
+        required: true,
+        tooltip: "Permet d'établir un rythme de communication adapté.",
+        category: "Collaboration & suivi",
+        order: 41,
+    },
+    {
+        id: "experience_prestataire",
+        label: "Avez-vous déjà travaillé avec des prestataires externes ? Comment cela s’est-il passé ?",
+        type: "textarea",
+        placeholder: "Partagez votre expérience précédente",
+        required: true,
+        tooltip: "Nous aide à adapter notre approche à vos attentes.",
+        category: "Collaboration & suivi",
+        order: 42,
+    },
+    {
+        id: "formation_admin",
+        label: "Souhaitez-vous une formation pour gérer le site (CMS, contenu, etc.) ?",
+        type: "radio",
+        required: false,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+        ],
+        tooltip: "Pour être autonome après la livraison du site.",
+        category: "Collaboration & suivi",
+        order: 43,
+    },
+
+    // === 13. MAINTENANCE & ÉVOLUTION ===
+    {
+        id: "maintenance_besoin",
+        label: "Souhaitez-vous un service de maintenance après la mise en ligne ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "a_discuter", label: "À discuter" },
+        ],
+        tooltip: "Mise à jour du site, correctifs, évolutions futures...",
+        category: "Maintenance & évolution",
+        order: 44,
+    },
+    {
+        id: "evolutions_prevues",
+        label: "Avez-vous déjà en tête des évolutions futures du projet ?",
+        type: "textarea",
+        required: false,
+        placeholder: "Ex : ajout d'un blog, nouvelles fonctionnalités...",
+        tooltip: "Nous aide à concevoir une architecture évolutive.",
+        category: "Maintenance & évolution",
+        order: 45,
+    },
+
+    // === 14. CONTRAINTES & REMARQUES ===
+    {
+        id: "contraintes",
+        label: "Y a-t-il des contraintes techniques, juridiques, ou autres à prendre en compte ?",
+        type: "textarea",
+        placeholder: "Normes, RGPD, hébergement, accessibilité, etc.",
+        required: false,
+        tooltip: "Toute contrainte spécifique qui pourrait impacter le projet.",
+        category: "Contraintes & remarques",
+        order: 46,
+    },
+    {
+        id: "remarques",
+        label: "Souhaitez-vous ajouter autre chose ?",
+        type: "textarea",
+        placeholder: "Remarques ou demandes spécifiques...",
+        required: false,
+        tooltip: "Tout élément supplémentaire qui vous semble important.",
+        category: "Contraintes & remarques",
+        order: 47,
+    },
+
+    // === 9. PLANNING & BUDGET ===
+    {
+        id: "budget",
+        label: "Quel est votre budget approximatif ?",
+        type: "number",
+        placeholder: "En euros",
+        required: false,
+        validation: {
+            min: 1000,
+            max: 100000,
+            errorMessage: "Le budget doit être compris entre 1 000 et 100 000 euros",
+        },
+        tooltip: "Indiquez une fourchette pour cadrer les solutions proposées.",
+        category: "Budget",
+        order: 48,
+    },
+    {
+        id: "delai",
+        label: "Quel est votre délai idéal de livraison ?",
+        type: "date",
+        placeholder: "Choisissez une date",
+        required: false,
+        tooltip: "Permet de planifier la charge de travail.",
+        category: "Planification",
+        order: 49,
+    },
+    {
+        id: "dates_cles",
+        label: "Quelles sont les dates clés à respecter ?",
+        type: "text",
+        placeholder: "",
+        required: false,
+        tooltip: "",
+        category: "Planification",
+        order: 50,
+    },
+];
