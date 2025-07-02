@@ -6,7 +6,6 @@ type FormData = Record<string, any>
 const form = ref<FormData>({})
 const errors = ref<FormData>({})
 const accordionState = ref<Record<string, boolean>>({})
-const pdfRef = ref<HTMLElement | null>(null)
 
 // Initialiser les champs et états d'accordéon
 for (const field of specifications) {
@@ -61,76 +60,97 @@ function validateField(field: any, value: any): string | null {
   }
   return null
 }
-
-async function generateStructuredPdf() {
+async function loadImageAsBase64(src: string): Promise<string> {
+  const response = await fetch(src)
+  const blob = await response.blob()
+  return await new Promise<string>((resolve) => {
+    const reader = new FileReader()
+    reader.onloadend = () => resolve(reader.result as string)
+    reader.readAsDataURL(blob)
+  })
+}
+async function generateStructuredPdfWithJsPdf() {
   if (!import.meta.client) return
 
-  const html2pdf = (await import('html2pdf.js')).default
+  const jsPDFModule = await import('jspdf')
+  const autoTable = (await import('jspdf-autotable')).default
+  const jsPDF = jsPDFModule.default
 
+  const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' })
   const today = new Date().toLocaleDateString('fr-FR')
+  let currentY = 10
 
-  const container = document.createElement('div')
-  container.innerHTML = `
-    <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px;">
-      <div style="display: flex; align-items: center; margin-bottom: 24px;">
-        <img src="/images/logo.svg" alt="Logo AS-Turing" style="height: 50px; margin-right: 20px;" />
-        <div>
-          <h1 style="font-size: 24px; margin: 0;">Cahier des charges</h1>
-          <p style="font-size: 12px; color: #666;">Généré le ${today}</p>
-        </div>
-      </div>
-      ${generateHtmlContentFromForm()}
-      <p style="font-size: 12px; color: #999; margin-top: 40px; text-align: center;">
-        Ce document est généré automatiquement à partir du formulaire AS-Turing.
-      </p>
-    </div>
-  `
+  // Logo (optionnel)
+  const logoBase64 = await loadImageAsBase64('/images/logo.png')
+  doc.addImage(logoBase64, 'PNG', 10, currentY, 50, 15)
 
-  await html2pdf()
-      .set({
-        margin: 10,
-        filename: `cahier-des-charges-${today.replace(/\//g, '-')}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      })
-      .from(container)
-      .save()
-}
+// Titre
+  doc.setFontSize(24)
+  doc.setFont('helvetica', 'bold')
 
-function generateHtmlContentFromForm(): string {
+  const title = 'Cahier des charges ' + form.value.nom_entreprise;
+  const pageWidth = doc.internal.pageSize.getWidth()
+  const textWidth = doc.getTextWidth(title)
+  const xPosition = (pageWidth - textWidth) / 2
+  doc.text(title, xPosition, 42)
+
+  doc.setFontSize(10)
+  doc.setFont('helvetica', 'normal')
+  doc.text(`Généré le ${today}`, 200, 15, { align: 'right' })
+
+  currentY += 50
+
   const grouped = groupedSpecifications.value
 
-  return grouped
-      .map(({ name, fields }) => {
-        const rows = fields
-            .map(field => {
-              const value = form.value[field.id]
-              const display = Array.isArray(value)
-                  ? value.join(', ')
-                  : value?.toString().trim() || '<em style="color: #888;">(non renseigné)</em>'
+  for (const group of grouped) {
+    const { name, fields } = group
 
-              return `
-            <tr>
-              <td style="padding: 8px 12px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                <strong>${field.label}</strong>
-              </td>
-              <td style="padding: 8px 12px; border: 1px solid #ccc;">${display}</td>
-            </tr>
-          `
-            })
-            .join('')
+    doc.setFontSize(13)
+    doc.setTextColor(30)
+    doc.text(name, 10, currentY)
+    currentY += 6
 
-        return `
-        <h2 style="margin-top: 32px; font-size: 18px; color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 4px;">
-          ${name}
-        </h2>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-          ${rows}
-        </table>
-      `
-      })
-      .join('')
+    const rows = fields.map(field => {
+      const rawValue = form.value[field.id]
+      const value = Array.isArray(rawValue)
+          ? rawValue.join(', ')
+          : rawValue?.toString().trim() || '(non renseigné)'
+      return [field.label, value]
+    })
+
+    autoTable(doc, {
+      head: [['Question', 'Réponse']],
+      body: rows,
+      startY: currentY,
+      theme: 'grid',
+      styles: {
+        fontSize: 10,
+        cellPadding: 3,
+      },
+      headStyles: {
+        fillColor: [44, 62, 80],
+        textColor: 255,
+        halign: 'left',
+      },
+      bodyStyles: {
+        valign: 'top',
+      },
+      columnStyles: {
+        0: { cellWidth: 70 },
+        1: { cellWidth: 120 },
+      },
+      margin: { left: 10, right: 10 },
+      didDrawPage: (data) => {
+        currentY = data.cursor.y + 10
+      }
+    })
+  }
+
+  doc.setFontSize(9)
+  doc.setTextColor(150)
+  doc.text('Document généré automatiquement via AS-Turing.fr', 10, 290)
+
+  doc.save(`cahier-des-charges-${today.replace(/\//g, '-')}.pdf`)
 }
 
 async function handleSubmit() {
@@ -145,10 +165,12 @@ async function handleSubmit() {
 
   if (Object.keys(errors.value).length === 0) {
 
-    await generateStructuredPdf()
+    await generateStructuredPdfWithJsPdf()
 
-    alert('Formulaire soumis et PDF généré ✅')
+    console.log("PDF généré avec succés : ", form.value)
   } else {
+    await generateStructuredPdfWithJsPdf()
+
     console.warn('❌ Erreurs :', errors.value)
   }
 }
@@ -156,7 +178,7 @@ async function handleSubmit() {
 
 <template>
   <form @submit.prevent="handleSubmit">
-    <div ref="pdfRef" class="space-y-6 max-w-3xl mx-auto">
+    <div class="space-y-6 max-w-3xl mx-auto">
       <div
           v-for="(category, index) in groupedSpecifications"
           :key="index"
@@ -200,6 +222,7 @@ async function handleSubmit() {
                 v-model="form[field.id]"
                 :placeholder="field.placeholder"
                 class="w-full p-2 border rounded"
+                rows="5"
             ></textarea>
 
             <!-- Select -->
