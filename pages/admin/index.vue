@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import FormAdminLogin from "../../components/form/FormAdminLogin.vue";
 </script>
 
 <template>
-  <h1>admin panel</h1>
-
-  <FormSpecification />
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">Panneau d'administration</h1>
+    <FormAdminLogin />
+  </div>
 </template>
 
 <style scoped>
