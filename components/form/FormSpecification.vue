@@ -147,8 +147,16 @@ async function generateStructuredPdfWithJsPdf() {
   }
 
   doc.setFontSize(9)
-  doc.setTextColor(150)
-  doc.text('Document généré automatiquement via AS-Turing.fr', 10, 290)
+  doc.setTextColor(120)
+  doc.setFont('helvetica', 'italic')
+  doc.text(
+      'Ce document a été généré automatiquement via AS-Turing.fr à partir des réponses fournies par le client dans le formulaire.\n' +
+      'Il constitue une base de discussion et de cadrage du projet, sans valeur contractuelle sauf mention contraire.',
+      10,
+      285,
+      { maxWidth: 190 }
+  )
+
 
   doc.save(`cahier-des-charges-${today.replace(/\//g, '-')}.pdf`)
 }
