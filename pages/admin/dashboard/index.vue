@@ -10,7 +10,7 @@ definePageMeta({
 
 onMounted(() => {
   const userStore = useUserStore()
-  userStore.loadToken
+  userStore.loadToken()
 })
 
 // Active menu item tracking
