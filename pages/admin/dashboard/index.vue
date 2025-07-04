@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import FormSpecification from '@/components/form/FormSpecification.vue';
+import {useUserStore} from "../../../store/user";
+import {definePageMeta} from "../../../.nuxt/imports";
+
+definePageMeta({
+  middleware: 'auth'
+})
+
+onMounted(() => {
+  const userStore = useUserStore()
+  userStore.loadToken
+})
 
 // Active menu item tracking
 const activeMenuItem = ref('cahier-des-charges');

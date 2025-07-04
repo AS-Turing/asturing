@@ -6,56 +6,63 @@ const router = useRouter()
 
 // Form data and validation
 const form = ref({
-  email: '',
   password: ''
 })
 
 const errors = ref({
-  email: '',
   password: ''
 })
 
 // Validation function
-function validateField(field: string, value: string): string | null {
+function validateField(value: string): string | null {
   if (!value.trim()) {
     return 'Ce champ est requis.'
-  }
-
-  if (field === 'email') {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(value)) {
-      return 'Veuillez entrer une adresse email valide.'
-    }
   }
 
   return null
 }
 
-// Form submission handler
-function handleSubmit() {
-  // Reset errors
-  errors.value = {
-    email: '',
-    password: ''
-  }
+async function login(password: string): Promise<boolean> {
+  const response = await fetch('https://www.as-turing.fr/php-api/login.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ password })
+  })
 
-  // Validate fields
-  const emailError = validateField('email', form.value.email)
-  const passwordError = validateField('password', form.value.password)
-
-  if (emailError) errors.value.email = emailError
-  if (passwordError) errors.value.password = passwordError
-
-  // If no errors, proceed with login
-  if (!errors.value.email && !errors.value.password) {
-    console.log('Login attempt with:', form.value)
-    // Here you would typically call an authentication API
-    // For example: await login(form.value.email, form.value.password)
-
-    // For demo purposes, we'll just navigate to the dashboard
-    router.push('/admin/dashboard')
+  if (response.ok) {
+    const data = await response.json()
+    console.log(data)
+    localStorage.setItem('token', data.token)
+    return true
+  } else {
+    return false
   }
 }
+async function handleSubmit() {
+  // Reset errors
+  errors.value.password = ''
+
+  // Validate fields
+  const passwordError = validateField(form.value.password)
+
+  if (passwordError) {
+    errors.value.password = passwordError
+    return
+  }
+
+  console.log('Login attempt with:', form.value)
+
+  const success = await login(form.value.password)
+
+  if (success) {
+    router.push('/admin/dashboard')
+  } else {
+    errors.value.password = 'Mot de passe invalide.'
+  }
+}
+
 </script>
 
 <template>
@@ -63,22 +70,6 @@ function handleSubmit() {
     <h1 class="text-2xl font-bold mb-6 text-center">Connexion Administrateur</h1>
 
     <form @submit.prevent="handleSubmit" class="space-y-6">
-      <div>
-        <label for="email" class="block font-semibold mb-1">
-          Email <span class="text-red-500">*</span>
-        </label>
-        <input
-          id="email"
-          type="email"
-          v-model="form.email"
-          placeholder="Votre adresse email"
-          class="w-full p-2 border rounded"
-        />
-        <p v-if="errors.email" class="text-sm text-red-600 mt-1">
-          {{ errors.email }}
-        </p>
-      </div>
-
       <div>
         <label for="password" class="block font-semibold mb-1">
           Mot de passe <span class="text-red-500">*</span>

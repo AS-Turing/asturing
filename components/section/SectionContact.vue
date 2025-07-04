@@ -23,7 +23,7 @@ async function sendMail(event: Event) {
     formData.append('phone', mailContent.value.phone)
     formData.append('message', mailContent.value.message)
 
-    const response = await fetch('https://as-turing.fr/php-api/mail.php', {
+    const response = await fetch('/php-api/mail.php', {
       method: 'POST',
       body: formData,
     })

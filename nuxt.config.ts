@@ -96,7 +96,7 @@ export default defineNuxtConfig({
       '/localisation/developpeur-web-sauveterre-de-guyenne'
     ]
   },
-  ssr: true,
+  ssr: false,
   tailwindcss: {
     configPath: './tailwind.config.ts',
     editorSupport: { autocompleteUtil: { as: 'tailwindClasses' }, generateConfig: true },
