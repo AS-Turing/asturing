@@ -1,3 +1,10 @@
+import {jwtDecode} from "jwt-decode";
+
+interface JwtPayload {
+    exp: number
+    sub?: string
+    [key: string]: any
+}
 export const useUserStore = defineStore('user', () => {
     const token = ref<string | null>(null)
 
@@ -9,8 +16,16 @@ export const useUserStore = defineStore('user', () => {
     }
 
     function loadToken() {
-        const saved = localStorage.getItem('token')
-        if (saved) token.value = saved
+        if( process.client) {
+            const saved = localStorage.getItem('token')
+            if (saved && !isTokenExpired(saved)) {
+                token.value = saved
+                startTokenTimer()
+            } else {
+                console.log('token expired')
+                localStorage.removeItem('token')
+            }
+        }
     }
 
     function logout() {
@@ -18,11 +33,43 @@ export const useUserStore = defineStore('user', () => {
         localStorage.removeItem('token')
     }
 
+    function isTokenExpired(token: string) : boolean{
+        try {
+            const decoded = jwtDecode<JwtPayload>(token)
+            const now = Math.floor((Date.now() / 1000))
+            return decoded.exp < now
+        } catch (e) {
+            return true
+        }
+    }
+
+    function startTokenTimer() {
+        console.log(token)
+        if (!token.value) return
+
+        try {
+            const decoded = jwtDecode<JwtPayload>(token.value)
+            const now = Math.floor(Date.now() / 1000)
+            const delay = (decoded.exp - now) * 1000
+
+            if (delay > 0) {
+                setTimeout(() => {
+                    logout()
+                    navigateTo('/admin')
+                }, delay)
+            }
+        } catch (e) {
+            logout()
+        }
+    }
+
     return {
         token,
         isAuthenticated,
         setToken,
         loadToken,
-        logout
+        logout,
+        isTokenExpired,
+        startTokenTimer
     }
 })
