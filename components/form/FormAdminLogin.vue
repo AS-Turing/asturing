@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 import { useRouter } from 'vue-router'
+import FingerprintJS from '@fingerprintjs/fingerprintjs'
+import getFigerprint from "../../utils/fingerprint";
 
 const router = useRouter()
 
@@ -8,6 +10,7 @@ const router = useRouter()
 const form = ref({
   password: ''
 })
+
 
 const errors = ref({
   password: ''
@@ -23,24 +26,35 @@ function validateField(value: string): string | null {
 }
 
 async function login(password: string): Promise<boolean> {
-  const response = await fetch('https://www.as-turing.fr/php-api/login.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ password })
-  })
+  try {
+    const fingerPrint = await getFigerprint();
+    const response = await fetch('http://localhost:8000/php-api/login.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ password, fingerPrint })
+    });
 
-  if (response.ok) {
-    const data = await response.json()
-    console.log(data)
-    localStorage.setItem('token', data.token)
-    return true
-  } else {
-    return false
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Erreur de l\'API :', errorData); // Cela affichera { error: "Invalid credentials" }
+      errors.value.password = errorData.error || 'Une erreur est survenue.';
+      return false;
+
+    }
+
+    const data = await response.json();
+    localStorage.setItem('token', data.token);
+    console.log(localStorage.getItem('token'), data);
+    return true;
+  } catch (error) {
+    // Capture des exceptions, ex. problème réseau ou syntaxe JSON invalide
+    console.error('Erreur lors de la requête fetch:', error);
+    errors.value.password = 'Impossible de se connecter au serveur.';
+    return false;
   }
-}
-async function handleSubmit() {
+}async function handleSubmit() {
   // Reset errors
   errors.value.password = ''
 
@@ -51,8 +65,6 @@ async function handleSubmit() {
     errors.value.password = passwordError
     return
   }
-
-  console.log('Login attempt with:', form.value)
 
   const success = await login(form.value.password)
 
