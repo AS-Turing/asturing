@@ -46,7 +46,7 @@ useSeoMeta({
       <div>
         <h2 class="text-2xl font-semibold mb-2 underline dark:decoration-secondary underline-offset-8">3. Tarification & paiement</h2>
         <p>La facturation se fait au forfait, selon une grille tarifaire pré-définie ou sur mesure selon le projet.</p>
-        <p>Un acompte de 10% est demandé à la validation du devis. Le solde est à régler à 30 jours fin de mois par virement bancaire.</p>
+        <p>Un acompte de 30% est demandé à la validation du devis. Le solde est à régler à 30 jours fin de mois par virement bancaire après la livraison.</p>
         <h3 class="text-xl font-semibold mt-4">Pénalités de retard</h3>
         <p>Conformément à la loi (article L.441-10 du Code de commerce), tout retard de paiement entraînera une pénalité calculée sur la base du taux directeur de la BCE majoré de 10 points, ainsi qu'une indemnisation forfaitaire de 40€ pour frais de recouvrement.</p>
       </div>
