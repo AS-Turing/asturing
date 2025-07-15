@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import {onMounted, ref} from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import FingerprintJS from '@fingerprintjs/fingerprintjs'
 import getFigerprint from "../../utils/fingerprint";
 
 const router = useRouter()

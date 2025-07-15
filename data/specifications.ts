@@ -229,7 +229,7 @@ export const specifications: Specification[] = [
     {
         id: "traduction",
         label: "Y a-t-il un besoin de traduction ou multilingue ?",
-        type: "text",
+        type: "textarea",
         placeholder: "Précisez les langues nécessaires",
         required: false,
         tooltip: "Important pour l'architecture du site et son référencement.",
@@ -269,7 +269,7 @@ export const specifications: Specification[] = [
     {
         id: "valeurs_design",
         label: "Quelles émotions/valeurs voulez-vous que le design véhicule ?",
-        type: "text",
+        type: "textarea",
         placeholder: "",
         required: false,
         tooltip: "",
@@ -338,7 +338,7 @@ export const specifications: Specification[] = [
     {
         id: "fonctionnalites_techniques",
         label: "Y a-t-il des fonctionnalités techniques précises à intégrer ?",
-        type: "text",
+        type: "textarea",
         placeholder: "Ex: paiement, carte interactive...",
         required: false,
         tooltip: "Précisez les aspects techniques spécifiques nécessaires.",
@@ -382,7 +382,7 @@ export const specifications: Specification[] = [
     {
         id: "preferences_techno",
         label: "Avez-vous une préférence technologique ou CMS ?",
-        type: "text",
+        type: "textarea",
         placeholder: "Ex: WordPress, Shopify, développement sur mesure...",
         required: false,
         tooltip: "Nous aide à orienter les choix techniques.",
@@ -401,6 +401,20 @@ export const specifications: Specification[] = [
             { value: "À déterminer", label: "À déterminer"}
         ],
         tooltip: "Pour anticiper les obligations légales (RGPD).",
+        category: "Sécurité & conformité",
+        order: 30,
+    },
+    {
+        id: "CGU/CGV",
+        label: "Souhaitez-vous que nous gérions la rédaction des mentions légales et CGU/CGV ?",
+        type: "radio",
+        required: true,
+        options: [
+            { value: "oui", label: "Oui" },
+            { value: "non", label: "Non" },
+            { value: "À déterminer", label: "À déterminer"}
+        ],
+        tooltip: "Les mentions légales et CGU/CGV sont obligatoires pour tout site professionnel. Nous pouvons vous accompagner pour rédiger ces documents de manière conforme (RGPD, e-commerce, collecte de données…).",
         category: "Sécurité & conformité",
         order: 30,
     },

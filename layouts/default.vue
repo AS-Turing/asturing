@@ -9,9 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
 
 useSeoMeta({
   charset: 'utf-8',
@@ -19,7 +16,6 @@ useSeoMeta({
   ogType: 'website',
   ogLocale: 'fr_FR',
   ogSiteName: 'AS-Turing',
-  linkCanonical: `https://www.as-turing.fr${route.path === '/' ? '' : route.path}`,
 })
 
 </script>

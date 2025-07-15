@@ -17,6 +17,11 @@ $mail = new PHPMailer(true);
 
 header('Content-Type: application/json');
 
+header("Access-Control-Allow-Origin: https://www.as-turing.fr");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
+
 
 $firstname = htmlspecialchars($_POST['firstname'] ?? '');
 $lastname = htmlspecialchars($_POST['lastname'] ?? '');
