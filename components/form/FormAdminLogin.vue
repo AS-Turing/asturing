@@ -27,7 +27,7 @@ function validateField(value: string): string | null {
 async function login(password: string): Promise<boolean> {
   try {
     const fingerPrint = await getFigerprint();
-    const response = await fetch('http://www.as-turing.fr/php-api/login.php', {
+    const response = await fetch('https://www.as-turing.fr/php-api/login.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
