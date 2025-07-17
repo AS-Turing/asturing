@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import FormSpecification from '@/components/form/FormSpecification.vue';
+import CdcList from '@/components/CdcList.vue';
 import {useUserStore} from "../../../store/user";
 import {definePageMeta} from "../../../.nuxt/imports";
 
@@ -57,8 +58,7 @@ function setActiveMenuItem(id) {
       <main class="flex-1 p-6 bg-gray-50">
         <!-- Dynamic content based on active menu item -->
         <div v-if="activeMenuItem === 'cahier-des-charges'">
-          <h2 class="text-2xl font-bold mb-6">Cahier des charges</h2>
-          <FormSpecification />
+          <CdcList />
         </div>
       </main>
     </div>
