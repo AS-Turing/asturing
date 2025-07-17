@@ -32,4 +32,7 @@ logs
 *.~*
 
 vendor
+api/vendor
+api/var
 public/upload/*
+.pnpm-store/
