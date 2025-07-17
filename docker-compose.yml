@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  nuxt:
+    build:
+      context: .
+      dockerfile: Dockerfile.nuxt
+    container_name: nuxt3
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+    depends_on:
+      - symfony
+
+  symfony:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.symfony
+    container_name: symfony
+    ports:
+      - "8000:80"
+    environment:
+      DATABASE_URL: mysql://asturingudb:userpass@mysql:3306/asturingdb
+    volumes:
+      - ./api:/app
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-asturing
+    restart: always
+    environment:
+      MYSQL_DATABASE: asturingdb
+      MYSQL_USER: asturingudb
+      MYSQL_PASSWORD: userpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - '3306:3306'
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
