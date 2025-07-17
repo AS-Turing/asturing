@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Services;
+use App\Entity\ServicePriceInclude;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Services>
+ * @extends ServiceEntityRepository<ServicePriceInclude>
  */
-class ServicesRepository extends ServiceEntityRepository
+class ServicePriceIncludeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Services::class);
+        parent::__construct($registry, ServicePriceInclude::class);
     }
 
     //    /**
-    //     * @return Services[] Returns an array of Services objects
+    //     * @return ServicePriceInclude[] Returns an array of ServicePriceInclude objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class ServicesRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Services
+    //    public function findOneBySomeField($value): ?ServicePriceInclude
     //    {
     //        return $this->createQueryBuilder('s')
     //            ->andWhere('s.exampleField = :val')
