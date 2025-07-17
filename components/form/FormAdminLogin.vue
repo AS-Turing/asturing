@@ -27,7 +27,7 @@ function validateField(value: string): string | null {
 async function login(password: string): Promise<boolean> {
   try {
     const fingerPrint = await getFigerprint();
-    const response = await fetch('https://www.as-turing.fr/php-api/login.php', {
+    const response = await fetch('http://localhost:8000/php-api/login.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ async function login(password: string): Promise<boolean> {
 
     const data = await response.json();
     localStorage.setItem('token', data.token);
-    console.log(localStorage.getItem('token'), data);
+
     return true;
   } catch (error) {
     // Capture des exceptions, ex. problème réseau ou syntaxe JSON invalide
