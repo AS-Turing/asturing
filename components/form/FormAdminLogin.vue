@@ -26,13 +26,13 @@ function validateField(value: string): string | null {
 
 async function login(password: string): Promise<boolean> {
   try {
-    const fingerPrint = await getFigerprint();
-    const response = await fetch('http://localhost:8000/php-api/login.php', {
+    const fingerprint = await getFigerprint();
+    const response = await fetch('http://localhost:8000/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ password, fingerPrint })
+      body: JSON.stringify({ password, fingerprint })
     });
 
     if (!response.ok) {
