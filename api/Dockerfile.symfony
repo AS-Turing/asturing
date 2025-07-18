@@ -31,6 +31,12 @@ RUN printf "\n<Directory /app/public>\n\
     Require all granted\n\
 </Directory>\n" | tee -a /etc/apache2/apache2.conf
 
+RUN a2enmod rewrite
+
+# Configuration pour permettre l'utilisation de .htaccess
+RUN sed -i 's!/var/www/html!/app/api/public!g' /etc/apache2/sites-available/000-default.conf && \
+    sed -i 's!AllowOverride None!AllowOverride All!g' /etc/apache2/apache2.conf
+
 # Use www-data user to run the container
 USER www-data
 
