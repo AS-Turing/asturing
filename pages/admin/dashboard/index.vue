@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import FormSpecification from '@/components/form/FormSpecification.vue';
 import CdcList from '@/components/CdcList.vue';
 import {useUserStore} from "../../../store/user";
 import {definePageMeta} from "../../../.nuxt/imports";

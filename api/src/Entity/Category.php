@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CateogryRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CateogryRepository::class)]
-class Cateogry
+#[ORM\Entity(repositoryClass: CategoryRepository::class)]
+class Category
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,7 +21,7 @@ class Cateogry
     /**
      * @var Collection<int, Specification>
      */
-    #[ORM\OneToMany(targetEntity: Specification::class, mappedBy: 'cateogry')]
+    #[ORM\OneToMany(targetEntity: Specification::class, mappedBy: 'category')]
     private Collection $Specification;
 
     public function __construct()
@@ -58,7 +58,7 @@ class Cateogry
     {
         if (!$this->Specification->contains($specification)) {
             $this->Specification->add($specification);
-            $specification->setCateogry($this);
+            $specification->setCategory($this);
         }
 
         return $this;
@@ -68,8 +68,8 @@ class Cateogry
     {
         if ($this->Specification->removeElement($specification)) {
             // set the owning side to null (unless already changed)
-            if ($specification->getCateogry() === $this) {
-                $specification->setCateogry(null);
+            if ($specification->getCategory() === $this) {
+                $specification->setCategory(null);
             }
         }
 

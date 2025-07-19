@@ -48,7 +48,7 @@ class Specification
     private ?array $type_options = null;
 
     #[ORM\ManyToOne(inversedBy: 'Specification')]
-    private ?Cateogry $cateogry = null;
+    private ?Category $category = null;
 
     public function getId(): ?int
     {
@@ -187,14 +187,14 @@ class Specification
         return $this;
     }
 
-    public function getCateogry(): ?Cateogry
+    public function getCategory(): ?Category
     {
-        return $this->cateogry;
+        return $this->category;
     }
 
-    public function setCateogry(?Cateogry $cateogry): static
+    public function setCategory(?Category $category): static
     {
-        $this->cateogry = $cateogry;
+        $this->category = $category;
 
         return $this;
     }
