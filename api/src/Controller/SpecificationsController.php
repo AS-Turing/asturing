@@ -2,18 +2,48 @@
 
 namespace App\Controller;
 
+use App\Repository\SpecificationBookRepository;
+use App\Service\SerializerContextBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\SerializerInterface;
+
 
 final class SpecificationsController extends AbstractController
 {
-    #[Route('/specifications', name: 'app_specifications', methods: ['POST'])]
-    public function index(): JsonResponse
+    public function __construct(
+        private readonly SerializerInterface $serializer,
+        private readonly SerializerContextBuilder $serializerContextBuilder
+    )
     {
+    }
+
+    #[Route('/specifications', name: 'app_specifications', methods: ['GET'])]
+    public function index(SpecificationBookRepository $specificationBookRepository): JsonResponse
+    {
+        $specificationBooks = $specificationBookRepository->createQueryBuilder('sb')
+            ->addSelect('c')
+            ->leftJoin('sb.client', 'c')
+            ->getQuery()
+            ->getResult();
+
+        if (empty($specificationBooks)) {
+            return new JsonResponse([
+                'success' => false,
+                'message' => 'No specification books found',
+            ]);
+        }
+
+        $jsonContent = $this->serializer->serialize(
+            $specificationBooks, 'json', $this->serializerContextBuilder->buildSerializerContext()
+        );
+
         return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/SpecificationsController.php',
+            'success' => true,
+            'data' => json_decode($jsonContent)
+            ,
         ]);
     }
 }

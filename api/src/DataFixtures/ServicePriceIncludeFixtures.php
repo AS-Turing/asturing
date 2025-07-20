@@ -64,7 +64,7 @@ class ServicePriceIncludeFixtures extends Fixture implements DependentFixtureInt
                 'Fonctionnalité simple' => [
                     "Analyse rapide du besoin (échange + cadrage léger)",
                     "Développement d'une fonctionnalité simple (formulaire, calcul, affichage spécifique…)",
-                    "Petite intégration ou interaction avec un service/API existant",
+                    "Petite intégration ou interaction avec un Service/API existant",
                     "Recette technique et retour client",
                     "Livraison documentée (si nécessaire)"
                 ],

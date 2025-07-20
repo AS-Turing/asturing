@@ -18,7 +18,7 @@ export const useUserStore = defineStore('user', () => {
     function loadToken() {
         if( process.client) {
             const saved = localStorage.getItem('token')
-            console.log(saved, isTokenExpired(saved))
+
             if (saved && !isTokenExpired(saved)) {
                 token.value = saved
                 startTokenTimer()
