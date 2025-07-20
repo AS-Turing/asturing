@@ -13,6 +13,9 @@ class File
     #[ORM\Column]
     private ?int $id = null;
 
+    /**
+     * @Groups({"file:read", "specification:read"})
+     */
     #[ORM\Column(length: 255)]
     private ?string $filename = null;
 
@@ -76,5 +79,12 @@ class File
         $this->quote = $quote;
 
         return $this;
+    }
+    /**
+     * @Groups({"specification:read", "file:read"})
+     */
+    public function getFileUrl(): ?string
+    {
+        return '/api/uploads/cdc' . $this->filename;
     }
 }

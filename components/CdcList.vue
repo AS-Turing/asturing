@@ -2,18 +2,13 @@
 import { ref, onMounted } from 'vue';
 import FormSpecification from '@/components/form/FormSpecification.vue';
 import FileUploadForm from '@/components/FileUploadForm.vue';
+import {SpecificationBook} from "../types/specificationBook";
 
 // Interface for file information
-interface FileInfo {
-  name: string;
-  path: string;
-  size: number;
-  modified: number;
-  type: string;
-}
+
 
 // State
-const files = ref<FileInfo[]>([]);
+const specificationBooks = ref<SpecificationBook[]>([]);
 const loading = ref(true);
 const error = ref<string | null>(null);
 const showModal = ref(false);
@@ -47,8 +42,7 @@ async function fetchFiles() {
   error.value = null;
   
   try {
-    console.log('here')
-    const response = await fetch('http://localhost:8000/php-api/list-cdc.php', {
+    const response = await fetch('http://localhost:8000/api/specifications', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -57,7 +51,7 @@ async function fetchFiles() {
     const data = await response.json();
 
     if (data.success) {
-      files.value = data.files;
+      specificationBooks.value = data.data
     } else {
       error.value = data.message || 'Une erreur est survenue lors du chargement des fichiers';
     }
@@ -132,7 +126,7 @@ onMounted(() => {
     </div>
     
     <!-- Empty state -->
-    <div v-else-if="files.length === 0" class="text-center py-8 bg-gray-50 rounded border">
+    <div v-else-if="specificationBooks.length === 0" class="text-center py-8 bg-gray-50 rounded border">
       <p class="text-gray-600">Aucun cahier des charges disponible</p>
       <button 
         @click="toggleModal" 
@@ -147,30 +141,30 @@ onMounted(() => {
       <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-50">
           <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nom</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Taille</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Decription</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date de modification</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-          <tr v-for="file in files" :key="file.path" class="hover:bg-gray-50">
+          <tr v-for="specificationBook in specificationBooks" :key="specificationBook.id" class="hover:bg-gray-50">
             <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm font-medium text-gray-900">{{ file.name }}</div>
+              <div class="text-sm font-medium text-gray-900">{{ specificationBook.client.company }}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-500">{{ formatFileSize(file.size) }}</div>
+              <div class="text-sm text-gray-500">{{ specificationBook?.description }}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-500">{{ formatDate(file.modified) }}</div>
+              <div class="text-sm text-gray-500">{{ specificationBook?.file[0]?.uploadedAt }}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-500">{{ file.type }}</div>
+              <div class="text-sm text-gray-500">{{ }}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-              <button 
-                @click="openFile(file.path)" 
+              <button
+                @click="openFile('http://localhost:8000' + specificationBook?.file[0]?.fileUrl)"
                 class="text-blue-600 hover:text-blue-900 mr-3"
               >
                 Consulter

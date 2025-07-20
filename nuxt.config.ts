@@ -68,7 +68,7 @@ export default defineNuxtConfig({
   },
   sitemap: {
     siteUrl: 'https://www.as-turing.fr',
-    trailingSlash: true,
+    trailingSlash: false,
     gzip: true,
     autoLastmod: true,
     xls: false,

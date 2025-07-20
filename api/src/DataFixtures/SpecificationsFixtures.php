@@ -814,7 +814,7 @@ class SpecificationsFixtures extends Fixture implements DependentFixtureInterfac
         $this->createSpecification(
             $manager,
             'maintenance_besoin',
-            'Souhaitez-vous un service de maintenance après la mise en ligne ?',
+            'Souhaitez-vous un Service de maintenance après la mise en ligne ?',
             'radio',
             null,
             true,
