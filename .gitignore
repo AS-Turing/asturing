@@ -24,6 +24,9 @@ backend/.DS_Store
 .env
 .env.*
 !.env.example
+/backend/.env
+/backend/.env.dev
+/backend/.env.test
 # Git files
 *.seed
 *.pid
