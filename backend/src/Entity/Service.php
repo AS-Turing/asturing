@@ -31,9 +31,16 @@ class Service
     #[ORM\OneToMany(targetEntity: MicroService::class, mappedBy: 'service')]
     private Collection $micro_service;
 
+    /**
+     * @var Collection<int, ServicePrice>
+     */
+    #[ORM\OneToMany(targetEntity: ServicePrice::class, mappedBy: 'service')]
+    private Collection $servicePrices;
+
     public function __construct()
     {
         $this->micro_service = new ArrayCollection();
+        $this->servicePrices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -101,6 +108,36 @@ class Service
             // set the owning side to null (unless already changed)
             if ($microService->getService() === $this) {
                 $microService->setService(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ServicePrice>
+     */
+    public function getServicePrices(): Collection
+    {
+        return $this->servicePrices;
+    }
+
+    public function addServicePrice(ServicePrice $servicePrice): static
+    {
+        if (!$this->servicePrices->contains($servicePrice)) {
+            $this->servicePrices->add($servicePrice);
+            $servicePrice->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeServicePrice(ServicePrice $servicePrice): static
+    {
+        if ($this->servicePrices->removeElement($servicePrice)) {
+            // set the owning side to null (unless already changed)
+            if ($servicePrice->getService() === $this) {
+                $servicePrice->setService(null);
             }
         }
 

@@ -30,5 +30,5 @@ export interface File {
     uploadedAt: string
     specificationBook: number
     quote: any
-    fileUrl: string
+    path: string
 }

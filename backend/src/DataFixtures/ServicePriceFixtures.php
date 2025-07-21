@@ -147,7 +147,7 @@ class ServicePriceFixtures extends Fixture implements DependentFixtureInterface
 
             foreach ($servicePriceData['prices'] as $priceData) {
                 $servicePrice = new ServicePrice();
-                $servicePrice->setServiceId($service->getId());
+                $servicePrice->setService($service);
                 $servicePrice->setName($priceData['name']);
                 $servicePrice->setPrice($priceData['price']);
 

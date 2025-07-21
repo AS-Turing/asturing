@@ -42,7 +42,7 @@ async function fetchFiles() {
   error.value = null;
   
   try {
-    const response = await fetch('http://localhost:8000/api/specifications', {
+    const response = await fetch('http://backend.localhost:8000/api/specifications', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -164,7 +164,7 @@ onMounted(() => {
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
               <button
-                @click="openFile('http://localhost:8000' + specificationBook?.file[0]?.fileUrl)"
+                @click="openFile('http://localhost:8000/api/file/' + specificationBook?.file[0]?.path)"
                 class="text-blue-600 hover:text-blue-900 mr-3"
               >
                 Consulter

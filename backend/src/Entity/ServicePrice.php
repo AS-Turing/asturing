@@ -15,9 +15,9 @@ class ServicePrice
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $service_id = null;
-
+    #[ORM\ManyToOne(inversedBy: 'servicePrices')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Service $service = null;
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
@@ -40,14 +40,15 @@ class ServicePrice
         return $this->id;
     }
 
-    public function getServiceId(): ?int
+
+    public function getService(): ?Service
     {
-        return $this->service_id;
+        return $this->service;
     }
 
-    public function setServiceId(int $service_id): static
+    public function setService(?Service $service): static
     {
-        $this->service_id = $service_id;
+        $this->service = $service;
 
         return $this;
     }

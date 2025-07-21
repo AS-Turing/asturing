@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\FileRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FileRepository::class)]
@@ -27,6 +28,9 @@ class File
 
     #[ORM\ManyToOne(inversedBy: 'file')]
     private ?Quote $quote = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $path = null;
 
     public function getId(): ?int
     {
@@ -86,5 +90,17 @@ class File
     public function getFileUrl(): ?string
     {
         return '/api/uploads/cdc' . $this->filename;
+    }
+
+    public function getPath(): ?string
+    {
+        return $this->path;
+    }
+
+    public function setPath(string $path): static
+    {
+        $this->path = $path;
+
+        return $this;
     }
 }
