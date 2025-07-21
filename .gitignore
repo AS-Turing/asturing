@@ -1,13 +1,13 @@
 # Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+frontend/.output
+frontend/.data
+frontend/.nuxt
+frontend/.nitro
+frontend/.cache
+frontend/dist
 
 # Node dependencies
-node_modules
+frontend/node_modules
 
 # Logs
 logs
@@ -15,7 +15,7 @@ logs
 
 # Misc
 .DS_Store
-/backend/.DS_Store
+backend/.DS_Store
 /frontend/.DS_Store
 .fleet
 .idea
@@ -27,7 +27,7 @@ logs
 # Git files
 *.seed
 *.pid
-.swp
+.swpdev-env
 *.bak
 *.orig
 *.rej
@@ -37,4 +37,4 @@ vendor
 api/vendor
 api/var
 public/upload/*
-.pnpm-store/
+frontend/.pnpm-store/

@@ -39,5 +39,5 @@ RUN sed -i 's!/var/www/html!/app/api/public!g' /etc/apache2/sites-available/000-
 # Use www-data user to run the container
 USER www-data
 
-EXPOSE 80
+EXPOSE 8000
 CMD ["apache2-foreground"]
