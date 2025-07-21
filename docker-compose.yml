@@ -1,23 +1,23 @@
 services:
   nuxt:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - '3000:3000'
     volumes:
-      - ./:/app
+      - ./frontend:/app
 
   symfony:
     build:
-      context: ./api
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "8000:80"
     environment:
       DATABASE_URL: mysql://asturingudb:userpass@mysql:3306/asturingdb
     volumes:
-      - ./api:/app
+      - ./backend:/app
     depends_on:
       mysql:
         condition: service_healthy
