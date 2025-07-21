@@ -14,11 +14,13 @@ class FileFixtures extends Fixture implements DependentFixtureInterface
         1 => [
             'specification_book_id' => 1,
             'filename' => 'cahier-des-charges-08-07-2025.pdf',
+            'path' => 'upload/cdc/cahier-des-charges-08-07-2025.pdf',
             'upload_at' => '2020-07-20',
         ],
         2 => [
             'specification_book_id' => 2,
             'filename' => 'cahier-des-charges-08-2025.pdf',
+            'path' => 'upload/cdc/cahier-des-charges-08-2025.pdf',
             'upload_at' => '2020-08-20',
         ]
     ];
@@ -28,6 +30,7 @@ class FileFixtures extends Fixture implements DependentFixtureInterface
         foreach (self::FILES as $fileData) {
             $file = new File();
             $file->setFilename($fileData['filename']);
+            $file->setPath($fileData['path']);
             $file->setSpecificationBook($this->getReference('specification-book-' .
                 $fileData['specification_book_id'], SpecificationBook::class));
             $file->setUploadedAt(

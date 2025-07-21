@@ -27,7 +27,7 @@ function validateField(value: string): string | null {
 async function login(password: string): Promise<boolean> {
   try {
     const fingerprint = await getFigerprint();
-    const response = await fetch('http://localhost:8000/api/auth', {
+    const response = await fetch('http://backend.localhost:8000/api/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
