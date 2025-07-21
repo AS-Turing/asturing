@@ -1,0 +1,38 @@
+networks:
+  default:
+    name: traefik
+
+services:
+  traefik:
+    image: traefik
+    container_name: traefik
+    restart: always
+    ports:
+      - "80:80"
+      - "8080:8080"
+    labels:
+      # - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.localhost`)"
+      - "traefik.http.routers.traefik.service=api@internal"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    labels:
+      - "traefik.http.routers.adminer.rule=Host(`adminer.localhost`)"
+      - "traefik.http.services.adminer.loadbalancer.server.port=8080"
+
+  mail:
+      image: axllent/mailpit
+      container_name: mail
+      restart: always
+      labels:
+          - traefik.http.routers.mail.rule=Host(`mail.localhost`)
+          - traefik.http.services.mail.loadbalancer.server.port=8025
+      command:
+          - "--smtp-auth-accept-any"
+          - "--smtp-auth-allow-insecure"

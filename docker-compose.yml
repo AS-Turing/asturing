@@ -3,8 +3,11 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    ports:
-      - '3000:3000'
+    networks:
+      - traefik
+    labels:
+      - "traefik.http.routers.frontend.rule=Host(`frontend.localhost`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
     volumes:
       - ./frontend:/app
 
@@ -14,6 +17,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:80"
+    networks:
+      - traefik
+    labels:
+      - "traefik.http.routers.backend.rule=Host(`backend.localhost`)"
+      - "traefik.http.services.backend.loadbalancer.server.port=8000"
     environment:
       DATABASE_URL: mysql://asturingudb:userpass@mysql:3306/asturingdb
     volumes:
@@ -31,6 +39,8 @@ services:
       MYSQL_ROOT_PASSWORD: rootpass
     ports:
       - '3306:3306'
+    networks:
+      - traefik
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
@@ -40,3 +50,7 @@ services:
 
 volumes:
   db_data:
+
+networks:
+  traefik:
+    external: true
