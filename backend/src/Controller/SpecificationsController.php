@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Specification;
 use App\Repository\SpecificationBookRepository;
+use App\Repository\SpecificationRepository;
 use App\Service\SerializerContextBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -44,6 +46,16 @@ final class SpecificationsController extends AbstractController
             'success' => true,
             'data' => json_decode($jsonContent)
             ,
+        ]);
+    }
+
+    #[Route('/specifications/questions', name:'app_specifications_questions', methods: ['GET'])]
+    public function getQuestions(SpecificationRepository $specificationRepository): JsonResponse
+    {
+        $specificationList = $specificationRepository->findAll();
+        return $this->json([
+            'success' => true,
+            'data' => $this->serializer->serialize($specificationList, 'json', $this->serializerContextBuilder->buildSerializerContext())
         ]);
     }
 }
