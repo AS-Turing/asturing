@@ -2,6 +2,9 @@ import {navigateTo} from "nuxt/app";
 import {useUserStore} from "../store/user";
 
 export async function useApiFetch(endpoint: string, options: RequestInit = {}) {
+    const config = useRuntimeConfig()
+    const baseUrl = config.public.apiBaseUrl
+
     const userStore = useUserStore()
 
     if (!userStore.token) {
@@ -19,7 +22,7 @@ export async function useApiFetch(endpoint: string, options: RequestInit = {}) {
         ...(token && { Authorization: `Bearer ${token.value}` }),
     }
 
-    const response = await fetch(`http://backend.localhost:8000${endpoint}`, {
+    const response = await fetch(`${baseUrl}${endpoint}`, {
         ...options,
         headers: {
             ...defautHeader,
