@@ -10,6 +10,8 @@ export const useUserStore = defineStore('user', () => {
 
     const isAuthenticated = computed(() => !!token.value)
 
+    let logoutTimer: ReturnType<typeof setTimeout> | null = null
+
     function setToken(newToken: string) {
         token.value = newToken
         localStorage.setItem('token', newToken)
@@ -32,6 +34,10 @@ export const useUserStore = defineStore('user', () => {
     function logout() {
         token.value = null
         localStorage.removeItem('token')
+        if (logoutTimer) {
+            clearTimeout(logoutTimer)
+            logoutTimer = null
+        }
     }
 
     function isTokenExpired(token: string) : boolean{
@@ -45,7 +51,7 @@ export const useUserStore = defineStore('user', () => {
     }
 
     function startTokenTimer() {
-        if (!token.value) return
+        if (!token.value || logoutTimer) return
 
         try {
             const decoded = jwtDecode<JwtPayload>(token.value)
@@ -53,12 +59,12 @@ export const useUserStore = defineStore('user', () => {
             const delay = (decoded.exp - now) * 1000
 
             if (delay > 0) {
-                setTimeout(() => {
+                logoutTimer = setTimeout(() => {
                     logout()
                     navigateTo('/admin')
                 }, delay)
             }
-        } catch (e) {
+        } catch {
             logout()
         }
     }
