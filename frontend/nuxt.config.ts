@@ -61,7 +61,9 @@ export default defineNuxtConfig({
         to: 'alexandre@as-turing.fr'
       }
     },
-    public: {} // tu peux ajouter ici d'autres configs accessibles en client
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || 'http://backend.localhost:8000'
+    }
   },
   site: {
     url: 'https://www.as-turing.fr'
