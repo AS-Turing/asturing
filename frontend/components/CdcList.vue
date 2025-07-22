@@ -14,17 +14,6 @@ const error = ref<string | null>(null);
 const showModal = ref(false);
 const activeTab = ref<'form' | 'upload'>('form');
 
-// Format file size to human-readable format
-function formatFileSize(bytes: number): string {
-  if (bytes === 0) return '0 Bytes';
-  
-  const k = 1024;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-}
-
 // Format date to human-readable format
 function formatDate(timestamp: number): string {
   return new Date(timestamp * 1000).toLocaleDateString('fr-FR', {
@@ -42,18 +31,12 @@ async function fetchFiles() {
   error.value = null;
   
   try {
-    const response = await fetch('http://backend.localhost:8000/api/specifications', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    const data = await response.json();
+    const response = await useApiFetch('/api/specifications')
 
-    if (data.success) {
-      specificationBooks.value = data.data
+    if (response.success) {
+      specificationBooks.value = response.data
     } else {
-      error.value = data.message || 'Une erreur est survenue lors du chargement des fichiers';
+      error.value = response.message || 'Une erreur est survenue lors du chargement des fichiers';
     }
   } catch (err) {
     error.value = 'Erreur de connexion au serveur';
