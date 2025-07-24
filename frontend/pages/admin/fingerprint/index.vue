@@ -7,11 +7,14 @@ const requestStatus = ref<'idle' | 'loading' | 'success' | 'error'>('idle')
 const statusMessage = ref<string>('')
 
 async function postFingerprint(): Promise<void> {
+  const config = useRuntimeConfig()
+  const baseUrl = config.public.apiBaseUrl
+
   try {
     requestStatus.value = 'loading';
     statusMessage.value = 'Envoi de l\'empreinte en cours...'
 
-    const response = await fetch('http://localhost:8000/api/fingerprint', {
+    const response: Response = await fetch(`${baseUrl}/api/fingerprint`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

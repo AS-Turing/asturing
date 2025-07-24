@@ -15,14 +15,14 @@ const mailContent = ref({
 async function sendMail(event: Event) {
   const config = useRuntimeConfig()
   const baseUrl = config.public.apiBaseUrl
+
   event.preventDefault()
+
   try {
-
-
     const data = {
       ...mailContent.value,
     }
-    const response = await fetch(`${baseUrl}/api/mail/contact`, {
+    const response: Response = await fetch(`${baseUrl}/api/mail/contact`, {
       method: 'POST',
       body: JSON.stringify(data),
     })

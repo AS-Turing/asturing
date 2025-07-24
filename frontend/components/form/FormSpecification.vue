@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import {useApiFetch} from "../../utils/useApiFetch";
+import {SpecificationQuestion} from "../../types/SpecificationQuestion";
+import {ApiResponse} from "../../types/apiResponse";
 
 type FormData = Record<string, any>
 const form = ref<FormData>({})
@@ -15,7 +16,7 @@ async function loadData() {
   apiError.value = null
   
   try {
-    const response = await useApiFetch('/api/specifications/questions')
+    const response: ApiResponse<SpecificationQuestion[]> = await useApiFetch('/api/specifications/questions')
     
     if (!response || !response.success) {
       throw new Error('La requête API a échoué')
@@ -83,20 +84,6 @@ async function loadData() {
   }
 }
 
-onMounted(() => {
-  loadData()
-  
-  // Set first category to open by default after a short delay
-  setTimeout(() => {
-    if (groupedSpecifications.value.length > 0) {
-      const firstCategory = groupedSpecifications.value[0].name
-      accordionState.value[firstCategory] = true
-    }
-  }, 500)
-})
-
-
-
 // Grouper les questions par catégorie
 const groupedSpecifications = computed(() => {
   const categories: Record<string, any[]> = {}
@@ -123,44 +110,6 @@ const groupedSpecifications = computed(() => {
   return Object.entries(categories).map(([name, fields]) => ({ name, fields }))
 })
 
-function toggleCategory(name: string) {
-  accordionState.value[name] = !accordionState.value[name]
-}
-
-function validateField(field: any, value: any): string | null {
-  // Check if required field is empty
-  if (field.required && (!value || (Array.isArray(value) && value.length === 0))) {
-    return 'Ce champ est requis.'
-  }
-  
-  // Check validation rules
-  if (field.validation) {
-    // Pattern validation for string values
-    if (field.validation.pattern && typeof value === 'string') {
-      try {
-        const regex = new RegExp(field.validation.pattern)
-        if (!regex.test(value)) {
-          return field.validation.errorMessage || 'Format invalide.'
-        }
-      } catch (error) {
-        console.error('Invalid regex pattern:', field.validation.pattern, error)
-        return 'Erreur de validation.'
-      }
-    }
-    
-    // Min/max validation for number values
-    if (typeof value === 'number') {
-      if (
-          (field.validation.min !== null && field.validation.min !== undefined && value < field.validation.min) ||
-          (field.validation.max !== null && field.validation.max !== undefined && value > field.validation.max)
-      ) {
-        return field.validation.errorMessage || 'Valeur hors limites.'
-      }
-    }
-  }
-  
-  return null
-}
 async function loadImageAsBase64(src: string): Promise<string> {
   const response = await fetch(src)
   const blob = await response.blob()
@@ -281,6 +230,59 @@ async function generateStructuredPdfWithJsPdf() {
   }
 }
 
+function toggleCategory(name: string) {
+  accordionState.value[name] = !accordionState.value[name]
+}
+
+function validateField(field: any, value: any): string | null {
+  // Check if required field is empty
+  if (field.required && (!value || (Array.isArray(value) && value.length === 0))) {
+    return 'Ce champ est requis.'
+  }
+
+  // Check validation rules
+  if (field.validation) {
+    // Pattern validation for string values
+    if (field.validation.pattern && typeof value === 'string') {
+      try {
+        const regex = new RegExp(field.validation.pattern)
+        if (!regex.test(value)) {
+          return field.validation.errorMessage || 'Format invalide.'
+        }
+      } catch (error) {
+        console.error('Invalid regex pattern:', field.validation.pattern, error)
+        return 'Erreur de validation.'
+      }
+    }
+
+    // Min/max validation for number values
+    if (typeof value === 'number') {
+      if (
+          (field.validation.min !== null && field.validation.min !== undefined && value < field.validation.min) ||
+          (field.validation.max !== null && field.validation.max !== undefined && value > field.validation.max)
+      ) {
+        return field.validation.errorMessage || 'Valeur hors limites.'
+      }
+    }
+  }
+
+  return null
+}
+
+async function uploadFile(file: any) {
+  const response: ApiResponse<any> = useApiFetch('/file/upload', {
+    method: 'POST',
+    body: file,
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'Accept': 'application/json',
+    }
+  })
+
+  if (!response.success) {
+    console.warn(resonse.data)
+  }
+}
 async function handleSubmit() {
   errors.value = {}
 
@@ -309,6 +311,18 @@ async function handleSubmit() {
     }
   }
 }
+
+onMounted(() => {
+  loadData()
+
+  // Set first category to open by default after a short delay
+  setTimeout(() => {
+    if (groupedSpecifications.value.length > 0) {
+      const firstCategory = groupedSpecifications.value[0].name
+      accordionState.value[firstCategory] = true
+    }
+  }, 500)
+})
 </script>
 
 <template>
