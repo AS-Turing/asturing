@@ -22,7 +22,7 @@ export async function useApiFetch(endpoint: string, options: RequestInit = {}) {
         ...(token && { Authorization: `Bearer ${token.value}` }),
     }
 
-    const response = await fetch(`${baseUrl}${endpoint}`, {
+    const response: Response = await fetch(`${baseUrl}${endpoint}`, {
         ...options,
         headers: {
             ...defautHeader,

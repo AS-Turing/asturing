@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import FormSpecification from '@/components/form/FormSpecification.vue';
 import FileUploadForm from '@/components/FileUploadForm.vue';
 import {SpecificationBook} from "../types/specificationBook";
+import {ApiResponse} from "../types/apiResponse";
 
 // Interface for file information
 
@@ -31,7 +32,7 @@ async function fetchFiles() {
   error.value = null;
   
   try {
-    const response = await useApiFetch('/api/specifications')
+    const response: ApiResponse<SpecificationBook[]> = await useApiFetch('/api/specifications')
 
     if (response.success) {
       specificationBooks.value = response.data

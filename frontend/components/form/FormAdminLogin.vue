@@ -25,9 +25,12 @@ function validateField(value: string): string | null {
 }
 
 async function login(password: string): Promise<boolean> {
+  const config = useRuntimeConfig()
+  const baseUrl = config.public.apiBaseUrl
+
   try {
     const fingerprint = await getFigerprint();
-    const response = await fetch('http://backend.localhost:8000/api/auth', {
+    const response: Response = await fetch(`${baseUrl}/api/auth`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

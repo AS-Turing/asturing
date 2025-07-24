@@ -53,9 +53,11 @@ final class SpecificationsController extends AbstractController
     public function getQuestions(SpecificationRepository $specificationRepository): JsonResponse
     {
         $specificationList = $specificationRepository->findAll();
+
         return $this->json([
             'success' => true,
-            'data' => $this->serializer->serialize($specificationList, 'json', $this->serializerContextBuilder->buildSerializerContext())
+            'data' => json_decode($this->serializer->serialize($specificationList, 'json',
+                $this->serializerContextBuilder->buildSerializerContext()), true)
         ]);
     }
 }

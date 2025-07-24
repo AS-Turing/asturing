@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 final class FileController extends AbstractController
 {
 
-    #[Route('/file/upload/cdc/{filename}', name: 'app_file_show', methods: ['GET'])]
+    #[Route('/file/download/cdc/{filename}', name: 'app_file_show', methods: ['GET'])]
     public function show(string $filename, KernelInterface $kernel): BinaryFileResponse | JsonResponse
     {
         $path = $kernel->getProjectDir() . '/upload/cdc/' . $filename;
@@ -25,5 +25,11 @@ final class FileController extends AbstractController
         }
 
         return new BinaryFileResponse($path);
+    }
+
+    #[Route('/file/upload/{filename}', name: 'app_file_upload', methods: ['GET'])]
+    public function upload(string $filename, KernelInterface $kernel): BinaryFileResponse | JsonResponse
+    {
+
     }
 }
