@@ -77,7 +77,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "frontend/.output/public/*"
           target: "/home/asturiq/www/frontend"
-          strip_components: 3
+          strip_components: 2
 
       - name: 🚀 Deploy backend via SCP
         uses: appleboy/scp-action@v0.1.4
