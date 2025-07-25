@@ -75,6 +75,9 @@ jobs:
       - name: ⏬ Checkout
         uses: actions/checkout@v3
 
+      - name: 📂 Debug
+        run: ls -al frontend/.output/public
+
       - name: 🚀 Deploy frontend via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -84,9 +87,6 @@ jobs:
           source: "frontend/.output/public/*"
           target: "/home/asturiq/www/frontend"
           strip_components: 3
-
-      - name: 📂 Debug
-        run: ls -al frontend/.output/public
 
       - name: 🚀 Deploy backend via SCP
         uses: appleboy/scp-action@v0.1.4
