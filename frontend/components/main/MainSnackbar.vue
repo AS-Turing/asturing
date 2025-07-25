@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { GlobalNotification } from '~/types/notification'
+import type { GlobalNotification } from '../../types/notification'
+import { useNotifications } from '../../.nuxt/imports'
 
 const props = defineProps<{
   notification: GlobalNotification

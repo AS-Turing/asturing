@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import {SpecificationQuestion} from "../../types/SpecificationQuestion";
-import {ApiResponse} from "../../types/apiResponse";
+import { ApiResponse } from '../../types/apiResponse'
+import { Specification } from '../../data/specifications'
+import { SpecificationQuestion } from '../../types/SpecificationQuestion'
+import { useApiFetch } from '../../.nuxt/imports'
 
 type FormData = Record<string, any>
 const form = ref<FormData>({})
 const errors = ref<FormData>({})
 const accordionState = ref<Record<string, boolean>>({})
-const specifications = ref<Specification[]>([]);
+const specifications = ref<Specification[]>([])
 const isLoading = ref(false)
 const apiError = ref<string | null>(null)
 
@@ -29,15 +31,12 @@ async function loadData() {
     }
     
     try {
-      // Parse the JSON string in the data field
-      const parsedData = JSON.parse(data)
-      
-      if (!Array.isArray(parsedData)) {
+      if (!Array.isArray(data)) {
         throw new Error('Format de données invalide')
       }
       
       // Transform the data to match the expected structure
-      const transformedData = parsedData.map((item: any) => {
+      const transformedData = data.map((item: any) => {
         // Convert category from object to string (category name)
         const categoryName = item.category?.name || 'Autre'
         
@@ -51,12 +50,12 @@ async function loadData() {
             pattern: item.pattern,
             min: item.min,
             max: item.max,
-            errorMessage: item.errorMessage
+            errorMessage: item.errorMessage,
           },
           tooltip: item.tooltip,
           category: categoryName,
           order: item.displayOrder || 0,
-          options: item.typeOptions // Rename typeOptions to options
+          options: item.typeOptions, // Rename typeOptions to options
         }
       })
       
@@ -136,7 +135,7 @@ async function generateStructuredPdfWithJsPdf() {
       const logoBase64 = await loadImageAsBase64('/images/logo.png')
       doc.addImage(logoBase64, 'PNG', 10, currentY, 50, 15)
     } catch (error) {
-      console.warn("Impossible de charger le logo:", error)
+      console.warn('Impossible de charger le logo:', error)
       // Continue without logo
     }
 
@@ -174,8 +173,8 @@ async function generateStructuredPdfWithJsPdf() {
       const rows = fields.map(field => {
         const rawValue = form.value[field.id]
         const value = Array.isArray(rawValue)
-            ? rawValue.join(', ')
-            : rawValue?.toString().trim() || '(non renseigné)'
+          ? rawValue.join(', ')
+          : rawValue?.toString().trim() || '(non renseigné)'
         return [field.label, value]
       })
 
@@ -204,7 +203,7 @@ async function generateStructuredPdfWithJsPdf() {
         margin: { left: 10, right: 10 },
         didDrawPage: (data) => {
           currentY = data.cursor.y + 10
-        }
+        },
       })
     }
 
@@ -213,11 +212,11 @@ async function generateStructuredPdfWithJsPdf() {
     doc.setTextColor(120)
     doc.setFont('helvetica', 'italic')
     doc.text(
-        'Ce document a été généré automatiquement via AS-Turing.fr à partir des réponses fournies par le client dans le formulaire.\n' +
+      'Ce document a été généré automatiquement via AS-Turing.fr à partir des réponses fournies par le client dans le formulaire.\n' +
         'Il constitue une base de discussion et de cadrage du projet, sans valeur contractuelle sauf mention contraire.',
-        10,
-        285,
-        { maxWidth: 190 }
+      10,
+      285,
+      { maxWidth: 190 },
     )
 
     // Save the PDF
@@ -225,7 +224,7 @@ async function generateStructuredPdfWithJsPdf() {
     
     return true
   } catch (error) {
-    console.error("Erreur lors de la génération du PDF:", error)
+    console.error('Erreur lors de la génération du PDF:', error)
     throw error
   }
 }
@@ -258,7 +257,7 @@ function validateField(field: any, value: any): string | null {
     // Min/max validation for number values
     if (typeof value === 'number') {
       if (
-          (field.validation.min !== null && field.validation.min !== undefined && value < field.validation.min) ||
+        (field.validation.min !== null && field.validation.min !== undefined && value < field.validation.min) ||
           (field.validation.max !== null && field.validation.max !== undefined && value > field.validation.max)
       ) {
         return field.validation.errorMessage || 'Valeur hors limites.'
@@ -276,7 +275,7 @@ async function uploadFile(file: any) {
     headers: {
       'Content-Type': 'multipart/form-data',
       'Accept': 'application/json',
-    }
+    },
   })
 
   if (!response.success) {
@@ -299,15 +298,15 @@ async function handleSubmit() {
   if (Object.keys(errors.value).length === 0) {
     try {
       await generateStructuredPdfWithJsPdf()
-      console.log("PDF généré avec succès : ", form.value)
+      console.log('PDF généré avec succès : ', form.value)
     } catch (error) {
-      console.error("Erreur lors de la génération du PDF :", error)
+      console.error('Erreur lors de la génération du PDF :', error)
     }
   } else {
     try {
       console.warn('❌ Erreurs :', errors.value)
     } catch (error) {
-      console.error("Erreur lors de la génération du PDF :", error)
+      console.error('Erreur lors de la génération du PDF :', error)
     }
   }
 }
@@ -353,20 +352,20 @@ onMounted(() => {
     <!-- Form content -->
     <form v-else @submit.prevent="handleSubmit" class="space-y-6">
       <div
-          v-for="(category, index) in groupedSpecifications"
-          :key="index"
-          class="border rounded"
+        v-for="(category, index) in groupedSpecifications"
+        :key="index"
+        class="border rounded"
       >
         <!-- Catégorie (header) -->
         <button
-            type="button"
-            class="w-full text-left bg-gray-100 px-4 py-3 font-semibold text-lg hover:bg-gray-200 transition"
-            @click="toggleCategory(category.name)"
+          type="button"
+          class="w-full text-left bg-gray-100 px-4 py-3 font-semibold text-lg hover:bg-gray-200 transition"
+          @click="toggleCategory(category.name)"
         >
           {{ category.name }}
           <span class="float-right">
-          {{ accordionState[category.name] ? '▲' : '▼' }}
-        </span>
+            {{ accordionState[category.name] ? '▲' : '▼' }}
+          </span>
         </button>
 
         <!-- Questions (body) -->
@@ -380,36 +379,36 @@ onMounted(() => {
 
             <!-- Text, Email, Number, Date -->
             <input
-                v-if="['text', 'email', 'number', 'date', 'tel'].includes(field.type)"
-                :id="field.id"
-                :type="field.type"
-                v-model="form[field.id]"
-                :placeholder="field.placeholder"
-                class="w-full p-2 border rounded"
+              v-if="['text', 'email', 'number', 'date', 'tel'].includes(field.type)"
+              :id="field.id"
+              :type="field.type"
+              v-model="form[field.id]"
+              :placeholder="field.placeholder"
+              class="w-full p-2 border rounded"
             />
 
             <!-- Textarea -->
             <textarea
-                v-if="field.type === 'textarea'"
-                :id="field.id"
-                v-model="form[field.id]"
-                :placeholder="field.placeholder"
-                class="w-full p-2 border rounded"
-                rows="5"
+              v-if="field.type === 'textarea'"
+              :id="field.id"
+              v-model="form[field.id]"
+              :placeholder="field.placeholder"
+              class="w-full p-2 border rounded"
+              rows="5"
             ></textarea>
 
             <!-- Select -->
             <select
-                v-if="field.type === 'select'"
-                :id="field.id"
-                v-model="form[field.id]"
-                class="w-full p-2 border rounded"
+              v-if="field.type === 'select'"
+              :id="field.id"
+              v-model="form[field.id]"
+              class="w-full p-2 border rounded"
             >
               <option disabled value="">{{ field.placeholder }}</option>
               <option
-                  v-for="option in field.options"
-                  :key="option.value"
-                  :value="option.value"
+                v-for="option in field.options"
+                :key="option.value"
+                :value="option.value"
               >
                 {{ option.label }}
               </option>
@@ -418,14 +417,14 @@ onMounted(() => {
             <!-- Checkbox -->
             <div v-if="field.type === 'checkbox'" class="flex flex-col gap-1">
               <label
-                  v-for="option in field.options"
-                  :key="option.value"
-                  class="flex items-center space-x-2"
+                v-for="option in field.options"
+                :key="option.value"
+                class="flex items-center space-x-2"
               >
                 <input
-                    type="checkbox"
-                    :value="option.value"
-                    v-model="form[field.id]"
+                  type="checkbox"
+                  :value="option.value"
+                  v-model="form[field.id]"
                 />
                 <span>{{ option.label }}</span>
               </label>
@@ -434,15 +433,15 @@ onMounted(() => {
             <!-- Radio -->
             <div v-if="field.type === 'radio'" class="flex flex-col gap-1">
               <label
-                  v-for="option in field.options"
-                  :key="option.value"
-                  class="flex items-center space-x-2"
+                v-for="option in field.options"
+                :key="option.value"
+                class="flex items-center space-x-2"
               >
                 <input
-                    type="radio"
-                    :name="field.id"
-                    :value="option.value"
-                    v-model="form[field.id]"
+                  type="radio"
+                  :name="field.id"
+                  :value="option.value"
+                  v-model="form[field.id]"
                 />
                 <span>{{ option.label }}</span>
               </label>
@@ -456,8 +455,8 @@ onMounted(() => {
         </div>
       </div>
       <button
-          type="submit"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded"
+        type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded"
       >
         Envoyer
       </button>

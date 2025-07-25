@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import getFigerprint from "../../../utils/fingerprint";
+import getFigerprint from '../../../utils/fingerprint'
 
 const fingerprint = ref<string>('')
 const requestStatus = ref<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -11,7 +11,7 @@ async function postFingerprint(): Promise<void> {
   const baseUrl = config.public.apiBaseUrl
 
   try {
-    requestStatus.value = 'loading';
+    requestStatus.value = 'loading'
     statusMessage.value = 'Envoi de l\'empreinte en cours...'
 
     const response: Response = await fetch(`${baseUrl}/api/fingerprint`, {
@@ -19,17 +19,17 @@ async function postFingerprint(): Promise<void> {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ fingerprint: fingerprint.value })
-    });
+      body: JSON.stringify({ fingerprint: fingerprint.value }),
+    })
 
     const data = await response.json()
 
     if (!response.ok || !data.success) {
-      requestStatus.value = 'error';
+      requestStatus.value = 'error'
       statusMessage.value = data.error || 'Une erreur est survenue lors de l\'envoi de l\'empreinte'
       console.error('Erreur de l\'API :', data)
     } else {
-      requestStatus.value = 'success';
+      requestStatus.value = 'success'
       statusMessage.value = data.message || 'Empreinte envoyée avec succès'
       console.log('Succès:', data)
     }

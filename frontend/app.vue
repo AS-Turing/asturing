@@ -9,6 +9,6 @@
 useHead({
   htmlAttrs: {
     lang: 'fr',
-  }
+  },
 })
 </script>

@@ -22,6 +22,4 @@ export interface TypeOption {
 export interface Category {
     id: number
     name: string
-    Specification: any[]
-    specification: any[]
 }

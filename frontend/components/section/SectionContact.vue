@@ -31,7 +31,7 @@ async function sendMail(event: Event) {
 
     if (response.ok) {
       console.log('Message envoyé !', text)
-      notifySuccess("Votre message a bien été transmis avec succès !");
+      notifySuccess('Votre message a bien été transmis avec succès !')
       mailContent.value = {
         firstname: '',
         lastname: '',
@@ -42,7 +42,7 @@ async function sendMail(event: Event) {
       }
     } else {
       console.error('Erreur lors de l’envoi :', text)
-      notifyError("Une erreur est survenue, veuillez réessayer ou nous contacter directement.")
+      notifyError('Une erreur est survenue, veuillez réessayer ou nous contacter directement.')
     }
   } catch (err) {
     console.error('Erreur réseau :', err)
@@ -53,12 +53,12 @@ async function sendMail(event: Event) {
 <template>
   <section class="bg-white dark:bg-gray-900 py-8 md:py-16 md:px-4 sm:px-8">
     <div
-        ref="formRef"
-        :class="[
-          'transition-all duration-1000 ease-out transform mx-auto relative z-10',
-          showForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        ]"
-        class="max-w-4xl p-6 md:p-12 rounded-2xl border border-gray-200 dark:bg-primary"
+      ref="formRef"
+      :class="[
+        'transition-all duration-1000 ease-out transform mx-auto relative z-10',
+        showForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      ]"
+      class="max-w-4xl p-6 md:p-12 rounded-2xl border border-gray-200 dark:bg-primary"
     >
       <div id="contact-form" class="text-center mb-12">
         <h2 class="text-4xl sm:text-5xl font-bold text-primary dark:text-white mb-4 underline dark:decoration-secondary underline-offset-8">
@@ -119,8 +119,8 @@ async function sendMail(event: Event) {
         <div class="sm:col-span-2 mt-6 flex justify-center"
              :class="['transition-all duration-700 ease-out transform opacity-0 translate-y-4', showForm ? 'opacity-100 translate-y-0 delay-[600ms]' : '']">
           <button
-              @click="sendMail"
-              class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
+            @click="sendMail"
+            class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
              text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
              dark:text-primary dark:bg-secondary dark:hover:text-secondary dark:hover:bg-primary dark:border-gray-700
              hover:scale-105 transition-all duration-700 ease-in-out transform focus:ring-4 focus:ring-gray-100 hover:cursor-pointer"

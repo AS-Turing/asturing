@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const skills = [
-  { title: "HTML", level: 90 },
-  { title: "CSS", level: 80 },
-  { title: "JavaScript", level: 85 },
-  { title: "Vue.js", level: 70 },
-  { title: "TailwindCSS", level: 75 }
-];
+  { title: 'HTML', level: 90 },
+  { title: 'CSS', level: 80 },
+  { title: 'JavaScript', level: 85 },
+  { title: 'Vue.js', level: 70 },
+  { title: 'TailwindCSS', level: 75 },
+]
 </script>
 
 <template>
@@ -17,9 +17,9 @@ const skills = [
 
       <div class="space-y-8">
         <div
-            v-for="skill in skills"
-            :key="skill.title"
-            class="space-y-2"
+          v-for="skill in skills"
+          :key="skill.title"
+          class="space-y-2"
         >
           <div class="flex justify-between items-center">
             <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white">
@@ -31,8 +31,8 @@ const skills = [
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
             <div
-                class="bg-secondary h-3 transition-all duration-700 ease-in-out"
-                :style="{ width: skill.level + '%' }"
+              class="bg-secondary h-3 transition-all duration-700 ease-in-out"
+              :style="{ width: skill.level + '%' }"
             ></div>
           </div>
         </div>

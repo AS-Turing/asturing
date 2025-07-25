@@ -1,4 +1,4 @@
-import type { GlobalNotification } from '~/types/notification'
+import type { GlobalNotification } from '../types/notification'
 import { nanoid } from 'nanoid'
 
 const notifications = ref<GlobalNotification[]>([])

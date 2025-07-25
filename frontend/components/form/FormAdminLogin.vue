@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import getFigerprint from "../../utils/fingerprint";
+import getFigerprint from '../../utils/fingerprint'
+import { useRuntimeConfig } from 'nuxt/app'
 
 const router = useRouter()
 
 // Form data and validation
 const form = ref({
-  password: ''
+  password: '',
 })
 
 
 const errors = ref({
-  password: ''
+  password: '',
 })
 
 // Validation function
@@ -29,32 +30,32 @@ async function login(password: string): Promise<boolean> {
   const baseUrl = config.public.apiBaseUrl
 
   try {
-    const fingerprint = await getFigerprint();
+    const fingerprint = await getFigerprint()
     const response: Response = await fetch(`${baseUrl}/api/auth`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ password, fingerprint })
-    });
+      body: JSON.stringify({ password, fingerprint }),
+    })
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Erreur de l\'API :', errorData); // Cela affichera { error: "Invalid credentials" }
-      errors.value.password = errorData.error || 'Une erreur est survenue.';
-      return false;
+      const errorData = await response.json()
+      console.error('Erreur de l\'API :', errorData) // Cela affichera { error: "Invalid credentials" }
+      errors.value.password = errorData.error || 'Une erreur est survenue.'
+      return false
 
     }
 
-    const data = await response.json();
-    localStorage.setItem('token', data.token);
+    const data = await response.json()
+    localStorage.setItem('token', data.token)
 
-    return true;
+    return true
   } catch (error) {
     // Capture des exceptions, ex. problème réseau ou syntaxe JSON invalide
-    console.error('Erreur lors de la requête fetch:', error);
-    errors.value.password = 'Impossible de se connecter au serveur.';
-    return false;
+    console.error('Erreur lors de la requête fetch:', error)
+    errors.value.password = 'Impossible de se connecter au serveur.'
+    return false
   }
 }async function handleSubmit() {
   // Reset errors
@@ -93,7 +94,7 @@ async function login(password: string): Promise<boolean> {
           type="password"
           v-model="form.password"
           placeholder="Votre mot de passe"
-          class="w-full p-2 border rounded"
+          class="w-full p-2 border rounded dark:text-black"
         />
         <p v-if="errors.password" class="text-sm text-red-600 mt-1">
           {{ errors.password }}

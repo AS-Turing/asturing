@@ -4,7 +4,7 @@ useSeoMeta({
   description: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.',
   ogUrl: 'https://www.as-turing.fr/engagements',
   ogTitle: 'Mes engagements',
-  ogDescription: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.'
+  ogDescription: 'Nos valeurs, notre éthique et nos engagements pour un numérique responsable.',
 })
 </script>
 
@@ -12,7 +12,7 @@ useSeoMeta({
   <section class="bg-white dark:bg-gray-900 py-16 px-4 sm:px-8 text-primary dark:text-white">
     <div class="max-w-6xl mx-auto">
       <h1 
-          class="text-4xl sm:text-5xl font-bold mb-8 underline underline-offset-8 dark:decoration-secondary dark:decoration-secondary-offset-8 text-center">
+        class="text-4xl sm:text-5xl font-bold mb-8 underline underline-offset-8 dark:decoration-secondary dark:decoration-secondary-offset-8 text-center">
         Charte d'engagement client — AS-Turing
       </h1>
 

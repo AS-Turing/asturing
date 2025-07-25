@@ -5,7 +5,7 @@ const props = defineProps({
   type: String,
   content: Array,
 })
-const displayedText = ref("")
+const displayedText = ref('')
 const typingSpeed = 80
 const pauseBetweenTexts = 1000
 
@@ -16,7 +16,7 @@ const typeText = async (texts: any[]) => {
     for (let i = 0; i < texts.length; i++) {
       const text = texts[i]
 
-      displayedText.value = ""
+      displayedText.value = ''
 
       for (let j = 0; j < text.length; j++) {
         displayedText.value += text[j]
@@ -42,7 +42,7 @@ onMounted(() => {
 
 <template>
   <span
-      class="max-w-3xl mb-4 text-xl font-extrabold md:text-2xl xl:text-3xl tracking-tight text-white leading-relaxed">
+    class="max-w-3xl mb-4 text-xl font-extrabold md:text-2xl xl:text-3xl tracking-tight text-white leading-relaxed">
     Envie {{ displayedText }}
   </span>
 </template>

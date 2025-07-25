@@ -4,7 +4,7 @@ useSeoMeta({
   description: 'Consultez les conditions générales de vente d’AS-Turing : cadre juridique, modalités de prestation, paiement, responsabilité et propriété intellectuelle.',
   ogUrl: 'https://www.as-turing.fr/conditions-generales-de-ventes',
   ogTitle: 'CGV - AS-Turing',
-  ogDescription: 'Toutes les informations légales sur les prestations proposées par AS-Turing. Lisez nos conditions de vente, garanties et responsabilités.'
+  ogDescription: 'Toutes les informations légales sur les prestations proposées par AS-Turing. Lisez nos conditions de vente, garanties et responsabilités.',
 })
 </script>
 

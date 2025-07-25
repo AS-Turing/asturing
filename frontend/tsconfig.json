@@ -39,7 +39,6 @@
     "types",
     "imports.d.ts",
     ".nuxt/types/**/*.d.ts",
-    ".nuxt/types/imports.d.ts",
     ".nuxt/types/imports.d.ts"
   ],
   "exclude": [
