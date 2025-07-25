@@ -55,16 +55,16 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
+          extensions: pdo, pdo_mysql
 
       - name: 📦 Install Composer dependencies
-        working-directory: ./backend
-        run: composer install --no-dev --optimize-autoloader --no-scripts
+        run: |
+          curl -sS https://getcomposer.org/installer | php
+          sudo mv composer.phar /usr/local/bin/composer
 
-  #     - name: ⚙️ Warmup Symfony cache (disabled due to DB)
-  #       working-directory: ./backend
-  #       run: |
-  #         php bin/console cache:clear
-  #         php bin/console cache:warmup
+      - name: 📦 Install Composer dependencies (prod)
+        working-directory: ./backend
+        run: composer install --no-dev --optimize-autoloader
 
   deploy:
     name: 🚀 Deploy to OVH
