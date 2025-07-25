@@ -9,8 +9,7 @@ jobs:
   build_front:
     name: 🔧 Build Nuxt Static
     runs-on: ubuntu-latest
-    outputs:
-      frontend_path: ${{ steps.set_output.outputs.frontend_path }}
+
     steps:
       - name: ⏬ Checkout
         uses: actions/checkout@v3
@@ -23,27 +22,25 @@ jobs:
       - name: 📥 Install pnpm
         run: npm install -g pnpm
 
-      - name: 📦 Install dependencies
+      - name: 📦 Install frontend dependencies
         working-directory: ./frontend
         run: pnpm install
 
-      - name: ⚙️ Setup Nuxt env
+      - name: ⚙️ Setup Nuxt .env
         working-directory: ./frontend
-        run: echo "API_BASE_URL=https://www.as-turing.fr/api" >> .env
+        run: echo "API_BASE_URL=https://www.as-turing.fr/api" > .env
 
       - name: 🛠 Generate static site
         working-directory: ./frontend
         run: pnpm run generate
 
-      - name: 📦 Store build path
-        id: set_output
-        run: echo "frontend_path=frontend/.output/public" >> $GITHUB_OUTPUT
+      - name: 🧪 Verify build output
+        run: ls -la frontend/.output/public
 
   build_back:
     name: 🔧 Build Symfony Backend
     runs-on: ubuntu-latest
-    outputs:
-      backend_path: ${{ steps.set_output.outputs.backend_path }}
+
     steps:
       - name: ⏬ Checkout
         uses: actions/checkout@v3
@@ -53,30 +50,24 @@ jobs:
         with:
           php-version: 8.2
 
-      - name: 📦 Install Composer deps
+      - name: 📦 Install Composer dependencies
         working-directory: ./backend
         run: composer install --no-dev --optimize-autoloader --no-scripts
 
-#      - name: ⚙️ Cache warmup
-#        working-directory: ./backend
-#        run: |
-#          php bin/console cache:clear
-#          php bin/console cache:warmup
-
-      - name: 📦 Store backend path
-        id: set_output
-        run: echo "backend_path=backend" >> $GITHUB_OUTPUT
+  #     - name: ⚙️ Warmup Symfony cache (disabled due to DB)
+  #       working-directory: ./backend
+  #       run: |
+  #         php bin/console cache:clear
+  #         php bin/console cache:warmup
 
   deploy:
     name: 🚀 Deploy to OVH
     needs: [build_front, build_back]
     runs-on: ubuntu-latest
+
     steps:
       - name: ⏬ Checkout
         uses: actions/checkout@v3
-
-      - name: 📂 Debug
-        run: ls -al frontend/.output/public
 
       - name: 🚀 Deploy frontend via SCP
         uses: appleboy/scp-action@v0.1.4
