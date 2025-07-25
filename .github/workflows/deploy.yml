@@ -62,7 +62,7 @@ jobs:
 
       - name: 📦 Install Composer deps
         working-directory: ./backend
-        run: composer install --no-dev --optimize-autoloader
+        run: composer install --no-dev --optimize-autoloader --no-scripts
 
       - name: ⚙️ Cache warmup
         working-directory: ./backend
