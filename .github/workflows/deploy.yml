@@ -57,14 +57,18 @@ jobs:
           php-version: 8.2
           extensions: pdo, pdo_mysql
 
-      - name: 📦 Install Composer dependencies
-        run: |
-          curl -sS https://getcomposer.org/installer | php
-          sudo mv composer.phar /usr/local/bin/composer
-
-      - name: 📦 Install Composer dependencies (prod)
+      - name: 📦 Install Composer dependencies (no scripts)
         working-directory: ./backend
-        run: composer install --no-dev --optimize-autoloader
+        run: composer install --no-dev --optimize-autoloader --no-scripts
+
+      - name: 📦 Upload backend artifact (including vendor)
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-build
+          path: |
+            backend
+            !backend/var
+            !backend/tests
 
   deploy:
     name: 🚀 Deploy to OVH
@@ -81,13 +85,19 @@ jobs:
           name: frontend-build
           path: frontend/.output/public
 
-      - name: 🔍 Check Nuxt output
+      - name: 📥 Download backend build
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-build
+          path: backend
+
+      - name: 🔍 Check frontend output
         run: |
           if [ ! -d frontend/.output/public ]; then
-            echo "❌ Build output not found!"
+            echo "❌ Frontend output not found!"
             exit 1
           fi
-          echo "✅ Build output exists:"
+          echo "✅ Frontend output exists:"
           ls -la frontend/.output/public
 
       - name: 🚀 Deploy frontend via SCP
