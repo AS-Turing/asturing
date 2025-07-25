@@ -42,8 +42,8 @@ useSeoMeta({
     </div>
     <div class="text-center mt-12">
       <NuxtLink
-          to="/contact"
-          class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
+        to="/contact"
+        class="group inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg
              text-secondary bg-primary hover:text-primary hover:bg-secondary border-secondary hover:border-primary
              dark:text-primary dark:bg-secondary dark:hover:text-secondary dark:hover:bg-primary dark:border-gray-700    dark:focus:ring-gray-800
              hover:scale-105 transition-all duration-700 ease-in-out transform focus:ring-4 focus:ring-gray-100 hover:cursor-pointer"

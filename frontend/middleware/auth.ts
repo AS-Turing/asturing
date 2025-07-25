@@ -1,15 +1,15 @@
-import {useUserStore} from "../store/user";
+import {useUserStore} from '../store/user'
 
-export default defineNuxtRouteMiddleware((to, from) => {
-    const user = useUserStore()
+export default defineNuxtRouteMiddleware(() => {
+  const user = useUserStore()
 
-    if(!user.token) {
-        const token = localStorage.getItem('token')
+  if(!user.token) {
+    const token: string | null = localStorage.getItem('token')
 
-        if(token) {
-            user.setToken(token)
-        } else {
-            return navigateTo('/admin')
-        }
+    if(token) {
+      user.setToken(token)
+    } else {
+      return navigateTo('/admin')
     }
+  }
 })

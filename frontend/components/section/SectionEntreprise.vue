@@ -6,7 +6,7 @@
 <template>
   <section class="py-8 md:py-16 md:px-4 sm:px-8">
     <div
-        class="max-w-4xl p-6 md:p-12 rounded-2xl border border-gray-200 bg-white dark:bg-primary  mx-auto relative z-10">
+      class="max-w-4xl p-6 md:p-12 rounded-2xl border border-gray-200 bg-white dark:bg-primary  mx-auto relative z-10">
       <div class="text-center mb-8">
         <h2 class="text-4xl sm:text-5xl font-bold text-primary dark:text-white mb-4 underline dark:decoration-secondary underline-offset-8">Informations d’entreprise</h2>
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
@@ -28,7 +28,7 @@
         <p><strong>Domaine et activités :</strong><br> Programmation, conseil et autres activités informatiques</p>
       </div>
       <div
-          class="flex flex-col items-center md:items-center space-y-4 text-center md:text-right text-gray-800 dark:text-white mt-20">
+        class="flex flex-col items-center md:items-center space-y-4 text-center md:text-right text-gray-800 dark:text-white mt-20">
         <h2 class="text-xl font-semibold">Suivez-moi</h2>
         <div class="flex gap-6 justify-center md:justify-end">
           <NuxtLink to="https://github.com/Chadowww" aria-label="GitHub" class="hover:text-secondary">

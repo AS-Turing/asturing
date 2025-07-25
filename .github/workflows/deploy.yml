@@ -1,0 +1,99 @@
+name: 🚀 Deploy Nuxt & Symfony to OVH
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_front:
+    name: 🔧 Build Nuxt Static
+    runs-on: ubuntu-latest
+    outputs:
+      frontend_path: ${{ steps.set_output.outputs.frontend_path }}
+    steps:
+      - name: ⏬ Checkout
+        uses: actions/checkout@v3
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📥 Install pnpm
+        run: npm install -g pnpm
+
+      - name: 📦 Install dependencies
+        working-directory: ./frontend
+        run: pnpm install
+
+      - name: ⚙️ Setup Nuxt env
+        working-directory: ./frontend
+        run: echo "API_BASE_URL=https://www.as-turing.fr/api" >> .env
+
+      - name: 🛠 Generate static site
+        working-directory: ./frontend
+        run: pnpm run generate
+
+      - name: 📦 Store build path
+        id: set_output
+        run: echo "frontend_path=frontend/.output/public" >> $GITHUB_OUTPUT
+
+  build_back:
+    name: 🔧 Build Symfony Backend
+    runs-on: ubuntu-latest
+    outputs:
+      backend_path: ${{ steps.set_output.outputs.backend_path }}
+    steps:
+      - name: ⏬ Checkout
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+
+      - name: 📦 Install Composer deps
+        working-directory: ./backend
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: ⚙️ Cache warmup
+        working-directory: ./backend
+        run: |
+          php bin/console cache:clear
+          php bin/console cache:warmup
+
+      - name: 📦 Store backend path
+        id: set_output
+        run: echo "backend_path=backend" >> $GITHUB_OUTPUT
+
+  deploy:
+    name: 🚀 Deploy to OVH
+    needs: [build_front, build_back]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⏬ Checkout
+        uses: actions/checkout@v3
+
+      - name: 🚀 Deploy frontend via SCP
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "frontend/.output/public/*"
+          target: "/home/asturiq/www/frontend"
+          strip_components: 3
+
+      - name: 🚀 Deploy backend via SCP
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "backend/*"
+          target: "/home/asturiq/www/backend"
+          strip_components: 1
+
+      - name: ✅ Done
+        run: echo "🎉 Deployed to OVH!"

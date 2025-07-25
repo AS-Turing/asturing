@@ -6,7 +6,7 @@ useSeo()
 <template>
   <SectionHero />
   <SectionService />
-<!--  <SectionSkill />-->
+  <!--  <SectionSkill />-->
   <SectionAbout />
   <SectionContact />
 </template>

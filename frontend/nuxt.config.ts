@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+ 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   colorMode: {

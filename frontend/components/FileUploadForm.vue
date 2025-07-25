@@ -1,91 +1,91 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const emit = defineEmits(['upload-success', 'upload-error']);
+const emit = defineEmits(['upload-success', 'upload-error'])
 
-const file = ref<File | null>(null);
-const uploading = ref(false);
-const error = ref<string | null>(null);
-const dragActive = ref(false);
+const file = ref<File | null>(null)
+const uploading = ref(false)
+const error = ref<string | null>(null)
+const dragActive = ref(false)
 
 // Handle file selection
 function handleFileChange(event: Event) {
-  const input = event.target as HTMLInputElement;
+  const input = event.target as HTMLInputElement
   if (input.files && input.files.length > 0) {
-    file.value = input.files[0];
-    error.value = null;
+    file.value = input.files[0]
+    error.value = null
   }
 }
 
 // Handle file drop
 function handleDrop(event: DragEvent) {
-  event.preventDefault();
-  dragActive.value = false;
+  event.preventDefault()
+  dragActive.value = false
   
   if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
-    file.value = event.dataTransfer.files[0];
-    error.value = null;
+    file.value = event.dataTransfer.files[0]
+    error.value = null
   }
 }
 
 // Handle drag events
 function handleDragOver(event: DragEvent) {
-  event.preventDefault();
-  dragActive.value = true;
+  event.preventDefault()
+  dragActive.value = true
 }
 
 function handleDragLeave() {
-  dragActive.value = false;
+  dragActive.value = false
 }
 
 // Upload file
 async function uploadFile() {
   if (!file.value) {
-    error.value = 'Veuillez sélectionner un fichier';
-    return;
+    error.value = 'Veuillez sélectionner un fichier'
+    return
   }
   
   // Check file type
-  const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+  const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
   if (!allowedTypes.includes(file.value.type)) {
-    error.value = 'Type de fichier non autorisé. Types autorisés: PDF, DOC, DOCX';
-    return;
+    error.value = 'Type de fichier non autorisé. Types autorisés: PDF, DOC, DOCX'
+    return
   }
   
   // Check file size (10MB max)
-  const maxSize = 10 * 1024 * 1024;
+  const maxSize = 10 * 1024 * 1024
   if (file.value.size > maxSize) {
-    error.value = 'La taille du fichier dépasse la limite de 10MB';
-    return;
+    error.value = 'La taille du fichier dépasse la limite de 10MB'
+    return
   }
   
-  uploading.value = true;
-  error.value = null;
+  uploading.value = true
+  error.value = null
   
   try {
-    const formData = new FormData();
-    formData.append('file', file.value);
+    const formData = new FormData()
+    formData.append('file', file.value)
     
     const response = await fetch('/php-api/upload-cdc.php', {
       method: 'POST',
-      body: formData
-    });
+      body: formData,
+    })
     
-    const result = await response.json();
+    const result = await response.json()
     
     if (result.success) {
-      file.value = null;
-      emit('upload-success', result.file);
+      file.value = null
+      emit('upload-success', result.file)
     } else {
-      error.value = result.message || 'Erreur lors de l\'upload';
-      emit('upload-error', error.value);
+      error.value = result.message || 'Erreur lors de l\'upload'
+      emit('upload-error', error.value)
     }
   } catch (err) {
-    error.value = 'Erreur de connexion au serveur';
-    emit('upload-error', error.value);
-    console.error('Error uploading file:', err);
+    error.value = 'Erreur de connexion au serveur'
+    emit('upload-error', error.value)
+    console.error('Error uploading file:', err)
   } finally {
-    uploading.value = false;
+    uploading.value = false
   }
 }
 </script>

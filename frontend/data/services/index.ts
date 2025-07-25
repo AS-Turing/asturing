@@ -7,10 +7,10 @@ import { integrationSolutionsExternes } from './integration'
 import { maintenanceSupport } from './maintenance'
 
 export default [
-    conseilAccompagnementDigital,
-    creationSiteInternet,
-    developpementSurMesure,
-    formationVulgarisation,
-    integrationSolutionsExternes,
-    maintenanceSupport,
+  conseilAccompagnementDigital,
+  creationSiteInternet,
+  developpementSurMesure,
+  formationVulgarisation,
+  integrationSolutionsExternes,
+  maintenanceSupport,
 ]
