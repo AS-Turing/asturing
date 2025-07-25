@@ -36,12 +36,12 @@ jobs:
 
       - name: 🧪 Verify build output
         run: ls -la frontend/.output/public
-        
-      - name: 📦 Upload Nuxt build artifacts
-        uses: actions/upload-artifact@v3
+
+      - name: 📦 Upload frontend artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: nuxt-build
-          path: frontend/.output/public/
+          name: frontend-build
+          path: frontend/.output/public
 
   build_back:
     name: 🔧 Build Symfony Backend
@@ -75,10 +75,10 @@ jobs:
       - name: ⏬ Checkout
         uses: actions/checkout@v3
 
-      - name: 📥 Download Nuxt build artifacts
-        uses: actions/download-artifact@v3
+      - name: 📥 Download frontend artifact
+        uses: actions/download-artifact@v4
         with:
-          name: nuxt-build
+          name: frontend-build
           path: frontend/.output/public
 
       - name: 🔍 Check Nuxt output
