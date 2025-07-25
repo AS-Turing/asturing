@@ -28,7 +28,7 @@ jobs:
 
       - name: ⚙️ Setup Nuxt .env
         working-directory: ./frontend
-        run: echo "API_BASE_URL=https://www.as-turing.fr/" > .env
+        run: echo "API_BASE_URL=https://www.as-turing.fr" > .env
 
       - name: 🛠 Generate static site
         working-directory: ./frontend
