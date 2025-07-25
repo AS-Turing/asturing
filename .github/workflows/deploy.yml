@@ -69,6 +69,15 @@ jobs:
       - name: ⏬ Checkout
         uses: actions/checkout@v3
 
+      - name: 🔍 Check Nuxt output
+        run: |
+          if [ ! -d frontend/.output/public ]; then
+            echo "❌ Build output not found!"
+            exit 1
+          fi
+          echo "✅ Build output exists:"
+          ls -la frontend/.output/public
+
       - name: 🚀 Deploy frontend via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
