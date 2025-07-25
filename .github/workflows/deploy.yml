@@ -85,6 +85,9 @@ jobs:
           target: "/home/asturiq/www/frontend"
           strip_components: 3
 
+      - name: 📂 Debug
+        run: ls -al frontend/.output/public
+
       - name: 🚀 Deploy backend via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
