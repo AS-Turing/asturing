@@ -92,38 +92,38 @@
           <li class="lg:w-4/12 text-center">
             <ul>
               <li>
-                <NuxtLink to="/localisation/developpeur-web-libourne"
+                <NuxtLink to="/localisation/libourne"
                           class="hover:underline font-medium hover:dark:text-secondary"
                           title="Développeur Web freelance à Libourne">
-                  Développeur Web à Libourne
+                  Création site Web à Libourne
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/localisation/developpeur-web-bordeaux"
+                <NuxtLink to="/localisation/bordeaux"
                           class="hover:underline font-medium hover:dark:text-secondary"
                           title="Développeur Web freelance à Bordeaux">
-                  Développeur Web à Bordeaux
+                  Création site Web à Bordeaux
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/localisation/developpeur-web-saint-emilion"
+                <NuxtLink to="/localisation/saint-emilion"
                           class="hover:underline font-medium hover:dark:text-secondary"
                           title="Développeur Web freelance à Saint-Émilion">
-                  Développeur Web à Saint-Émilion
+                  Création site Web à Saint-Émilion
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/localisation/developpeur-web-sauveterre-de-guyenne"
+                <NuxtLink to="/localisation/sauveterre-de-guyenne"
                           class="hover:underline font-medium hover:dark:text-secondary"
                           title="Développeur Web freelance à Sauveterre-de-Guyenne">
-                  Développeur Web à Sauveterre-de-Guyenne
+                  Création site Web à Sauveterre-de-Guyenne
                 </NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/localisation/developpeur-web-creon"
+                <NuxtLink to="/localisation/creon"
                           class="hover:underline font-medium hover:dark:text-secondary"
                           title="Développeur Web freelance à Créon">
-                  Développeur Web à Créon
+                  Création site Web à Créon
                 </NuxtLink>
               </li>
             </ul>
