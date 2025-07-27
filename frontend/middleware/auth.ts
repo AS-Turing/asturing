@@ -1,15 +1,22 @@
-import {useUserStore} from '../store/user'
+import { defineNuxtRouteMiddleware, navigateTo } from '#app'
+import { useUserStore } from '../store/user'
+import type { RouteLocationNormalized } from 'vue-router'
 
-export default defineNuxtRouteMiddleware(() => {
+export default defineNuxtRouteMiddleware((to: RouteLocationNormalized) => {
   const user = useUserStore()
 
-  if(!user.token) {
-    const token: string | null = localStorage.getItem('token')
-
-    if(token) {
+  if (!user.token) {
+    const token = localStorage.getItem('token')
+    if (token) {
       user.setToken(token)
-    } else {
-      return navigateTo('/admin')
     }
+  }
+
+  if (!user.isAuthenticated && to.path !== '/admin') {
+    return navigateTo('/admin')
+  }
+
+  if (user.isAuthenticated && (to.path === '/admin' || to.path === '/admin/')) {
+    return navigateTo('/admin/dashboard')
   }
 })

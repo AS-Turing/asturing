@@ -25,7 +25,6 @@ export const useUserStore = defineStore('user', () => {
         token.value = saved
         startTokenTimer()
       } else {
-        console.log('token expired')
         localStorage.removeItem('token')
       }
     }
