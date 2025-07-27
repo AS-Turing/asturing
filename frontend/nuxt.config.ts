@@ -78,24 +78,38 @@ export default defineNuxtConfig({
       changefreq: 'monthly',
       priority: 0.8,
     },
-    routes: async () => [
-      '/',
-      '/services',
-      '/services/creation-site-internet',
-      '/services/conseil-accompagnement-digital',
-      '/services/developpement-sur-mesure',
-      '/services/maintenance-support-technique',
-      '/services/integration-solutions-externes',
-      '/services/formation-vulgarisation',
-      '/about',
-      '/contact',
-      '/conditions-generales-de-ventes',
-      '/engagements',
+    exclude: [
+      '/admin/**',
+    ],
+    routes: async () => {
+      return [
+        { url: '/', changefreq: 'monthly', priority: 0.9 },
+        { url: '/services', changefreq: 'monthly', priority: 0.8 },
+        { url: '/services/creation-site-internet', changefreq: 'monthly', priority: 0.7 },
+        { url: '/services/conseil-accompagnement-digital', changefreq: 'monthly', priority: 0.7 },
+        { url: '/services/developpement-sur-mesure', changefreq: 'monthly', priority: 0.7 },
+        { url: '/services/maintenance-support-technique', changefreq: 'monthly', priority: 0.7 },
+        { url: '/services/integration-solutions-externes', changefreq: 'monthly', priority: 0.7 },
+        { url: '/services/formation-vulgarisation', changefreq: 'monthly', priority: 0.7 },
+        { url: '/about', changefreq: 'monthly', priority: 0.8 },
+        { url: '/contact', changefreq: 'monthly', priority: 0.8 },
+        { url: '/conditions-generales-de-ventes', changefreq: 'monthly', priority: 0.8 },
+        { url: '/engagements', changefreq: 'monthly', priority: 0.8 },
+        { url: '/localisation/libourne', changefreq: 'monthly', priority: 0.7 },
+        { url: '/localisation/bordeaux', changefreq: 'monthly', priority: 0.7 },
+        { url: '/localisation/saint-emilion', changefreq: 'monthly', priority: 0.7 },
+        { url: '/localisation/creon', changefreq: 'monthly', priority: 0.7 },
+        { url: '/localisation/sauveterre-de-guyenne', changefreq: 'monthly', priority: 0.7 },
+      ]
+    },
+  },
+  generate: {
+    routes: [
       '/localisation/libourne',
       '/localisation/bordeaux',
       '/localisation/saint-emilion',
       '/localisation/creon',
-      '/localisation/sauveterre-de-guyenne'
+      '/localisation/sauveterre-de-guyenne',
     ]
   },
   ssr: false,
