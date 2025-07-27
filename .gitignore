@@ -41,3 +41,6 @@ api/vendor
 api/var
 public/upload/*
 frontend/.pnpm-store/
+*/*.sql
+*.zip
+data.json

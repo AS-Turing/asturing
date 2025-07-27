@@ -18,6 +18,7 @@ class UserFixtures extends Fixture
         $user->setUpdatedAt(new \DateTimeImmutable('now'));
         $user->setPassword('$argon2id$v=19$m=65536,t=4,p=1$TTdDdHFBVlFDWUlYOWtWNg$tWqWT78fMcvqfrHXULz3S9ldUIzye2axX7P50fFsyf0');
         $user->setFingerprint('a5e27be0cbdaf64c132b6088da22549c');
+        $user->setRequiresValidation(false);
         $manager->persist($user);
 
         $manager->flush();
