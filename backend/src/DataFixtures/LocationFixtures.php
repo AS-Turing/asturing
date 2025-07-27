@@ -13,7 +13,7 @@ class LocationFixtures extends Fixture
         [
             'city' => 'Libourne',
             'slug' => 'libourne',
-            'title' => 'Développeur Web à Libourne | Création site internet | AS-Turing',
+            'title' => 'Création site Web à Libourne | Création site internet | AS-Turing',
             'description' => 'Développeur web freelance à Libourne, je conçois des sites sur mesure pour les commerçants, artisans et entreprises locales. Misez sur un site performant et bien référencé.',
             'og_title' => 'Création de site internet à Libourne - AS-Turing',
             'og_description' => 'Création de site vitrine ou e-commerce à Libourne. Accompagnement technique, design moderne, visibilité locale assurée.',
@@ -23,7 +23,7 @@ class LocationFixtures extends Fixture
         [
             'city' => 'Bordeaux',
             'slug' => 'bordeaux',
-            'title' => 'Développeur Web à Bordeaux | Site internet moderne & SEO | AS-Turing',
+            'title' => 'Création site Web à Bordeaux | Site internet moderne & SEO | AS-Turing',
             'description' => 'Vous êtes une startup, PME ou indépendant à Bordeaux ? Je développe des sites web rapides, scalables et orientés conversion.',
             'og_title' => 'Développement web à Bordeaux - Freelance NuxtJS | AS-Turing',
             'og_description' => 'Sites internet professionnels à Bordeaux : performance, UX, référencement local et conseils sur mesure.',
@@ -33,7 +33,7 @@ class LocationFixtures extends Fixture
         [
             'city' => 'Saint-Émilion',
             'slug' => 'saint-emilion',
-            'title' => 'Développeur Web à Saint-Émilion | Site vitrine & sur-mesure | AS-Turing',
+            'title' => 'Création site Web à Saint-Émilion | Site vitrine & sur-mesure | AS-Turing',
             'description' => 'Artisans, vignerons, restaurateurs : donnez une vitrine digitale à votre activité à Saint-Émilion avec un site rapide, élégant et facile à mettre à jour.',
             'og_title' => 'Création de site web à Saint-Émilion - AS-Turing',
             'og_description' => 'Développement de sites sur mesure pour les acteurs touristiques et viticoles à Saint-Émilion. Optimisé pour le référencement local.',
@@ -43,7 +43,7 @@ class LocationFixtures extends Fixture
         [
             'city' => 'Créon',
             'slug' => 'creon',
-            'title' => 'Développeur Web à Créon | Site internet performant | AS-Turing',
+            'title' => 'Création site Web à Créon | Site internet performant | AS-Turing',
             'description' => 'Création de site web à Créon pour artisans, commerçants et indépendants. Sites modernes, rapides et bien référencés.',
             'og_title' => 'Création site internet à Créon - AS-Turing',
             'og_description' => 'Développeur freelance à Créon : site vitrine, site sur-mesure, SEO local et accompagnement personnalisé.',
@@ -53,7 +53,7 @@ class LocationFixtures extends Fixture
         [
             'city' => 'Sauveterre-de-Guyenne',
             'slug' => 'sauveterre-de-guyenne',
-            'title' => 'Développeur Web à Sauveterre-de-Guyenne | Création de site internet | AS-Turing',
+            'title' => 'Création site Web à Sauveterre-de-Guyenne | Création de site internet | AS-Turing',
             'description' => 'Développement de site internet à Sauveterre-de-Guyenne : vitrine, e-commerce ou sur-mesure. Qualité, rapidité et référencement local.',
             'og_title' => 'Site internet à Sauveterre-de-Guyenne - AS-Turing',
             'og_description' => "Besoin d'un site web à Sauveterre-de-Guyenne ? Je conçois des solutions efficaces et adaptées à vos besoins.",

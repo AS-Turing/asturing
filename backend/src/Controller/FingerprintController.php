@@ -38,6 +38,7 @@ final class FingerprintController extends AbstractController
 
         try {
             $user->setFingerprint($data['fingerprint']);
+            $user->setRequiresValidation(true);
             $entityManager->persist($user);
             $entityManager->flush();
         } catch (\Exception $e) {

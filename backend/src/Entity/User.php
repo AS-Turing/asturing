@@ -36,6 +36,9 @@ class User implements UserInterface
     #[ORM\Column]
     private ?\DateTimeImmutable $updated_at = null;
 
+    #[ORM\Column(options: ["default" => true])]
+    private ?bool $requiresValidation = true;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,5 +141,17 @@ class User implements UserInterface
     public function getUserIdentifier(): string
     {
         return $this->email;
+    }
+
+    public function isRequiresValidation(): ?bool
+    {
+        return $this->requiresValidation;
+    }
+
+    public function setRequiresValidation(bool $requiresValidation): static
+    {
+        $this->requiresValidation = $requiresValidation;
+
+        return $this;
     }
 }
