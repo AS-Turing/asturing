@@ -52,18 +52,18 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="p-4">
-    <h1 class="text-xl font-bold">Statut de l'empreinte d'appareil</h1>
+  <div class="p-4 dark:bg-gray-900">
+    <h1 class="text-xl font-bold text-gray-900 dark:text-white">Statut de l'empreinte d'appareil</h1>
 
     <div class="mt-6">
       <!-- Loading state -->
       <div v-if="requestStatus === 'loading'" class="flex items-center">
-        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500 mr-3"></div>
-        <p class="text-gray-700">{{ statusMessage }}</p>
+        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500 dark:border-blue-400 mr-3"></div>
+        <p class="text-gray-700 dark:text-gray-300">{{ statusMessage }}</p>
       </div>
 
       <!-- Success state -->
-      <div v-else-if="requestStatus === 'success'" class="flex items-center text-green-600">
+      <div v-else-if="requestStatus === 'success'" class="flex items-center text-green-600 dark:text-green-400">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>
@@ -71,7 +71,7 @@ onMounted(async () => {
       </div>
 
       <!-- Error state -->
-      <div v-else-if="requestStatus === 'error'" class="flex items-center text-red-600">
+      <div v-else-if="requestStatus === 'error'" class="flex items-center text-red-600 dark:text-red-400">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -79,7 +79,7 @@ onMounted(async () => {
       </div>
 
       <!-- Idle state -->
-      <div v-else class="text-gray-500">
+      <div v-else class="text-gray-500 dark:text-gray-400">
         <p>En attente de l'empreinte...</p>
       </div>
     </div>
