@@ -20,6 +20,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import LocalisationPage from '@/components/localisation/LocalisationPage.vue'
+import {Localisation} from "../../types/localisation";
+import {ApiResponse} from "../../types/apiResponse";
 
 const route = useRoute()
 const slug = route.params.slug as string
@@ -29,7 +31,7 @@ const { data: response } = await useFetch(`/api/location/${slug}`, {
   baseURL: process.env.API_BASE_URL || 'http://backend.localhost:8000',
 })
 
-const location = response.value?.success ? response.value.data : null
+const location: Localisation = response.value?.success ? response.value.data : null
 
 // Map API response to match the expected format for LocalisationPage
 const locationData = computed(() => {

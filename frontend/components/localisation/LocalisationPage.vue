@@ -1,15 +1,9 @@
 <script setup lang="ts">
 import { useSeoMeta } from 'nuxt/app'
+import { Localisation } from '../../types/localisation'
 
 const props = defineProps<{
-  data: {
-    ville: string
-    title: string
-    description: string
-    ogTitle: string
-    ogDescription: string
-    ogUrl: string
-  }
+  data: Localisation
 }>()
 
 useSeoMeta({
@@ -23,16 +17,13 @@ useSeoMeta({
 
 <template>
   <div class="px-4 py-10 sm:px-10 max-w-5xl mx-auto space-y-12 text-primary dark:text-white">
-    <h1 class="text-4xl font-bold ">Développeur Web à {{ props.data.ville }}</h1>
-    <p class="text-lg">
-      Vous êtes une entreprise, une association ou un indépendant basé à {{ props.data.ville }} ? Je vous accompagne
-      dans la création ou la refonte de votre site web. Performance, design, référencement local : faisons rayonner votre activité en ligne.
-    </p>
+    <h1 class="text-4xl font-bold ">Création site internet à {{ props.data.ville }}</h1>
+    <p class="text-lg">{{props.data.description}}</p>
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">Ce que je vous propose</h2>
       <ul class="list-disc list-inside   space-y-2">
-        <li>Sites vitrines performants avec NuxtJS</li>
+        <li>Création de vos site, Wordpress, Nuxt, Prestashop.</li>
         <li>Design responsive (mobile/tablette)</li>
         <li>Optimisation du référencement local (Google My Business, balises SEO...)</li>
         <li>Formation à l'utilisation du site</li>
@@ -42,7 +33,7 @@ useSeoMeta({
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">Formules</h2>
-      <div class="grid sm:grid-cols-2 gap-6">
+      <div class="grid sm:grid-cols-3 gap-6">
         <div class="border rounded-xl p-4 shadow-sm">
           <h3 class="text-xl font-bold">Pack Essentiel</h3>
           <ul class="list-disc list-inside text-sm mt-2 space-y-1">
@@ -58,6 +49,15 @@ useSeoMeta({
             <li>Site complet jusqu’à 6 pages</li>
             <li>Blog ou section actualité</li>
             <li>SEO avancé</li>
+          </ul>
+          <p class="mt-4 font-semibold text-secondary">À partir de 1 190€ TTC</p>
+        </div>
+        <div class="border rounded-xl p-4 shadow-sm ">
+          <h3 class="text-xl font-bold">Sur mesure</h3>
+          <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+            <li>Nombre de pages illimité</li>
+            <li>Développement spécifique (formulaires avancés, animations...)</li>
+            <li>Maintenance 3 mois offerte</li>
           </ul>
           <p class="mt-4 font-semibold text-secondary">À partir de 1 190€ TTC</p>
         </div>
