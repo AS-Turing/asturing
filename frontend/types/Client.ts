@@ -1,4 +1,4 @@
-import {SpecificationBook} from "./specificationBook";
+import { SpecificationBook } from './specificationBook'
 
 export interface Client {
     id: number

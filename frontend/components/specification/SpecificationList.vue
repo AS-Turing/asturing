@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import CoreFileUploadForm from "../core/CoreFileUploadForm.vue";
+import CoreFileUploadForm from '../core/CoreFileUploadForm.vue'
 import { SpecificationBook } from '../types/specificationBook'
 import { ApiResponse } from '../types/apiResponse'
-import SpecificationForm from "./SpecificationForm.vue";
+import SpecificationForm from './SpecificationForm.vue'
 
 const specificationBooks = ref<SpecificationBook[]>([])
 const loading = ref(true)

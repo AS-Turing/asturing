@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import FormAdminLogin from "../../components/form/FormAdminLogin.vue";
-import {definePageMeta} from "../../.nuxt/imports";
-import {useUserStore} from "../../store/user";
+import FormAdminLogin from '../../components/form/FormAdminLogin.vue'
+import { definePageMeta } from '../../.nuxt/imports'
+import { useUserStore } from '../../store/user'
 
 definePageMeta({
   middleware: 'auth',
