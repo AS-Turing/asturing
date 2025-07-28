@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useApiFetch } from '../../utils/useApiFetch'
-import {Client} from "../../types/Client";
+import { Client } from '../../types/Client'
 
 const emit = defineEmits(['submit-success'])
 
@@ -18,7 +18,7 @@ const form: Client = ref({
   address: '',
   zipCode: '',
   country: '',
-  webSite: ''
+  webSite: '',
 })
 
 const errors = ref({
@@ -33,7 +33,7 @@ const errors = ref({
   address: '',
   zipCode: '',
   country: '',
-  webSite: ''
+  webSite: '',
 })
 
 const isSubmitting = ref(false)
@@ -115,8 +115,8 @@ async function handleSubmit() {
       method: 'POST',
       body: JSON.stringify(form.value),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
 
     if (response.success) {

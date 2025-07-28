@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import { useUserStore } from '../../../store/user'
 import { definePageMeta } from '../../../.nuxt/imports'
-import SpecificationList from "../../../components/specification/SpecificationList.vue";
-import ClientList from "../../../components/client/ClientList.vue";
+import SpecificationList from '../../../components/specification/SpecificationList.vue'
+import ClientList from '../../../components/client/ClientList.vue'
 
 definePageMeta({
   middleware: 'auth',
@@ -20,7 +20,7 @@ const activeMenuItem = ref('specification')
 // Menu items
 const menuItems = [
   { id: 'specification', label: 'Cahier des charges', icon: '📝' },
-  {id: 'client', label: 'Client', icon: '📝'}
+  { id: 'client', label: 'Client', icon: '📝' },
 ]
 
 // Function to set active menu item
