@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import CdcList from '@/components/CdcList.vue'
 import { useUserStore } from '../../../store/user'
 import { definePageMeta } from '../../../.nuxt/imports'
+import SpecificationList from "../../../components/specification/SpecificationList.vue";
+import ClientList from "../../../components/client/ClientList.vue";
 
 definePageMeta({
   middleware: 'auth',
@@ -14,11 +15,12 @@ onMounted(() => {
 })
 
 // Active menu item tracking
-const activeMenuItem = ref('cahier-des-charges')
+const activeMenuItem = ref('specification')
 
 // Menu items
 const menuItems = [
-  { id: 'cahier-des-charges', label: 'Cahier des charges', icon: '📝' },
+  { id: 'specification', label: 'Cahier des charges', icon: '📝' },
+  {id: 'client', label: 'Client', icon: '📝'}
 ]
 
 // Function to set active menu item
@@ -58,8 +60,11 @@ function setActiveMenuItem(id) {
       <!-- Main content area -->
       <main class="flex-1 p-6 bg-gray-50 dark:bg-gray-900/50 transition-colors">
         <!-- Dynamic content based on active menu item -->
-        <div v-if="activeMenuItem === 'cahier-des-charges'" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow dark:shadow-gray-800/20 transition-colors">
-          <CdcList />
+        <div v-if="activeMenuItem === 'specification'" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow dark:shadow-gray-800/20 transition-colors">
+          <SpecificationList />
+        </div>
+        <div v-if="activeMenuItem === 'client'" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow dark:shadow-gray-800/20 transition-colors">
+          <ClientList />
         </div>
       </main>
     </div>
