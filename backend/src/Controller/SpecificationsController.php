@@ -2,14 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Specification;
 use App\Repository\SpecificationBookRepository;
 use App\Repository\SpecificationRepository;
 use App\Service\SerializerContextBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 
 
@@ -53,11 +51,11 @@ final class SpecificationsController extends AbstractController
     public function getQuestions(SpecificationRepository $specificationRepository): JsonResponse
     {
         $specificationList = $specificationRepository->findAll();
-        dump($specificationList);die;
+
         return $this->json([
             'success' => true,
             'data' => json_decode($this->serializer->serialize($specificationList, 'json',
-                $this->serializerContextBuilder->buildSerializerContext()), true)
+                $this->serializerContextBuilder->buildSerializerContext()), true, 512, JSON_THROW_ON_ERROR)
         ]);
     }
 }

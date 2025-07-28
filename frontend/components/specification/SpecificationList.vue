@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import FormSpecification from '@/components/form/FormSpecification.vue'
-import FileUploadForm from '@/components/FileUploadForm.vue'
+import CoreFileUploadForm from "../core/CoreFileUploadForm.vue";
 import { SpecificationBook } from '../types/specificationBook'
 import { ApiResponse } from '../types/apiResponse'
+import SpecificationForm from "./SpecificationForm.vue";
 
-// Interface for file information
-
-
-// State
 const specificationBooks = ref<SpecificationBook[]>([])
 const loading = ref(true)
 const error = ref<string | null>(null)
@@ -186,12 +182,12 @@ onMounted(() => {
         <div class="p-6">
           <!-- Form tab -->
           <div v-if="activeTab === 'form'">
-            <FormSpecification />
+            <SpecificationForm />
           </div>
           
           <!-- Upload tab -->
           <div v-if="activeTab === 'upload'">
-            <FileUploadForm @upload-success="handleUploadSuccess" />
+            <CoreFileUploadForm @upload-success="handleUploadSuccess" />
           </div>
         </div>
       </div>

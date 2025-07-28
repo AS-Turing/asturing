@@ -325,15 +325,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto dark:bg-gray-900">
     <!-- Loading state -->
     <div v-if="isLoading" class="flex justify-center items-center py-12">
-      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-      <span class="ml-3 text-gray-600">Chargement des questions...</span>
+      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 dark:border-blue-400"></div>
+      <span class="ml-3 text-gray-600 dark:text-gray-300">Chargement des questions...</span>
     </div>
     
     <!-- Error state -->
-    <div v-else-if="apiError" class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative my-6">
+    <div v-else-if="apiError" class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded relative my-6">
       <strong class="font-bold">Erreur !</strong>
       <span class="block sm:inline"> {{ apiError }}</span>
       <button 
@@ -346,7 +346,7 @@ onMounted(() => {
     
     <!-- Empty state -->
     <div v-else-if="!isLoading && specifications.length === 0" class="text-center py-12">
-      <p class="text-gray-500">Aucune question n'a été trouvée.</p>
+      <p class="text-gray-500 dark:text-gray-400">Aucune question n'a été trouvée.</p>
     </div>
     
     <!-- Form content -->
@@ -354,12 +354,12 @@ onMounted(() => {
       <div
         v-for="(category, index) in groupedSpecifications"
         :key="index"
-        class="border rounded"
+        class="border dark:border-gray-700 rounded"
       >
         <!-- Catégorie (header) -->
         <button
           type="button"
-          class="w-full text-left bg-gray-100 px-4 py-3 font-semibold text-lg hover:bg-gray-200 transition"
+          class="w-full text-left bg-gray-100 dark:bg-gray-800 px-4 py-3 font-semibold text-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition dark:text-white"
           @click="toggleCategory(category.name)"
         >
           {{ category.name }}
@@ -369,13 +369,13 @@ onMounted(() => {
         </button>
 
         <!-- Questions (body) -->
-        <div v-show="accordionState[category.name]" class="p-4 space-y-6 bg-white">
+        <div v-show="accordionState[category.name]" class="p-4 space-y-6 bg-white dark:bg-gray-900">
           <div v-for="field in category.fields" :key="field.id">
-            <label :for="field.id" class="block font-semibold mb-1">
+            <label :for="field.id" class="block font-semibold mb-1 dark:text-white">
               {{ field.label }}
-              <span v-if="field.required" class="text-red-500">*</span>
+              <span v-if="field.required" class="text-red-500 dark:text-red-400">*</span>
             </label>
-            <p v-if="field.tooltip" class="text-sm text-gray-500 mb-2">{{ field.tooltip }}</p>
+            <p v-if="field.tooltip" class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ field.tooltip }}</p>
 
             <!-- Text, Email, Number, Date -->
             <input
@@ -384,7 +384,7 @@ onMounted(() => {
               :type="field.type"
               v-model="form[field.id]"
               :placeholder="field.placeholder"
-              class="w-full p-2 border rounded"
+              class="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-400"
             />
 
             <!-- Textarea -->
@@ -393,7 +393,7 @@ onMounted(() => {
               :id="field.id"
               v-model="form[field.id]"
               :placeholder="field.placeholder"
-              class="w-full p-2 border rounded"
+              class="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:placeholder-gray-400"
               rows="5"
             ></textarea>
 
@@ -402,7 +402,7 @@ onMounted(() => {
               v-if="field.type === 'select'"
               :id="field.id"
               v-model="form[field.id]"
-              class="w-full p-2 border rounded"
+              class="w-full p-2 border rounded dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             >
               <option disabled value="">{{ field.placeholder }}</option>
               <option
@@ -425,8 +425,9 @@ onMounted(() => {
                   type="checkbox"
                   :value="option.value"
                   v-model="form[field.id]"
+                  class="dark:bg-gray-800 dark:border-gray-700"
                 />
-                <span>{{ option.label }}</span>
+                <span class="dark:text-gray-300">{{ option.label }}</span>
               </label>
             </div>
 
@@ -442,13 +443,14 @@ onMounted(() => {
                   :name="field.id"
                   :value="option.value"
                   v-model="form[field.id]"
+                  class="dark:bg-gray-800 dark:border-gray-700"
                 />
-                <span>{{ option.label }}</span>
+                <span class="dark:text-gray-300">{{ option.label }}</span>
               </label>
             </div>
 
             <!-- Validation Error -->
-            <p v-if="errors[field.id]" class="text-sm text-red-600 mt-1">
+            <p v-if="errors[field.id]" class="text-sm text-red-600 dark:text-red-400 mt-1">
               {{ errors[field.id] }}
             </p>
           </div>
@@ -456,7 +458,7 @@ onMounted(() => {
       </div>
       <button
         type="submit"
-        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded"
+        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded"
       >
         Envoyer
       </button>
