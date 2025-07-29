@@ -2,14 +2,15 @@
 import { useRoute } from 'vue-router'
 import LocalisationPage from '@/components/localisation/LocalisationPage.vue'
 import { Localisation } from '../../types/localisation'
+import {useRuntimeConfig} from "nuxt/app";
 
+const config = useRuntimeConfig()
 const route = useRoute()
 const slug = route.params.slug as string
+const baseUrl = config.public.apiBaseUrl
 
 // Fetch location data from API
-const { data: response } = await useFetch(`/api/location/${slug}`, {
-  baseURL: process.env.API_BASE_URL || 'http://backend.localhost:8000',
-})
+const { data: response } = await useFetch(`${baseUrl}/api/location/${slug}`)
 
 const location: Localisation = response.value?.success ? response.value.data : null
 
