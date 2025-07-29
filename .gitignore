@@ -44,3 +44,9 @@ frontend/.pnpm-store/
 */*.sql
 *.zip
 data.json
+
+# Fix prod
+/frontend/public/
+images
+index.html
+_nuxt
