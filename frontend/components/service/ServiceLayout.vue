@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Service } from '@/data/services'
+import {Service} from "../../types/services";
 
 const props = defineProps<{ service: Service }>()
 
@@ -35,7 +35,7 @@ useSeoMeta({
 
     <h2 class="text-xl font-semibold mt-8 mb-2">FAQ</h2>
     <div class="space-y-4">
-      <details v-for="item in service.faq" :key="item.question" class="border rounded p-3">
+      <details v-for="item in service.faqs" :key="item.question" class="border rounded p-3">
         <summary class="font-medium cursor-pointer">{{ item.question }}</summary>
         <p class="text-sm mt-2">{{ item.answer }}</p>
       </details>

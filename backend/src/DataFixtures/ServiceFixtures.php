@@ -76,7 +76,7 @@ class ServiceFixtures extends Fixture
             ]
         ],
         'maintenance' => [
-            'slug' => 'maintenance-support',
+            'slug' => 'maintenance-support-technique',
             'title' => 'Maintenance & support',
             'description' => "Un accompagnement continu pour garantir le bon fonctionnement, la sécurité et l'évolution de vos outils digitaux.",
             'microServices' => [

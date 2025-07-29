@@ -1,26 +1,35 @@
-export interface Tarification {
-    name: string
-    includes: string[]
-    price: string
-}
-
-export interface FAQ {
-    question: string
-    answer: string
-}
-
 export interface Service {
+    id: number
     slug: string
     title: string
     description: string
     microServices: string[]
-    prices: Tarification[]
-    faq: FAQ[]
-    seo: {
-        title: string,
-        description: string,
-        ogTitle: string,
-        ogDescription: string,
-        ogUrl: string,
-    }
+    prices: Price[]
+    faqs: Faq[]
+    seo: Seo
+}
+
+export interface Price {
+    id: number
+    name: string
+    includes: string[]
+    price: string
+    service: number
+}
+
+export interface Faq {
+    id: number
+    question: string
+    answer: string
+    service: number
+}
+
+export interface Seo {
+    id: number
+    title: string
+    description: string
+    ogTitle: string
+    ogDescription: string
+    ogUrl: string
+    service: number
 }

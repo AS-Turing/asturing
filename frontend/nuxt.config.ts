@@ -110,6 +110,12 @@ export default defineNuxtConfig({
       '/localisation/saint-emilion',
       '/localisation/creon',
       '/localisation/sauveterre-de-guyenne',
+      '/services/creation-site-internet',
+      '/services/conseil-accompagnement-digital',
+      '/services/developpement-sur-mesure',
+      '/services/maintenance-support-technique',
+      '/services/integration-solutions-externes',
+      '/services/formation-vulgarisation'
     ]
   },
   ssr: false,
