@@ -3,6 +3,7 @@ import { Client } from '../../types/Client'
 import { useApiFetch } from '../../utils/useApiFetch'
 import CoreFileUploadForm from '../core/CoreFileUploadForm.vue'
 import ClientDelete from './ClientDelete.vue'
+import ClientEdit from './ClientEdit.vue'
 
 const clients = ref<Client[]>()
 const loading = ref(true)
@@ -111,6 +112,8 @@ onMounted(() => {
               class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Site internet</th>
             <th
               class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"></th>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"></th>
           </tr>
         </thead>
         <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -144,7 +147,10 @@ onMounted(() => {
               <div class="text-sm text-gray-500 dark:text-gray-400">{{ client.webSite }}</div>
             </td>
             <td class="px-3 py-2 whitespace-nowrap">
-              <ClientDelete />
+              <ClientEdit  :client="client" />
+            </td>
+            <td class="px-3 py-2 whitespace-nowrap">
+              <ClientDelete  :client="client" />
             </td>
           </tr>
         </tbody>
