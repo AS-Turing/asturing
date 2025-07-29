@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 import { useApiFetch } from '../../utils/useApiFetch'
 import { Client } from '../../types/Client'
+const props = defineProps<{
+  client?: Client
+}>()
 
 const emit = defineEmits(['submit-success'])
 
@@ -109,10 +112,14 @@ async function handleSubmit() {
   }
 
   isSubmitting.value = true
+  const isUpdate = props.client !== null && props.client !== undefined
 
   try {
-    const response = await useApiFetch('/api/client', {
-      method: 'POST',
+    const url = isUpdate ? `/api/client/${props.client.id}` : '/api/client'
+    const method = isUpdate ? 'PUT' : 'POST'
+    
+    const response = await useApiFetch(url, {
+      method: method,
       body: JSON.stringify(form.value),
       headers: {
         'Content-Type': 'application/json',
@@ -123,27 +130,39 @@ async function handleSubmit() {
       submitSuccess.value = true
       emit('submit-success')
       
-      // Reset form after successful submission
-      Object.keys(form.value).forEach(key => {
-        form.value[key as keyof typeof form.value] = ''
-      })
+      // Only reset form after successful creation, not update
+      if (!isUpdate) {
+        Object.keys(form.value).forEach(key => {
+          form.value[key as keyof typeof form.value] = ''
+        })
+      }
     } else {
-      submitError.value = response.data || 'Une erreur est survenue lors de la création du client'
+      submitError.value = response.data || (isUpdate 
+        ? 'Une erreur est survenue lors de la mise à jour du client' 
+        : 'Une erreur est survenue lors de la création du client')
     }
   } catch (error) {
-    console.error('Error creating client:', error)
+    console.error(isUpdate ? 'Error updating client:' : 'Error creating client:', error)
     submitError.value = 'Erreur de connexion au serveur'
   } finally {
     isSubmitting.value = false
   }
 }
+
+onMounted(() => {
+  if (props.client !== null && props.client !== undefined) {
+    form.value = props.client
+  }
+})
+
 </script>
 
 <template>
   <div class="client-form">
     <!-- Success message -->
     <div v-if="submitSuccess" class="mb-6 bg-green-100 dark:bg-green-900/20 border border-green-400 dark:border-green-800 text-green-700 dark:text-green-400 px-4 py-3 rounded">
-      <p>Le client a été créé avec succès!</p>
+      <p v-if="props.client">Le client a été mis à jour avec succès!</p>
+      <p v-else>Le client a été créé avec succès!</p>
     </div>
 
     <!-- Error message -->
@@ -383,7 +402,12 @@ async function handleSubmit() {
           <span v-if="isSubmitting" class="mr-2">
             <div class="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white"></div>
           </span>
-          {{ isSubmitting ? 'Création en cours...' : 'Créer le client' }}
+          <template v-if="props.client">
+            {{ isSubmitting ? 'Mise à jour en cours...' : 'Mettre à jour le client' }}
+          </template>
+          <template v-else>
+            {{ isSubmitting ? 'Création en cours...' : 'Créer le client' }}
+          </template>
         </button>
       </div>
     </form>
