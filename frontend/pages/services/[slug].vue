@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import {useRoute} from "vue-router";
 import {Service} from "../../types/services";
+import {useRuntimeConfig} from "nuxt/app";
 
+const config = useRuntimeConfig()
 const route = useRoute()
+
+const baseUrl = config.public.apiBaseUrl
 const slug = route.params.slug as string
 
-const { data: response } = await useFetch(`/api/service/${slug}`, {
-  baseURL: process.env.API_BASE_URL || 'http://backend.localhost:8000',
-})
+const { data: response } = await useFetch(`${baseUrl}/api/service/${slug}`)
 
 const service: Service = response.value?.success ? response.value.data : null
 
