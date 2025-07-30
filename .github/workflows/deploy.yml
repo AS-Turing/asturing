@@ -1,4 +1,4 @@
-name: 🚀 Deploy Nuxt & Symfony to OVH
+name: Deploy Nuxt & Symfony to OVH (secure)
 
 on:
   push:
@@ -7,61 +7,61 @@ on:
 
 jobs:
   build_front:
-    name: 🔧 Build Nuxt Static
+    name: Build Nuxt Static
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⏬ Checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: 📦 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 📥 Install pnpm
+      - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: 📦 Install frontend dependencies
+      - name: Install frontend dependencies
         working-directory: ./frontend
         run: pnpm install
 
-      - name: ⚙️ Setup Nuxt .env
+      - name: Setup Nuxt .env
         working-directory: ./frontend
         run: echo "API_BASE_URL=https://www.as-turing.fr" > .env
 
-      - name: 🛠 Generate static site
+      - name: Generate static site
         working-directory: ./frontend
         run: pnpm run generate
 
-      - name: 🧪 Verify build output
+      - name: Verify build output
         run: ls -la frontend/.output/public
 
-      - name: 📦 Upload frontend artifact
+      - name: Upload frontend artifact
         uses: actions/upload-artifact@v4
         with:
           name: frontend-build
           path: frontend/.output/public
 
   build_back:
-    name: 🔧 Build Symfony Backend
+    name: Build Symfony Backend
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⏬ Checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: ⚙️ Setup PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
           extensions: pdo, pdo_mysql
 
-      - name: 📦 Install Composer dependencies (no scripts)
+      - name: Install Composer dependencies
         working-directory: ./backend
         run: composer install --no-dev --optimize-autoloader --no-scripts
 
-      - name: 📦 Upload backend artifact (including vendor)
+      - name: Upload backend artifact
         uses: actions/upload-artifact@v4
         with:
           name: backend-build
@@ -71,54 +71,46 @@ jobs:
             !backend/tests
 
   deploy:
-    name: 🚀 Deploy to OVH
+    name: Deploy to OVH (secure rsync)
     needs: [build_front, build_back]
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⏬ Checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: 📥 Download frontend artifact
+      - name: Download frontend artifact
         uses: actions/download-artifact@v4
         with:
           name: frontend-build
           path: frontend/.output/public
 
-      - name: 📥 Download backend build
+      - name: Download backend artifact
         uses: actions/download-artifact@v4
         with:
           name: backend-build
           path: backend
 
-      - name: 🔍 Check frontend output
+      - name: Setup SSH
         run: |
-          if [ ! -d frontend/.output/public ]; then
-            echo "❌ Frontend output not found!"
-            exit 1
-          fi
-          echo "✅ Frontend output exists:"
-          ls -la frontend/.output/public
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github-ci
+          chmod 600 ~/.ssh/github-ci
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: 🚀 Deploy frontend via SCP
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "frontend/.output/public/*"
-          target: "/home/asturiq/www/frontend"
-          strip_components: 2
+      - name: Deploy frontend via rsync
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
+            frontend/.output/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/frontend
 
-      - name: 🚀 Deploy backend via SCP
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "backend/*"
-          target: "/home/asturiq/www/backend"
-          strip_components: 1
+      - name: Deploy backend via rsync
+        run: |
+          rsync -az --delete \
+            --exclude="var/" \
+            --exclude=".env.local" \
+            -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
+            backend/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/backend
 
-      - name: ✅ Done
-        run: echo "🎉 Deployed to OVH!"
+      - name: Done
+        run: echo "Deployed to OVH!"
