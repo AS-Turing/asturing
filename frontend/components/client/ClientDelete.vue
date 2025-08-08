@@ -29,8 +29,6 @@ async function confirmDelete() {
   error.value = null
   
   try {
-    // Here you would add the actual API call to delete the client
-    // For example:
     await useApiFetch(`/api/client/${props.client.id}`, {
       method: 'DELETE',
     })
