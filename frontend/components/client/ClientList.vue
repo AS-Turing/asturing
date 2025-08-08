@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { Client } from '../../types/Client'
 import { useApiFetch } from '../../utils/useApiFetch'
 import CoreFileUploadForm from '../core/CoreFileUploadForm.vue'
 import ClientDelete from './ClientDelete.vue'
 import ClientEdit from './ClientEdit.vue'
+import { ApiResponse } from 'types/apiResponse.js'
 
 const clients = ref<Client[]>()
 const loading = ref(true)
@@ -30,7 +32,6 @@ async function fetchData() {
     loading.value = false
   }
 }
-
 function toggleModal() {
   showModal.value = !showModal.value
 }

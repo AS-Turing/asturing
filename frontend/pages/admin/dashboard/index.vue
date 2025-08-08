@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useUserStore } from '../../../store/user'
 import { definePageMeta } from '../../../.nuxt/imports'
 import SpecificationList from '../../../components/specification/SpecificationList.vue'
@@ -21,10 +21,11 @@ const activeMenuItem = ref('specification')
 const menuItems = [
   { id: 'specification', label: 'Cahier des charges', icon: '📝' },
   { id: 'client', label: 'Client', icon: '📝' },
+  { id: 'service', label: 'Service', icon: '🛠️' },
 ]
 
 // Function to set active menu item
-function setActiveMenuItem(id) {
+function setActiveMenuItem(id: string) {
   activeMenuItem.value = id
 }
 </script>
@@ -65,6 +66,9 @@ function setActiveMenuItem(id) {
         </div>
         <div v-if="activeMenuItem === 'client'" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow dark:shadow-gray-800/20 transition-colors">
           <ClientList />
+        </div>
+        <div v-if="activeMenuItem === 'service'" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow dark:shadow-gray-800/20 transition-colors">
+          <ServiceList />
         </div>
       </main>
     </div>
