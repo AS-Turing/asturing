@@ -1,4 +1,21 @@
 <script setup lang="ts">
+import { useRuntimeConfig } from 'nuxt/app'
+
+interface NavItem {
+  label: string
+  to: string
+  title?: string
+}
+
+const config = useRuntimeConfig()
+const baseUrl = config.public.apiBaseUrl
+
+const { data: footerResponse } = await useFetch(`${baseUrl}/api/navigation/footer`)
+
+const services: NavItem[] = footerResponse.value?.data?.services ?? []
+const mainLinks: NavItem[] = footerResponse.value?.data?.main ?? []
+const legalLinks: NavItem[] = footerResponse.value?.data?.legal ?? []
+const locationLinks: NavItem[] = footerResponse.value?.data?.locations ?? []
 </script>
 
 <template>
@@ -26,104 +43,37 @@
               Services
             </NuxtLink>
             <ul class="mt-1 space-y-1 text-sm ggroup-hover:block">
-              <li>
-                <NuxtLink to="/services/creation-site-internet"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Création de site internet">
-                  Création de site internet
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/services/conseil-accompagnement-digital"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Conseil & accompagnement digital">
-                  Conseil & accompagnement digital
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/services/developpement-sur-mesure"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Développement sur mesure">
-                  Développement sur mesure
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/services/maintenance-support-technique"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Maintenance & support technique">
-                  Maintenance & support technique
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/services/integration-solutions-externes"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Intégration de solutions externes">
-                  Intégration de solutions externes
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/services/formation-vulgarisation"
-                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" title="Formation et vulgarisation">
-                  Formation et vulgarisation
+              <li v-for="(s, i) in services" :key="i">
+                <NuxtLink :to="s.to"
+                          class="block px-2 py-1 rounded hover:underline hover:dark:text-secondary" :title="s.title || s.label">
+                  {{ s.label }}
                 </NuxtLink>
               </li>
             </ul>
           </li>
           <li class="lg:w-4/12 text-center">
-            <NuxtLink to="/about" class="hover:underline font-medium hover:dark:text-secondary" title="À propos">
-              À propos
-            </NuxtLink>
-          </li>
-          <li class="lg:w-4/12 text-center">
-            <NuxtLink to="/contact" class="hover:underline font-medium hover:dark:text-secondary" title="Contact">
-              Contact
-            </NuxtLink>
+            <template v-for="(item, idx) in mainLinks" :key="idx">
+              <NuxtLink :to="item.to" class="hover:underline font-medium hover:dark:text-secondary" :title="item.title || item.label">
+                {{ item.label }}
+              </NuxtLink>
+            </template>
           </li>
           <li class="lg:w-4/12 text-center">
             <ul>
-              <li>
-                <NuxtLink to="/conditions-generales-de-ventes"
-                          class="hover:underline font-medium hover:dark:text-secondary">
-                  Conditions générales de ventes
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/engagements" class="hover:underline font-medium hover:dark:text-secondary">
-                  La charte d'engagement d'AS-Turing
+              <li v-for="(item, idx) in legalLinks" :key="idx">
+                <NuxtLink :to="item.to" class="hover:underline font-medium hover:dark:text-secondary">
+                  {{ item.label }}
                 </NuxtLink>
               </li>
             </ul>
           </li>
           <li class="lg:w-4/12 text-center">
             <ul>
-              <li>
-                <NuxtLink to="/localisation/libourne"
+              <li v-for="(item, idx) in locationLinks" :key="idx">
+                <NuxtLink :to="item.to"
                           class="hover:underline font-medium hover:dark:text-secondary"
-                          title="Développeur Web freelance à Libourne">
-                  Création site Web à Libourne
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/localisation/bordeaux"
-                          class="hover:underline font-medium hover:dark:text-secondary"
-                          title="Développeur Web freelance à Bordeaux">
-                  Création site Web à Bordeaux
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/localisation/saint-emilion"
-                          class="hover:underline font-medium hover:dark:text-secondary"
-                          title="Développeur Web freelance à Saint-Émilion">
-                  Création site Web à Saint-Émilion
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/localisation/sauveterre-de-guyenne"
-                          class="hover:underline font-medium hover:dark:text-secondary"
-                          title="Développeur Web freelance à Sauveterre-de-Guyenne">
-                  Création site Web à Sauveterre-de-Guyenne
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="/localisation/creon"
-                          class="hover:underline font-medium hover:dark:text-secondary"
-                          title="Développeur Web freelance à Créon">
-                  Création site Web à Créon
+                          :title="item.title || item.label">
+                  {{ item.label }}
                 </NuxtLink>
               </li>
             </ul>

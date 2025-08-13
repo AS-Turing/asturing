@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useColorMode } from '../../.nuxt/imports'
 import { ref } from '../../.nuxt/imports'
+import { useRuntimeConfig } from 'nuxt/app'
 
 interface ServiceItem {
   label: string;
@@ -14,14 +15,15 @@ const colorMode = useColorMode()
 const mobileMenuOpen = ref<boolean>(false)
 const isOpen = ref<boolean>(false)
 
-const subServices: ServiceItem[] = [
-  { label: 'Création de site internet', href: '/services/creation-site-internet' },
-  { label: 'Conseil & accompagnement digital', href: '/services/conseil-accompagnement-digital' },
-  { label: 'Développement sur mesure', href: '/services/developpement-sur-mesure' },
-  { label: 'Maintenance & support technique', href: '/services/maintenance-support-technique' },
-  { label: 'Intégration de solutions externes', href: '/services/integration-solutions-externes' },
-  { label: 'Formation et vulgarisation', href: '/services/formation-vulgarisation' },
-]
+// Fetch dynamic services for menu
+const config = useRuntimeConfig()
+const baseUrl = config.public.apiBaseUrl
+
+const { data: servicesResponse } = await useFetch(`${baseUrl}/api/services/menu`)
+const subServices: ServiceItem[] = (servicesResponse.value?.success ? servicesResponse.value.data : []).map((s: { title: string; slug: string }) => ({
+  label: s.title,
+  href: `/services/${s.slug}`,
+}))
 
 const toggleMenu = (): void => {
   isOpen.value = !isOpen.value

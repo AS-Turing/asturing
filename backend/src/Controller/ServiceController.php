@@ -9,7 +9,6 @@ use App\Entity\Service;
 use App\Repository\ServiceRepository;
 use App\Service\EntityHydrator;
 use App\Service\SerializerContextBuilder;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -28,7 +27,7 @@ final class ServiceController extends AbstractController
     ){}
 
     #[Route('/services', name: 'get_services', methods: 'GET')]
-    public function index() {
+    public function index(): JsonResponse {
         $services = $this->serviceRepository->findAll();
         if (!$services) {
             return $this->json([
@@ -37,11 +36,26 @@ final class ServiceController extends AbstractController
             ]);
         }
 
-
         return $this->json([
             'success' => true,
             'data' => json_decode($this->serializer->serialize($services, 'json',
                 $this->serializerContextBuilder->buildSerializerContext()), true, 512, JSON_THROW_ON_ERROR)
+        ]);
+    }
+
+    #[Route('/services/menu', name: 'get_services_menu', methods: 'GET')]
+    public function menu(): JsonResponse {
+        $services = $this->serviceRepository->findAll();
+        $data = array_map(static function (Service $s) {
+            return [
+                'title' => $s->getTitle(),
+                'slug' => $s->getSlug(),
+            ];
+        }, $services);
+
+        return $this->json([
+            'success' => true,
+            'data' => $data,
         ]);
     }
 
@@ -70,12 +84,10 @@ final class ServiceController extends AbstractController
 
         $service = new Service();
 
-        // --- SEO (OneToOne) ---
         if (!empty($data['seo']) && is_array($data['seo'])) {
             $seo = new Seo();
             $this->entityHydrator->hydrate($data['seo'], $seo);
 
-            // établis la relation des deux côtés si nécessaire
             if (method_exists($seo, 'setService')) {
                 $seo->setService($service);
             }
@@ -83,30 +95,25 @@ final class ServiceController extends AbstractController
                 $service->setSeo($seo);
             }
 
-            // si pas de cascade persist sur Service->seo :
              $this->entityManager->persist($seo);
         }
 
-        // --- Prices (OneToMany) ---
         if (!empty($data['prices']) && is_array($data['prices'])) {
             foreach ($data['prices'] as $p) {
                 $price = new Price();
                 $this->entityHydrator->hydrate($p, $price);
 
-                // relation propriétaire
                 if (method_exists($price, 'setService')) {
                     $price->setService($service);
                 }
                 if (method_exists($service, 'addPrice')) {
-                    $service->addPrice($price); // ajoute dans la Collection<Price>
+                    $service->addPrice($price);
                 }
 
-                // si pas de cascade persist sur Service->prices :
                  $this->entityManager->persist($price);
             }
         }
 
-        // --- FAQs (OneToMany) ---
         if (!empty($data['faqs']) && is_array($data['faqs'])) {
             foreach ($data['faqs'] as $f) {
                 $faq = new Faq();
@@ -119,17 +126,14 @@ final class ServiceController extends AbstractController
                     $service->addFaq($faq);
                 }
 
-                // si pas de cascade persist :
                  $this->entityManager->persist($faq);
             }
         }
 
-        // --- Hydrate les champs simples du service (sans les relations) ---
         $serviceFields = $data;
         unset($serviceFields['prices'], $serviceFields['seo'], $serviceFields['faqs']);
         $this->entityHydrator->hydrate($serviceFields, $service);
 
-        // dd($service); // -> tu verras une Collection<Price> peuplée d'entités Price
 
         try {
             $this->entityManager->persist($service); // suffisant si cascade persist configurée
