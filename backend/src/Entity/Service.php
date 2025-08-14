@@ -101,6 +101,10 @@ class Service
         $this->prices = $prices;
     }
 
+    public function addPrice(Price $prices): static {
+        $this->prices->add($prices);
+        return $this;
+    }
     public function setMicroServices(?array $microServices): static
     {
         $this->microServices = $microServices;

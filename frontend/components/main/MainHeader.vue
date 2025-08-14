@@ -126,13 +126,13 @@ const leave = (el: HTMLElement, done: TransitionCallback): void => {
           <div
             v-if="isOpen"
             @mouseleave="closeMenu"
-            class="absolute mt-2 bg-white dark:bg-gray-800 shadow-lg rounded p-4 z-50"
+            class="absolute md:min-w-72 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded p-4 z-50"
           >
             <NuxtLink
               v-for="(item, index) in subServices"
               :key="index"
               :to="item.href"
-              class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 hover:underline hover:dark:text-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+              class="block md:min-w-72 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 hover:underline hover:dark:text-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
             >
               {{ item.label }}
             </NuxtLink>
