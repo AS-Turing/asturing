@@ -7,6 +7,8 @@ export interface Service {
     prices: Price[]
     faqs: Faq[]
     seo: Seo
+    img: string
+    icon: string
 }
 
 export interface Price {

@@ -1,80 +1,75 @@
 <script setup lang="ts">
-const items = [
-  {
-    title: 'Création de site internet',
-    icon: 'lucide:layout-template', // ou "mdi:web"
-    description: 'Voyons ensemble comment créer votre identité numérique.',
-    image: '/images/crea-web.png',
-    link: 'services/creation-site-internet',
-  },
-  {
-    title: 'Conseil & accompagnement digital',
-    icon: 'lucide:messages-square', // ou "mdi:account-question"
-    description: "Besoin d'aide sur votre site ou besoin d'un avis ? Parlons-en !",
-    image: '/images/cons-accomp.png',
-    link: 'services/conseil-accompagnement-digital',
-  },
-  {
-    title: 'Développement sur mesure',
-    icon: 'lucide:code-2', // ou "mdi:xml"
-    description: 'Un développement spécifique ? Un algorithme ? Créons le code qui vous convient.',
-    image: '/images/dev-surmesur.png',
-    link: 'services/developpement-sur-mesure',
-  },
-  {
-    title: 'Maintenance & support technique',
-    icon: 'lucide:settings', // ou "mdi:tools"
-    description: 'Besoin de corriger un bug ? Une montée de version de votre site ? Tout est faisable.',
-    image: '/images/maint-st.png',
-    link: 'services/maintenance-support-technique',
-  },
-  {
-    title: 'Intégration de solutions externes',
-    icon: 'lucide:plug', // ou "mdi:puzzle"
-    description: 'Vous souhaitez intégrer un nouveau module à votre site ? Voyons si c’est faisable.',
-    image: '/images/inte-ext.png',
-    link: 'services/integration-solutions-externes',
-  },
-  {
-    title: 'Formation et vulgarisation',
-    icon: 'lucide:book-open-check', // ou "mdi:school"
-    description: 'Vous souhaitez vous sensibiliser au domaine du web ? Prenons rendez-vous.',
-    image: '/images/form-vulga.png',
-    link: 'services/formation-vulgarisation',
-  },
-]
+import { useRuntimeConfig } from 'nuxt/app'
+import { ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
+import { Service } from '/types/services'
 
-const visibleCards = ref<number[]>([]) // On stocke les indices des Cards visibles
 
-const observeCards = () => {
-  const observer = new IntersectionObserver(
+const services = ref<Service[]>([])
+const loading = ref(true)
+const error = ref<string | null>(null)
+const visibleCards = ref<number[]>([])
+
+let observer: IntersectionObserver | null = null
+
+function ensureObserver() {
+  if (observer) observer.disconnect()
+  observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const index = Number(entry.target.getAttribute('data-index'))
-
         if (entry.isIntersecting) {
-          // Ajoute s’il est visible
-          if (!visibleCards.value.includes(index)) {
-            visibleCards.value.push(index)
-          }
+          if (!visibleCards.value.includes(index)) visibleCards.value.push(index)
         } else {
-          // Retire s’il sort de l’écran
           const i = visibleCards.value.indexOf(index)
-          if (i !== -1) {
-            visibleCards.value.splice(i, 1)
-          }
+          if (i !== -1) visibleCards.value.splice(i, 1)
         }
       })
     },
     { threshold: 0.3 },
   )
-
-  const cardElements = document.querySelectorAll('.card-item')
-  cardElements.forEach((el) => observer.observe(el))
+  document.querySelectorAll<HTMLElement>('.card-item').forEach((el) => observer!.observe(el))
 }
 
-onMounted(() => {
-  observeCards()
+async function fetchServices() {
+  const baseUrl = useRuntimeConfig().public.apiBaseUrl
+  loading.value = true
+  error.value = null
+  try {
+    const { data } = await useFetch<ApiResponse<Service[]>>(`${baseUrl}/api/services`, { server: false })
+
+    if (data.value?.success) {
+      services.value = (data.value.data || []).map((s, idx) => ({
+        ...s,
+        icon: s.icon ?? 'lucide:square',
+        img: s.img ?? '/images/placeholder-service.webp',
+      }))
+    } else {
+      error.value = data.value?.data as any || 'Erreur lors du chargement des services'
+    }
+  } catch (e) {
+    error.value = 'Erreur de connexion au serveur'
+    console.error(e)
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(async () => {
+  await fetchServices()
+  await nextTick()
+  ensureObserver()
+})
+
+watch(
+  () => services.value?.length,
+  async () => {
+    await nextTick()
+    ensureObserver()
+  },
+)
+
+onBeforeUnmount(() => {
+  if (observer) observer.disconnect()
 })
 </script>
 
@@ -85,18 +80,20 @@ onMounted(() => {
         Mes services
       </h2>
 
+      <div v-if="error" class="text-red-600 dark:text-red-400 text-center">{{ error }}</div>
+
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <NuxtLink
-          v-for="(item, index) in items"
-          :key="item.title + '-' + index"
-          :to="item.link"
+          v-for="(item, index) in services"
+          :key="item.id ?? (item.title + '-' + index)"
+          :to="`/services/` + item.slug"
           class="card-item group overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-primary shadow-sm hover:shadow-lg transition-all duration-500"
           :data-index="index"
-          :class="{'animate-visible': visibleCards.includes(index)}"
+          :class="{ 'animate-visible': visibleCards.includes(index) }"
         >
           <img
-            :src="item.image"
-            alt="Illustration service"
+            :src="item.img"
+            :alt="`Illustration service ${item.title}`"
             loading="lazy"
             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
           />
@@ -111,6 +108,8 @@ onMounted(() => {
           </div>
         </NuxtLink>
       </div>
+
+      <div v-if="loading" class="mt-8 text-center opacity-60">Chargement…</div>
     </div>
   </section>
 </template>
