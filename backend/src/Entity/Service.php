@@ -39,6 +39,12 @@ class Service
     #[ORM\OneToOne(mappedBy: 'service', cascade: ['persist', 'remove'])]
     private ?Seo $seo = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $icon = null;
+
     public function __construct()
     {
         $this->prices = new ArrayCollection();
@@ -155,6 +161,30 @@ class Service
         }
 
         $this->seo = $seo;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): static
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    public function getIcon(): ?string
+    {
+        return $this->icon;
+    }
+
+    public function setIcon(?string $icon): static
+    {
+        $this->icon = $icon;
 
         return $this;
     }

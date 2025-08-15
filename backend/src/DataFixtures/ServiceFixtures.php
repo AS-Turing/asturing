@@ -21,7 +21,9 @@ class ServiceFixtures extends Fixture
                 "Choix d'outils et de technologies adaptés à vos besoins",
                 'Accompagnement dans la rédaction de cahiers des charges',
                 'Suivi de projet ou accompagnement ponctuel sur demande'
-            ]
+            ],
+            'img' => '/images/cons-accomp.png',
+            'icon' => 'lucide:messages-square'
         ],
         'creation' => [
             'slug' => 'creation-site-internet',
@@ -34,7 +36,9 @@ class ServiceFixtures extends Fixture
                 'Blogs et sites de contenu',
                 'Sites sur-mesure selon vos besoins spécifiques',
                 'Intégration de solutions de paiement, formulaires, etc.'
-            ]
+            ],
+            'img' => '/images/crea-web.png',
+            'icon' => 'lucide:layout-template'
         ],
         'developpement' => [
             'slug' => 'developpement-sur-mesure',
@@ -47,7 +51,9 @@ class ServiceFixtures extends Fixture
                 'Automatisation de tâches et de processus',
                 'Développement de fonctionnalités spécifiques',
                 'Solutions de gestion de contenu adaptées à vos besoins'
-            ]
+            ],
+            'img' => '/images/dev-surmesur.png',
+            'icon' => 'lucide:code-2'
         ],
         'formation' => [
             'slug' => 'formation-vulgarisation',
@@ -60,7 +66,9 @@ class ServiceFixtures extends Fixture
                 'Vulgarisation de concepts techniques complexes',
                 'Documentation personnalisée et supports de formation',
                 'Conseils pour votre montée en compétences digitales'
-            ]
+            ],
+            'img' => '/images/form-vulga.png',
+            'icon' => 'lucide:book-open-check'
         ],
         'integration' => [
             'slug' => 'integration-solutions-externes',
@@ -73,7 +81,9 @@ class ServiceFixtures extends Fixture
                 'Synchronisation de données entre différentes plateformes',
                 'Intégration de systèmes de paiement et de réservation',
                 'Mise en place de workflows automatisés entre vos outils'
-            ]
+            ],
+            'img' => '/images/inte-ext.png',
+            'icon' => 'lucide:plug'
         ],
         'maintenance' => [
             'slug' => 'maintenance-support-technique',
@@ -86,7 +96,9 @@ class ServiceFixtures extends Fixture
                 'Support technique et résolution de problèmes',
                 'Évolutions et améliorations continues',
                 'Maintenance préventive et corrective'
-            ]
+            ],
+            'img' => '/images/maint-st.png',
+            'icon' => 'lucide:settings'
         ]
     ];
 
@@ -98,7 +110,8 @@ class ServiceFixtures extends Fixture
             $service->setTitle($serviceData['title']);
             $service->setDescription($serviceData['description']);
             $service->setMicroServices($serviceData['microServices']);
-
+            $service->setImg($serviceData['img']);
+            $service->setIcon($serviceData['icon']);
             $manager->persist($service);
 
             // Add a reference to this service for other fixtures to use
