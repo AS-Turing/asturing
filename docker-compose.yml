@@ -6,8 +6,8 @@ services:
     networks:
       - traefik
     labels:
-      - "traefik.http.routers.frontend.rule=Host(`frontend.localhost`)"
-      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.http.routers.asturing-front.rgit ule=Host(`as-turing.localhost`)"
+      - "traefik.http.services.asturing-front.loadbalancer.server.port=3000"
     volumes:
       - ./frontend:/app
       - /app/node_modules
@@ -21,8 +21,8 @@ services:
     networks:
       - traefik
     labels:
-      - "traefik.http.routers.backend.rule=Host(`backend.localhost`)"
-      - "traefik.http.services.backend.loadbalancer.server.port=8000"
+      - "traefik.http.routers.asturing-backend.rule=Host(`backend.localhost`)"
+      - "traefik.http.services.asturing-backend.loadbalancer.server.port=8000"
     environment:
       DATABASE_URL: mysql://asturingudb:userpass@mysql:3306/asturingdb
     volumes:
