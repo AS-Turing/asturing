@@ -6,7 +6,7 @@ services:
     networks:
       - traefik
     labels:
-      - "traefik.http.routers.asturing-front.rgit ule=Host(`as-turing.localhost`)"
+      - "traefik.http.routers.asturing-front.rule=Host(`as-turing.localhost`)"
       - "traefik.http.services.asturing-front.loadbalancer.server.port=3000"
     volumes:
       - ./frontend:/app
