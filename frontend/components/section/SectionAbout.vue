@@ -18,7 +18,14 @@ const scrollToElement = (id: string) => {
   <section class="m-auto bg-white dark:bg-gray-900 min-h-[60vh] py-16">
     <h2
       class="mb-4 lg:mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-primary text-center dark:text-white underline dark:decoration-secondary underline-offset-8">
-      À propos de <span class="font-bold jetbrains-mono-800">&lt;AS-Turing /&gt;</span>
+      À propos de
+      <span class="font-bold jetbrains-mono-800">
+        <div class="relative inline-block">
+          <span
+            class="relative block select-none underline-offset-8 underline text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-500 to-sky-500 [text-shadow:0_0_32px_rgba(251,191,36,0.45),0_0_70px_rgba(56,189,248,0.35)]"
+          >&lt; AS-Turing /&gt;</span>
+        </div>
+      </span>
     </h2>
     <div class="w-10/12 max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
       <div class="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
