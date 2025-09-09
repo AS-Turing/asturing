@@ -110,7 +110,7 @@ jobs:
           rsync -az --delete \
             --exclude="var/" \
             --exclude=".env.local" \
-            --progress
+            --progress \
             -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
             backend/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/backend
 
