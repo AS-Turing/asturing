@@ -50,7 +50,7 @@ const locationLinks: NavItem[] = footerResponse.value?.data?.locations ?? []
               </li>
             </ul>
           </li>
-          <li class="lg:w-4/12 text-center">
+          <li class="lg:w-4/12 text-center flex flex-col">
             <template v-for="(item, idx) in mainLinks" :key="idx">
               <NuxtLink :to="item.to" class="hover:underline font-medium hover:dark:text-secondary" :title="item.title || item.label">
                 {{ item.label }}
