@@ -103,7 +103,7 @@ jobs:
           rsync -az --delete \
             --progress \
             -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
-            frontend/.output/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/frontend
+            frontend/.output/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/asturingfrontend
 
       - name: Deploy backend via rsync
         run: |
@@ -112,7 +112,7 @@ jobs:
             --exclude=".env.local" \
             --progress \
             -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
-            backend/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/backend
+            backend/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/asturing/backend
 
       - name: Done
         run: echo "Deployed to OVH!"
