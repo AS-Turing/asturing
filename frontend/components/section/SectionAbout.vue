@@ -20,7 +20,7 @@ const scrollToElement = (id: string) => {
       class="mb-4 lg:mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-primary text-center dark:text-white underline dark:decoration-secondary underline-offset-8">
       À propos de
       <span class="font-bold jetbrains-mono-800">
-        <div class="relative inline-block">
+        <div class="relative inline-block mt-4 md:mt-0">
           <span
             class="relative block select-none underline-offset-8 underline text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-500 to-sky-500 [text-shadow:0_0_32px_rgba(251,191,36,0.45),0_0_70px_rgba(56,189,248,0.35)]"
           >&lt; AS-Turing /&gt;</span>
