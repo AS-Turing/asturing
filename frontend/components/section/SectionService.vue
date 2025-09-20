@@ -35,7 +35,7 @@ async function fetchServices() {
   loading.value = true
   error.value = null
   try {
-    const { data } = await useFetch<ApiResponse<Service[]>>(`${baseUrl}/api/services`, { server: false })
+    const { data } = await useFetch<ApiResponse<Service[]>>(`${baseUrl}/services`, { server: false })
 
     if (data.value?.success) {
       services.value = (data.value.data || []).map((s, idx) => ({

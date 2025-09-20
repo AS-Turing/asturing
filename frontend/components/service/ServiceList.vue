@@ -18,7 +18,7 @@ async function fetchServices() {
   error.value = null
 
   try {
-    const response: ApiResponse<Service[]> = await useApiFetch('/api/services')
+    const response: ApiResponse<Service[]> = await useApiFetch('/services')
 
     if (response.success) {
       services.value = response.data

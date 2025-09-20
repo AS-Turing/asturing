@@ -9,7 +9,7 @@ const route = useRoute()
 const baseUrl = config.public.apiBaseUrl
 const slug = route.params.slug as string
 
-const { data: response } = await useFetch(`${baseUrl}/api/service/${slug}`)
+const { data: response } = await useFetch(`${baseUrl}/service/${slug}`)
 
 const service: Service = response.value?.success ? response.value.data : null
 

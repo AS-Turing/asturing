@@ -22,7 +22,7 @@ async function sendMail(event: Event) {
     const data = {
       ...mailContent.value,
     }
-    const response: Response = await fetch(`${baseUrl}/api/mail/contact`, {
+    const response: Response = await fetch(`${baseUrl}/mail/contact`, {
       method: 'POST',
       body: JSON.stringify(data),
     })
