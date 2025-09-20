@@ -10,7 +10,7 @@ const slug = route.params.slug as string
 const baseUrl = config.public.apiBaseUrl
 
 // Fetch location data from API
-const { data: response } = await useFetch(`${baseUrl}/api/location/${slug}`)
+const { data: response } = await useFetch(`${baseUrl}/location/${slug}`)
 
 const location: Localisation = response.value?.success ? response.value.data : null
 

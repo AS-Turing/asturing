@@ -26,7 +26,7 @@ async function confirmDelete() {
   error.value = null
 
   try {
-    await useApiFetch('/api/service/delete', {
+    await useApiFetch('/service/delete', {
       method: 'DELETE',
     })
 

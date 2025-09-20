@@ -18,7 +18,7 @@ async function fetchData() {
   error.value = null
 
   try {
-    const response: ApiResponse<Client[]> = await useApiFetch('/api/clients')
+    const response: ApiResponse<Client[]> = await useApiFetch('/clients')
     
     if (response.success) {
       clients.value = response.data

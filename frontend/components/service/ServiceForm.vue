@@ -169,7 +169,7 @@ async function handleSubmit() {
   const isUpdate = props.service !== null && props.service !== undefined
 
   try {
-    const url = isUpdate ? `/api/services/${props.service.id}` : '/api/services'
+    const url = isUpdate ? `/services/${props.service.id}` : '/services'
     const method = isUpdate ? 'PUT' : 'POST'
     
     const response = await useApiFetch(url, {

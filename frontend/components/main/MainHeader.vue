@@ -19,7 +19,7 @@ const isOpen = ref<boolean>(false)
 const config = useRuntimeConfig()
 const baseUrl = config.public.apiBaseUrl
 
-const { data: servicesResponse } = await useFetch(`${baseUrl}/api/services/menu`)
+const { data: servicesResponse } = await useFetch(`${baseUrl}/services/menu`)
 const subServices: ServiceItem[] = (servicesResponse.value?.success ? servicesResponse.value.data : []).map((s: { title: string; slug: string }) => ({
   label: s.title,
   href: `/services/${s.slug}`,

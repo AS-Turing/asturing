@@ -17,7 +17,7 @@ async function fetchFiles() {
   error.value = null
   
   try {
-    const response: ApiResponse<SpecificationBook[]> = await useApiFetch('/api/specifications')
+    const response: ApiResponse<SpecificationBook[]> = await useApiFetch('/specifications')
 
     if (response.success) {
       specificationBooks.value = response.data
