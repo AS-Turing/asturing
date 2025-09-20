@@ -26,6 +26,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory and copy app code
 COPY . .
 
+# autorise composer à tourner en root (build)
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
