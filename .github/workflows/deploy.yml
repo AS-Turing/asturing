@@ -103,7 +103,7 @@ jobs:
           rsync -az --delete \
             --progress \
             -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
-            frontend/.output/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/asturing/frontend
+            frontend/.output/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}}:/home/asturiq/www/asturing/frontend/.output/public/
 
       - name: Deploy backend via rsync
         run: |
