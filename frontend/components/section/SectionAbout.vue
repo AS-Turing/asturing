@@ -85,7 +85,7 @@ const scrollToElement = (id: string) => {
           ]"
           src="public/images/form-contact-img.png"
           class="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
-        />
+         alt="formulaire de contact"/>
         <!--        </Transition>-->
       </div>
     </div>
