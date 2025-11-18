@@ -34,7 +34,7 @@ class Service
     #[ORM\OneToMany(targetEntity: Faq::class, mappedBy: 'service')]
     private Collection $faqs;
 
-    #[ORM\OneToMany(targetEntity: Price::class, mappedBy: 'service')]
+    #[ORM\OneToMany(targetEntity: Price::class, mappedBy: 'service', cascade: ['persist', 'remove'])]
     private Collection $prices;
     #[ORM\OneToOne(mappedBy: 'service', cascade: ['persist', 'remove'])]
     private ?Seo $seo = null;

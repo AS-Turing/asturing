@@ -26,8 +26,7 @@ const scrollToElement = (id: string) => {
   <section
     class="relative bg-white dark:bg-gray-900 min-h-[80vh] bg-cover bg-center before:content-[''] before:z-0 before:absolute before:inset-0 before:bg-black before:bg-opacity-50" style="background-image:url('/images/hero.png')">
     <div class="absolute w-full z-10 min-h-[80vh] grid max-w-screen-xl px-2 py-8 mx-auto lg:gap-8 xl:gap-0 lg:px-24 lg:py-16 lg:grid-cols-12">
-      <Transition name="slide" appear>
-        <div class="mr-auto place-self-center lg:col-span-12">
+      <div class="mr-auto place-self-center lg:col-span-12">
           <h1 class="max-w-2xl mb-4 text-4xl font-extrabold md:text-5xl xl:text-6xl tracking-tight text-white leading-relaxed">
             Mon objectif ?
             Vous aider à réaliser vos envies Numériques.
@@ -57,7 +56,6 @@ const scrollToElement = (id: string) => {
             </span>
           </button>
         </div>
-      </Transition>
     </div>
   </section>
 </template>
