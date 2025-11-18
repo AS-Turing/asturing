@@ -1,5 +1,6 @@
 volumes:
-  db_data:
+  asturing_dev_db_data:
+  symfony_vendor:
 
 services:
   nuxt:
@@ -32,7 +33,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - db_data:/var/lib/mysql
+      - asturing_dev_db_data:/var/lib/mysql
     healthcheck:
       test: ["CMD","mysqladmin","ping","-h","localhost"]
       timeout: 20s

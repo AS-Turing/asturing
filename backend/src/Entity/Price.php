@@ -22,7 +22,7 @@ class Price
     #[ORM\Column(length: 255)]
     private ?string $price = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne(inversedBy: 'prices')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Service $service = null;
 
