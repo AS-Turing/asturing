@@ -53,5 +53,6 @@ _nuxt
 
 #Docker
 docker*.yml.bak.*
+*.override.yml
 #dev environnement
 traefik/
