@@ -1,13 +1,31 @@
 <script setup lang="ts">
 import { useRuntimeConfig } from 'nuxt/app'
-import { ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch, nextTick, computed } from 'vue'
 import { Service } from '/types/services'
 
-
-const services = ref<Service[]>([])
-const loading = ref(true)
-const error = ref<string | null>(null)
+const baseUrl = useRuntimeConfig().public.apiBaseUrl
 const visibleCards = ref<number[]>([])
+
+// useFetch au top level pour SSR
+const { data: apiResponse, pending: loading, error: fetchError } = await useFetch<ApiResponse<Service[]>>(`${baseUrl}/services`)
+
+// Computed pour transformer les données
+const services = computed(() => {
+  if (!apiResponse.value?.success) return []
+  return (apiResponse.value.data || []).map((s) => ({
+    ...s,
+    icon: s.icon ?? 'lucide:square',
+    img: s.img ?? '/images/placeholder-service.webp',
+  }))
+})
+
+const error = computed(() => {
+  if (fetchError.value) return 'Erreur de connexion au serveur'
+  if (apiResponse.value && !apiResponse.value.success) {
+    return apiResponse.value.data as any || 'Erreur lors du chargement des services'
+  }
+  return null
+})
 
 let observer: IntersectionObserver | null = null
 
@@ -30,32 +48,7 @@ function ensureObserver() {
   document.querySelectorAll<HTMLElement>('.card-item').forEach((el) => observer!.observe(el))
 }
 
-async function fetchServices() {
-  const baseUrl = useRuntimeConfig().public.apiBaseUrl
-  loading.value = true
-  error.value = null
-  try {
-    const { data } = await useFetch<ApiResponse<Service[]>>(`${baseUrl}/api/services`, { server: false })
-
-    if (data.value?.success) {
-      services.value = (data.value.data || []).map((s, idx) => ({
-        ...s,
-        icon: s.icon ?? 'lucide:square',
-        img: s.img ?? '/images/placeholder-service.webp',
-      }))
-    } else {
-      error.value = data.value?.data as any || 'Erreur lors du chargement des services'
-    }
-  } catch (e) {
-    error.value = 'Erreur de connexion au serveur'
-    console.error(e)
-  } finally {
-    loading.value = false
-  }
-}
-
 onMounted(async () => {
-  await fetchServices()
   await nextTick()
   ensureObserver()
 })

@@ -50,3 +50,9 @@ data.json
 images
 index.html
 _nuxt
+
+#Docker
+docker*.yml.bak.*
+*.override.yml
+#dev environnement
+traefik/

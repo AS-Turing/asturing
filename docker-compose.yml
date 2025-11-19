@@ -1,57 +1,40 @@
+volumes:
+  asturing_dev_db_data:
+  symfony_vendor:
+
 services:
   nuxt:
+    restart: always
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    networks:
-      - traefik
-    labels:
-      - "traefik.http.routers.asturing-front.rule=Host(`as-turing.localhost`)"
-      - "traefik.http.services.asturing-front.loadbalancer.server.port=3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+    environment:
+      HOST: ${HOST}
+      NITRO_HOST: ${NITRO_HOST}
+      NITRO_PORT: ${NITRO_PORT}
 
   symfony:
+    restart: always
     build:
       context: ./backend
       dockerfile: Dockerfile
-    ports:
-      - "8000:80"
-    networks:
-      - traefik
-    labels:
-      - "traefik.http.routers.asturing-backend.rule=Host(`backend.localhost`)"
-      - "traefik.http.services.asturing-backend.loadbalancer.server.port=8000"
     environment:
-      DATABASE_URL: mysql://asturingudb:userpass@mysql:3306/asturingdb
-    volumes:
-      - ./backend:/app
+      DATABASE_URL: ${DATABASE_URL}
     depends_on:
       mysql:
         condition: service_healthy
 
   mysql:
+    restart: always
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: asturingdb
-      MYSQL_USER: asturingudb
-      MYSQL_PASSWORD: userpass
-      MYSQL_ROOT_PASSWORD: rootpass
-    ports:
-      - '3306:3306'
-    networks:
-      - traefik
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - db_data:/var/lib/mysql
+      - asturing_dev_db_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
       timeout: 20s
       retries: 10
-
-volumes:
-  db_data:
-
-networks:
-  traefik:
-    external: true

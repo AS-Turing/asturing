@@ -62,7 +62,7 @@ export default defineNuxtConfig({
       }
     },
     public: {
-      apiBaseUrl: process.env.API_BASE_URL || 'http://backend.localhost:8000'
+      apiBaseUrl: '/api'
     }
   },
   site: {
@@ -118,7 +118,7 @@ export default defineNuxtConfig({
       '/services/formation-vulgarisation'
     ]
   },
-  ssr: false,
+  ssr: true,
   tailwindcss: {
     configPath: './tailwind.config.ts',
     editorSupport: { autocompleteUtil: { as: 'tailwindClasses' }, generateConfig: true },

@@ -18,7 +18,7 @@ async function loadData() {
   apiError.value = null
   
   try {
-    const response: ApiResponse<SpecificationQuestion[]> = await useApiFetch('/api/specifications/questions')
+    const response: ApiResponse<SpecificationQuestion[]> = await useApiFetch('/specifications/questions')
     
     if (!response || !response.success) {
       throw new Error('La requête API a échoué')

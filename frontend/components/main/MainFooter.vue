@@ -10,7 +10,7 @@ interface NavItem {
 const config = useRuntimeConfig()
 const baseUrl = config.public.apiBaseUrl
 
-const { data: footerResponse } = await useFetch(`${baseUrl}/api/navigation/footer`)
+const { data: footerResponse } = await useFetch(`${baseUrl}/navigation/footer`)
 
 const services: NavItem[] = footerResponse.value?.data?.services ?? []
 const mainLinks: NavItem[] = footerResponse.value?.data?.main ?? []
