@@ -7,36 +7,35 @@ import {useRuntimeConfig} from "nuxt/app";
 const config = useRuntimeConfig()
 const route = useRoute()
 const slug = route.params.slug as string
-const baseUrl = config.public.apiBaseUrl
+const baseUrl = import.meta.server ? config.apiBaseUrl : config.public.apiBaseUrl
 
 // Fetch location data from API
-const { data: response } = await useFetch(`${baseUrl}/location/${slug}`)
+const { data: response, error } = await useFetch(`${baseUrl}/location/${slug}`)
 
-const location: Localisation = response.value?.success ? response.value.data : null
-
-// Map API response to match the expected format for LocalisationPage
-const locationData = computed(() => {
-  if (!location) return null
-
-  return {
-    ville: location.city,
-    title: location.title,
-    description: location.description,
-    ogTitle: location.ogTitle,
-    ogDescription: location.ogDescription,
-    ogUrl: location.ogUrl,
-    map: location.map,
-  }
-})
-
-// Handle 404 if location not found
-if (!location) {
+if (error.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Localisation non trouvée',
     fatal: true,
   })
 }
+
+const location = computed(() => response.value?.success ? response.value.data : null)
+
+// Map API response to match the expected format for LocalisationPage
+const locationData = computed(() => {
+  if (!location.value) return null
+
+  return {
+    ville: location.value.city,
+    title: location.value.title,
+    description: location.value.description,
+    ogTitle: location.value.ogTitle,
+    ogDescription: location.value.ogDescription,
+    ogUrl: location.value.ogUrl,
+    map: location.value.map,
+  }
+})
 </script>
 
 <template>

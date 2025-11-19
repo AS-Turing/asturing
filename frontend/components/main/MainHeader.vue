@@ -17,13 +17,15 @@ const isOpen = ref<boolean>(false)
 
 // Fetch dynamic services for menu
 const config = useRuntimeConfig()
-const baseUrl = config.public.apiBaseUrl
+const baseUrl = import.meta.server ? config.apiBaseUrl : config.public.apiBaseUrl
 
 const { data: servicesResponse } = await useFetch(`${baseUrl}/services/menu`)
-const subServices: ServiceItem[] = (servicesResponse.value?.success ? servicesResponse.value.data : []).map((s: { title: string; slug: string }) => ({
-  label: s.title,
-  href: `/services/${s.slug}`,
-}))
+const subServices = computed(() => 
+  (servicesResponse.value?.success ? servicesResponse.value.data : []).map((s: { title: string; slug: string }) => ({
+    label: s.title,
+    href: `/services/${s.slug}`,
+  }))
+)
 
 const toggleMenu = (): void => {
   isOpen.value = !isOpen.value
