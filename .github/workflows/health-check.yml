@@ -1,0 +1,98 @@
+name: Health Check & Monitoring
+
+on:
+  schedule:
+    # Tous les jours à 9h00 UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Production Health Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🏥 Check production health
+        run: |
+          echo "🔍 Health check en cours..."
+          # Ajouter l'URL du site quand disponible
+          # curl -f https://as-turing.fr || exit 1
+          echo "⏳ Health check endpoint à configurer"
+      
+      - name: 📊 Server disk space
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "📊 Disk Usage"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            df -h | grep -E '(Filesystem|/dev/)' || true
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "🐳 Docker Disk Usage"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            docker system df || true
+      
+      - name: 🐳 Check containers status
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "🐳 Containers Status"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            docker compose ps
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "📊 Container Resources"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            docker stats --no-stream || true
+      
+      - name: 🔍 Check for errors in logs
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "🔍 Recent Errors (last 50 lines)"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            docker compose logs --tail=50 2>&1 | grep -i "error\|exception\|fatal" || echo "No errors found"
+      
+      - name: 🧹 Auto cleanup if needed
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "🧹 Cleaning up old Docker resources..."
+            docker image prune -f
+            docker container prune -f
+            echo "✅ Cleanup completed"
+      
+      - name: 📊 Generate report
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 Health Check Summary"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Date: $(date)"
+          echo "Status: ${{ job.status }}"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

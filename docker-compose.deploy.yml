@@ -1,0 +1,12 @@
+services:
+  nuxt:
+    image: ghcr.io/as-turing/asturing-nuxt:develop
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+  
+  symfony:
+    image: ghcr.io/as-turing/asturing-symfony:develop
+    build:
+      context: ./backend
+      dockerfile: Dockerfile

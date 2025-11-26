@@ -62,3 +62,26 @@ docker*.yml.bak.*
 #dev environnement
 traefik/
 deploy.sh
+.env.deploy
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Documentation Markdown - Ignore all except main READMEs
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Ignore all .md files
+*.md
+
+# Except these READMEs
+!README.md
+!frontend/README.md
+!backend/README.md
+
+# Explicitly ignore documentation files
+CI-CD-SETUP.md
+QUICKSTART-CICD.md
+INFRASTRUCTURE.md
+RECAP.md
+REFONTE-INFRA.md
+.github/*.md
+.github/workflows/*.md
+
