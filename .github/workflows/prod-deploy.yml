@@ -26,21 +26,6 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.PROD_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Create backup
-        run: |
-          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
-            set -e
-            cd ${{ secrets.PROD_PATH }}
-            
-            # Create backup directory with timestamp
-            BACKUP_DIR="${{ secrets.BACKUP_PATH }}/$(date +%Y%m%d_%H%M%S)"
-            mkdir -p $BACKUP_DIR
-            
-            # Backup database
-            docker compose exec -T mysql mysqldump -u ${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} ${{ secrets.DB_NAME }} > $BACKUP_DIR/database.sql || true
-            
-            echo "✅ Backup created at $BACKUP_DIR"
-          EOF
 
       - name: Deploy files via rsync
         run: |
