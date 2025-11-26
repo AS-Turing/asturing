@@ -20,12 +20,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p 2222 -H 2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881 >> ~/.ssh/known_hosts
+          ssh-keyscan -p 2222 -H ${{ secrets.PROD_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy files via rsync
         run: |
           rsync -avz --delete \
-            -e "ssh -p 2222" \
+            -e "ssh -4 -p 2222" \
             --exclude='.git/' \
             --exclude='node_modules/' \
             --exclude='frontend/.nuxt/' \
@@ -34,18 +34,18 @@ jobs:
             --exclude='backend/var/' \
             --exclude='.env' \
             --exclude='docker-compose.override.yml' \
-            ./ chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881:/srv/www/asturing/prod/
+            ./ ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/srv/www/asturing/prod/
 
       - name: Copy production override file
         run: |
           rsync -avz \
-            -e "ssh -p 2222" \
+            -e "ssh -4 -p 2222" \
             docker-compose.override.prod.yml \
-            chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881:/srv/www/asturing/prod/docker-compose.override.yml
+            ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/srv/www/asturing/prod/docker-compose.override.yml
 
       - name: Rebuild and restart containers
         run: |
-          ssh -p 2222 chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881 << 'EOF'
+          ssh -4 -p 2222 ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
             cd /srv/www/asturing/prod
             docker compose down
             docker compose build --no-cache
@@ -55,7 +55,7 @@ jobs:
 
       - name: Clean up old images
         run: |
-          ssh -p 2222 chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881 << 'EOF'
+          ssh -4 -p 2222 ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
             docker image prune -f
           EOF
 
