@@ -109,10 +109,19 @@ jobs:
         run: |
           rsync -az --delete \
             --exclude="var/" \
+            --exclude=".env" \
             --exclude=".env.local" \
+            --exclude="config/jwt/" \
+            --exclude="public/uploads/" \
             --progress \
             -e "ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes" \
             backend/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/asturiq/www/asturing/backend
+
+      - name: Clear Symfony cache
+        run: |
+          ssh -i ~/.ssh/github-ci -o StrictHostKeyChecking=yes \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "cd /home/asturiq/www/asturing/backend && php bin/console cache:clear --env=prod --no-debug"
 
       - name: Done
         run: echo "Deployed to OVH!"

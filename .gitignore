@@ -20,6 +20,7 @@ backend/.DS_Store
 .fleet
 .idea
 .idea/
+
 # Local env files
 .env
 .env.*
@@ -27,6 +28,10 @@ backend/.DS_Store
 /backend/.env
 /backend/.env.dev
 /backend/.env.test
+
+# Docker override (local dev)
+docker-compose.override.yml
+
 # Git files
 *.seed
 *.pid
@@ -56,3 +61,4 @@ docker*.yml.bak.*
 *.override.yml
 #dev environnement
 traefik/
+deploy.sh

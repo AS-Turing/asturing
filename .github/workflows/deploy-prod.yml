@@ -1,0 +1,63 @@
+name: Deploy to Production Server
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    name: Deploy via rsync + rebuild containers
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 2222 -H 2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881 >> ~/.ssh/known_hosts
+
+      - name: Deploy files via rsync
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p 2222" \
+            --exclude='.git/' \
+            --exclude='node_modules/' \
+            --exclude='frontend/.nuxt/' \
+            --exclude='frontend/.output/' \
+            --exclude='backend/vendor/' \
+            --exclude='backend/var/' \
+            --exclude='.env' \
+            --exclude='docker-compose.override.yml' \
+            ./ chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881:/srv/www/asturing/prod/
+
+      - name: Copy production override file
+        run: |
+          rsync -avz \
+            -e "ssh -p 2222" \
+            docker-compose.override.prod.yml \
+            chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881:/srv/www/asturing/prod/docker-compose.override.yml
+
+      - name: Rebuild and restart containers
+        run: |
+          ssh -p 2222 chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881 << 'EOF'
+            cd /srv/www/asturing/prod
+            docker compose down
+            docker compose build --no-cache
+            docker compose up -d
+            docker compose ps
+          EOF
+
+      - name: Clean up old images
+        run: |
+          ssh -p 2222 chado@2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881 << 'EOF'
+            docker image prune -f
+          EOF
+
+      - name: Deployment complete
+        run: echo "✅ Deployment to production server complete!"

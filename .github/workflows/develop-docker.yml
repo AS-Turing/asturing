@@ -1,0 +1,138 @@
+name: CI/CD develop — Build Docker and Deploy to Dev
+
+on:
+  push:
+    branches:
+      - develop
+
+# This workflow builds Docker images for frontend and backend, pushes them to Docker Hub
+# and optionally deploys them on the remote dev server via SSH + docker compose.
+#
+# Required repository SECRETS:
+# - DOCKERHUB_USERNAME: Docker Hub username (namespace)
+# - DOCKERHUB_TOKEN: Docker Hub access token (with write permission)
+# - SSH_PRIVATE_KEY: private key for the dev server
+# - SSH_HOST: server hostname or IPv6 (e.g. 2a01:e0a:ba9:ecc0:329c:23ff:fe66:7881)
+# - SSH_USER: server SSH user (e.g. chado)
+#
+# Optional repository VARS (Settings > Variables):
+# - DOCKERHUB_NAMESPACE: defaults to secrets.DOCKERHUB_USERNAME if not provided
+# - FRONT_IMAGE_NAME: defaults to asturing-frontend
+# - BACK_IMAGE_NAME: defaults to asturing-backend
+# - REMOTE_COMPOSE_FILE: full path to docker compose file on the server, e.g. /home/chado/as-turing/dev/docker-compose.yml
+#   or leave empty and set REMOTE_COMPOSE_DIR instead.
+# - REMOTE_COMPOSE_DIR: directory containing docker-compose.yml (and optional overrides), e.g. /srv/www/asturing/dev
+# - REMOTE_WORKDIR: the directory where compose is run, e.g. /home/chado/as-turing/dev
+# - REMOTE_DOCKERHUB_LOGIN: set to "true" if the server must login to Docker Hub to pull private images
+
+jobs:
+  build_and_push:
+    name: Build & Push Docker images (develop)
+    runs-on: ubuntu-latest
+    env:
+      # Resolve namespace and repo names
+      DOCKERHUB_NAMESPACE: ${{ vars.DOCKERHUB_NAMESPACE || secrets.DOCKERHUB_USERNAME }}
+      FRONT_IMAGE_NAME: ${{ vars.FRONT_IMAGE_NAME || 'asturing-frontend' }}
+      BACK_IMAGE_NAME: ${{ vars.BACK_IMAGE_NAME || 'asturing-backend' }}
+      FRONT_TAG1: develop
+      BACK_TAG1: develop
+      FRONT_TAG2: develop-${{ github.sha }}
+      BACK_TAG2: develop-${{ github.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & Push FRONTEND image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          push: true
+          provenance: false
+          tags: |
+            ${{ env.DOCKERHUB_NAMESPACE }}/${{ env.FRONT_IMAGE_NAME }}:${{ env.FRONT_TAG1 }}
+            ${{ env.DOCKERHUB_NAMESPACE }}/${{ env.FRONT_IMAGE_NAME }}:${{ env.FRONT_TAG2 }}
+
+      - name: Build & Push BACKEND image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: true
+          provenance: false
+          tags: |
+            ${{ env.DOCKERHUB_NAMESPACE }}/${{ env.BACK_IMAGE_NAME }}:${{ env.BACK_TAG1 }}
+            ${{ env.DOCKERHUB_NAMESPACE }}/${{ env.BACK_IMAGE_NAME }}:${{ env.BACK_TAG2 }}
+
+  deploy_remote:
+    name: Deploy to Dev server (pull & compose up)
+    needs: build_and_push
+    runs-on: ubuntu-latest
+    if: ${{ secrets.SSH_HOST && secrets.SSH_USER && secrets.SSH_PRIVATE_KEY }}
+    env:
+      DOCKERHUB_NAMESPACE: ${{ vars.DOCKERHUB_NAMESPACE || secrets.DOCKERHUB_USERNAME }}
+      FRONT_IMAGE_NAME: ${{ vars.FRONT_IMAGE_NAME || 'asturing-frontend' }}
+      BACK_IMAGE_NAME: ${{ vars.BACK_IMAGE_NAME || 'asturing-backend' }}
+      FRONT_TAG: develop
+      BACK_TAG: develop
+      REMOTE_COMPOSE_FILE: ${{ vars.REMOTE_COMPOSE_FILE }}
+      REMOTE_COMPOSE_DIR: ${{ vars.REMOTE_COMPOSE_DIR }}
+      REMOTE_WORKDIR: ${{ vars.REMOTE_WORKDIR || '~' }}
+      REMOTE_DOCKERHUB_LOGIN: ${{ vars.REMOTE_DOCKERHUB_LOGIN || 'false' }}
+    steps:
+      - name: Prepare SSH key and known_hosts (IPv6-friendly)
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/ci_key
+          chmod 600 ~/.ssh/ci_key
+          # We skip strict host checking to avoid issues with raw IPv6 literals in CI
+          printf "Host dev-host\n  HostName %s\n  User %s\n  Port 22\n  IdentityFile ~/.ssh/ci_key\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null\n  AddressFamily inet6\n" "${{ secrets.SSH_HOST }}" "${{ secrets.SSH_USER }}" >> ~/.ssh/config
+
+      - name: Verify connectivity
+        run: ssh dev-host 'echo Connected to $(hostname) && uname -a'
+
+      - name: Optional docker login on remote (if pulling private images)
+        if: ${{ env.REMOTE_DOCKERHUB_LOGIN == 'true' }}
+        run: |
+          ssh dev-host "echo '${{ secrets.DOCKERHUB_TOKEN }}' | docker login -u '${{ secrets.DOCKERHUB_USERNAME }}' --password-stdin"
+
+      - name: Pull latest images on remote
+        run: |
+          ssh dev-host "docker pull ${DOCKERHUB_NAMESPACE}/${FRONT_IMAGE_NAME}:${FRONT_TAG}"
+          ssh dev-host "docker pull ${DOCKERHUB_NAMESPACE}/${BACK_IMAGE_NAME}:${BACK_TAG}"
+
+      - name: Recreate services with docker compose (REMOTE_COMPOSE_FILE or DIR)
+        run: |
+          # Determine compose file path: prefer REMOTE_COMPOSE_FILE, else REMOTE_COMPOSE_DIR/docker-compose.yml
+          TARGET_COMPOSE="${REMOTE_COMPOSE_FILE}"
+          if [ -z "$TARGET_COMPOSE" ] && [ -n "${REMOTE_COMPOSE_DIR}" ]; then
+            TARGET_COMPOSE="${REMOTE_COMPOSE_DIR%/}/docker-compose.yml"
+          fi
+          if [ -n "$TARGET_COMPOSE" ]; then
+            ssh dev-host "cd ${REMOTE_WORKDIR} && docker compose -f ${TARGET_COMPOSE} pull && docker compose -f ${TARGET_COMPOSE} up -d --remove-orphans"
+          else
+            echo "No REMOTE_COMPOSE_FILE or REMOTE_COMPOSE_DIR provided; using fallback run method."
+          fi
+
+      - name: Restart containers directly (fallback if no compose file)
+        if: ${{ env.REMOTE_COMPOSE_FILE == '' }}
+        run: |
+          # Fallback: stop and run containers by image name (minimal). Adjust as needed on the server.
+          ssh dev-host "docker rm -f asturing_front || true; docker rm -f asturing_back || true; \
+            docker run -d --name asturing_front --restart unless-stopped -p 3000:3000 ${DOCKERHUB_NAMESPACE}/${FRONT_IMAGE_NAME}:${FRONT_TAG} && \
+            docker run -d --name asturing_back --restart unless-stopped -p 8080:80 ${DOCKERHUB_NAMESPACE}/${BACK_IMAGE_NAME}:${BACK_TAG}"
+
+      - name: Done
+        run: echo "Develop images deployed (pull + restart)."
