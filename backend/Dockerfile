@@ -54,8 +54,9 @@ RUN printf "\n<Directory /app/public>\n\
     Require all granted\n\
 </Directory>\n" | tee -a /etc/apache2/apache2.conf
 
-# Fix permissions
-RUN chown -R www-data:www-data /app && \
+# Create var directory if it doesn't exist and fix permissions
+RUN mkdir -p /app/var && \
+    chown -R www-data:www-data /app && \
     chmod -R 755 /app/var
 
 # Switch to www-data user
