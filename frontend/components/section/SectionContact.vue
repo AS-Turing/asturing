@@ -13,39 +13,27 @@ const mailContent = ref({
 })
 
 async function sendMail(event: Event) {
-  const config = useRuntimeConfig()
-  const baseUrl = config.public.apiBaseUrl
-
   event.preventDefault()
 
   try {
-    const data = {
-      ...mailContent.value,
-    }
-    const response: Response = await fetch(`${baseUrl}/mail/contact`, {
+    const response = await $fetch('/api/contact', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: mailContent.value,
     })
 
-    const text = await response.text()
-
-    if (response.ok) {
-      console.log('Message envoyé !', text)
-      notifySuccess('Votre message a bien été transmis avec succès !')
-      mailContent.value = {
-        firstname: '',
-        lastname: '',
-        company: '',
-        mail: '',
-        phone: '',
-        message: '',
-      }
-    } else {
-      console.error('Erreur lors de l’envoi :', text)
-      notifyError('Une erreur est survenue, veuillez réessayer ou nous contacter directement.')
+    console.log('Message envoyé !', response)
+    notifySuccess('Votre message a bien été transmis avec succès !')
+    mailContent.value = {
+      firstname: '',
+      lastname: '',
+      company: '',
+      mail: '',
+      phone: '',
+      message: '',
     }
-  } catch (err) {
+  } catch (err: any) {
     console.error('Erreur réseau :', err)
+    notifyError('Une erreur est survenue, veuillez réessayer ou nous contacter directement.')
   }
 }
 </script>
@@ -128,7 +116,7 @@ async function sendMail(event: Event) {
             <Icon name="lucide:send"
                   class="w-5 h-5 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
             <span class="ml-2 transition-all duration-700 group-hover:translate-x-1 font-bold">
-              Envie d’échanger sur votre projet ?
+              Envie d'échanger sur votre projet ?
             </span>
           </button>
         </div>
