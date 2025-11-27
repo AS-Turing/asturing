@@ -20,45 +20,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
-      
-      - name: 🔑 Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      
-      - name: 📝 Add server to known hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-      
-      - name: 📦 Sync files to server
-        run: |
-          rsync -avz --delete \
-            -e "ssh -p ${{ secrets.SSH_PORT }}" \
-            --exclude='.git/' \
-            --exclude='node_modules/' \
-            --exclude='frontend/.nuxt/' \
-            --exclude='frontend/.output/' \
-            --exclude='frontend/node_modules/' \
-            --exclude='backend/vendor/' \
-            --exclude='backend/var/' \
-            --exclude='.env' \
-            --exclude='docker-compose.override.yml' \
-            --exclude='docker-compose.dev.yml' \
-            --exclude='docker-compose.dev.remote.yml' \
-            --progress \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/
-      
-      - name: ⚙️ Copy production override config
-        run: |
-          rsync -avz \
-            -e "ssh -p ${{ secrets.SSH_PORT }}" \
-            docker-compose.override.prod.yml \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/docker-compose.override.yml
-      
-      - name: 🐳 Deploy containers on server
+      - name: 🐳 Deploy to production server
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
