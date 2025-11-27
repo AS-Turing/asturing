@@ -38,6 +38,10 @@ RUN composer install \
 # Copy application code
 COPY . .
 
+# Create minimal .env file for production (Symfony needs it to exist)
+RUN echo "APP_ENV=prod" > /app/.env && \
+    echo "APP_DEBUG=0" >> /app/.env
+
 # Run post-install scripts
 RUN composer dump-autoload --optimize --no-dev --classmap-authoritative
 
