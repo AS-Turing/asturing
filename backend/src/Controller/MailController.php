@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class MailController extends AbstractController
 {
-    #[Route('/mail/contact ', name: 'app_mail_contact', methods: ['POST'])]
+    #[Route('/mail/contact', name: 'app_mail_contact', methods: ['POST'])]
     public function contact(Request $request, MailerInterface $mailer): JsonResponse
     {
         try {
