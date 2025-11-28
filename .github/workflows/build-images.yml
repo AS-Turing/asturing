@@ -2,7 +2,7 @@ name: Build & Push Docker Images
 
 on:
   push:
-    branches: [main, master, develop]
+    branches: [main, master]
   workflow_dispatch:
 
 env:
@@ -34,23 +34,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: 🏷️ Determine tag
-        id: determine_tag
-        run: |
-          if [[ "${{ github.ref }}" == "refs/heads/develop" ]]; then
-            echo "tag=develop" >> $GITHUB_OUTPUT
-          else
-            echo "tag=production" >> $GITHUB_OUTPUT
-          fi
-      
       - name: 🏷️ Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-nuxt
           tags: |
-            type=raw,value=${{ steps.determine_tag.outputs.tag }}
+            type=raw,value=production
             type=sha,prefix=,format=short
+            type=raw,value=latest
       
       - name: 🏗️ Build and push
         uses: docker/build-push-action@v5
@@ -88,23 +80,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: 🏷️ Determine tag
-        id: determine_tag
-        run: |
-          if [[ "${{ github.ref }}" == "refs/heads/develop" ]]; then
-            echo "tag=develop" >> $GITHUB_OUTPUT
-          else
-            echo "tag=production" >> $GITHUB_OUTPUT
-          fi
-      
       - name: 🏷️ Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-symfony
           tags: |
-            type=raw,value=${{ steps.determine_tag.outputs.tag }}
+            type=raw,value=production
             type=sha,prefix=,format=short
+            type=raw,value=latest
       
       - name: 🏗️ Build and push
         uses: docker/build-push-action@v5

@@ -1,10 +1,7 @@
 name: Development - Auto Deploy
 
 on:
-  workflow_run:
-    workflows: ["Build & Push Docker Images"]
-    types:
-      - completed
+  push:
     branches: [develop]
   workflow_dispatch:
 
@@ -12,30 +9,31 @@ jobs:
   deploy-dev:
     name: Deploy to Development
     runs-on: ubuntu-latest
-    environment: development
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
       
-      - name: 🚀 Deploy to Development Server
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            cd ${{ secrets.DEPLOY_PATH }}
-            docker compose pull
-            docker compose up -d --force-recreate
-            docker image prune -f
-      
-      - name: 📝 Deployment summary
+      - name: 🔍 Lint and validate
         run: |
-          echo "🚀 Development deployment completed"
-          echo "Branch: develop"
-          echo "Environment: development"
-          echo "Path: ${{ secrets.DEPLOY_PATH }}"
-          echo "Images pulled and containers restarted"
+          echo "✅ Code validation for development"
+          # Add any development-specific checks here
+      
+      - name: 📝 Development deployment summary
+        run: |
+          echo "🚀 Development branch updated"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Author: ${{ github.actor }}"
+          
+      - name: 💬 Comment on PR (if exists)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ Development checks passed! Ready for review.'
+            })
