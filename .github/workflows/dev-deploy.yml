@@ -12,6 +12,7 @@ jobs:
   deploy-dev:
     name: Deploy to Development
     runs-on: ubuntu-latest
+    environment: development
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
@@ -21,11 +22,12 @@ jobs:
       - name: 🚀 Deploy to Development Server
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.DEV_SERVER_HOST }}
-          username: ${{ secrets.DEV_SERVER_USER }}
-          key: ${{ secrets.DEV_SERVER_SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /srv/www/asturing/dev
+            cd ${{ secrets.DEPLOY_PATH }}
             docker compose pull
             docker compose up -d --force-recreate
             docker image prune -f
@@ -34,4 +36,6 @@ jobs:
         run: |
           echo "🚀 Development deployment completed"
           echo "Branch: develop"
+          echo "Environment: development"
+          echo "Path: ${{ secrets.DEPLOY_PATH }}"
           echo "Images pulled and containers restarted"
