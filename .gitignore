@@ -64,6 +64,10 @@ traefik/
 deploy.sh
 .env.deploy
 
+# Scripts sensibles contenant des informations de déploiement
+rollback.sh
+setup-cicd.sh
+
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Documentation Markdown - Ignore all except main READMEs
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
