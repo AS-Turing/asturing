@@ -13,11 +13,14 @@
           💎 Excellence & Innovation
         </div>
         <h1 class="text-6xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-          Nos Services<br/>
-          <span class="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">Premium</span>
+          Création de site internet<br/>
+          <span class="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">et solutions web sur-mesure</span>
         </h1>
         <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Des solutions digitales sur-mesure conçues pour transformer votre vision en réalité et propulser votre croissance
+          Agence web à Libourne spécialisée en création de sites vitrines, e-commerce et applications métier pour TPE et PME de l'Entre-deux-Mers
+        </p>
+        <p class="text-lg text-white/80 mt-4">
+          Libourne • Saint-Émilion • Bordeaux • Gironde
         </p>
       </div>
     </section>
@@ -28,10 +31,10 @@
         <!-- Section header -->
         <div class="text-center mb-16">
           <h2 class="text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-            Une expertise complète
+            Nos services de développement web
           </h2>
           <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Découvrez nos services pensés pour répondre à tous vos besoins digitaux
+            Solutions digitales complètes adaptées à votre secteur d'activité et vos objectifs de croissance
           </p>
         </div>
 
@@ -63,10 +66,10 @@
     <section class="py-20 px-4 bg-white dark:bg-gray-800 transition-colors">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-heading font-bold mb-6 text-gray-900 dark:text-white">
-          Un projet en tête ?
+          Un projet web en tête ?
         </h2>
         <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-          Discutons de vos besoins et trouvons ensemble la solution adaptée
+          Discutons de vos besoins et trouvons ensemble la solution adaptée à votre entreprise
         </p>
         <NuxtLink 
           to="/contact" 
@@ -84,4 +87,120 @@
 
 <script setup lang="ts">
 const { data: services, pending } = await useFetch('/api/services')
+
+// SEO optimisé pour page services
+useHead({
+  title: 'Nos Services - Création Site Internet & E-commerce Libourne | AS-Turing',
+  meta: [
+    {
+      name: 'description',
+      content: 'Services web complets à Libourne : création de sites vitrines, e-commerce, applications métier. Agence web de proximité pour TPE et PME. Devis gratuit. Libourne, Saint-Émilion, Bordeaux.'
+    },
+    // Open Graph
+    {
+      property: 'og:title',
+      content: 'Services Web - Création Site Internet Libourne | AS-Turing'
+    },
+    {
+      property: 'og:description',
+      content: 'Sites vitrines, e-commerce, applications métier sur-mesure. Agence web à Libourne au service des entreprises de l\'Entre-deux-Mers.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    // Keywords
+    {
+      name: 'keywords',
+      content: 'services création site internet, agence web Libourne, développement web sur-mesure, création e-commerce, application métier, refonte site web, site vitrine professionnel, Bordeaux, Gironde'
+    },
+    // Robots
+    {
+      name: 'robots',
+      content: 'index, follow'
+    }
+  ],
+  // Schema.org Service
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        'serviceType': 'Création de sites internet et développement web',
+        'provider': {
+          '@type': 'LocalBusiness',
+          'name': 'AS-Turing',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': 'Libourne',
+            'addressRegion': 'Nouvelle-Aquitaine',
+            'postalCode': '33500',
+            'addressCountry': 'FR'
+          }
+        },
+        'areaServed': [
+          {
+            '@type': 'City',
+            'name': 'Libourne'
+          },
+          {
+            '@type': 'City',
+            'name': 'Saint-Émilion'
+          },
+          {
+            '@type': 'City',
+            'name': 'Bordeaux'
+          }
+        ],
+        'hasOfferCatalog': {
+          '@type': 'OfferCatalog',
+          'name': 'Services Web',
+          'itemListElement': [
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Création site vitrine',
+                'description': 'Site internet professionnel pour présenter votre activité'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Création e-commerce',
+                'description': 'Boutique en ligne sur-mesure pour vendre vos produits'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Application métier',
+                'description': 'Solutions web personnalisées pour votre activité'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Refonte site web',
+                'description': 'Modernisation de votre site internet existant'
+              }
+            },
+            {
+              '@type': 'Offer',
+              'itemOffered': {
+                '@type': 'Service',
+                'name': 'Maintenance et TMA',
+                'description': 'Support technique et maintenance continue'
+              }
+            }
+          ]
+        }
+      })
+    }
+  ]
+})
 </script>

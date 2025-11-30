@@ -111,7 +111,11 @@
         "description": "Discutons de vos enjeux et trouvons ensemble les meilleures solutions.",
         "buttonText": "Demander un audit"
       },
-      "longDescription": "Le conseil stratégique digital, c'est comme avoir un architecte avant de construire une maison. Plutôt que de foncer tête baissée et de devoir tout refaire, nous prenons le temps d'analyser vos besoins réels, d'étudier les meilleures solutions du marché, et de vous proposer un plan d'action concret avec budget et planning. Que vous soyez une TPE qui lance son premier site ou une PME qui veut digitaliser ses processus, notre rôle est de traduire vos objectifs business en solutions techniques adaptées."
+      "longDescription": "Le conseil stratégique digital, c'est comme avoir un architecte avant de construire une maison. Plutôt que de foncer tête baissée et de devoir tout refaire, nous prenons le temps d'analyser vos besoins réels, d'étudier les meilleures solutions du marché, et de vous proposer un plan d'action concret avec budget et planning. Que vous soyez une TPE qui lance son premier site ou une PME qui veut digitaliser ses processus, notre rôle est de traduire vos objectifs business en solutions techniques adaptées.",
+      "metaTitle": "Conseil & Stratégie Digitale Libourne | Audit Technique & MOA",
+      "metaDescription": "Expert conseil digital à Libourne. Audit technique, cadrage projet, AMOA. Évitez les erreurs coûteuses avec un accompagnement stratégique personnalisé.",
+      "metaKeywords": "conseil digital Libourne, audit technique, AMOA, stratégie digitale, cadrage projet web",
+      "ogImage": null
     },
     {
       "title": "Conception & Développement Web",
@@ -224,7 +228,11 @@
         "description": "Discutons de vos besoins et co-construisons la solution idéale.",
         "buttonText": "Démarrer mon projet"
       },
-      "longDescription": "Développer un site ou une application, ce n'est pas juste du code. C'est comprendre votre métier, vos clients, vos contraintes. C'est concevoir une interface intuitive que vos utilisateurs vont adorer. C'est choisir les bonnes technologies pour que ça fonctionne aujourd'hui ET dans 5 ans. Nous travaillons main dans la main avec vous : vous validez chaque étape, vous voyez l'avancement régulièrement, et à la fin vous avez exactement ce dont vous avez besoin. Bonus : on vous forme pour que vous soyez autonome après."
+      "longDescription": "Développer un site ou une application, ce n'est pas juste du code. C'est comprendre votre métier, vos clients, vos contraintes. C'est concevoir une interface intuitive que vos utilisateurs vont adorer. C'est choisir les bonnes technologies pour que ça fonctionne aujourd'hui ET dans 5 ans. Nous travaillons main dans la main avec vous : vous validez chaque étape, vous voyez l'avancement régulièrement, et à la fin vous avez exactement ce dont vous avez besoin. Bonus : on vous forme pour que vous soyez autonome après.",
+      "metaTitle": "Création Site Internet & Développement Web Libourne | AS-Turing",
+      "metaDescription": "Développement web sur-mesure à Libourne : sites vitrines, e-commerce, applications métier. Technologies modernes, design responsive. Devis gratuit.",
+      "metaKeywords": "création site internet Libourne, développement web, site vitrine, e-commerce, application web, Symfony, Vue.js",
+      "ogImage": null
     },
     {
       "title": "Intégrations & Automatisation",
@@ -337,7 +345,11 @@
         "description": "Analysons ensemble votre écosystème et identifions les gains de productivité.",
         "buttonText": "Analyser mes besoins"
       },
-      "longDescription": "Imaginez : un nouveau client s'inscrit sur votre site, il est automatiquement ajouté à votre CRM, reçoit un email de bienvenue, et votre comptable voit la facture se créer toute seule. C'est ça, l'automatisation ! Plutôt que de payer quelqu'un pour recopier des infos d'un logiciel à l'autre (avec le risque d'erreurs), vos outils se synchronisent en temps réel. Résultat : vous gagnez des heures chaque semaine, vos données sont toujours à jour, et vous pouvez vous concentrer sur ce qui compte vraiment : votre business."
+      "longDescription": "Imaginez : un nouveau client s'inscrit sur votre site, il est automatiquement ajouté à votre CRM, reçoit un email de bienvenue, et votre comptable voit la facture se créer toute seule. C'est ça, l'automatisation ! Plutôt que de payer quelqu'un pour recopier des infos d'un logiciel à l'autre (avec le risque d'erreurs), vos outils se synchronisent en temps réel. Résultat : vous gagnez des heures chaque semaine, vos données sont toujours à jour, et vous pouvez vous concentrer sur ce qui compte vraiment : votre business.",
+      "metaTitle": "Intégrations & Automatisation Web | Connectez vos Outils - Libourne",
+      "metaDescription": "Intégration API et automatisation de processus. Connectez vos outils (CRM, ERP, e-commerce). Gagnez du temps avec des workflows intelligents.",
+      "metaKeywords": "intégration API, automatisation web, connecteur CRM, webhook, synchronisation données, workflow",
+      "ogImage": null
     },
     {
       "title": "TMA & Support Technique",
@@ -450,7 +462,11 @@
         "description": "Confiez-nous la maintenance de votre infrastructure et concentrez-vous sur votre business.",
         "buttonText": "Demander un audit"
       },
-      "longDescription": "Un site web, c'est comme une voiture : ça nécessite un entretien régulier. Mises à jour de sécurité pour éviter les piratages, sauvegardes pour ne jamais perdre vos données, optimisations pour garder un site rapide, corrections de bugs quand quelque chose ne marche plus... C'est notre métier de veiller à tout ça. Avec nos formules TMA (Tierce Maintenance Applicative), vous avez l'esprit tranquille : on surveille tout 24/7, on intervient rapidement en cas de problème, et on vous envoie un rapport tous les mois pour que vous sachiez ce qu'on a fait."
+      "longDescription": "Un site web, c'est comme une voiture : ça nécessite un entretien régulier. Mises à jour de sécurité pour éviter les piratages, sauvegardes pour ne jamais perdre vos données, optimisations pour garder un site rapide, corrections de bugs quand quelque chose ne marche plus... C'est notre métier de veiller à tout ça. Avec nos formules TMA (Tierce Maintenance Applicative), vous avez l'esprit tranquille : on surveille tout 24/7, on intervient rapidement en cas de problème, et on vous envoie un rapport tous les mois pour que vous sachiez ce qu'on a fait.",
+      "metaTitle": "TMA & Maintenance Site Internet Libourne | Support Technique",
+      "metaDescription": "Maintenance et support technique de sites web. TMA réactive, corrections bugs, mises à jour sécurité. Assurez la pérennité de votre site.",
+      "metaKeywords": "maintenance site web, TMA, support technique, correction bugs, mise à jour sécurité, hébergement",
+      "ogImage": null
     },
     {
       "title": "Formation & Montée en Compétences",
@@ -563,7 +579,11 @@
         "description": "Discutons de vos besoins en formation et créons un programme adapté à vos équipes.",
         "buttonText": "Demander un programme"
       },
-      "longDescription": "Nos formations, c'est l'inverse d'un cours magistral ennuyeux. On part de VOS besoins réels, on utilise VOS exemples concrets, et on vous fait pratiquer directement sur vos propres projets. Vous voulez savoir ajouter des pages sur votre site WordPress ? On vous montre ET vous le faites avec nous. Vous voulez comprendre le référencement Google ? On analyse votre site ensemble et on l'optimise. Zéro jargon incompréhensible, que du concret et de l'applicable immédiatement. À la fin, vous êtes autonome et vous avez des supports pour vous rappeler."
+      "longDescription": "Nos formations, c'est l'inverse d'un cours magistral ennuyeux. On part de VOS besoins réels, on utilise VOS exemples concrets, et on vous fait pratiquer directement sur vos propres projets. Vous voulez savoir ajouter des pages sur votre site WordPress ? On vous montre ET vous le faites avec nous. Vous voulez comprendre le référencement Google ? On analyse votre site ensemble et on l'optimise. Zéro jargon incompréhensible, que du concret et de l'applicable immédiatement. À la fin, vous êtes autonome et vous avez des supports pour vous rappeler.",
+      "metaTitle": "Formation Développement Web Libourne | Montée en Compétences",
+      "metaDescription": "Formation web personnalisée pour vos équipes. Développement, gestion de projet, bonnes pratiques. Devenez autonome sur vos outils.",
+      "metaKeywords": "formation développement web, formation Symfony, formation Vue.js, montée en compétences, formation sur-mesure",
+      "ogImage": null
     }
   ]
 }
