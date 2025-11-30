@@ -1,0 +1,62 @@
+# ================================
+# Docker Compose Override - DÉVELOPPEMENT LOCAL
+# ================================
+
+services:
+  nuxt:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: asturing-v2-dev-nuxt
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      NITRO_PORT: 3000
+      NUXT_PUBLIC_API_BASE: http://symfony
+      NUXT_TELEMETRY_DISABLED: 1
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.asturing-v2-front.rule=Host(`v2.as-turing.local`)"
+      - "traefik.http.routers.asturing-v2-front.entrypoints=web"
+      - "traefik.http.services.asturing-v2-front.loadbalancer.server.port=3000"
+
+  symfony:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: asturing-v2-dev-symfony
+    ports:
+      - "8082:80"
+    volumes:
+      - ./backend:/app
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+      APP_SECRET: dev_secret_key_change_in_prod
+      DATABASE_URL: "mysql://asturingudb:userpass@mysql:3306/asturingdb?serverVersion=8.0.32&charset=utf8mb4"
+      TRUSTED_PROXIES: 127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+      CORS_ALLOW_ORIGIN: "*"
+      JWT_SECRET_KEY: /app/config/jwt/private.pem
+      JWT_PUBLIC_KEY: /app/config/jwt/public.pem
+      JWT_PASSPHRASE: Fw7jzpdr7!
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.asturing-v2-api.rule=Host(`api-v2.as-turing.local`)"
+      - "traefik.http.routers.asturing-v2-api.entrypoints=web"
+      - "traefik.http.services.asturing-v2-api.loadbalancer.server.port=80"
+
+  mysql:
+    container_name: asturing-v2-dev-mysql
+    ports:
+      - "3308:3306"
+    volumes:
+      - asturing_v2_dev_db_data:/var/lib/mysql
+
+volumes:
+  asturing_v2_dev_db_data:
+

@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Command;
+
+use App\DataFixtures\ProjectFixtures;
+use App\DataFixtures\ServiceFixtures;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+
+#[AsCommand(
+    name: 'app:load-fixtures',
+    description: 'Load fixtures data into database',
+)]
+class LoadFixturesCommand extends Command
+{
+    public function __construct(
+        private EntityManagerInterface $entityManager
+    ) {
+        parent::__construct();
+    }
+
+    protected function configure(): void
+    {
+        $this->addOption('purge', null, InputOption::VALUE_NONE, 'Purge data before loading');
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $io = new SymfonyStyle($input, $output);
+
+        $io->title('Loading fixtures...');
+
+        // Purge if requested
+        if ($input->getOption('purge')) {
+            $io->section('Purging existing data...');
+            
+            $connection = $this->entityManager->getConnection();
+            $connection->executeStatement('SET FOREIGN_KEY_CHECKS=0');
+            $connection->executeStatement('TRUNCATE TABLE blog_post');
+            $connection->executeStatement('TRUNCATE TABLE project');
+            $connection->executeStatement('TRUNCATE TABLE service');
+            $connection->executeStatement('TRUNCATE TABLE contact_message');
+            $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1');
+            
+            $io->success('Data purged!');
+        }
+
+        // Load Services
+        $io->section('Loading Services...');
+        $serviceFixtures = new ServiceFixtures();
+        $serviceFixtures->load($this->entityManager);
+        $io->success('6 Services loaded successfully!');
+
+        // Load Projects
+        $io->section('Loading Projects...');
+        $projectFixtures = new ProjectFixtures();
+        $projectFixtures->load($this->entityManager);
+        $io->success('2 Projects loaded successfully!');
+
+        // Load Blog Posts
+        $io->section('Loading Blog Posts...');
+        $blogPostFixtures = new \App\DataFixtures\BlogPostFixtures();
+        $blogPostFixtures->load($this->entityManager);
+        $io->success('5 Blog Posts loaded successfully!');
+
+        $io->success('All fixtures loaded successfully!');
+
+        return Command::SUCCESS;
+    }
+}

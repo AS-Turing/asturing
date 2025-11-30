@@ -1,0 +1,111 @@
+{
+  "services": [
+    {
+      "title": "Conseil & Stratégie Digitale",
+      "slug": "conseil-strategie-digitale",
+      "icon": "mdi:lightbulb-on",
+      "iconGradient": "from-coral to-primary",
+      "borderColor": "border-coral",
+      "linkColor": "text-coral",
+      "position": 1,
+      "shortDescription": "Expertise technique et stratégique pour piloter vos projets digitaux.",
+      "description": "Bénéficiez d'un regard expert pour faire les bons choix stratégiques et techniques. De l'audit à la définition de votre roadmap, nous vous accompagnons dans la réussite de vos projets digitaux.",
+      "heroTitle": "Conseil & Stratégie Digitale",
+      "heroSubtitle": "L'expertise pour prendre les bonnes décisions",
+      "heroDescription": "Audit technique, choix technologiques, cadrage projet... Nous vous accompagnons pour définir la meilleure stratégie digitale et éviter les erreurs coûteuses.",
+      "auditDuration": "2h",
+      "deliveryTime": "1-2 sem.",
+      "startingPrice": "800€",
+      "solutions": [
+        {
+          "title": "Audit technique complet",
+          "description": "Analyse approfondie de votre infrastructure et recommandations",
+          "features": [
+            "Code review & architecture",
+            "Performance & sécurité",
+            "SEO technique",
+            "Plan d'action priorisé"
+          ]
+        },
+        {
+          "title": "Cadrage de projet",
+          "description": "Définissez les bases solides de votre projet digital",
+          "features": [
+            "Analyse des besoins",
+            "Rédaction cahier des charges",
+            "Choix technologiques",
+            "Estimation budget & planning"
+          ]
+        },
+        {
+          "title": "Accompagnement MOA/AMOA",
+          "description": "Un expert technique à vos côtés tout au long du projet",
+          "features": [
+            "Pilotage technique",
+            "Validation des livrables",
+            "Conseil continu",
+            "Gestion des prestataires"
+          ]
+        }
+      ],
+      "process": [
+        {
+          "title": "Compréhension du contexte",
+          "description": "Analyse de votre activité, objectifs business et contraintes techniques"
+        },
+        {
+          "title": "Audit & Diagnostic",
+          "description": "Évaluation technique et stratégique de votre situation actuelle"
+        },
+        {
+          "title": "Recommandations stratégiques",
+          "description": "Propositions concrètes et priorisées avec ROI estimé"
+        },
+        {
+          "title": "Roadmap & Plan d'action",
+          "description": "Feuille de route détaillée avec phases, planning et budget"
+        },
+        {
+          "title": "Suivi & Ajustements",
+          "description": "Accompagnement continu et adaptation de la stratégie selon les résultats"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "Outils d'analyse (Lighthouse, GTmetrix)",
+          "description": "Audit de performance, SEO et accessibilité web"
+        },
+        {
+          "name": "Sécurité (OWASP, Snyk)",
+          "description": "Analyse des vulnérabilités et conformité RGPD"
+        },
+        {
+          "name": "Architecture (C4, UML)",
+          "description": "Modélisation et documentation d'architectures techniques"
+        },
+        {
+          "name": "Gestion de projet (Jira, Notion)",
+          "description": "Pilotage et suivi de projets en mode agile"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Pourquoi faire un audit technique ?",
+          "answer": "Pour identifier les faiblesses de votre infrastructure, optimiser les performances, renforcer la sécurité et planifier sereinement les évolutions futures. Un audit évite les mauvaises surprises et sécurise vos investissements."
+        },
+        {
+          "question": "Quelle est la différence entre MOA et AMOA ?",
+          "answer": "La MOA (Maîtrise d'Ouvrage) pilote le projet côté métier. L'AMOA (Assistance à MOA) apporte une expertise technique pour aider la MOA à prendre les bonnes décisions et dialoguer efficacement avec les équipes techniques."
+        },
+        {
+          "question": "Intervenez-vous sur des projets déjà en cours ?",
+          "answer": "Absolument ! Nous pouvons rejoindre votre projet à tout moment pour apporter notre expertise, débloquer des situations complexes ou valider les choix techniques."
+        },
+        {
+          "question": "Travaillez-vous avec d'autres prestataires ?",
+          "answer": "Oui, nous collaborons régulièrement avec d'autres agences, designers ou développeurs. Notre rôle est d'assurer la cohérence technique et la qualité du projet."
+        }
+      ]
+    }
+  ]
+}

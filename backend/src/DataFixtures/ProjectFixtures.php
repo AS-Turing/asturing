@@ -1,0 +1,70 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Entity\Project;
+use Doctrine\Persistence\ObjectManager;
+
+class ProjectFixtures
+{
+    public function load(ObjectManager $manager): void
+    {
+        $projectsData = [
+            [
+                'title' => 'Château Montaiguillon',
+                'slug' => 'chateau-montaiguillon',
+                'category' => 'SITE VITRINE PREMIUM',
+                'description' => 'Site vitrine premium pour domaine viticole de Saint-Émilion. Architecture WordPress custom, 15+ blocs Gutenberg sur-mesure, design system élégant bordeaux/beige.',
+                'technologies' => ['WordPress', 'Gutenberg', 'CI/CD', 'Docker'],
+                'imageText' => '[ Screenshot Château Montaiguillon ]',
+                'bgGradient' => 'from-gray-900 to-gray-800',
+                'imageGradient' => 'from-amber-900 to-red-900',
+                'dotColor' => 'bg-primary',
+                'categoryColor' => 'text-gray-400',
+                'descColor' => 'text-gray-300',
+                'techClass' => 'bg-white/10 text-white',
+                'linkColor' => 'text-primary',
+                'position' => 1,
+            ],
+            [
+                'title' => 'Solution web sur-mesure',
+                'slug' => 'application-metier',
+                'category' => 'APPLICATION MÉTIER',
+                'description' => 'Application métier pour gestion de flux complexe. Interface moderne, API REST performante, automatisations avancées et tableau de bord analytique.',
+                'technologies' => ['Vue.js 3', 'Nuxt', 'Symfony', 'API Platform'],
+                'imageText' => '[ Screenshot Application ]',
+                'bgGradient' => 'from-primary to-secondary',
+                'imageGradient' => 'from-primary/20 to-secondary/20',
+                'dotColor' => 'bg-white',
+                'categoryColor' => 'text-white/80',
+                'descColor' => 'text-white/90',
+                'techClass' => 'bg-white/20 text-white',
+                'linkColor' => 'text-white',
+                'position' => 2,
+            ],
+        ];
+
+        foreach ($projectsData as $data) {
+            $project = new Project();
+            $project->setTitle($data['title']);
+            $project->setSlug($data['slug']);
+            $project->setCategory($data['category']);
+            $project->setDescription($data['description']);
+            $project->setTechnologies($data['technologies']);
+            $project->setImageText($data['imageText']);
+            $project->setBgGradient($data['bgGradient']);
+            $project->setImageGradient($data['imageGradient']);
+            $project->setDotColor($data['dotColor']);
+            $project->setCategoryColor($data['categoryColor']);
+            $project->setDescColor($data['descColor']);
+            $project->setTechClass($data['techClass']);
+            $project->setLinkColor($data['linkColor']);
+            $project->setPosition($data['position']);
+            $project->setIsActive(true);
+
+            $manager->persist($project);
+        }
+
+        $manager->flush();
+    }
+}

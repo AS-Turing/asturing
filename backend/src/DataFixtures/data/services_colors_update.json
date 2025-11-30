@@ -1,0 +1,32 @@
+{
+  "creation-sites-web": {
+    "borderColor": "border-primary",
+    "iconGradient": "from-primary to-coral",
+    "linkColor": "text-primary"
+  },
+  "developpement-sur-mesure": {
+    "borderColor": "border-secondary",
+    "iconGradient": "from-secondary to-accent",
+    "linkColor": "text-secondary"
+  },
+  "maintenance-support": {
+    "borderColor": "border-accent",
+    "iconGradient": "from-accent to-coral",
+    "linkColor": "text-accent"
+  },
+  "conseil-accompagnement": {
+    "borderColor": "border-coral",
+    "iconGradient": "from-coral to-primary",
+    "linkColor": "text-coral"
+  },
+  "formations-vulgarisation": {
+    "borderColor": "border-primary",
+    "iconGradient": "from-primary to-secondary",
+    "linkColor": "text-primary"
+  },
+  "integrations-externes": {
+    "borderColor": "border-secondary",
+    "iconGradient": "from-secondary to-primary",
+    "linkColor": "text-secondary"
+  }
+}
