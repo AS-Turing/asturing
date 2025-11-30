@@ -3,8 +3,8 @@
     "hero": {
       "badge": "Notre Approche",
       "badgeIcon": "mdi:chart-timeline-variant",
-      "title": "Notre Méthodologie",
-      "subtitle": "Un processus éprouvé, transparent et collaboratif pour garantir la réussite de vos projets digitaux"
+      "title": "Méthodologie de Développement Web",
+      "subtitle": "Processus agile et transparent pour vos projets web à Libourne. De l'audit au déploiement, un accompagnement personnalisé à chaque étape."
     },
     "process": {
       "title": "Notre Processus en 5 Étapes",
@@ -109,8 +109,8 @@
       ]
     },
     "seo": {
-      "title": "Notre Méthodologie - AS-Turing",
-      "description": "Découvrez notre processus de développement web en 5 étapes : de la découverte à la mise en ligne. Approche agile, transparente et collaborative."
+      "title": "Méthodologie Agence Web Libourne | Processus de Développement",
+      "description": "Découvrez notre processus de création de sites internet : audit, design, développement agile, tests, déploiement. Méthodologie transparente et collaborative à Libourne."
     }
   }
 }

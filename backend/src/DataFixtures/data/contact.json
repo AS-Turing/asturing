@@ -2,8 +2,8 @@
   "contact": {
     "hero": {
       "badge": "📧 Contactez-nous",
-      "title": "Parlons de votre projet",
-      "subtitle": "Audit gratuit de 30min • Devis sous 48h • Premier prototype en 1 semaine"
+      "title": "Contactez-nous",
+      "subtitle": "Un projet de site internet à Libourne ? Discutons-en autour d'un café. Devis gratuit et conseils personnalisés."
     },
     "form": {
       "title": "Envoyez-nous un message",
@@ -81,8 +81,8 @@
       ]
     },
     "seo": {
-      "title": "Contact - AS-Turing",
-      "description": "Contactez AS-Turing pour votre projet web. Audit gratuit, devis sous 48h. Agence web à Libourne spécialisée en développement sur-mesure."
+      "title": "Contact Agence Web Libourne | Devis Gratuit & Conseils",
+      "description": "Contactez notre agence web à Libourne pour votre projet de site internet. Devis gratuit, réponse rapide. Email, téléphone ou rendez-vous : nous sommes à votre écoute !"
     }
   }
 }

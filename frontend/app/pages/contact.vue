@@ -149,7 +149,87 @@ const submitContact = async () => {
 }
 
 useHead({
-  title: config.value?.seo?.title || 'Contact',
-  meta: [{ name: 'description', content: config.value?.seo?.description || '' }]
+  title: config.value?.seo?.title || 'Contact Agence Web Libourne | Devis Gratuit & Conseils',
+  meta: [
+    {
+      name: 'description',
+      content: config.value?.seo?.description || 'Contactez notre agence web à Libourne pour votre projet de site internet. Devis gratuit, réponse rapide. Rencontrons-nous autour d\'un café !'
+    },
+    // Keywords
+    {
+      name: 'keywords',
+      content: 'contact agence web Libourne, devis site internet, rendez-vous agence web, création site Libourne, contact développeur web'
+    },
+    // Open Graph
+    {
+      property: 'og:title',
+      content: config.value?.seo?.title || 'Contactez-nous - Agence Web Libourne'
+    },
+    {
+      property: 'og:description',
+      content: config.value?.seo?.description || 'Une question ? Un projet web ? Contactez-nous pour un devis gratuit et des conseils personnalisés.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    // Robots
+    {
+      name: 'robots',
+      content: 'index, follow'
+    }
+  ],
+  // Schema.org ContactPage
+  script: config.value ? [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        'name': 'Contact - AS-Turing',
+        'description': 'Contactez notre agence web pour votre projet de site internet',
+        'url': 'https://as-turing.fr/contact',
+        'mainEntity': {
+          '@type': 'LocalBusiness',
+          'name': 'AS-Turing',
+          'description': 'Agence web spécialisée en création de sites internet',
+          'telephone': config.value.contactInfo?.find((i: any) => i.type === 'phone')?.value || '',
+          'email': config.value.contactInfo?.find((i: any) => i.type === 'email')?.value || '',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': 'Libourne',
+            'addressRegion': 'Nouvelle-Aquitaine',
+            'postalCode': '33500',
+            'addressCountry': 'FR'
+          },
+          'geo': {
+            '@type': 'GeoCoordinates',
+            'latitude': '44.9178',
+            'longitude': '-0.2422'
+          },
+          'areaServed': [
+            {
+              '@type': 'City',
+              'name': 'Libourne'
+            },
+            {
+              '@type': 'City',
+              'name': 'Saint-Émilion'
+            },
+            {
+              '@type': 'City',
+              'name': 'Bordeaux'
+            },
+            {
+              '@type': 'City',
+              'name': 'Créon'
+            }
+          ],
+          'priceRange': '€€',
+          'openingHours': 'Mo-Fr 09:00-18:00'
+        }
+      })
+    }
+  ] : []
 })
 </script>

@@ -106,9 +106,90 @@
 <script setup lang="ts">
 const { data: config } = await useFetch('/api/process/config')
 
+// SEO optimisé pour la page méthodologie/processus
 useHead({
-  title: config.value?.seo?.title || 'Notre Méthodologie',
-  meta: [{ name: 'description', content: config.value?.seo?.description || '' }]
+  title: config.value?.seo?.title || 'Méthodologie Agence Web Libourne | Processus de Développement',
+  meta: [
+    {
+      name: 'description',
+      content: config.value?.seo?.description || 'Découvrez notre processus de création de sites internet : de l\'audit au déploiement. Méthodologie agile, transparence et accompagnement personnalisé à Libourne.'
+    },
+    // Keywords
+    {
+      name: 'keywords',
+      content: 'méthodologie agence web, processus développement web, méthode agile, gestion projet web, accompagnement digital, Libourne'
+    },
+    // Open Graph
+    {
+      property: 'og:title',
+      content: config.value?.seo?.title || 'Notre Méthodologie - Processus de Développement Web'
+    },
+    {
+      property: 'og:description',
+      content: config.value?.seo?.description || 'Méthodologie agile et transparente pour vos projets web. De l\'audit au déploiement, nous vous accompagnons à chaque étape.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    // Robots
+    {
+      name: 'robots',
+      content: 'index, follow'
+    }
+  ],
+  // Schema.org HowTo
+  script: config.value ? [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        'name': 'Processus de création de site internet',
+        'description': 'Méthodologie complète pour la création de votre site web, de l\'audit initial au déploiement en production',
+        'step': config.value.process?.steps?.map((step: any, index: number) => ({
+          '@type': 'HowToStep',
+          'position': index + 1,
+          'name': step.title,
+          'text': step.description,
+          'itemListElement': step.deliverables?.map((deliverable: string) => ({
+            '@type': 'HowToDirection',
+            'text': deliverable
+          })) || []
+        })) || []
+      })
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        'name': 'AS-Turing',
+        'description': 'Agence web spécialisée en création de sites internet et applications web',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Libourne',
+          'addressRegion': 'Nouvelle-Aquitaine',
+          'postalCode': '33500',
+          'addressCountry': 'FR'
+        },
+        'areaServed': [
+          {
+            '@type': 'City',
+            'name': 'Libourne'
+          },
+          {
+            '@type': 'City',
+            'name': 'Saint-Émilion'
+          },
+          {
+            '@type': 'City',
+            'name': 'Bordeaux'
+          }
+        ]
+      })
+    }
+  ] : []
 })
 </script>
 
