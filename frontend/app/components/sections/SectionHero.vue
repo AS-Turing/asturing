@@ -18,17 +18,21 @@
           </div>
           
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Votre partenaire digital pour des projets qui 
+            Création de site internet à 
             <span class="relative inline-block">
-              <span class="relative z-10 text-yellow-300 animate-pulse">performent</span>
+              <span class="relative z-10 text-yellow-300">Libourne</span>
               <span class="absolute bottom-2 left-0 w-full h-3 bg-yellow-300/30 -rotate-1"></span>
             </span>
           </h1>
           
           <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
-            Agence web spécialisée en création de sites haute performance et applications métier. 
-            Basée à Libourne, nous accompagnons TPE, PME et grands comptes dans leur transformation 
-            digitale avec des solutions sur-mesure et pérennes.
+            Votre agence web de proximité dans l'Entre-deux-Mers. 
+            Sites vitrines, e-commerce et applications métier pour commerces et PME. 
+            <strong class="font-bold">Qualité professionnelle, tarifs accessibles, accompagnement personnalisé.</strong>
+          </p>
+          
+          <p class="text-lg text-white/80 mb-4">
+            Libourne • Saint-Émilion • Créon • Bordeaux Est
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4">
