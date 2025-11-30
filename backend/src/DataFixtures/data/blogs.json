@@ -1,0 +1,64 @@
+{
+  "blogs": [
+    {
+      "title": "Comment choisir le bon CMS pour votre projet web ?",
+      "slug": "comment-choisir-bon-cms-projet-web",
+      "excerpt": "WordPress, PrestaShop, ou développement custom ? Guide complet pour faire le bon choix selon vos besoins et votre budget.",
+      "content": "<h2>Introduction</h2><p>Le choix d'un CMS est crucial pour la réussite de votre projet web. Dans cet article, nous allons explorer les différentes options disponibles et vous aider à faire le bon choix.</p><h2>WordPress : Le couteau suisse</h2><p>WordPress est le CMS le plus populaire au monde, et pour de bonnes raisons...</p><h2>PrestaShop : L'expert e-commerce</h2><p>Pour les boutiques en ligne, PrestaShop offre des fonctionnalités natives puissantes...</p><h2>Développement custom : La solution sur-mesure</h2><p>Quand les solutions clés en main ne suffisent plus, le développement sur-mesure s'impose...</p>",
+      "category": "Technique",
+      "categoryClass": "bg-primary/10 text-primary",
+      "imageGradient": "from-primary to-coral",
+      "imageText": "[ Illustration CMS ]",
+      "publishedAt": "2024-11-15",
+      "isPublished": true
+    },
+    {
+      "title": "Les 10 erreurs à éviter lors de la création de votre site web",
+      "slug": "10-erreurs-eviter-creation-site-web",
+      "excerpt": "Découvrez les pièges les plus courants qui peuvent compromettre le succès de votre site web et comment les éviter.",
+      "content": "<h2>Introduction</h2><p>La création d'un site web peut sembler simple, mais de nombreux pièges peuvent compromettre votre projet...</p><h2>1. Négliger le responsive design</h2><p>Plus de 60% du trafic web provient des mobiles...</p><h2>2. Ignorer le SEO dès le départ</h2><p>Le référencement naturel doit être pensé dès la conception...</p>",
+      "category": "Conseils",
+      "categoryClass": "bg-secondary/10 text-secondary",
+      "imageGradient": "from-secondary to-accent",
+      "imageText": "[ Illustration Erreurs Web ]",
+      "publishedAt": "2024-11-20",
+      "isPublished": true
+    },
+    {
+      "title": "Vue.js 3 vs React : Quel framework choisir en 2024 ?",
+      "slug": "vuejs-3-vs-react-quel-framework-choisir-2024",
+      "excerpt": "Comparatif détaillé entre Vue.js 3 et React pour vous aider à choisir le framework JavaScript adapté à vos projets.",
+      "content": "<h2>Introduction</h2><p>Le choix d'un framework JavaScript est déterminant pour la réussite de votre application web moderne...</p><h2>Vue.js 3 : Simplicité et élégance</h2><p>Vue.js 3 avec la Composition API offre une approche intuitive et progressive...</p><h2>React : L'écosystème mature</h2><p>React domine le marché avec un écosystème riche et une large communauté...</p>",
+      "category": "Développement",
+      "categoryClass": "bg-accent/10 text-accent",
+      "imageGradient": "from-accent to-coral",
+      "imageText": "[ Illustration Vue vs React ]",
+      "publishedAt": "2024-11-25",
+      "isPublished": true
+    },
+    {
+      "title": "Optimiser les performances de votre application Symfony",
+      "slug": "optimiser-performances-application-symfony",
+      "excerpt": "Guide pratique pour améliorer drastiquement les performances de vos applications Symfony avec des techniques éprouvées.",
+      "content": "<h2>Introduction</h2><p>Les performances sont cruciales pour l'expérience utilisateur et le SEO...</p><h2>Cache et optimisation</h2><p>Symfony offre de puissants outils de cache natifs...</p><h2>Profiler et analyse</h2><p>Le Symfony Profiler est votre meilleur allié pour identifier les goulets d'étranglement...</p>",
+      "category": "Performance",
+      "categoryClass": "bg-coral/10 text-coral",
+      "imageGradient": "from-coral to-primary",
+      "imageText": "[ Illustration Performance Symfony ]",
+      "publishedAt": "2024-11-28",
+      "isPublished": true
+    },
+    {
+      "title": "L'importance du design UX/UI pour votre business",
+      "slug": "importance-design-ux-ui-business",
+      "excerpt": "Comment un bon design UX/UI peut transformer votre taux de conversion et fidéliser vos utilisateurs.",
+      "content": "<h2>Introduction</h2><p>Le design n'est pas qu'une question d'esthétique, c'est un investissement business...</p><h2>UX : L'expérience utilisateur avant tout</h2><p>Un site intuitif réduit le taux de rebond et augmente les conversions...</p><h2>UI : L'interface qui séduit</h2><p>Une interface moderne et cohérente renforce la crédibilité de votre marque...</p>",
+      "category": "Design",
+      "categoryClass": "bg-primary/10 text-primary",
+      "imageGradient": "from-primary to-secondary",
+      "imageText": "[ Illustration UX/UI ]",
+      "publishedAt": "2024-12-01",
+      "isPublished": false
+    }
+  ]
+}

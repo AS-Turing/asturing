@@ -1,6 +1,5 @@
 <template>
-  <div class="min-h-screen">
-    <!-- Hero -->
+  <div v-if="config" class="min-h-screen">
     <section class="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)]">
       <div class="absolute inset-0 opacity-20">
         <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-float"></div>
@@ -10,27 +9,26 @@
       <div class="max-w-5xl mx-auto text-center relative z-10">
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-semibold mb-8">
           <Icon name="mdi:chart-timeline-variant" class="w-5 h-5" />
-          <span>Notre Approche</span>
+          <span>{{ config.hero.badge }}</span>
         </div>
 
         <h1 class="text-5xl md:text-7xl font-heading font-bold text-white mb-8 leading-tight">
-          Notre Méthodologie
+          {{ config.hero.title }}
         </h1>
         <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Un processus éprouvé, transparent et collaboratif pour garantir la réussite de vos projets digitaux
+          {{ config.hero.subtitle }}
         </p>
       </div>
     </section>
 
-    <!-- Process -->
     <section class="py-24 px-4 bg-white dark:bg-gray-900 transition-colors">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-            Notre Processus en 5 Étapes
+            {{ config.process.title }}
           </h2>
           <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            De l'idée à la mise en ligne, un accompagnement structuré et agile
+            {{ config.process.description }}
           </p>
         </div>
 
@@ -38,7 +36,7 @@
           <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-coral)] transform -translate-x-1/2 hidden md:block"></div>
 
           <div class="space-y-16">
-            <div v-for="(step, index) in processSteps" :key="index" class="relative flex flex-col md:flex-row gap-8 items-center" :class="{ 'md:flex-row-reverse': index % 2 === 1 }">
+            <div v-for="(step, index) in config.process.steps" :key="index" class="relative flex flex-col md:flex-row gap-8 items-center" :class="{ 'md:flex-row-reverse': index % 2 === 1 }">
               <div class="flex-shrink-0 relative z-10">
                 <div class="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center shadow-2xl">
                   <span class="text-white text-3xl font-bold">{{ index + 1 }}</span>
@@ -75,20 +73,19 @@
       </div>
     </section>
 
-    <!-- Values -->
     <section class="py-24 px-4 bg-gray-50 dark:bg-gray-800 transition-colors">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-            Nos Engagements
+            {{ config.values.title }}
           </h2>
           <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Les valeurs qui guident notre travail au quotidien
+            {{ config.values.description }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="(value, index) in values" :key="index" class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group">
+          <div v-for="(value, index) in config.values.items" :key="index" class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group">
             <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]"></div>
 
             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -102,82 +99,17 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <ServiceCTA />
   </div>
 </template>
 
 <script setup lang="ts">
-const processSteps = [
-  {
-    icon: 'mdi:compass',
-    title: 'Découverte & Cadrage',
-    duration: '1-2 semaines',
-    description: 'Nous commençons par comprendre en profondeur votre activité, vos objectifs et vos contraintes. Ateliers de cadrage, analyse de l\'existant, définition du périmètre.',
-    deliverables: ['Cahier des charges détaillé', 'Architecture technique', 'Estimation budget & planning', 'Maquettes fonctionnelles']
-  },
-  {
-    icon: 'mdi:palette',
-    title: 'Design & Prototypage',
-    duration: '2-3 semaines',
-    description: 'Conception de l\'expérience utilisateur (UX) et de l\'interface (UI). Création de prototypes interactifs que vous validez avant de passer au développement.',
-    deliverables: ['Maquettes haute-fidélité', 'Prototype cliquable', 'Charte graphique', 'Guide de style']
-  },
-  {
-    icon: 'mdi:code-braces',
-    title: 'Développement Agile',
-    duration: '4-12 semaines',
-    description: 'Développement par sprints de 2 semaines avec démonstrations régulières. Vous suivez l\'avancement en temps réel et validez chaque fonctionnalité.',
-    deliverables: ['Code source versionné', 'Démos toutes les 2 semaines', 'Documentation technique', 'Environnement de préproduction']
-  },
-  {
-    icon: 'mdi:test-tube',
-    title: 'Tests & Optimisation',
-    duration: '1-2 semaines',
-    description: 'Tests approfondis : fonctionnels, performances, sécurité, compatibilité multi-navigateurs et mobile. Optimisation SEO et accessibilité.',
-    deliverables: ['Rapport de tests complets', 'Corrections de bugs', 'Optimisation performances', 'Documentation utilisateur']
-  },
-  {
-    icon: 'mdi:rocket-launch',
-    title: 'Mise en ligne & Suivi',
-    duration: '1 semaine',
-    description: 'Déploiement sécurisé en production, formation de vos équipes, et suivi post-lancement. Nous restons disponibles pour vous accompagner.',
-    deliverables: ['Site en production', 'Formation utilisateurs', 'Documentation complète', 'Support 1 mois offert']
-  }
-]
+const { data: config } = await useFetch('/api/process/config')
 
-const values = [
-  {
-    icon: 'mdi:handshake',
-    title: 'Transparence Totale',
-    description: 'Vous avez accès en temps réel à l\'avancement du projet. Pas de surprises, pas de jargon incompréhensible. On vous explique tout clairement.'
-  },
-  {
-    icon: 'mdi:account-group',
-    title: 'Collaboration Active',
-    description: 'Votre projet, c\'est VOTRE projet. Nous co-construisons ensemble, vous validez chaque étape, et votre feedback fait évoluer le produit.'
-  },
-  {
-    icon: 'mdi:quality-high',
-    title: 'Qualité Premium',
-    description: 'Code propre, sécurisé et maintenable. Tests rigoureux, respect des standards web, performances optimales. Pas de compromis sur la qualité.'
-  },
-  {
-    icon: 'mdi:rocket',
-    title: 'Livraison Continue',
-    description: 'Pas besoin d\'attendre 6 mois pour voir quelque chose. Avec notre approche agile, vous voyez des résultats concrets toutes les 2 semaines.'
-  },
-  {
-    icon: 'mdi:school',
-    title: 'Transmission de Savoir',
-    description: 'On ne vous laisse pas seul après la livraison. Formation complète, documentation claire, et on vous rend autonome sur votre outil.'
-  },
-  {
-    icon: 'mdi:shield-check',
-    title: 'Engagement Long Terme',
-    description: 'On ne disparaît pas après le projet. Support, maintenance, évolutions... On reste votre partenaire tech sur la durée.'
-  }
-]
+useHead({
+  title: config.value?.seo?.title || 'Notre Méthodologie',
+  meta: [{ name: 'description', content: config.value?.seo?.description || '' }]
+})
 </script>
 
 <style scoped>

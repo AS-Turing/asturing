@@ -1,0 +1,116 @@
+{
+  "process": {
+    "hero": {
+      "badge": "Notre Approche",
+      "badgeIcon": "mdi:chart-timeline-variant",
+      "title": "Notre Méthodologie",
+      "subtitle": "Un processus éprouvé, transparent et collaboratif pour garantir la réussite de vos projets digitaux"
+    },
+    "process": {
+      "title": "Notre Processus en 5 Étapes",
+      "description": "De l'idée à la mise en ligne, un accompagnement structuré et agile",
+      "steps": [
+        {
+          "icon": "mdi:compass",
+          "title": "Découverte & Cadrage",
+          "duration": "1-2 semaines",
+          "description": "Nous commençons par comprendre en profondeur votre activité, vos objectifs et vos contraintes. Ateliers de cadrage, analyse de l'existant, définition du périmètre.",
+          "deliverables": [
+            "Cahier des charges détaillé",
+            "Architecture technique",
+            "Estimation budget & planning",
+            "Maquettes fonctionnelles"
+          ]
+        },
+        {
+          "icon": "mdi:palette",
+          "title": "Design & Prototypage",
+          "duration": "2-3 semaines",
+          "description": "Conception de l'expérience utilisateur (UX) et de l'interface (UI). Création de prototypes interactifs que vous validez avant de passer au développement.",
+          "deliverables": [
+            "Maquettes haute-fidélité",
+            "Prototype cliquable",
+            "Charte graphique",
+            "Guide de style"
+          ]
+        },
+        {
+          "icon": "mdi:code-braces",
+          "title": "Développement Agile",
+          "duration": "4-12 semaines",
+          "description": "Développement par sprints de 2 semaines avec démonstrations régulières. Vous suivez l'avancement en temps réel et validez chaque fonctionnalité.",
+          "deliverables": [
+            "Code source versionné",
+            "Démos toutes les 2 semaines",
+            "Documentation technique",
+            "Environnement de préproduction"
+          ]
+        },
+        {
+          "icon": "mdi:test-tube",
+          "title": "Tests & Optimisation",
+          "duration": "1-2 semaines",
+          "description": "Tests approfondis : fonctionnels, performances, sécurité, compatibilité multi-navigateurs et mobile. Optimisation SEO et accessibilité.",
+          "deliverables": [
+            "Rapport de tests complets",
+            "Corrections de bugs",
+            "Optimisation performances",
+            "Documentation utilisateur"
+          ]
+        },
+        {
+          "icon": "mdi:rocket-launch",
+          "title": "Mise en ligne & Suivi",
+          "duration": "1 semaine",
+          "description": "Déploiement sécurisé en production, formation de vos équipes, et suivi post-lancement. Nous restons disponibles pour vous accompagner.",
+          "deliverables": [
+            "Site en production",
+            "Formation utilisateurs",
+            "Documentation complète",
+            "Support 1 mois offert"
+          ]
+        }
+      ]
+    },
+    "values": {
+      "title": "Nos Engagements",
+      "description": "Les valeurs qui guident notre travail au quotidien",
+      "items": [
+        {
+          "icon": "mdi:handshake",
+          "title": "Transparence Totale",
+          "description": "Vous avez accès en temps réel à l'avancement du projet. Pas de surprises, pas de jargon incompréhensible. On vous explique tout clairement."
+        },
+        {
+          "icon": "mdi:account-group",
+          "title": "Collaboration Active",
+          "description": "Votre projet, c'est VOTRE projet. Nous co-construisons ensemble, vous validez chaque étape, et votre feedback fait évoluer le produit."
+        },
+        {
+          "icon": "mdi:quality-high",
+          "title": "Qualité Premium",
+          "description": "Code propre, sécurisé et maintenable. Tests rigoureux, respect des standards web, performances optimales. Pas de compromis sur la qualité."
+        },
+        {
+          "icon": "mdi:rocket",
+          "title": "Livraison Continue",
+          "description": "Pas besoin d'attendre 6 mois pour voir quelque chose. Avec notre approche agile, vous voyez des résultats concrets toutes les 2 semaines."
+        },
+        {
+          "icon": "mdi:school",
+          "title": "Transmission de Savoir",
+          "description": "On ne vous laisse pas seul après la livraison. Formation complète, documentation claire, et on vous rend autonome sur votre outil."
+        },
+        {
+          "icon": "mdi:shield-check",
+          "title": "Engagement Long Terme",
+          "description": "On ne disparaît pas après le projet. Support, maintenance, évolutions... On reste votre partenaire tech sur la durée."
+        }
+      ]
+    },
+    "seo": {
+      "title": "Notre Méthodologie - AS-Turing",
+      "description": "Découvrez notre processus de développement web en 5 étapes : de la découverte à la mise en ligne. Approche agile, transparente et collaborative."
+    }
+  }
+}

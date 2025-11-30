@@ -1,0 +1,88 @@
+{
+  "contact": {
+    "hero": {
+      "badge": "📧 Contactez-nous",
+      "title": "Parlons de votre projet",
+      "subtitle": "Audit gratuit de 30min • Devis sous 48h • Premier prototype en 1 semaine"
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.",
+      "privacyText": "En soumettant ce formulaire, vous acceptez notre",
+      "privacyLink": "politique de confidentialité",
+      "submitButton": "Envoyer ma demande",
+      "submittingButton": "Envoi en cours...",
+      "successMessage": "✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.",
+      "errorMessage": "❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email."
+    },
+    "contactInfo": [
+      {
+        "icon": "mdi:email",
+        "gradient": "gradient-primary-coral",
+        "title": "Email",
+        "value": "contact@as-turing.fr",
+        "link": "mailto:contact@as-turing.fr",
+        "type": "email"
+      },
+      {
+        "icon": "mdi:phone",
+        "gradient": "gradient-secondary-accent",
+        "title": "Téléphone",
+        "value": "06 12 34 56 78",
+        "link": "tel:+33612345678",
+        "type": "phone"
+      },
+      {
+        "icon": "mdi:map-marker",
+        "gradient": "gradient-accent-coral",
+        "title": "Localisation",
+        "value": "Libourne, Nouvelle-Aquitaine\nInterventions France entière",
+        "type": "text"
+      },
+      {
+        "icon": "mdi:clock-outline",
+        "gradient": "gradient-coral-primary",
+        "title": "Horaires",
+        "value": "Lun - Ven: 9h - 18h\nSam: Sur rendez-vous",
+        "type": "text"
+      }
+    ],
+    "urgentCta": {
+      "title": "Besoin urgent ?",
+      "description": "Appelez-nous directement pour un échange rapide sur votre projet.",
+      "buttonText": "Appeler maintenant",
+      "buttonLink": "tel:+33612345678",
+      "buttonIcon": "mdi:phone"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "description": "Avant de nous contacter, consultez nos réponses aux questions les plus courantes",
+      "items": [
+        {
+          "question": "Quel est le délai moyen pour développer un site web ?",
+          "answer": "Le délai varie selon la complexité du projet. Un site vitrine simple : 2-3 semaines. Un site e-commerce : 4-8 semaines. Une application sur-mesure : 8-16 semaines. Nous vous fournissons un planning détaillé dès le devis."
+        },
+        {
+          "question": "Quels sont vos tarifs ?",
+          "answer": "Nos tarifs varient selon vos besoins. Site vitrine à partir de 2500€, e-commerce à partir de 5000€, applications métier sur devis. Nous proposons aussi des formules de maintenance mensuelle adaptées à votre budget."
+        },
+        {
+          "question": "Proposez-vous de la maintenance après livraison ?",
+          "answer": "Oui ! Nous proposons des contrats de TMA (Tierce Maintenance Applicative) mensuels incluant mises à jour, sauvegardes, monitoring et support technique. À partir de 150€/mois selon vos besoins."
+        },
+        {
+          "question": "Travaillez-vous avec des clients en dehors de Libourne ?",
+          "answer": "Absolument ! Nous intervenons partout en France. La plupart de nos échanges se font en visio, et nous nous déplaçons si besoin pour les projets importants."
+        },
+        {
+          "question": "Puis-je gérer mon site moi-même après la livraison ?",
+          "answer": "Oui ! Tous nos sites sont livrés avec une formation complète. Nous privilégions des CMS intuitifs (WordPress, PrestaShop) ou développons des interfaces d'administration sur-mesure et faciles à utiliser."
+        }
+      ]
+    },
+    "seo": {
+      "title": "Contact - AS-Turing",
+      "description": "Contactez AS-Turing pour votre projet web. Audit gratuit, devis sous 48h. Agence web à Libourne spécialisée en développement sur-mesure."
+    }
+  }
+}

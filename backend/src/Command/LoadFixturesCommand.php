@@ -44,6 +44,12 @@ class LoadFixturesCommand extends Command
             $connection->executeStatement('TRUNCATE TABLE blog_post');
             $connection->executeStatement('TRUNCATE TABLE project');
             $connection->executeStatement('TRUNCATE TABLE service');
+            $connection->executeStatement('TRUNCATE TABLE service_faq');
+            $connection->executeStatement('TRUNCATE TABLE service_process_step');
+            $connection->executeStatement('TRUNCATE TABLE service_solution');
+            $connection->executeStatement('TRUNCATE TABLE service_technology');
+            $connection->executeStatement('TRUNCATE TABLE contact_page');
+            $connection->executeStatement('TRUNCATE TABLE process_page');
             $connection->executeStatement('TRUNCATE TABLE contact_message');
             $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1');
             
@@ -67,6 +73,18 @@ class LoadFixturesCommand extends Command
         $blogPostFixtures = new \App\DataFixtures\BlogPostFixtures();
         $blogPostFixtures->load($this->entityManager);
         $io->success('5 Blog Posts loaded successfully!');
+
+        // Load Contact Page
+        $io->section('Loading Contact Page...');
+        $contactPageFixtures = new \App\DataFixtures\ContactPageFixtures();
+        $contactPageFixtures->load($this->entityManager);
+        $io->success('Contact Page loaded successfully!');
+
+        // Load Process Page
+        $io->section('Loading Process Page...');
+        $processPageFixtures = new \App\DataFixtures\ProcessPageFixtures();
+        $processPageFixtures->load($this->entityManager);
+        $io->success('Process Page loaded successfully!');
 
         $io->success('All fixtures loaded successfully!');
 
