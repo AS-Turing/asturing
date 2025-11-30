@@ -50,6 +50,7 @@ class LoadFixturesCommand extends Command
             $connection->executeStatement('TRUNCATE TABLE service_technology');
             $connection->executeStatement('TRUNCATE TABLE contact_page');
             $connection->executeStatement('TRUNCATE TABLE process_page');
+            $connection->executeStatement('TRUNCATE TABLE client');
             $connection->executeStatement('TRUNCATE TABLE contact_message');
             $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1');
             
@@ -85,6 +86,12 @@ class LoadFixturesCommand extends Command
         $processPageFixtures = new \App\DataFixtures\ProcessPageFixtures();
         $processPageFixtures->load($this->entityManager);
         $io->success('Process Page loaded successfully!');
+
+        // Load Clients
+        $io->section('Loading Clients...');
+        $clientFixtures = new \App\DataFixtures\ClientFixtures();
+        $clientFixtures->load($this->entityManager);
+        $io->success('8 Clients loaded successfully!');
 
         $io->success('All fixtures loaded successfully!');
 

@@ -1,0 +1,68 @@
+{
+  "clients": [
+    {
+      "name": "Château Montaiguillon",
+      "logo": null,
+      "website": "https://chateau-montaiguillon.com",
+      "description": "Domaine viticole de Saint-Émilion",
+      "position": 1,
+      "isActive": true
+    },
+    {
+      "name": "Restaurant Le Jardin",
+      "logo": null,
+      "website": null,
+      "description": "Restaurant gastronomique",
+      "position": 2,
+      "isActive": true
+    },
+    {
+      "name": "Boulangerie Dupont",
+      "logo": null,
+      "website": null,
+      "description": "Artisan boulanger",
+      "position": 3,
+      "isActive": true
+    },
+    {
+      "name": "Garage Auto Plus",
+      "logo": null,
+      "website": null,
+      "description": "Garage automobile",
+      "position": 4,
+      "isActive": true
+    },
+    {
+      "name": "Coiffure Élégance",
+      "logo": null,
+      "website": null,
+      "description": "Salon de coiffure",
+      "position": 5,
+      "isActive": true
+    },
+    {
+      "name": "Pharmacie Centrale",
+      "logo": null,
+      "website": null,
+      "description": "Pharmacie de quartier",
+      "position": 6,
+      "isActive": true
+    },
+    {
+      "name": "Cabinet Médical Dr Martin",
+      "logo": null,
+      "website": null,
+      "description": "Cabinet médical",
+      "position": 7,
+      "isActive": true
+    },
+    {
+      "name": "Agence Immo Vision",
+      "logo": null,
+      "website": null,
+      "description": "Agence immobilière",
+      "position": 8,
+      "isActive": true
+    }
+  ]
+}

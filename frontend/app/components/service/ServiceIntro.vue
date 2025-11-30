@@ -4,7 +4,7 @@
       <div class="flex flex-col md:flex-row gap-12 items-center">
         <div class="md:w-1/3">
           <div class="w-full aspect-square rounded-3xl bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-secondary)]/20 flex items-center justify-center">
-            <Icon :name="icon" class="w-32 h-32 text-[var(--color-primary)]" />
+            <Icon :name="icon" class="!w-32 !h-32 text-[var(--color-primary)]" />
           </div>
         </div>
         <div class="md:w-2/3">

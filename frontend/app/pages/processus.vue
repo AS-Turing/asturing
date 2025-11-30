@@ -47,7 +47,7 @@
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all">
                   <div class="flex items-start gap-4 mb-4">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center flex-shrink-0">
-                      <Icon :name="step.icon" class="w-7 h-7 text-[var(--color-primary)]" />
+                      <Icon :name="step.icon" class="!w-7 !h-7 text-[var(--color-primary)]" />
                     </div>
                     <div>
                       <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">{{ step.title }}</h3>
@@ -89,7 +89,7 @@
             <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]"></div>
 
             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Icon :name="value.icon" class="w-8 h-8 text-[var(--color-primary)]" />
+              <Icon :name="value.icon" class="!w-8 !h-8 text-[var(--color-primary)]" />
             </div>
 
             <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{{ value.title }}</h3>

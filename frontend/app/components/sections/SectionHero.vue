@@ -13,7 +13,7 @@
         <div class="space-y-8">
           <div class="inline-block">
             <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-              🚀 Agence Web & Digital
+              Agence Web & Digital
             </span>
           </div>
           

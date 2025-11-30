@@ -9,7 +9,7 @@
     <div class="max-w-6xl mx-auto text-center relative z-10">
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-semibold mb-8">
-        <Icon :name="icon" class="w-5 h-5" />
+        <Icon :name="icon" class="!w-5 !h-5" />
         <span>Service Premium</span>
       </div>
       
