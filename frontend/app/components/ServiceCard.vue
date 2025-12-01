@@ -1,10 +1,10 @@
 <template>
   <div 
-    class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-lg hover:shadow-2xl transition group border-t-4"
+    class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group border-t-4 dark:border-t-4"
     :class="getBorderClass(service.borderColor)"
   >
     <div 
-      class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition shadow-lg"
+      class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg"
       :class="getGradientClass(service.iconGradient)"
     >
       <Icon :name="service.icon" class="!w-8 !h-8 text-white" />
@@ -15,11 +15,11 @@
     </p>
     <NuxtLink 
       :to="`/services/${service.slug}`" 
-      class="font-semibold hover:underline inline-flex items-center"
+      class="font-semibold hover:underline inline-flex items-center group/link"
       :class="getLinkClass(service.linkColor)"
     >
       En savoir plus 
-      <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
     </NuxtLink>

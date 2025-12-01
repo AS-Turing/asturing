@@ -1,10 +1,10 @@
 <template>
   <header 
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-dark/80 backdrop-blur-md"
     :class="[
       scrolled 
-        ? 'bg-white/90 dark:bg-dark/90 backdrop-blur-lg shadow-lg border-b border-gray-200/50 dark:border-white/10' 
-        : 'bg-transparent'
+        ? 'shadow-lg border-b border-gray-200/50 dark:border-white/10 bg-white/95 dark:bg-dark/95' 
+        : ''
     ]"
   >
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
