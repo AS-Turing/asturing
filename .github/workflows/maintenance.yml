@@ -1,0 +1,97 @@
+name: Cleanup & Maintenance
+
+on:
+  schedule:
+    # Tous les dimanches à 3h00 UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  cleanup-ghcr:
+    name: Cleanup GHCR Images
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    
+    steps:
+      - name: 🗑️ Delete old untagged images
+        run: |
+          echo "🔍 Listing old container images..."
+          echo "⚠️  Manual cleanup required via GitHub UI"
+          echo "Go to: Packages → asturing-nuxt/asturing-symfony → Manage versions"
+  
+  cleanup-server:
+    name: Cleanup Production Server
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🧹 Clean Docker resources
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "🧹 Docker Cleanup"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            
+            # Arrêt des containers non utilisés
+            docker container prune -f
+            
+            # Suppression des images non utilisées
+            docker image prune -a -f
+            
+            # Suppression des volumes non utilisés (ATTENTION!)
+            # docker volume prune -f
+            
+            # Suppression des networks non utilisés
+            docker network prune -f
+            
+            # Nettoyage complet du système
+            docker system prune -a -f
+            
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "📊 Disk Space After Cleanup"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            df -h | grep -E '(Filesystem|/dev/)' || true
+            
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "🐳 Docker Disk Usage After Cleanup"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            docker system df
+            
+            echo ""
+            echo "✅ Cleanup completed successfully"
+      
+      - name: 🗂️ Clean old logs
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            
+            echo "🗂️ Cleaning old log files..."
+            
+            # Nettoyer les logs Symfony (plus de 30 jours)
+            find backend/var/log -name "*.log" -type f -mtime +30 -delete 2>/dev/null || true
+            
+            # Nettoyer les logs système si accessibles
+            # sudo journalctl --vacuum-time=30d
+            
+            echo "✅ Log cleanup completed"
+      
+      - name: 📊 Generate cleanup report
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 Maintenance Report"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Date: $(date)"
+          echo "Status: Completed"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

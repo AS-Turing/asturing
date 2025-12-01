@@ -1,2 +1,17 @@
-lighthouse.json
-STRATEGIE_SEO.md
+# Ignorer tout par défaut
+*
+
+# Exceptions : on garde frontend/ et backend/ qui ont leurs propres .gitignore
+!frontend/
+!backend/
+
+# Exceptions : fichiers de configuration essentiels
+!.gitignore
+!.github/
+!docker-compose.yml
+
+# Ignorer les fichiers temporaires et logs courants
+*.log
+*.sql
+*.md
+!README.md
