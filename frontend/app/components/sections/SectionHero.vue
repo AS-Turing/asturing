@@ -164,6 +164,10 @@ const techStack = [
   'React',
   'Docker'
 ]
+
+onMounted(() => {
+  console.log('✅ [IMMÉDIAT] SectionHero montée (not lazy)')
+})
 </script>
 
 <style scoped>

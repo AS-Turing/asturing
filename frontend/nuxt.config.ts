@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon'],
   
   imports: {

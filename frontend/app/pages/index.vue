@@ -1,13 +1,18 @@
 <template>
   <div>
+    <!-- Hero section - immédiatement chargée (above the fold) -->
     <SectionHero />
-    <SectionServices />
-    <SectionProcess />
-    <SectionAdvantages />
-    <SectionClients />
-    <SectionProjects />
-    <SectionBlog />
-    <SectionContact />
+    
+    <!-- Sections lazy-loadées avec le système natif de Nuxt -->
+    <ClientOnly>
+      <LazySectionServices />
+      <LazySectionProcess />
+      <LazySectionAdvantages />
+      <LazySectionClients />
+      <LazySectionProjects />
+      <LazySectionBlog />
+      <LazySectionContact />
+    </ClientOnly>
   </div>
 </template>
 
