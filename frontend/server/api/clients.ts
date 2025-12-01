@@ -1,4 +1,4 @@
-export default defineEventHandler(async () => {
+export default cachedEventHandler(async () => {
   const config = useRuntimeConfig()
   
   try {
@@ -11,4 +11,8 @@ export default defineEventHandler(async () => {
       message: 'Failed to fetch clients'
     })
   }
+}, {
+  maxAge: 60 * 5, // Cache 5 minutes
+  name: 'clients-list',
+  getKey: () => 'all-clients'
 })

@@ -58,6 +58,15 @@ class Service
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $heroSubtitle = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $heroDescription = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $shortDescription = null;
+
+    #[ORM\Column(type: Types::JSON, nullable: true)]
+    private ?array $cta = null;
+
     #[ORM\Column(type: Types::JSON, nullable: true)]
     private array $stats = [];
 
@@ -378,6 +387,39 @@ class Service
     public function setOgImage(?string $ogImage): static
     {
         $this->ogImage = $ogImage;
+        return $this;
+    }
+
+    public function getHeroDescription(): ?string
+    {
+        return $this->heroDescription;
+    }
+
+    public function setHeroDescription(?string $heroDescription): static
+    {
+        $this->heroDescription = $heroDescription;
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(?string $shortDescription): static
+    {
+        $this->shortDescription = $shortDescription;
+        return $this;
+    }
+
+    public function getCta(): ?array
+    {
+        return $this->cta;
+    }
+
+    public function setCta(?array $cta): static
+    {
+        $this->cta = $cta;
         return $this;
     }
 

@@ -16,9 +16,13 @@
       <h1 class="text-5xl md:text-7xl font-heading font-bold text-white mb-8 leading-tight">
         {{ title }}
       </h1>
-      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6 leading-relaxed">
         {{ subtitle }}
       </p>
+      <p v-if="description" class="text-lg text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed">
+        {{ description }}
+      </p>
+      <p v-else class="mb-12"></p>
       
       <!-- Quick stats -->
       <div class="grid gap-6 max-w-4xl mx-auto" :class="{
@@ -53,6 +57,7 @@ const props = withDefaults(defineProps<{
   icon: string
   title: string
   subtitle: string
+  description?: string | null
   auditDuration?: string | null
   deliveryTime?: string | null
   deliveryTimeLabel?: string

@@ -4,6 +4,7 @@
       :icon="service.icon"
       :title="service.heroTitle || service.title"
       :subtitle="service.heroSubtitle || service.description"
+      :description="service.heroDescription"
       :audit-duration="service.auditDuration"
       :delivery-time="service.deliveryTime"
       :starting-price="service.startingPrice"
@@ -37,7 +38,13 @@
       :faqs="service.faqs"
     />
 
-    <ServiceCTA />
+    <ServiceCTA 
+      v-if="service.cta"
+      :title="service.cta.title"
+      :subtitle="service.cta.description"
+      :primary-button-text="service.cta.buttonText"
+    />
+    <ServiceCTA v-else />
   </div>
 
   <div v-else class="min-h-screen flex items-center justify-center">

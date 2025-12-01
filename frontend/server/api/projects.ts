@@ -1,4 +1,4 @@
-export default defineEventHandler(async (event) => {
+export default cachedEventHandler(async (event) => {
   const config = useRuntimeConfig()
   
   try {
@@ -10,4 +10,8 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'Failed to fetch projects'
     })
   }
+}, {
+  maxAge: 60 * 5, // Cache 5 minutes
+  name: 'projects-list',
+  getKey: () => 'all-projects'
 })

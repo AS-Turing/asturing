@@ -22,6 +22,7 @@ class ServiceFixtures extends Fixture
             $service->setTitle($serviceData['title']);
             $service->setSlug($serviceData['slug']);
             $service->setDescription($serviceData['shortDescription']);
+            $service->setShortDescription($serviceData['shortDescription']);
             $service->setLongDescription($serviceData['description']);
             $service->setIcon($serviceData['icon']);
             $service->setIconGradient($serviceData['iconGradient']);
@@ -31,7 +32,9 @@ class ServiceFixtures extends Fixture
             $service->setIsActive(true);
             $service->setHeroTitle($serviceData['heroTitle']);
             $service->setHeroSubtitle($serviceData['heroSubtitle']);
+            $service->setHeroDescription($serviceData['heroDescription'] ?? null);
             $service->setAuditDuration($serviceData['auditDuration']);
+            $service->setCta($serviceData['cta'] ?? null);
             
             if (isset($serviceData['deliveryTime'])) {
                 $service->setDeliveryTime($serviceData['deliveryTime']);
