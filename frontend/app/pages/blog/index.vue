@@ -14,10 +14,10 @@
           </span>
         </div>
         <h1 class="text-5xl md:text-6xl font-bold mb-6">
-          Actualités & Conseils
+          Blog Agence Web Libourne
         </h1>
         <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-          Nos derniers articles sur le développement web, les technologies et les bonnes pratiques
+          Conseils et actualités sur la création de sites internet, l'e-commerce et les stratégies digitales
         </p>
       </div>
     </section>
@@ -158,11 +158,56 @@ const countByCategory = (category: string) => {
 }
 
 useHead({
-  title: 'Blog - AS-Turing',
+  title: 'Blog Création Site Internet Libourne | Conseils E-commerce & Web',
   meta: [
     {
       name: 'description',
-      content: 'Découvrez nos articles sur le développement web, les technologies et les bonnes pratiques. Conseils, tutoriels et actualités tech.'
+      content: 'Blog agence web Libourne : conseils création de sites internet, stratégies e-commerce, référencement SEO, bonnes pratiques digitales.'
+    },
+    // Keywords
+    {
+      name: 'keywords',
+      content: 'blog création site internet, conseils e-commerce, agence web Libourne, SEO, site vitrine, boutique en ligne, stratégie digitale'
+    },
+    // Open Graph
+    {
+      property: 'og:title',
+      content: 'Blog Création Site Internet - Conseils & Actualités | AS-Turing'
+    },
+    {
+      property: 'og:description',
+      content: 'Conseils d\'expert pour votre site internet : création, e-commerce, référencement et stratégies digitales efficaces.'
+    },
+    {
+      property: 'og:type',
+      content: 'blog'
+    },
+    // Robots
+    {
+      name: 'robots',
+      content: 'index, follow'
+    }
+  ],
+  // Schema.org Blog
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        'name': 'Blog AS-Turing',
+        'description': 'Blog sur la création de sites internet, l\'e-commerce et les stratégies digitales',
+        'url': 'https://as-turing.fr/blog',
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'AS-Turing',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://as-turing.fr/logo.png'
+          }
+        },
+        'inLanguage': 'fr-FR'
+      })
     }
   ]
 })

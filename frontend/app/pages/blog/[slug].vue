@@ -191,7 +191,11 @@ const formattedArticle = computed(() => {
     excerpt: article.value.excerpt,
     content: article.value.content,
     imageGradient: article.value.imageGradient,
-    imageText: article.value.imageText
+    imageText: article.value.imageText,
+    metaTitle: article.value.metaTitle,
+    metaDescription: article.value.metaDescription,
+    metaKeywords: article.value.metaKeywords,
+    ogImage: article.value.ogImage
   }
 })
 
@@ -246,23 +250,81 @@ const copyLink = async () => {
 
 // SEO
 useHead({
-  title: formattedArticle.value ? `${formattedArticle.value.title} - Blog AS-Turing` : 'Article introuvable',
+  title: formattedArticle.value?.metaTitle || (formattedArticle.value ? `${formattedArticle.value.title} - Blog AS-Turing` : 'Article introuvable'),
   meta: formattedArticle.value ? [
     {
       name: 'description',
-      content: formattedArticle.value.excerpt
+      content: formattedArticle.value.metaDescription || formattedArticle.value.excerpt
     },
+    // Keywords
+    {
+      name: 'keywords',
+      content: formattedArticle.value.metaKeywords || ''
+    },
+    // Open Graph
     {
       property: 'og:title',
-      content: formattedArticle.value.title
+      content: formattedArticle.value.metaTitle || formattedArticle.value.title
     },
     {
       property: 'og:description',
-      content: formattedArticle.value.excerpt
+      content: formattedArticle.value.metaDescription || formattedArticle.value.excerpt
     },
     {
       property: 'og:type',
       content: 'article'
+    },
+    {
+      property: 'og:image',
+      content: formattedArticle.value.ogImage || ''
+    },
+    {
+      property: 'article:published_time',
+      content: article.value?.publishedAt || ''
+    },
+    {
+      property: 'article:author',
+      content: 'AS-Turing'
+    },
+    {
+      property: 'article:section',
+      content: formattedArticle.value.category
+    },
+    // Robots
+    {
+      name: 'robots',
+      content: 'index, follow'
+    }
+  ] : [],
+  // Schema.org Article
+  script: formattedArticle.value ? [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'headline': formattedArticle.value.title,
+        'description': formattedArticle.value.excerpt,
+        'datePublished': article.value?.publishedAt,
+        'dateModified': article.value?.updatedAt || article.value?.publishedAt,
+        'author': {
+          '@type': 'Organization',
+          'name': 'AS-Turing',
+          'url': 'https://as-turing.fr'
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'AS-Turing',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://as-turing.fr/logo.png'
+          }
+        },
+        'articleSection': formattedArticle.value.category,
+        'inLanguage': 'fr-FR',
+        'wordCount': formattedArticle.value.content?.replace(/<[^>]*>/g, '').split(/\s+/).length || 0,
+        'timeRequired': `PT${readingTime.value}M`
+      })
     }
   ] : []
 })

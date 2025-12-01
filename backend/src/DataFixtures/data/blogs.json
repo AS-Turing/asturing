@@ -10,7 +10,11 @@
       "imageGradient": "from-primary to-coral",
       "imageText": "[ Illustration CMS ]",
       "publishedAt": "2024-11-15",
-      "isPublished": true
+      "isPublished": true,
+      "metaTitle": "Comment Choisir le Bon CMS pour Votre Site Web ? | Guide 2024",
+      "metaDescription": "WordPress, PrestaShop ou développement custom ? Découvrez notre guide complet pour choisir le CMS adapté à votre projet web et votre budget.",
+      "metaKeywords": "choix CMS, WordPress, PrestaShop, développement custom, création site web, CMS comparatif",
+      "ogImage": null
     },
     {
       "title": "Les 10 erreurs à éviter lors de la création de votre site web",
@@ -22,7 +26,11 @@
       "imageGradient": "from-secondary to-accent",
       "imageText": "[ Illustration Erreurs Web ]",
       "publishedAt": "2024-11-20",
-      "isPublished": true
+      "isPublished": true,
+      "metaTitle": "10 Erreurs à Éviter lors de la Création de Votre Site Web",
+      "metaDescription": "Découvrez les 10 pièges les plus courants en création de sites web : responsive design, SEO, performance, sécurité. Conseils d'expert pour réussir.",
+      "metaKeywords": "erreurs création site web, pièges site internet, responsive design, SEO, performance web, bonnes pratiques",
+      "ogImage": null
     },
     {
       "title": "Vue.js 3 vs React : Quel framework choisir en 2024 ?",
@@ -34,7 +42,11 @@
       "imageGradient": "from-accent to-coral",
       "imageText": "[ Illustration Vue vs React ]",
       "publishedAt": "2024-11-25",
-      "isPublished": true
+      "isPublished": true,
+      "metaTitle": "Vue.js 3 vs React 2024 : Quel Framework JavaScript Choisir ?",
+      "metaDescription": "Comparatif complet Vue.js 3 vs React en 2024 : performance, écosystème, courbe d'apprentissage. Guide pour choisir le meilleur framework.",
+      "metaKeywords": "Vue.js 3, React, comparatif framework, JavaScript, framework frontend, Vue vs React 2024",
+      "ogImage": null
     },
     {
       "title": "Optimiser les performances de votre application Symfony",
@@ -46,7 +58,11 @@
       "imageGradient": "from-coral to-primary",
       "imageText": "[ Illustration Performance Symfony ]",
       "publishedAt": "2024-11-28",
-      "isPublished": true
+      "isPublished": true,
+      "metaTitle": "Optimiser les Performances de Votre Application Symfony | Guide",
+      "metaDescription": "Guide complet pour booster les performances Symfony : cache, profiler, optimisation base de données. Techniques éprouvées pour une app rapide.",
+      "metaKeywords": "Symfony performance, optimisation Symfony, cache Symfony, Symfony profiler, améliorer vitesse Symfony",
+      "ogImage": null
     },
     {
       "title": "L'importance du design UX/UI pour votre business",
@@ -58,7 +74,11 @@
       "imageGradient": "from-primary to-secondary",
       "imageText": "[ Illustration UX/UI ]",
       "publishedAt": "2024-12-01",
-      "isPublished": false
+      "isPublished": false,
+      "metaTitle": "L'Importance du Design UX/UI pour Votre Business en 2024",
+      "metaDescription": "Comment un bon design UX/UI transforme votre taux de conversion. Investissement rentable pour fidéliser vos utilisateurs et booster vos ventes.",
+      "metaKeywords": "design UX UI, expérience utilisateur, interface utilisateur, conversion, ergonomie web, design business",
+      "ogImage": null
     }
   ]
 }
