@@ -7,6 +7,12 @@
         : ''
     ]"
   >
+    <!-- Barre de progression du scroll (très subtile) -->
+    <div 
+      class="absolute top-0 left-0 h-0.5 gradient-hero transition-all duration-150"
+      :style="{ width: `${scrollProgress}%` }"
+    ></div>
+    
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo avec animation au scroll -->
@@ -51,17 +57,25 @@
             :key="link.to"
             :to="link.to"
             class="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium group"
+            :class="{ 'text-primary dark:text-primary': $route.path === link.to }"
           >
             {{ link.label }}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 gradient-hero group-hover:w-full transition-all duration-300"></span>
+            <span 
+              class="absolute bottom-0 left-0 h-0.5 gradient-hero transition-all duration-300"
+              :class="$route.path === link.to ? 'w-full' : 'w-0 group-hover:w-full'"
+            ></span>
           </NuxtLink>
           
           <NuxtLink
             to="/blog"
             class="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium group"
+            :class="{ 'text-primary dark:text-primary': $route.path === '/blog' }"
           >
             Blog
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 gradient-hero group-hover:w-full transition-all duration-300"></span>
+            <span 
+              class="absolute bottom-0 left-0 h-0.5 gradient-hero transition-all duration-300"
+              :class="$route.path === '/blog' ? 'w-full' : 'w-0 group-hover:w-full'"
+            ></span>
           </NuxtLink>
 
           <!-- Dark Mode Toggle -->
@@ -88,12 +102,13 @@
             </svg>
           </button>
 
-          <!-- CTA Button -->
+          <!-- CTA Button avec effet shimmer -->
           <NuxtLink
             to="/contact"
-            class="ml-2 px-6 py-2 gradient-hero text-white rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 animate-gradient"
+            class="ml-2 px-6 py-2 gradient-hero text-white rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 animate-gradient relative overflow-hidden group/cta"
           >
-            Contact
+            <span class="relative z-10">Contact</span>
+            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/cta:translate-x-[200%] transition-transform duration-1000"></span>
           </NuxtLink>
         </div>
 
@@ -187,6 +202,7 @@
 const mobileMenuOpen = ref(false)
 const scrolled = ref(false)
 const scrollY = ref(0)
+const scrollProgress = ref(0)
 const logoTextWidth = 120 // Largeur approximative du texte "AS-Turing" en pixels
 
 const { isDark, toggleDark, initDarkMode } = useDarkMode()
@@ -205,6 +221,10 @@ onMounted(() => {
   const handleScroll = () => {
     scrollY.value = window.scrollY
     scrolled.value = window.scrollY > 20
+    
+    // Calculer la progression du scroll
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    scrollProgress.value = (window.scrollY / windowHeight) * 100
   }
   window.addEventListener('scroll', handleScroll)
   
