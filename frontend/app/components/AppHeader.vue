@@ -9,18 +9,37 @@
   >
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo avec animation -->
+        <!-- Logo avec animation au scroll -->
         <NuxtLink 
           to="/" 
           class="flex items-center gap-2 group"
           @click="mobileMenuOpen = false"
         >
-          <div class="w-1 h-12 gradient-bar rounded-full group-hover:scale-110 transition-transform duration-300"></div>
-          <span class="text-2xl font-bold">
+          <div 
+            class="w-1 gradient-bar rounded-full group-hover:scale-110 transition-all duration-300"
+            :style="{
+              height: `${Math.max(0, 48 - (scrollY / 2))}px`
+            }"
+          ></div>
+          
+          <span class="text-2xl font-bold inline-flex items-center">
             <span class="code-brackets">&lt;</span>
-            <span class="text-primary group-hover:scale-105 inline-block transition-transform duration-300">AS</span>
-            <span class="text-coral">-</span>
-            <span class="text-secondary group-hover:scale-105 inline-block transition-transform duration-300">Turing</span>
+            
+            <!-- Texte qui disparaît au scroll -->
+            <span 
+              class="inline-block overflow-hidden transition-opacity duration-300 align-bottom"
+              :style="{
+                width: `${Math.max(0, logoTextWidth - (scrollY / 2))}px`,
+                opacity: scrollY > logoTextWidth * 2 ? 0 : 1
+              }"
+            >
+              <span class="inline-block whitespace-nowrap">
+                <span class="text-primary group-hover:scale-105 inline-block transition-transform duration-300">AS</span>
+                <span class="text-coral">-</span>
+                <span class="text-secondary group-hover:scale-105 inline-block transition-transform duration-300">Turing</span>
+              </span>
+            </span>
+            
             <span class="code-brackets">/&gt;</span>
           </span>
         </NuxtLink>
@@ -167,6 +186,8 @@
 <script setup lang="ts">
 const mobileMenuOpen = ref(false)
 const scrolled = ref(false)
+const scrollY = ref(0)
+const logoTextWidth = 120 // Largeur approximative du texte "AS-Turing" en pixels
 
 const { isDark, toggleDark, initDarkMode } = useDarkMode()
 
@@ -182,6 +203,7 @@ onMounted(() => {
   
   // Gérer le scroll
   const handleScroll = () => {
+    scrollY.value = window.scrollY
     scrolled.value = window.scrollY > 20
   }
   window.addEventListener('scroll', handleScroll)
