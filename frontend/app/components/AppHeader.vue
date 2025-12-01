@@ -18,11 +18,18 @@
         <!-- Logo avec animation au scroll -->
         <NuxtLink 
           to="/" 
-          class="flex items-center gap-2 group"
+          class="flex items-center gap-2 group relative"
           @click="mobileMenuOpen = false"
         >
+          <!-- Particules subtiles au hover -->
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="particle particle-1"></span>
+            <span class="particle particle-2"></span>
+            <span class="particle particle-3"></span>
+          </div>
+          
           <div 
-            class="w-1 gradient-bar rounded-full group-hover:scale-110 transition-all duration-300"
+            class="w-1 gradient-bar rounded-full group-hover:scale-110 transition-all duration-300 relative z-10"
             :style="{
               height: `${Math.max(0, 48 - (scrollY / 2))}px`
             }"
@@ -53,28 +60,32 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-1">
           <NuxtLink
-            v-for="link in navLinks"
+            v-for="(link, index) in navLinks"
             :key="link.to"
             :to="link.to"
-            class="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium group"
-            :class="{ 'text-primary dark:text-primary': $route.path === link.to }"
+            class="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all font-medium group nav-link"
+            :class="{ 
+              'text-primary dark:text-primary link-active': $route.path === link.to 
+            }"
+            :style="{ animationDelay: `${index * 100}ms` }"
           >
             {{ link.label }}
             <span 
               class="absolute bottom-0 left-0 h-0.5 gradient-hero transition-all duration-300"
-              :class="$route.path === link.to ? 'w-full' : 'w-0 group-hover:w-full'"
+              :class="$route.path === link.to ? 'w-full shadow-glow' : 'w-0 group-hover:w-full'"
             ></span>
           </NuxtLink>
           
           <NuxtLink
             to="/blog"
-            class="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium group"
-            :class="{ 'text-primary dark:text-primary': $route.path === '/blog' }"
+            class="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all font-medium group nav-link"
+            :class="{ 'text-primary dark:text-primary link-active': $route.path === '/blog' }"
+            :style="{ animationDelay: '300ms' }"
           >
             Blog
             <span 
               class="absolute bottom-0 left-0 h-0.5 gradient-hero transition-all duration-300"
-              :class="$route.path === '/blog' ? 'w-full' : 'w-0 group-hover:w-full'"
+              :class="$route.path === '/blog' ? 'w-full shadow-glow' : 'w-0 group-hover:w-full'"
             ></span>
           </NuxtLink>
 
@@ -102,11 +113,14 @@
             </svg>
           </button>
 
-          <!-- CTA Button avec effet shimmer -->
+          <!-- CTA Button avec effet shimmer et glow -->
           <NuxtLink
             to="/contact"
             class="ml-2 px-6 py-2 gradient-hero text-white rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 animate-gradient relative overflow-hidden group/cta"
           >
+            <!-- Glow effect -->
+            <span class="absolute -inset-1 bg-gradient-to-r from-primary via-coral to-secondary rounded-full opacity-0 group-hover/cta:opacity-30 blur-lg transition-opacity duration-500"></span>
+            
             <span class="relative z-10">Contact</span>
             <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/cta:translate-x-[200%] transition-transform duration-1000"></span>
           </NuxtLink>
@@ -243,5 +257,69 @@ onMounted(() => {
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient 3s ease infinite;
+}
+
+/* Animation stagger des liens */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-link {
+  animation: slideInDown 0.5s ease-out both;
+}
+
+/* Glow effect sur liens actifs */
+.link-active {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5), 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Particules autour du logo */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-coral));
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.particle-1 {
+  top: 0;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  top: 50%;
+  right: 0;
+  animation-delay: 1s;
+}
+
+.particle-3 {
+  bottom: 0;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1);
+    opacity: 1;
+  }
 }
 </style>
