@@ -9,7 +9,7 @@
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="inline-block mb-4">
           <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
-            Portfolio
+            Réalisations
           </span>
         </div>
         
@@ -133,10 +133,10 @@ const { data: projects, pending } = await useFetch('/api/projects')
 
 // SEO
 useHead({
-  title: 'Nos Projets - Portfolio AS Turing',
+  title: 'Nos Projets - Réalisations AS Turing',
   meta: [
     { name: 'description', content: 'Découvrez nos réalisations : sites vitrines premium, applications métier et solutions web sur-mesure pour TPE, PME et associations.' },
-    { property: 'og:title', content: 'Nos Projets - Portfolio AS Turing' },
+    { property: 'og:title', content: 'Nos Projets - Réalisations AS Turing' },
     { property: 'og:description', content: 'Découvrez nos réalisations web et applications métier.' },
   ]
 })
