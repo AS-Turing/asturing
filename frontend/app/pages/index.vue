@@ -10,6 +10,7 @@
       <LazySectionAdvantages />
       <LazySectionClients />
       <LazySectionProjects />
+      <LazySectionAbout />
       <LazySectionBlog />
       <LazySectionContact />
     </ClientOnly>
