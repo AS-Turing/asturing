@@ -46,10 +46,8 @@
                 opacity: scrollY > logoTextWidth * 2 ? 0 : 1
               }"
             >
-              <span class="inline-block whitespace-nowrap">
-                <span class="text-primary group-hover:scale-105 inline-block transition-transform duration-300">AS</span>
-                <span class="text-coral">-</span>
-                <span class="text-secondary group-hover:scale-105 inline-block transition-transform duration-300">Turing</span>
+              <span class="inline-block whitespace-nowrap bg-gradient-to-r from-primary via-secondary to-coral bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
+                AS-Turing
               </span>
             </span>
             
