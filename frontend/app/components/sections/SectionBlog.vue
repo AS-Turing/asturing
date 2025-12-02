@@ -17,7 +17,7 @@
 
       <div class="grid md:grid-cols-3 gap-8">
         <NuxtLink
-          v-for="article in articles"
+          v-for="article in articles.slice(0, 3)"
           :key="article.slug"
           :to="article.slug ? `/blog/${article.slug}` : '#'"
           class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
