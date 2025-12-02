@@ -18,6 +18,26 @@ class ProjectFixtures
             $project->setSlug($data['slug']);
             $project->setCategory($data['category']);
             $project->setDescription($data['description']);
+            
+            // Nouveaux champs détaillés
+            $project->setExcerpt($data['excerpt'] ?? null);
+            $project->setClient($data['client'] ?? null);
+            $project->setSector($data['sector'] ?? null);
+            $project->setYear($data['year'] ?? null);
+            $project->setDuration($data['duration'] ?? null);
+            $project->setStatus($data['status'] ?? null);
+            $project->setUrl($data['url'] ?? null);
+            $project->setChallenge($data['challenge'] ?? null);
+            $project->setSolution($data['solution'] ?? null);
+            $project->setResults($data['results'] ?? null);
+            $project->setContent($data['content'] ?? null);
+            $project->setTestimonial($data['testimonial'] ?? null);
+            $project->setFeatures($data['features'] ?? []);
+            $project->setImages($data['images'] ?? []);
+            $project->setFeatured($data['featured'] ?? false);
+            $project->setIsPublished($data['isPublished'] ?? true);
+            
+            // Champs existants
             $project->setTechnologies($data['technologies']);
             $project->setImageText($data['imageText']);
             $project->setBgGradient($data['bgGradient']);

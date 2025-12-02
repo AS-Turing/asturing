@@ -11,7 +11,7 @@ export default cachedEventHandler(async (event) => {
     })
   }
 }, {
-  maxAge: 60 * 5, // Cache 5 minutes
+  maxAge: process.env.NODE_ENV === 'production' ? 60 * 5 : 0, // Cache seulement en prod
   name: 'projects-list',
   getKey: () => 'all-projects'
 })
