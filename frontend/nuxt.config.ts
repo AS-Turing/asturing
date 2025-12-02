@@ -91,7 +91,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
     server: {
-      allowedHosts: ['v2.as-turing.local']
+      allowedHosts: ['v2.as-turing.local', 'dev.asturing.as-turing.fr']
     },
     build: {
       rollupOptions: {
