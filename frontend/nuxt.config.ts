@@ -7,7 +7,23 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon'],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap'],
+  
+  // Configuration du sitemap
+  site: {
+    url: 'https://as-turing.fr',
+  },
+  
+  sitemap: {
+    hostname: 'https://as-turing.fr',
+    gzip: true,
+    exclude: [
+      '/index-old'
+    ],
+    sources: [
+      '/api/__sitemap__/urls'
+    ]
+  },
   
   imports: {
     autoImport: true
