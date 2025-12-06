@@ -1,0 +1,117 @@
+{
+    "title": "Conseil & Stratégie Digitale",
+    "slug": "conseil-strategie-digitale",
+    "icon": "mdi:lightbulb-on",
+    "iconGradient": "from-coral to-primary",
+    "borderColor": "border-coral",
+    "linkColor": "text-coral",
+    "position": 1,
+    "shortDescription": "Un accompagnement expert pour faire les bons choix techniques et stratégiques.",
+    "description": "Vous avez un projet digital mais vous ne savez pas par où commencer ? Vous hésitez entre plusieurs solutions ou technologies ? Votre site actuel rencontre des problèmes de performance ou de fiabilité ? Nous vous apportons un regard d’expert pour éviter les erreurs coûteuses et aligner vos choix digitaux avec vos objectifs business. De l’audit technique au plan d’action complet, nous vous aidons à avancer sereinement.",
+    "heroTitle": "Conseil & Stratégie Digitale",
+    "heroSubtitle": "L'expertise pour prendre les bonnes décisions",
+    "heroDescription": "Audit, cadrage, choix technologiques, pilotage MOA/AMOA... Nous sécurisons vos décisions stratégiques et techniques dès le début du projet.",
+    "auditDuration": "2h",
+    "deliveryTime": "1-2 sem.",
+    "startingPrice": "800€",
+    "solutions": [
+        {
+            "title": "Audit technique complet",
+            "description": "Analyse approfondie de votre écosystème digital pour identifier les faiblesses et les opportunités.",
+            "features": [
+                "Revue du code & architecture",
+                "Analyse performance & sécurité",
+                "Diagnostic SEO technique",
+                "Plan d'action priorisé"
+            ]
+        },
+        {
+            "title": "Cadrage de projet",
+            "description": "Définissez une base solide avant de lancer votre projet digital.",
+            "features": [
+                "Atelier d’analyse des besoins",
+                "Cahier des charges complet",
+                "Choix technologiques adaptés",
+                "Estimation budget & planning"
+            ]
+        },
+        {
+            "title": "Accompagnement MOA/AMOA",
+            "description": "Un expert à vos côtés pour piloter efficacement votre projet.",
+            "features": [
+                "Pilotage technique & fonctionnel",
+                "Contrôle qualité des livrables",
+                "Conseil continu",
+                "Coordination des prestataires"
+            ]
+        }
+    ],
+    "process": [
+        {
+            "title": "Compréhension du contexte",
+            "description": "Analyse de votre activité, de vos objectifs et de vos contraintes."
+        },
+        {
+            "title": "Audit & Diagnostic",
+            "description": "Évaluation technique, stratégique et organisationnelle de votre situation."
+        },
+        {
+            "title": "Recommandations stratégiques",
+            "description": "Propositions concrètes, priorisées, alignées sur votre ROI."
+        },
+        {
+            "title": "Roadmap & Plan d'action",
+            "description": "Feuille de route claire avec étapes, planning et budget estimé."
+        },
+        {
+            "title": "Suivi & Ajustements",
+            "description": "Accompagnement continu et adaptation des actions selon vos objectifs."
+        }
+    ],
+    "technologies": [
+        {
+            "name": "Lighthouse / GTmetrix",
+            "description": "Analyses de performance, accessibilité et SEO."
+        },
+        {
+            "name": "OWASP / Snyk",
+            "description": "Contrôle des vulnérabilités et sécurité applicative."
+        },
+        {
+            "name": "C4 / UML",
+            "description": "Modélisation d’architectures techniques claires et durables."
+        },
+        {
+            "name": "Jira / Notion",
+            "description": "Pilotage de projet en mode agile."
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Pourquoi faire un audit technique ?",
+            "answer": "Pour identifier les risques, comprendre les points faibles, anticiper les problèmes et sécuriser la suite du projet."
+        },
+        {
+            "question": "Quelle est la différence entre MOA et AMOA ?",
+            "answer": "La MOA représente le métier et ses besoins, l’AMOA apporte la compétence technique pour guider la décision et cadrer la relation avec les développeurs."
+        },
+        {
+            "question": "Pouvez-vous intervenir sur un projet déjà en cours ?",
+            "answer": "Oui. Nous pouvons reprendre, auditer ou cadrer un projet en cours pour sécuriser les décisions."
+        },
+        {
+            "question": "Travaillez-vous avec d'autres prestataires ?",
+            "answer": "Oui, nous collaborons avec agences, designers et développeurs pour assurer la cohérence technique globale."
+        }
+    ],
+    "cta": {
+        "title": "Besoin d'un regard expert ?",
+        "description": "Discutons ensemble de vos enjeux pour vous proposer les meilleures solutions.",
+        "buttonText": "Demander un audit"
+    },
+    "longDescription": "Le conseil digital, c’est l’assurance de prendre les bonnes décisions dès le départ. Comme un architecte avant la construction, nous analysons votre contexte, vos besoins et vos contraintes pour vous proposer un plan d’action clair, compréhensible et réaliste. Vous gagnez du temps, évitez les erreurs et assurez la pérennité de votre projet.",
+    "metaTitle": "Conseil & Stratégie Digitale Libourne | Audit & Expertise",
+    "metaDescription": "Audit, AMOA, cadrage projet. Expertise digitale à Libourne pour sécuriser vos projets et faire les bons choix stratégiques.",
+    "metaKeywords": "audit digital, conseil Libourne, AMOA, stratégie digitale, cadrage projet",
+    "ogImage": null
+},

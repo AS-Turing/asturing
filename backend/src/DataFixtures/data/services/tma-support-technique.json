@@ -1,0 +1,117 @@
+{
+    "title": "TMA & Support Technique",
+    "slug": "tma-support-technique",
+    "icon": "mdi:headset",
+    "iconGradient": "from-accent to-coral",
+    "borderColor": "border-accent",
+    "linkColor": "text-accent",
+    "position": 4,
+    "shortDescription": "La maintenance complète pour un site toujours sécurisé et performant.",
+    "description": "Votre site est en ligne, mais qui assure sa sécurité, sa rapidité et ses mises à jour ? Nous prenons en charge l’entretien technique complet de votre site web pour garantir sa stabilité et son bon fonctionnement. Vous restez concentré sur votre activité, nous nous occupons du reste.",
+    "heroTitle": "TMA & Support Technique",
+    "heroSubtitle": "La sérénité pour vos projets digitaux",
+    "heroDescription": "Mises à jour, sécurité, sauvegardes, monitoring, corrections — nous assurons la pérennité de votre site.",
+    "auditDuration": "1h",
+    "deliveryTime": "Immédiat",
+    "startingPrice": "149€/mois",
+    "solutions": [
+        {
+            "title": "TMA Essentielle",
+            "description": "La maintenance indispensable pour un site sécurisé.",
+            "features": [
+                "Mises à jour régulières",
+                "Sauvegardes automatisées",
+                "Monitoring 24/7",
+                "Support email 48h"
+            ]
+        },
+        {
+            "title": "TMA Business",
+            "description": "La maintenance complète pour une activité professionnelle.",
+            "features": [
+                "Support prioritaire 4h",
+                "Optimisations continues",
+                "Corrections illimitées",
+                "Rapports mensuels"
+            ]
+        },
+        {
+            "title": "TMA Premium",
+            "description": "Pour les sites critiques qui nécessitent une haute disponibilité.",
+            "features": [
+                "Hotline dédiée",
+                "Intervention 1h",
+                "Fonctionnalités incluses",
+                "Supervision avancée"
+            ]
+        }
+    ],
+    "process": [
+        {
+            "title": "Audit & Reprise",
+            "description": "Analyse complète de votre site et prise en main technique."
+        },
+        {
+            "title": "Plan de maintenance",
+            "description": "Définition des actions de mise à jour et d’optimisation."
+        },
+        {
+            "title": "Monitoring proactif",
+            "description": "Surveillance continue des performances et de la sécurité."
+        },
+        {
+            "title": "Interventions préventives",
+            "description": "Mises à jour et optimisations régulières."
+        },
+        {
+            "title": "Support & Reporting",
+            "description": "Assistance réactive et rapports mensuels clairs."
+        }
+    ],
+    "technologies": [
+        {
+            "name": "UptimeRobot / Datadog",
+            "description": "Surveillance continue et alertes automatisées."
+        },
+        {
+            "name": "Cloudflare / Wordfence",
+            "description": "Sécurité avancée et protection anti-attaques."
+        },
+        {
+            "name": "UpdraftPlus / Borg",
+            "description": "Sauvegardes automatisées et restauration rapide."
+        },
+        {
+            "name": "GitHub Actions / GitLab CI",
+            "description": "Déploiements automatisés et sécurisés."
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Que comprend la TMA ?",
+            "answer": "Mises à jour, corrections, sécurité, sauvegardes, optimisations, monitoring et support."
+        },
+        {
+            "question": "Quel est le délai d’intervention ?",
+            "answer": "Selon la formule : 48h, 4h ou 1h pour les urgences."
+        },
+        {
+            "question": "Puis-je changer de formule ?",
+            "answer": "Oui, vous pouvez évoluer à tout moment selon vos besoins."
+        },
+        {
+            "question": "Reprenez-vous les sites existants ?",
+            "answer": "Oui, après un audit initial nous reprenons la maintenance de sites créés par d’autres prestataires."
+        }
+    ],
+    "cta": {
+        "title": "Besoin d'une maintenance fiable ?",
+        "description": "Confiez-nous votre site pour une sérénité totale.",
+        "buttonText": "Demander un audit"
+    },
+    "longDescription": "Un site web doit être entretenu pour rester rapide, sécurisé et fiable. Nos offres TMA vous garantissent un suivi continu, des interventions rapides et une tranquillité d’esprit totale.",
+    "metaTitle": "Maintenance & Support Site Internet Libourne",
+    "metaDescription": "TMA, support technique, sécurité, sauvegardes et monitoring. Une maintenance complète pour votre site.",
+    "metaKeywords": "maintenance web, TMA, support technique",
+    "ogImage": null
+},
