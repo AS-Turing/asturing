@@ -9,57 +9,61 @@
             "linkColor": "text-coral",
             "position": 1,
             "shortDescription": "Un accompagnement expert pour faire les bons choix techniques et stratégiques.",
-            "description": "Vous avez un projet digital mais vous ne savez pas par où commencer ? Vous hésitez entre plusieurs solutions ou technologies ? Votre site actuel rencontre des problèmes de performance ou de fiabilité ? Nous vous apportons un regard d’expert pour éviter les erreurs coûteuses et aligner vos choix digitaux avec vos objectifs business. De l’audit technique au plan d’action complet, nous vous aidons à avancer sereinement.",
+            "description": "Vous avez un projet digital mais vous ne savez pas par où commencer ? Vous hésitez entre plusieurs solutions ou technologies ? Votre site actuel rencontre des problèmes de performance ou de fiabilité ? Nous vous apportons un regard d'expert pour éviter les erreurs coûteuses et aligner vos choix digitaux avec vos objectifs business. De l'audit technique au plan d'action complet, nous vous aidons à avancer sereinement.",
             "heroTitle": "Conseil & Stratégie Digitale",
             "heroSubtitle": "L'expertise pour prendre les bonnes décisions",
-            "heroDescription": "Audit, cadrage, choix technologiques, pilotage MOA/AMOA... Nous sécurisons vos décisions stratégiques et techniques dès le début du projet.",
+            "heroDescription": "Audit, cadrage, choix technologiques, pilotage de projet... Nous sécurisons vos décisions stratégiques et techniques dès le début du projet.",
             "auditDuration": "2h",
             "deliveryTime": "1-2 sem.",
             "startingPrice": "800€",
             "solutions": [
                 {
-                    "title": "Audit technique complet",
-                    "description": "Analyse approfondie de votre écosystème digital pour identifier les faiblesses et les opportunités.",
+                    "title": "Audit Technique & Diagnostic",
+                    "description": "Analysez votre site ou projet existant pour identifier les points d'amélioration et sécuriser la suite.",
                     "features": [
-                        "Revue du code & architecture",
-                        "Analyse performance & sécurité",
-                        "Diagnostic SEO technique",
-                        "Plan d'action priorisé"
+                        "Revue du code & architecture technique",
+                        "Analyse performance, sécurité & SEO",
+                        "Diagnostic des points faibles & risques",
+                        "Recommandations priorisées par impact",
+                        "Plan d'action concret et chiffré"
                     ]
                 },
                 {
-                    "title": "Cadrage de projet",
-                    "description": "Définissez une base solide avant de lancer votre projet digital.",
+                    "title": "Cadrage Projet (Stand-alone)",
+                    "description": "Structurez votre projet avant de le confier à votre équipe ou un autre prestataire. Note : Cette prestation est incluse dans nos projets de développement.",
                     "features": [
-                        "Atelier d’analyse des besoins",
-                        "Cahier des charges complet",
-                        "Choix technologiques adaptés",
-                        "Estimation budget & planning"
+                        "Atelier d'analyse des besoins & objectifs",
+                        "Choix technologiques adaptés à votre contexte",
+                        "Cahier des charges fonctionnel complet",
+                        "Estimation budget & planning réaliste",
+                        "Identification des risques projet"
                     ]
                 },
                 {
-                    "title": "Accompagnement MOA/AMOA",
-                    "description": "Un expert à vos côtés pour piloter efficacement votre projet.",
+                    "title": "Accompagnement Chef de Projet",
+                    "description": "Un expert digital à vos côtés pour piloter votre projet et coordonner tous les intervenants.",
                     "features": [
-                        "Pilotage technique & fonctionnel",
+                        "Pilotage technique & fonctionnel du projet",
+                        "Coordination des prestataires (dev, design, etc.)",
                         "Contrôle qualité des livrables",
-                        "Conseil continu",
-                        "Coordination des prestataires"
+                        "Conseil stratégique continu",
+                        "Reporting & suivi d'avancement",
+                        "Gestion des risques & arbitrages"
                     ]
                 }
             ],
             "process": [
                 {
                     "title": "Compréhension du contexte",
-                    "description": "Analyse de votre activité, de vos objectifs et de vos contraintes."
+                    "description": "Analyse de votre activité, de vos objectifs business et de vos contraintes."
                 },
                 {
                     "title": "Audit & Diagnostic",
-                    "description": "Évaluation technique, stratégique et organisationnelle de votre situation."
+                    "description": "Évaluation technique, stratégique et organisationnelle de votre situation actuelle."
                 },
                 {
                     "title": "Recommandations stratégiques",
-                    "description": "Propositions concrètes, priorisées, alignées sur votre ROI."
+                    "description": "Propositions concrètes, priorisées par ROI et alignées sur vos objectifs."
                 },
                 {
                     "title": "Roadmap & Plan d'action",
@@ -67,43 +71,51 @@
                 },
                 {
                     "title": "Suivi & Ajustements",
-                    "description": "Accompagnement continu et adaptation des actions selon vos objectifs."
+                    "description": "Accompagnement continu et adaptation des actions selon l'évolution de vos besoins."
                 }
             ],
             "technologies": [
                 {
-                    "name": "Lighthouse / GTmetrix",
-                    "description": "Analyses de performance, accessibilité et SEO."
+                    "name": "Lighthouse / PageSpeed Insights",
+                    "description": "Analyses de performance, accessibilité et SEO technique."
                 },
                 {
-                    "name": "OWASP / Snyk",
-                    "description": "Contrôle des vulnérabilités et sécurité applicative."
+                    "name": "Google Search Console / Analytics",
+                    "description": "Audit SEO, trafic et comportement utilisateurs."
                 },
                 {
-                    "name": "C4 / UML",
-                    "description": "Modélisation d’architectures techniques claires et durables."
+                    "name": "Figma / Excalidraw",
+                    "description": "Wireframes, maquettes et schémas d'architecture."
                 },
                 {
-                    "name": "Jira / Notion",
-                    "description": "Pilotage de projet en mode agile."
+                    "name": "Notion / Miro",
+                    "description": "Documentation projet et workshops collaboratifs."
                 }
             ],
             "faqs": [
                 {
-                    "question": "Pourquoi faire un audit technique ?",
-                    "answer": "Pour identifier les risques, comprendre les points faibles, anticiper les problèmes et sécuriser la suite du projet."
+                    "question": "Pourquoi faire un audit technique avant de lancer un projet ?",
+                    "answer": "Un audit technique permet d'identifier les risques, comprendre les points faibles de votre écosystème digital actuel, anticiper les problèmes et sécuriser vos investissements futurs. C'est comme un diagnostic médical : mieux vaut savoir avant d'agir."
                 },
                 {
-                    "question": "Quelle est la différence entre MOA et AMOA ?",
-                    "answer": "La MOA représente le métier et ses besoins, l’AMOA apporte la compétence technique pour guider la décision et cadrer la relation avec les développeurs."
+                    "question": "Le cadrage est-il inclus si vous développez mon site ?",
+                    "answer": "Oui, absolument. Le cadrage fait partie intégrante de notre processus de développement (étape 1 : Cadrage & Analyse). Cette offre stand-alone s'adresse à ceux qui veulent structurer leur projet de manière professionnelle mais souhaitent le développer ailleurs ou avec leurs propres ressources internes."
                 },
                 {
                     "question": "Pouvez-vous intervenir sur un projet déjà en cours ?",
-                    "answer": "Oui. Nous pouvons reprendre, auditer ou cadrer un projet en cours pour sécuriser les décisions."
+                    "answer": "Oui, nous intervenons régulièrement sur des projets en cours de route : audit d'un développement existant, reprise d'un projet bloqué, accompagnement chef de projet pour sécuriser la fin d'un chantier complexe. Nous nous adaptons à votre situation."
+                },
+                {
+                    "question": "Combien coûte une prestation de conseil ?",
+                    "answer": "Chaque mission est différente selon la complexité et la durée. Après un premier échange gratuit de 30 minutes pour comprendre votre besoin, nous vous proposons un devis clair et détaillé. Comptez à partir de 800€ pour un audit express, et sur devis pour les missions plus longues."
                 },
                 {
                     "question": "Travaillez-vous avec d'autres prestataires ?",
-                    "answer": "Oui, nous collaborons avec agences, designers et développeurs pour assurer la cohérence technique globale."
+                    "answer": "Oui, nous collaborons régulièrement avec d'autres agences, designers, développeurs ou consultants pour assurer la cohérence technique globale d'un projet. Notre rôle est de coordonner et de garantir la qualité finale."
+                },
+                {
+                    "question": "Quelle est la différence entre conseil et développement ?",
+                    "answer": "Le conseil, c'est l'analyse, la stratégie, les choix techniques et le pilotage. Le développement, c'est la réalisation concrète. Nous faisons les deux, mais certains clients préfèrent juste notre regard d'expert pour sécuriser leurs décisions avant de développer avec leurs équipes ou un autre prestataire."
                 }
             ],
             "cta": {
@@ -111,10 +123,10 @@
                 "description": "Discutons ensemble de vos enjeux pour vous proposer les meilleures solutions.",
                 "buttonText": "Demander un audit"
             },
-            "longDescription": "Le conseil digital, c’est l’assurance de prendre les bonnes décisions dès le départ. Comme un architecte avant la construction, nous analysons votre contexte, vos besoins et vos contraintes pour vous proposer un plan d’action clair, compréhensible et réaliste. Vous gagnez du temps, évitez les erreurs et assurez la pérennité de votre projet.",
-            "metaTitle": "Conseil & Stratégie Digitale Libourne | Audit & Expertise",
-            "metaDescription": "Audit, AMOA, cadrage projet. Expertise digitale à Libourne pour sécuriser vos projets et faire les bons choix stratégiques.",
-            "metaKeywords": "audit digital, conseil Libourne, AMOA, stratégie digitale, cadrage projet",
+            "longDescription": "Le conseil digital, c'est l'assurance de prendre les bonnes décisions dès le départ. Comme un architecte avant la construction, nous analysons votre contexte, vos besoins et vos contraintes pour vous proposer un plan d'action clair, compréhensible et réaliste. Vous gagnez du temps, évitez les erreurs coûteuses et assurez la pérennité de votre investissement digital.",
+            "metaTitle": "Conseil & Stratégie Digitale Libourne | Audit & Expertise Web",
+            "metaDescription": "Audit technique, cadrage projet, accompagnement chef de projet digital. Expertise conseil à Libourne pour sécuriser vos projets web et faire les bons choix.",
+            "metaKeywords": "audit digital, conseil web Libourne, expertise technique, stratégie digitale, cadrage projet, chef de projet digital",
             "ogImage": null
         },
         {
@@ -132,36 +144,57 @@
             "heroDescription": "Sites corporate, e-commerce, applications métier : nous créons des plateformes web modernes qui génèrent de la valeur pour votre entreprise.",
             "auditDuration": "1h",
             "deliveryTime": "4-16 sem.",
-            "startingPrice": "3500€",
+            "startingPrice": "1 800€",
             "solutions": [
                 {
-                    "title": "Sites vitrine & corporate",
-                    "description": "Un site professionnel pour valoriser votre activité.",
+                    "title": "Site Vitrine Professionnel",
+                    "description": "Un site moderne qui valorise votre activité et convertit vos visiteurs en clients.",
+                    "startingPrice": "1 800€",
+                    "deliveryTime": "4-6 sem.",
                     "features": [
-                        "Design moderne & responsive",
-                        "Gestion simple via CMS",
-                        "SEO optimisé",
-                        "Performances maximales"
+                        "Design 100% sur-mesure responsive",
+                        "WordPress custom ou framework moderne",
+                        "Architecture SEO professionnelle (balises, schema.org, sitemap)",
+                        "Performance optimale (PageSpeed > 90, Core Web Vitals)",
+                        "Sécurité renforcée (SSL, anti-spam, firewall)",
+                        "Formulaire de contact avancé",
+                        "Back-office intuitif + formation complète",
+                        "Environnement de développement & recette",
+                        "Documentation technique complète"
                     ]
                 },
                 {
                     "title": "E-commerce B2C & B2B",
-                    "description": "Vendez en ligne avec une plateforme fiable et sécurisée.",
+                    "description": "Une boutique en ligne fiable, sécurisée et optimisée pour la conversion.",
+                    "startingPrice": "4 500€",
+                    "deliveryTime": "6-10 sem.",
                     "features": [
-                        "Catalogue illimité",
-                        "Paiement sécurisé",
-                        "Gestion commandes & stocks",
-                        "Reporting avancé"
+                        "WooCommerce custom ou Symfony e-commerce",
+                        "Catalogue produits illimité",
+                        "Paiement sécurisé (Stripe, PayPal, virement)",
+                        "Gestion commandes, stocks & clients",
+                        "Mode B2B (tarifs différenciés, devis)",
+                        "Optimisation conversion (tunnel, upsell)",
+                        "Performance & SEO e-commerce",
+                        "Intégrations (facturation, CRM, stock)",
+                        "Formation complète à la gestion"
                     ]
                 },
                 {
-                    "title": "Applications métier sur mesure",
-                    "description": "Digitalisez vos processus avec un outil conçu pour vous.",
+                    "title": "Application Métier Sur-Mesure",
+                    "description": "Digitalisez vos processus avec une solution technique parfaitement adaptée.",
+                    "startingPrice": "8 000€",
+                    "deliveryTime": "8-16 sem.",
                     "features": [
                         "Développement 100% personnalisé",
-                        "Automatisation de workflows",
-                        "Intégrations API",
-                        "Évolutif et scalable"
+                        "Architecture scalable et moderne",
+                        "Automatisation de workflows complexes",
+                        "Intégrations API multiples",
+                        "Interface utilisateur optimisée",
+                        "Base de données performante",
+                        "CI/CD et environnements multiples",
+                        "Documentation technique complète",
+                        "Support dédié post-livraison"
                     ]
                 }
             ],
@@ -184,7 +217,7 @@
                 },
                 {
                     "title": "Déploiement & Formation",
-                    "description": "Mise en production sécurisée et formation à l’utilisation."
+                    "description": "Mise en production sécurisée et formation à l'utilisation."
                 }
             ],
             "technologies": [
@@ -207,20 +240,36 @@
             ],
             "faqs": [
                 {
+                    "question": "Pourquoi vos tarifs sont-ils plus élevés que certains concurrents ?",
+                    "answer": "Nos sites ne sont pas des templates WordPress achetés 50€ et revendus. Chaque projet est développé sur-mesure avec une vraie expertise technique : architecture SEO professionnelle (balises sémantiques, schema.org, optimisations avancées), performances maximales (PageSpeed > 90, Core Web Vitals optimisés), sécurité renforcée (SSL, firewall, anti-intrusion), code propre et maintenable. Nous ne faisons pas du 'pousse-carton' : vous obtenez un outil professionnel qui convertit, se référence naturellement et dure dans le temps."
+                },
+                {
+                    "question": "Qu'est-ce qui différencie vraiment un site AS-Turing d'un site low-cost ?",
+                    "answer": "Un site low-cost = template générique + installation basique + hébergement surchargé. Résultat : lent (3-5 secondes de chargement), mal référencé (pas en 1ère page Google), vulnérable (failles de sécurité), et abandonné après livraison. Nos sites : développement sur-mesure, architecture optimisée, hébergement premium, performances AAA (< 1 seconde de chargement), SEO technique poussé, sécurité durcie, documentation complète et accompagnement post-livraison. Vous payez un professionnel, vous obtenez un résultat professionnel."
+                },
+                {
                     "question": "Combien de temps dure un développement ?",
-                    "answer": "Selon la complexité : 4 à 6 semaines pour un site vitrine, 6 à 10 semaines pour un e-commerce, 8 à 16 semaines pour une application métier."
+                    "answer": "Selon la complexité : 4 à 6 semaines pour un site vitrine, 6 à 10 semaines pour un e-commerce, 8 à 16 semaines pour une application métier. Ces délais incluent la phase de conception, les validations intermédiaires et les tests qualité complets."
                 },
                 {
-                    "question": "Puis-je suivre l’avancement du projet ?",
-                    "answer": "Oui, vous recevez des démonstrations régulières et un accès à l’environnement de développement."
+                    "question": "Puis-je suivre l'avancement du projet ?",
+                    "answer": "Absolument. Vous recevez des démonstrations régulières (toutes les 1-2 semaines), un accès à l'environnement de développement, et vous validez chaque étape importante avant qu'on passe à la suivante. Transparence totale sur l'avancement."
                 },
                 {
-                    "question": "Proposez-vous hébergement et maintenance ?",
-                    "answer": "Oui, nous pouvons gérer l’hébergement, les mises à jour et le suivi technique."
+                    "question": "Proposez-vous l'hébergement du site ?",
+                    "answer": "Nous ne proposons pas d'hébergement production en direct, car nous préférons nous concentrer sur notre expertise : le développement. En revanche, nous vous accompagnons dans le choix d'un hébergeur adapté (OVH, Infomaniak, o2switch...), nous configurons l'environnement et assurons la mise en ligne. Vous gardez le contrôle total de votre infrastructure. Un environnement de développement/recette est disponible pendant toute la durée du projet (et maintenu si vous avez un contrat TMA)."
                 },
                 {
-                    "question": "Serai-je autonome à la fin ?",
-                    "answer": "Bien sûr. Vous disposez d’un back-office intuitif et d’une formation complète."
+                    "question": "Serai-je autonome à la fin du projet ?",
+                    "answer": "Totalement. Vous disposez d'un back-office intuitif, d'une formation complète (2-3h en visio), de tutoriels vidéos personnalisés et d'une documentation détaillée. Si vous bloquez après livraison, on reste disponible."
+                },
+                {
+                    "question": "Que se passe-t-il si mon projet évolue en cours de route ?",
+                    "answer": "Normal, ça arrive souvent. Nous travaillons en mode agile : vous pouvez ajuster les priorités et demander des évolutions. Si cela impacte le budget ou le planning, on vous prévient immédiatement et on valide ensemble avant de continuer."
+                },
+                {
+                    "question": "Garantissez-vous les résultats SEO et les performances ?",
+                    "answer": "Nous garantissons une architecture SEO professionnelle (tout ce qui dépend du code et de la technique), et des performances mesurables (PageSpeed > 90, Core Web Vitals dans le vert). Le positionnement Google dépend aussi de vos contenus, de votre stratégie éditoriale et de votre secteur, mais nous vous donnons toutes les bases techniques pour réussir."
                 }
             ],
             "cta": {
@@ -228,10 +277,10 @@
                 "description": "Explorons votre idée et construisons votre futur outil ensemble.",
                 "buttonText": "Démarrer mon projet"
             },
-            "longDescription": "Un bon développement web, c’est un mélange d'écoute, d'expertise et de méthode. Nous concevons des plateformes performantes, adaptées à votre activité et pensées pour évoluer avec vous. Vous suivez chaque étape, vous validez les décisions et vous recevez un outil fiable et professionnel, prêt à être utilisé.",
-            "metaTitle": "Création de Site & Développement Web Libourne",
-            "metaDescription": "Sites vitrines, boutiques e-commerce, applications métier : développement web sur mesure à Libourne.",
-            "metaKeywords": "développement web, création site internet, e-commerce Libourne",
+            "longDescription": "Un bon développement web, c'est un mélange d'écoute, d'expertise et de méthode. Nous concevons des plateformes performantes, adaptées à votre activité et pensées pour évoluer avec vous. Vous suivez chaque étape, vous validez les décisions et vous recevez un outil fiable et professionnel, prêt à être utilisé.",
+            "metaTitle": "Création de Site & Développement Web Libourne | Qualité AAA",
+            "metaDescription": "Sites vitrines à partir de 1800€, e-commerce dès 4500€, applications sur-mesure. Performance garantie, SEO optimisé, sécurité renforcée. Libourne/Bordeaux.",
+            "metaKeywords": "développement web professionnel, création site Libourne, e-commerce Bordeaux, site sur-mesure, SEO performance",
             "ogImage": null
         },
         {
@@ -243,112 +292,142 @@
             "linkColor": "text-secondary",
             "position": 3,
             "shortDescription": "Connectez vos outils et gagnez du temps au quotidien.",
-            "description": "Vos outils ne communiquent pas ? Vous perdez du temps à transférer des données ou répéter des tâches manuelles ? Nous connectons vos systèmes pour automatiser vos processus et fluidifier votre activité. CRM, ERP, e-commerce, emailing… Tout devient synchronisé et automatique.",
+            "description": "Vos outils ne communiquent pas entre eux ? Vous perdez du temps à ressaisir des données ou à répéter des tâches manuelles ? Nous connectons vos systèmes et automatisons vos processus pour fluidifier votre activité. Site web, CRM, comptabilité, e-commerce, logistique… Tout devient synchronisé et automatique.",
             "heroTitle": "Intégrations & Automatisation",
             "heroSubtitle": "Connectez vos outils, automatisez vos processus",
-            "heroDescription": "Webhooks, synchronisation de données, APIs, automatisations no-code : transformez votre écosystème digital en machine efficace.",
+            "heroDescription": "APIs, webhooks, automatisations serveur : transformez votre écosystème digital en machine efficace qui travaille pour vous.",
             "auditDuration": "1h30",
             "deliveryTime": "2-6 sem.",
-            "startingPrice": "1800€",
+            "startingPrice": "1 800€",
             "solutions": [
                 {
-                    "title": "Développement d’APIs",
-                    "description": "Connectez vos outils grâce à des API robustes et sécurisées.",
+                    "title": "Connexion Site ↔ Outils Métier",
+                    "description": "Faites dialoguer votre site web avec vos outils business pour éviter la double saisie et gagner du temps.",
                     "features": [
-                        "API REST / GraphQL",
-                        "Authentification sécurisée",
-                        "Documentation complète",
-                        "Monitoring intégré"
+                        "Site e-commerce → Logiciel comptable (Pennylane, QuickBooks)",
+                        "Formulaires → CRM (HubSpot, Brevo, Mailchimp)",
+                        "Commandes → Gestion stocks / ERP (Odoo, custom)",
+                        "Réservations → Planning / Calendrier",
+                        "API REST sécurisée (JWT)",
+                        "Synchronisation bidirectionnelle ou unidirectionnelle",
+                        "Gestion des erreurs et logs détaillés",
+                        "Documentation technique complète"
                     ]
                 },
                 {
-                    "title": "Automatisation no-code / low-code",
-                    "description": "Automatisez vos tâches sans développement complexe.",
+                    "title": "Automatisation de Processus Métier",
+                    "description": "Automatisez vos tâches répétitives grâce à des scripts intelligents et des tâches planifiées côté serveur.",
                     "features": [
-                        "Zapier / Make / n8n",
-                        "Workflows personnalisés",
-                        "Déclencheurs intelligents",
-                        "Notifications multi-canaux"
+                        "Envoi automatique de factures après commande",
+                        "Génération de rapports quotidiens/hebdomadaires",
+                        "Synchronisation automatique de données entre outils",
+                        "Notifications et alertes intelligentes (email, SMS, Slack)",
+                        "Export automatique vers comptabilité",
+                        "Scripts d'automatisation (cron jobs, tasks planifiées)",
+                        "Traitement batch de données",
+                        "Webhooks temps réel",
+                        "Monitoring et alertes en cas d'erreur"
                     ]
                 },
                 {
-                    "title": "Intégration CRM / ERP",
-                    "description": "Centralisez vos données et fluidifiez votre gestion.",
+                    "title": "Intégrations E-Commerce Avancées",
+                    "description": "Optimisez votre boutique en ligne avec des connexions avancées vers vos outils métier et logistiques.",
                     "features": [
-                        "HubSpot / Salesforce / Odoo",
-                        "Synchronisation bidirectionnelle",
-                        "Enrichissement auto",
-                        "Reporting centralisé"
+                        "Synchronisation stocks multi-canaux (site + marketplaces)",
+                        "Intégration transporteurs (Colissimo, Mondial Relay, Chronopost)",
+                        "Connexion ERP / gestion commerciale",
+                        "Passerelle de paiement personnalisée",
+                        "Facturation automatisée",
+                        "APIs e-commerce (WooCommerce, PrestaShop, custom)",
+                        "Gestion des webhooks (commandes, stocks, paiements)",
+                        "Synchronisation temps réel ou planifiée",
+                        "Tableaux de bord et reporting centralisé"
                     ]
                 }
             ],
             "process": [
                 {
                     "title": "Cartographie des flux",
-                    "description": "Analyse de vos outils et identification des automatisations potentielles."
+                    "description": "Analyse de vos outils actuels et identification des automatisations à fort impact."
                 },
                 {
-                    "title": "Architecture d’intégration",
-                    "description": "Définition de la structure technique et des connecteurs adaptés."
+                    "title": "Architecture d'intégration",
+                    "description": "Définition de la structure technique, des connecteurs et du mode de synchronisation."
                 },
                 {
                     "title": "Développement & Paramétrage",
-                    "description": "Création des APIs, webhooks et automatisations personnalisées."
+                    "description": "Création des APIs, webhooks, scripts et automatisations personnalisées."
                 },
                 {
-                    "title": "Tests d’intégration",
-                    "description": "Vérification complète du bon fonctionnement des échanges."
+                    "title": "Tests d'intégration",
+                    "description": "Vérification complète du bon fonctionnement des échanges et gestion des cas d'erreur."
                 },
                 {
                     "title": "Déploiement & Monitoring",
-                    "description": "Mise en production progressive avec supervision des flux."
+                    "description": "Mise en production progressive avec supervision continue des flux de données."
                 }
             ],
             "technologies": [
                 {
-                    "name": "API REST / GraphQL",
-                    "description": "Échanges fiables entre vos systèmes."
-                },
-                {
-                    "name": "Zapier / Make / n8n",
-                    "description": "Automatisation rapide sans développement lourd."
+                    "name": "API REST / JWT",
+                    "description": "Échanges sécurisés et authentification entre vos systèmes."
                 },
                 {
                     "name": "Webhooks temps réel",
-                    "description": "Synchronisation instantanée entre outils."
+                    "description": "Synchronisation instantanée déclenchée par événements."
                 },
                 {
-                    "name": "iPaaS & ETL",
-                    "description": "Solutions avancées d’intégration de données."
+                    "name": "Cron Jobs & Tasks",
+                    "description": "Automatisations planifiées côté serveur (rapports, synchronisations, etc.)."
+                },
+                {
+                    "name": "WooCommerce / PrestaShop API",
+                    "description": "Intégrations e-commerce avancées et sur-mesure."
                 }
             ],
             "faqs": [
                 {
+                    "question": "Je n'ai pas de compétences techniques, est-ce pour moi ?",
+                    "answer": "Absolument. Nous nous occupons de toute la partie technique. Vous n'avez qu'à nous expliquer ce que vous voulez automatiser, nous trouvons la solution et la mettons en place. Vous gagnez du temps sans toucher une ligne de code."
+                },
+                {
                     "question": "Quels outils pouvez-vous connecter ?",
-                    "answer": "Nous intégrons la majorité des CRM, ERP, outils comptables, e-commerce, emailings et applications SaaS du marché."
+                    "answer": "Nous intégrons la majorité des CRM, outils comptables, plateformes e-commerce, solutions d'emailing et applications métier du marché. Si l'outil dispose d'une API ou permet des exports/imports, nous pouvons le connecter. Sinon, nous développons des connecteurs personnalisés."
                 },
                 {
-                    "question": "La synchronisation est-elle immédiate ?",
-                    "answer": "Oui, selon vos besoins : webhooks temps réel ou synchronisation planifiée."
+                    "question": "Combien coûte une intégration simple ?",
+                    "answer": "Une intégration basique entre 2 outils (ex: formulaire de contact → CRM) démarre à partir de 1 800€. Les projets plus complexes (plusieurs outils, synchronisation bidirectionnelle, logique métier) sont facturés sur devis après analyse de vos besoins. Nous vous proposons toujours un devis clair avant de commencer."
                 },
                 {
-                    "question": "Que se passe-t-il si un outil évolue ?",
-                    "answer": "Nous assurons la maintenance des intégrations et adaptons les flux en fonction des mises à jour."
+                    "question": "La synchronisation est-elle immédiate ou planifiée ?",
+                    "answer": "Les deux sont possibles selon vos besoins et contraintes techniques. Synchronisation temps réel via webhooks (événement déclenche l'action) ou synchronisation planifiée (toutes les heures, chaque nuit, etc.). Nous choisissons ensemble la meilleure approche."
                 },
                 {
-                    "question": "Les données sont-elles sécurisées ?",
-                    "answer": "Toutes les communications sont chiffrées et conformes au RGPD."
+                    "question": "Que se passe-t-il si un de mes outils évolue ou change d'API ?",
+                    "answer": "Nous assurons la maintenance des intégrations et adaptons les flux en fonction des évolutions des outils. C'est couvert par nos contrats de TMA (maintenance). Nous surveillons proactivement les changements d'API pour anticiper les adaptations nécessaires."
+                },
+                {
+                    "question": "Les données sont-elles sécurisées lors des échanges ?",
+                    "answer": "Oui, toutes les communications sont chiffrées (HTTPS/TLS) et l'authentification est sécurisée (tokens JWT, clés API). Nous sommes conformes au RGPD et ne stockons que les données strictement nécessaires au fonctionnement des intégrations."
+                },
+                {
+                    "question": "Puis-je modifier les automatisations après la mise en place ?",
+                    "answer": "Oui, les automatisations sont évolutives. Vous pouvez demander des ajustements, ajouter de nouveaux déclencheurs, modifier les règles métier. Nous facturons les modifications selon la complexité (forfait ou au temps passé)."
+                },
+                {
+                    "question": "Combien de temps prend une intégration ?",
+                    "answer": "Entre 2 et 6 semaines selon la complexité : une intégration simple (2 outils) prend 1-2 semaines, tandis qu'un projet multi-outils avec logique métier complexe peut nécessiter 4-6 semaines. Nous définissons un planning précis après l'analyse de vos besoins."
                 }
             ],
             "cta": {
                 "title": "Prêt à automatiser votre activité ?",
-                "description": "Identifions ensemble vos gains de productivité.",
+                "description": "Identifions ensemble vos gains de productivité et les processus à optimiser.",
                 "buttonText": "Analyser mes besoins"
             },
-            "longDescription": "Automatiser, c’est libérer du temps. Vos outils se synchronisent seuls, vos données sont à jour automatiquement, vos équipes ne perdent plus des heures sur des tâches répétitives. Vous gagnez en efficacité, en fiabilité et en confort de travail.",
-            "metaTitle": "Automatisation & Intégration d’Outils Libourne",
-            "metaDescription": "Automatisations no-code, APIs, synchronisation de données. Connectez vos outils et gagnez du temps.",
-            "metaKeywords": "automatisation, API, intégration CRM, no-code",
+            "longDescription": "Automatiser, c'est libérer du temps pour ce qui compte vraiment. Vos outils se synchronisent automatiquement, vos données sont à jour en permanence, vos équipes ne perdent plus des heures sur des tâches répétitives. Vous gagnez en efficacité, en fiabilité et en confort de travail. L'automatisation n'est plus réservée aux grandes entreprises : nous la rendons accessible aux PME et commerces.",
+            "metaTitle": "Automatisation & Intégration d'Outils | Libourne Bordeaux",
+            "metaDescription": "Connectez vos outils métier (CRM, comptabilité, e-commerce) et automatisez vos processus. APIs, webhooks, synchronisation de données. Devis gratuit.",
+            "metaKeywords": "automatisation processus, intégration API, connexion CRM, synchronisation données, automatisation e-commerce, webhooks, Libourne",
             "ogImage": null
         },
         {
@@ -360,112 +439,161 @@
             "linkColor": "text-accent",
             "position": 4,
             "shortDescription": "La maintenance complète pour un site toujours sécurisé et performant.",
-            "description": "Votre site est en ligne, mais qui assure sa sécurité, sa rapidité et ses mises à jour ? Nous prenons en charge l’entretien technique complet de votre site web pour garantir sa stabilité et son bon fonctionnement. Vous restez concentré sur votre activité, nous nous occupons du reste.",
+            "description": "Votre site est en ligne, mais qui assure sa sécurité, sa rapidité et ses mises à jour ? Nous prenons en charge l'entretien technique complet de votre site web pour garantir sa stabilité, sa performance et son bon fonctionnement. Vous restez concentré sur votre activité, nous nous occupons du reste.",
             "heroTitle": "TMA & Support Technique",
             "heroSubtitle": "La sérénité pour vos projets digitaux",
-            "heroDescription": "Mises à jour, sécurité, sauvegardes, monitoring, corrections — nous assurons la pérennité de votre site.",
+            "heroDescription": "Mises à jour, sécurité, sauvegardes, monitoring, corrections et évolutions — nous assurons la pérennité de votre site.",
             "auditDuration": "1h",
             "deliveryTime": "Immédiat",
             "startingPrice": "149€/mois",
             "solutions": [
                 {
                     "title": "TMA Essentielle",
-                    "description": "La maintenance indispensable pour un site sécurisé.",
+                    "price": "149€/mois",
+                    "priceEngagement": "129€/mois",
+                    "description": "La maintenance indispensable pour un site vitrine ou blog professionnel.",
                     "features": [
-                        "Mises à jour régulières",
-                        "Sauvegardes automatisées",
-                        "Monitoring 24/7",
-                        "Support email 48h"
+                        "Mises à jour WordPress/plugins/thèmes (1×/mois)",
+                        "Sauvegardes automatiques hebdomadaires (rétention 30 jours)",
+                        "Monitoring uptime 24/7 avec alertes",
+                        "2h de développement/corrections incluses par mois",
+                        "Support email (délai de réponse 48h)",
+                        "Rapport mensuel basique (uptime, sauvegardes, mises à jour)",
+                        "Heures supplémentaires : 80€/h (par tranches de 30min)",
+                        "Sans engagement ou 129€/mois avec engagement 12 mois"
                     ]
                 },
                 {
                     "title": "TMA Business",
-                    "description": "La maintenance complète pour une activité professionnelle.",
+                    "price": "349€/mois",
+                    "priceEngagement": "299€/mois",
+                    "description": "La maintenance complète pour un site professionnel ou e-commerce actif.",
                     "features": [
-                        "Support prioritaire 4h",
-                        "Optimisations continues",
-                        "Corrections illimitées",
-                        "Rapports mensuels"
+                        "Tout de la formule Essentielle +",
+                        "Mises à jour WordPress/plugins/thèmes (2×/mois)",
+                        "Sauvegardes quotidiennes automatiques (rétention 60 jours)",
+                        "Monitoring uptime + performance (alertes avancées)",
+                        "5h de développement/corrections incluses par mois",
+                        "Support email prioritaire (délai de réponse 4h)",
+                        "Optimisations SEO/performance trimestrielles",
+                        "Surveillance sécurité renforcée (Wordfence Pro)",
+                        "Rapport mensuel détaillé (analytics, performance, sécurité)",
+                        "Heures supplémentaires : 75€/h (par tranches de 30min)",
+                        "Sans engagement ou 299€/mois avec engagement 12 mois"
                     ]
                 },
                 {
                     "title": "TMA Premium",
-                    "description": "Pour les sites critiques qui nécessitent une haute disponibilité.",
+                    "price": "699€/mois",
+                    "priceEngagement": "599€/mois",
+                    "description": "Pour les sites critiques nécessitant haute disponibilité et évolution continue.",
                     "features": [
-                        "Hotline dédiée",
-                        "Intervention 1h",
-                        "Fonctionnalités incluses",
-                        "Supervision avancée"
+                        "Tout de la formule Business +",
+                        "11h de développement incluses par mois",
+                        "Hotline téléphonique dédiée",
+                        "Support ultra-prioritaire (délai de réponse 1h)",
+                        "Monitoring avancé (uptime, performance, erreurs, logs)",
+                        "Audit sécurité approfondi trimestriel",
+                        "Optimisations mensuelles (performance, SEO, UX)",
+                        "Environnement de test/staging permanent",
+                        "Gestion de crise (piratage, panne majeure)",
+                        "Rapport mensuel complet avec recommandations",
+                        "Heures supplémentaires : 70€/h (par tranches de 30min)",
+                        "Sans engagement ou 599€/mois avec engagement 12 mois"
                     ]
                 }
             ],
             "process": [
                 {
                     "title": "Audit & Reprise",
-                    "description": "Analyse complète de votre site et prise en main technique."
+                    "description": "Analyse technique complète de votre site (sécurité, performance, code) et prise en main complète de l'infrastructure."
                 },
                 {
                     "title": "Plan de maintenance",
-                    "description": "Définition des actions de mise à jour et d’optimisation."
+                    "description": "Définition du calendrier de mises à jour, optimisations et actions préventives adaptées à votre activité."
                 },
                 {
                     "title": "Monitoring proactif",
-                    "description": "Surveillance continue des performances et de la sécurité."
+                    "description": "Surveillance continue 24/7 des performances, disponibilité et sécurité avec alertes automatiques en cas d'incident."
                 },
                 {
                     "title": "Interventions préventives",
-                    "description": "Mises à jour et optimisations régulières."
+                    "description": "Mises à jour régulières, sauvegardes automatiques, optimisations planifiées pour éviter les problèmes avant qu'ils n'arrivent."
                 },
                 {
                     "title": "Support & Reporting",
-                    "description": "Assistance réactive et rapports mensuels clairs."
+                    "description": "Assistance réactive par email/téléphone selon formule + rapports mensuels clairs sur l'état de votre site."
                 }
             ],
             "technologies": [
                 {
-                    "name": "UptimeRobot / Datadog",
-                    "description": "Surveillance continue et alertes automatisées."
+                    "name": "UptimeRobot / Pingdom",
+                    "description": "Surveillance 24/7 de la disponibilité et temps de réponse de votre site."
                 },
                 {
                     "name": "Cloudflare / Wordfence",
-                    "description": "Sécurité avancée et protection anti-attaques."
+                    "description": "Protection anti-attaques (DDoS, injections SQL, brute force) et firewall applicatif."
                 },
                 {
-                    "name": "UpdraftPlus / Borg",
-                    "description": "Sauvegardes automatisées et restauration rapide."
+                    "name": "UpdraftPlus / BackupBuddy",
+                    "description": "Sauvegardes automatiques chiffrées avec restauration en un clic."
                 },
                 {
-                    "name": "GitHub Actions / GitLab CI",
-                    "description": "Déploiements automatisés et sécurisés."
+                    "name": "Google Search Console / Analytics",
+                    "description": "Suivi SEO, monitoring des erreurs techniques et analyse du comportement visiteurs."
                 }
             ],
             "faqs": [
                 {
-                    "question": "Que comprend la TMA ?",
-                    "answer": "Mises à jour, corrections, sécurité, sauvegardes, optimisations, monitoring et support."
+                    "question": "Que comprend exactement la TMA ?",
+                    "answer": "La TMA (Tierce Maintenance Applicative) comprend la maintenance préventive (mises à jour, sauvegardes, monitoring, sécurité) et la maintenance corrective (corrections de bugs, résolution de problèmes). Selon votre formule, vous bénéficiez aussi d'heures de développement pour faire évoluer votre site (ajout de fonctionnalités, modifications, optimisations)."
                 },
                 {
-                    "question": "Quel est le délai d’intervention ?",
-                    "answer": "Selon la formule : 48h, 4h ou 1h pour les urgences."
+                    "question": "Quel est le délai d'intervention en cas de problème ?",
+                    "answer": "Cela dépend de votre formule : TMA Essentielle (48h par email), TMA Business (4h par email prioritaire), TMA Premium (1h par hotline dédiée). En cas d'urgence critique (site hors ligne, piratage), nous intervenons dans les meilleurs délais quelle que soit la formule."
                 },
                 {
-                    "question": "Puis-je changer de formule ?",
-                    "answer": "Oui, vous pouvez évoluer à tout moment selon vos besoins."
+                    "question": "Les heures de développement incluses sont-elles reportées si non utilisées ?",
+                    "answer": "Non, les heures incluses sont à consommer dans le mois. Si vous n'utilisez pas vos heures, elles ne sont pas reportées au mois suivant. Cela nous permet de maintenir des tarifs attractifs et d'optimiser notre organisation. Nous vous aidons à planifier vos besoins pour maximiser votre forfait."
                 },
                 {
-                    "question": "Reprenez-vous les sites existants ?",
-                    "answer": "Oui, après un audit initial nous reprenons la maintenance de sites créés par d’autres prestataires."
+                    "question": "Comment sont facturées les heures supplémentaires ?",
+                    "answer": "Si vous consommez plus que vos heures incluses, les heures supplémentaires sont facturées par tranches de 30 minutes : TMA Essentielle (80€/h), TMA Business (75€/h), TMA Premium (70€/h). Nous vous prévenons toujours avant de dépasser votre forfait pour validation."
+                },
+                {
+                    "question": "Puis-je changer de formule en cours de contrat ?",
+                    "answer": "Oui, vous pouvez upgrader (passer à une formule supérieure) à tout moment. Le changement est effectif dès le mois suivant avec un prorata si nécessaire. Pour downgrader (formule inférieure), un préavis de 30 jours est nécessaire."
+                },
+                {
+                    "question": "Reprenez-vous la maintenance de sites développés par d'autres prestataires ?",
+                    "answer": "Oui, absolument. Nous réalisons d'abord un audit technique complet (1h, inclus) pour évaluer l'état du site, identifier les éventuels problèmes et définir le plan de reprise. Ensuite, nous assurons la maintenance comme pour nos propres développements."
+                },
+                {
+                    "question": "Que se passe-t-il en cas de piratage de mon site ?",
+                    "answer": "En TMA Essentielle et Business, nous intervenons pour nettoyer et sécuriser votre site (consommation des heures incluses + éventuelles heures sup selon gravité). En TMA Premium, la gestion de crise est incluse : intervention immédiate, nettoyage complet, renforcement de la sécurité et rapport détaillé."
+                },
+                {
+                    "question": "Où sont stockées mes sauvegardes ?",
+                    "answer": "Vos sauvegardes sont stockées sur des serveurs cloud sécurisés (hors de votre hébergement) avec chiffrement des données. Durée de rétention : 30 jours (Essentielle), 60 jours (Business), 90 jours (Premium). Vous pouvez demander une copie de vos sauvegardes à tout moment."
+                },
+                {
+                    "question": "Puis-je résilier mon contrat de TMA ?",
+                    "answer": "Si vous êtes sans engagement : résiliation à tout moment avec un préavis de 30 jours. Si vous avez souscrit avec engagement 12 mois : le contrat court jusqu'à son terme, puis devient sans engagement (tacite reconduction). Dans tous les cas, nous vous restituons vos accès et sauvegardes proprement."
+                },
+                {
+                    "question": "Qu'est-ce qui différencie votre TMA des autres agences ?",
+                    "answer": "Transparence totale (reporting détaillé), réactivité (nous sommes une petite structure, pas de ticket perdu dans un SAV impersonnel), expertise technique réelle (développement from scratch, pas de sous-traitance), et tarifs honnêtes sans frais cachés. Vous avez un interlocuteur unique qui connaît votre projet."
                 }
             ],
             "cta": {
                 "title": "Besoin d'une maintenance fiable ?",
-                "description": "Confiez-nous votre site pour une sérénité totale.",
-                "buttonText": "Demander un audit"
+                "description": "Confiez-nous votre site pour une sérénité totale et concentrez-vous sur votre activité.",
+                "buttonText": "Demander un audit gratuit"
             },
-            "longDescription": "Un site web doit être entretenu pour rester rapide, sécurisé et fiable. Nos offres TMA vous garantissent un suivi continu, des interventions rapides et une tranquillité d’esprit totale.",
-            "metaTitle": "Maintenance & Support Site Internet Libourne",
-            "metaDescription": "TMA, support technique, sécurité, sauvegardes et monitoring. Une maintenance complète pour votre site.",
-            "metaKeywords": "maintenance web, TMA, support technique",
+            "longDescription": "Un site web doit être entretenu régulièrement pour rester rapide, sécurisé et fiable. Les mises à jour non faites deviennent des failles de sécurité, les sauvegardes oubliées vous exposent à des pertes de données, et les problèmes non détectés impactent votre référencement. Nos offres TMA vous garantissent un suivi professionnel continu, des interventions rapides en cas de problème, et une tranquillité d'esprit totale. Vous vous concentrez sur votre activité, nous veillons sur votre présence digitale.",
+            "metaTitle": "Maintenance & Support WordPress | TMA Site Internet Libourne",
+            "metaDescription": "TMA WordPress dès 149€/mois : mises à jour, sécurité, sauvegardes, monitoring 24/7 et support réactif. 3 formules adaptées à vos besoins. Sans engagement.",
+            "metaKeywords": "maintenance WordPress, TMA site internet, support technique web, sécurité WordPress, sauvegardes automatiques, monitoring site web, Libourne, Bordeaux",
             "ogImage": null
         },
         {
@@ -476,66 +604,71 @@
             "borderColor": "border-primary",
             "linkColor": "text-primary",
             "position": 5,
-            "shortDescription": "Des formations concrètes pour devenir autonome sur vos outils.",
-            "description": "Vous souhaitez gérer votre site vous-même ? Former vos équipes au digital ? Comprendre les bases du développement ou du référencement ? Nous proposons des formations pratiques et sur mesure, adaptées à votre niveau et vos besoins.",
+            "shortDescription": "Des formations concrètes pour devenir autonome sur vos outils digitaux.",
+            "description": "Vous souhaitez gérer votre site vous-même ? Optimiser votre référencement ? Sécuriser et maintenir votre plateforme en toute autonomie ? Nous proposons des formations pratiques et sur mesure, adaptées à votre niveau et vos besoins réels. Pas de théorie inutile : uniquement des compétences concrètes pour progresser rapidement.",
             "heroTitle": "Formation & Montée en Compétences",
-            "heroSubtitle": "Autonomisez vos équipes sur le digital",
-            "heroDescription": "Formations WordPress, SEO, développement, Git, outils agiles… Des sessions pratiques pour progresser rapidement.",
+            "heroSubtitle": "Devenez autonome sur vos outils digitaux",
+            "heroDescription": "Formations WordPress, SEO, gestion et sécurité de site... Des sessions pratiques basées sur VOS besoins réels.",
             "auditDuration": "30min",
-            "deliveryTime": "1-3 jours",
-            "startingPrice": "650€/j",
+            "deliveryTime": "Demi-journée à 3 jours",
+            "startingPrice": "400€",
             "solutions": [
                 {
-                    "title": "Formations CMS & E-commerce",
-                    "description": "Gérez efficacement votre site WordPress ou WooCommerce.",
+                    "title": "Formation CMS & E-Commerce",
+                    "description": "Gérez efficacement votre site WordPress ou boutique WooCommerce en toute autonomie.",
                     "features": [
-                        "Création & gestion de contenu",
-                        "Gestion des extensions",
-                        "SEO de base",
-                        "Bonnes pratiques de maintenance"
+                        "Création et gestion de contenu (pages, articles, médias)",
+                        "Gestion des produits et commandes (WooCommerce)",
+                        "Installation et configuration d'extensions",
+                        "Optimisation SEO de base (titres, meta, images)",
+                        "Bonnes pratiques de gestion quotidienne"
                     ]
                 },
                 {
-                    "title": "Initiation au Développement Web",
-                    "description": "Comprenez le fonctionnement du web et apprenez les bases du code.",
+                    "title": "Formation SEO & Présence en Ligne",
+                    "description": "Développez votre visibilité sur internet et attirez plus de clients grâce au référencement naturel.",
                     "features": [
-                        "HTML / CSS / JavaScript",
-                        "Frameworks modernes",
-                        "Bonnes pratiques",
-                        "Exercices réels"
+                        "Comprendre le fonctionnement de Google",
+                        "Optimiser ses contenus pour le référencement",
+                        "Stratégie de mots-clés et recherche locale",
+                        "Google My Business et présence locale",
+                        "Rédiger pour le web et pour Google",
+                        "Mesurer ses résultats (Search Console, Analytics)"
                     ]
                 },
                 {
-                    "title": "Outils & Méthodes Agiles",
-                    "description": "Adoptez les outils et méthodes des équipes techniques.",
+                    "title": "Gestion Quotidienne & Sécurité",
+                    "description": "Maîtrisez la maintenance et la sécurité de votre site pour éviter les problèmes et rester serein.",
                     "features": [
-                        "Git / GitHub / GitLab",
-                        "Méthodes agiles",
-                        "Outils collaboratifs",
-                        "Sensibilisation cybersécurité"
+                        "Sauvegardes automatiques et restauration",
+                        "Gestion des mises à jour (WordPress, plugins, thèmes)",
+                        "Détection et correction des problèmes courants",
+                        "Bases de la sécurité web (mots de passe, 2FA, SSL)",
+                        "Surveillance et monitoring de base",
+                        "Que faire en cas de piratage ou panne ?"
                     ]
                 }
             ],
             "process": [
                 {
                     "title": "Analyse des besoins",
-                    "description": "Évaluation du niveau et définition des objectifs."
+                    "description": "Évaluation de votre niveau actuel et définition des objectifs concrets."
                 },
                 {
                     "title": "Programme personnalisé",
-                    "description": "Contenu sur mesure adapté à votre activité."
+                    "description": "Contenu sur mesure adapté à votre activité et vos outils."
                 },
                 {
                     "title": "Sessions interactives",
-                    "description": "Ateliers pratiques basés sur vos cas réels."
+                    "description": "Ateliers pratiques basés sur VOS cas réels, pas de théorie abstraite."
                 },
                 {
                     "title": "Ressources pédagogiques",
-                    "description": "Supports, fiches pratiques et vidéos."
+                    "description": "Supports de cours, fiches pratiques et tutoriels vidéos personnalisés."
                 },
                 {
                     "title": "Suivi post-formation",
-                    "description": "Support pendant 1 mois et session Q/R."
+                    "description": "Support par email pendant 1 mois et session de questions/réponses."
                 }
             ],
             "technologies": [
@@ -544,45 +677,61 @@
                     "description": "Gestion complète et optimisation de votre site."
                 },
                 {
-                    "name": "HTML / CSS / JavaScript",
-                    "description": "Les fondamentaux du web moderne."
+                    "name": "Google Search Console / Analytics",
+                    "description": "Suivi SEO, performances et comportement visiteurs."
                 },
                 {
-                    "name": "Git / GitHub / GitLab",
-                    "description": "Collaboration et versioning."
+                    "name": "Outils de sauvegarde",
+                    "description": "UpdraftPlus, BackupBuddy et solutions de backup."
                 },
                 {
-                    "name": "Symfony / Vue.js",
-                    "description": "Découverte ou perfectionnement sur frameworks modernes."
+                    "name": "Sécurité WordPress",
+                    "description": "Wordfence, iThemes Security, bonnes pratiques."
                 }
             ],
             "faqs": [
                 {
-                    "question": "Quel niveau est nécessaire ?",
-                    "answer": "Aucun. Les formations sont adaptées à votre niveau, du débutant au confirmé."
+                    "question": "La formation est-elle incluse quand vous développez mon site ?",
+                    "answer": "Oui, absolument. Toute livraison de projet inclut une formation complète de 2-3h sur la gestion de votre site. Cette offre s'adresse à ceux qui veulent une formation approfondie (demi-journée ou journée complète) ou qui ont un site développé ailleurs."
+                },
+                {
+                    "question": "Quel niveau est nécessaire pour suivre une formation ?",
+                    "answer": "Aucun niveau spécifique requis. Les formations sont adaptées à votre niveau, du grand débutant au confirmé qui veut se perfectionner. Nous partons de là où vous êtes."
                 },
                 {
                     "question": "Présentiel ou distanciel ?",
-                    "answer": "Les deux sont possibles, en présentiel Bordeaux/Libourne ou en visio."
+                    "answer": "Les deux formats sont possibles : en présentiel dans la région de Bordeaux/Libourne ou en visioconférence (Zoom, Google Meet). Le contenu est identique, seul le format change."
+                },
+                {
+                    "question": "Combien de temps dure une formation ?",
+                    "answer": "Selon vos besoins : demi-journée (3-4h) pour un sujet précis, journée complète (7h) pour une formation approfondie, ou plusieurs sessions étalées sur 2-3 jours. Nous adaptons le rythme à votre disponibilité."
+                },
+                {
+                    "question": "Quel est le tarif des formations ?",
+                    "answer": "Demi-journée (3-4h) : 400€. Journée complète (7h) : 650€. Formation multi-jours : sur devis. Formation post-projet (2-3h) : incluse dans nos développements. Tarif dégressif possible pour les groupes."
                 },
                 {
                     "question": "Peut-on avoir un programme 100% sur mesure ?",
-                    "answer": "Oui, c’est même notre spécialité."
+                    "answer": "Oui, c'est même notre spécialité. Chaque formation est construite sur mesure en fonction de votre activité, vos outils et vos objectifs. Nous ne faisons pas de formations 'catalogue' standardisées."
                 },
                 {
-                    "question": "Y a-t-il une certification ?",
-                    "answer": "Une attestation est fournie, et nous préparons aux certifications de certains outils."
+                    "question": "Y a-t-il une certification ou une attestation ?",
+                    "answer": "Une attestation de formation est fournie à l'issue de chaque session. Nous ne sommes pas organisme certifiant Qualiopi, mais nous pouvons vous préparer aux certifications officielles de certains outils (ex: Google Analytics)."
+                },
+                {
+                    "question": "Que se passe-t-il si je bloque après la formation ?",
+                    "answer": "Vous bénéficiez d'un support par email pendant 1 mois après la formation. Si besoin, nous pouvons aussi organiser une session de questions/réponses en visio (15-30min, gratuite dans le mois suivant la formation)."
                 }
             ],
             "cta": {
-                "title": "Prêts à monter en compétences ?",
-                "description": "Construisons ensemble un programme adapté à vos besoins.",
+                "title": "Prêt à monter en compétences ?",
+                "description": "Construisons ensemble un programme de formation adapté à vos besoins réels.",
                 "buttonText": "Demander un programme"
             },
-            "longDescription": "Nos formations sont pratiques, adaptées et basées sur vos besoins réels. Vous pratiquez, vous progressez et vous devenez autonome sur vos outils.",
-            "metaTitle": "Formations Digitales & Développement Web Libourne",
-            "metaDescription": "Formations WordPress, SEO, développement web, outils agiles. Sessions pratiques et personnalisées.",
-            "metaKeywords": "formation web, WordPress, SEO, initiation développement",
+            "longDescription": "Nos formations sont 100% pratiques, basées sur vos besoins réels et vos outils concrets. Vous ne suivez pas un programme générique : nous construisons ensemble une formation sur mesure qui vous permet de progresser rapidement et de devenir autonome. Pratique, concret, actionnable.",
+            "metaTitle": "Formations WordPress, SEO & Sécurité Web | Libourne Bordeaux",
+            "metaDescription": "Formations WordPress, WooCommerce, SEO et sécurité web. Sessions pratiques et personnalisées pour PME et artisans. Demi-journée dès 400€.",
+            "metaKeywords": "formation WordPress Libourne, formation SEO Bordeaux, formation WooCommerce, sécurité site web, gestion site internet",
             "ogImage": null
         }
     ]

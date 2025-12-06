@@ -77,15 +77,68 @@
           </div>
 
           <div class="space-y-6">
-            <div v-for="info in config.contactInfo" :key="info.title" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+            <!-- Email -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" :class="info.gradient">
-                  <Icon :name="info.icon" class="!w-6 !h-6 text-white" />
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-primary to-secondary">
+                  <Icon name="mdi:email" class="!w-6 !h-6 text-white" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-dark dark:text-white mb-1">{{ info.title }}</h3>
-                  <a v-if="info.link" :href="info.link" :class="info.type === 'email' ? 'text-primary' : info.type === 'phone' ? 'text-secondary' : ''" class="hover:underline">{{ info.value }}</a>
-                  <p v-else class="text-gray-600 dark:text-gray-400 whitespace-pre-line">{{ info.value }}</p>
+                  <h3 class="font-semibold text-dark dark:text-white mb-1">Email</h3>
+                  <a :href="`mailto:${company?.email}`" class="text-primary hover:underline">{{ company?.email }}</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Téléphone -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-secondary to-coral">
+                  <Icon name="mdi:phone" class="!w-6 !h-6 text-white" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-dark dark:text-white mb-1">Téléphone</h3>
+                  <a :href="`tel:${company?.phone?.replace(/\s/g, '')}`" class="text-secondary hover:underline">{{ company?.phone }}</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Adresse -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-coral to-accent">
+                  <Icon name="mdi:map-marker" class="!w-6 !h-6 text-white" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-dark dark:text-white mb-1">Adresse</h3>
+                  <p class="text-gray-600 dark:text-gray-400">{{ company?.address }}</p>
+                  <p class="text-gray-600 dark:text-gray-400">{{ company?.zipCode }} {{ company?.city }}</p>
+                  <p class="text-gray-600 dark:text-gray-400">{{ company?.region }}, {{ company?.country }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Horaires -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-accent to-primary">
+                  <Icon name="mdi:clock-outline" class="!w-6 !h-6 text-white" />
+                </div>
+                <div class="w-full">
+                  <h3 class="font-semibold text-dark dark:text-white mb-2">Horaires</h3>
+                  <div class="space-y-1 text-sm">
+                    <div v-for="item in sortedBusinessHours" :key="item.day" class="flex justify-between">
+                      <span class="text-gray-600 dark:text-gray-400 font-medium">{{ formatDay(item.day) }}</span>
+                      <span class="text-gray-600 dark:text-gray-400">
+                        <template v-if="item.hours && typeof item.hours === 'object' && item.hours.open && item.hours.close">
+                          {{ item.hours.open }} - {{ item.hours.close }}
+                        </template>
+                        <template v-else>
+                          Fermé
+                        </template>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,7 +146,8 @@
             <div class="gradient-hero rounded-2xl p-6 text-white shadow-xl">
               <h3 class="text-xl font-bold mb-2">{{ config.urgentCta.title }}</h3>
               <p class="text-white/90 mb-4 text-sm">{{ config.urgentCta.description }}</p>
-              <a :href="config.urgentCta.buttonLink" class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all hover:scale-105">
+              <a :href="`tel:${company?.phone?.replace(/\s/g, '')}`"
+                 class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all hover:scale-105">
                 <Icon :name="config.urgentCta.buttonIcon" class="!w-5 !h-5" />
                 {{ config.urgentCta.buttonText }}
               </a>
@@ -126,6 +180,7 @@
 <script setup lang="ts">
 const { sendContactMessage } = useApi()
 const { data: config } = await useFetch('/api/contact/config')
+const { companyInfo: company } = useCompany()
 
 const form = ref({ name: '', email: '', phone: '', company: '', subject: '', message: '' })
 const submitting = ref(false)
@@ -133,6 +188,33 @@ const status = ref({ type: '', message: '' })
 const openFaq = ref<number | null>(null)
 
 const toggleFaq = (index: number) => { openFaq.value = openFaq.value === index ? null : index }
+
+const daysTranslation: Record<string, string> = {
+  'monday': 'Lundi',
+  'tuesday': 'Mardi',
+  'wednesday': 'Mercredi',
+  'thursday': 'Jeudi',
+  'friday': 'Vendredi',
+  'saturday': 'Samedi',
+  'sunday': 'Dimanche'
+}
+
+const formatDay = (day: string) => daysTranslation[day.toLowerCase()] || day
+
+// Ordre correct des jours de la semaine
+const weekDaysOrder = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+
+// Horaires triés par ordre de jours
+const sortedBusinessHours = computed(() => {
+  if (!company.value?.businessHours) return []
+  
+  return weekDaysOrder
+    .filter(day => company.value.businessHours[day])
+    .map(day => ({
+      day,
+      hours: company.value.businessHours[day]
+    }))
+})
 
 const submitContact = async () => {
   submitting.value = true
@@ -193,8 +275,8 @@ useHead({
           '@type': 'LocalBusiness',
           'name': 'AS-Turing',
           'description': 'Agence web spécialisée en création de sites internet',
-          'telephone': config.value.contactInfo?.find((i: any) => i.type === 'phone')?.value || '',
-          'email': config.value.contactInfo?.find((i: any) => i.type === 'email')?.value || '',
+          'telephone': company.value?.phone || '',
+          'email': company.value?.email || '',
           'address': {
             '@type': 'PostalAddress',
             'addressLocality': 'Libourne',
