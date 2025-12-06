@@ -108,6 +108,16 @@
 </template>
 
 <script setup lang="ts">
+usePremiumSeo({
+  title: 'Notre Méthodologie de Développement Web | AS-Turing Libourne',
+  description: 'Découvrez notre processus de développement web en 5 étapes : découverte, design, développement agile, tests et mise en ligne. Méthodologie éprouvée et transparente.',
+  url: 'https://as-turing.fr/methodologie',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Méthodologie', url: '/methodologie' }
+  ]
+})
 const processSteps = [
   {
     icon: 'mdi:compass',
@@ -199,3 +209,5 @@ const values = [
   animation: float-delayed 8s ease-in-out infinite;
 }
 </style>
+
+

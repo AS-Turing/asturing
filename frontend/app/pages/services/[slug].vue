@@ -64,93 +64,43 @@ const { data: service } = await useFetch(() => `/api/services/${route.params.slu
   watch: [() => route.params.slug]
 })
 
-// SEO dynamique basé sur les données du service
-useHead(() => ({
-  title: service.value?.metaTitle || `${service.value?.title} | AS-Turing`,
-  meta: [
-    {
-      name: 'description',
-      content: service.value?.metaDescription || service.value?.description || ''
-    },
-    // Keywords
-    {
-      name: 'keywords',
-      content: service.value?.metaKeywords || ''
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: service.value?.metaTitle || service.value?.title || ''
-    },
-    {
-      property: 'og:description',
-      content: service.value?.metaDescription || service.value?.description || ''
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      property: 'og:image',
-      content: service.value?.ogImage || ''
-    },
-    // Robots
-    {
-      name: 'robots',
-      content: 'index, follow'
-    }
-  ],
-  // Schema.org Service détaillé
-  script: service.value ? [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        'name': service.value.title,
-        'description': service.value.description,
-        'serviceType': service.value.title,
-        'url': `https://as-turing.fr/services/${service.value.slug}`,
-        'provider': {
-          '@type': 'LocalBusiness',
-          'name': 'AS-Turing',
-          'address': {
-            '@type': 'PostalAddress',
-            'addressLocality': 'Libourne',
-            'addressRegion': 'Nouvelle-Aquitaine',
-            'postalCode': '33500',
-            'addressCountry': 'FR'
-          }
-        },
-        'areaServed': [
-          {
-            '@type': 'City',
-            'name': 'Libourne'
-          },
-          {
-            '@type': 'City',
-            'name': 'Saint-Émilion'
-          },
-          {
-            '@type': 'City',
-            'name': 'Bordeaux'
-          }
-        ],
-        ...(service.value.startingPrice ? {
-          'offers': {
-            '@type': 'Offer',
-            'price': service.value.startingPrice.replace(/[^0-9]/g, ''),
-            'priceCurrency': 'EUR',
-            'priceSpecification': {
-              '@type': 'PriceSpecification',
-              'price': service.value.startingPrice.replace(/[^0-9]/g, ''),
-              'priceCurrency': 'EUR'
-            }
-          }
-        } : {})
-      })
-    }
-  ] : []
-}))
+// SEO Premium AAA avec Schema Product et FAQs
+watch(service, (newService) => {
+  if (newService) {
+    usePremiumSeo({
+      title: newService.metaTitle || `${newService.title} | AS-Turing`,
+      description: newService.metaDescription || newService.description || '',
+      url: `https://as-turing.fr/services/${newService.slug}`,
+      image: newService.ogImage || 'https://as-turing.fr/images/og-services.jpg',
+      type: 'website',
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Services', url: '/services' },
+        { name: newService.title, url: `/services/${newService.slug}` }
+      ],
+      faq: newService.faqs?.map((faq: any) => ({
+        question: faq.question,
+        answer: faq.answer
+      })),
+      product: newService.startingPrice ? {
+        name: newService.title,
+        image: newService.ogImage || 'https://as-turing.fr/images/og-services.jpg',
+        description: newService.description,
+        price: newService.startingPrice.replace(/[^0-9]/g, ''),
+        currency: 'EUR'
+      } : undefined
+    })
+    
+    // Keywords meta supplémentaires
+    useHead({
+      meta: [
+        {
+          name: 'keywords',
+          content: newService.metaKeywords || `${newService.title}, agence web Libourne, ${newService.slug}`
+        }
+      ]
+    })
+  }
+}, { immediate: true })
 </script>
 

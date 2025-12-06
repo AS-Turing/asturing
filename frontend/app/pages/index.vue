@@ -20,37 +20,25 @@
 <script setup lang="ts">
 const { companyInfo: company } = useCompany()
 
-// SEO optimisé pour positionnement local Libourne / Entre-deux-Mers
-useHead({
+// SEO Premium AAA avec Open Graph, Twitter Cards, JSON-LD Schema
+usePremiumSeo({
   title: 'Création Site Internet Libourne | Agence Web Entre-deux-Mers - AS-Turing',
+  description: 'Agence web de proximité à Libourne. Création de sites internet et e-commerce pour commerces et PME. Qualité professionnelle, tarifs accessibles. Libourne, Saint-Émilion, Bordeaux Est.',
+  url: 'https://as-turing.fr',
+  image: 'https://as-turing.fr/images/og-home.jpg',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' }
+  ]
+})
+
+// Geo + Keywords meta spécifiques local
+useHead({
   meta: [
     {
-      name: 'description',
-      content: 'Agence web de proximité à Libourne. Création de sites internet et e-commerce pour commerces et PME. Qualité professionnelle, tarifs accessibles. Libourne, Saint-Émilion, Bordeaux Est.'
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: 'AS-Turing - Agence Web Libourne | Création Site Internet'
-    },
-    {
-      property: 'og:description',
-      content: 'Votre agence web de proximité dans l\'Entre-deux-Mers. Sites vitrines, e-commerce et applications métier. Accompagnement personnalisé, tarifs compétitifs.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      property: 'og:locale',
-      content: 'fr_FR'
-    },
-    // Keywords (pour certains moteurs)
-    {
       name: 'keywords',
-      content: 'création site internet Libourne, agence web Libourne, site internet Saint-Émilion, création site e-commerce, agence web Entre-deux-Mers, développement web Bordeaux, site vitrine Gironde'
+      content: 'création site internet Libourne, agence web Libourne, site internet Saint-Émilion, création site e-commerce, agence web Entre-deux-Mers, développement web Bordeaux, site vitrine Gironde, TMA Libourne, maintenance site web'
     },
-    // Geo
     {
       name: 'geo.region',
       content: 'FR-33'
@@ -59,92 +47,14 @@ useHead({
       name: 'geo.placename',
       content: 'Libourne'
     },
-    // Robots
     {
-      name: 'robots',
-      content: 'index, follow'
-    }
-  ],
-  // Schema.org LocalBusiness
-  script: computed(() => [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        '@id': 'https://as-turing.fr',
-        'name': company.value?.companyName || 'AS-Turing',
-        'description': company.value?.description || 'Agence web spécialisée en création de sites internet et e-commerce à Libourne',
-        'url': 'https://as-turing.fr',
-        'telephone': company.value?.phone?.replace(/\s/g, '') || '',
-        'email': company.value?.email || '',
-        'address': {
-          '@type': 'PostalAddress',
-          'addressLocality': company.value?.city || 'Libourne',
-          'addressRegion': company.value?.region || 'Nouvelle-Aquitaine',
-          'postalCode': company.value?.zipCode || '33500',
-          'addressCountry': 'FR'
-        },
-        'geo': {
-          '@type': 'GeoCoordinates',
-          'latitude': '44.9186',
-          'longitude': '-0.2421'
-        },
-        'areaServed': [
-          {
-            '@type': 'City',
-            'name': 'Libourne'
-          },
-          {
-            '@type': 'City',
-            'name': 'Saint-Émilion'
-          },
-          {
-            '@type': 'City',
-            'name': 'Bordeaux'
-          },
-          {
-            '@type': 'City',
-            'name': 'Créon'
-          }
-        ],
-        'priceRange': '€€',
-        'openingHours': 'Mo-Fr 09:00-18:00',
-        'sameAs': [
-          company.value?.socialNetworks?.linkedin,
-          company.value?.socialNetworks?.github
-        ].filter(Boolean)
-      })
+      name: 'geo.position',
+      content: '44.9177;-0.2419'
     },
     {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        'name': company.value?.companyName || 'AS-Turing',
-        'description': company.value?.tagline || 'Création de sites internet, e-commerce et applications métier sur-mesure',
-        'serviceType': [
-          'Création site internet',
-          'Développement e-commerce',
-          'Application web sur-mesure',
-          'Refonte site web',
-          'Maintenance site internet'
-        ],
-        'provider': {
-          '@type': 'Organization',
-          'name': company.value?.companyName || 'AS-Turing'
-        },
-        'areaServed': {
-          '@type': 'GeoCircle',
-          'geoMidpoint': {
-            '@type': 'GeoCoordinates',
-            'latitude': '44.9186',
-            'longitude': '-0.2421'
-          },
-          'geoRadius': '40000'
-        }
-      })
+      name: 'ICBM',
+      content: '44.9177, -0.2419'
     }
-  ])
+  ]
 })
 </script>

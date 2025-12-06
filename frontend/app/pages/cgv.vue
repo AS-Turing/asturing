@@ -205,3 +205,16 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+usePremiumSeo({
+  title: 'Conditions Générales de Vente (CGV) | AS-Turing',
+  description: 'Consultez les conditions générales de vente d\'AS-Turing : tarifs, paiement, délais, propriété intellectuelle et engagements contractuels.',
+  url: 'https://as-turing.fr/cgv',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'CGV', url: '/cgv' }
+  ]
+})
+</script>

@@ -241,86 +241,40 @@ const copyLink = async () => {
   }
 }
 
-// SEO
-useHead({
-  title: formattedArticle.value?.metaTitle || (formattedArticle.value ? `${formattedArticle.value.title} - Blog AS-Turing` : 'Article introuvable'),
-  meta: formattedArticle.value ? [
-    {
-      name: 'description',
-      content: formattedArticle.value.metaDescription || formattedArticle.value.excerpt
-    },
-    // Keywords
-    {
-      name: 'keywords',
-      content: formattedArticle.value.metaKeywords || ''
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: formattedArticle.value.metaTitle || formattedArticle.value.title
-    },
-    {
-      property: 'og:description',
-      content: formattedArticle.value.metaDescription || formattedArticle.value.excerpt
-    },
-    {
-      property: 'og:type',
-      content: 'article'
-    },
-    {
-      property: 'og:image',
-      content: formattedArticle.value.ogImage || ''
-    },
-    {
-      property: 'article:published_time',
-      content: article.value?.publishedAt || ''
-    },
-    {
-      property: 'article:author',
-      content: 'AS-Turing'
-    },
-    {
-      property: 'article:section',
-      content: formattedArticle.value.category
-    },
-    // Robots
-    {
-      name: 'robots',
-      content: 'index, follow'
-    }
-  ] : [],
-  // Schema.org Article
-  script: formattedArticle.value ? [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        'headline': formattedArticle.value.title,
-        'description': formattedArticle.value.excerpt,
-        'datePublished': article.value?.publishedAt,
-        'dateModified': article.value?.updatedAt || article.value?.publishedAt,
-        'author': {
-          '@type': 'Organization',
-          'name': 'AS-Turing',
-          'url': 'https://as-turing.fr'
-        },
-        'publisher': {
-          '@type': 'Organization',
-          'name': 'AS-Turing',
-          'logo': {
-            '@type': 'ImageObject',
-            'url': 'https://as-turing.fr/logo.png'
-          }
-        },
-        'articleSection': formattedArticle.value.category,
-        'inLanguage': 'fr-FR',
-        'wordCount': formattedArticle.value.content?.replace(/<[^>]*>/g, '').split(/\s+/).length || 0,
-        'timeRequired': `PT${readingTime.value}M`
-      })
-    }
-  ] : []
-})
+// SEO Premium AAA pour Article avec Schema BlogPosting
+watch(formattedArticle, (newArticle) => {
+  if (newArticle) {
+    usePremiumSeo({
+      title: newArticle.metaTitle || `${newArticle.title} - Blog AS-Turing`,
+      description: newArticle.metaDescription || newArticle.excerpt,
+      url: `https://as-turing.fr/blog/${newArticle.slug}`,
+      image: newArticle.ogImage || 'https://as-turing.fr/images/og-blog.jpg',
+      type: 'article',
+      article: {
+        publishedTime: article.value?.publishedAt,
+        modifiedTime: article.value?.updatedAt,
+        author: 'AS-Turing',
+        section: newArticle.category,
+        tags: newArticle.tags || []
+      },
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Blog', url: '/blog' },
+        { name: newArticle.title, url: `/blog/${newArticle.slug}` }
+      ]
+    })
+    
+    // Keywords meta
+    useHead({
+      meta: [
+        {
+          name: 'keywords',
+          content: newArticle.metaKeywords || `${newArticle.category}, blog développement web, ${newArticle.slug}`
+        }
+      ]
+    })
+  }
+}, { immediate: true })
 </script>
 
 <style scoped>

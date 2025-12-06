@@ -207,4 +207,15 @@
 
 <script setup lang="ts">
 const { companyInfo: company } = useCompany()
+
+usePremiumSeo({
+  title: 'Mentions Légales | AS-Turing - Agence Web Libourne',
+  description: 'Mentions légales d\'AS-Turing : informations sur l\'éditeur, l\'hébergement, la propriété intellectuelle et la conformité RGPD.',
+  url: 'https://as-turing.fr/mentions-legales',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Mentions légales', url: '/mentions-legales' }
+  ]
+})
 </script>
