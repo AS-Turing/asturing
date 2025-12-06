@@ -44,6 +44,11 @@
               </NuxtLink>
             </li>
             <li>
+              <NuxtLink to="/engagements" class="hover:text-blue-400 transition-colors">
+                Nos engagements
+              </NuxtLink>
+            </li>
+            <li>
               <NuxtLink to="/blog" class="hover:text-blue-400 transition-colors">
                 Blog & Actualités
               </NuxtLink>
