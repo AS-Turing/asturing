@@ -52,6 +52,7 @@ class LoadFixturesCommand extends Command
             $connection->executeStatement('TRUNCATE TABLE process_page');
             $connection->executeStatement('TRUNCATE TABLE client');
             $connection->executeStatement('TRUNCATE TABLE contact_message');
+            $connection->executeStatement('TRUNCATE TABLE company_info');
             $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1');
             
             $io->success('Data purged!');
@@ -92,6 +93,12 @@ class LoadFixturesCommand extends Command
         $clientFixtures = new \App\DataFixtures\ClientFixtures();
         $clientFixtures->load($this->entityManager);
         $io->success('8 Clients loaded successfully!');
+
+        // Load Company Info
+        $io->section('Loading Company Info...');
+        $companyInfoFixtures = new \App\DataFixtures\CompanyInfoFixtures();
+        $companyInfoFixtures->load($this->entityManager);
+        $io->success('Company Info loaded successfully!');
 
         $io->success('All fixtures loaded successfully!');
 

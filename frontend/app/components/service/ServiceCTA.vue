@@ -21,11 +21,12 @@
           {{ primaryButtonText }}
         </NuxtLink>
         <a 
-          :href="`tel:${phone}`"
+          v-if="company?.phone"
+          :href="`tel:${phoneFormatted}`"
           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-all border-2 border-white/30"
         >
           <Icon name="mdi:phone" class="w-6 h-6" />
-          {{ phoneDisplay }}
+          {{ company.phone }}
         </a>
       </div>
       
@@ -37,17 +38,17 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
+const { companyInfo: company } = useCompany()
+
+const props = withDefaults(defineProps<{
   title?: string
   subtitle?: string
   primaryButtonText?: string
-  phone?: string
-  phoneDisplay?: string
 }>(), {
   title: 'Prêt à démarrer votre projet ?',
   subtitle: 'Discutons de vos besoins et trouvons la meilleure solution ensemble. Audit gratuit et sans engagement.',
-  primaryButtonText: 'Demander un devis',
-  phone: '+33123456789',
-  phoneDisplay: '01 23 45 67 89'
+  primaryButtonText: 'Demander un devis'
 })
+
+const phoneFormatted = computed(() => company.value?.phone?.replace(/\s/g, '') || '')
 </script>

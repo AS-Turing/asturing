@@ -95,9 +95,9 @@
   
   .gradient-soft {
     background: linear-gradient(135deg, 
-      color-mix(in srgb, var(--color-primary) 5%, transparent),
-      color-mix(in srgb, var(--color-accent) 5%, transparent),
-      color-mix(in srgb, var(--color-secondary) 5%, transparent)
+      color-mix(in srgb, var(--color-primary) 10%, transparent),
+      color-mix(in srgb, var(--color-accent) 10%, transparent),
+      color-mix(in srgb, var(--color-secondary) 10%, transparent)
     );
   }
   

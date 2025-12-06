@@ -6,10 +6,10 @@
     <!-- Sections lazy-loadées avec le système natif de Nuxt -->
     <ClientOnly>
       <LazySectionServices />
+      <LazySectionProjects />
+      <LazySectionClients />
       <LazySectionProcess />
       <LazySectionAdvantages />
-      <LazySectionClients />
-      <LazySectionProjects />
       <LazySectionAbout />
       <LazySectionBlog />
       <LazySectionContact />
@@ -18,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+const { companyInfo: company } = useCompany()
+
 // SEO optimisé pour positionnement local Libourne / Entre-deux-Mers
 useHead({
   title: 'Création Site Internet Libourne | Agence Web Entre-deux-Mers - AS-Turing',
@@ -64,23 +66,23 @@ useHead({
     }
   ],
   // Schema.org LocalBusiness
-  script: [
+  script: computed(() => [
     {
       type: 'application/ld+json',
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         '@id': 'https://as-turing.fr',
-        'name': 'AS-Turing',
-        'description': 'Agence web spécialisée en création de sites internet et e-commerce à Libourne',
+        'name': company.value?.companyName || 'AS-Turing',
+        'description': company.value?.description || 'Agence web spécialisée en création de sites internet et e-commerce à Libourne',
         'url': 'https://as-turing.fr',
-        'telephone': '+33123456789',
-        'email': 'contact@as-turing.fr',
+        'telephone': company.value?.phone?.replace(/\s/g, '') || '',
+        'email': company.value?.email || '',
         'address': {
           '@type': 'PostalAddress',
-          'addressLocality': 'Libourne',
-          'addressRegion': 'Nouvelle-Aquitaine',
-          'postalCode': '33500',
+          'addressLocality': company.value?.city || 'Libourne',
+          'addressRegion': company.value?.region || 'Nouvelle-Aquitaine',
+          'postalCode': company.value?.zipCode || '33500',
           'addressCountry': 'FR'
         },
         'geo': {
@@ -109,9 +111,9 @@ useHead({
         'priceRange': '€€',
         'openingHours': 'Mo-Fr 09:00-18:00',
         'sameAs': [
-          'https://linkedin.com/company/as-turing',
-          'https://github.com/as-turing'
-        ]
+          company.value?.socialNetworks?.linkedin,
+          company.value?.socialNetworks?.github
+        ].filter(Boolean)
       })
     },
     {
@@ -119,8 +121,8 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
-        'name': 'AS-Turing',
-        'description': 'Création de sites internet, e-commerce et applications métier sur-mesure',
+        'name': company.value?.companyName || 'AS-Turing',
+        'description': company.value?.tagline || 'Création de sites internet, e-commerce et applications métier sur-mesure',
         'serviceType': [
           'Création site internet',
           'Développement e-commerce',
@@ -130,7 +132,7 @@ useHead({
         ],
         'provider': {
           '@type': 'Organization',
-          'name': 'AS-Turing'
+          'name': company.value?.companyName || 'AS-Turing'
         },
         'areaServed': {
           '@type': 'GeoCircle',
@@ -143,6 +145,6 @@ useHead({
         }
       })
     }
-  ]
+  ])
 })
 </script>

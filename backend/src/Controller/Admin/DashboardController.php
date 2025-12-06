@@ -44,6 +44,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Page Process', 'fas fa-tasks', \App\Entity\ProcessPage::class);
         
         yield MenuItem::section('Général');
+        yield MenuItem::linkToCrud('Informations entreprise', 'fas fa-building', \App\Entity\CompanyInfo::class);
         yield MenuItem::linkToCrud('Clients', 'fas fa-users', Client::class);
         yield MenuItem::linkToCrud('Messages Contact', 'fas fa-inbox', \App\Entity\ContactMessage::class);
         

@@ -1,5 +1,5 @@
 <template>
-  <section v-if="projects && projects.length > 0" id="projets" class="py-20 bg-white dark:bg-dark transition-colors duration-300">
+  <section v-if="projects && projects.length > 0" id="projets" class="py-20 gradient-soft transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <div class="inline-block mb-4">

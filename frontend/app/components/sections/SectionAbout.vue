@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-dark-lighter dark:to-dark transition-colors duration-300">
+  <section class="py-20 gradient-soft transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="text-center mb-16">
