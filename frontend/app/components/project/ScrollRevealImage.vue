@@ -157,20 +157,7 @@ const updateScrollProgress = () => {
   
   // Progress de 0 à 1, mais sur la distance jusqu'à stopPosition (pas scrollZoneHeight)
   let scrollRatio = stopPosition > 0 ? Math.min(1, positionInZone / stopPosition) : 0
-  
-  // Log quand scrollRatio atteint 1.0 (une seule fois)
-  if (scrollRatio >= 1.0 && positionInZone <= stopPosition + 5) {
-    // console.log('🛑 ARRÊT PAR RATIO MAX:', {
-    //   imageSrc: props.imageSrc,
-    //   containerTop: containerTop.toFixed(0),
-    //   imageHeight,
-    //   maxScrollPixels: maxScrollPixels.value,
-    //   stopPosition,
-    //   positionInZone: positionInZone.toFixed(0),
-    //   scrollRatio: scrollRatio.toFixed(2)
-    // })
-  }
-  
+
   // Calculer translatePixels
   // On scroll TOUTE l'image (maxScrollPixels) mais à une vitesse adaptée
   const translatePixels = scrollRatio * maxScrollPixels.value
@@ -180,37 +167,11 @@ const updateScrollProgress = () => {
   
   // CONDITION D'ARRÊT : Si le bas de l'image atteint le bas du container, on arrête
   if (imageActualBottom <= containerBottom) {
-    // console.log('🛑 ARRÊT DU SCROLL:', {
-    //   imageSrc: props.imageSrc,
-    //   containerTop: containerTop.toFixed(0),
-    //   containerBottom: containerBottom.toFixed(0),
-    //   imageHeight,
-    //   maxScrollPixels: maxScrollPixels.value,
-    //   stopPosition,
-    //   positionInZone: positionInZone.toFixed(0),
-    //   scrollRatio: scrollRatio.toFixed(2),
-    //   translatePixels: translatePixels.toFixed(0),
-    //   imageActualBottom: imageActualBottom.toFixed(0),
-    //   diffBottom: (imageActualBottom - containerBottom).toFixed(0)
-    // })
+
     // On garde la dernière valeur de scrollProgress, on ne calcule plus
     return
   }
-  // if (props.imageSrc?.includes('client-dashboard-fullpage')) {
-  // console.log('hors arrêt:', {
-  //   imageSrc: props.imageSrc,
-  //   containerTop: containerTop.toFixed(0),
-  //   containerBottom: containerBottom.toFixed(0),
-  //   imageHeight,
-  //   maxScrollPixels: maxScrollPixels.value,
-  //   stopPosition,
-  //   positionInZone: positionInZone.toFixed(0),
-  //   scrollRatio: scrollRatio.toFixed(2),
-  //   translatePixels: translatePixels.toFixed(0),
-  //   imageActualBottom: imageActualBottom.toFixed(0),
-  //   diffBottom: (imageActualBottom - containerBottom).toFixed(0)
-  // })
-  // }
+
   // Convertir en pourcentage pour translateY
   scrollProgress.value = (translatePixels / imageHeight) * 100
 }
