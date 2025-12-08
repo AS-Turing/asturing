@@ -48,24 +48,18 @@ export default defineNuxtConfig({
   
   // ✨ Configuration du cache pour optimiser les performances
   routeRules: {
-    // Page d'accueil : prérendu au build (statique)
-    '/': { prerender: true },
+    // Page d'accueil : ISR avec régénération toutes les heures
+    '/': { isr: 3600 },
     
-    // Pages statiques : cache infini
-    '/about': { static: true },
-    '/services/**': { static: true },
-    '/processus': { static: true },
-    
-    // Blog : SWR (cache 1h, revalidation en background)
-    '/blog': { swr: 3600 },
-    '/blog/**': { swr: 3600 },
-    
-    // Projets : ISR (régénération toutes les heures)
+    // Pages dynamiques : ISR (régénération périodique pour perfs + SEO)
+    '/about': { isr: 3600 },
+    '/services/**': { isr: 3600 },
+    '/processus': { isr: 3600 },
+    '/blog': { isr: 7200 }, // 2h pour le blog
+    '/blog/**': { isr: 7200 },
     '/projets': { isr: 3600 },
     '/projets/**': { isr: 3600 },
-    
-    // Contact : pas de cache (formulaire)
-    '/contact': { ssr: true },
+    '/contact': { ssr: true }, // Pas de cache pour le formulaire
     
     // API : cache court (5 min)
     '/api/services': { cache: { maxAge: 300 } },
@@ -78,8 +72,8 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true, // Compression Gzip/Brotli
     prerender: {
-      crawlLinks: true, // Crawl automatique des liens
-      routes: ['/'] // Routes à prérendrer
+      crawlLinks: false, // Désactivé pour éviter prerendering auto
+      routes: [] // Aucune route prérendue
     },
     // Headers de cache pour le navigateur
     routeRules: {
