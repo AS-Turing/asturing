@@ -120,40 +120,111 @@ const updateScrollProgress = () => {
   // Position actuelle dans la zone (0 au début, scrollZoneHeight à la fin)
   const positionInZone = Math.max(0, Math.min(scrollZoneHeight, scrollStartPosition - containerTop))
   
-  // Progress de 0 à 1 dans la zone
-  const scrollRatio = scrollZoneHeight > 0 ? positionInZone / scrollZoneHeight : 0
+  // NOUVELLE APPROCHE : Toutes les images s'arrêtent au même point visuel
+  // Chaque taille d'image a sa propre stopPosition (valeurs calibrées empiriquement)
+  // Table de correspondance basée sur maxScrollPixels
+  let stopPosition;
+  
+  if (maxScrollPixels.value >= 4000) {
+    // Très grandes images (4127px → 935, 3912px → 950)
+    stopPosition = maxScrollPixels.value > 4050 ? 935 : 950;
+  } else if (maxScrollPixels.value >= 2500) {
+    // Grandes images (2627px → 1100)
+    stopPosition = 1100;
+  } else if (maxScrollPixels.value >= 1400) {
+    // Petites images (1402px → 1900)
+    stopPosition = 1900;
+  } else {
+    // Images très petites (fallback)
+    stopPosition = 2000;
+  }
+  
+  // Ou interpolation linéaire entre les points connus
+  // Pour plus de précision entre les valeurs
+  const knownPoints = [
+    { maxScroll: 1402, stop: 1900 },
+    { maxScroll: 2627, stop: 1100 },
+    { maxScroll: 3912, stop: 950 },
+    { maxScroll: 4127, stop: 935 }
+  ];
+  
+  // Trouver les 2 points les plus proches pour interpoler
+  const sorted = knownPoints.sort((a, b) => a.maxScroll - b.maxScroll);
+  const current = maxScrollPixels.value;
+  
+  if (current <= sorted[0].maxScroll) {
+    stopPosition = sorted[0].stop;
+  } else if (current >= sorted[sorted.length - 1].maxScroll) {
+    stopPosition = sorted[sorted.length - 1].stop;
+  } else {
+    // Interpolation entre 2 points
+    for (let i = 0; i < sorted.length - 1; i++) {
+      if (current >= sorted[i].maxScroll && current <= sorted[i + 1].maxScroll) {
+        const p1 = sorted[i];
+        const p2 = sorted[i + 1];
+        const ratio = (current - p1.maxScroll) / (p2.maxScroll - p1.maxScroll);
+        stopPosition = Math.round(p1.stop + ratio * (p2.stop - p1.stop));
+        break;
+      }
+    }
+  }
+  
+  // Progress de 0 à 1, mais sur la distance jusqu'à stopPosition (pas scrollZoneHeight)
+  let scrollRatio = stopPosition > 0 ? Math.min(1, positionInZone / stopPosition) : 0
+  
+  // Log quand scrollRatio atteint 1.0 (une seule fois)
+  if (scrollRatio >= 1.0 && positionInZone <= stopPosition + 5) {
+    // console.log('🛑 ARRÊT PAR RATIO MAX:', {
+    //   imageSrc: props.imageSrc,
+    //   containerTop: containerTop.toFixed(0),
+    //   imageHeight,
+    //   maxScrollPixels: maxScrollPixels.value,
+    //   stopPosition,
+    //   positionInZone: positionInZone.toFixed(0),
+    //   scrollRatio: scrollRatio.toFixed(2)
+    // })
+  }
   
   // Calculer translatePixels
   // On scroll TOUTE l'image (maxScrollPixels) mais à une vitesse adaptée
-  // Vitesse = maxScrollPixels / scrollZoneHeight
-  // Plus l'image est grande, plus elle scroll vite pour montrer tout son contenu
   const translatePixels = scrollRatio * maxScrollPixels.value
   
-  // Position du bas de l'image VISIBLE dans le container
-  // L'image commence à containerTop et on la translate vers le haut de translatePixels
-  // Donc le bas visible est à : containerTop + containerHeight (le bas du container)
-  // Et le vrai bas de l'image (si on pouvait tout voir) serait à : containerTop + imageHeight - translatePixels
-  
-  // Position du bas de l'image réelle
+  // Position du bas de l'image réelle (avec le translateY appliqué)
   const imageActualBottom = containerTop + imageHeight - translatePixels
   
-  // Debug
-  if (props.imageSrc?.includes('lighthouse-score-fullpage')) {
-    console.log('📊 Scroll Zone:', {
-      containerTop: containerTop.toFixed(0),
-      scrollStartPosition: scrollStartPosition.toFixed(0),
-      scrollEndPosition,
-      scrollZoneHeight,
-      positionInZone: positionInZone.toFixed(0),
-      scrollRatio: scrollRatio.toFixed(2),
-      translatePixels: translatePixels.toFixed(0),
-      percentDone: ((translatePixels / maxScrollPixels.value) * 100).toFixed(0) + '%'
-    })
+  // CONDITION D'ARRÊT : Si le bas de l'image atteint le bas du container, on arrête
+  if (imageActualBottom <= containerBottom) {
+    // console.log('🛑 ARRÊT DU SCROLL:', {
+    //   imageSrc: props.imageSrc,
+    //   containerTop: containerTop.toFixed(0),
+    //   containerBottom: containerBottom.toFixed(0),
+    //   imageHeight,
+    //   maxScrollPixels: maxScrollPixels.value,
+    //   stopPosition,
+    //   positionInZone: positionInZone.toFixed(0),
+    //   scrollRatio: scrollRatio.toFixed(2),
+    //   translatePixels: translatePixels.toFixed(0),
+    //   imageActualBottom: imageActualBottom.toFixed(0),
+    //   diffBottom: (imageActualBottom - containerBottom).toFixed(0)
+    // })
+    // On garde la dernière valeur de scrollProgress, on ne calcule plus
+    return
   }
-  
-  // PAS DE CONDITION D'ARRÊT - on laisse scroller naturellement
-  // jusqu'à maxScrollPixels
-  
+  // if (props.imageSrc?.includes('client-dashboard-fullpage')) {
+  // console.log('hors arrêt:', {
+  //   imageSrc: props.imageSrc,
+  //   containerTop: containerTop.toFixed(0),
+  //   containerBottom: containerBottom.toFixed(0),
+  //   imageHeight,
+  //   maxScrollPixels: maxScrollPixels.value,
+  //   stopPosition,
+  //   positionInZone: positionInZone.toFixed(0),
+  //   scrollRatio: scrollRatio.toFixed(2),
+  //   translatePixels: translatePixels.toFixed(0),
+  //   imageActualBottom: imageActualBottom.toFixed(0),
+  //   diffBottom: (imageActualBottom - containerBottom).toFixed(0)
+  // })
+  // }
   // Convertir en pourcentage pour translateY
   scrollProgress.value = (translatePixels / imageHeight) * 100
 }
