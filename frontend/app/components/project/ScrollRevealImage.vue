@@ -62,11 +62,8 @@ const onImageLoad = () => {
   const imageHeight = imageRef.value.naturalHeight
   const containerHeight = containerRef.value.offsetHeight
   
-  // Combien l'image dépasse du container
-  // Si image = 3000px et container = 400px, elle dépasse de 2600px
   maxScrollPixels.value = imageHeight - containerHeight
   
-  // Si l'image ne dépasse pas, pas de scroll
   if (maxScrollPixels.value <= 0) {
     maxScrollPixels.value = 0
     scrollProgress.value = 0
@@ -94,17 +91,6 @@ const updateScrollProgress = () => {
   const containerBottom = rect.bottom
   const containerHeight = rect.height
   const imageHeight = imageRef.value.naturalHeight
-
-  // On veut que le scroll s'arrête quand le bas de l'image est aligné avec le bas du container
-  // imageBottom = containerTop + imageHeight - translatePixels
-  // containerBottom = containerTop + containerHeight
-  // On veut : imageBottom = containerBottom
-  // Donc : containerTop + imageHeight - translatePixels = containerTop + containerHeight
-  // Donc : translatePixels = imageHeight - containerHeight = maxScrollPixels ✓
-  
-  // ZONE DE SCROLL FIXE POUR TOUTES LES IMAGES :
-  // Toutes les images scrollent dans la MÊME zone de hauteur fixe
-  // Les grandes images scrollent plus vite que les petites
   
   const navbarHeight = 65 // Hauteur de la navbar
   
