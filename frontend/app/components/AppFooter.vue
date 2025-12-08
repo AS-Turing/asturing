@@ -34,12 +34,12 @@
           <h3 class="text-white font-semibold mb-4">À propos</h3>
           <ul class="space-y-2 text-sm">
             <li>
-              <NuxtLink to="/realisations" class="hover:text-blue-400 transition-colors">
+              <NuxtLink to="/projets" class="hover:text-blue-400 transition-colors">
                 Nos réalisations
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/methodologie" class="hover:text-blue-400 transition-colors">
+              <NuxtLink to="/processus" class="hover:text-blue-400 transition-colors">
                 Notre méthodologie
               </NuxtLink>
             </li>

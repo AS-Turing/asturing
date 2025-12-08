@@ -93,25 +93,6 @@
       </div>
     </section>
 
-    <!-- Technologies -->
-    <section class="py-16 bg-gray-50 dark:bg-dark-lighter">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8">
-          <h2 class="text-2xl font-bold text-dark dark:text-white mb-2">Stack Technique</h2>
-          <p class="text-gray-600 dark:text-gray-400">Technologies et outils utilisés</p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-3">
-          <span
-            v-for="tech in project.technologies"
-            :key="tech"
-            class="px-4 py-2 bg-white dark:bg-dark rounded-full text-sm font-semibold text-dark dark:text-white shadow-sm hover:shadow-md transition-shadow"
-          >
-            {{ tech }}
-          </span>
-        </div>
-      </div>
-    </section>
-
     <!-- Contenu du projet (Challenge, Solution, Results) -->
     <ProjectContent 
       v-if="project.content"
@@ -119,6 +100,12 @@
       :projectTitle="project.title"
       :imageText="project.imageText"
       :imageGradient="project.imageGradient"
+      :technologies="project.technologies"
+      :techIcons="project.techIcons || []"
+      :imageUrl="project.imageUrl"
+      :challengeImage="project.challengeImage"
+      :solutionImage="project.solutionImage"
+      :resultsImage="project.resultsImage"
     />
 
     <!-- Features Grid - Pleine largeur avec cards -->

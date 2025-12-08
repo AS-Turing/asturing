@@ -66,6 +66,9 @@ class Project
     private array $technologies = [];
 
     #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
+    private array $techIcons = [];
+
+    #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
     private array $features = [];
 
     #[ORM\Column(type: Types::JSON, nullable: true)]
@@ -363,6 +366,17 @@ class Project
     public function setTechnologies(array $technologies): static
     {
         $this->technologies = $technologies;
+        return $this;
+    }
+
+    public function getTechIcons(): array
+    {
+        return $this->techIcons ?? [];
+    }
+
+    public function setTechIcons(?array $techIcons): static
+    {
+        $this->techIcons = $techIcons ?? [];
         return $this;
     }
 

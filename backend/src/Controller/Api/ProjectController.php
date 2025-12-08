@@ -69,6 +69,7 @@ class ProjectController extends AbstractController
             'content' => $project->getContent(),
             'testimonial' => $project->getTestimonial(),
             'technologies' => $project->getTechnologies(),
+            'techIcons' => $project->getTechIcons(),
             'features' => $project->getFeatures(),
             'images' => $project->getImages(),
             'imageUrl' => $project->getImageUrl(),
