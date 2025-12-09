@@ -17,7 +17,7 @@
           to="/contact"
           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[var(--color-primary)] rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-2xl hover:scale-105"
         >
-          <Icon name="mdi:calendar" class="w-6 h-6" />
+          <MdiIcon name="mdi:calendar" class="w-6 h-6" />
           {{ primaryButtonText }}
         </NuxtLink>
         <a 
@@ -25,7 +25,7 @@
           :href="`tel:${phoneFormatted}`"
           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-all border-2 border-white/30"
         >
-          <Icon name="mdi:phone" class="w-6 h-6" />
+          <MdiIcon name="mdi:phone" class="w-6 h-6" />
           {{ company.phone }}
         </a>
       </div>

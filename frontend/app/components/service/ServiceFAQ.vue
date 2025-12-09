@@ -18,7 +18,7 @@
         >
           <summary class="font-bold text-lg text-gray-900 dark:text-white list-none flex justify-between items-center p-6 cursor-pointer">
             <span class="pr-8">{{ faq.question }}</span>
-            <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform group-open:rotate-180 flex-shrink-0 text-[var(--color-primary)]" />
+            <MdiIcon name="mdi:chevron-down" class="w-6 h-6 transition-transform group-open:rotate-180 flex-shrink-0 text-[var(--color-primary)]" />
           </summary>
           <div class="px-6 pb-6">
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ faq.answer }}</p>
@@ -35,7 +35,7 @@
           class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-lg hover:shadow-xl transition-all"
         >
           Contactez-nous
-          <Icon name="mdi:arrow-right" class="w-5 h-5" />
+          <MdiIcon name="mdi:arrow-right" class="w-5 h-5" />
         </NuxtLink>
       </div>
     </div>

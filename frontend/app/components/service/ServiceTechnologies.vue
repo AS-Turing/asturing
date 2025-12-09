@@ -17,7 +17,7 @@
           class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all flex items-start gap-4"
         >
           <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center flex-shrink-0">
-            <Icon :name="tech.icon || 'mdi:code-tags'" class="!w-6 !h-6 text-[var(--color-primary)]" />
+            <MdiIcon :name="tech.icon || 'mdi:code-tags'" class="!w-6 !h-6 text-[var(--color-primary)]" />
           </div>
           <div class="flex-1">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ tech.name }}</h3>

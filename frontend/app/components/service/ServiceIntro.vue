@@ -4,7 +4,7 @@
       <div class="flex flex-col md:flex-row gap-12 items-center">
         <div class="md:w-1/3">
           <div class="w-full aspect-square rounded-3xl bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-secondary)]/20 flex items-center justify-center">
-            <Icon :name="icon" class="!w-32 !h-32 text-[var(--color-primary)]" />
+            <MdiIcon :name="icon" class="!w-32 !h-32 text-[var(--color-primary)]" />
           </div>
         </div>
         <div class="md:w-2/3">
@@ -19,7 +19,7 @@
             class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-lg hover:shadow-xl transition-all"
           >
             Demander un devis gratuit
-            <Icon name="mdi:arrow-right" class="w-5 h-5" />
+            <MdiIcon name="mdi:arrow-right" class="w-5 h-5" />
           </NuxtLink>
         </div>
       </div>

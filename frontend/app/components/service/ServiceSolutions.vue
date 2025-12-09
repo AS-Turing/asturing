@@ -24,7 +24,7 @@
           
           <div class="mb-6">
             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Icon :name="solution.icon || 'mdi:check-circle'" class="!w-8 !h-8 text-[var(--color-primary)]" />
+              <MdiIcon :name="solution.icon || 'mdi:check-circle'" class="!w-8 !h-8 text-[var(--color-primary)]" />
             </div>
             <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{{ solution.title }}</h3>
             <p class="text-gray-600 dark:text-gray-300 mb-6">{{ solution.description }}</p>
@@ -32,7 +32,7 @@
           
           <ul v-if="solution.features && solution.features.length" class="space-y-3 mb-6">
             <li v-for="(feature, idx) in solution.features" :key="idx" class="flex items-start gap-3">
-              <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+              <MdiIcon name="mdi:check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
               <span class="text-gray-700 dark:text-gray-300">{{ feature }}</span>
             </li>
           </ul>
