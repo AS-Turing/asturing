@@ -42,6 +42,9 @@ COPY . .
 # Générer l'autoloader optimisé
 RUN composer dump-autoload --optimize
 
+# Installer les assets des bundles (copie réelle au lieu de symlink)
+RUN php bin/console assets:install public
+
 # Permissions
 RUN mkdir -p var/cache var/log && \
     chown -R www-data:www-data /app && \
