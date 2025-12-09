@@ -220,18 +220,23 @@ const slug = route.params.slug as string
 
 const { data: project, error } = await useFetch(`/api/projects/${slug}`)
 
-// SEO
-if (project.value) {
-  useHead({
-    title: `${project.value.title} - Projet AS Turing`,
-    meta: [
-      { name: 'description', content: project.value.excerpt || project.value.description },
-      { property: 'og:title', content: project.value.title },
-      { property: 'og:description', content: project.value.excerpt || project.value.description },
-      { property: 'og:type', content: 'article' },
-    ]
-  })
-}
+// SEO Premium AAA avec Schema
+watch(project, (newProject) => {
+  if (newProject) {
+    usePremiumSeo({
+      title: `${newProject.title} - Réalisation AS-Turing`,
+      description: newProject.excerpt || newProject.description,
+      url: `https://as-turing.fr/projets/${newProject.slug}`,
+      image: newProject.imageUrl || 'https://as-turing.fr/images/og-projects.jpg',
+      type: 'article',
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Projets', url: '/projets' },
+        { name: newProject.title, url: `/projets/${newProject.slug}` }
+      ]
+    })
+  }
+}, { immediate: true })
 
 // Handle 404
 if (error.value) {

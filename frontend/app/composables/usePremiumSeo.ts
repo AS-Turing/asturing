@@ -55,15 +55,17 @@ export const usePremiumSeo = (config: SeoConfig) => {
     twitterSite: '@asturing', // À adapter si tu as un compte Twitter
     
     // Robots
-    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-    
-    // Canonical
-    link: [
-      { rel: 'canonical', href: url }
-    ]
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   }
   
   useSeoMeta(seoMeta)
+  
+  // Canonical URL (doit être dans useHead, pas useSeoMeta)
+  useHead({
+    link: [
+      { rel: 'canonical', href: url }
+    ]
+  })
   
   // JSON-LD Schemas
   const schemas: any[] = []

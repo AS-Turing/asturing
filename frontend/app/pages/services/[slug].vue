@@ -60,7 +60,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { data: service } = await useFetch(() => `/api/services/${route.params.slug}`, {
-  key: () => `service-${route.params.slug}`,
+  key: `service-${route.params.slug}`,
   watch: [() => route.params.slug]
 })
 

@@ -8,7 +8,7 @@
 
       <div class="max-w-5xl mx-auto text-center relative z-10">
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-semibold mb-8">
-          <Icon name="mdi:chart-timeline-variant" class="w-5 h-5" />
+          <MdiIcon name="mdi:chart-timeline-variant" class="w-5 h-5" />
           <span>{{ config.hero.badge }}</span>
         </div>
 
@@ -47,7 +47,7 @@
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all">
                   <div class="flex items-start gap-4 mb-4">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center flex-shrink-0">
-                      <Icon :name="step.icon" class="!w-7 !h-7 text-[var(--color-primary)]" />
+                      <MdiIcon :name="step.icon" class="!w-7 !h-7 text-[var(--color-primary)]" />
                     </div>
                     <div>
                       <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">{{ step.title }}</h3>
@@ -60,7 +60,7 @@
                     <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Livrables :</p>
                     <ul class="space-y-2">
                       <li v-for="(deliverable, idx) in step.deliverables" :key="idx" class="flex items-start gap-2">
-                        <Icon name="mdi:check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <MdiIcon name="mdi:check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <span class="text-gray-600 dark:text-gray-400 text-sm">{{ deliverable }}</span>
                       </li>
                     </ul>
@@ -89,7 +89,7 @@
             <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]"></div>
 
             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Icon :name="value.icon" class="!w-8 !h-8 text-[var(--color-primary)]" />
+              <MdiIcon :name="value.icon" class="!w-8 !h-8 text-[var(--color-primary)]" />
             </div>
 
             <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{{ value.title }}</h3>

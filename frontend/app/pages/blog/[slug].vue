@@ -161,11 +161,14 @@
 const route = useRoute()
 const slug = route.params.slug as string
 
-// Fetch article
-const { data: article, error } = await useFetch(`/api/blog/${slug}`)
+// Fetch article avec SSR pour SEO
+const { data: article } = await useFetch(() => `/api/blog/posts/${slug}`, {
+  key: `blog-post-${slug}`
+})
 
-// Fetch all articles for related section
-const { data: rawArticles } = await useFetch('/api/blog')
+const { data: rawArticles } = await useFetch('/api/blog/posts', {
+  key: 'blog-posts'
+})
 
 const formattedArticle = computed(() => {
   if (!article.value) return null
@@ -188,7 +191,8 @@ const formattedArticle = computed(() => {
     metaTitle: article.value.metaTitle,
     metaDescription: article.value.metaDescription,
     metaKeywords: article.value.metaKeywords,
-    ogImage: article.value.ogImage
+    ogImage: article.value.ogImage,
+    tags: article.value.tags
   }
 })
 

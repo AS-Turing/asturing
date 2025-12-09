@@ -81,7 +81,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-primary to-secondary">
-                  <Icon name="mdi:email" class="!w-6 !h-6 text-white" />
+                  <MdiIcon name="mdi:email" class="!w-6 !h-6 text-white" />
                 </div>
                 <div>
                   <h3 class="font-semibold text-dark dark:text-white mb-1">Email</h3>
@@ -94,7 +94,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-secondary to-coral">
-                  <Icon name="mdi:phone" class="!w-6 !h-6 text-white" />
+                  <MdiIcon name="mdi:phone" class="!w-6 !h-6 text-white" />
                 </div>
                 <div>
                   <h3 class="font-semibold text-dark dark:text-white mb-1">Téléphone</h3>
@@ -107,7 +107,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-coral to-accent">
-                  <Icon name="mdi:map-marker" class="!w-6 !h-6 text-white" />
+                  <MdiIcon name="mdi:map-marker" class="!w-6 !h-6 text-white" />
                 </div>
                 <div>
                   <h3 class="font-semibold text-dark dark:text-white mb-1">Adresse</h3>
@@ -122,7 +122,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 gradient-hero from-accent to-primary">
-                  <Icon name="mdi:clock-outline" class="!w-6 !h-6 text-white" />
+                  <MdiIcon name="mdi:clock-outline" class="!w-6 !h-6 text-white" />
                 </div>
                 <div class="w-full">
                   <h3 class="font-semibold text-dark dark:text-white mb-2">Horaires</h3>

@@ -38,61 +38,78 @@
             v-for="project in projects"
             :key="project.id"
             :to="`/projets/${project.slug}`"
-            class="group block"
+            class="group relative bg-white dark:bg-dark rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
           >
-            <article class="h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 gradient-hero" :class="project.bgGradient">
-              <!-- Image -->
-              <div class="relative h-64 overflow-hidden">
-                <div 
-                  class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold gradient-hero transition-transform duration-500 group-hover:scale-110"
-                  :class="project.imageGradient"
-                >
-                  {{ project.imageText }}
-                </div>
-                <div class="absolute top-4 right-4">
-                  <span :class="`w-3 h-3 rounded-full ${project.dotColor} animate-pulse block`"></span>
-                </div>
-              </div>
-
-              <!-- Content -->
-              <div class="p-6">
-                <div :class="`text-sm font-semibold mb-2 ${project.categoryColor}`">
-                  {{ project.category }}
+            <!-- Image placeholder -->
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 dark:from-dark-lighter dark:to-dark">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <!-- Pattern subtil -->
+                <div class="absolute inset-0 opacity-5">
+                  <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                  </svg>
                 </div>
                 
-                <h2 class="text-2xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
-                  {{ project.title }}
-                </h2>
-                
-                <p :class="`mb-4 leading-relaxed line-clamp-3 ${project.descColor}`">
-                  {{ project.description }}
-                </p>
-
-                <!-- Technologies (max 3) -->
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    v-for="tech in project.technologies.slice(0, 3)"
-                    :key="tech"
-                    :class="`px-3 py-1 rounded-full text-xs font-semibold ${project.techClass}`"
-                  >
-                    {{ tech }}
-                  </span>
-                  <span 
-                    v-if="project.technologies.length > 3"
-                    :class="`px-3 py-1 rounded-full text-xs font-semibold ${project.techClass}`"
-                  >
-                    +{{ project.technologies.length - 3 }}
-                  </span>
-                </div>
-
-                <div :class="`inline-flex items-center gap-2 font-semibold group-hover:gap-3 transition-all ${project.linkColor}`">
-                  Voir le projet
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <!-- Icône centrale -->
+                <div class="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
               </div>
-            </article>
+              
+              <!-- Badge catégorie -->
+              <div class="absolute top-4 left-4">
+                <span :class="`px-3 py-1 rounded-full text-xs font-semibold ${project.techClass}`">
+                  {{ project.category }}
+                </span>
+              </div>
+              
+              <!-- Badge statut -->
+              <div class="absolute top-4 right-4">
+                <span :class="`w-3 h-3 rounded-full ${project.dotColor} animate-pulse block`"></span>
+              </div>
+            </div>
+
+            <!-- Contenu -->
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark dark:text-white mb-2 group-hover:text-primary transition-colors">
+                {{ project.title }}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                {{ project.description }}
+              </p>
+              
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  v-for="tech in project.technologies?.slice(0, 3)"
+                  :key="tech"
+                  class="px-2 py-1 bg-gray-100 dark:bg-dark-lighter rounded text-xs text-gray-600 dark:text-gray-400"
+                >
+                  {{ tech }}
+                </span>
+                <span
+                  v-if="project.technologies?.length > 3"
+                  class="px-2 py-1 bg-gray-100 dark:bg-dark-lighter rounded text-xs text-gray-600 dark:text-gray-400"
+                >
+                  +{{ project.technologies.length - 3 }}
+                </span>
+              </div>
+
+              <!-- CTA -->
+              <div class="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                <span>Voir le projet</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
           </NuxtLink>
         </div>
 
@@ -143,9 +160,9 @@ useHead({
 </script>
 
 <style scoped>
-.line-clamp-3 {
+.line-clamp-2 {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

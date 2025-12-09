@@ -36,7 +36,7 @@ export default defineSitemapEventHandler(async () => {
     
     // Blog - skip if 404
     try {
-      const blogResponse = await $fetch(`${apiBase}/api/blog/articles`)
+      const blogResponse = await $fetch(`${apiBase}/api/blog/posts`)
       if (blogResponse && Array.isArray(blogResponse)) {
         blogResponse.forEach((article: any) => {
           urls.push({
@@ -47,8 +47,9 @@ export default defineSitemapEventHandler(async () => {
           })
         })
       }
-    } catch (blogError) {
-      console.warn('Blog API not available, skipping blog URLs in sitemap')
+    } catch (blogError: any) {
+      console.error('Blog API error:', blogError.message || blogError)
+      console.error('Blog API URL tried:', `${apiBase}/api/blog/posts`)
     }
   } catch (error) {
     console.error('Error fetching dynamic routes for sitemap:', error)
