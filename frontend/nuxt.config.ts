@@ -48,15 +48,14 @@ export default defineNuxtConfig({
   
   // ✨ Configuration du cache pour optimiser les performances
   routeRules: {
-    // Page d'accueil : ISR avec régénération toutes les heures
-    '/': { isr: 3600 },
+    // Page d'accueil : SSR pur (pas d'ISR pour éviter problèmes cache blog)
+    '/': { ssr: true },
     
     // Pages dynamiques : ISR (régénération périodique pour perfs + SEO)
-    '/about': { isr: 3600 },
     '/services/**': { isr: 3600 },
     '/processus': { isr: 3600 },
-    '/blog': { isr: 7200 }, // 2h pour le blog
-    '/blog/**': { isr: 7200 },
+    '/blog': { ssr: true }, // SSR pur
+    '/blog/**': { ssr: true }, // SSR pur
     '/projets': { isr: 3600 },
     '/projets/**': { isr: 3600 },
     '/contact': { ssr: true }, // Pas de cache pour le formulaire
