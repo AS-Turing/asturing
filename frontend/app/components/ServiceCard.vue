@@ -7,7 +7,7 @@
       class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg"
       :class="getGradientClass(service.iconGradient)"
     >
-      <Icon :name="service.icon" class="!w-8 !h-8 text-white" />
+      <MdiIcon v-if="service.icon" :name="service.icon" class="!w-8 !h-8 text-white" />
     </div>
     <h3 class="text-2xl font-bold text-dark dark:text-white mb-4">{{ service.title }}</h3>
     <p class="text-gray-600 dark:text-gray-300 mb-6">

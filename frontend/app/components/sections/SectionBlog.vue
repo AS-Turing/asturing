@@ -74,7 +74,12 @@
 </template>
 
 <script setup lang="ts">
-const { data: rawArticles } = await useFetch('/api/blog')
+const { fetchBlogPosts } = useApi()
+const rawArticles = ref([])
+
+onMounted(async () => {
+  rawArticles.value = await fetchBlogPosts()
+})
 
 const articles = computed(() => {
   if (!rawArticles.value) return []

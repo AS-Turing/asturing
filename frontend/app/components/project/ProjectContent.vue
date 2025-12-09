@@ -47,7 +47,7 @@
                       
                       <!-- Label avec style épuré -->
                       <span class="text-xs text-center text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all duration-300">
-                        {{ technologies[iconIndex].split(' ')[0] }}
+                        {{ getTechLabel(icon) }}
                       </span>
                     </div>
                   </div>
@@ -226,6 +226,7 @@ const iconMap: Record<string, string> = {
   'wordpress': 'skill-icons:wordpress',
   'strapi': 'skill-icons:strapi-dark',
   'sanity': 'skill-icons:sanity',
+  'gutenberg': 'simple-icons:gutenberg',
   
   // Backend Services
   'supabase': 'skill-icons:supabase-dark',
@@ -244,6 +245,12 @@ const iconMap: Record<string, string> = {
 
 const getIconName = (slug: string): string => {
   return iconMap[slug] || 'mdi:code-tags'
+}
+
+// Helper pour obtenir le label d'une techno depuis son slug
+const getTechLabel = (slug: string): string => {
+  // Capitaliser la première lettre
+  return slug.charAt(0).toUpperCase() + slug.slice(1)
 }
 </script>
 
