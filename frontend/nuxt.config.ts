@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   sitemap: {
     hostname: 'https://www.as-turing.fr',
     gzip: true,
+    xsl: false,
     exclude: [
       '/index-old'
     ],
