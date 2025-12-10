@@ -11,11 +11,11 @@ export default defineNuxtConfig({
   
   // Configuration du sitemap
   site: {
-    url: 'https://as-turing.fr',
+    url: 'https://www.as-turing.fr',
   },
   
   sitemap: {
-    hostname: 'https://as-turing.fr',
+    hostname: 'https://www.as-turing.fr',
     gzip: true,
     exclude: [
       '/index-old'

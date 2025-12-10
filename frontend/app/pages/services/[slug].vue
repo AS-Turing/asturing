@@ -70,8 +70,8 @@ watch(service, (newService) => {
     usePremiumSeo({
       title: newService.metaTitle || `${newService.title} | AS-Turing`,
       description: newService.metaDescription || newService.description || '',
-      url: `https://as-turing.fr/services/${newService.slug}`,
-      image: newService.ogImage || 'https://as-turing.fr/images/og-services.jpg',
+      url: `https://www.as-turing.fr/services/${newService.slug}`,
+      image: newService.ogImage || 'https://www.as-turing.fr/images/og-services.jpg',
       type: 'website',
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
@@ -84,7 +84,7 @@ watch(service, (newService) => {
       })),
       product: newService.startingPrice ? {
         name: newService.title,
-        image: newService.ogImage || 'https://as-turing.fr/images/og-services.jpg',
+        image: newService.ogImage || 'https://www.as-turing.fr/images/og-services.jpg',
         description: newService.description,
         price: newService.startingPrice.replace(/[^0-9]/g, ''),
         currency: 'EUR'

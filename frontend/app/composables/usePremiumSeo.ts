@@ -28,8 +28,8 @@ export const usePremiumSeo = (config: SeoConfig) => {
   const route = useRoute()
   const siteConfig = useSiteConfig()
   
-  const url = config.url || `https://as-turing.fr${route.path}`
-  const image = config.image || 'https://as-turing.fr/images/og-default.jpg'
+  const url = config.url || `https://www.as-turing.fr${route.path}`
+  const image = config.image || 'https://www.as-turing.fr/images/og-default.jpg'
   const siteName = 'AS-Turing'
   const locale = 'fr_FR'
   
@@ -75,8 +75,8 @@ export const usePremiumSeo = (config: SeoConfig) => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'AS-Turing',
-    url: 'https://as-turing.fr',
-    logo: 'https://as-turing.fr/images/logo2.png',
+    url: 'https://www.as-turing.fr',
+    logo: 'https://www.as-turing.fr/images/logo2.png',
     description: 'Agence digitale spécialisée dans la création de solutions web innovantes et performantes',
     address: {
       '@type': 'PostalAddress',
@@ -104,10 +104,10 @@ export const usePremiumSeo = (config: SeoConfig) => {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      '@id': 'https://as-turing.fr/#business',
+      '@id': 'https://www.as-turing.fr/#business',
       name: 'AS-Turing',
-      image: 'https://as-turing.fr/images/logo2.png',
-      url: 'https://as-turing.fr',
+      image: 'https://www.as-turing.fr/images/logo2.png',
+      url: 'https://www.as-turing.fr',
       telephone: '+33783070052',
       email: 'contact@as-turing.fr',
       address: {
@@ -165,7 +165,7 @@ export const usePremiumSeo = (config: SeoConfig) => {
         name: 'AS-Turing',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://as-turing.fr/images/logo2.png'
+          url: 'https://www.as-turing.fr/images/logo2.png'
         }
       },
       datePublished: config.article.publishedTime,
@@ -186,7 +186,7 @@ export const usePremiumSeo = (config: SeoConfig) => {
         '@type': 'ListItem',
         position: index + 1,
         name: crumb.name,
-        item: `https://as-turing.fr${crumb.url}`
+        item: `https://www.as-turing.fr${crumb.url}`
       }))
     })
   }
@@ -230,18 +230,18 @@ export const usePremiumSeo = (config: SeoConfig) => {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      '@id': 'https://as-turing.fr/#website',
-      url: 'https://as-turing.fr',
+      '@id': 'https://www.as-turing.fr/#website',
+      url: 'https://www.as-turing.fr',
       name: 'AS-Turing',
       description: 'Agence digitale spécialisée dans la création de solutions web',
       publisher: {
-        '@id': 'https://as-turing.fr/#organization'
+        '@id': 'https://www.as-turing.fr/#organization'
       },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://as-turing.fr/blog?q={search_term_string}'
+          urlTemplate: 'https://www.as-turing.fr/blog?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }

@@ -226,8 +226,8 @@ watch(project, (newProject) => {
     usePremiumSeo({
       title: `${newProject.title} - Réalisation AS-Turing`,
       description: newProject.excerpt || newProject.description,
-      url: `https://as-turing.fr/projets/${newProject.slug}`,
-      image: newProject.imageUrl || 'https://as-turing.fr/images/og-projects.jpg',
+      url: `https://www.as-turing.fr/projets/${newProject.slug}`,
+      image: newProject.imageUrl || 'https://www.as-turing.fr/images/og-projects.jpg',
       type: 'article',
       breadcrumbs: [
         { name: 'Accueil', url: '/' },

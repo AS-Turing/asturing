@@ -251,8 +251,8 @@ watch(formattedArticle, (newArticle) => {
     usePremiumSeo({
       title: newArticle.metaTitle || `${newArticle.title} - Blog AS-Turing`,
       description: newArticle.metaDescription || newArticle.excerpt,
-      url: `https://as-turing.fr/blog/${newArticle.slug}`,
-      image: newArticle.ogImage || 'https://as-turing.fr/images/og-blog.jpg',
+      url: `https://www.as-turing.fr/blog/${newArticle.slug}`,
+      image: newArticle.ogImage || 'https://www.as-turing.fr/images/og-blog.jpg',
       type: 'article',
       article: {
         publishedTime: article.value?.publishedAt,

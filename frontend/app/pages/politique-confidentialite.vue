@@ -317,7 +317,7 @@ const { companyInfo: company } = useCompany()
 usePremiumSeo({
   title: 'Politique de Confidentialité | AS-Turing - Protection de vos données',
   description: 'Découvrez comment AS-Turing protège vos données personnelles. Transparence totale, aucun tracking, conformité RGPD. Zéro jour de conservation.',
-  url: 'https://as-turing.fr/politique-confidentialite',
+  url: 'https://www.as-turing.fr/politique-confidentialite',
   type: 'website',
   breadcrumbs: [
     { name: 'Accueil', url: '/' },

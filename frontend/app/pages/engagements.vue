@@ -351,7 +351,7 @@
 usePremiumSeo({
   title: 'Nos Engagements Clients | AS-Turing - Transparence et Qualité',
   description: 'Découvrez les engagements d\'AS-Turing envers ses clients : transparence, qualité, délais respectés et accompagnement sur-mesure. Une relation de confiance.',
-  url: 'https://as-turing.fr/engagements',
+  url: 'https://www.as-turing.fr/engagements',
   type: 'website',
   breadcrumbs: [
     { name: 'Accueil', url: '/' },

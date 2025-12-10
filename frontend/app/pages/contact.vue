@@ -270,7 +270,7 @@ useHead({
         '@type': 'ContactPage',
         'name': 'Contact - AS-Turing',
         'description': 'Contactez notre agence web pour votre projet de site internet',
-        'url': 'https://as-turing.fr/contact',
+        'url': 'https://www.as-turing.fr/contact',
         'mainEntity': {
           '@type': 'LocalBusiness',
           'name': 'AS-Turing',
