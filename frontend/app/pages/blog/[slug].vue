@@ -49,7 +49,7 @@
 
     <!-- Content -->
     <article class="py-16">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Excerpt -->
         <div class="mb-12">
           <p class="text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-medium">

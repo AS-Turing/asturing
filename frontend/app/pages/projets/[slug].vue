@@ -95,7 +95,8 @@
 
     <!-- Contenu du projet (Challenge, Solution, Results) -->
     <ProjectContent 
-      v-if="project.content"
+      v-if="project && project.content"
+      :key="`project-content-${project.id}`"
       :content="project.content"
       :projectTitle="project.title"
       :imageText="project.imageText"
@@ -218,7 +219,10 @@
 const route = useRoute()
 const slug = route.params.slug as string
 
-const { data: project, error } = await useFetch(`/api/projects/${slug}`)
+const { data: project, error } = await useFetch(() => `/api/projects/${slug}`, {
+  key: `project-${slug}`,
+  watch: [() => route.params.slug]
+})
 
 // SEO Premium AAA avec Schema
 watch(project, (newProject) => {
