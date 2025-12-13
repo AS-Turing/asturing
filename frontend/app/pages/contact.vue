@@ -62,9 +62,6 @@
                   <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Message *</label>
                   <textarea v-model="form.message" rows="6" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 resize-none transition"></textarea>
                 </div>
-                <div v-if="status.message" class="p-4 rounded-xl" :class="status.type === 'success' ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200' : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'">
-                  {{ status.message }}
-                </div>
                 <button type="submit" :disabled="submitting" class="w-full gradient-hero text-white py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100">
                   {{ submitting ? config.form.submittingButton : config.form.submitButton }}
                 </button>
@@ -184,7 +181,6 @@ const { companyInfo: company } = useCompany()
 
 const form = ref({ name: '', email: '', phone: '', company: '', subject: '', message: '' })
 const submitting = ref(false)
-const status = ref({ type: '', message: '' })
 const openFaq = ref<number | null>(null)
 
 const toggleFaq = (index: number) => { openFaq.value = openFaq.value === index ? null : index }
@@ -217,14 +213,15 @@ const sortedBusinessHours = computed(() => {
 })
 
 const submitContact = async () => {
+  const { notifySuccess, notifyError } = useNotifications()
+  
   submitting.value = true
-  status.value = { type: '', message: '' }
   try {
     await sendContactMessage(form.value)
-    status.value = { type: 'success', message: config.value?.form?.successMessage || '✅ Merci !' }
+    notifySuccess(config.value?.form?.successMessage || '✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.')
     form.value = { name: '', email: '', phone: '', company: '', subject: '', message: '' }
   } catch (error) {
-    status.value = { type: 'error', message: config.value?.form?.errorMessage || '❌ Erreur' }
+    notifyError(config.value?.form?.errorMessage || '❌ Une erreur est survenue. Veuillez réessayer.')
   } finally {
     submitting.value = false
   }
