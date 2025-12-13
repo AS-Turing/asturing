@@ -28,20 +28,22 @@
           <div 
             v-for="client in clients" 
             :key="client.id"
-            class="group relative w-56 h-32 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 border-2 border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary overflow-hidden"
+            class="group relative w-56 h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 border-2 border-gray-700 hover:border-primary overflow-hidden"
           >
-            <!-- Logo ou nom -->
-            <div v-if="client.logo" class="w-full h-full p-6">
-              <img :src="client.logo" :alt="client.name" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300">
+            <!-- Logo en background qui couvre toute la card -->
+            <div v-if="client.logo" class="absolute inset-0 p-8 flex items-center justify-center">
+              <img :src="client.logo" :alt="client.name" class="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
             </div>
-            <div v-else class="text-center px-4">
+            
+            <!-- Nom en fallback si pas de logo -->
+            <div v-else class="text-center px-4 relative z-10">
               <span class="text-xl font-bold text-gray-600 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">
                 {{ client.name }}
               </span>
             </div>
 
             <!-- Hover overlay avec description -->
-            <div v-if="client.description" class="absolute inset-0 bg-primary/95 dark:bg-primary/90 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div v-if="client.description" class="absolute inset-0 bg-gradient-to-br from-primary/95 to-secondary/95 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <div class="text-center">
                 <p class="text-white font-semibold text-lg mb-1">{{ client.name }}</p>
                 <p class="text-white/90 text-sm">{{ client.description }}</p>
@@ -55,18 +57,22 @@
           <div 
             v-for="client in clients" 
             :key="'dup-' + client.id"
-            class="group relative w-56 h-32 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 border-2 border-gray-100 dark:border-gray-700 hover:border-primary dark:hover:border-primary overflow-hidden"
+            class="group relative w-56 h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 border-2 border-gray-700 hover:border-primary overflow-hidden"
           >
-            <div v-if="client.logo" class="w-full h-full p-6">
-              <img :src="client.logo" :alt="client.name" class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300">
+            <!-- Logo en background qui couvre toute la card -->
+            <div v-if="client.logo" class="absolute inset-0 p-8 flex items-center justify-center">
+              <img :src="client.logo" :alt="client.name" class="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
             </div>
-            <div v-else class="text-center px-4">
+            
+            <!-- Nom en fallback si pas de logo -->
+            <div v-else class="text-center px-4 relative z-10">
               <span class="text-xl font-bold text-gray-600 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">
                 {{ client.name }}
               </span>
             </div>
 
-            <div v-if="client.description" class="absolute inset-0 bg-primary/95 dark:bg-primary/90 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Hover overlay avec description -->
+            <div v-if="client.description" class="absolute inset-0 bg-gradient-to-br from-primary/95 to-secondary/95 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <div class="text-center">
                 <p class="text-white font-semibold text-lg mb-1">{{ client.name }}</p>
                 <p class="text-white/90 text-sm">{{ client.description }}</p>
