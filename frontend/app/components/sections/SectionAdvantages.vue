@@ -40,10 +40,12 @@
         <div class="relative">
           <div class="absolute inset-0 gradient-hero rounded-3xl blur-3xl opacity-20"></div>
           <div class="relative bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-2xl">
-            <div class="gradient-soft h-96 rounded-2xl flex items-center justify-center">
-              <p class="text-gray-500 dark:text-gray-400 text-lg text-center px-4">
-                [ Photo professionnelle / Illustration workspace ]
-              </p>
+            <div class="h-96 rounded-2xl overflow-hidden">
+              <img 
+                src="/images/workspace-desk-minimal.jpg" 
+                alt="Workspace professionnel AS-Turing" 
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
             </div>
           </div>
         </div>

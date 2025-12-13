@@ -31,7 +31,7 @@
                 <!-- Si c'est la section "solution" et le premier bloc, afficher les icônes tech -->
                 <div v-if="section.type === 'solution' && blockIndex === 0 && techIcons && techIcons.length > 0" class="py-8">
                   <!-- Grid d'icônes sans card -->
-                  <div class="grid grid-cols-3 gap-8">
+                  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
                     <div 
                       v-for="(icon, iconIndex) in techIcons" 
                       :key="iconIndex"
@@ -42,7 +42,7 @@
                       
                       <!-- Icône container -->
                       <div class="relative w-20 h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                        <Icon :name="getIconName(icon)" class="!w-full !h-full drop-shadow-lg" />
+                        <Icon :name="getIconName(icon)" class="!w-full !h-full drop-shadow-lg" mode="svg" />
                       </div>
                       
                       <!-- Label avec style épuré -->
@@ -225,7 +225,7 @@ const iconMap: Record<string, string> = {
   // CMS
   'wordpress': 'skill-icons:wordpress',
   'strapi': 'skill-icons:strapi-dark',
-  'sanity': 'skill-icons:sanity',
+  'sanity': 'simple-icons:sanity',
   'gutenberg': 'simple-icons:gutenberg',
   
   // Backend Services
