@@ -38,6 +38,7 @@
         "SEO-ready"
       ],
       "imageText": "[ Château Montaiguillon ]",
+      "imageUrl": "/images/projects/chateau-montaiguillon/logo-01-768x298-1.png",
       "images": [],
       "bgGradient": "from-gray-900 to-gray-800",
       "imageGradient": "from-amber-900 to-red-900",
@@ -60,7 +61,7 @@
                 "type": "text_image",
                 "layout": "image_left",
                 "image": "images/projects/chateau-montaiguillon/before-loss.png",
-                "content": "<h3>Contexte et Problématique</h3>\n<p>Le Château Montaiguillon, domaine viticole reconnu de Saint-Émilion, s'est retrouvé dans une situation critique : <strong>perte totale de leur site web</strong> suite à un non-renouvellement d'hébergement. Aucune sauvegarde n'avait été conservée.</p>\n\n<p>Le client avait besoin :</p>\n<ul>\n<li><strong>D'une refonte complète et rapide</strong> pour retrouver une présence en ligne</li>\n<li><strong>D'un site premium</strong> reflétant le prestige du domaine</li>\n<li><strong>D'une solution moderne et pérenne</strong> pour éviter toute nouvelle perte</li>\n<li><strong>D'une autonomie</strong> pour gérer les contenus facilement</li>\n<li><strong>D'un design élégant</strong> respectant l'identité viticole haut de gamme</li>\n</ul>\n\n<p>Contraintes :</p>\n<ul>\n<li>Budget limité (1000€)</li>\n<li>Délai serré (livraison en 2 semaines)</li>\n<li>Besoin de nombreuses pages (~15 pages)</li>\n<li>Aucun contenu existant à récupérer</li>\n</ul>"
+                "content": "<h3>Contexte et Problématique</h3>\n<p>Le Château Montaiguillon, domaine viticole reconnu de Saint-Émilion, s'est retrouvé dans une situation critique : <strong>perte totale de leur site web</strong> suite à un non-renouvellement d'hébergement. Aucune sauvegarde n'avait été conservée.</p>\n\n<p>Le client avait besoin :</p>\n<ul>\n<li><strong>D'une refonte complète et rapide</strong> pour retrouver une présence en ligne</li>\n<li><strong>D'un site premium</strong> reflétant le prestige du domaine</li>\n<li><strong>D'une solution moderne et pérenne</strong> pour éviter toute nouvelle perte</li>\n<li><strong>D'une autonomie</strong> pour gérer les contenus facilement</li>\n<li><strong>D'un design élégant</strong> respectant l'identité viticole haut de gamme</li>\n</ul>\n\n<p>Contraintes :</p>\n<ul>\n<li>Délai serré (livraison en 2 semaines)</li>\n<li>Besoin de nombreuses pages (~15 pages)</li>\n<li>Aucun contenu existant à récupérer</li>\n</ul>"
               }
             ]
           },
@@ -186,6 +187,7 @@
         "Admin intuitif non-technique"
       ],
       "imageText": "[ Screenshot Gears Projects Motor ]",
+      "imageUrl": "/images/projects/gpm/logo-20.png",
       "images": [],
       "bgGradient": "from-slate-900 to-slate-800",
       "imageGradient": "from-blue-900 to-slate-900",
@@ -338,6 +340,7 @@
         "Utilisable offline (PWA)"
       ],
       "imageText": "[ Mockup Application Gravity Lift ]",
+      "imageUrl": null,
       "images": [],
       "bgGradient": "from-primary to-secondary",
       "imageGradient": "from-primary/20 to-secondary/20",
