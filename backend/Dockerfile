@@ -1,75 +1,55 @@
-# ================================
-# Production Dockerfile - Symfony
-# Optimized for production
-# ================================
+# Dockerfile pour Symfony 8
+FROM php:8.4-apache
 
-FROM php:8.3-apache
+# Installer les extensions PHP nécessaires
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    zip \
+    libicu-dev \
+    libpq-dev \
+    && docker-php-ext-install \
+    intl \
+    pdo \
+    pdo_mysql \
+    opcache
 
-WORKDIR /app
-
-# Install system dependencies and PHP extensions
-RUN apt-get update && \
-    apt-get install -y \
-        git \
-        unzip \
-        zip \
-        libpq-dev \
-        libonig-dev \
-        libxml2-dev \
-        libzip-dev && \
-    docker-php-ext-install pdo pdo_mysql zip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install Composer
+# Installer Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy dependency files
-COPY composer.json composer.lock ./
+# Configurer Apache
+RUN a2enmod rewrite
+RUN sed -i 's!/var/www/html!/app/public!g' /etc/apache2/sites-available/000-default.conf
 
-# Install PHP dependencies (production)
-RUN composer install \
-    --no-dev \
-    --no-interaction \
-    --no-scripts \
-    --prefer-dist \
-    --optimize-autoloader
-
-# Copy application code
-COPY . .
-
-# Create minimal .env file for production (Symfony needs it to exist)
-RUN echo "APP_ENV=prod" > /app/.env && \
-    echo "APP_DEBUG=0" >> /app/.env
-
-# Run post-install scripts
-RUN composer dump-autoload --optimize --no-dev --classmap-authoritative
-
-# Configure Apache
-RUN a2enmod rewrite && \
-    sed -i 's!/var/www/html!/app/public!g' /etc/apache2/sites-available/000-default.conf && \
-    sed -i 's!AllowOverride None!AllowOverride All!g' /etc/apache2/apache2.conf && \
-    echo "ServerName localhost" >> /etc/apache2/apache2.conf
-
-# Set directory permissions
-RUN printf "\n<Directory /app/public>\n\
+# Configuration Apache pour Symfony
+RUN echo '<Directory /app/public>\n\
     Options Indexes FollowSymLinks\n\
     AllowOverride All\n\
     Require all granted\n\
-</Directory>\n" | tee -a /etc/apache2/apache2.conf
+</Directory>' >> /etc/apache2/sites-available/000-default.conf
 
-# Create var directory if it doesn't exist and fix permissions
-RUN mkdir -p /app/var && \
+WORKDIR /app
+
+# Copier les fichiers de dépendances
+COPY composer.json composer.lock ./
+
+# Installer les dépendances en dev
+RUN composer install --no-scripts --no-autoloader
+
+# Copier le reste du code
+COPY . .
+
+# Générer l'autoloader optimisé
+RUN composer dump-autoload --optimize
+
+# Installer les assets des bundles (copie réelle au lieu de symlink)
+RUN php bin/console assets:install public
+
+# Permissions
+RUN mkdir -p var/cache var/log && \
     chown -R www-data:www-data /app && \
-    chmod -R 755 /app/var
-
-# Switch to www-data user
-USER www-data
+    chmod -R 755 var
 
 EXPOSE 80
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-  CMD curl -f http://localhost/api/health || exit 1
 
 CMD ["apache2-foreground"]

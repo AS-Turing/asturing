@@ -1,0 +1,449 @@
+{
+  "projects": [
+    {
+      "title": "Château Montaiguillon",
+      "slug": "chateau-montaiguillon",
+      "category": "SITE VITRINE PREMIUM",
+      "excerpt": "Refonte complète d'un site vitrine pour domaine viticole de Saint-Émilion après perte totale des données. Architecture WordPress moderne avec blocs Gutenberg sur-mesure en React.",
+      "description": "Site vitrine premium pour domaine viticole de Saint-Émilion. Architecture WordPress custom, 15+ blocs Gutenberg sur-mesure, design system élégant bordeaux/beige.",
+      "client": "Château Montaiguillon",
+      "sector": "Viticulture / Œnotourisme",
+      "year": "2024",
+      "duration": "2 semaines",
+      "status": "En cours de déploiement",
+      "url": "http://dev.montaiguillon.as-turing.fr/",
+      "challenge": "<h3>Contexte et Problématique</h3>\n<p>Le Château Montaiguillon, domaine viticole reconnu de Saint-Émilion, s'est retrouvé dans une situation critique : <strong>perte totale de leur site web</strong> suite à un non-renouvellement d'hébergement. Aucune sauvegarde n'avait été conservée.</p>\n\n<p>Le client avait besoin :</p>\n<ul>\n<li><strong>D'une refonte complète et rapide</strong> pour retrouver une présence en ligne</li>\n<li><strong>D'un site premium</strong> reflétant le prestige du domaine</li>\n<li><strong>D'une solution moderne et pérenne</strong> pour éviter toute nouvelle perte</li>\n<li><strong>D'une autonomie</strong> pour gérer les contenus facilement</li>\n<li><strong>D'un design élégant</strong> respectant l'identité viticole haut de gamme</li>\n</ul>\n\n<p>Contraintes :</p>\n<ul>\n<li>Budget limité (1000€)</li>\n<li>Délai serré (livraison en 2 semaines)</li>\n<li>Besoin de nombreuses pages (~15 pages)</li>\n<li>Aucun contenu existant à récupérer</li>\n</ul>",
+      "solution": "<h3>Solution Technique Mise en Œuvre</h3>\n\n<h4>Architecture WordPress Moderne</h4>\n<p>Plutôt qu'un thème classique, j'ai conçu une <strong>architecture sur-mesure</strong> combinant :</p>\n\n<ul>\n<li><strong>WordPress 6.8</strong> : CMS robuste et familier pour le client</li>\n<li><strong>Gutenberg + React</strong> : création de 15+ blocs custom réutilisables</li>\n<li><strong>Tailwind CSS</strong> : intégré dans un thème custom pour un design system cohérent</li>\n<li><strong>Docker + CI/CD</strong> : environnement dev/prod automatisé, déploiements sécurisés</li>\n<li><strong>GitHub Actions</strong> : pipeline d'intégration continue pour les mises à jour</li>\n</ul>\n\n<h4>Design System sur Mesure</h4>\n<p>J'ai créé entièrement le design en m'inspirant de l'univers viticole :</p>\n\n<ul>\n<li><strong>Palette de couleurs</strong> : tons bordeaux, beiges, dorés évoquant le vin et la terre</li>\n<li><strong>Typographies</strong> : Playfair Display (titres élégants) + Lato (textes lisibles)</li>\n<li><strong>Composants réutilisables</strong> : hero sections, grilles de vins, galeries, formulaires de contact</li>\n<li><strong>Animations subtiles</strong> : transitions fluides pour une expérience premium</li>\n<li><strong>Responsive design</strong> : adaptation parfaite mobile, tablette, desktop</li>\n</ul>\n\n<h4>Blocs Gutenberg Custom en React</h4>\n<p>Pour offrir une flexibilité maximale au client, j'ai développé des blocs sur-mesure :</p>\n\n<ul>\n<li><strong>Bloc Hero</strong> : sections d'accueil avec images plein écran et CTA</li>\n<li><strong>Bloc Vin</strong> : présentation des cuvées avec fiches détaillées</li>\n<li><strong>Bloc Histoire</strong> : timeline du domaine avec photos historiques</li>\n<li><strong>Bloc Vignoble</strong> : présentation des parcelles et terroirs</li>\n<li><strong>Bloc Témoignages</strong> : carousel d'avis clients</li>\n<li><strong>Bloc Galerie</strong> : lightbox pour photos du château et vignes</li>\n<li><strong>Bloc Contact</strong> : formulaires avec validation et design cohérent</li>\n</ul>\n\n<h4>Infrastructure DevOps</h4>\n<p>Pour garantir la pérennité et éviter toute nouvelle perte :</p>\n\n<ul>\n<li><strong>Docker Compose</strong> : environnements reproductibles (dev/staging/prod)</li>\n<li><strong>Sauvegardes automatiques</strong> : quotidiennes avec rétention 30 jours</li>\n<li><strong>CI/CD GitHub Actions</strong> : déploiements automatisés et sécurisés</li>\n<li><strong>Traefik reverse proxy</strong> : SSL automatique, gestion multi-sites</li>\n<li><strong>Monitoring</strong> : surveillance uptime et performances</li>\n</ul>\n\n<h4>Infrastructure et Hébergement</h4>\n<p>Tous les projets sont hébergés sur une <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li>🖥️ <strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li>🐳 <strong>Orchestration Docker</strong> : multi-containers, réseaux isolés</li>\n<li>🔀 <strong>Nginx + Traefik</strong> : reverse proxy intelligent, load balancing</li>\n<li>🔒 <strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li>🔄 <strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li>📊 <strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li>💾 <strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li>🛡️ <strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>\n\n<p>Cette maîtrise complète de la stack DevOps garantit <strong>disponibilité, performances et sécurité optimales</strong>.</p>",
+      "results": "<h3>Résultats et Livrables</h3>\n\n<h4>Livraison dans les temps</h4>\n<ul>\n<li>✅ <strong>15 pages créées</strong> de A à Z en 2 semaines</li>\n<li>✅ <strong>Design entièrement sur-mesure</strong> sans template générique</li>\n<li>✅ <strong>15+ blocs Gutenberg custom</strong> pour autonomie complète du client</li>\n<li>✅ <strong>Site responsive</strong> testé sur tous supports</li>\n<li>✅ <strong>Performance optimisée</strong> : temps de chargement < 2s</li>\n</ul>\n\n<h4>Stack technique moderne</h4>\n<ul>\n<li><strong>WordPress 6.8</strong> : dernière version stable</li>\n<li><strong>React 18</strong> : pour les blocs Gutenberg interactifs</li>\n<li><strong>Tailwind CSS 3</strong> : design system cohérent et maintenable</li>\n<li><strong>Docker</strong> : environnements isolés et reproductibles</li>\n<li><strong>GitHub Actions</strong> : automatisation CI/CD</li>\n</ul>\n\n<h4>Bénéfices pour le client</h4>\n<ul>\n<li>💼 <strong>Autonomie totale</strong> : gestion des contenus sans développeur</li>\n<li>🛡️ <strong>Sécurité renforcée</strong> : sauvegardes automatiques, SSL, mises à jour</li>\n<li>🚀 <strong>Évolutivité</strong> : ajout facile de nouvelles sections via blocs</li>\n<li>📱 <strong>Mobile-first</strong> : parfait sur smartphones (60% du trafic viticole)</li>\n<li>⚡ <strong>Performances</strong> : site rapide = meilleur SEO et conversions</li>\n<li>🔄 <strong>Pérennité</strong> : infrastructure moderne qui durera dans le temps</li>\n</ul>\n\n<h4>Déploiement à venir</h4>\n<p>Le site est actuellement en environnement de développement. Le déploiement en production interviendra prochainement avec :</p>\n<ul>\n<li>Migration DNS vers le domaine définitif</li>\n<li>Optimisation SEO complète</li>\n<li>Configuration Google Analytics et Search Console</li>\n<li>Formation du client à l'administration</li>\n</ul>",
+      "testimonial": null,
+      "technologies": [
+        "WordPress 6.8",
+        "Gutenberg",
+        "React 18",
+        "Tailwind CSS",
+        "Docker",
+        "CI/CD",
+        "GitHub Actions",
+        "Traefik"
+      ],
+      "features": [
+        "15+ blocs Gutenberg sur-mesure",
+        "Design entièrement custom",
+        "Architecture Docker moderne",
+        "CI/CD automatisé",
+        "Sauvegardes quotidiennes",
+        "SSL automatique",
+        "Responsive design",
+        "Optimisation performances",
+        "SEO-ready"
+      ],
+      "imageText": "[ Château Montaiguillon ]",
+      "imageUrl": "/images/projects/chateau-montaiguillon/logo-01-768x298-1.png",
+      "images": [],
+      "bgGradient": "from-gray-900 to-gray-800",
+      "imageGradient": "from-amber-900 to-red-900",
+      "dotColor": "bg-primary",
+      "categoryColor": "text-gray-400",
+      "descColor": "text-gray-300",
+      "techClass": "bg-white/10 text-white",
+      "linkColor": "text-primary",
+      "position": 1,
+      "featured": true,
+      "isPublished": true,
+      "content": {
+        "sections": [
+          {
+            "type": "challenge",
+            "title": "Contexte et Problématique",
+            "bgColor": "white",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/chateau-montaiguillon/before-loss.png",
+                "content": "<h3>Contexte et Problématique</h3>\n<p>Le Château Montaiguillon, domaine viticole reconnu de Saint-Émilion, s'est retrouvé dans une situation critique : <strong>perte totale de leur site web</strong> suite à un non-renouvellement d'hébergement. Aucune sauvegarde n'avait été conservée.</p>\n\n<p>Le client avait besoin :</p>\n<ul>\n<li><strong>D'une refonte complète et rapide</strong> pour retrouver une présence en ligne</li>\n<li><strong>D'un site premium</strong> reflétant le prestige du domaine</li>\n<li><strong>D'une solution moderne et pérenne</strong> pour éviter toute nouvelle perte</li>\n<li><strong>D'une autonomie</strong> pour gérer les contenus facilement</li>\n<li><strong>D'un design élégant</strong> respectant l'identité viticole haut de gamme</li>\n</ul>\n\n<p>Contraintes :</p>\n<ul>\n<li>Délai serré (livraison en 2 semaines)</li>\n<li>Besoin de nombreuses pages (~15 pages)</li>\n<li>Aucun contenu existant à récupérer</li>\n</ul>"
+              }
+            ]
+          },
+          {
+            "type": "solution",
+            "title": "Solution Technique Développée",
+            "bgColor": "gray",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": null,
+                "content": "<h4>Architecture WordPress Moderne</h4><p>Plutôt qu'un thème classique, j'ai conçu une <strong>architecture sur-mesure</strong> combinant :</p>\n\n<ul>\n<li><strong>WordPress 6.8</strong> : CMS robuste et familier pour le client</li>\n<li><strong>Gutenberg + React</strong> : création de 15+ blocs custom réutilisables</li>\n<li><strong>Tailwind CSS</strong> : intégré dans un thème custom pour un design system cohérent</li>\n<li><strong>Docker + CI/CD</strong> : environnement dev/prod automatisé, déploiements sécurisés</li>\n<li><strong>GitHub Actions</strong> : pipeline d'intégration continue pour les mises à jour</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/chateau-montaiguillon/homepage-design-fullpage.png",
+                "content": "<h4>Design System sur Mesure</h4><p>J'ai créé entièrement le design en m'inspirant de l'univers viticole :</p>\n\n<ul>\n<li><strong>Palette de couleurs</strong> : tons bordeaux, beiges, dorés évoquant le vin et la terre</li>\n<li><strong>Typographies</strong> : Playfair Display (titres élégants) + Lato (textes lisibles)</li>\n<li><strong>Composants réutilisables</strong> : hero sections, grilles de vins, galeries, formulaires de contact</li>\n<li><strong>Animations subtiles</strong> : transitions fluides pour une expérience premium</li>\n<li><strong>Responsive design</strong> : adaptation parfaite mobile, tablette, desktop</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/chateau-montaiguillon/gutenberg-blocks.png",
+                "content": "<h4>Blocs Gutenberg Custom en React</h4><p>Pour offrir une flexibilité maximale au client, j'ai développé des blocs sur-mesure :</p>\n\n<ul>\n<li><strong>Bloc Hero</strong> : sections d'accueil avec images plein écran et CTA</li>\n<li><strong>Bloc Vin</strong> : présentation des cuvées avec fiches détaillées</li>\n<li><strong>Bloc Histoire</strong> : timeline du domaine avec photos historiques</li>\n<li><strong>Bloc Vignoble</strong> : présentation des parcelles et terroirs</li>\n<li><strong>Bloc Témoignages</strong> : carousel d'avis clients</li>\n<li><strong>Bloc Galerie</strong> : lightbox pour photos du château et vignes</li>\n<li><strong>Bloc Contact</strong> : formulaires avec validation et design cohérent</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/chateau-montaiguillon/admin-interface.png",
+                "content": "<h4>Infrastructure DevOps</h4><p>Pour garantir la pérennité et éviter toute nouvelle perte :</p>\n\n<ul>\n<li><strong>Docker Compose</strong> : environnements reproductibles (dev/staging/prod)</li>\n<li><strong>Sauvegardes automatiques</strong> : quotidiennes avec rétention 30 jours</li>\n<li><strong>CI/CD GitHub Actions</strong> : déploiements automatisés et sécurisés</li>\n<li><strong>Traefik reverse proxy</strong> : SSL automatique, gestion multi-sites</li>\n<li><strong>Monitoring</strong> : surveillance uptime et performances</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/chateau-montaiguillon/infrastructure.png",
+                "content": "<h4>Infrastructure et Hébergement</h4><p>Tous les projets sont hébergés sur une <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li>🖥️ <strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li>🐳 <strong>Orchestration Docker</strong> : multi-containers, réseaux isolés</li>\n<li>🔀 <strong>Nginx + Traefik</strong> : reverse proxy intelligent, load balancing</li>\n<li>🔒 <strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li>🔄 <strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li>📊 <strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li>💾 <strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li>🛡️ <strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>\n\n<p>Cette maîtrise complète de la stack DevOps garantit <strong>disponibilité, performances et sécurité optimales</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "type": "results",
+            "title": "Résultats et Livrables",
+            "bgColor": "gradient",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/chateau-montaiguillon/final-homepage-fullpage.png",
+                "content": "<h4>Livraison dans les temps</h4><ul>\n<li>✅ <strong>15 pages créées</strong> de A à Z en 2 semaines</li>\n<li>✅ <strong>Design entièrement sur-mesure</strong> sans template générique</li>\n<li>✅ <strong>15+ blocs Gutenberg custom</strong> pour autonomie complète du client</li>\n<li>✅ <strong>Site responsive</strong> testé sur tous supports</li>\n<li>✅ <strong>Performance optimisée</strong> : temps de chargement < 2s</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/chateau-montaiguillon/lighthouse-score-fullpage.png",
+                "content": "<h4>Stack technique moderne</h4><ul>\n<li><strong>WordPress 6.8</strong> : dernière version stable</li>\n<li><strong>React 18</strong> : pour les blocs Gutenberg interactifs</li>\n<li><strong>Tailwind CSS 3</strong> : design system cohérent et maintenable</li>\n<li><strong>Docker</strong> : environnements isolés et reproductibles</li>\n<li><strong>GitHub Actions</strong> : automatisation CI/CD</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/chateau-montaiguillon/mobile-responsive.png",
+                "content": "<h4>Bénéfices pour le client</h4><ul>\n<li>💼 <strong>Autonomie totale</strong> : gestion des contenus sans développeur</li>\n<li>🛡️ <strong>Sécurité renforcée</strong> : sauvegardes automatiques, SSL, mises à jour</li>\n<li>🚀 <strong>Évolutivité</strong> : ajout facile de nouvelles sections via blocs</li>\n<li>📱 <strong>Mobile-first</strong> : parfait sur smartphones (60% du trafic viticole)</li>\n<li>⚡ <strong>Performances</strong> : site rapide = meilleur SEO et conversions</li>\n<li>🔄 <strong>Pérennité</strong> : infrastructure moderne qui durera dans le temps</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/chateau-montaiguillon/client-dashboard-fullpage.png",
+                "content": "<h4>Déploiement à venir</h4><p>Le site est actuellement en environnement de développement. Le déploiement en production interviendra prochainement avec :</p>\n<ul>\n<li>Migration DNS vers le domaine définitif</li>\n<li>Optimisation SEO complète</li>\n<li>Configuration Google Analytics et Search Console</li>\n<li>Formation du client à l'administration</li>\n</ul>"
+              }
+            ]
+          }
+        ]
+      },
+      "techIcons": [
+        "wordpress",
+        "react",
+        "tailwind",
+        "docker",
+        "github"
+      ]
+    },
+    {
+      "title": "Gears Projects Motor",
+      "slug": "gears-projects-motor",
+      "category": "SITE VITRINE MODERNE",
+      "excerpt": "Site vitrine pour garage associatif bordelais. Architecture Jamstack headless avec Sanity CMS pour gestion autonome des contenus, blog et formations.",
+      "description": "Plateforme web moderne pour garage associatif à Bordeaux. Stack Nuxt + Sanity pour gestion de contenu flexible, blog, formations et adhérents.",
+      "client": "Gears Projects Motor",
+      "sector": "Associatif / Automobile / Formation",
+      "year": "2024",
+      "duration": "3-4 semaines",
+      "status": "Finalisé - En cours de déploiement",
+      "url": "http://dev.gpm.as-turing.fr/",
+      "challenge": "<h3>Contexte et Problématique</h3>\n<p>Gears Projects Motor est un <strong>garage associatif basé à Bordeaux</strong> qui propose à ses adhérents l'accès à un atelier équipé et une expertise automobile pour réparer leurs véhicules en autonomie.</p>\n\n<p>Le garage souhaitait :</p>\n<ul>\n<li><strong>Moderniser sa présence en ligne</strong> pour attirer de nouveaux adhérents</li>\n<li><strong>Publier du contenu régulièrement</strong> : articles de blog, tutoriels mécaniques</li>\n<li><strong>Promouvoir des formations</strong> : sessions d'apprentissage pour débutants</li>\n<li><strong>Gérer les adhésions</strong> via HelloAsso (solution externe)</li>\n<li><strong>Avoir un admin simple</strong> : pas de WordPress \"usine à gaz\"</li>\n</ul>\n\n<h3>Contraintes Spécifiques</h3>\n<ul>\n<li><strong>Pas de backoffice surchargé</strong> : refus de WordPress jugé trop complexe</li>\n<li><strong>Gestion autonome</strong> : client non-technique devant pouvoir tout modifier facilement</li>\n<li><strong>Flexibilité éditoriale</strong> : pages personnalisables, blog, formations</li>\n<li><strong>Intégration HelloAsso</strong> : gestion des inscriptions et paiements externalisée</li>\n<li><strong>Gestion adhérents</strong> : suivi des membres de l'association</li>\n<li><strong>Performance</strong> : site rapide même avec beaucoup de contenu</li>\n</ul>",
+      "solution": "<h3>Solution Technique Mise en Œuvre</h3>\n\n<h4>Architecture Jamstack Headless</h4>\n<p>Choix d'une approche moderne découplant front et back pour flexibilité maximale :</p>\n\n<ul>\n<li><strong>Nuxt 3</strong> : framework Vue.js performant, SSR/SSG pour SEO optimal</li>\n<li><strong>Sanity CMS</strong> : headless CMS intuitif et puissant pour gestion de contenu</li>\n<li><strong>Supabase</strong> : backend temps réel pour gestion adhérents</li>\n<li><strong>Tailwind CSS</strong> : design system moderne et responsive</li>\n<li><strong>TypeScript</strong> : typage pour robustesse du code</li>\n</ul>\n\n<h4>Pourquoi Sanity plutôt que WordPress ?</h4>\n<p>Le client souhaitait <strong>éviter la complexité de WordPress</strong>. Sanity offre :</p>\n\n<ul>\n<li>✨ <strong>Interface épurée</strong> : focus uniquement sur le contenu</li>\n<li>✨ <strong>Éditeur visuel</strong> : Portable Text pour mise en forme riche</li>\n<li>✨ <strong>Schémas personnalisés</strong> : types de contenu sur-mesure (article, formation, adhérent)</li>\n<li>✨ <strong>API temps réel</strong> : modifications visibles instantanément</li>\n<li>✨ <strong>Pas de plugins</strong> : pas de gestion de mises à jour complexes</li>\n<li>✨ <strong>Versioning intégré</strong> : historique des modifications</li>\n<li>✨ <strong>Rôles utilisateurs</strong> : gestion des permissions fine</li>\n</ul>\n\n<h4>Fonctionnalités Développées</h4>\n\n<p><strong>1. Gestion de contenu complète via Sanity</strong></p>\n<ul>\n<li><strong>Pages personnalisables</strong> : système de blocs modulaires (hero, texte, images, FAQ, etc.)</li>\n<li><strong>Blog</strong> : publication d'articles, catégories, tags, auteurs</li>\n<li><strong>Formations</strong> : sessions de formation avec dates, tarifs, inscriptions HelloAsso</li>\n<li><strong>Adhérents</strong> : gestion de la liste des membres (nom, date adhésion, statut)</li>\n<li><strong>Médias</strong> : galerie photos de l'atelier, outils disponibles</li>\n<li><strong>Services</strong> : présentation des prestations du garage</li>\n</ul>\n\n<p><strong>2. Intégration HelloAsso</strong></p>\n<ul>\n<li>Liens directs vers formulaires HelloAsso pour formations</li>\n<li>Widgets d'inscription intégrés dans les pages</li>\n<li>Suivi des sessions et places disponibles</li>\n</ul>\n\n<p><strong>3. Interface utilisateur moderne</strong></p>\n<ul>\n<li>Design épuré aux couleurs de l'association</li>\n<li>Navigation intuitive</li>\n<li>Animations subtiles pour dynamisme</li>\n<li>Formulaire de contact avec validation</li>\n<li>Newsletter pour fidélisation</li>\n</ul>\n\n<h4>Architecture Technique</h4>\n\n<ul>\n<li><strong>Frontend Nuxt 3</strong> : génération statique (SSG) pour performances maximales</li>\n<li><strong>Sanity Studio</strong> : admin hébergé séparément (studio.gpm.as-turing.fr)</li>\n<li><strong>Supabase</strong> : BDD PostgreSQL pour adhérents + auth future</li>\n<li><strong>CDN</strong> : distribution mondiale des assets</li>\n<li><strong>Build automatisé</strong> : déploiement à chaque modification de contenu</li>\n</ul>\n\n<h4>Infrastructure et Hébergement</h4>\n<p>Site hébergé sur <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li>🖥️ <strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li>🐳 <strong>Orchestration Docker</strong> : Nuxt + Sanity Studio + Supabase en containers</li>\n<li>🔀 <strong>Nginx + Traefik</strong> : reverse proxy intelligent, routing multi-services</li>\n<li>🔒 <strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li>🔄 <strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li>📊 <strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li>💾 <strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li>🛡️ <strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>",
+      "results": "<h3>Résultats et Livrables</h3>\n\n<h4>Livraison Complète</h4>\n<ul>\n<li>✅ <strong>Site vitrine moderne</strong> : présentation claire du garage et de ses valeurs</li>\n<li>✅ <strong>Blog opérationnel</strong> : publication autonome d'articles et tutoriels</li>\n<li>✅ <strong>Section formations</strong> : présentation des sessions avec liens HelloAsso</li>\n<li>✅ <strong>Admin Sanity configuré</strong> : gestion complète des contenus par le client</li>\n<li>✅ <strong>Gestion adhérents</strong> : suivi des membres dans Sanity Studio</li>\n<li>✅ <strong>Design responsive</strong> : parfait sur mobile, tablette, desktop</li>\n<li>✅ <strong>Performance optimale</strong> : temps de chargement < 1,5s</li>\n</ul>\n\n<h4>Stack Technique Moderne</h4>\n<ul>\n<li><strong>Nuxt 3</strong> : dernière version, Vue.js 3, Composition API</li>\n<li><strong>Sanity.io</strong> : headless CMS nouvelle génération</li>\n<li><strong>Supabase</strong> : backend open-source (alternative Firebase)</li>\n<li><strong>Tailwind CSS</strong> : design system utilitaire</li>\n<li><strong>TypeScript</strong> : code robuste et maintenable</li>\n<li><strong>Docker</strong> : environnements isolés et reproductibles</li>\n</ul>\n\n<h4>Bénéfices pour le Client</h4>\n<ul>\n<li>🎯 <strong>Simplicité d'utilisation</strong> : admin Sanity intuitif, pas de courbe d'apprentissage</li>\n<li>✍️ <strong>Autonomie complète</strong> : modification de TOUT le contenu sans développeur</li>\n<li>🚀 <strong>Performances exceptionnelles</strong> : site ultra-rapide grâce à la génération statique</li>\n<li>📝 <strong>Flexibilité éditoriale</strong> : création de pages personnalisées par blocs</li>\n<li>💰 <strong>Coûts maîtrisés</strong> : pas de licence WordPress, Sanity gratuit jusqu'à 3 utilisateurs</li>\n<li>🔄 <strong>Évolutivité</strong> : ajout facile de fonctionnalités (espace membre, réservations, etc.)</li>\n<li>📱 <strong>Mobile-first</strong> : excellent rendu sur smartphones</li>\n<li>🔍 <strong>SEO optimisé</strong> : SSR/SSG pour indexation parfaite par Google</li>\n</ul>\n\n<h4>Prochaines Étapes</h4>\n<ul>\n<li>Migration DNS vers le domaine définitif</li>\n<li>Formation approfondie du client à Sanity Studio</li>\n<li>Mise en place Google Analytics</li>\n<li>Stratégie de contenu pour le blog</li>\n<li>Ajout possible d'un espace membre authentifié (Supabase Auth)</li>\n</ul>\n\n<h4>Retour Client</h4>\n<p>\"<em>Exactement ce que je voulais ! L'admin Sanity est mille fois plus simple que WordPress. Je peux modifier mes pages comme je veux, publier des articles facilement. Le site est rapide et moderne. Merci !</em>\"</p>",
+      "testimonial": {
+        "quote": "Exactement ce que je voulais ! L'admin Sanity est mille fois plus simple que WordPress. Je peux modifier mes pages comme je veux, publier des articles facilement. Le site est rapide et moderne.",
+        "author": "Gears Projects Motor",
+        "role": "Président de l'association"
+      },
+      "technologies": [
+        "Nuxt 3",
+        "Vue.js 3",
+        "Sanity CMS",
+        "Supabase",
+        "TypeScript",
+        "Tailwind CSS",
+        "Docker",
+        "Nginx",
+        "Traefik"
+      ],
+      "features": [
+        "Headless CMS Sanity",
+        "Blog avec articles et tutoriels",
+        "Gestion des formations",
+        "Gestion des adhérents",
+        "Pages personnalisables par blocs",
+        "Intégration HelloAsso",
+        "Design responsive moderne",
+        "SSR/SSG pour SEO optimal",
+        "Performance < 1,5s chargement",
+        "Admin intuitif non-technique"
+      ],
+      "imageText": "[ Screenshot Gears Projects Motor ]",
+      "imageUrl": "/images/projects/gpm/logo-20.png",
+      "images": [],
+      "bgGradient": "from-slate-900 to-slate-800",
+      "imageGradient": "from-blue-900 to-slate-900",
+      "dotColor": "bg-blue-500",
+      "categoryColor": "text-gray-400",
+      "descColor": "text-gray-300",
+      "techClass": "bg-white/10 text-white",
+      "linkColor": "text-blue-400",
+      "position": 2,
+      "featured": true,
+      "isPublished": true,
+      "content": {
+        "sections": [
+          {
+            "type": "challenge",
+            "title": "Contexte et Problématique",
+            "bgColor": "white",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gears-projects-motor/old-garage-site.png",
+                "content": "<h3>Contexte et Problématique</h3>\n<p>Gears Projects Motor est un <strong>garage associatif basé à Bordeaux</strong> qui propose à ses adhérents l'accès à un atelier équipé et une expertise automobile pour réparer leurs véhicules en autonomie.</p>\n\n<p>Le garage souhaitait :</p>\n<ul>\n<li><strong>Moderniser sa présence en ligne</strong> pour attirer de nouveaux adhérents</li>\n<li><strong>Publier du contenu régulièrement</strong> : articles de blog, tutoriels mécaniques</li>\n<li><strong>Promouvoir des formations</strong> : sessions d'apprentissage pour débutants</li>\n<li><strong>Gérer les adhésions</strong> via HelloAsso (solution externe)</li>\n<li><strong>Avoir un admin simple</strong> : pas de WordPress \"usine à gaz\"</li>\n</ul>\n\n<h3>Contraintes Spécifiques</h3>\n<ul>\n<li><strong>Pas de backoffice surchargé</strong> : refus de WordPress jugé trop complexe</li>\n<li><strong>Gestion autonome</strong> : client non-technique devant pouvoir tout modifier facilement</li>\n<li><strong>Flexibilité éditoriale</strong> : pages personnalisables, blog, formations</li>\n<li><strong>Intégration HelloAsso</strong> : gestion des inscriptions et paiements externalisée</li>\n<li><strong>Gestion adhérents</strong> : suivi des membres de l'association</li>\n<li><strong>Performance</strong> : site rapide même avec beaucoup de contenu</li>\n</ul>"
+              }
+            ]
+          },
+          {
+            "type": "solution",
+            "title": "Solution Technique Développée",
+            "bgColor": "gray",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": null,
+                "content": "<h4>Architecture Jamstack Headless</h4><p>Choix d'une approche moderne découplant front et back pour flexibilité maximale :</p>\n\n<ul>\n<li><strong>Nuxt 3</strong> : framework Vue.js performant, SSR/SSG pour SEO optimal</li>\n<li><strong>Sanity CMS</strong> : headless CMS intuitif et puissant pour gestion de contenu</li>\n<li><strong>Supabase</strong> : backend temps réel pour gestion adhérents</li>\n<li><strong>Tailwind CSS</strong> : design system moderne et responsive</li>\n<li><strong>TypeScript</strong> : typage pour robustesse du code</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gears-projects-motor/homepage-design.png",
+                "content": "<h4>Pourquoi Sanity plutôt que WordPress ?</h4><p>Le client souhaitait <strong>éviter la complexité de WordPress</strong>. Sanity offre :</p>\n\n<ul>\n<li>✨ <strong>Interface épurée</strong> : focus uniquement sur le contenu</li>\n<li>✨ <strong>Éditeur visuel</strong> : Portable Text pour mise en forme riche</li>\n<li>✨ <strong>Schémas personnalisés</strong> : types de contenu sur-mesure (article, formation, adhérent)</li>\n<li>✨ <strong>API temps réel</strong> : modifications visibles instantanément</li>\n<li>✨ <strong>Pas de plugins</strong> : pas de gestion de mises à jour complexes</li>\n<li>✨ <strong>Versioning intégré</strong> : historique des modifications</li>\n<li>✨ <strong>Rôles utilisateurs</strong> : gestion des permissions fine</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gears-projects-motor/sanity-cms.png",
+                "content": "<h4>Fonctionnalités Développées</h4><p><strong>1. Gestion de contenu complète via Sanity</strong></p>\n<ul>\n<li><strong>Pages personnalisables</strong> : système de blocs modulaires (hero, texte, images, FAQ, etc.)</li>\n<li><strong>Blog</strong> : publication d'articles, catégories, tags, auteurs</li>\n<li><strong>Formations</strong> : sessions de formation avec dates, tarifs, inscriptions HelloAsso</li>\n<li><strong>Adhérents</strong> : gestion de la liste des membres (nom, date adhésion, statut)</li>\n<li><strong>Médias</strong> : galerie photos de l'atelier, outils disponibles</li>\n<li><strong>Services</strong> : présentation des prestations du garage</li>\n</ul>\n\n<p><strong>2. Intégration HelloAsso</strong></p>\n<ul>\n<li>Liens directs vers formulaires HelloAsso pour formations</li>\n<li>Widgets d'inscription intégrés dans les pages</li>\n<li>Suivi des sessions et places disponibles</li>\n</ul>\n\n<p><strong>3. Interface utilisateur moderne</strong></p>\n<ul>\n<li>Design épuré aux couleurs de l'association</li>\n<li>Navigation intuitive</li>\n<li>Animations subtiles pour dynamisme</li>\n<li>Formulaire de contact avec validation</li>\n<li>Newsletter pour fidélisation</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gears-projects-motor/blog-interface.png",
+                "content": "<h4>Architecture Technique</h4><ul>\n<li><strong>Frontend Nuxt 3</strong> : génération statique (SSG) pour performances maximales</li>\n<li><strong>Sanity Studio</strong> : admin hébergé séparément (studio.gpm.as-turing.fr)</li>\n<li><strong>Supabase</strong> : BDD PostgreSQL pour adhérents + auth future</li>\n<li><strong>CDN</strong> : distribution mondiale des assets</li>\n<li><strong>Build automatisé</strong> : déploiement à chaque modification de contenu</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gears-projects-motor/formations-page.png",
+                "content": "<h4>Infrastructure et Hébergement</h4><p>Site hébergé sur <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li>🖥️ <strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li>🐳 <strong>Orchestration Docker</strong> : Nuxt + Sanity Studio + Supabase en containers</li>\n<li>🔀 <strong>Nginx + Traefik</strong> : reverse proxy intelligent, routing multi-services</li>\n<li>🔒 <strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li>🔄 <strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li>📊 <strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li>💾 <strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li>🛡️ <strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>"
+              }
+            ]
+          },
+          {
+            "type": "results",
+            "title": "Résultats et Livrables",
+            "bgColor": "gradient",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gears-projects-motor/final-homepage.png",
+                "content": "<h4>Livraison Complète</h4><ul>\n<li>✅ <strong>Site vitrine moderne</strong> : présentation claire du garage et de ses valeurs</li>\n<li>✅ <strong>Blog opérationnel</strong> : publication autonome d'articles et tutoriels</li>\n<li>✅ <strong>Section formations</strong> : présentation des sessions avec liens HelloAsso</li>\n<li>✅ <strong>Admin Sanity configuré</strong> : gestion complète des contenus par le client</li>\n<li>✅ <strong>Gestion adhérents</strong> : suivi des membres dans Sanity Studio</li>\n<li>✅ <strong>Design responsive</strong> : parfait sur mobile, tablette, desktop</li>\n<li>✅ <strong>Performance optimale</strong> : temps de chargement < 1,5s</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gears-projects-motor/performance-metrics.png",
+                "content": "<h4>Stack Technique Moderne</h4><ul>\n<li><strong>Nuxt 3</strong> : dernière version, Vue.js 3, Composition API</li>\n<li><strong>Sanity.io</strong> : headless CMS nouvelle génération</li>\n<li><strong>Supabase</strong> : backend open-source (alternative Firebase)</li>\n<li><strong>Tailwind CSS</strong> : design system utilitaire</li>\n<li><strong>TypeScript</strong> : code robuste et maintenable</li>\n<li><strong>Docker</strong> : environnements isolés et reproductibles</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gears-projects-motor/blog-example.png",
+                "content": "<h4>Bénéfices pour le Client</h4><ul>\n<li>🎯 <strong>Simplicité d'utilisation</strong> : admin Sanity intuitif, pas de courbe d'apprentissage</li>\n<li>✍️ <strong>Autonomie complète</strong> : modification de TOUT le contenu sans développeur</li>\n<li>🚀 <strong>Performances exceptionnelles</strong> : site ultra-rapide grâce à la génération statique</li>\n<li>📝 <strong>Flexibilité éditoriale</strong> : création de pages personnalisées par blocs</li>\n<li>💰 <strong>Coûts maîtrisés</strong> : pas de licence WordPress, Sanity gratuit jusqu'à 3 utilisateurs</li>\n<li>🔄 <strong>Évolutivité</strong> : ajout facile de fonctionnalités (espace membre, réservations, etc.)</li>\n<li>📱 <strong>Mobile-first</strong> : excellent rendu sur smartphones</li>\n<li>🔍 <strong>SEO optimisé</strong> : SSR/SSG pour indexation parfaite par Google</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gears-projects-motor/mobile-view.png",
+                "content": "<h4>Prochaines Étapes</h4><ul>\n<li>Migration DNS vers le domaine définitif</li>\n<li>Formation approfondie du client à Sanity Studio</li>\n<li>Mise en place Google Analytics</li>\n<li>Stratégie de contenu pour le blog</li>\n<li>Ajout possible d'un espace membre authentifié (Supabase Auth)</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": null,
+                "content": "<h4>Retour Client</h4><p>\"<em>Exactement ce que je voulais ! L'admin Sanity est mille fois plus simple que WordPress. Je peux modifier mes pages comme je veux, publier des articles facilement. Le site est rapide et moderne. Merci !</em>\"</p>"
+              }
+            ]
+          }
+        ]
+      },
+      "techIcons": [
+        "nuxt",
+        "vue",
+        "sanity",
+        "supabase",
+        "typescript",
+        "tailwind",
+        "docker",
+        "nginx"
+      ]
+    },
+    {
+      "title": "Gravity Lift",
+      "slug": "gravity-lift",
+      "category": "APPLICATION MÉTIER SaaS",
+      "excerpt": "Application métier pour calcul de centre de gravité et systèmes de levage de poutres béton précontraint. Solution innovante pour entreprises BTP et bureaux d'études.",
+      "description": "Application métier pour gestion de flux complexe. Interface moderne, calculs avancés de centres de gravité, dimensionnement automatique des systèmes de levage.",
+      "client": "Projet personnel",
+      "sector": "BTP / Génie Civil / Bureaux d'études",
+      "year": "2024-2025",
+      "duration": "En cours",
+      "status": "En développement - Version beta prévue",
+      "url": null,
+      "challenge": "<h3>Problématique Métier</h3>\n<p>Dans le secteur du BTP, le levage de poutres en béton précontraint est une opération <strong>critique et dangereuse</strong>. Une erreur de calcul du centre de gravité ou un mauvais dimensionnement du système de levage peut entraîner :</p>\n\n<ul>\n<li>⚠️ <strong>Accidents graves</strong> : chute de poutre, renversement</li>\n<li>⚠️ <strong>Dommages matériels</strong> : casse de la poutre (coût > 10 000€/pièce)</li>\n<li>⚠️ <strong>Arrêts de chantier</strong> : perte de temps et pénalités</li>\n<li>⚠️ <strong>Responsabilité juridique</strong> : en cas d'accident</li>\n</ul>\n\n<h3>Méthodes Actuelles</h3>\n<p>Aujourd'hui, les professionnels utilisent :</p>\n\n<ul>\n<li><strong>Calculs manuels</strong> : longs, sources d'erreurs</li>\n<li><strong>Tableurs Excel</strong> : non spécialisés, pas de contrôles automatiques</li>\n<li><strong>Logiciels CAO lourds</strong> : surdimensionnés pour ce besoin spécifique, coûteux</li>\n<li><strong>Expérience terrain</strong> : approximations parfois dangereuses</li>\n</ul>\n\n<p><strong>Besoin identifié</strong> : un outil simple, rapide, précis et accessible pour calculer centres de gravité et systèmes de levage optimaux.</p>",
+      "solution": "<h3>Solution Technique Développée</h3>\n\n<h4>Fonctionnalités Principales</h4>\n\n<p><strong>1. Modélisation de la poutre</strong></p>\n<ul>\n<li>Saisie des dimensions de base (longueur, largeur, hauteur)</li>\n<li>Ajout de réhausses (épaississements locaux)</li>\n<li>Définition des réservations (trous, évides, ancrages)</li>\n<li>Positionnement 3D de chaque élément</li>\n<li>Visualisation en temps réel</li>\n</ul>\n\n<p><strong>2. Calcul automatique du volume</strong></p>\n<ul>\n<li>Prise en compte de la géométrie complexe</li>\n<li>Soustraction automatique des réservations</li>\n<li>Ajout des réhausses dans le calcul</li>\n<li>Précision au cm³</li>\n</ul>\n\n<p><strong>3. Calcul du centre de gravité</strong></p>\n<ul>\n<li>Algorithme de calcul barycentrique</li>\n<li>Intégration de la densité du béton (variable selon type)</li>\n<li>Position exacte en X, Y, Z</li>\n<li>Visualisation graphique du point d'équilibre</li>\n</ul>\n\n<p><strong>4. Dimensionnement du système de levage</strong></p>\n<ul>\n<li>Calcul des points de levage optimaux</li>\n<li>Prise en compte de l'angle des élingues</li>\n<li>Calcul des efforts sur chaque point d'attache</li>\n<li>Recommandation du matériel adapté (élingues, palonniers)</li>\n<li>Vérification des coefficients de sécurité</li>\n<li>Alertes si configuration dangereuse</li>\n</ul>\n\n<h4>Stack Technique</h4>\n\n<ul>\n<li><strong>Nuxt 3</strong> : framework Vue.js pour interface réactive</li>\n<li><strong>TypeScript</strong> : typage fort pour fiabilité des calculs</li>\n<li><strong>Tailwind CSS 4</strong> : design system moderne et responsive</li>\n<li><strong>Three.js</strong> (prévu) : visualisation 3D interactive de la poutre</li>\n<li><strong>Algorithmes personnalisés</strong> : calculs géométriques et physiques</li>\n<li><strong>PWA</strong> : utilisable offline sur chantier</li>\n</ul>\n\n<h4>Infrastructure et Hébergement</h4>\n<p>Tous les projets sont hébergés sur une <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li>🖥️ <strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li>🐳 <strong>Orchestration Docker</strong> : multi-containers, réseaux isolés</li>\n<li>🔀 <strong>Nginx + Traefik</strong> : reverse proxy intelligent, load balancing</li>\n<li>🔒 <strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li>🔄 <strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li>📊 <strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li>💾 <strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li>🛡️ <strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>\n\n<p>Cette maîtrise complète de la stack DevOps garantit <strong>disponibilité, performances et sécurité optimales</strong>.</p>\n\n<h4>Innovation</h4>\n\n<ul>\n<li>✨ <strong>Spécialisation métier</strong> : focus 100% béton précontraint</li>\n<li>✨ <strong>Interface intuitive</strong> : pas besoin d'être ingénieur pour l'utiliser</li>\n<li>✨ <strong>Résultats instantanés</strong> : calculs en temps réel</li>\n<li>✨ <strong>Validation automatique</strong> : alertes si configuration dangereuse</li>\n<li>✨ <strong>Export PDF</strong> : rapport de levage pour traçabilité</li>\n</ul>",
+      "results": "<h3>État d'Avancement et Objectifs</h3>\n\n<h4>Version Actuelle (Beta)</h4>\n<ul>\n<li>✅ <strong>Algorithme de calcul opérationnel</strong> : centre de gravité précis</li>\n<li>✅ <strong>Gestion des volumes complexes</strong> : réhausses + réservations</li>\n<li>✅ <strong>Calcul des élingues</strong> : angles, efforts, dimensionnement</li>\n<li>✅ <strong>Interface fonctionnelle</strong> : saisie et résultats basiques</li>\n<li>⏳ <strong>Design en cours</strong> : habillage UI/UX professionnel</li>\n<li>⏳ <strong>Visualisation 3D</strong> : intégration Three.js prévue</li>\n</ul>\n\n<h4>Roadmap</h4>\n\n<p><strong>Phase 1 - MVP (Q1 2025)</strong></p>\n<ul>\n<li>Finalisation du design professionnel</li>\n<li>Ajout de la visualisation 3D interactive</li>\n<li>Export PDF des rapports de levage</li>\n<li>Tests utilisateurs avec professionnels BTP</li>\n<li>Landing page marketing</li>\n</ul>\n\n<p><strong>Phase 2 - Version commerciale (Q2 2025)</strong></p>\n<ul>\n<li>Système d'authentification et abonnements</li>\n<li>Historique des calculs</li>\n<li>Templates de poutres courantes</li>\n<li>Mode multi-projets</li>\n<li>API pour intégrations tierces</li>\n</ul>\n\n<p><strong>Phase 3 - Évolutions (2025+)</strong></p>\n<ul>\n<li>Catalogue de matériel de levage intégré</li>\n<li>Collaboration en équipe</li>\n<li>Mobile app native (iOS/Android)</li>\n<li>IA pour suggestions d'optimisation</li>\n<li>Intégration avec logiciels BTP existants</li>\n</ul>\n\n<h4>Marché Cible</h4>\n\n<ul>\n<li>🏢 <strong>Entreprises de préfabrication béton</strong></li>\n<li>🏗️ <strong>Entreprises de gros œuvre</strong></li>\n<li>📐 <strong>Bureaux d'études structure</strong></li>\n<li>🏭 <strong>Fabricants de poutres précontraintes</strong></li>\n<li>🚧 <strong>Maîtres d'œuvre BTP</strong></li>\n</ul>\n\n<h4>Modèle Économique Envisagé</h4>\n\n<ul>\n<li><strong>Freemium</strong> : 3 calculs gratuits/mois</li>\n<li><strong>Pro</strong> : 29€/mois - calculs illimités + export PDF</li>\n<li><strong>Enterprise</strong> : 99€/mois - multi-users + API</li>\n<li><strong>White label</strong> : intégration pour éditeurs logiciels BTP</li>\n</ul>",
+      "testimonial": null,
+      "technologies": [
+        "Nuxt 3",
+        "Vue.js 3",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Three.js",
+        "Vite",
+        "Pinia",
+        "PWA"
+      ],
+      "features": [
+        "Calcul centre de gravité précis",
+        "Modélisation volumes complexes",
+        "Gestion réhausses et réservations",
+        "Dimensionnement systèmes de levage",
+        "Calcul angles élingues",
+        "Vérification coefficients sécurité",
+        "Visualisation 3D (à venir)",
+        "Export PDF rapports",
+        "Interface intuitive",
+        "Utilisable offline (PWA)"
+      ],
+      "imageText": "[ Mockup Application Gravity Lift ]",
+      "imageUrl": null,
+      "images": [],
+      "bgGradient": "from-primary to-secondary",
+      "imageGradient": "from-primary/20 to-secondary/20",
+      "dotColor": "bg-white",
+      "categoryColor": "text-white/80",
+      "descColor": "text-white/90",
+      "techClass": "bg-white/20 text-white",
+      "linkColor": "text-white",
+      "position": 3,
+      "featured": true,
+      "isPublished": true,
+      "content": {
+        "sections": [
+          {
+            "type": "challenge",
+            "title": "Contexte et Problématique",
+            "bgColor": "white",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gravity-lift/manual-calculations.png",
+                "content": "<h3>Problématique Métier</h3>\n<p>Dans le secteur du BTP, le levage de poutres en béton précontraint est une opération <strong>critique et dangereuse</strong>. Une erreur de calcul du centre de gravité ou un mauvais dimensionnement du système de levage peut entraîner :</p>\n\n<ul>\n<li>⚠️ <strong>Accidents graves</strong> : chute de poutre, renversement</li>\n<li>⚠️ <strong>Dommages matériels</strong> : casse de la poutre (coût > 10 000€/pièce)</li>\n<li>⚠️ <strong>Arrêts de chantier</strong> : perte de temps et pénalités</li>\n<li>⚠️ <strong>Responsabilité juridique</strong> : en cas d'accident</li>\n</ul>\n\n<h3>Méthodes Actuelles</h3>\n<p>Aujourd'hui, les professionnels utilisent :</p>\n\n<ul>\n<li><strong>Calculs manuels</strong> : longs, sources d'erreurs</li>\n<li><strong>Tableurs Excel</strong> : non spécialisés, pas de contrôles automatiques</li>\n<li><strong>Logiciels CAO lourds</strong> : surdimensionnés pour ce besoin spécifique, coûteux</li>\n<li><strong>Expérience terrain</strong> : approximations parfois dangereuses</li>\n</ul>\n\n<p><strong>Besoin identifié</strong> : un outil simple, rapide, précis et accessible pour calculer centres de gravité et systèmes de levage optimaux.</p>"
+              }
+            ]
+          },
+          {
+            "type": "solution",
+            "title": "Solution Technique Développée",
+            "bgColor": "gray",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": null,
+                "content": "<h4>Fonctionnalités Principales</h4><p><strong>1. Modélisation de la poutre</strong></p>\n<ul>\n<li>Saisie des dimensions de base (longueur, largeur, hauteur)</li>\n<li>Ajout de réhausses (épaississements locaux)</li>\n<li>Définition des réservations (trous, évides, ancrages)</li>\n<li>Positionnement 3D de chaque élément</li>\n<li>Visualisation en temps réel</li>\n</ul>\n\n<p><strong>2. Calcul automatique du volume</strong></p>\n<ul>\n<li>Prise en compte de la géométrie complexe</li>\n<li>Soustraction automatique des réservations</li>\n<li>Ajout des réhausses dans le calcul</li>\n<li>Précision au cm³</li>\n</ul>\n\n<p><strong>3. Calcul du centre de gravité</strong></p>\n<ul>\n<li>Algorithme de calcul barycentrique</li>\n<li>Intégration de la densité du béton (variable selon type)</li>\n<li>Position exacte en X, Y, Z</li>\n<li>Visualisation graphique du point d'équilibre</li>\n</ul>\n\n<p><strong>4. Dimensionnement du système de levage</strong></p>\n<ul>\n<li>Calcul des points de levage optimaux</li>\n<li>Prise en compte de l'angle des élingues</li>\n<li>Calcul des efforts sur chaque point d'attache</li>\n<li>Recommandation du matériel adapté (élingues, palonniers)</li>\n<li>Vérification des coefficients de sécurité</li>\n<li>Alertes si configuration dangereuse</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gravity-lift/app-interface.png",
+                "content": "<h4>Stack Technique</h4><ul>\n<li><strong>Nuxt 3</strong> : framework Vue.js pour interface réactive</li>\n<li><strong>TypeScript</strong> : typage fort pour fiabilité des calculs</li>\n<li><strong>Tailwind CSS 4</strong> : design system moderne et responsive</li>\n<li><strong>Three.js</strong> (prévu) : visualisation 3D interactive de la poutre</li>\n<li><strong>Algorithmes personnalisés</strong> : calculs géométriques et physiques</li>\n<li><strong>PWA</strong> : utilisable offline sur chantier</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gravity-lift/3d-visualization.png",
+                "content": "<h4>Infrastructure et Hébergement</h4><p>Tous les projets sont hébergés sur une <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li>🖥️ <strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li>🐳 <strong>Orchestration Docker</strong> : multi-containers, réseaux isolés</li>\n<li>🔀 <strong>Nginx + Traefik</strong> : reverse proxy intelligent, load balancing</li>\n<li>🔒 <strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li>🔄 <strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li>📊 <strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li>💾 <strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li>🛡️ <strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>\n\n<p>Cette maîtrise complète de la stack DevOps garantit <strong>disponibilité, performances et sécurité optimales</strong>.</p>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gravity-lift/calculation-engine.png",
+                "content": "<h4>Innovation</h4><ul>\n<li>✨ <strong>Spécialisation métier</strong> : focus 100% béton précontraint</li>\n<li>✨ <strong>Interface intuitive</strong> : pas besoin d'être ingénieur pour l'utiliser</li>\n<li>✨ <strong>Résultats instantanés</strong> : calculs en temps réel</li>\n<li>✨ <strong>Validation automatique</strong> : alertes si configuration dangereuse</li>\n<li>✨ <strong>Export PDF</strong> : rapport de levage pour traçabilité</li>\n</ul>"
+              },
+              {
+                "image": "images/projects/gravity-lift/pwa-install.png"
+              }
+            ]
+          },
+          {
+            "type": "results",
+            "title": "Résultats et Livrables",
+            "bgColor": "gradient",
+            "blocks": [
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gravity-lift/final-app.png",
+                "content": "<h4>Version Actuelle (Beta)</h4><ul>\n<li>✅ <strong>Algorithme de calcul opérationnel</strong> : centre de gravité précis</li>\n<li>✅ <strong>Gestion des volumes complexes</strong> : réhausses + réservations</li>\n<li>✅ <strong>Calcul des élingues</strong> : angles, efforts, dimensionnement</li>\n<li>✅ <strong>Interface fonctionnelle</strong> : saisie et résultats basiques</li>\n<li>⏳ <strong>Design en cours</strong> : habillage UI/UX professionnel</li>\n<li>⏳ <strong>Visualisation 3D</strong> : intégration Three.js prévue</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gravity-lift/3d-performance.png",
+                "content": "<h4>Roadmap</h4><p><strong>Phase 1 - MVP (Q1 2025)</strong></p>\n<ul>\n<li>Finalisation du design professionnel</li>\n<li>Ajout de la visualisation 3D interactive</li>\n<li>Export PDF des rapports de levage</li>\n<li>Tests utilisateurs avec professionnels BTP</li>\n<li>Landing page marketing</li>\n</ul>\n\n<p><strong>Phase 2 - Version commerciale (Q2 2025)</strong></p>\n<ul>\n<li>Système d'authentification et abonnements</li>\n<li>Historique des calculs</li>\n<li>Templates de poutres courantes</li>\n<li>Mode multi-projets</li>\n<li>API pour intégrations tierces</li>\n</ul>\n\n<p><strong>Phase 3 - Évolutions (2025+)</strong></p>\n<ul>\n<li>Catalogue de matériel de levage intégré</li>\n<li>Collaboration en équipe</li>\n<li>Mobile app native (iOS/Android)</li>\n<li>IA pour suggestions d'optimisation</li>\n<li>Intégration avec logiciels BTP existants</li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_left",
+                "image": "images/projects/gravity-lift/mobile-pwa.png",
+                "content": "<h4>Marché Cible</h4><ul>\n<li>🏢 <strong>Entreprises de préfabrication béton</strong></li>\n<li>🏗️ <strong>Entreprises de gros œuvre</strong></li>\n<li>📐 <strong>Bureaux d'études structure</strong></li>\n<li>🏭 <strong>Fabricants de poutres précontraintes</strong></li>\n<li>🚧 <strong>Maîtres d'œuvre BTP</strong></li>\n</ul>"
+              },
+              {
+                "type": "text_image",
+                "layout": "image_right",
+                "image": "images/projects/gravity-lift/user-workflow.png",
+                "content": "<h4>Modèle Économique Envisagé</h4><ul>\n<li><strong>Freemium</strong> : 3 calculs gratuits/mois</li>\n<li><strong>Pro</strong> : 29€/mois - calculs illimités + export PDF</li>\n<li><strong>Enterprise</strong> : 99€/mois - multi-users + API</li>\n<li><strong>White label</strong> : intégration pour éditeurs logiciels BTP</li>\n</ul>"
+              }
+            ]
+          }
+        ]
+      },
+      "techIcons": [
+        "nuxt",
+        "vue",
+        "typescript",
+        "tailwind",
+        "threejs",
+        "vite",
+        "pinia",
+        "pwa"
+      ]
+    }
+  ]
+}

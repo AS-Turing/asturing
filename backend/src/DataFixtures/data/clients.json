@@ -1,0 +1,28 @@
+{
+  "clients": [
+    {
+      "name": "Château Montaiguillon",
+      "logo": "/images/projects/chateau-montaiguillon/logo-01-768x298-1.png",
+      "website": "https://chateau-montaiguillon.com",
+      "description": "Domaine viticole de Saint-Émilion",
+      "position": 1,
+      "isActive": true
+    },
+    {
+      "name": "Gears Projects Motor",
+      "logo": "/images/projects/gpm/logo-20.png",
+      "website": null,
+      "description": "Garage associatif",
+      "position": 2,
+      "isActive": true
+    },
+    {
+      "name": "GravityLift",
+      "logo": null,
+      "website": null,
+      "description": "Application BTP",
+      "position": 3,
+      "isActive": true
+    }
+  ]
+}

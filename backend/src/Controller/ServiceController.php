@@ -2,292 +2,93 @@
 
 namespace App\Controller;
 
-use App\Entity\Faq;
-use App\Entity\Price;
-use App\Entity\Seo;
-use App\Entity\Service;
 use App\Repository\ServiceRepository;
-use App\Service\EntityHydrator;
-use App\Service\SerializerContextBuilder;
-use Doctrine\ORM\EntityManagerInterface;
-use JsonException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
-final class ServiceController extends AbstractController
+#[Route('/api/services', name: 'api_services_')]
+class ServiceController extends AbstractController
 {
     public function __construct(
-        private readonly ServiceRepository $serviceRepository,
-        private readonly SerializerInterface $serializer,
-        private readonly SerializerContextBuilder $serializerContextBuilder,
-        private readonly EntityManagerInterface $entityManager,
-        private readonly EntityHydrator $entityHydrator
-    ){}
-
-    #[Route('/services', name: 'get_services', methods: 'GET')]
-    public function index(): JsonResponse {
-        $services = $this->serviceRepository->findAll();
-        if (!$services) {
-            return $this->json([
-                'success' => false,
-                'message' => 'No services found',
-            ]);
-        }
-
-        return $this->json([
-            'success' => true,
-            'data' => json_decode($this->serializer->serialize($services, 'json',
-                $this->serializerContextBuilder->buildSerializerContext()), true, 512, JSON_THROW_ON_ERROR)
-        ]);
+        private ServiceRepository $serviceRepository
+    ) {
     }
 
-    #[Route('/services/menu', name: 'get_services_menu', methods: 'GET')]
-    public function menu(): JsonResponse {
-        $services = $this->serviceRepository->findAll();
-        $data = array_map(static function (Service $s) {
+    #[Route('', name: 'list', methods: ['GET'])]
+    public function list(): JsonResponse
+    {
+        $services = $this->serviceRepository->findBy(['isActive' => true], ['position' => 'ASC']);
+        
+        return $this->json(array_map(function($service) {
             return [
-                'title' => $s->getTitle(),
-                'slug' => $s->getSlug(),
+                'id' => $service->getId(),
+                'title' => $service->getTitle(),
+                'slug' => $service->getSlug(),
+                'description' => $service->getDescription(),
+                'icon' => $service->getIcon(),
+                'iconGradient' => $service->getIconGradient(),
+                'borderColor' => $service->getBorderColor(),
+                'linkColor' => $service->getLinkColor(),
             ];
-        }, $services);
+        }, $services));
+    }
+
+    #[Route('/{slug}', name: 'show', methods: ['GET'])]
+    public function show(string $slug): JsonResponse
+    {
+        $service = $this->serviceRepository->findOneBy(['slug' => $slug, 'isActive' => true]);
+        
+        if (!$service) {
+            return $this->json(['error' => 'Service not found'], 404);
+        }
 
         return $this->json([
-            'success' => true,
-            'data' => $data,
+            'id' => $service->getId(),
+            'title' => $service->getTitle(),
+            'slug' => $service->getSlug(),
+            'description' => $service->getDescription(),
+            'longDescription' => $service->getLongDescription(),
+            'icon' => $service->getIcon(),
+            'iconGradient' => $service->getIconGradient(),
+            'borderColor' => $service->getBorderColor(),
+            'linkColor' => $service->getLinkColor(),
+            'heroImage' => $service->getHeroImage(),
+            'heroTitle' => $service->getHeroTitle(),
+            'heroSubtitle' => $service->getHeroSubtitle(),
+            'auditDuration' => $service->getAuditDuration(),
+            'auditDescription' => $service->getAuditDescription(),
+            'startingPrice' => $service->getStartingPrice(),
+            'deliveryTime' => $service->getDeliveryTime(),
+            'features' => array_map(fn($f) => [
+                'id' => $f->getId(),
+                'title' => $f->getTitle(),
+                'description' => $f->getDescription(),
+                'icon' => $f->getIcon(),
+            ], $service->getFeatures()->toArray()),
+            'solutions' => array_map(fn($s) => [
+                'id' => $s->getId(),
+                'title' => $s->getTitle(),
+                'description' => $s->getDescription(),
+                'features' => $s->getFeatures(),
+                'icon' => $s->getIcon(),
+            ], $service->getSolutions()->toArray()),
+            'processSteps' => array_map(fn($p) => [
+                'id' => $p->getId(),
+                'title' => $p->getTitle(),
+                'description' => $p->getDescription(),
+            ], $service->getProcessSteps()->toArray()),
+            'technologies' => array_map(fn($t) => [
+                'id' => $t->getId(),
+                'name' => $t->getName(),
+                'description' => $t->getDescription(),
+                'icon' => $t->getIcon(),
+            ], $service->getTechnologies()->toArray()),
+            'faqs' => array_map(fn($f) => [
+                'id' => $f->getId(),
+                'question' => $f->getQuestion(),
+                'answer' => $f->getAnswer(),
+            ], $service->getFaqs()->toArray()),
         ]);
-    }
-
-    #[Route('/service/{slug}', name: 'app_service_')]
-    public function get(string $slug): JsonResponse
-    {
-        $service = $this->serviceRepository->findOneBy(['slug' => $slug]);
-
-        if (!$service) {
-            return $this->json([
-                'success' => false,
-                'data' => 'Service not found',
-            ]);
-        }
-        return $this->json([
-            'success' => true,
-            'data' => json_decode($this->serializer->serialize($service, 'json',
-                $this->serializerContextBuilder->buildSerializerContext()), true, 512, JSON_THROW_ON_ERROR)
-        ]);
-    }
-
-    #[Route('/services', name:'create_service', methods: ['POST'])]
-    public function post(Request $request): JsonResponse
-    {
-        $data = json_decode($request->getContent(), true, 512, JSON_THROW_ON_ERROR);
-
-        $service = new Service();
-
-        if (!empty($data['seo']) && is_array($data['seo'])) {
-            $seo = new Seo();
-            $this->entityHydrator->hydrate($data['seo'], $seo);
-
-            if (method_exists($seo, 'setService')) {
-                $seo->setService($service);
-            }
-            if (method_exists($service, 'setSeo')) {
-                $service->setSeo($seo);
-            }
-
-             $this->entityManager->persist($seo);
-        }
-
-        if (!empty($data['prices']) && is_array($data['prices'])) {
-            foreach ($data['prices'] as $p) {
-                $price = new Price();
-                $this->entityHydrator->hydrate($p, $price);
-
-                if (method_exists($price, 'setService')) {
-                    $price->setService($service);
-                }
-                if (method_exists($service, 'addPrice')) {
-                    $service->addPrice($price);
-                }
-
-                 $this->entityManager->persist($price);
-            }
-        }
-
-        if (!empty($data['faqs']) && is_array($data['faqs'])) {
-            foreach ($data['faqs'] as $f) {
-                $faq = new Faq();
-                $this->entityHydrator->hydrate($f, $faq);
-
-                if (method_exists($faq, 'setService')) {
-                    $faq->setService($service);
-                }
-                if (method_exists($service, 'addFaq')) {
-                    $service->addFaq($faq);
-                }
-
-                 $this->entityManager->persist($faq);
-            }
-        }
-
-        $serviceFields = $data;
-        unset($serviceFields['prices'], $serviceFields['seo'], $serviceFields['faqs']);
-        $this->entityHydrator->hydrate($serviceFields, $service);
-
-
-        try {
-            $this->entityManager->persist($service);
-            $this->entityManager->flush();
-
-            return $this->json([
-                'success' => true,
-                'data' => json_decode($this->serializer->serialize(
-                    $service,
-                    'json',
-                    $this->serializerContextBuilder->buildSerializerContext()
-                ), true, 512, JSON_THROW_ON_ERROR),
-            ], 201);
-        } catch (\Throwable $exception) {
-            return $this->json([
-                'success' => false,
-                'data' => $exception->getMessage(),
-            ], 500);
-        }
-    }
-
-    #[Route('/services/{id}', name: 'update_service', methods: ['PUT'])]
-    public function patch(int $id, Request $request): JsonResponse
-    {
-        $data = json_decode($request->getContent(), true, 512, JSON_THROW_ON_ERROR);
-
-        $service = $this->serviceRepository->find($id);
-        if (!$service) {
-            return $this->json(['success' => false, 'data' => 'Service not found'], Response::HTTP_NOT_FOUND);
-        }
-
-        if (array_key_exists('seo', $data)) {
-            if (is_array($data['seo']) && !empty($data['seo'])) {
-                $seoFields = array_diff_key($data['seo'], array_flip(['id', 'service']));
-
-                $seo = $service->getSeo();
-                if ($seo) {
-                    $this->entityHydrator->hydrate($seoFields, $seo);
-                } else {
-                    $seo = new Seo();
-                    $this->entityHydrator->hydrate($seoFields, $seo);
-                    $seo->setService($service);
-                    $service->setSeo($seo);
-                    $this->entityManager->persist($seo);
-                }
-            } else {
-                if ($service->getSeo()) {
-                    $service->setSeo(null);
-                }
-            }
-        }
-
-        if (array_key_exists('prices', $data) && is_array($data['prices'])) {
-            $existingPricesById = [];
-            foreach ($service->getPrices() as $pr) {
-                if (null !== $pr->getId()) {
-                    $existingPricesById[$pr->getId()] = $pr;
-                }
-            }
-
-            $seenPriceIds = [];
-
-            foreach ($data['prices'] as $p) {
-                $p = is_array($p) ? $p : [];
-                $pFiltered = array_diff_key($p, array_flip(['id', 'service']));
-
-                if (isset($p['id']) && isset($existingPricesById[(int)$p['id']])) {
-                    $entity = $existingPricesById[(int)$p['id']];
-                    $this->entityHydrator->hydrate($pFiltered, $entity);
-                    $seenPriceIds[] = (int)$p['id'];
-                } else {
-                    $price = new Price();
-                    $this->entityHydrator->hydrate($pFiltered, $price);
-                    $price->setService($service);
-                    $service->addPrice($price);
-                     $this->entityManager->persist($price);
-                }
-            }
-
-            foreach ($service->getPrices()->toArray() as $pr) {
-                if ($pr->getId() !== null && !in_array($pr->getId(), $seenPriceIds, true)) {
-                    if (method_exists($service, 'removePrice')) {
-                        $service->removePrice($pr);
-                    } else {
-                        $service->getPrices()->removeElement($pr);
-                        $pr->setService(null);
-                         $this->entityManager->remove($pr);
-                    }
-                }
-            }
-        }
-
-        if (array_key_exists('faqs', $data) && is_array($data['faqs'])) {
-            $existingFaqsById = [];
-            foreach ($service->getFaqs() as $fq) {
-                if (null !== $fq->getId()) {
-                    $existingFaqsById[$fq->getId()] = $fq;
-                }
-            }
-
-            $seenFaqIds = [];
-
-            foreach ($data['faqs'] as $f) {
-                $f = is_array($f) ? $f : [];
-                $fFiltered = array_diff_key($f, array_flip(['id', 'service']));
-
-                if (isset($f['id']) && isset($existingFaqsById[(int)$f['id']])) {
-                    $entity = $existingFaqsById[(int)$f['id']];
-                    $this->entityHydrator->hydrate($fFiltered, $entity);
-                    $seenFaqIds[] = (int)$f['id'];
-                } else {
-                    $faq = new Faq();
-                    $this->entityHydrator->hydrate($fFiltered, $faq);
-                    $faq->setService($service);
-                    $service->addFaq($faq);
-                     $this->entityManager->persist($faq);
-                }
-            }
-
-            foreach ($service->getFaqs()->toArray() as $fq) {
-                if ($fq->getId() !== null && !in_array($fq->getId(), $seenFaqIds, true)) {
-                    if (method_exists($service, 'removeFaq')) {
-                        $service->removeFaq($fq);
-                    } else {
-                        $service->getFaqs()->removeElement($fq);
-                        $fq->setService(null);
-                         $this->entityManager->remove($fq);
-                    }
-                }
-            }
-        }
-
-        $serviceFields = $data;
-        unset($serviceFields['prices'], $serviceFields['seo'], $serviceFields['faqs']);
-        if (!empty($serviceFields)) {
-            $serviceFields = array_diff_key($serviceFields, array_flip(['prices','faqs','seo','id']));
-            $this->entityHydrator->hydrate($serviceFields, $service);
-        }
-
-        try {
-            $this->entityManager->persist($service);
-            $this->entityManager->flush();
-
-            return $this->json([
-                'success' => true,
-                'data' => json_decode($this->serializer->serialize(
-                    $service,
-                    'json',
-                    $this->serializerContextBuilder->buildSerializerContext()
-                ), true, 512, JSON_THROW_ON_ERROR),
-            ]);
-        } catch (\Throwable $e) {
-            return $this->json(['success' => false, 'data' => $e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
     }
 }

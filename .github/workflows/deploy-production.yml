@@ -1,11 +1,11 @@
 name: Deploy to Production
 
 on:
-  # workflow_run:
-  #   workflows: ["Build & Push Docker Images"]
-  #   types:
-  #     - completed
-  #   branches: [main, master]
+  workflow_run:
+    workflows: ["Build & Push Docker Images"]
+    types:
+      - completed
+    branches: [main, master]
   workflow_dispatch:
 
 env:

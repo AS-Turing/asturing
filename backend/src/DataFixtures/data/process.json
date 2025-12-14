@@ -1,0 +1,116 @@
+{
+    "process": {
+        "hero": {
+            "badge": "Notre Approche",
+            "badgeIcon": "mdi:chart-timeline-variant",
+            "title": "Notre Méthodologie de Développement Web",
+            "subtitle": "Un processus clair, agile et transparent pour garantir la réussite de votre projet digital. De l’analyse initiale au suivi post-production, chaque étape est maîtrisée."
+        },
+        "process": {
+            "title": "Notre Processus en 5 Étapes",
+            "description": "Une méthode structurée, centrée sur vos objectifs, et pensée pour livrer rapidement de la valeur.",
+            "steps": [
+                {
+                    "icon": "mdi:compass",
+                    "title": "Découverte & Cadrage",
+                    "duration": "1-2 semaines",
+                    "description": "Nous prenons le temps de comprendre votre activité, vos enjeux, vos utilisateurs et vos contraintes. Cette phase permet d’éviter les mauvaises surprises et de poser des bases solides.",
+                    "deliverables": [
+                        "Cahier des charges complet",
+                        "Architecture fonctionnelle & technique",
+                        "Planning et budget estimatif",
+                        "Premières maquettes fonctionnelles"
+                    ]
+                },
+                {
+                    "icon": "mdi:palette",
+                    "title": "Design & Prototypage",
+                    "duration": "2-3 semaines",
+                    "description": "Nous concevons l’expérience utilisateur (UX) et l’interface (UI) via des prototypes interactifs. Vous visualisez votre futur site avant même la première ligne de code.",
+                    "deliverables": [
+                        "Maquettes haute fidélité",
+                        "Prototype cliquable",
+                        "Charte graphique dédiée",
+                        "Styleguide & composants"
+                    ]
+                },
+                {
+                    "icon": "mdi:code-braces",
+                    "title": "Développement Agile",
+                    "duration": "4-12 semaines",
+                    "description": "Le projet avance par sprints de 2 semaines avec démonstrations régulières. Vous voyez l’évolution en temps réel et pouvez réorienter si besoin.",
+                    "deliverables": [
+                        "Code propre et versionné",
+                        "Démos toutes les 2 semaines",
+                        "Documentation technique continue",
+                        "Environnement de préproduction"
+                    ]
+                },
+                {
+                    "icon": "mdi:test-tube",
+                    "title": "Tests & Optimisation",
+                    "duration": "1-2 semaines",
+                    "description": "Avant la mise en ligne, nous effectuons une batterie de tests : sécurité, performances, affichage mobile, SEO technique, accessibilité… Tout est optimisé pour offrir une expérience irréprochable.",
+                    "deliverables": [
+                        "Rapport de tests complet",
+                        "Corrections & stabilisation",
+                        "Optimisation performance & SEO",
+                        "Documentation utilisateur"
+                    ]
+                },
+                {
+                    "icon": "mdi:rocket-launch",
+                    "title": "Mise en ligne & Suivi",
+                    "duration": "1 semaine",
+                    "description": "Déploiement sécurisé en production, formation de vos équipes, monitoring post-lancement et accompagnement personnalisé. Vous n’êtes jamais seul après la mise en ligne.",
+                    "deliverables": [
+                        "Mise en production sécurisée",
+                        "Formation utilisateurs",
+                        "Documentation complète",
+                        "Support offert 30 jours"
+                    ]
+                }
+            ]
+        },
+        "values": {
+            "title": "Nos Engagements",
+            "description": "Une manière de travailler claire et des valeurs fortes qui guident chacune de nos décisions.",
+            "items": [
+                {
+                    "icon": "mdi:handshake",
+                    "title": "Transparence Totale",
+                    "description": "Vous avez accès à l’avancement en permanence. Tout est expliqué clairement, sans jargon inutile. Vous savez toujours où en est votre projet."
+                },
+                {
+                    "icon": "mdi:account-group",
+                    "title": "Co-construction",
+                    "description": "Votre expertise métier + notre expertise technique = le combo parfait. Vous êtes impliqué à chaque étape pour garantir le meilleur résultat."
+                },
+                {
+                    "icon": "mdi:quality-high",
+                    "title": "Qualité Premium",
+                    "description": "Nous respectons les standards du web, écrivons un code maintenable et effectuons des tests rigoureux pour garantir un produit durable et performant."
+                },
+                {
+                    "icon": "mdi:rocket",
+                    "title": "Livraison Continue",
+                    "description": "Vous n’attendez jamais des mois sans nouvelles. Grâce à l’agile, vous recevez des fonctionnalités testables toutes les deux semaines."
+                },
+                {
+                    "icon": "mdi:school",
+                    "title": "Transmission & Autonomie",
+                    "description": "Nous formons vos équipes, fournissons des supports clairs et vous aidons à devenir autonome sur vos outils."
+                },
+                {
+                    "icon": "mdi:shield-check",
+                    "title": "Engagement Long Terme",
+                    "description": "Nous restons à vos côtés après la mise en ligne : maintenance, support, évolutions… Vous avez un partenaire tech fiable sur la durée."
+                }
+            ]
+        },
+        "seo": {
+            "title": "Méthodologie Agence Web Libourne | Processus de Développement",
+            "description": "Découvrez notre méthode de création digitale : cadrage, design, développement agile, tests, déploiement. Un processus transparent et orienté résultats, adapté aux TPE/PME à Libourne et Bordeaux."
+        }
+    }
+}

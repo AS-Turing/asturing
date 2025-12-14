@@ -1,118 +1,138 @@
- 
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
-  colorMode: {
-    dataValue: 'theme',
-    classSuffix: '',
-    preference: process.env.NUXT_COLOR_MODE || 'light',
-    fallback: 'light',
+  compatibilityDate: '2025-07-15',
+  future: {
+    compatibilityVersion: 4
   },
-  compatibilityDate: '2025-04-13',
-  css: ['~/assets/css/app.css'],
-  devtools: {
-    enabled: process.env.NODE_ENV !== 'production',
-    timeline: {
-      enabled: process.env.NODE_ENV !== 'production',
-    },
-  },
-  vite: {
-    server: {
-      allowedHosts: ['www.as-turing.fr', 'as-turing.fr'],
-    },
-  },
-  head: {
-    htmlAttrs: {
-      lang: 'fr'
+  devtools: { enabled: false },
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap'],
+  
+  // Configuration de Nuxt Icon
+  icon: {
+    serverBundle: {
+      collections: ['skill-icons', 'simple-icons', 'logos', 'mdi']
     }
   },
-  nitro: {
-    preset: 'node-server',
-  },
-  mail: {
-    message: {
-      to: 'alexandre@as-turing.fr',
-    },
-    smtp: {
-      host: 'ssl0.ovh.net',
-      port: 587,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      }
-    }
-  },
-  modules: [
-    '@nuxt/devtools',
-    '@nuxtjs/tailwindcss',
-    'nuxt-icon',
-    '@vee-validate/nuxt',
-    '@hebilicious/vue-query-nuxt',
-    'nuxt-svgo',
-    '@nuxtjs/color-mode',
-    '@pinia/nuxt',
-    '@nuxtjs/sitemap'
-  ],
-  runtimeConfig: {
-    apiBaseUrl: process.env.API_BASE_URL ? `${process.env.API_BASE_URL}/api` : 'http://symfony/api',
-    mail: {
-      smtp: {
-        host: 'ssl0.ovh.net',
-        port: 587,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        }
-      },
-      message: {
-        to: 'alexandre@as-turing.fr'
-      }
-    },
-    public: {
-      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE || '/api'
-    }
-  },
+  
+  // Configuration du sitemap
   site: {
-    url: 'https://www.as-turing.fr'
+    url: 'https://www.as-turing.fr',
   },
+  
   sitemap: {
-    siteUrl: 'https://www.as-turing.fr',
-    trailingSlash: false,
+    hostname: 'https://www.as-turing.fr',
     gzip: true,
-    autoLastmod: true,
-    xls: false,
-    defaults: {
-      changefreq: 'monthly',
-      priority: 0.8,
-    },
+    xsl: false,
     exclude: [
-      '/admin/**',
+      '/index-old'
     ],
-    urls: [
-      { url: '/', changefreq: 'monthly', priority: 0.9 },
-      { url: '/services', changefreq: 'monthly', priority: 0.8 },
-      { url: '/services/creation-site-internet', changefreq: 'monthly', priority: 0.7 },
-      { url: '/services/conseil-accompagnement-digital', changefreq: 'monthly', priority: 0.7 },
-      { url: '/services/developpement-sur-mesure', changefreq: 'monthly', priority: 0.7 },
-      { url: '/services/maintenance-support-technique', changefreq: 'monthly', priority: 0.7 },
-      { url: '/services/integration-solutions-externes', changefreq: 'monthly', priority: 0.7 },
-      { url: '/services/formation-vulgarisation', changefreq: 'monthly', priority: 0.7 },
-      { url: '/about', changefreq: 'monthly', priority: 0.8 },
-      { url: '/contact', changefreq: 'monthly', priority: 0.8 },
-      { url: '/conditions-generales-de-ventes', changefreq: 'monthly', priority: 0.8 },
-      { url: '/engagements', changefreq: 'monthly', priority: 0.8 },
-      { url: '/localisation/libourne', changefreq: 'monthly', priority: 0.7 },
-      { url: '/localisation/bordeaux', changefreq: 'monthly', priority: 0.7 },
-      { url: '/localisation/saint-emilion', changefreq: 'monthly', priority: 0.7 },
-      { url: '/localisation/creon', changefreq: 'monthly', priority: 0.7 },
-      { url: '/localisation/sauveterre-de-guyenne', changefreq: 'monthly', priority: 0.7 },
+    sources: [
+      '/api/__sitemap__/urls'
     ]
   },
-  ssr: true,
-  tailwindcss: {
-    configPath: './tailwind.config.ts',
-    editorSupport: { autocompleteUtil: { as: 'tailwindClasses' }, generateConfig: true },
+  
+  imports: {
+    autoImport: true
   },
-  typescript: {
-    typeCheck: false,
+  
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: false,
+      }
+    ]
   },
+  
+  css: ['~/assets/css/main.css'],
+  
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony'
+    }
+  },
+  
+  // ✨ Configuration du cache pour optimiser les performances
+  routeRules: {
+    // Page d'accueil : SSR pur (pas d'ISR pour éviter problèmes cache blog)
+    '/': { ssr: true },
+    
+    // Pages dynamiques : SSR pur TEMPORAIREMENT (ISR désactivé pour debug cache)
+    '/services/**': { ssr: true },
+    '/processus': { ssr: true },
+    '/blog': { ssr: true },
+    '/blog/**': { ssr: true },
+    '/projets': { ssr: true },
+    '/projets/**': { ssr: true },
+    '/contact': { ssr: true },
+    
+    // API : PAS de cache pour le moment (debug)
+    '/api/**': { cache: false },
+    
+    // Nuxt Icon : servir localement
+    '/_nuxt_icon/**': { cache: true, headers: { 'Cache-Control': 'public, max-age=31536000' } },
+  },
+  
+  // Optimisation Nitro
+  nitro: {
+    compressPublicAssets: true, // Compression Gzip/Brotli
+    prerender: {
+      crawlLinks: false, // Désactivé pour éviter prerendering auto
+      routes: [] // Aucune route prérendue
+    },
+    // Headers de cache pour le navigateur
+    routeRules: {
+      // PAGES HTML : pas de cache navigateur pour voir les modifs immédiatement
+      '/projets/**': {
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      },
+      '/_nuxt/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable' // 1 an pour les assets versionnés
+        }
+      },
+      '/images/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=2592000' // 30 jours pour les images
+        }
+      },
+      '/fonts/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable' // 1 an pour les fonts
+        }
+      }
+    }
+  },
+  
+  // Optimisation Vite
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+    server: {
+      allowedHosts: ['v2.as-turing.local', 'dev.asturing.as-turing.fr']
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Séparer les vendors pour un meilleur cache
+            'vue-vendor': ['vue', 'vue-router'],
+          }
+        }
+      }
+    }
+  },
+  
+  // Payload extraction pour meilleures perfs
+  experimental: {
+    payloadExtraction: true,
+    renderJsonPayloads: true
+  }
 })

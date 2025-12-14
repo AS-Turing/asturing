@@ -1,90 +1,17 @@
-# Nuxt dev/build outputs
-frontend/.output
-frontend/.data
-frontend/.nuxt
-frontend/.nitro
-frontend/.cache
-frontend/dist
+# Ignorer tout par défaut
+*
 
-# Node dependencies
-frontend/node_modules
+# Exceptions : on garde frontend/ et backend/ qui ont leurs propres .gitignore
+!frontend/
+!backend/
 
-# Logs
-logs
+# Exceptions : fichiers de configuration essentiels
+!.gitignore
+!.github/
+!docker-compose.yml
+
+# Ignorer les fichiers temporaires et logs courants
 *.log
-
-# Misc
-.DS_Store
-backend/.DS_Store
-/frontend/.DS_Store
-.fleet
-.idea
-.idea/
-
-# Local env files
-.env
-.env.*
-!.env.example
-/backend/.env
-/backend/.env.dev
-/backend/.env.test
-
-# Docker override (local dev)
-docker-compose.override.yml
-
-# Git files
-*.seed
-*.pid
-.swpdev-env
-*.bak
-*.orig
-*.rej
-*.~*
-
-vendor
-api/vendor
-api/var
-public/upload/*
-frontend/.pnpm-store/
-*/*.sql
-*.zip
-data.json
-
-# Fix prod
-/frontend/public/
-images
-index.html
-_nuxt
-
-#Docker
-docker*.yml.bak.*
-*.override.yml
-#dev environnement
-traefik/
-deploy.sh
-.env.deploy
-
-# Scripts sensibles contenant des informations de déploiement
-rollback.sh
-setup-cicd.sh
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Documentation Markdown - Ignore all except main READMEs
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-# Ignore all .md files
+*.sql
 *.md
-
-# Except these READMEs
-!README.md
-!frontend/README.md
-!backend/README.md
-
-# Explicitly ignore documentation files
-CI-CD-SETUP.md
-QUICKSTART-CICD.md
-INFRASTRUCTURE.md
-RECAP.md
-REFONTE-INFRA.md
-.github/*.md
-.github/workflows/*.md
-
+!README.mdDEBUG_DOCKER_NETWORK_ISSUE.md
