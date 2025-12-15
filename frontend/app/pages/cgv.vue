@@ -210,7 +210,7 @@
 usePremiumSeo({
   title: 'Conditions Générales de Vente (CGV) | AS-Turing',
   description: 'Consultez les conditions générales de vente d\'AS-Turing : tarifs, paiement, délais, propriété intellectuelle et engagements contractuels.',
-  url: 'https://as-turing.fr/cgv',
+  url: 'https://www.as-turing.fr/cgv',
   type: 'website',
   breadcrumbs: [
     { name: 'Accueil', url: '/' },

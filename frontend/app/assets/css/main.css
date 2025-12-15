@@ -93,25 +93,62 @@
     background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 50%, var(--color-secondary) 100%);
   }
   
-  .gradient-soft {
-    background: linear-gradient(135deg, 
-      color-mix(in srgb, var(--color-primary) 10%, transparent),
-      color-mix(in srgb, var(--color-accent) 10%, transparent),
-      color-mix(in srgb, var(--color-secondary) 10%, transparent)
-    );
-  }
-  
-  .dark .gradient-soft {
-    background: linear-gradient(135deg,
-      color-mix(in srgb, var(--color-primary) 10%, transparent),
-      color-mix(in srgb, var(--color-accent) 10%, transparent),
-      color-mix(in srgb, var(--color-secondary) 10%, transparent)
-    );
-  }
-  
-  .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+   .gradient-soft {
+     background: linear-gradient(135deg, 
+       color-mix(in srgb, var(--color-primary) 10%, transparent),
+       color-mix(in srgb, var(--color-accent) 10%, transparent),
+       color-mix(in srgb, var(--color-secondary) 10%, transparent)
+     );
+   }
+   
+   .dark .gradient-soft {
+     background: linear-gradient(135deg,
+       color-mix(in srgb, var(--color-primary) 10%, transparent),
+       color-mix(in srgb, var(--color-accent) 10%, transparent),
+       color-mix(in srgb, var(--color-secondary) 10%, transparent)
+     );
+   }
+
+   .logo-surface {
+     position: relative;
+     background: radial-gradient(circle at 25% 25%,
+       color-mix(in srgb, var(--color-primary) 6%, #ffffff) 0%,
+       #f5f6fb 55%,
+       #e7eaf4 100%);
+     border: 1px solid color-mix(in srgb, var(--color-neutral-900) 8%, transparent);
+     box-shadow:
+       inset 0 1px 2px rgba(15, 23, 42, 0.08),
+       0 18px 35px rgba(15, 23, 42, 0.08);
+   }
+   
+   .logo-surface::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(120deg, rgba(255, 255, 255, 0.45), transparent 60%);
+     opacity: 0.5;
+     pointer-events: none;
+     z-index: 0;
+   }
+   
+   .dark .logo-surface {
+     background: radial-gradient(circle at 25% 25%,
+       rgba(255, 255, 255, 0.08) 0%,
+       rgba(15, 23, 42, 0.82) 55%,
+       rgba(2, 6, 23, 0.95) 100%);
+     border-color: rgba(255, 255, 255, 0.08);
+     box-shadow:
+       inset 0 1px 2px rgba(255, 255, 255, 0.04),
+       0 25px 45px rgba(2, 6, 23, 0.65);
+   }
+   
+   .dark .logo-surface::after {
+     opacity: 0.2;
+   }
+
+   .glass {
+     background: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
   

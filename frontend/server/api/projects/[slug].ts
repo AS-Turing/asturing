@@ -1,4 +1,4 @@
-export default cachedEventHandler(async (event) => {
+export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const slug = getRouterParam(event, 'slug')
   
@@ -26,8 +26,7 @@ export default cachedEventHandler(async (event) => {
       statusMessage: 'Failed to fetch project'
     })
   }
-}, {
-  maxAge: process.env.NODE_ENV === 'production' ? 60 * 10 : 0, // Cache seulement en prod
-  name: 'project-detail',
-  getKey: (event) => `project-${getRouterParam(event, 'slug')}`
 })
+
+// DÉSACTIVÉ TEMPORAIREMENT : cachedEventHandler causait des problèmes de cache persistant
+// Réactiver plus tard avec une stratégie d'invalidation sur webhook depuis Symfony

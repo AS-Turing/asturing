@@ -95,7 +95,8 @@
 
     <!-- Contenu du projet (Challenge, Solution, Results) -->
     <ProjectContent 
-      v-if="project.content"
+      v-if="project && project.content"
+      :key="`project-content-${project.id}`"
       :content="project.content"
       :projectTitle="project.title"
       :imageText="project.imageText"
@@ -218,7 +219,10 @@
 const route = useRoute()
 const slug = route.params.slug as string
 
-const { data: project, error } = await useFetch(`/api/projects/${slug}`)
+const { data: project, error } = await useFetch(() => `/api/projects/${slug}`, {
+  key: `project-${slug}`,
+  watch: [() => route.params.slug]
+})
 
 // SEO Premium AAA avec Schema
 watch(project, (newProject) => {
@@ -226,8 +230,8 @@ watch(project, (newProject) => {
     usePremiumSeo({
       title: `${newProject.title} - Réalisation AS-Turing`,
       description: newProject.excerpt || newProject.description,
-      url: `https://as-turing.fr/projets/${newProject.slug}`,
-      image: newProject.imageUrl || 'https://as-turing.fr/images/og-projects.jpg',
+      url: `https://www.as-turing.fr/projets/${newProject.slug}`,
+      image: newProject.imageUrl || 'https://www.as-turing.fr/images/og-projects.jpg',
       type: 'article',
       breadcrumbs: [
         { name: 'Accueil', url: '/' },

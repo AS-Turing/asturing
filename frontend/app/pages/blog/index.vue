@@ -202,13 +202,13 @@ useHead({
         '@type': 'Blog',
         'name': 'Blog AS-Turing',
         'description': 'Blog sur la création de sites internet, l\'e-commerce et les stratégies digitales',
-        'url': 'https://as-turing.fr/blog',
+        'url': 'https://www.as-turing.fr/blog',
         'publisher': {
           '@type': 'Organization',
           'name': 'AS-Turing',
           'logo': {
             '@type': 'ImageObject',
-            'url': 'https://as-turing.fr/logo.png'
+            'url': 'https://www.as-turing.fr/logo.png'
           }
         },
         'inLanguage': 'fr-FR'

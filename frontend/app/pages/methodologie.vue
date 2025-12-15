@@ -111,7 +111,7 @@
 usePremiumSeo({
   title: 'Notre Méthodologie de Développement Web | AS-Turing Libourne',
   description: 'Découvrez notre processus de développement web en 5 étapes : découverte, design, développement agile, tests et mise en ligne. Méthodologie éprouvée et transparente.',
-  url: 'https://as-turing.fr/methodologie',
+  url: 'https://www.as-turing.fr/methodologie',
   type: 'website',
   breadcrumbs: [
     { name: 'Accueil', url: '/' },

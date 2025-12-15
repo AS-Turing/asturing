@@ -49,7 +49,7 @@
 
     <!-- Content -->
     <article class="py-16">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Excerpt -->
         <div class="mb-12">
           <p class="text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
@@ -251,8 +251,8 @@ watch(formattedArticle, (newArticle) => {
     usePremiumSeo({
       title: newArticle.metaTitle || `${newArticle.title} - Blog AS-Turing`,
       description: newArticle.metaDescription || newArticle.excerpt,
-      url: `https://as-turing.fr/blog/${newArticle.slug}`,
-      image: newArticle.ogImage || 'https://as-turing.fr/images/og-blog.jpg',
+      url: `https://www.as-turing.fr/blog/${newArticle.slug}`,
+      image: newArticle.ogImage || 'https://www.as-turing.fr/images/og-blog.jpg',
       type: 'article',
       article: {
         publishedTime: article.value?.publishedAt,

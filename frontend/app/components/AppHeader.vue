@@ -220,6 +220,7 @@ const logoTextWidth = 120 // Largeur approximative du texte "AS-Turing" en pixel
 const { isDark, toggleDark, initDarkMode } = useDarkMode()
 
 const navLinks = [
+  { to: '/', label: 'Accueil' },
   { to: '/services', label: 'Services' },
   { to: '/processus', label: 'Processus' },
   { to: '/projets', label: 'Projets' },

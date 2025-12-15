@@ -40,6 +40,7 @@ class ProjectFixtures
             // Champs existants
             $project->setTechnologies($data['technologies']);
             $project->setTechIcons($data['techIcons'] ?? []);
+            $project->setImageUrl($data['imageUrl'] ?? null);
             $project->setImageText($data['imageText']);
             $project->setBgGradient($data['bgGradient']);
             $project->setImageGradient($data['imageGradient']);

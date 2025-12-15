@@ -19,23 +19,38 @@
             <input 
               v-model="contactForm.name"
               type="text" 
-              placeholder="Votre nom" 
+              placeholder="Votre nom *" 
               required
               class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary dark:focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 transition"
             >
             <input 
               v-model="contactForm.email"
               type="email" 
-              placeholder="Votre email" 
+              placeholder="Votre email *" 
               required
               class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-secondary dark:focus:border-secondary outline-none text-dark dark:text-white dark:bg-gray-700 transition"
+            >
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <input 
+              v-model="contactForm.phone"
+              type="tel" 
+              placeholder="Téléphone" 
+              class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-accent dark:focus:border-accent outline-none text-dark dark:text-white dark:bg-gray-700 transition"
+            >
+            <input 
+              v-model="contactForm.company"
+              type="text" 
+              placeholder="Entreprise" 
+              class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-coral dark:focus:border-coral outline-none text-dark dark:text-white dark:bg-gray-700 transition"
             >
           </div>
           
           <input 
             v-model="contactForm.subject"
             type="text" 
-            placeholder="Sujet" 
+            placeholder="Sujet *" 
             required
             class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-accent dark:focus:border-accent outline-none text-dark dark:text-white dark:bg-gray-700 transition"
           >
@@ -43,16 +58,17 @@
           <textarea 
             v-model="contactForm.message"
             rows="5" 
-            placeholder="Décrivez votre projet" 
+            placeholder="Décrivez votre projet *" 
             required
             class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary dark:focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 resize-none transition"
           ></textarea>
           
           <button 
             type="submit" 
-            class="w-full gradient-hero text-white py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-gradient"
+            :disabled="submitting"
+            class="w-full gradient-hero text-white py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-gradient disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
           >
-            Envoyer ma demande
+            {{ submitting ? 'Envoi en cours...' : 'Envoyer ma demande' }}
           </button>
         </form>
 
@@ -97,11 +113,20 @@ const { companyInfo: company } = useCompany()
 const contactForm = ref({
   name: '',
   email: '',
+  phone: '',
+  company: '',
   subject: '',
   message: ''
 })
 
+const submitting = ref(false)
+
 const submitContact = async () => {
+  const { notifySuccess, notifyError } = useNotifications()
+  
+  if (submitting.value) return
+  submitting.value = true
+  
   try {
     const { sendContactMessage } = useApi()
     await sendContactMessage(contactForm.value)
@@ -110,13 +135,17 @@ const submitContact = async () => {
     contactForm.value = {
       name: '',
       email: '',
+      phone: '',
+      company: '',
       subject: '',
       message: ''
     }
-    alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.')
+    notifySuccess('✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.')
   } catch (error) {
-    alert('Une erreur est survenue. Veuillez réessayer.')
+    notifyError('❌ Une erreur est survenue. Veuillez réessayer.')
     console.error('Error submitting contact form:', error)
+  } finally {
+    submitting.value = false
   }
 }
 </script>

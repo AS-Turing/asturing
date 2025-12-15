@@ -22,11 +22,21 @@
           :to="`/projets/${project.slug}`"
           class="group relative bg-white dark:bg-dark rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
         >
-          <!-- Image placeholder -->
-          <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 dark:from-dark-lighter dark:to-dark">
-            <div class="absolute inset-0 flex items-center justify-center">
+          <!-- Image -->
+          <div class="relative h-48 overflow-hidden rounded-2xl logo-surface">
+            <!-- Image si disponible -->
+            <div v-if="project.imageUrl" class="absolute inset-0 flex items-center justify-center p-8 z-10">
+              <img
+                :src="project.imageUrl"
+                :alt="project.imageText || project.title"
+                class="w-full h-full object-contain drop-shadow-lg transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            
+            <!-- Fallback si pas d'image -->
+            <div v-else class="absolute inset-0 flex items-center justify-center z-10">
               <!-- Pattern subtil -->
-              <div class="absolute inset-0 opacity-5">
+              <div class="absolute inset-0 opacity-5 z-0">
                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -46,15 +56,10 @@
             </div>
             
             <!-- Badge catégorie -->
-            <div class="absolute top-4 left-4">
+            <div class="absolute top-4 left-4 z-20">
               <span :class="`px-3 py-1 rounded-full text-xs font-semibold ${project.techClass}`">
                 {{ project.category }}
               </span>
-            </div>
-            
-            <!-- Badge statut -->
-            <div class="absolute top-4 right-4">
-              <span :class="`w-3 h-3 rounded-full ${project.dotColor} animate-pulse block`"></span>
             </div>
           </div>
 

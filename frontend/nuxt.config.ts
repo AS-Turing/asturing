@@ -9,14 +9,22 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap'],
   
+  // Configuration de Nuxt Icon
+  icon: {
+    serverBundle: {
+      collections: ['skill-icons', 'simple-icons', 'logos', 'mdi']
+    }
+  },
+  
   // Configuration du sitemap
   site: {
-    url: 'https://as-turing.fr',
+    url: 'https://www.as-turing.fr',
   },
   
   sitemap: {
-    hostname: 'https://as-turing.fr',
+    hostname: 'https://www.as-turing.fr',
     gzip: true,
+    xsl: false,
     exclude: [
       '/index-old'
     ],
@@ -51,20 +59,20 @@ export default defineNuxtConfig({
     // Page d'accueil : SSR pur (pas d'ISR pour éviter problèmes cache blog)
     '/': { ssr: true },
     
-    // Pages dynamiques : ISR (régénération périodique pour perfs + SEO)
-    '/services/**': { isr: 3600 },
-    '/processus': { isr: 3600 },
-    '/blog': { ssr: true }, // SSR pur
-    '/blog/**': { ssr: true }, // SSR pur
-    '/projets': { isr: 3600 },
-    '/projets/**': { isr: 3600 },
-    '/contact': { ssr: true }, // Pas de cache pour le formulaire
+    // Pages dynamiques : SSR pur TEMPORAIREMENT (ISR désactivé pour debug cache)
+    '/services/**': { ssr: true },
+    '/processus': { ssr: true },
+    '/blog': { ssr: true },
+    '/blog/**': { ssr: true },
+    '/projets': { ssr: true },
+    '/projets/**': { ssr: true },
+    '/contact': { ssr: true },
     
-    // API : cache court (5 min)
-    '/api/services': { cache: { maxAge: 300 } },
-    '/api/projects': { cache: { maxAge: 300 } },
-    '/api/clients': { cache: { maxAge: 300 } },
-    '/api/blog': { cache: { maxAge: 300 } },
+    // API : PAS de cache pour le moment (debug)
+    '/api/**': { cache: false },
+    
+    // Nuxt Icon : servir localement
+    '/_nuxt_icon/**': { cache: true, headers: { 'Cache-Control': 'public, max-age=31536000' } },
   },
   
   // Optimisation Nitro
@@ -76,6 +84,14 @@ export default defineNuxtConfig({
     },
     // Headers de cache pour le navigateur
     routeRules: {
+      // PAGES HTML : pas de cache navigateur pour voir les modifs immédiatement
+      '/projets/**': {
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      },
       '/_nuxt/**': {
         headers: {
           'Cache-Control': 'public, max-age=31536000, immutable' // 1 an pour les assets versionnés

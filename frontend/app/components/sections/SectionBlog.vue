@@ -61,7 +61,7 @@
       <div class="text-center mt-12">
         <NuxtLink
           to="/blog"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300"
+          class="inline-flex items-center gap-2 px-8 py-4 gradient-hero from-primary to-secondary text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
         >
           Voir tous les articles
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

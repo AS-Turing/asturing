@@ -24,8 +24,8 @@ const { companyInfo: company } = useCompany()
 usePremiumSeo({
   title: 'Création Site Internet Libourne | Agence Web Entre-deux-Mers - AS-Turing',
   description: 'Agence web de proximité à Libourne. Création de sites internet et e-commerce pour commerces et PME. Qualité professionnelle, tarifs accessibles. Libourne, Saint-Émilion, Bordeaux Est.',
-  url: 'https://as-turing.fr',
-  image: 'https://as-turing.fr/images/og-home.jpg',
+  url: 'https://www.as-turing.fr',
+  image: 'https://www.as-turing.fr/images/og-home.jpg',
   type: 'website',
   breadcrumbs: [
     { name: 'Accueil', url: '/' }

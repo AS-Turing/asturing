@@ -1,4 +1,4 @@
-export default cachedEventHandler(async (event) => {
+export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   
   try {
@@ -10,8 +10,6 @@ export default cachedEventHandler(async (event) => {
       statusMessage: 'Failed to fetch projects'
     })
   }
-}, {
-  maxAge: process.env.NODE_ENV === 'production' ? 60 * 5 : 0, // Cache seulement en prod
-  name: 'projects-list',
-  getKey: () => 'all-projects'
 })
+
+// DÉSACTIVÉ TEMPORAIREMENT : cachedEventHandler causait des problèmes de cache persistant
