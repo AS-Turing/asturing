@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_PREFIX: ${{ github.repository_owner }}/asturing
+  IMAGE_PREFIX: as-turing/asturing
 
 jobs:
   # ========================================
