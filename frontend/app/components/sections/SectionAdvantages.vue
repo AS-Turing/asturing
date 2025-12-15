@@ -55,6 +55,8 @@
 </template>
 
 <script setup lang="ts">
+const workspaceImage = '/images/workspace-desk-minimal.jpg'
+
 const advantages = [
   {
     title: 'Engagement contractuel de réactivité',
