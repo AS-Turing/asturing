@@ -127,7 +127,31 @@
             "metaTitle": "Conseil & Stratégie Digitale Libourne | Audit & Expertise Web",
             "metaDescription": "Audit technique, cadrage projet, accompagnement chef de projet digital. Expertise conseil à Libourne pour sécuriser vos projets web et faire les bons choix.",
             "metaKeywords": "audit digital, conseil web Libourne, expertise technique, stratégie digitale, cadrage projet, chef de projet digital",
-            "ogImage": null
+            "ogImage": null,
+            "audience": {
+                "title": "Ce service est idéal si vous êtes :",
+                "items": [
+                    "une PME ou un dirigeant qui veut sécuriser un projet avant d’investir",
+                    "une structure avec un site existant lent, fragile ou mal référencé",
+                    "une équipe interne qui a besoin d’un regard expert externe",
+                    "un projet en cours qui s’enlise (retards, qualité, choix techniques flous)"
+                ]
+            },
+            "outcomes": {
+                "title": "Concrètement, à la fin de la mission :",
+                "items": [
+                    "vous avez une analyse claire des risques et priorités (tech, SEO, sécurité, perf)",
+                    "vous repartez avec une roadmap actionnable, priorisée par impact/ROI",
+                    "vous savez quoi faire, dans quel ordre, et avec quel budget/planning",
+                    "vous évitez les erreurs coûteuses et les choix technos inadaptés"
+                ]
+            },
+            "ctaSoft": {
+                "title": "Besoin d’un regard expert ?",
+                "description": "Un échange rapide permet de comprendre votre contexte et de vous dire si un audit/cadrage est pertinent. Sans engagement.",
+                "buttonText": "Valider la faisabilité (15 min)",
+                "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
+            }
         },
         {
             "title": "Conception & Développement Web",
@@ -169,7 +193,7 @@
                     "startingPrice": "4 500€",
                     "deliveryTime": "6-10 sem.",
                     "features": [
-                        "WooCommerce custom ou Symfony e-commerce",
+                        "WooCommerce custom, Prestashop, Magento ou Symfony e-commerce",
                         "Catalogue produits illimité",
                         "Paiement sécurisé (Stripe, PayPal, virement)",
                         "Gestion commandes, stocks & clients",
@@ -234,8 +258,12 @@
                     "description": "Interfaces fluides, modernes et performantes."
                 },
                 {
-                    "name": "Node.js / Express",
-                    "description": "Back-end performant pour applications temps réel."
+                    "name": "Prestashop",
+                    "description": "Solution e-commerce spécialisée pour la gestion de boutiques en ligne performantes et orientées vente."
+                },
+                {
+                    "name": "Magento",
+                    "description": "Plateforme e-commerce avancée adaptée aux projets complexes et aux catalogues à grande échelle."
                 }
             ],
             "faqs": [
@@ -261,7 +289,7 @@
                 },
                 {
                     "question": "Serai-je autonome à la fin du projet ?",
-                    "answer": "Totalement. Vous disposez d'un back-office intuitif, d'une formation complète (2-3h en visio), de tutoriels vidéos personnalisés et d'une documentation détaillée. Si vous bloquez après livraison, on reste disponible."
+                    "answer": "Totalement. Vous disposez d'un back-office intuitif, d'une formation complète (2-3h en visio), de tutoriels personnalisés et d'une documentation détaillée. Si vous bloquez après livraison, on reste disponible."
                 },
                 {
                     "question": "Que se passe-t-il si mon projet évolue en cours de route ?",
@@ -281,7 +309,31 @@
             "metaTitle": "Création de Site & Développement Web Libourne | Qualité AAA",
             "metaDescription": "Sites vitrines à partir de 1800€, e-commerce dès 4500€, applications sur-mesure. Performance garantie, SEO optimisé, sécurité renforcée. Libourne/Bordeaux.",
             "metaKeywords": "développement web professionnel, création site Libourne, e-commerce Bordeaux, site sur-mesure, SEO performance",
-            "ogImage": null
+            "ogImage": null,
+            "audience": {
+                "title": "Ce service est idéal si vous êtes :",
+                "items": [
+                    "un commerce, artisan ou PME qui veut un site crédible et qui génère des contacts",
+                    "une entreprise qui veut une solution stable, rapide et évolutive (pas un template)",
+                    "une structure qui a besoin d’un site vitrine, e-commerce ou d’un outil métier",
+                    "un porteur de projet qui veut un accompagnement clair, étape par étape"
+                ]
+            },
+            "outcomes": {
+                "title": "Concrètement, à la fin du projet :",
+                "items": [
+                    "vous avez un site/app prêt à l’emploi, administrable simplement",
+                    "l’architecture est pensée pour la performance, la sécurité et le SEO",
+                    "vous êtes formé et autonome (avec doc + back-office propre)",
+                    "vous disposez d’une base saine et maintenable pour évoluer dans le temps"
+                ]
+            },
+            "ctaSoft": {
+                "title": "Vous avez un projet ou une question ?",
+                "description": "Un premier échange permet de confirmer la solution la plus adaptée (vitrine, e-commerce, app), les délais et un ordre de budget. Sans engagement.",
+                "buttonText": "Discuter de votre besoin (15 min)",
+                "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
+            }
         },
         {
             "title": "Intégrations & Automatisation",
@@ -428,7 +480,31 @@
             "metaTitle": "Automatisation & Intégration d'Outils | Libourne Bordeaux",
             "metaDescription": "Connectez vos outils métier (CRM, comptabilité, e-commerce) et automatisez vos processus. APIs, webhooks, synchronisation de données. Devis gratuit.",
             "metaKeywords": "automatisation processus, intégration API, connexion CRM, synchronisation données, automatisation e-commerce, webhooks, Libourne",
-            "ogImage": null
+            "ogImage": null,
+            "audience": {
+                "title": "Ce service est idéal si vous êtes :",
+                "items": [
+                    "une PME qui perd du temps en double saisie entre plusieurs outils",
+                    "un e-commerce qui veut synchroniser commandes, stocks, facturation, CRM",
+                    "une entreprise avec des processus répétitifs à automatiser (rapports, exports, alertes)",
+                    "une structure qui veut fiabiliser les échanges (logs, gestion d’erreurs, monitoring)"
+                ]
+            },
+            "outcomes": {
+                "title": "Concrètement, à la fin du projet :",
+                "items": [
+                    "vos outils communiquent automatiquement (API, webhooks, tâches planifiées)",
+                    "vous réduisez la charge manuelle et les erreurs humaines",
+                    "vous avez des logs/alertes pour superviser et éviter les incidents silencieux",
+                    "vous disposez d’une documentation claire pour maintenir et faire évoluer"
+                ]
+            },
+            "ctaSoft": {
+                "title": "On identifie vos gains rapidement ?",
+                "description": "En 15 minutes, on clarifie vos outils, vos flux et les automatisations à plus fort impact. Sans engagement.",
+                "buttonText": "Identifier les gains (15 min)",
+                "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
+            }
         },
         {
             "title": "TMA & Support Technique",
@@ -594,7 +670,31 @@
             "metaTitle": "Maintenance & Support WordPress | TMA Site Internet Libourne",
             "metaDescription": "TMA WordPress dès 149€/mois : mises à jour, sécurité, sauvegardes, monitoring 24/7 et support réactif. 3 formules adaptées à vos besoins. Sans engagement.",
             "metaKeywords": "maintenance WordPress, TMA site internet, support technique web, sécurité WordPress, sauvegardes automatiques, monitoring site web, Libourne, Bordeaux",
-            "ogImage": null
+            "ogImage": null,
+            "audience": {
+                "title": "Ce service est idéal si vous êtes :",
+                "items": [
+                    "une entreprise qui veut un site fiable sans gérer la technique au quotidien",
+                    "un e-commerce qui ne peut pas se permettre une panne ou un piratage",
+                    "un site WordPress déjà en ligne qui a besoin de suivi pro (mises à jour, backups, sécurité)",
+                    "une structure qui veut un interlocuteur unique et réactif"
+                ]
+            },
+            "outcomes": {
+                "title": "Concrètement, avec la TMA :",
+                "items": [
+                    "votre site reste à jour, sécurisé et surveillé en continu",
+                    "vous limitez les risques (pannes, failles, pertes de données)",
+                    "vous avez un support structuré + des heures d’évolution selon formule",
+                    "vous gardez une vision claire grâce au reporting régulier"
+                ]
+            },
+            "ctaSoft": {
+                "title": "Vous voulez savoir si votre site est sain ?",
+                "description": "On fait un point rapide sur votre situation et on vous dit quelle formule est adaptée. Sans engagement.",
+                "buttonText": "Faire un point (15 min)",
+                "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
+            }
         },
         {
             "title": "Formation & Montée en Compétences",
@@ -732,7 +832,32 @@
             "metaTitle": "Formations WordPress, SEO & Sécurité Web | Libourne Bordeaux",
             "metaDescription": "Formations WordPress, WooCommerce, SEO et sécurité web. Sessions pratiques et personnalisées pour PME et artisans. Demi-journée dès 400€.",
             "metaKeywords": "formation WordPress Libourne, formation SEO Bordeaux, formation WooCommerce, sécurité site web, gestion site internet",
-            "ogImage": null
+            "ogImage": null,
+            "audience": {
+                "title": "Ce service est idéal si vous êtes :",
+                "items": [
+                    "une PME qui veut être autonome sur WordPress, SEO ou sécurité",
+                    "un responsable qui veut former une équipe (process, bonnes pratiques)",
+                    "un site existant qui nécessite une prise en main propre",
+                    "un besoin concret (pas de théorie) : publier, optimiser, sécuriser, maintenir"
+                ]
+            },
+            "outcomes": {
+                "title": "Concrètement, après la formation :",
+                "items": [
+                    "vous savez appliquer les actions sur VOTRE site (cas réel, pas générique)",
+                    "vous repartez avec des supports pratiques et réutilisables",
+                    "vous gagnez en autonomie et en confiance sur vos outils",
+                    "vous avez un suivi post-formation pour débloquer les questions"
+                ]
+            },
+            "ctaSoft": {
+                "title": "Vous voulez voir si la formation est adaptée ?",
+                "description": "On échange 15 minutes pour comprendre votre niveau et définir un programme simple et concret. Sans engagement.",
+                "buttonText": "Définir le programme (15 min)",
+                "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
+            }
+
         }
     ]
 }

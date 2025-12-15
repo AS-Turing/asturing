@@ -35,6 +35,15 @@ class ServiceFixtures extends Fixture
             $service->setHeroDescription($serviceData['heroDescription'] ?? null);
             $service->setAuditDuration($serviceData['auditDuration']);
             $service->setCta($serviceData['cta'] ?? null);
+            if (isset($serviceData['audience'])) {
+                $service->setAudience($serviceData['audience']);
+            }
+            if (isset($serviceData['outcomes'])) {
+                $service->setOutcomes($serviceData['outcomes']);
+            }
+            if (isset($serviceData['ctaSoft'])) {
+                $service->setCtaSoft($serviceData['ctaSoft']);
+            }
             
             if (isset($serviceData['deliveryTime'])) {
                 $service->setDeliveryTime($serviceData['deliveryTime']);
@@ -51,6 +60,21 @@ class ServiceFixtures extends Fixture
                 $solution->setTitle($solutionData['title']);
                 $solution->setDescription($solutionData['description']);
                 $solution->setFeatures($solutionData['features']);
+                if (isset($solutionData['startingPrice'])) {
+                    $solution->setStartingPrice($solutionData['startingPrice']);
+                }
+                if (isset($solutionData['deliveryTime'])) {
+                    $solution->setDeliveryTime($solutionData['deliveryTime']);
+                }
+                if (isset($solutionData['price'])) {
+                    $solution->setPrice($solutionData['price']);
+                }
+                if (isset($solutionData['priceEngagement'])) {
+                    $solution->setPriceEngagement($solutionData['priceEngagement']);
+                }
+                if (isset($solutionData['icon'])) {
+                    $solution->setIcon($solutionData['icon']);
+                }
                 $solution->setPosition($index);
                 $solution->setService($service);
                 $manager->persist($solution);
@@ -94,5 +118,4 @@ class ServiceFixtures extends Fixture
         $manager->flush();
     }
 }
-
 

@@ -8,19 +8,19 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: false },
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap'],
-  
+
   // Configuration de Nuxt Icon
   icon: {
     serverBundle: {
       collections: ['skill-icons', 'simple-icons', 'logos', 'mdi']
     }
   },
-  
+
   // Configuration du sitemap
   site: {
     url: 'https://www.as-turing.fr',
   },
-  
+
   sitemap: {
     hostname: 'https://www.as-turing.fr',
     gzip: true,
@@ -32,11 +32,19 @@ export default defineNuxtConfig({
       '/api/__sitemap__/urls'
     ]
   },
-  
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'fr'
+      }
+    }
+  },
+
   imports: {
     autoImport: true
   },
-  
+
   components: {
     dirs: [
       {
@@ -45,20 +53,20 @@ export default defineNuxtConfig({
       }
     ]
   },
-  
+
   css: ['~/assets/css/main.css'],
-  
+
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony'
     }
   },
-  
+
   // ✨ Configuration du cache pour optimiser les performances
   routeRules: {
     // Page d'accueil : SSR pur (pas d'ISR pour éviter problèmes cache blog)
     '/': { ssr: true },
-    
+
     // Pages dynamiques : SSR pur TEMPORAIREMENT (ISR désactivé pour debug cache)
     '/services/**': { ssr: true },
     '/processus': { ssr: true },
@@ -67,14 +75,14 @@ export default defineNuxtConfig({
     '/projets': { ssr: true },
     '/projets/**': { ssr: true },
     '/contact': { ssr: true },
-    
+
     // API : PAS de cache pour le moment (debug)
     '/api/**': { cache: false },
-    
+
     // Nuxt Icon : servir localement
     '/_nuxt_icon/**': { cache: true, headers: { 'Cache-Control': 'public, max-age=31536000' } },
   },
-  
+
   // Optimisation Nitro
   nitro: {
     compressPublicAssets: true, // Compression Gzip/Brotli
@@ -109,7 +117,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   // Optimisation Vite
   vite: {
     plugins: [
@@ -129,7 +137,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   // Payload extraction pour meilleures perfs
   experimental: {
     payloadExtraction: true,

@@ -68,6 +68,15 @@ class Service
     private ?array $cta = null;
 
     #[ORM\Column(type: Types::JSON, nullable: true)]
+    private ?array $audience = null;
+
+    #[ORM\Column(type: Types::JSON, nullable: true)]
+    private ?array $outcomes = null;
+
+    #[ORM\Column(type: Types::JSON, nullable: true)]
+    private ?array $ctaSoft = null;
+
+    #[ORM\Column(type: Types::JSON, nullable: true)]
     private array $stats = [];
 
     #[ORM\Column(type: Types::JSON, nullable: true)]
@@ -420,6 +429,39 @@ class Service
     public function setCta(?array $cta): static
     {
         $this->cta = $cta;
+        return $this;
+    }
+
+    public function getAudience(): ?array
+    {
+        return $this->audience;
+    }
+
+    public function setAudience(?array $audience): static
+    {
+        $this->audience = $audience;
+        return $this;
+    }
+
+    public function getOutcomes(): ?array
+    {
+        return $this->outcomes;
+    }
+
+    public function setOutcomes(?array $outcomes): static
+    {
+        $this->outcomes = $outcomes;
+        return $this;
+    }
+
+    public function getCtaSoft(): ?array
+    {
+        return $this->ctaSoft;
+    }
+
+    public function setCtaSoft(?array $ctaSoft): static
+    {
+        $this->ctaSoft = $ctaSoft;
         return $this;
     }
 
