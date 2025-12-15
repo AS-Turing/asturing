@@ -33,6 +33,18 @@ class ServiceSolution
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $icon = null;
 
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $startingPrice = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $deliveryTime = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $price = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $priceEngagement = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -101,6 +113,50 @@ class ServiceSolution
     public function setIcon(?string $icon): static
     {
         $this->icon = $icon;
+        return $this;
+    }
+
+    public function getStartingPrice(): ?string
+    {
+        return $this->startingPrice;
+    }
+
+    public function setStartingPrice(?string $startingPrice): static
+    {
+        $this->startingPrice = $startingPrice;
+        return $this;
+    }
+
+    public function getDeliveryTime(): ?string
+    {
+        return $this->deliveryTime;
+    }
+
+    public function setDeliveryTime(?string $deliveryTime): static
+    {
+        $this->deliveryTime = $deliveryTime;
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?string $price): static
+    {
+        $this->price = $price;
+        return $this;
+    }
+
+    public function getPriceEngagement(): ?string
+    {
+        return $this->priceEngagement;
+    }
+
+    public function setPriceEngagement(?string $priceEngagement): static
+    {
+        $this->priceEngagement = $priceEngagement;
         return $this;
     }
 }

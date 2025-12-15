@@ -14,9 +14,9 @@
         <div 
           v-for="(solution, index) in solutions" 
           :key="solution.id || index"
-          class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group"
+          class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group flex flex-col"
         >
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)]"></div>
           
           <div v-if="index === 1" class="absolute top-6 right-6 px-3 py-1 bg-[var(--color-coral)] text-white text-xs font-bold rounded-full">
             Populaire
@@ -29,8 +29,42 @@
             <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{{ solution.title }}</h3>
             <p class="text-gray-600 dark:text-gray-300 mb-6">{{ solution.description }}</p>
           </div>
+
+          <div
+            v-if="solution.startingPrice || solution.deliveryTime || solution.price || solution.priceEngagement"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
+          >
+            <div
+              v-if="solution.startingPrice"
+              class="rounded-2xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4"
+            >
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">À partir de</p>
+              <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ solution.startingPrice }}</p>
+            </div>
+            <div
+              v-if="solution.deliveryTime"
+              class="rounded-2xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4"
+            >
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Délai moyen</p>
+              <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ solution.deliveryTime }}</p>
+            </div>
+            <div
+              v-if="solution.price"
+              class="rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] text-white p-4 shadow-lg"
+            >
+              <p class="text-sm text-white/80 mb-1">Sans engagement</p>
+              <p class="text-2xl font-bold">{{ solution.price }}</p>
+            </div>
+            <div
+              v-if="solution.priceEngagement"
+              class="rounded-2xl border border-dashed border-[var(--color-primary)]/40 bg-white/70 dark:bg-gray-900/40 p-4"
+            >
+              <p class="text-sm text-gray-500 dark:text-gray-300 mb-1">Avec engagement 12 mois</p>
+              <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ solution.priceEngagement }}</p>
+            </div>
+          </div>
           
-          <ul v-if="solution.features && solution.features.length" class="space-y-3 mb-6">
+          <ul v-if="solution.features && solution.features.length" class="space-y-3 mb-6 flex-grow">
             <li v-for="(feature, idx) in solution.features" :key="idx" class="flex items-start gap-3">
               <MdiIcon name="mdi:check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
               <span class="text-gray-700 dark:text-gray-300">{{ feature }}</span>
@@ -39,7 +73,7 @@
           
           <NuxtLink 
             to="/contact"
-            class="block w-full text-center px-6 py-3 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+            class="block w-full text-center px-6 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-xl hover:shadow-lg transition-all mt-auto"
           >
             Choisir cette solution
           </NuxtLink>
@@ -57,6 +91,10 @@ defineProps<{
     title: string
     description: string
     features?: string[]
+    startingPrice?: string | null
+    deliveryTime?: string | null
+    price?: string | null
+    priceEngagement?: string | null
   }>
 }>()
 </script>

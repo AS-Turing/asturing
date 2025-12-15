@@ -68,10 +68,18 @@ class ServiceController extends AbstractController
             'metaKeywords' => $service->getMetaKeywords(),
             'ogImage' => $service->getOgImage(),
             'cta' => $service->getCta(),
+            'ctaSoft' => $service->getCtaSoft(),
+            'audience' => $service->getAudience(),
+            'outcomes' => $service->getOutcomes(),
             'solutions' => array_map(fn($s) => [
                 'title' => $s->getTitle(),
                 'description' => $s->getDescription(),
                 'features' => $s->getFeatures(),
+                'startingPrice' => $s->getStartingPrice(),
+                'deliveryTime' => $s->getDeliveryTime(),
+                'price' => $s->getPrice(),
+                'priceEngagement' => $s->getPriceEngagement(),
+                'icon' => $s->getIcon(),
                 'position' => $s->getPosition(),
             ], $service->getSolutions()->toArray()),
             'processSteps' => array_map(fn($p) => [
