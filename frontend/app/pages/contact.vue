@@ -36,31 +36,31 @@
               <form @submit.prevent="submitContact" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Nom complet *</label>
-                    <input v-model="form.name" type="text" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
+                    <label for="contact-name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Nom complet *</label>
+                    <input id="contact-name" v-model="form.name" type="text" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 transition" aria-required="true" />
                   </div>
                   <div>
-                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email *</label>
-                    <input v-model="form.email" type="email" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-secondary outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
+                    <label for="contact-email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email *</label>
+                    <input id="contact-email" v-model="form.email" type="email" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-secondary outline-none text-dark dark:text-white dark:bg-gray-700 transition" aria-required="true" />
                   </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Téléphone</label>
-                    <input v-model="form.phone" type="tel" class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-accent outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
+                    <label for="contact-phone" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Téléphone</label>
+                    <input id="contact-phone" v-model="form.phone" type="tel" class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-accent outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
                   </div>
                   <div>
-                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Entreprise</label>
-                    <input v-model="form.company" type="text" class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-coral outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
+                    <label for="contact-company" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Entreprise</label>
+                    <input id="contact-company" v-model="form.company" type="text" class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-coral outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
                   </div>
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Sujet *</label>
-                  <input v-model="form.subject" type="text" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-accent outline-none text-dark dark:text-white dark:bg-gray-700 transition" />
+                  <label for="contact-subject" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Sujet *</label>
+                  <input id="contact-subject" v-model="form.subject" type="text" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-accent outline-none text-dark dark:text-white dark:bg-gray-700 transition" aria-required="true" />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Message *</label>
-                  <textarea v-model="form.message" rows="6" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 resize-none transition"></textarea>
+                  <label for="contact-message" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Message *</label>
+                  <textarea id="contact-message" v-model="form.message" rows="6" required class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:border-primary outline-none text-dark dark:text-white dark:bg-gray-700 resize-none transition" aria-required="true"></textarea>
                 </div>
                 <button type="submit" :disabled="submitting" class="w-full gradient-hero text-white py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100">
                   {{ submitting ? config.form.submittingButton : config.form.submitButton }}
