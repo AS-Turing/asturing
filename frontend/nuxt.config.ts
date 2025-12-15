@@ -37,7 +37,12 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'fr'
-      }
+      },
+      link: [
+        // Preconnect to API for faster data fetching
+        { rel: 'preconnect', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' },
+        { rel: 'dns-prefetch', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' }
+      ]
     }
   },
 
