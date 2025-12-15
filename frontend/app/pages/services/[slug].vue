@@ -127,7 +127,7 @@
       v-if="ctaSoftBlock"
       class="py-24 px-4 bg-gray-50 dark:bg-gray-950 transition-colors"
     >
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="relative group overflow-hidden rounded-[32px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-xl hover:shadow-2xl transition-all duration-500">
           <!-- Subtle gradient background -->
           <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-[var(--color-secondary)]/5 opacity-50 group-hover:opacity-70 transition-opacity"></div>

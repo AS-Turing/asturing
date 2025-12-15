@@ -193,7 +193,7 @@
                     "startingPrice": "4 500€",
                     "deliveryTime": "6-10 sem.",
                     "features": [
-                        "WooCommerce custom ou Symfony e-commerce",
+                        "WooCommerce custom, Prestashop, Magento ou Symfony e-commerce",
                         "Catalogue produits illimité",
                         "Paiement sécurisé (Stripe, PayPal, virement)",
                         "Gestion commandes, stocks & clients",
@@ -258,8 +258,12 @@
                     "description": "Interfaces fluides, modernes et performantes."
                 },
                 {
-                    "name": "Node.js / Express",
-                    "description": "Back-end performant pour applications temps réel."
+                    "name": "Prestashop",
+                    "description": "Solution e-commerce spécialisée pour la gestion de boutiques en ligne performantes et orientées vente."
+                },
+                {
+                    "name": "Magento",
+                    "description": "Plateforme e-commerce avancée adaptée aux projets complexes et aux catalogues à grande échelle."
                 }
             ],
             "faqs": [
@@ -285,7 +289,7 @@
                 },
                 {
                     "question": "Serai-je autonome à la fin du projet ?",
-                    "answer": "Totalement. Vous disposez d'un back-office intuitif, d'une formation complète (2-3h en visio), de tutoriels vidéos personnalisés et d'une documentation détaillée. Si vous bloquez après livraison, on reste disponible."
+                    "answer": "Totalement. Vous disposez d'un back-office intuitif, d'une formation complète (2-3h en visio), de tutoriels personnalisés et d'une documentation détaillée. Si vous bloquez après livraison, on reste disponible."
                 },
                 {
                     "question": "Que se passe-t-il si mon projet évolue en cours de route ?",
