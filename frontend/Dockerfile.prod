@@ -30,6 +30,9 @@ WORKDIR /app
 # Copier les fichiers buildés
 COPY --from=builder /app/.output /app/.output
 
+# Copier les fichiers publics (images, etc.) dans .output/public
+COPY --from=builder /app/public /app/.output/public
+
 # Exposer le port
 EXPOSE 3000
 
