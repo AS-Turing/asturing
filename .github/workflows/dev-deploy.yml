@@ -35,7 +35,7 @@ jobs:
             
             # Update docker-compose to use GHCR images
             export REGISTRY=ghcr.io
-            export IMAGE_PREFIX=${{ github.repository_owner }}/asturing
+            export IMAGE_PREFIX=as-turing/asturing
             export IMAGE_TAG=dev
             
             # Pull latest images with dev tag
