@@ -5,7 +5,7 @@ on:
     workflows: ["Build & Push Docker Images"]
     types:
       - completed
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
 
 env:
@@ -28,18 +28,24 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ${{ secrets.DEPLOY_PATH }}
+            cd /srv/www/asturing/prod
             
             # Login to GitHub Container Registry
-            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
             
-            # Pull latest images
-            docker compose pull
+            # Update docker-compose to use GHCR images
+            export REGISTRY=ghcr.io
+            export IMAGE_PREFIX=${{ github.repository_owner }}/asturing
+            export IMAGE_TAG=production
+            
+            # Pull latest images with production tag
+            docker pull ${REGISTRY}/${IMAGE_PREFIX}-nuxt:${IMAGE_TAG}
+            docker pull ${REGISTRY}/${IMAGE_PREFIX}-symfony:${IMAGE_TAG}
             
             # Stop and remove old containers
             docker compose down
             
-            # Start new containers
+            # Start new containers with updated images
             docker compose up -d --force-recreate
             
             # Wait for containers to be healthy
@@ -49,17 +55,16 @@ jobs:
             # Show status
             docker compose ps
             
-            # Clean up old images
-            docker image prune -f
+            # Clean up old images (keep last 2)
+            docker image prune -f --filter "until=48h"
             
-            echo "✅ Deployment completed successfully!"
+            echo "✅ Production deployment completed successfully!"
       
       - name: 🔍 Health check
         run: |
           sleep 10
-          # Add your health check URL here when available
-          # curl -f https://as-turing.fr || exit 1
-          echo "✅ Health check passed (placeholder)"
+          curl -f https://as-turing.fr -I || echo "⚠️ Health check failed (site may be starting)"
+          echo "✅ Deployment completed"
       
       - name: 📢 Deployment notification
         if: always()

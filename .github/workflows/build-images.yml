@@ -2,7 +2,7 @@ name: Build & Push Docker Images
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, development]
   workflow_dispatch:
 
 env:
@@ -34,21 +34,31 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
+      - name: 🏷️ Determine environment tag
+        id: env
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "tag=production" >> $GITHUB_OUTPUT
+            echo "env=prod" >> $GITHUB_OUTPUT
+          else
+            echo "tag=dev" >> $GITHUB_OUTPUT
+            echo "env=dev" >> $GITHUB_OUTPUT
+          fi
+      
       - name: 🏷️ Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-nuxt
           tags: |
-            type=raw,value=production
-            type=sha,prefix=,format=short
-            type=raw,value=latest
+            type=raw,value=${{ steps.env.outputs.tag }}
+            type=sha,prefix=${{ steps.env.outputs.env }}-,format=short
       
       - name: 🏗️ Build and push
         uses: docker/build-push-action@v5
         with:
           context: ./frontend
-          file: ./frontend/Dockerfile
+          file: ./frontend/Dockerfile.prod
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -80,15 +90,25 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
+      - name: 🏷️ Determine environment tag
+        id: env
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "tag=production" >> $GITHUB_OUTPUT
+            echo "env=prod" >> $GITHUB_OUTPUT
+          else
+            echo "tag=dev" >> $GITHUB_OUTPUT
+            echo "env=dev" >> $GITHUB_OUTPUT
+          fi
+      
       - name: 🏷️ Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-symfony
           tags: |
-            type=raw,value=production
-            type=sha,prefix=,format=short
-            type=raw,value=latest
+            type=raw,value=${{ steps.env.outputs.tag }}
+            type=sha,prefix=${{ steps.env.outputs.env }}-,format=short
       
       - name: 🏗️ Build and push
         uses: docker/build-push-action@v5
