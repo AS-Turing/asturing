@@ -1,0 +1,42 @@
+# Dockerfile pour Nuxt 4 - Mode production
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Installer pnpm
+RUN npm install -g pnpm
+
+# Copier les fichiers de dépendances
+COPY package.json pnpm-lock.yaml ./
+
+# Installer les dépendances
+RUN pnpm install --no-frozen-lockfile
+
+# Copier le code source
+COPY . .
+
+# Variables d'environnement pour le build
+ARG NUXT_PUBLIC_API_BASE=http://localhost:8082
+ENV NUXT_PUBLIC_API_BASE=${NUXT_PUBLIC_API_BASE}
+
+# Build de production
+RUN pnpm build
+
+# Stage de production
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copier les fichiers buildés
+COPY --from=builder /app/.output /app/.output
+
+# Exposer le port
+EXPOSE 3000
+
+# Variables d'environnement
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=3000
+
+# Lancer l'application en production
+CMD ["node", ".output/server/index.mjs"]
