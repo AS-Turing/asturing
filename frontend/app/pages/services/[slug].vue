@@ -41,7 +41,7 @@
           >
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)] opacity-80"></div>
             
-            <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="hidden md:block absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
             
             <div class="relative">
               <div class="flex items-center gap-4 mb-6">
@@ -81,7 +81,7 @@
           >
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-primary)] to-[var(--color-secondary)] opacity-80"></div>
             
-            <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[var(--color-secondary)]/5 to-transparent rounded-full blur-3xl -ml-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="hidden md:block absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[var(--color-secondary)]/5 to-transparent rounded-full blur-3xl -ml-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
             
             <div class="relative">
               <div class="flex items-center gap-4 mb-6">
@@ -132,9 +132,9 @@
           <!-- Subtle gradient background -->
           <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 via-transparent to-[var(--color-secondary)]/5 opacity-50 group-hover:opacity-70 transition-opacity"></div>
           
-          <!-- Animated gradient orbs -->
-          <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[var(--color-primary)]/10 to-transparent rounded-full blur-3xl -mr-48 -mt-48 group-hover:scale-125 transition-transform duration-1000"></div>
-          <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[var(--color-secondary)]/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 group-hover:scale-125 transition-transform duration-1000"></div>
+          <!-- Animated gradient orbs (desktop only for performance) -->
+          <div class="hidden md:block absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[var(--color-primary)]/10 to-transparent rounded-full blur-3xl -mr-48 -mt-48 group-hover:scale-125 transition-transform duration-1000"></div>
+          <div class="hidden md:block absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[var(--color-secondary)]/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 group-hover:scale-125 transition-transform duration-1000"></div>
           
           <div class="relative z-10 p-10 md:p-14">
             <!-- Icon badge -->

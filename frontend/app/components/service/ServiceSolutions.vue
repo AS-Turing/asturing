@@ -71,12 +71,20 @@
             </li>
           </ul>
           
-          <NuxtLink 
-            to="/contact"
-            class="block w-full text-center px-6 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-xl hover:shadow-lg transition-all mt-auto"
-          >
-            Choisir cette solution
-          </NuxtLink>
+          <div class="space-y-3">
+            <NuxtLink 
+              to="/contact"
+              class="block w-full text-center px-6 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+            >
+              Choisir cette solution
+            </NuxtLink>
+            <a 
+              href="#faq"
+              class="block w-full text-center px-6 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] transition-colors"
+            >
+              En savoir plus ↓
+            </a>
+          </div>
         </div>
       </div>
     </div>
