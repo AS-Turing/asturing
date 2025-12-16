@@ -316,7 +316,8 @@ const route = useRoute()
 const ville = route.params.ville as string
 
 const { data: rawLocation } = await useFetch(() => `/api/locations/${ville}`, {
-  key: `location-${ville}`
+  key: `location-${ville}`,
+  watch: [() => route.params.ville]
 })
 
 const location = computed(() => rawLocation.value)
