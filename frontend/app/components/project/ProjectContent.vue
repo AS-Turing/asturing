@@ -5,8 +5,8 @@
       :key="sectionIndex"
       class="py-20"
       :class="{
-        'bg-white dark:bg-dark': section.bgColor === 'white',
-        'bg-gradient-to-br from-gray-50 to-white dark:from-dark-lighter dark:to-dark': section.bgColor === 'gray',
+        'bg-white dark:bg-gray-950': section.bgColor === 'white',
+        'bg-gray-50 dark:bg-gray-900': section.bgColor === 'gray',
         'bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10': section.bgColor === 'gradient'
       }"
     >
@@ -38,7 +38,7 @@
                       class="group relative flex flex-col items-center gap-3"
                     >
                       <!-- Glow effect au hover -->
-                      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                      <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
                       
                       <!-- Icône container -->
                       <div class="relative w-20 h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
@@ -46,7 +46,7 @@
                       </div>
                       
                       <!-- Label avec style épuré -->
-                      <span class="text-xs text-center text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all duration-300">
+                      <span class="text-xs text-center text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase opacity-70 group-hover:opacity-100 group-hover:text-[var(--color-primary)] transition-all duration-300">
                         {{ getTechLabel(icon) }}
                       </span>
                     </div>

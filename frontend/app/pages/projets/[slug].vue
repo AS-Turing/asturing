@@ -110,25 +110,25 @@
     />
 
     <!-- Features Grid - Pleine largeur avec cards -->
-    <section v-if="project.features && project.features.length > 0" class="py-20 bg-white dark:bg-dark">
+    <section v-if="project.features && project.features.length > 0" class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-4">Fonctionnalités Clés</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Fonctionnalités Clés</h2>
           <p class="text-xl text-gray-600 dark:text-gray-400">Ce qui rend ce projet unique</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             v-for="(feature, index) in project.features"
             :key="index"
-            class="group relative bg-gradient-to-br from-gray-50 to-white dark:from-dark-lighter dark:to-dark-lighter border border-gray-200 dark:border-gray-800 rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all duration-300"
+            class="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             <div class="flex items-start gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span class="text-dark dark:text-white font-medium flex-1">{{ feature }}</span>
+              <span class="text-gray-900 dark:text-white font-medium flex-1">{{ feature }}</span>
             </div>
           </div>
         </div>
@@ -164,16 +164,16 @@
     </section>
 
     <!-- Other Projects -->
-    <section class="py-20 bg-gray-50 dark:bg-dark-lighter">
+    <section class="py-20 bg-white dark:bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-dark dark:text-white mb-4">Découvrez nos autres réalisations</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Découvrez nos autres réalisations</h2>
           <p class="text-xl text-gray-600 dark:text-gray-400">Chaque projet est unique</p>
         </div>
         <div class="flex justify-center">
           <NuxtLink
             to="/projets"
-            class="inline-flex items-center gap-2 px-8 py-4 gradient-hero from-primary to-secondary text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
             Voir tous les projets
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

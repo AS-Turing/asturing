@@ -147,20 +147,20 @@
 
 <script setup lang="ts">
 const stats = [
-  { value: '15+', label: 'Projets livrés' },
+  { value: '2 ans', label: 'Expérience pro' },
   { value: '100%', label: 'Clients satisfaits' },
   { value: '<24h', label: 'Réponse moyenne' },
 ]
 
 const techStack = [
-  'WordPress',
-  'PrestaShop',
-  'Vue.js 3',
+  'Vue.js',
   'Nuxt',
   'Symfony',
-  'Node.js',
-  'React',
-  'Docker'
+  'TypeScript',
+  'Tailwind CSS',
+  'Docker',
+  'WordPress',
+  'MySQL'
 ]
 
 onMounted(() => {
