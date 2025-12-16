@@ -34,6 +34,19 @@ export default defineSitemapEventHandler(async () => {
       })
     }
     
+    // Locations (pages locales SEO)
+    const locationsResponse = await $fetch(`${apiBase}/api/locations`)
+    if (locationsResponse && Array.isArray(locationsResponse)) {
+      locationsResponse.forEach((location: any) => {
+        urls.push({
+          loc: `/creation-site-internet-${location.slug}`,
+          lastmod: location.updatedAt || new Date().toISOString(),
+          changefreq: 'monthly',
+          priority: 0.9 // Haute priorité pour SEO local
+        })
+      })
+    }
+    
     // Blog - skip if 404
     try {
       const blogResponse = await $fetch(`${apiBase}/api/blog/posts`)
