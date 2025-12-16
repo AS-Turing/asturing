@@ -10,7 +10,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div class="inline-block mb-4">
           <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-            📝 Blog
+            Blog
           </span>
         </div>
         <h1 class="text-5xl md:text-6xl font-bold mb-6">

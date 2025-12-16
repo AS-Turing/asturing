@@ -10,7 +10,7 @@
       
       <div class="max-w-6xl mx-auto text-center relative z-10">
         <div class="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-semibold">
-          💎 Excellence & Innovation
+          Excellence & Innovation
         </div>
         <h1 class="text-6xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
           Création de site internet<br/>

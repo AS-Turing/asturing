@@ -1,5 +1,5 @@
 <template>
-  <section v-if="clients && clients.length > 0" class="py-20 bg-gray-100 dark:bg-gray-900 overflow-hidden transition-colors duration-300">
+  <section v-if="clients && clients.length > 0" class="py-20 bg-white dark:bg-gray-900 overflow-hidden transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
       <div class="text-center">
         <div class="inline-block mb-4">
@@ -60,8 +60,8 @@
             class="group relative w-56 h-32 rounded-2xl logo-surface shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             <!-- Logo en background qui couvre toute la card -->
-            <div v-if="client.logo" class="absolute inset-0 p-8 flex items-center justify-center z-10">
-              <img :src="client.logo" :alt="client.name" class="w-full h-full object-contain opacity-90 group-hover:opacity-100 drop-shadow-lg transition-all duration-300 group-hover:scale-110">
+            <div v-if="client.logo" class="absolute inset-0 p-6 flex items-center justify-center z-10">
+              <img :src="client.logo" :alt="client.name" class="w-full h-full object-contain transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 opacity-85" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));">
             </div>
             
             <!-- Nom en fallback si pas de logo -->

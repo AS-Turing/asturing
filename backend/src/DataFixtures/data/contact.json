@@ -12,8 +12,8 @@
       "privacyLink": "politique de confidentialité",
       "submitButton": "Envoyer ma demande",
       "submittingButton": "Envoi en cours...",
-      "successMessage": "✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.",
-      "errorMessage": "❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email."
+      "successMessage": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.",
+      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email."
     },
     "contactInfo": [
       {
