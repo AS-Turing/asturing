@@ -181,7 +181,13 @@
 </template>
 
 <script setup lang="ts">
-const { data: services } = await useFetch('/api/services')
-const { data: locations } = await useFetch('/api/locations')
+const { data: services } = await useFetch('/api/services', {
+  key: 'footer-services',
+  dedupe: 'defer'
+})
+const { data: locations } = await useFetch('/api/locations', {
+  key: 'footer-locations',
+  dedupe: 'defer'
+})
 const { companyInfo: company } = useCompany()
 </script>
