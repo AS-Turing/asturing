@@ -316,7 +316,9 @@ const route = useRoute()
 const ville = route.params.ville as string
 
 const { data: location } = await useFetch(() => `/api/locations/${ville}`, {
-  key: `location-${ville}`
+  key: `location-${ville}`,
+  server: true,
+  lazy: false
 })
 
 // FAQ accordion state
