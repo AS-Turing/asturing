@@ -51,9 +51,9 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gray-50 dark:bg-dark-lighter">
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
           Prêt à lancer votre projet ?
         </h2>
         <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
@@ -61,7 +61,7 @@
         </p>
         <NuxtLink
           to="/contact"
-          class="inline-flex items-center gap-2 px-8 py-4 gradient-hero from-primary to-secondary text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
         >
           Demander un devis gratuit
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
