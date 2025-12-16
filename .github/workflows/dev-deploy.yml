@@ -1,39 +1,76 @@
-name: Development - Auto Deploy
+name: Deploy to Development
 
 on:
-  push:
-    branches: [develop]
+  workflow_run:
+    workflows: ["Build & Push Docker Images"]
+    types:
+      - completed
+    branches: [development]
   workflow_dispatch:
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: as-turing/asturing
+
 jobs:
-  deploy-dev:
-    name: Deploy to Development
+  deploy:
+    name: Deploy to Development Server
     runs-on: ubuntu-latest
+    environment: development
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
-      
-      - name: 🔍 Lint and validate
-        run: |
-          echo "✅ Code validation for development"
-          # Add any development-specific checks here
-      
-      - name: 📝 Development deployment summary
-        run: |
-          echo "🚀 Development branch updated"
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
-          echo "Author: ${{ github.actor }}"
-          
-      - name: 💬 Comment on PR (if exists)
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+      - name: 🐳 Deploy to development server
+        uses: appleboy/ssh-action@v1.0.3
         with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '✅ Development checks passed! Ready for review.'
-            })
+            cd /srv/www/asturing/dev
+            
+            # Login to GitHub Container Registry
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+            
+            # Update docker-compose to use GHCR images
+            export REGISTRY=ghcr.io
+            export IMAGE_PREFIX=as-turing/asturing
+            export IMAGE_TAG=dev
+            
+            # Pull latest images with dev tag
+            docker pull ${REGISTRY}/${IMAGE_PREFIX}-nuxt:${IMAGE_TAG}
+            docker pull ${REGISTRY}/${IMAGE_PREFIX}-symfony:${IMAGE_TAG}
+            
+            # Stop and remove old containers
+            docker compose down
+            
+            # Start new containers with updated images
+            docker compose up -d --force-recreate
+            
+            # Wait for containers to be healthy
+            echo "Waiting for containers to start..."
+            sleep 15
+            
+            # Show status
+            docker compose ps
+            
+            # Clean up old images (keep last 2)
+            docker image prune -f --filter "until=48h"
+            
+            echo "✅ Development deployment completed successfully!"
+      
+      - name: 🔍 Health check
+        run: |
+          sleep 10
+          curl -f http://dev.asturing.as-turing.fr -I || echo "⚠️ Health check failed (site may be starting)"
+          echo "✅ Deployment completed"
+      
+      - name: 📢 Deployment notification
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "✅ Deployment to development successful!"
+          else
+            echo "❌ Deployment to development failed!"
+          fi

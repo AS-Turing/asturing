@@ -41,7 +41,8 @@
           <div class="absolute inset-0 gradient-hero rounded-3xl blur-3xl opacity-20"></div>
           <div class="relative bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-2xl">
             <div class="h-96 rounded-2xl overflow-hidden">
-              <img 
+              <NuxtImg 
+                 loading="lazy"
                 src="/images/workspace-desk-minimal.jpg" 
                 alt="Workspace professionnel AS-Turing" 
                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
