@@ -1,0 +1,211 @@
+{
+  "ville": "Saint-Émilion",
+  "slug": "saint-emilion",
+  "departement": "Gironde (33)",
+  "codePostal": "33330",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.8944,
+    "longitude": -0.1561
+  },
+  "meta": {
+    "title": "Sites Viticoles Saint-Émilion - Châteaux & Vente Vins | AS-Turing",
+    "description": "Agence web spécialisée châteaux et domaines de Saint-Émilion. Sites multilingues, boutiques vins, réservations visites. Experts œnotourisme et appellations Grand Cru.",
+    "keywords": "création site internet saint-émilion, site web viticole, château saint-émilion, vente vin en ligne, développeur web saint-émilion"
+  },
+  "hero": {
+    "title": "Sites Web pour Châteaux de Saint-Émilion",
+    "subtitle": "Agence spécialisée viticole & œnotourisme",
+    "description": "Votre domaine mérite une vitrine digitale à la hauteur de vos cuvées. Notre agence spécialisée crée des sites multilingues pour l'export, boutiques en ligne sécurisées, réservations de visites automatisées. Nous parlons couramment le langage du vin.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "24h",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "Bilingue",
+        "label": "Sites"
+      },
+      {
+        "value": "Saint-Émilion",
+        "label": "Spécialiste"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi une agence spécialisée web viticole ?",
+    "intro": "À Saint-Émilion, on ne vend pas un vin comme on vend des chaussures. Il faut comprendre les appellations, les classements, les terroirs, l'œnotourisme. Notre agence est spécialisée dans le digital viticole pour parler à vos clients du monde entier.",
+    "advantages": [
+      {
+        "icon": "mdi:glass-wine",
+        "title": "Expertise secteur viticole",
+        "description": "Présentation de cuvées avec fiches techniques détaillées, gestion des millésimes et appellations, intégration des classements (Grand Cru Classé, Premier Grand Cru...), storytelling du terroir et de l'histoire du domaine. Notre équipe connaît le vocabulaire œnologique."
+      },
+      {
+        "icon": "mdi:earth",
+        "title": "Sites multilingues export",
+        "description": "USA, Royaume-Uni, Allemagne, Chine, Japon... Vos clients viennent du monde entier. Nous créons des sites traduits professionnellement en anglais, allemand, espagnol, chinois. Vocabulaire œnologique précis, adaptation culturelle des contenus."
+      },
+      {
+        "icon": "mdi:trophy",
+        "title": "Design digne d'un Grand Cru",
+        "description": "Design élégant et intemporel qui reflète le prestige de Saint-Émilion. Mise en valeur de vos photos de vignobles et de chais, vidéos immersives, animations subtiles. L'élégance du digital au service de la tradition viticole."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs accessibles, même pour les petits domaines",
+        "description": "Site vitrine château : dès 1 800€. Boutique vente en ligne : dès 4 500€. Réservations de visites : module à partir de 1 200€. Tarifs transparents pensés pour les propriétés familiales comme pour les grandes maisons."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les acteurs de Saint-Émilion",
+    "intro": "Solutions digitales adaptées aux châteaux, domaines viticoles et activités touristiques.",
+    "list": [
+      {
+        "icon": "mdi:glass-wine",
+        "title": "Site Château / Domaine Viticole",
+        "description": "Site vitrine premium pour votre château ou domaine : présentation cuvées, histoire, terroir, photos/vidéos professionnelles. Multilingue (FR/EN minimum), optimisé SEO œnotourisme. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Châteaux Grand Cru, Domaines AOC"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "Boutique Vente de Vins en Ligne",
+        "description": "E-commerce viticole avec gestion millésimes, appellations, livraison France & export. Paiement sécurisé, espace client B2B, gestion stocks par année. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente directe propriété, cavistes"
+      },
+      {
+        "icon": "mdi:calendar",
+        "title": "Système de Réservation Visites",
+        "description": "Module de réservation en ligne pour vos visites et dégustations : calendrier temps réel, paiement en ligne, confirmation automatique, multilangue. Intégré à votre site existant ou nouveau site.",
+        "examples": "Visites guidées, dégustations, événements"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance sites viticoles, e-commerce"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Saint-Émilion",
+    "list": [
+      {
+        "name": "Viticulture & Œnologie",
+        "description": "Châteaux, domaines, caves, négociants",
+        "icon": "mdi:glass-wine"
+      },
+      {
+        "name": "Œnotourisme",
+        "description": "Visites, dégustations, événements viticoles",
+        "icon": "mdi:map-marker-path"
+      },
+      {
+        "name": "Hôtellerie & Restauration",
+        "description": "Hôtels de charme, restaurants gastronomiques",
+        "icon": "mdi:silverware-fork-knife"
+      },
+      {
+        "name": "Tourisme & Culture",
+        "description": "Guides, musées, patrimoine UNESCO",
+        "icon": "mdi:castle"
+      },
+      {
+        "name": "Services aux vignerons",
+        "description": "Œnologues, tonneliers, services viticoles",
+        "icon": "mdi:wrench"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations viticoles",
+    "intro": "Découvrez quelques sites web créés pour des domaines et châteaux de la région.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Libourne",
+        "type": "Site vitrine associatif",
+        "url": "dev.gpm.as-turing.fr"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Rencontre au château",
+        "description": "Visite de votre domaine et dégustation pour comprendre votre identité, vos cuvées, votre histoire et vos objectifs commerciaux."
+      },
+      {
+        "number": "2",
+        "title": "Devis personnalisé",
+        "description": "Proposition détaillée sous 5 jours ouvrés : fonctionnalités, design, multilinguisme, intégrations (réservations, e-commerce). Tarifs transparents."
+      },
+      {
+        "number": "3",
+        "title": "Création & Validation",
+        "description": "Maquettes graphiques, rédaction des contenus (avec traductions si besoin), développement. Vous validez chaque étape."
+      },
+      {
+        "number": "4",
+        "title": "Lancement & Promotion",
+        "description": "Mise en ligne, formation à la gestion, optimisation SEO. Accompagnement pour promouvoir votre nouveau site."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Combien coûte un site web pour mon château ?",
+      "answer": "Site vitrine prestige : dès 1 800€ (présentation domaine, cuvées, histoire). Boutique en ligne : dès 4 500€ (vente directe avec gestion millésimes). Réservations visites : module dès 1 200€. Site complet multilingue avec vente : à partir de 6 500€. Devis sur-mesure sous 5 jours."
+    },
+    {
+      "question": "Mon site peut-il être en anglais et chinois ?",
+      "answer": "Absolument ! La plupart de mes clients viticoles exportent. Je crée des sites en français + anglais minimum (inclus). Langues supplémentaires : allemand, espagnol, italien, chinois, japonais. Traductions professionnelles via traducteurs spécialisés œnologie."
+    },
+    {
+      "question": "Comment vendre nos cuvées directement en ligne ?",
+      "answer": "E-commerce viticole complet : présentation par millésime et appellation, gestion des stocks par année, calcul frais de port France/Export, paiement sécurisé, espace caviste B2B avec tarifs négociés. 100% conforme réglementation vente alcool en ligne."
+    },
+    {
+      "question": "Peut-on prendre des réservations de visites automatiquement ?",
+      "answer": "Oui ! Système de réservation clé-en-main : calendrier avec disponibilités en temps réel, choix de créneaux et formules (visite simple, dégustation, repas), paiement en ligne sécurisé, confirmation auto par email multilingue. Synchronisation avec votre calendrier interne possible."
+    },
+    {
+      "question": "Serons-nous bien référencés sur \"château Saint-Émilion\" ?",
+      "answer": "Optimisation SEO viticole complète : ciblage \"château [nom] saint-émilion\", \"grand cru classé\", \"dégustation saint-émilion\", etc. Balisage schema.org spécifique vin (WineStore, Winery). Référencement multilingue pour capter touristes étrangers. Stratégie œnotourisme incluse."
+    },
+    {
+      "question": "Qui gère les mises à jour après la mise en ligne ?",
+      "answer": "Soit vous gérez en autonomie (formation complète fournie), soit maintenance via mes formules TMA : Essentielle (129€/mois avec engagement 12 mois), Business (299€/mois), Premium (599€/mois). Mises à jour millésimes, nouveautés, photos de vendanges... Support prioritaire domaines viticoles."
+    }
+  ],
+  "cta": {
+    "title": "Valorisez votre château en ligne",
+    "description": "Discutons de votre projet autour d'une dégustation. Premier rendez-vous gratuit et sans engagement.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Saint-Émilion et satellites",
+    "cities": [
+      "Saint-Émilion",
+      "Pomerol",
+      "Montagne",
+      "Lussac",
+      "Puisseguin",
+      "Saint-Georges",
+      "Castillon-la-Bataille",
+      "Fronsac",
+      "Lalande-de-Pomerol"
+    ]
+  }
+}

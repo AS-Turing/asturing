@@ -1,0 +1,211 @@
+{
+  "ville": "Sauveterre-de-Guyenne",
+  "slug": "sauveterre-de-guyenne",
+  "departement": "Gironde (33)",
+  "codePostal": "33540",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.6931,
+    "longitude": -0.0853
+  },
+  "meta": {
+    "title": "Site Internet Sauveterre - Artisans & Commerces TPE | AS-Turing",
+    "description": "Agence web pour artisans et commerces de Sauveterre-de-Guyenne. Structure locale, tarifs TPE adaptés dès 1 800€. Déplacements gratuits dans le secteur.",
+    "keywords": "création site internet sauveterre-de-guyenne, développeur web sauveterre, site internet 33540, agence web entre-deux-mers"
+  },
+  "hero": {
+    "title": "Sites Web Sauveterre-de-Guyenne",
+    "subtitle": "Agence locale pour TPE et artisans",
+    "description": "Artisan, commerçant ou service à la personne à Sauveterre ? Vous avez besoin d'un site simple, efficace et abordable. Notre agence locale crée votre vitrine web avec des tarifs pensés pour les petites structures. Zéro blabla, du concret.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "24h",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "100%",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "Local",
+        "label": "Développeur"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi une agence locale qui comprend les TPE ?",
+    "intro": "À Sauveterre, on n'a pas besoin d'un site à 10 000€. On a besoin d'un site qui marche, qui est beau, et qui ne coûte pas un bras. Et surtout, d'une agence qu'on peut appeler directement sans tomber sur un standard.",
+    "advantages": [
+      {
+        "icon": "mdi:map-marker",
+        "title": "Vraiment local, vraiment dispo",
+        "description": "Sauveterre, Monségur, Pellegrue, Targon, Rauzan, Blasimon... Notre agence se déplace gratuitement dans le secteur. Rendez-vous chez vous, à votre atelier, sur un chantier, au café. On fait simple et efficace."
+      },
+      {
+        "icon": "mdi:clock-fast",
+        "title": "Réactivité maximale",
+        "description": "Intervention rapide sous 24h en cas d'urgence. Vous avez un contact direct avec votre développeur, pas de hot-line anonyme. Support personnalisé et réactif."
+      },
+      {
+        "icon": "mdi:handshake",
+        "title": "On parle votre langue",
+        "description": "Pas de jargon technique incompréhensible. Notre agence travaille pour des plombiers, des coiffeurs, des paysagistes, des producteurs locaux. Des gens qui veulent un site qui leur amène des clients, point."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs honnêtes pour les TPE",
+        "description": "Site vitrine : 1 800€. Boutique en ligne : 4 500€. Paiement en 3 fois possible. Pas de frais cachés, pas de maintenance obligatoire. Un prix juste pour un travail sérieux. Devis clair sous 5 jours."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Sauveterre",
+    "intro": "Solutions digitales adaptées aux commerces, artisans et services locaux.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité et convertit vos visiteurs en clients. Design 100% sur-mesure responsive, architecture SEO professionnelle, performance optimale (PageSpeed > 90). À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Artisans, commerces, professions libérales"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce Local",
+        "description": "Boutique en ligne pour vendre vos produits localement ou en France entière. Click & collect, livraison locale, catalogue produits, paiement sécurisé. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Produits du terroir, artisanat, vins"
+      },
+      {
+        "icon": "mdi:calendar-check",
+        "title": "Site avec Réservation",
+        "description": "Site web avec système de prise de rendez-vous en ligne : calendrier temps réel, confirmation automatique, rappels par email. Idéal pour les services à la personne et professions libérales.",
+        "examples": "Coiffeurs, esthétique, professionnels de santé"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Sauveterre et ses environs",
+    "list": [
+      {
+        "name": "Commerce de proximité",
+        "description": "Boutiques, épiceries, marchés",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Artisanat",
+        "description": "Plombiers, électriciens, menuisiers, maçons",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Agriculture & Viticulture",
+        "description": "Exploitations agricoles, domaines viticoles",
+        "icon": "mdi:sprout"
+      },
+      {
+        "name": "Services à la personne",
+        "description": "Coiffeurs, esthétique, bien-être",
+        "icon": "mdi:account-heart"
+      },
+      {
+        "name": "Professions libérales",
+        "description": "Médecins, infirmiers, kinés, comptables",
+        "icon": "mdi:briefcase"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations dans la région",
+    "intro": "Découvrez quelques sites web que j'ai créés pour des clients de la région.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Libourne",
+        "type": "Site vitrine associatif",
+        "url": "dev.gpm.as-turing.fr"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Rencontre à Sauveterre",
+        "description": "Rendez-vous gratuit à Sauveterre-de-Guyenne (bureau, chez vous ou dans un café) pour discuter de votre projet et comprendre vos besoins."
+      },
+      {
+        "number": "2",
+        "title": "Devis personnalisé",
+        "description": "Je vous envoie un devis détaillé sous 5 jours ouvrés. Tarifs clairs adaptés aux budgets des TPE locales, pas de frais cachés."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Je développe votre site en vous tenant informé régulièrement. Vous validez chaque étape importante du projet."
+      },
+      {
+        "number": "4",
+        "title": "Mise en ligne",
+        "description": "Formation complète, livraison et mise en ligne. Support post-lancement inclus pour vous accompagner dans la prise en main."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quel est le prix d'un site internet à Sauveterre ?",
+      "answer": "Les tarifs varient selon vos besoins : site vitrine professionnel à partir de 1 800€, e-commerce à partir de 4 500€, application métier sur-mesure à partir de 8 000€. Je m'adapte aux budgets des TPE de Sauveterre et ses environs. Réponse sous 5 jours ouvrés avec devis détaillé gratuit."
+    },
+    {
+      "question": "Combien de temps pour créer mon site ?",
+      "answer": "Comptez 4 à 6 semaines pour un site vitrine, 6 à 10 semaines pour un e-commerce, 8 à 16 semaines pour une application métier. Délais respectés car je gère les projets en direct, sans intermédiaire."
+    },
+    {
+      "question": "Vous déplacez-vous gratuitement à Sauveterre ?",
+      "answer": "Oui ! Je me déplace gratuitement à Sauveterre-de-Guyenne et dans un rayon de 30km (Monségur, Pellegrue, Targon, Créon, Cadillac...). Premier rendez-vous toujours gratuit."
+    },
+    {
+      "question": "Proposez-vous la maintenance du site ?",
+      "answer": "Oui, je propose 3 formules de TMA : Essentielle à partir de 129€/mois (avec engagement 12 mois), Business à partir de 299€/mois et Premium à partir de 599€/mois. Intervention rapide en cas de problème grâce à la proximité."
+    },
+    {
+      "question": "Mon site sera-t-il visible sur Google à Sauveterre ?",
+      "answer": "Tous mes sites sont optimisés pour le référencement local (SEO). Vous apparaîtrez dans les recherches \"[votre activité] Sauveterre-de-Guyenne\" ou \"[votre activité] Entre-deux-Mers\". Je peux aussi gérer votre fiche Google My Business."
+    },
+    {
+      "question": "Pourquoi choisir un freelance plutôt qu'une agence ?",
+      "answer": "Contact direct avec le développeur, tarifs jusqu'à 50% plus accessibles qu'une grosse agence, réactivité maximale, relation de confiance sur le long terme. Même expertise technique et qualité professionnelle, sans les frais de structure."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre site internet ?",
+    "description": "Discutons de votre projet autour d'un café à Sauveterre. Premier rendez-vous gratuit et sans engagement.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Sauveterre-de-Guyenne et alentours (30km)",
+    "cities": [
+      "Sauveterre-de-Guyenne",
+      "Monségur",
+      "Pellegrue",
+      "Targon",
+      "Blasimon",
+      "Rauzan",
+      "Cadillac",
+      "Saint-Macaire",
+      "La Réole"
+    ]
+  }
+}
