@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     '/blog/**': { ssr: true },
     '/projets': { ssr: true },
     '/projets/**': { ssr: true },
-    '/creation-site-internet-**': { ssr:true},
+    '/creation-site-internet-*': { ssr: true },
     '/contact': { ssr: true },
 
     // API : PAS de cache pour le moment (debug)
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'Expires': '0'
         }
       },
-      '/creation-site-internet-**': {
+      '/creation-site-internet-*': {
         headers: {
           'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
           'Pragma': 'no-cache',
