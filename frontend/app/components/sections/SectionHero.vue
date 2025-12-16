@@ -153,14 +153,14 @@ const stats = [
 ]
 
 const techStack = [
-  'Vue.js',
-  'Nuxt',
-  'Symfony',
-  'TypeScript',
-  'Tailwind CSS',
-  'Docker',
   'WordPress',
-  'MySQL'
+  'PrestaShop',
+  'Shopify',
+  'Magento',
+  'Symfony',
+  'Vue.js',
+  'PHP',
+  'Docker'
 ]
 
 onMounted(() => {
