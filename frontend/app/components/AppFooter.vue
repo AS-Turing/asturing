@@ -35,7 +35,7 @@
           <ul class="space-y-2 text-sm">
             <li v-for="location in locations" :key="location.slug">
               <NuxtLink 
-                :to="`/creation-site-internet-${location.slug}`" 
+                :to="`/localisation/${location.slug}`" 
                 class="hover:text-blue-400 transition-colors"
               >
                 {{ location.ville }}
