@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-900 text-gray-300">
     <div class="container mx-auto px-6 py-12">
-      <div class="grid md:grid-cols-4 gap-8">
+      <div class="grid md:grid-cols-5 gap-8">
         <!-- Colonne Logo & Description -->
         <div>
           <img 
@@ -24,6 +24,21 @@
                 class="hover:text-blue-400 transition-colors"
               >
                 {{ service.title }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Colonne Zones d'intervention -->
+        <div v-if="locations && locations.length > 0">
+          <h3 class="text-white font-semibold mb-4">Zones d'intervention</h3>
+          <ul class="space-y-2 text-sm">
+            <li v-for="location in locations" :key="location.slug">
+              <NuxtLink 
+                :to="`/creation-site-internet-${location.slug}`" 
+                class="hover:text-blue-400 transition-colors"
+              >
+                {{ location.ville }}
               </NuxtLink>
             </li>
           </ul>
@@ -167,5 +182,6 @@
 
 <script setup lang="ts">
 const { data: services } = await useFetch('/api/services')
+const { data: locations } = await useFetch('/api/locations')
 const { companyInfo: company } = useCompany()
 </script>

@@ -1,0 +1,211 @@
+{
+  "ville": "Libourne",
+  "slug": "libourne",
+  "departement": "Gironde (33)",
+  "codePostal": "33500",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.9177,
+    "longitude": -0.2419
+  },
+  "meta": {
+    "title": "Site Internet Libourne - WordPress & E-commerce Local | AS-Turing",
+    "description": "Agence web basée à Libourne depuis 2023. Sites internet sur-mesure pour commerces & PME du Libournais. Proximité, réactivité et tarifs accessibles dès 1 800€.",
+    "keywords": "création site internet libourne, agence web libourne, développeur libourne, site internet libourne, création site web libourne"
+  },
+  "hero": {
+    "title": "Agence Web à Libourne",
+    "subtitle": "Installée à Libourne depuis 2023",
+    "description": "Agence web locale basée en plein cœur du Libournais. Nous accompagnons les commerces et entreprises du secteur dans leur projet digital. De la première rencontre à la mise en ligne, une équipe dédiée et disponible pour votre réussite.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "24h",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "100%",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "Libourne",
+        "label": "Basé à"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Les avantages d'une agence web locale à Libourne",
+    "intro": "Travailler avec une agence implantée à Libourne, c'est bénéficier d'une vraie proximité et d'une connaissance approfondie du marché local. Notre équipe vit et travaille au quotidien dans le Libournais.",
+    "advantages": [
+      {
+        "icon": "mdi:map-marker",
+        "title": "Ancré localement à Libourne",
+        "description": "Installé à Libourne depuis 2023, je connais chaque quartier, chaque rue commerçante. Déplacements gratuits dans tout le Libournais : Pomerol, Saint-Émilion, Fronsac, Castillon, Coutras. Café offert pour notre premier rendez-vous !"
+      },
+      {
+        "icon": "mdi:clock-fast",
+        "title": "Réactivité garantie",
+        "description": "Intervention sous 24h en cas d'urgence. Pas de hot-line, vous avez un contact direct avec votre développeur. Maintenance et support réactifs."
+      },
+      {
+        "icon": "mdi:handshake",
+        "title": "Expert du tissu économique libournais",
+        "description": "Du petit commerce de la rue Gambetta aux grands châteaux viticoles de Pomerol, je comprends les enjeux spécifiques de chaque secteur : viticole, commerce de centre-ville, artisanat, tourisme œnologique."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs adaptés aux TPE/PME libournaises",
+        "description": "Des prix pensés pour les budgets des entreprises locales : site vitrine dès 1 800€, e-commerce dès 4 500€. Structure légère = tarifs accessibles. Nous gardons le même niveau de qualité qu'une grosse agence."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Libourne",
+    "intro": "Je vous accompagne dans tous vos projets digitaux, du simple site vitrine au e-commerce complet.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité et convertit vos visiteurs en clients. Design 100% sur-mesure responsive, architecture SEO professionnelle, performance optimale (PageSpeed > 90). À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Artisans, commerces, professions libérales"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce B2C & B2B",
+        "description": "Boutique en ligne fiable, sécurisée et optimisée pour la conversion. Catalogue illimité, paiement sécurisé, gestion commandes & stocks, mode B2B avec tarifs différenciés. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente produits locaux, vins, e-commerce viticole"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus avec une solution technique parfaitement adaptée. Développement 100% personnalisé, architecture scalable, automatisation de workflows complexes, intégrations API multiples. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "Gestion adhérents, outils métier, plateformes spécifiques"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Libourne et alentours",
+    "list": [
+      {
+        "name": "Viticulture",
+        "description": "Châteaux, domaines, caves, négociants en vins",
+        "icon": "mdi:glass-wine"
+      },
+      {
+        "name": "Commerce & Distribution",
+        "description": "Boutiques, magasins, centres commerciaux",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Artisanat",
+        "description": "Plombiers, électriciens, menuisiers, paysagistes",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Tourisme",
+        "description": "Hôtels, chambres d'hôtes, restaurants, activités",
+        "icon": "mdi:bed"
+      },
+      {
+        "name": "Services B2B",
+        "description": "Experts-comptables, avocats, consultants",
+        "icon": "mdi:briefcase"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Nos réalisations dans le Libournais",
+    "intro": "Découvrez quelques sites web que j'ai créés pour des clients de Libourne et ses alentours.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Libourne",
+        "type": "Site vitrine associatif",
+        "url": "dev.gpm.as-turing.fr"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Rencontre à Libourne",
+        "description": "Rendez-vous gratuit à Libourne (bureau, chez vous ou dans un café) pour discuter de votre projet et comprendre vos besoins."
+      },
+      {
+        "number": "2",
+        "title": "Devis personnalisé",
+        "description": "Je vous envoie un devis détaillé sous 48h. Tarifs clairs, pas de frais cachés."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Je développe votre site en vous tenant informé régulièrement. Vous validez chaque étape."
+      },
+      {
+        "number": "4",
+        "title": "Mise en ligne",
+        "description": "Formation, livraison et mise en ligne. Support post-lancement inclus."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Combien coûte la création d'un site web à Libourne ?",
+      "answer": "Mes tarifs sont transparents et adaptés aux entreprises libournaises : site vitrine dès 1 800€, boutique en ligne dès 4 500€, application sur-mesure dès 8 000€. Chaque projet est unique, je vous envoie un devis détaillé sous 5 jours après notre rencontre."
+    },
+    {
+      "question": "Quel délai pour avoir mon site opérationnel ?",
+      "answer": "Un site vitrine est livré en 4 à 6 semaines, une boutique e-commerce en 6 à 10 semaines, une application métier en 8 à 16 semaines. Étant seul maître du projet de A à Z, je respecte scrupuleusement les délais convenus."
+    },
+    {
+      "question": "Pouvons-nous nous rencontrer en personne à Libourne ?",
+      "answer": "Absolument ! Basé à Libourne même, je viens vous voir gratuitement : votre bureau, votre commerce, ou autour d'un café en centre-ville. Je couvre tout le Libournais sans frais de déplacement (Pomerol, Saint-Émilion, Castillon, Fronsac, Coutras, Arveyres...)."
+    },
+    {
+      "question": "Assurez-vous le suivi et la maintenance après la mise en ligne ?",
+      "answer": "Oui, 3 formules TMA disponibles : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Avec engagement 12 mois sur la formule Essentielle. L'avantage d'être local : intervention physique possible si nécessaire."
+    },
+    {
+      "question": "Comment apparaître en première page Google \"[mon activité] Libourne\" ?",
+      "answer": "Chaque site que je crée intègre dès le départ les bonnes pratiques SEO : optimisation technique, contenus ciblés, balisage local. Pour Libourne spécifiquement, je travaille aussi votre présence sur Google My Business et les annuaires locaux."
+    },
+    {
+      "question": "Quelle différence avec une agence web de Bordeaux ?",
+      "answer": "Nous sommes une agence locale à taille humaine : tarifs 30 à 50% inférieurs aux grandes agences bordelaises grâce à notre structure légère. Interlocuteur dédié du début à la fin. Et surtout, nous sommes à Libourne, à 5 minutes de chez vous, pas à 40km au milieu de Bordeaux."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre site internet ?",
+    "description": "Discutons de votre projet autour d'un café à Libourne. Premier rendez-vous gratuit et sans engagement.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Libourne et alentours (30km)",
+    "cities": [
+      "Libourne",
+      "Saint-Émilion",
+      "Pomerol",
+      "Fronsac",
+      "Castillon-la-Bataille",
+      "Coutras",
+      "Montagne",
+      "Puisseguin",
+      "Lussac"
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "ville": "Bordeaux",
+  "slug": "bordeaux",
+  "departement": "Gironde (33)",
+  "codePostal": "33000",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.8378,
+    "longitude": -0.5792
+  },
+  "meta": {
+    "title": "Développeur Web Bordeaux - Sites Internet Pro & E-commerce | AS-Turing",
+    "description": "Agence web à Bordeaux : qualité professionnelle, tarifs accessibles et réactivité. Sites internet, e-commerce, applications métier pour entreprises de la métropole bordelaise.",
+    "keywords": "création site internet bordeaux, développeur web bordeaux, agence web bordeaux, site internet bordeaux, freelance web bordeaux"
+  },
+  "hero": {
+    "title": "Agence Web à Bordeaux",
+    "subtitle": "Expertise professionnelle, tarifs maîtrisés",
+    "description": "Agence web à taille humaine basée sur Bordeaux. Nous créons votre site internet avec l'expertise technique des grandes agences bordelaises, mais avec des tarifs accessibles et une vraie proximité client. Qualité professionnelle garantie.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "100%",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "Bordeaux",
+        "label": "Intervention sur"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi choisir une agence web à taille humaine à Bordeaux ?",
+    "intro": "À Bordeaux, vous avez le choix entre des dizaines d'agences web. Les grandes agences vous offrent qualité mais coûts élevés. Nous combinons expertise professionnelle et structure légère pour des tarifs accessibles aux PME et commerces bordelais.",
+    "advantages": [
+      {
+        "icon": "mdi:account-tie",
+        "title": "Expertise professionnelle complète",
+        "description": "WordPress, PrestaShop, Shopify, Magento, Symfony, Vue.js, PHP... Notre agence maîtrise les mêmes technologies que les grandes agences bordelaises. CMS grand public, e-commerce et développements sur-mesure. Qualité professionnelle garantie."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Budget maîtrisé : -30 à -50% vs agence",
+        "description": "Site vitrine pro : 1 800€ au lieu de 3 500€ en agence. E-commerce : 4 500€ au lieu de 8 000€. Application métier : 8 000€ au lieu de 15 000€. Tarifs transparents, devis détaillé sous 5 jours, aucun frais caché."
+      },
+      {
+        "icon": "mdi:lightning-bolt",
+        "title": "Réactivité et proximité",
+        "description": "Structure légère et équipe dédiée : vous avez un interlocuteur direct, pas de ping-pong entre commerciaux et techniques. Réponses rapides, rendez-vous flexibles sur toute la métropole bordelaise. L'agilité d'une petite structure."
+      },
+      {
+        "icon": "mdi:shield-check",
+        "title": "Standards professionnels garantis",
+        "description": "Méthodologies éprouvées, code propre et maintenable, performance optimale (PageSpeed >90), sécurité renforcée, SEO intégré dès la conception. Nous appliquons les standards professionnels des meilleures agences."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Bordeaux",
+    "intro": "Je vous accompagne dans tous vos projets digitaux, du site vitrine à l'application métier complexe.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité et convertit vos visiteurs en clients. Design 100% sur-mesure responsive, architecture SEO professionnelle, performance optimale (PageSpeed > 90). À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Start-ups, PME, professions libérales, artisans"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce B2C & B2B",
+        "description": "Boutique en ligne fiable, sécurisée et optimisée pour la conversion. Catalogue illimité, paiement sécurisé, gestion commandes & stocks, mode B2B avec tarifs différenciés. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente en ligne, marketplace, click & collect"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus avec une solution technique parfaitement adaptée. Développement 100% personnalisé, architecture scalable, automatisation de workflows complexes, intégrations API multiples. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "SaaS, CRM custom, plateformes métier"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Bordeaux et sa métropole",
+    "list": [
+      {
+        "name": "Tech & Innovation",
+        "description": "Start-ups, SaaS, agences digitales",
+        "icon": "mdi:rocket-launch"
+      },
+      {
+        "name": "Commerce & E-commerce",
+        "description": "Boutiques en ligne, marketplaces, retail",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Services B2B",
+        "description": "Cabinets conseils, ESN, experts-comptables",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Cabinets médicaux, centres de santé, coachs",
+        "icon": "mdi:heart-pulse"
+      },
+      {
+        "name": "Culture & Tourisme",
+        "description": "Musées, associations, guides touristiques",
+        "icon": "mdi:book-open-variant"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations pour des clients bordelais",
+    "intro": "Découvrez quelques projets web que j'ai créés pour des clients de Bordeaux et sa région.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Libourne",
+        "type": "Site vitrine associatif",
+        "url": "dev.gpm.as-turing.fr"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Premier contact",
+        "description": "Échange par visio ou rendez-vous sur Bordeaux pour comprendre votre projet et vos objectifs business."
+      },
+      {
+        "number": "2",
+        "title": "Devis détaillé",
+        "description": "Je vous envoie un devis complet sous 5 jours ouvrés. Tarifs transparents, fonctionnalités détaillées, planning réaliste."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Développement agile avec points réguliers. Vous validez les maquettes, l'ergonomie et les fonctionnalités au fur et à mesure."
+      },
+      {
+        "number": "4",
+        "title": "Livraison & Formation",
+        "description": "Mise en ligne, formation complète à la gestion du site, documentation technique. Support inclus post-lancement."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quels tarifs pour un site web à Bordeaux comparé aux agences ?",
+      "answer": "Un site vitrine professionnel : 1 800€ chez moi vs 3 000-4 000€ en agence bordelaise. E-commerce : 4 500€ vs 8 000-12 000€. Application métier : 8 000€ vs 15 000-25 000€. Économie de 30 à 50% sans compromis sur la qualité. Devis détaillé gratuit sous 5 jours."
+    },
+    {
+      "question": "Les délais sont-ils plus longs qu'en agence ?",
+      "answer": "Non, même délais voire plus courts ! Site vitrine : 4-6 semaines, e-commerce : 6-10 semaines, application : 8-16 semaines. Sans intermédiaires et processus bureaucratiques, les décisions sont plus rapides. Méthodologie agile avec validations régulières."
+    },
+    {
+      "question": "Rencontres en présentiel possibles sur Bordeaux ?",
+      "answer": "Absolument ! Je me déplace gratuitement partout sur la métropole : Bordeaux centre, Mérignac, Pessac, Talence, Bègles, Villenave-d'Ornon, Le Bouscat, Cenon, Gradignan... Votre bureau, un café, ou en visio selon vos préférences."
+    },
+    {
+      "question": "La maintenance est-elle incluse ou en option ?",
+      "answer": "Maintenance en option avec 3 formules : Essentielle (129€/mois avec engagement 12 mois), Business (299€/mois), Premium (599€/mois). Monitoring 24/7, sauvegardes automatiques, mises à jour de sécurité, support prioritaire. Tarifs aussi 40% inférieurs aux agences bordelaises."
+    },
+    {
+      "question": "Le référencement Google est-il aussi bon qu'avec une agence ?",
+      "answer": "Absolument. J'applique les mêmes techniques SEO que les agences : architecture technique optimale, balisage schema.org, Core Web Vitals, maillage interne, optimisation locale pour Bordeaux. La différence ? Je le fais personnellement, pas un stagiaire."
+    },
+    {
+      "question": "Quelle différence avec une grosse agence bordelaise ?",
+      "answer": "Nous sommes une agence à taille humaine : même qualité professionnelle, mêmes standards techniques, mais structure légère. Vous gagnez : -30 à 50% sur les tarifs, contact direct, décisions rapides. Vous gardez : qualité, expertise, rigueur professionnelle."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre projet web ?",
+    "description": "Discutons de votre projet. Premier échange gratuit et sans engagement, par visio ou sur Bordeaux.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Bordeaux et sa métropole",
+    "cities": [
+      "Bordeaux",
+      "Mérignac",
+      "Pessac",
+      "Talence",
+      "Bègles",
+      "Villenave-d'Ornon",
+      "Gradignan",
+      "Cenon",
+      "Le Bouscat"
+    ]
+  }
+}

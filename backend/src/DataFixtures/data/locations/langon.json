@@ -1,0 +1,211 @@
+{
+  "ville": "Langon",
+  "slug": "langon",
+  "departement": "Gironde (33)",
+  "codePostal": "33210",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.5550,
+    "longitude": -0.2472
+  },
+  "meta": {
+    "title": "Agence Web Langon Sud Gironde - Sites Pro & PME | AS-Turing",
+    "description": "Agence web intervenant sur Langon et le Sud Gironde. Sites pour PME, commerces, vignobles (Sauternes, Graves). Proximité, expertise professionnelle, tarifs dès 1 800€.",
+    "keywords": "création site internet langon, développeur web langon, agence web sud gironde, site internet langon, création site web 33210"
+  },
+  "hero": {
+    "title": "Agence Web Langon - Sud Gironde",
+    "subtitle": "Votre agence dans le Sud Gironde",
+    "description": "Langon, c'est le cœur économique du Sud Gironde. PME, commerces, vignobles de Sauternes et Graves... Notre agence crée des sites professionnels adaptés aux entreprises du territoire. Rendez-vous possibles à Langon, Bazas, Podensac, Cadillac.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "24h",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "100%",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "Langon",
+        "label": "Sud Gironde"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi une agence web dans le Sud Gironde ?",
+    "intro": "Le Sud Gironde, ce n'est pas Bordeaux. Les enjeux, les secteurs d'activité, les budgets sont différents. Entre vignobles prestigieux et PME dynamiques, notre agence propose des solutions web adaptées à chaque réalité locale.",
+    "advantages": [
+      {
+        "icon": "mdi:map-marker",
+        "title": "Couverture complète du Sud Gironde",
+        "description": "Langon, Bazas, Podensac, Cadillac, La Réole, Villandraut, Sauternes, Saint-Macaire... Notre agence se déplace gratuitement dans tout le Sud 33. Des rendez-vous en face-à-face, pas juste des visios depuis Bordeaux."
+      },
+      {
+        "icon": "mdi:clock-fast",
+        "title": "Réactivité garantie",
+        "description": "Intervention rapide sous 24h en cas d'urgence. Contact direct avec votre développeur, pas de hot-line. Maintenance et support réactifs pour les entreprises du Sud Gironde."
+      },
+      {
+        "icon": "mdi:briefcase",
+        "title": "Diversité des secteurs d'activité",
+        "description": "Du château de Sauternes à la PME industrielle de Langon, du commerce du centre-ville aux services B2B... Notre agence s'adapte à la diversité économique du Sud Gironde. Chaque secteur a ses spécificités, nous les connaissons."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs pros sans les frais bordelais",
+        "description": "Qualité professionnelle sans payer le prix de Bordeaux : site vitrine 1 800€, e-commerce 4 500€, application métier 8 000€. Budget maîtrisé pour les entreprises du Sud Gironde. Devis transparent sous 5 jours."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Langon",
+    "intro": "Solutions digitales professionnelles adaptées aux TPE, PME et commerces du Sud Gironde.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité et convertit vos visiteurs en clients. Design 100% sur-mesure responsive, architecture SEO professionnelle, performance optimale (PageSpeed > 90). À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "PME, artisans, professions libérales"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce B2C & B2B",
+        "description": "Boutique en ligne fiable, sécurisée et optimisée pour la conversion. Catalogue illimité, paiement sécurisé, gestion commandes & stocks, mode B2B avec tarifs différenciés. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Commerce local, vins, produits du terroir"
+      },
+      {
+        "icon": "mdi:glass-wine",
+        "title": "Sites Viticoles (Sauternes, Graves)",
+        "description": "Spécialiste des sites pour châteaux et domaines viticoles : présentation cuvées, réservations visites, vente en ligne. Multilingue pour le tourisme œnologique (Sauternes, Graves, Pessac-Léognan).",
+        "examples": "Châteaux AOC Sauternes, Graves, Barsac"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Langon et Sud Gironde",
+    "list": [
+      {
+        "name": "Viticulture (Sauternes, Graves)",
+        "description": "Châteaux, domaines, caves, négociants",
+        "icon": "mdi:glass-wine"
+      },
+      {
+        "name": "Commerce & Distribution",
+        "description": "Boutiques, commerces, centres commerciaux",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Artisanat & BTP",
+        "description": "Plombiers, électriciens, menuisiers, entreprises BTP",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Services B2B",
+        "description": "Cabinets comptables, avocats, consultants",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Professionnels de santé, centres médicaux",
+        "icon": "mdi:heart-pulse"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations dans le Sud Gironde",
+    "intro": "Découvrez quelques sites web que j'ai créés pour des clients de la région.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Libourne",
+        "type": "Site vitrine associatif",
+        "url": "dev.gpm.as-turing.fr"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Rencontre à Langon",
+        "description": "Rendez-vous gratuit à Langon (bureau, chez vous ou dans un café) pour discuter de votre projet et comprendre vos objectifs business."
+      },
+      {
+        "number": "2",
+        "title": "Devis personnalisé",
+        "description": "Je vous envoie un devis détaillé sous 5 jours ouvrés. Tarifs clairs adaptés aux TPE/PME du Sud Gironde, pas de frais cachés."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Je développe votre site en vous tenant informé régulièrement. Vous validez les maquettes, l'ergonomie et les fonctionnalités."
+      },
+      {
+        "number": "4",
+        "title": "Mise en ligne",
+        "description": "Formation complète, livraison et mise en ligne. Support post-lancement inclus pour vous accompagner."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quel est le prix d'un site internet à Langon ?",
+      "answer": "Les tarifs varient selon vos besoins : site vitrine professionnel à partir de 1 800€, e-commerce à partir de 4 500€, application métier sur-mesure à partir de 8 000€. Je m'adapte aux budgets des TPE/PME du Sud Gironde. Réponse sous 5 jours ouvrés avec devis détaillé gratuit."
+    },
+    {
+      "question": "Combien de temps pour créer mon site ?",
+      "answer": "Comptez 4 à 6 semaines pour un site vitrine, 6 à 10 semaines pour un e-commerce, 8 à 16 semaines pour une application métier. Délais respectés car je gère les projets en direct, sans intermédiaire."
+    },
+    {
+      "question": "Vous déplacez-vous gratuitement à Langon ?",
+      "answer": "Oui ! Je me déplace gratuitement à Langon et dans tout le Sud Gironde (Bazas, Podensac, Cadillac, La Réole, Villandraut, Sauternes...). Premier rendez-vous toujours gratuit."
+    },
+    {
+      "question": "Proposez-vous la maintenance du site ?",
+      "answer": "Oui, je propose 3 formules de TMA : Essentielle à partir de 129€/mois (avec engagement 12 mois), Business à partir de 299€/mois et Premium à partir de 599€/mois. Intervention rapide en cas de problème grâce à la proximité."
+    },
+    {
+      "question": "Mon site sera-t-il visible sur Google à Langon ?",
+      "answer": "Tous mes sites sont optimisés pour le référencement local (SEO). Vous apparaîtrez dans les recherches \"[votre activité] Langon\" ou \"[votre activité] Sud Gironde\". Je peux aussi gérer votre fiche Google My Business."
+    },
+    {
+      "question": "Pourquoi choisir un freelance plutôt qu'une agence ?",
+      "answer": "Contact direct avec le développeur, tarifs jusqu'à 50% plus accessibles qu'une grosse agence bordelaise, réactivité maximale, relation de confiance sur le long terme. Même expertise technique et qualité professionnelle, sans les frais de structure."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre site internet ?",
+    "description": "Discutons de votre projet autour d'un café à Langon. Premier rendez-vous gratuit et sans engagement.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Langon et Sud Gironde (30km)",
+    "cities": [
+      "Langon",
+      "Bazas",
+      "Podensac",
+      "Cadillac",
+      "La Réole",
+      "Villandraut",
+      "Sauternes",
+      "Barsac",
+      "Saint-Macaire"
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "ville": "Créon",
+  "slug": "creon",
+  "departement": "Gironde (33)",
+  "codePostal": "33670",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.7761,
+    "longitude": -0.3425
+  },
+  "meta": {
+    "title": "Site Web Créon Entre-deux-Mers - Commerces & PME | AS-Turing",
+    "description": "Agence web à Créon et l'Entre-deux-Mers. Sites internet pour commerces, artisans, vignerons du secteur. Proximité, tarifs TPE dès 1 800€, déplacements gratuits.",
+    "keywords": "création site internet créon, développeur web créon, site internet créon, agence web entre-deux-mers, création site web 33670"
+  },
+  "hero": {
+    "title": "Sites Internet Créon & Entre-deux-Mers",
+    "subtitle": "Agence web locale de proximité",
+    "description": "Artisan, commerçant ou vigneron de l'Entre-deux-Mers ? Notre agence locale crée votre site professionnel avec un vrai suivi de proximité. Rendez-vous à Créon, La Sauve, Latresne ou chez vous. Des tarifs pensés pour les budgets locaux.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "24h",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "100%",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "Créon",
+        "label": "Proche de"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Les atouts d'une agence locale dans l'Entre-deux-Mers",
+    "intro": "L'Entre-deux-Mers, ce n'est pas Bordeaux. Ici, on se connaît, on se fait confiance. Travailler avec une agence qui comprend le territoire, c'est l'assurance d'un accompagnement vraiment adapté à votre réalité.",
+    "advantages": [
+      {
+        "icon": "mdi:map-marker",
+        "title": "Vraie proximité dans l'Entre-deux-Mers",
+        "description": "Notre équipe connaît bien Créon, La Sauve, Latresne, Camblanes, Targon, Cadillac... Déplacements gratuits dans tout le secteur. On se voit où vous voulez : votre local, un café, le marché de Créon un dimanche matin !"
+      },
+      {
+        "icon": "mdi:clock-fast",
+        "title": "Réactivité garantie",
+        "description": "Intervention sous 24h en cas d'urgence. Contact direct avec votre développeur, pas de hot-line. Maintenance et support réactifs pour les entreprises locales."
+      },
+      {
+        "icon": "mdi:handshake",
+        "title": "Connaissance du territoire et de ses acteurs",
+        "description": "Vignerons AOC Entre-deux-Mers, artisans du bâtiment, commerces du bourg, chambres d'hôtes... Notre agence comprend les enjeux spécifiques de chaque secteur d'activité du territoire. Pas de discours généraliste."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Prix adaptés aux petites structures",
+        "description": "Site vitrine professionnel : 1 800€. Boutique en ligne : 4 500€. Paiement échelonné possible pour les TPE. Des tarifs réalistes pour les budgets des commerces et artisans de l'Entre-deux-Mers."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Créon",
+    "intro": "Je vous accompagne dans tous vos projets digitaux, du simple site vitrine au e-commerce complet.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité et convertit vos visiteurs en clients. Design 100% sur-mesure responsive, architecture SEO professionnelle, performance optimale (PageSpeed > 90). À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Artisans, commerces, professions libérales"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce B2C & B2B",
+        "description": "Boutique en ligne fiable, sécurisée et optimisée pour la conversion. Catalogue illimité, paiement sécurisé, gestion commandes & stocks, mode B2B avec tarifs différenciés. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente produits locaux, vins, click & collect"
+      },
+      {
+        "icon": "mdi:glass-wine",
+        "title": "Sites Viticoles",
+        "description": "Spécialiste des sites pour châteaux et domaines viticoles de l'Entre-deux-Mers : présentation cuvées, réservations visites, vente en ligne. Multilingue pour le tourisme œnologique.",
+        "examples": "Domaines AOC Entre-deux-Mers, caves"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Créon et l'Entre-deux-Mers",
+    "list": [
+      {
+        "name": "Viticulture",
+        "description": "Châteaux, domaines, caves de l'Entre-deux-Mers",
+        "icon": "mdi:glass-wine"
+      },
+      {
+        "name": "Commerce de proximité",
+        "description": "Boutiques, magasins, marchés locaux",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Artisanat",
+        "description": "Plombiers, électriciens, menuisiers, paysagistes",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Tourisme rural",
+        "description": "Gîtes, chambres d'hôtes, activités nature",
+        "icon": "mdi:bed"
+      },
+      {
+        "name": "Services locaux",
+        "description": "Professions libérales, services à la personne",
+        "icon": "mdi:briefcase"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations dans l'Entre-deux-Mers",
+    "intro": "Découvrez quelques sites web que j'ai créés pour des clients de la région.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Libourne",
+        "type": "Site vitrine associatif",
+        "url": "dev.gpm.as-turing.fr"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Rencontre locale",
+        "description": "Rendez-vous gratuit à Créon ou dans l'Entre-deux-Mers (bureau, chez vous ou dans un café) pour discuter de votre projet."
+      },
+      {
+        "number": "2",
+        "title": "Devis personnalisé",
+        "description": "Je vous envoie un devis détaillé sous 5 jours ouvrés. Tarifs clairs adaptés aux TPE/PME locales, pas de frais cachés."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Je développe votre site en vous tenant informé régulièrement. Vous validez chaque étape importante du projet."
+      },
+      {
+        "number": "4",
+        "title": "Mise en ligne",
+        "description": "Formation complète, livraison et mise en ligne. Support post-lancement inclus pour vous accompagner."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quel est le prix d'un site internet à Créon ?",
+      "answer": "Les tarifs varient selon vos besoins : site vitrine professionnel à partir de 1 800€, e-commerce à partir de 4 500€, application métier sur-mesure à partir de 8 000€. Je m'adapte aux budgets des TPE/PME de l'Entre-deux-Mers. Réponse sous 5 jours ouvrés avec devis détaillé gratuit."
+    },
+    {
+      "question": "Combien de temps pour créer mon site ?",
+      "answer": "Comptez 4 à 6 semaines pour un site vitrine, 6 à 10 semaines pour un e-commerce, 8 à 16 semaines pour une application métier. Délais respectés car je gère les projets en direct, sans intermédiaire."
+    },
+    {
+      "question": "Vous déplacez-vous gratuitement à Créon ?",
+      "answer": "Oui ! Je me déplace gratuitement à Créon et dans tout l'Entre-deux-Mers (La Sauve, Latresne, Camblanes, Targon, Cadillac...). Premier rendez-vous toujours gratuit."
+    },
+    {
+      "question": "Proposez-vous la maintenance du site ?",
+      "answer": "Oui, je propose 3 formules de TMA : Essentielle à partir de 129€/mois (avec engagement 12 mois), Business à partir de 299€/mois et Premium à partir de 599€/mois. Intervention rapide en cas de problème grâce à la proximité."
+    },
+    {
+      "question": "Mon site sera-t-il visible sur Google à Créon ?",
+      "answer": "Tous mes sites sont optimisés pour le référencement local (SEO). Vous apparaîtrez dans les recherches \"[votre activité] Créon\" ou \"[votre activité] Entre-deux-Mers\". Je peux aussi gérer votre fiche Google My Business."
+    },
+    {
+      "question": "Pourquoi choisir un freelance plutôt qu'une agence ?",
+      "answer": "Contact direct avec le développeur, tarifs jusqu'à 50% plus accessibles qu'une grosse agence bordelaise, réactivité maximale, relation de confiance sur le long terme. Même expertise technique et qualité professionnelle, sans les frais de structure."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre site internet ?",
+    "description": "Discutons de votre projet autour d'un café à Créon. Premier rendez-vous gratuit et sans engagement.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Créon et l'Entre-deux-Mers (30km)",
+    "cities": [
+      "Créon",
+      "La Sauve",
+      "Latresne",
+      "Camblanes-et-Meynac",
+      "Targon",
+      "Cadillac",
+      "Langoiran",
+      "Quinsac",
+      "Baurech"
+    ]
+  }
+}

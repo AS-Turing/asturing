@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\DataFixtures\LocationFixtures;
 use App\DataFixtures\ProjectFixtures;
 use App\DataFixtures\ServiceFixtures;
 use Doctrine\ORM\EntityManagerInterface;
@@ -53,6 +54,7 @@ class LoadFixturesCommand extends Command
             $connection->executeStatement('TRUNCATE TABLE client');
             $connection->executeStatement('TRUNCATE TABLE contact_message');
             $connection->executeStatement('TRUNCATE TABLE company_info');
+            $connection->executeStatement('TRUNCATE TABLE location');
             $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1');
             
             $io->success('Data purged!');
@@ -99,6 +101,12 @@ class LoadFixturesCommand extends Command
         $companyInfoFixtures = new \App\DataFixtures\CompanyInfoFixtures();
         $companyInfoFixtures->load($this->entityManager);
         $io->success('Company Info loaded successfully!');
+
+        // Load Locations
+        $io->section('Loading Locations...');
+        $locationFixtures = new LocationFixtures();
+        $locationFixtures->load($this->entityManager);
+        $io->success('Locations loaded successfully!');
 
         $io->success('All fixtures loaded successfully!');
 
