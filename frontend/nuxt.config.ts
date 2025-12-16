@@ -122,6 +122,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'Expires': '0'
         }
       },
+      '/localisation/**': {
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      },
       '/_nuxt/**': {
         headers: {
           'Cache-Control': 'public, max-age=31536000, immutable' // 1 an pour les assets versionnés
