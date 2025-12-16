@@ -78,14 +78,29 @@
             </div>
           </div>
 
-          <!-- Right: Image -->
+          <!-- Right: Logo -->
           <div class="relative">
-            <div class="relative h-96 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-              <div 
-                class="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold gradient-hero"
-                :class="project.imageGradient"
-              >
-                {{ project.imageText }}
+            <div class="relative h-96 rounded-3xl overflow-hidden shadow-2xl logo-surface">
+              <!-- Logo si disponible -->
+              <div v-if="project.imageUrl" class="absolute inset-0 flex items-center justify-center p-12">
+                <img
+                  :src="project.imageUrl"
+                  :alt="project.imageText || project.title"
+                  class="w-full h-full object-contain opacity-90"
+                  style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));"
+                />
+              </div>
+              
+              <!-- Fallback si pas de logo -->
+              <div v-else class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="w-24 h-24 mx-auto mb-4 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <p class="text-white/80 text-lg font-semibold">{{ project.imageText || project.title }}</p>
+                </div>
               </div>
             </div>
           </div>
