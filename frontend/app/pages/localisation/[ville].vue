@@ -315,12 +315,9 @@
 const route = useRoute()
 const ville = route.params.ville as string
 
-const { data: rawLocation } = await useFetch(() => `/api/locations/${ville}`, {
-  key: `location-${ville}`,
-  watch: [() => route.params.ville]
+const { data: location } = await useFetch(() => `/api/locations/${ville}`, {
+  key: `location-${ville}`
 })
-
-const location = computed(() => rawLocation.value)
 
 // FAQ accordion state
 const openFaqIndex = ref<number | null>(null)
