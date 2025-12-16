@@ -40,7 +40,7 @@ export default defineSitemapEventHandler(async () => {
       if (locationsResponse && Array.isArray(locationsResponse)) {
         locationsResponse.forEach((location: any) => {
           urls.push({
-            loc: `/creation-site-internet-${location.slug}`,
+            loc: `/localisation/${location.slug}`,
             lastmod: location.updatedAt || new Date().toISOString(),
             changefreq: 'monthly',
             priority: 0.9 // Haute priorité pour SEO local

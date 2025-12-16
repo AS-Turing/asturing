@@ -95,7 +95,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     '/projets': { ssr: true },
     '/projets/**': { ssr: true },
     '/contact': { ssr: true },
-    '/creation-site-internet-**': { ssr: true },
+    '/localisation': { ssr: true },
+    '/localisation/**': { ssr: true },
 
     // API : PAS de cache pour le moment (debug)
     '/api/**': { cache: false },

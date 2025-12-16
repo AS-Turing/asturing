@@ -315,18 +315,9 @@
 const route = useRoute()
 const ville = route.params.ville as string
 
-const { data: location, error } = await useFetch(() => `/api/locations/${ville}`, {
+const { data: location } = await useFetch(() => `/api/locations/${ville}`, {
   key: `location-${ville}`
 })
-
-// Handle 404
-if (error.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Ville non trouvée',
-    fatal: true
-  })
-}
 
 // FAQ accordion state
 const openFaqIndex = ref<number | null>(null)
@@ -341,12 +332,13 @@ watch(location, (newLocation) => {
     usePremiumSeo({
       title: newLocation.meta.title,
       description: newLocation.meta.description,
-      url: `https://www.as-turing.fr/creation-site-internet-${newLocation.slug}`,
+      url: `https://www.as-turing.fr/localisation/${newLocation.slug}`,
       image: 'https://www.as-turing.fr/images/og-location.jpg',
       type: 'website',
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
-        { name: `Création site internet ${newLocation.ville}`, url: `/creation-site-internet-${newLocation.slug}` }
+        { name: 'Localisations', url: '/localisation' },
+        { name: newLocation.ville, url: `/localisation/${newLocation.slug}` }
       ],
       faq: newLocation.faq
     })
