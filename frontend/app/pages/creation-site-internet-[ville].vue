@@ -317,8 +317,7 @@ const ville = route.params.ville as string
 
 const { data: location } = await useFetch(() => `/api/locations/${ville}`, {
   key: `location-${ville}`,
-  watch: [() => route.params.ville],
-  getCachedData: () => null
+  watch: [() => route.params.ville]
 })
 
 // FAQ accordion state
