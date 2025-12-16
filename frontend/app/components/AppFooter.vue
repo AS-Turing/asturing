@@ -183,11 +183,11 @@
 <script setup lang="ts">
 const { data: services } = await useFetch('/api/services', {
   key: 'footer-services',
-  getCachedData: () => null
+  dedupe: 'defer'
 })
 const { data: locations } = await useFetch('/api/locations', {
   key: 'footer-locations',
-  getCachedData: () => null
+  dedupe: 'defer'
 })
 const { companyInfo: company } = useCompany()
 </script>
