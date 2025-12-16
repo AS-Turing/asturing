@@ -315,19 +315,10 @@
 const route = useRoute()
 const ville = route.params.ville as string
 
-const { data: location, error } = await useFetch(() => `/api/locations/${ville}`, {
+const { data: location } = await useFetch(() => `/api/locations/${ville}`, {
   key: `location-${ville}`,
   watch: [() => route.params.ville]
 })
-
-// Handle 404
-if (error.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Ville non trouvée',
-    fatal: true
-  })
-}
 
 // FAQ accordion state
 const openFaqIndex = ref<number | null>(null)
