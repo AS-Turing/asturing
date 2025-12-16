@@ -316,7 +316,8 @@ const route = useRoute()
 const ville = route.params.ville as string
 
 const { data: location, error } = await useFetch(() => `/api/locations/${ville}`, {
-  key: `location-${ville}`
+  key: `location-${ville}`,
+  watch: [() => route.params.ville]
 })
 
 // Handle 404
@@ -350,7 +351,7 @@ watch(location, (newLocation) => {
       ],
       faq: newLocation.faq
     })
-    
+
     // Meta géographiques et keywords
     useHead({
       meta: [
