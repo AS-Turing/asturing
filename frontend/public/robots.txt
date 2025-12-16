@@ -4,6 +4,7 @@ Sitemap: https://www.as-turing.fr/sitemap.xml
 # Interdire l'accès aux dossiers sensibles
 User-agent: *
 Disallow: /admin/
+Disallow: /login
 Disallow: /_nuxt/
 Disallow: /api/
 Disallow: /.well-known/
