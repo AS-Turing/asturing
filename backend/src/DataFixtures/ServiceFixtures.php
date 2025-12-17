@@ -52,6 +52,20 @@ class ServiceFixtures extends Fixture
                 $service->setStartingPrice($serviceData['startingPrice']);
             }
             
+            // SEO Meta fields
+            if (isset($serviceData['metaTitle'])) {
+                $service->setMetaTitle($serviceData['metaTitle']);
+            }
+            if (isset($serviceData['metaDescription'])) {
+                $service->setMetaDescription($serviceData['metaDescription']);
+            }
+            if (isset($serviceData['metaKeywords'])) {
+                $service->setMetaKeywords($serviceData['metaKeywords']);
+            }
+            if (isset($serviceData['ogImage'])) {
+                $service->setOgImage($serviceData['ogImage']);
+            }
+            
             $manager->persist($service);
 
             // Solutions

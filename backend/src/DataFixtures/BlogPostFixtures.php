@@ -24,6 +24,20 @@ class BlogPostFixtures
             $post->setImageText($data['imageText']);
             $post->setPublishedAt(new \DateTimeImmutable($data['publishedAt']));
             $post->setIsPublished($data['isPublished']);
+            
+            // SEO Meta fields
+            if (isset($data['metaTitle'])) {
+                $post->setMetaTitle($data['metaTitle']);
+            }
+            if (isset($data['metaDescription'])) {
+                $post->setMetaDescription($data['metaDescription']);
+            }
+            if (isset($data['metaKeywords'])) {
+                $post->setMetaKeywords($data['metaKeywords']);
+            }
+            if (isset($data['ogImage'])) {
+                $post->setOgImage($data['ogImage']);
+            }
 
             $manager->persist($post);
         }
