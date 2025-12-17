@@ -34,6 +34,24 @@ export default defineSitemapEventHandler(async () => {
       })
     }
     
+    // Locations (pages locales SEO)
+    try {
+      const locationsResponse = await $fetch(`${apiBase}/api/locations`)
+      if (locationsResponse && Array.isArray(locationsResponse)) {
+        locationsResponse.forEach((location: any) => {
+          urls.push({
+            loc: `/creation-site-internet-${location.slug}`,
+            lastmod: location.updatedAt || new Date().toISOString(),
+            changefreq: 'monthly',
+            priority: 0.9
+          })
+        })
+      }
+    } catch (locationsError: any) {
+      console.error('Locations API error:', locationsError.message || locationsError)
+      console.error('Locations API URL tried:', `${apiBase}/api/locations`)
+    }
+    
     // Blog - skip if 404
     try {
       const blogResponse = await $fetch(`${apiBase}/api/blog/posts`)
