@@ -227,8 +227,6 @@ const submitContact = async () => {
   }
 }
 
-const { companyInfo: company } = useCompany()
-
 // SEO Premium AAA pour page contact
 usePremiumSeo({
   title: config.value?.seo?.title || 'Contact Agence Web Libourne | Devis Gratuit & Conseils',
