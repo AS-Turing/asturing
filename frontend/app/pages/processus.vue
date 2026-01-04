@@ -106,36 +106,25 @@
 <script setup lang="ts">
 const { data: config } = await useFetch('/api/process/config')
 
-// SEO optimisé pour la page méthodologie/processus
-useHead({
+// SEO Premium AAA pour page processus
+usePremiumSeo({
   title: config.value?.seo?.title || 'Méthodologie Agence Web Libourne | Processus de Développement',
+  description: config.value?.seo?.description || 'Découvrez notre processus de création de sites internet : de l\'audit au déploiement. Méthodologie agile, transparence et accompagnement personnalisé à Libourne.',
+  url: 'https://www.as-turing.fr/processus',
+  image: 'https://www.as-turing.fr/images/og-home.jpg',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Processus', url: '/processus' }
+  ]
+})
+
+// Keywords meta supplémentaires
+useHead({
   meta: [
-    {
-      name: 'description',
-      content: config.value?.seo?.description || 'Découvrez notre processus de création de sites internet : de l\'audit au déploiement. Méthodologie agile, transparence et accompagnement personnalisé à Libourne.'
-    },
-    // Keywords
     {
       name: 'keywords',
       content: 'méthodologie agence web, processus développement web, méthode agile, gestion projet web, accompagnement digital, Libourne'
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: config.value?.seo?.title || 'Notre Méthodologie - Processus de Développement Web'
-    },
-    {
-      property: 'og:description',
-      content: config.value?.seo?.description || 'Méthodologie agile et transparente pour vos projets web. De l\'audit au déploiement, nous vous accompagnons à chaque étape.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    // Robots
-    {
-      name: 'robots',
-      content: 'index, follow'
     }
   ],
   // Schema.org HowTo

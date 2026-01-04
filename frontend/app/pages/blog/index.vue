@@ -162,35 +162,25 @@ const countByCategory = (category: string) => {
   return articles.value.filter((a: any) => a.category === category).length
 }
 
-useHead({
+// SEO Premium AAA pour page blog
+usePremiumSeo({
   title: 'Blog Création Site Internet Libourne | Conseils E-commerce & Web',
+  description: 'Blog agence web Libourne : conseils création de sites internet, stratégies e-commerce, référencement SEO, bonnes pratiques digitales.',
+  url: 'https://www.as-turing.fr/blog',
+  image: 'https://www.as-turing.fr/images/og-blog.jpg',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Blog', url: '/blog' }
+  ]
+})
+
+// Keywords meta supplémentaires
+useHead({
   meta: [
-    {
-      name: 'description',
-      content: 'Blog agence web Libourne : conseils création de sites internet, stratégies e-commerce, référencement SEO, bonnes pratiques digitales.'
-    },
-    // Keywords
     {
       name: 'keywords',
       content: 'blog création site internet, conseils e-commerce, agence web Libourne, SEO, site vitrine, boutique en ligne, stratégie digitale'
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: 'Blog Création Site Internet - Conseils & Actualités | AS-Turing'
-    },
-    {
-      property: 'og:description',
-      content: 'Conseils d\'expert pour votre site internet : création, e-commerce, référencement et stratégies digitales efficaces.'
-    },
-    {
-      property: 'og:type',
-      content: 'blog'
-    },
-    // Robots
-    {
-      name: 'robots',
-      content: 'index, follow'
     }
   ],
   // Schema.org Blog

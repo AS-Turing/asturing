@@ -88,118 +88,24 @@
 <script setup lang="ts">
 const { data: services, pending } = await useFetch('/api/services')
 
-// SEO optimisé pour page services
-useHead({
+usePremiumSeo({
   title: 'Nos Services - Création Site Internet & E-commerce Libourne | AS-Turing',
+  description: 'Services web complets à Libourne : création de sites vitrines, e-commerce, applications métier. Agence web de proximité pour TPE et PME. Devis gratuit. Libourne, Saint-Émilion, Bordeaux.',
+  url: 'https://www.as-turing.fr/services',
+  image: 'https://www.as-turing.fr/images/og-home.jpg',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Services', url: '/services' }
+  ]
+})
+
+// Keywords meta supplémentaires
+useHead({
   meta: [
-    {
-      name: 'description',
-      content: 'Services web complets à Libourne : création de sites vitrines, e-commerce, applications métier. Agence web de proximité pour TPE et PME. Devis gratuit. Libourne, Saint-Émilion, Bordeaux.'
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: 'Services Web - Création Site Internet Libourne | AS-Turing'
-    },
-    {
-      property: 'og:description',
-      content: 'Sites vitrines, e-commerce, applications métier sur-mesure. Agence web à Libourne au service des entreprises de l\'Entre-deux-Mers.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    // Keywords
     {
       name: 'keywords',
       content: 'services création site internet, agence web Libourne, développement web sur-mesure, création e-commerce, application métier, refonte site web, site vitrine professionnel, Bordeaux, Gironde'
-    },
-    // Robots
-    {
-      name: 'robots',
-      content: 'index, follow'
-    }
-  ],
-  // Schema.org Service
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        'serviceType': 'Création de sites internet et développement web',
-        'provider': {
-          '@type': 'LocalBusiness',
-          'name': 'AS-Turing',
-          'address': {
-            '@type': 'PostalAddress',
-            'addressLocality': 'Libourne',
-            'addressRegion': 'Nouvelle-Aquitaine',
-            'postalCode': '33500',
-            'addressCountry': 'FR'
-          }
-        },
-        'areaServed': [
-          {
-            '@type': 'City',
-            'name': 'Libourne'
-          },
-          {
-            '@type': 'City',
-            'name': 'Saint-Émilion'
-          },
-          {
-            '@type': 'City',
-            'name': 'Bordeaux'
-          }
-        ],
-        'hasOfferCatalog': {
-          '@type': 'OfferCatalog',
-          'name': 'Services Web',
-          'itemListElement': [
-            {
-              '@type': 'Offer',
-              'itemOffered': {
-                '@type': 'Service',
-                'name': 'Création site vitrine',
-                'description': 'Site internet professionnel pour présenter votre activité'
-              }
-            },
-            {
-              '@type': 'Offer',
-              'itemOffered': {
-                '@type': 'Service',
-                'name': 'Création e-commerce',
-                'description': 'Boutique en ligne sur-mesure pour vendre vos produits'
-              }
-            },
-            {
-              '@type': 'Offer',
-              'itemOffered': {
-                '@type': 'Service',
-                'name': 'Application métier',
-                'description': 'Solutions web personnalisées pour votre activité'
-              }
-            },
-            {
-              '@type': 'Offer',
-              'itemOffered': {
-                '@type': 'Service',
-                'name': 'Refonte site web',
-                'description': 'Modernisation de votre site internet existant'
-              }
-            },
-            {
-              '@type': 'Offer',
-              'itemOffered': {
-                '@type': 'Service',
-                'name': 'Maintenance et TMA',
-                'description': 'Support technique et maintenance continue'
-              }
-            }
-          ]
-        }
-      })
     }
   ]
 })

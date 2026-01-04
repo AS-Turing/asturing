@@ -76,13 +76,26 @@
 <script setup lang="ts">
 const { data: projects, pending } = await useFetch('/api/projects')
 
-// SEO
-useHead({
+// SEO Premium AAA pour page projets
+usePremiumSeo({
   title: 'Nos Projets - Réalisations AS Turing',
+  description: 'Découvrez nos réalisations : sites vitrines premium, applications métier et solutions web sur-mesure pour TPE, PME et associations.',
+  url: 'https://www.as-turing.fr/projets',
+  image: 'https://www.as-turing.fr/images/og-projects.jpg',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Projets', url: '/projets' }
+  ]
+})
+
+// Keywords meta supplémentaires
+useHead({
   meta: [
-    { name: 'description', content: 'Découvrez nos réalisations : sites vitrines premium, applications métier et solutions web sur-mesure pour TPE, PME et associations.' },
-    { property: 'og:title', content: 'Nos Projets - Réalisations AS Turing' },
-    { property: 'og:description', content: 'Découvrez nos réalisations web et applications métier.' },
+    {
+      name: 'keywords',
+      content: 'réalisations agence web, portfolio site internet, projets web Libourne, sites vitrines, applications métier'
+    }
   ]
 })
 </script>

@@ -227,35 +227,27 @@ const submitContact = async () => {
   }
 }
 
-useHead({
+const { companyInfo: company } = useCompany()
+
+// SEO Premium AAA pour page contact
+usePremiumSeo({
   title: config.value?.seo?.title || 'Contact Agence Web Libourne | Devis Gratuit & Conseils',
+  description: config.value?.seo?.description || 'Contactez notre agence web à Libourne pour votre projet de site internet. Devis gratuit, réponse rapide. Rencontrons-nous autour d\'un café !',
+  url: 'https://www.as-turing.fr/contact',
+  image: 'https://www.as-turing.fr/images/og-home.jpg',
+  type: 'website',
+  breadcrumbs: [
+    { name: 'Accueil', url: '/' },
+    { name: 'Contact', url: '/contact' }
+  ]
+})
+
+// Keywords meta supplémentaires
+useHead({
   meta: [
-    {
-      name: 'description',
-      content: config.value?.seo?.description || 'Contactez notre agence web à Libourne pour votre projet de site internet. Devis gratuit, réponse rapide. Rencontrons-nous autour d\'un café !'
-    },
-    // Keywords
     {
       name: 'keywords',
       content: 'contact agence web Libourne, devis site internet, rendez-vous agence web, création site Libourne, contact développeur web'
-    },
-    // Open Graph
-    {
-      property: 'og:title',
-      content: config.value?.seo?.title || 'Contactez-nous - Agence Web Libourne'
-    },
-    {
-      property: 'og:description',
-      content: config.value?.seo?.description || 'Une question ? Un projet web ? Contactez-nous pour un devis gratuit et des conseils personnalisés.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    // Robots
-    {
-      name: 'robots',
-      content: 'index, follow'
     }
   ],
   // Schema.org ContactPage
