@@ -3,10 +3,17 @@
  * Permet de tracker des événements personnalisés facilement
  */
 
+const useGtmPlugin = () => {
+  const nuxtApp = useNuxtApp()
+  return nuxtApp.$gtm || null
+}
+
 export const useGtm = () => {
+  const gtm = useGtmPlugin()
+
   const pushEvent = (event: string, data: Record<string, any> = {}) => {
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
+    if (gtm) {
+      gtm.trackEvent({
         event,
         ...data
       })
