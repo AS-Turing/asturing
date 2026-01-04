@@ -189,11 +189,11 @@
       "imageText": "[ Screenshot Gears Projects Motor ]",
       "imageUrl": "/images/projects/gpm/logo-20.png",
       "images": [
-        "/images/projects/gpm/homepage.png",
-        "/images/projects/gpm/blog-page.png",
-        "/images/projects/gpm/asso-page.png",
-        "/images/projects/gpm/formations-page.png",
-        "/images/projects/gpm/contact-page.png"
+        "/images/projects/gpm/homepage-fullpage.png",
+        "/images/projects/gpm/blog-page-fullpage.png",
+        "/images/projects/gpm/asso-page-fullpage.png",
+        "/images/projects/gpm/formations-page-fullpage.png",
+        "/images/projects/gpm/contact-page-fullpage.png"
       ],
       "bgGradient": "from-slate-900 to-slate-800",
       "imageGradient": "from-blue-900 to-slate-900",
@@ -215,7 +215,7 @@
               {
                 "type": "text_image",
                 "layout": "image_left",
-                "image": "images/projects/gpm/homepage.png",
+                "image": "images/projects/gpm/homepage-fullpage.png",
                 "content": "<h3>Contexte et Problématique</h3>\n<p>Gears Projects Motor est un <strong>garage associatif basé à Bordeaux</strong> qui propose à ses adhérents l'accès à un atelier équipé et une expertise automobile pour réparer leurs véhicules en autonomie.</p>\n\n<p>Le garage souhaitait :</p>\n<ul>\n<li><strong>Moderniser sa présence en ligne</strong> pour attirer de nouveaux adhérents</li>\n<li><strong>Publier du contenu régulièrement</strong> : articles de blog, tutoriels mécaniques</li>\n<li><strong>Promouvoir des formations</strong> : sessions d'apprentissage pour débutants</li>\n<li><strong>Gérer les adhésions</strong> via HelloAsso (solution externe)</li>\n<li><strong>Avoir un admin simple</strong> : pas de WordPress \"usine à gaz\"</li>\n</ul>\n\n<h3>Contraintes Spécifiques</h3>\n<ul>\n<li><strong>Pas de backoffice surchargé</strong> : refus de WordPress jugé trop complexe</li>\n<li><strong>Gestion autonome</strong> : client non-technique devant pouvoir tout modifier facilement</li>\n<li><strong>Flexibilité éditoriale</strong> : pages personnalisables, blog, formations</li>\n<li><strong>Intégration HelloAsso</strong> : gestion des inscriptions et paiements externalisée</li>\n<li><strong>Gestion adhérents</strong> : suivi des membres de l'association</li>\n<li><strong>Performance</strong> : site rapide même avec beaucoup de contenu</li>\n</ul>"
               }
             ]
@@ -240,19 +240,19 @@
               {
                 "type": "text_image",
                 "layout": "image_left",
-                "image": "images/projects/gpm/asso-page.png",
+                "image": "images/projects/gpm/asso-page-fullpage.png",
                 "content": "<h4>Fonctionnalités Développées</h4><p><strong>1. Gestion de contenu complète via Sanity</strong></p>\n<ul>\n<li><strong>Pages personnalisables</strong> : système de blocs modulaires (hero, texte, images, FAQ, etc.)</li>\n<li><strong>Blog</strong> : publication d'articles, catégories, tags, auteurs</li>\n<li><strong>Formations</strong> : sessions de formation avec dates, tarifs, inscriptions HelloAsso</li>\n<li><strong>Adhérents</strong> : gestion de la liste des membres (nom, date adhésion, statut)</li>\n<li><strong>Médias</strong> : galerie photos de l'atelier, outils disponibles</li>\n<li><strong>Services</strong> : présentation des prestations du garage</li>\n</ul>\n\n<p><strong>2. Intégration HelloAsso</strong></p>\n<ul>\n<li>Liens directs vers formulaires HelloAsso pour formations</li>\n<li>Widgets d'inscription intégrés dans les pages</li>\n<li>Suivi des sessions et places disponibles</li>\n</ul>\n\n<p><strong>3. Interface utilisateur moderne</strong></p>\n<ul>\n<li>Design épuré aux couleurs de l'association</li>\n<li>Navigation intuitive</li>\n<li>Animations subtiles pour dynamisme</li>\n<li>Formulaire de contact avec validation</li>\n<li>Newsletter pour fidélisation</li>\n</ul>"
               },
               {
                 "type": "text_image",
                 "layout": "image_right",
-                "image": "images/projects/gpm/blog-page.png",
+                "image": "images/projects/gpm/blog-page-fullpage.png",
                 "content": "<h4>Architecture Technique</h4><ul>\n<li><strong>Frontend Nuxt 3</strong> : génération statique (SSG) pour performances maximales</li>\n<li><strong>Sanity Studio</strong> : admin hébergé séparément (studio.gpm.as-turing.fr)</li>\n<li><strong>Supabase</strong> : BDD PostgreSQL pour adhérents + auth future</li>\n<li><strong>CDN</strong> : distribution mondiale des assets</li>\n<li><strong>Build automatisé</strong> : déploiement à chaque modification de contenu</li>\n</ul>"
               },
               {
                 "type": "text_image",
                 "layout": "image_left",
-                "image": "images/projects/gpm/formations-page.png",
+                "image": "images/projects/gpm/formations-page-fullpage.png",
                 "content": "<h4>Infrastructure et Hébergement</h4><p>Site hébergé sur <strong>infrastructure personnelle</strong> entièrement configurée from scratch :</p>\n\n<ul>\n<li><strong>Serveur dédié</strong> : configuration Linux (Debian) optimisée</li>\n<li><strong>Orchestration Docker</strong> : Nuxt + Sanity Studio + Supabase en containers</li>\n<li><strong>Nginx + Traefik</strong> : reverse proxy intelligent, routing multi-services</li>\n<li><strong>SSL automatique</strong> : Let's Encrypt avec renouvellement auto</li>\n<li><strong>CI/CD custom</strong> : déploiements automatisés via GitHub Actions</li>\n<li><strong>Monitoring</strong> : surveillance uptime, performances, logs centralisés</li>\n<li><strong>Backups automatiques</strong> : quotidiens, stockage externe sécurisé</li>\n<li><strong>Sécurité</strong> : firewall, fail2ban, mises à jour automatiques</li>\n</ul>"
               }
             ]
@@ -265,7 +265,7 @@
               {
                 "type": "text_image",
                 "layout": "image_left",
-                "image": "images/projects/gpm/homepage.png",
+                "image": "images/projects/gpm/homepage-fullpage.png",
                 "content": "<h4>Livraison Complète</h4><ul>\n<li><strong>Site vitrine moderne</strong> : présentation claire du garage et de ses valeurs</li>\n<li><strong>Blog opérationnel</strong> : publication autonome d'articles et tutoriels</li>\n<li><strong>Section formations</strong> : présentation des sessions avec liens HelloAsso</li>\n<li><strong>Admin Sanity configuré</strong> : gestion complète des contenus par le client</li>\n<li><strong>Gestion adhérents</strong> : suivi des membres dans Sanity Studio</li>\n<li><strong>Design responsive</strong> : parfait sur mobile, tablette, desktop</li>\n<li><strong>Performance optimale</strong> : temps de chargement < 1,5s</li>\n</ul>"
               },
               {
@@ -277,13 +277,13 @@
               {
                 "type": "text_image",
                 "layout": "image_left",
-                "image": "images/projects/gpm/blog-page.png",
+                "image": "images/projects/gpm/blog-page-fullpage.png",
                 "content": "<h4>Bénéfices pour le Client</h4><ul>\n<li><strong>Simplicité d'utilisation</strong> : admin Sanity intuitif, pas de courbe d'apprentissage</li>\n<li><strong>Autonomie complète</strong> : modification de TOUT le contenu sans développeur</li>\n<li><strong>Performances exceptionnelles</strong> : site ultra-rapide grâce à la génération statique</li>\n<li><strong>Flexibilité éditoriale</strong> : création de pages personnalisées par blocs</li>\n<li><strong>Coûts maîtrisés</strong> : pas de licence WordPress, Sanity gratuit jusqu'à 3 utilisateurs</li>\n<li><strong>Évolutivité</strong> : ajout facile de fonctionnalités (espace membre, réservations, etc.)</li>\n<li><strong>Mobile-first</strong> : excellent rendu sur smartphones</li>\n<li><strong>SEO optimisé</strong> : SSR/SSG pour indexation parfaite par Google</li>\n</ul>"
               },
               {
                 "type": "text_image",
                 "layout": "image_right",
-                "image": "images/projects/gpm/contact-page.png",
+                "image": "images/projects/gpm/contact-page-fullpage.png",
                 "content": "<h4>Prochaines Étapes</h4><ul>\n<li>Migration DNS vers le domaine définitif</li>\n<li>Formation approfondie du client à Sanity Studio</li>\n<li>Mise en place Google Analytics</li>\n<li>Stratégie de contenu pour le blog</li>\n<li>Ajout possible d'un espace membre authentifié (Supabase Auth)</li>\n</ul>"
               },
               {
