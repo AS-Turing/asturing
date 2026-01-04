@@ -21,6 +21,7 @@ export default defineNuxtConfig({
   },
 
   // Configuration du sitemap
+
   site: {
     url: 'https://www.as-turing.fr',
   },
