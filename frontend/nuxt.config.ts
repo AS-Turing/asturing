@@ -13,6 +13,10 @@ export default defineNuxtConfig({
   icon: {
     serverBundle: {
       collections: ['skill-icons', 'simple-icons', 'logos', 'mdi']
+    },
+    clientBundle: {
+      collections: ['skill-icons', 'simple-icons', 'logos', 'mdi'],
+      scan: true
     }
   },
 

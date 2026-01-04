@@ -111,7 +111,7 @@
     <!-- Contenu du projet (Challenge, Solution, Results) -->
     <ProjectContent 
       v-if="project && project.content"
-      :key="`project-content-${project.id}`"
+      :key="`project-content-${project.slug}-${project.id}`"
       :content="project.content"
       :projectTitle="project.title"
       :imageText="project.imageText"

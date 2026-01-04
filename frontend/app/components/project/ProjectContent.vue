@@ -34,7 +34,7 @@
                   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
                     <div 
                       v-for="(icon, iconIndex) in techIcons" 
-                      :key="iconIndex"
+                      :key="`tech-${icon}-${iconIndex}`"
                       class="group relative flex flex-col items-center gap-3"
                     >
                       <!-- Glow effect au hover -->
@@ -42,7 +42,10 @@
                       
                       <!-- Icône container -->
                       <div class="relative w-20 h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                        <Icon :name="getIconName(icon)" class="!w-full !h-full drop-shadow-lg" mode="svg" />
+                        <SkillIcon 
+                          :slug="icon" 
+                          class="!w-full !h-full drop-shadow-lg"
+                        />
                       </div>
                       
                       <!-- Label avec style épuré -->
