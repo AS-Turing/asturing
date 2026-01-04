@@ -214,10 +214,16 @@ const sortedBusinessHours = computed(() => {
 
 const submitContact = async () => {
   const { notifySuccess, notifyError } = useNotifications()
+  const gtm = useGtm()
   
   submitting.value = true
   try {
     await sendContactMessage(form.value)
+    
+    // Track la soumission réussie du formulaire
+    gtm.trackFormSubmit('formulaire_contact', 'contact')
+    gtm.trackLeadGeneration('contact_form', 'demande_contact')
+    
     notifySuccess(config.value?.form?.successMessage || '✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.')
     form.value = { name: '', email: '', phone: '', company: '', subject: '', message: '' }
   } catch (error) {
@@ -225,6 +231,12 @@ const submitContact = async () => {
   } finally {
     submitting.value = false
   }
+}
+
+// Track le début de la saisie du formulaire
+const handleFormStart = () => {
+  const gtm = useGtm()
+  gtm.trackFormStart('formulaire_contact')
 }
 
 // SEO Premium AAA pour page contact

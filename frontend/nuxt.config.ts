@@ -42,21 +42,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'fr'
       },
-      script: [
-        {
-          children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TK6GRG67');`,
-          type: 'text/javascript'
-        }
-      ],
-      noscript: [
-        {
-          children: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK6GRG67" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
-        }
-      ],
       link: [
         // Preconnect to API for faster data fetching
         { rel: 'preconnect', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' },
-        { rel: 'dns-prefetch', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' }
+        { rel: 'dns-prefetch', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' },
+        // Preconnect to GTM for faster loading
+        { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
+        { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }
       ]
     }
   },
