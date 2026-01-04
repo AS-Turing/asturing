@@ -42,6 +42,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'fr'
       },
+      script: [
+        {
+          innerHTML: "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TK6GRG67');",
+          type: 'text/javascript',
+          body: true
+        }
+      ],
       link: [
         // Preconnect to API for faster data fetching
         { rel: 'preconnect', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' },
