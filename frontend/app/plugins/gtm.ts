@@ -1,27 +1,40 @@
-import { createGtm } from '@gtm-support/vue-gtm'
-
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   if (process.client) {
-    const router = useRouter()
+    // Initialiser dataLayer
+    window.dataLayer = window.dataLayer || []
     
-    const gtm = createGtm({
-      id: 'GTM-TK6GRG67',
-      defer: false,
-      compatibility: false,
-      enabled: true,
-      debug: true,
-      loadScript: true,
-      vueRouter: router,
-      trackOnNextTick: false,
-    })
-
-    nuxtApp.vueApp.use(gtm)
+    // Charger le script GTM
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TK6GRG67'
     
-    // Exposer GTM dans nuxtApp pour qu'il soit accessible via useNuxtApp()
-    return {
-      provide: {
-        gtm: nuxtApp.vueApp.config.globalProperties.$gtm
-      }
+    const firstScript = document.getElementsByTagName('script')[0]
+    if (firstScript && firstScript.parentNode) {
+      firstScript.parentNode.insertBefore(script, firstScript)
     }
+    
+    // Push l'événement initial
+    window.dataLayer.push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    })
+    
+    // Ajouter noscript
+    const noscript = document.createElement('noscript')
+    const iframe = document.createElement('iframe')
+    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-TK6GRG67'
+    iframe.height = '0'
+    iframe.width = '0'
+    iframe.style.display = 'none'
+    iframe.style.visibility = 'hidden'
+    noscript.appendChild(iframe)
+    document.body.insertBefore(noscript, document.body.firstChild)
   }
 })
+
+// Types pour TypeScript
+declare global {
+  interface Window {
+    dataLayer: Array<Record<string, any>>
+  }
+}
