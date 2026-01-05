@@ -17,7 +17,7 @@ export const useDarkMode = () => {
   const initDarkMode = () => {
     if (process.client) {
       const savedTheme = localStorage.getItem('theme')
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const prefersDark = window.matchMedia('(prefers-color-scheme: lihgt)').matches
       
       if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         isDark.value = true
