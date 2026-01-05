@@ -114,6 +114,9 @@ class SpecificationAnswersType extends AbstractType
                     // Convertir les tableaux (checkbox) en JSON
                     if (is_array($value)) {
                         $answer->setAnswerValue(json_encode($value));
+                    } elseif ($value instanceof \DateTimeInterface) {
+                        // Gérer les dates
+                        $answer->setAnswerValue($value->format('Y-m-d'));
                     } else {
                         $answer->setAnswerValue((string) $value);
                     }
@@ -141,6 +144,14 @@ class SpecificationAnswersType extends AbstractType
                     // Décoder JSON pour les checkbox
                     if ($answer->getSpecification()->getType() === 'checkbox') {
                         $value = json_decode($value, true) ?: [];
+                    }
+                    // Convertir string en DateTime pour les dates
+                    elseif ($answer->getSpecification()->getType() === 'date' && !empty($value)) {
+                        try {
+                            $value = new \DateTime($value);
+                        } catch (\Exception $e) {
+                            $value = null;
+                        }
                     }
                     
                     $form->get($fieldName)->setData($value);

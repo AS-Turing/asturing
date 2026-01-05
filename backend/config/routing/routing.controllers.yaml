@@ -1,0 +1,4 @@
+# Load all controllers with #[Route] attributes
+App\Controller\:
+    resource: '../../src/Controller/'
+    type: attribute

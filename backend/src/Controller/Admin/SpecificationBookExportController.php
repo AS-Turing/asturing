@@ -35,7 +35,7 @@ class SpecificationBookExportController extends AbstractController
         $sections = [
             'Contact' => [1, 2, 3, 4, 5],
             'Contexte entreprise' => [6, 7],
-            'Objectifs du projet' => [8, 9, 10, 11, 12],
+            'Objectifs du projet' => [8, 9],
             'Cibles & Utilisateurs' => [13, 14],
             'Contenu' => [15, 16, 17, 18],
             'Design & UX' => [19, 20, 21, 22],
@@ -45,6 +45,7 @@ class SpecificationBookExportController extends AbstractController
             'Juridique & Conformité' => [32, 33, 34, 35],
             'Collaboration & Suivi' => [36, 37, 38],
             'Maintenance & Évolution' => [39, 40],
+            'Budget & Planning' => [10, 11, 12],
             'Contraintes & Remarques' => [41, 42],
         ];
         
