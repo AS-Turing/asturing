@@ -5,6 +5,7 @@ namespace App\Command;
 use App\DataFixtures\LocationFixtures;
 use App\DataFixtures\ProjectFixtures;
 use App\DataFixtures\ServiceFixtures;
+use App\DataFixtures\SpecificationFixtures;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -55,6 +56,9 @@ class LoadFixturesCommand extends Command
             $connection->executeStatement('TRUNCATE TABLE contact_message');
             $connection->executeStatement('TRUNCATE TABLE company_info');
             $connection->executeStatement('TRUNCATE TABLE location');
+            $connection->executeStatement('TRUNCATE TABLE specification');
+            $connection->executeStatement('TRUNCATE TABLE specification_answer');
+            $connection->executeStatement('TRUNCATE TABLE specification_book');
             $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1');
             
             $io->success('Data purged!');
@@ -107,6 +111,12 @@ class LoadFixturesCommand extends Command
         $locationFixtures = new LocationFixtures();
         $locationFixtures->load($this->entityManager);
         $io->success('Locations loaded successfully!');
+
+        // Load Specifications
+        $io->section('Loading Specifications...');
+        $specificationFixtures = new SpecificationFixtures();
+        $specificationFixtures->load($this->entityManager);
+        $io->success('42 Specifications loaded successfully!');
 
         $io->success('All fixtures loaded successfully!');
 

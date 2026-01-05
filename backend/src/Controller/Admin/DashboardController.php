@@ -6,6 +6,8 @@ use App\Entity\BlogPost;
 use App\Entity\Client;
 use App\Entity\Project;
 use App\Entity\Service;
+use App\Entity\Specification;
+use App\Entity\SpecificationBook;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -53,6 +55,10 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Process Steps', 'fas fa-list-ol', \App\Entity\ServiceProcessStep::class);
         yield MenuItem::linkToCrud('Solutions', 'fas fa-lightbulb', \App\Entity\ServiceSolution::class);
         yield MenuItem::linkToCrud('Technologies', 'fas fa-microchip', \App\Entity\ServiceTechnology::class);
+        
+        yield MenuItem::section('Cahier des charges');
+        yield MenuItem::linkToCrud('Cahiers des charges', 'fas fa-clipboard-list', SpecificationBook::class);
+        yield MenuItem::linkToCrud('Questions', 'fas fa-question', Specification::class);
         
         yield MenuItem::section('Site');
         yield MenuItem::linkToUrl('Voir le site', 'fas fa-eye', '/');

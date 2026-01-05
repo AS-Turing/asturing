@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/crud/form_theme.html.twig' %}
+
+{% block form_start %}
+    {{ parent() }}
+    {% if form.vars.name == 'SpecificationBook' %}
+        <h3 class="mt-4 mb-3">📋 Questions du cahier des charges</h3>
+        <p class="text-muted">Remplissez les questions suivantes avec le client pendant l'entretien</p>
+    {% endif %}
+{% endblock %}

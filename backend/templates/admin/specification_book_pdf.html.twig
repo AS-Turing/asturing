@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cahier des charges - {{ specificationBook.title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DejaVu Sans', Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2563eb;
+        }
+        
+        .header h1 {
+            color: #1e40af;
+            font-size: 24pt;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #6b7280;
+            font-size: 12pt;
+        }
+        
+        .meta-info {
+            background: #f3f4f6;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .meta-info p {
+            margin: 5px 0;
+            font-size: 9pt;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            background: #2563eb;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-radius: 3px;
+        }
+        
+        .question-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9fafb;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .question {
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 5px;
+            font-size: 10pt;
+        }
+        
+        .answer {
+            color: #374151;
+            padding-left: 10px;
+            font-size: 10pt;
+        }
+        
+        .answer.empty {
+            color: #9ca3af;
+            font-style: italic;
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 8pt;
+            color: #6b7280;
+            padding: 10px 0;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .page-number:after {
+            content: counter(page);
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        
+        ul li {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 Cahier des charges</h1>
+        <div class="subtitle">{{ specificationBook.title }}</div>
+    </div>
+    
+    <div class="meta-info">
+        <p><strong>Date de création :</strong> {{ specificationBook.createdAt|date('d/m/Y à H:i') }}</p>
+        {% if specificationBook.description %}
+        <p><strong>Description :</strong> {{ specificationBook.description }}</p>
+        {% endif %}
+    </div>
+    
+    {% for sectionName, questionIds in sections %}
+        {% set hasAnswers = false %}
+        {% for spec in allSpecifications %}
+            {% if spec.displayOrder in questionIds and answers[spec.id] is defined and answers[spec.id] %}
+                {% set hasAnswers = true %}
+            {% endif %}
+        {% endfor %}
+        
+        {% if hasAnswers %}
+        <div class="section">
+            <div class="section-title">{{ sectionName }}</div>
+            
+            {% for spec in allSpecifications %}
+                {% if spec.displayOrder in questionIds %}
+                    <div class="question-block">
+                        <div class="question">{{ spec.label }}</div>
+                        <div class="answer {% if not answers[spec.id] %}empty{% endif %}">
+                            {% if answers[spec.id] %}
+                                {% set value = answers[spec.id] %}
+                                
+                                {# Handle checkbox (JSON array) #}
+                                {% if spec.type == 'checkbox' and value starts with '[' %}
+                                    {% set decodedValues = value|json_decode %}
+                                    {% if decodedValues is iterable %}
+                                        <ul>
+                                        {% for item in decodedValues %}
+                                            <li>{{ item }}</li>
+                                        {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        {{ value }}
+                                    {% endif %}
+                                
+                                {# Handle date #}
+                                {% elseif spec.type == 'date' %}
+                                    {{ value|date('d/m/Y') }}
+                                
+                                {# Handle number #}
+                                {% elseif spec.type == 'number' %}
+                                    {{ value|number_format(0, ',', ' ') }} €
+                                
+                                {# Handle textarea - preserve line breaks #}
+                                {% elseif spec.type == 'textarea' %}
+                                    {{ value|nl2br }}
+                                
+                                {# Default #}
+                                {% else %}
+                                    {{ value }}
+                                {% endif %}
+                            {% else %}
+                                <em>Non renseigné</em>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endfor %}
+    
+    <div class="footer">
+        <p>Généré le {{ "now"|date('d/m/Y à H:i') }} - Page <span class="page-number"></span></p>
+        <p>AS Turing - Agence web & développement</p>
+    </div>
+</body>
+</html>
