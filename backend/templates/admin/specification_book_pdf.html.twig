@@ -147,20 +147,17 @@
                                 
                                 {# Handle checkbox (JSON array) #}
                                 {% if spec.type == 'checkbox' and value starts with '[' %}
-                                    {% set decodedValues = value|json_decode %}
-                                    {% if decodedValues is iterable %}
-                                        <ul>
-                                        {% for item in decodedValues %}
-                                            <li>{{ item }}</li>
-                                        {% endfor %}
-                                        </ul>
-                                    {% else %}
-                                        {{ value }}
-                                    {% endif %}
+                                    {% set decodedValues = value|replace({'"': '', '[': '', ']': ''})|split(',') %}
+                                    <ul>
+                                    {% for item in decodedValues %}
+                                        <li>{{ item }}</li>
+                                    {% endfor %}
+                                    </ul>
                                 
                                 {# Handle date #}
                                 {% elseif spec.type == 'date' %}
-                                    {{ value|date('d/m/Y') }}
+                                    {% set dateValue = value|date('d/m/Y') %}
+                                    {{ dateValue }}
                                 
                                 {# Handle number #}
                                 {% elseif spec.type == 'number' %}
@@ -168,7 +165,7 @@
                                 
                                 {# Handle textarea - preserve line breaks #}
                                 {% elseif spec.type == 'textarea' %}
-                                    {{ value|nl2br }}
+                                    {{ value|nl2br|raw }}
                                 
                                 {# Default #}
                                 {% else %}
