@@ -4,187 +4,497 @@
     <meta charset="UTF-8">
     <title>Cahier des charges - {{ specificationBook.title }}</title>
     <style>
+        @page {
+            margin: 0 0 30px 0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'DejaVu Sans', Arial, sans-serif;
-            font-size: 10pt;
-            line-height: 1.6;
-            color: #333;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: #1a202c;
+            background: #ffffff;
         }
-        
-        .header {
+
+        /* Header professionnel */
+        .page-header {
+            background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 50%, #c084fc 100%);
+            padding: 25px 40px;
+            color: #1a202c;
+            margin-bottom: 0;
+        }
+
+        .header-top {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #2563eb;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
         }
-        
-        .header h1 {
-            color: #1e40af;
-            font-size: 24pt;
-            margin-bottom: 10px;
+
+        .doc-title h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #1a202c;
         }
-        
-        .header .subtitle {
-            color: #6b7280;
-            font-size: 12pt;
+
+        .doc-title .ref {
+            font-size: 10pt;
+            color: #1a202c;
         }
-        
-        .meta-info {
-            background: #f3f4f6;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 5px;
+
+        /* Bloc infos entreprise/client/cadre légal */
+        .info-block {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
-        .meta-info p {
-            margin: 5px 0;
+
+        .info-block h3 {
             font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            color: #1a202c;
         }
-        
+
+        .info-block p {
+            margin: 2px 0;
+            line-height: 1.3;
+            color: #1a202c;
+        }
+
+        /* Bandeau projet */
+        .project-banner {
+            background: #f8fafc;
+            border-left: 5px solid #ff9a3c;
+            padding: 15px 40px;
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 16pt;
+            color: #1a202c;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .project-meta {
+            font-size: 8.5pt;
+            color: #64748b;
+        }
+
+        /* Container */
+        .container {
+            padding: 0 40px 80px 40px;
+        }
+
+        /* Table des matières compacte */
+        .toc {
+            background: #f8fafc;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .toc h2 {
+            font-size: 12pt;
+            color: #1a202c;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #ff9a3c;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            column-count: 2;
+            column-gap: 25px;
+        }
+
+        .toc li {
+            padding: 2px 0;
+            font-size: 8pt;
+            color: #475569;
+            break-inside: avoid;
+        }
+
+        .toc li:before {
+            content: "▸ ";
+            color: #ff9a3c;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* Sections */
         .section {
             page-break-inside: avoid;
             margin-bottom: 25px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
         }
-        
-        .section-title {
-            background: #2563eb;
+
+        .section-header {
+            background: linear-gradient(to right, #ff9a3c, #ff6b6b);
             color: white;
-            padding: 8px 12px;
-            font-size: 14pt;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-radius: 3px;
+            padding: 8px 15px;
+            font-size: 11pt;
+            font-weight: 700;
         }
-        
+
+        .section-number {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: 8px;
+            font-size: 9pt;
+        }
+
+        .section-body {
+            padding: 15px;
+        }
+
+        /* Questions */
         .question-block {
             margin-bottom: 15px;
-            padding: 10px;
-            background: #f9fafb;
-            border-left: 3px solid #3b82f6;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
         }
-        
+
+        .question-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
         .question {
-            font-weight: bold;
-            color: #1e40af;
-            margin-bottom: 5px;
-            font-size: 10pt;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+            font-size: 9.5pt;
         }
-        
+
         .answer {
-            color: #374151;
-            padding-left: 10px;
-            font-size: 10pt;
+            color: #64748b;
+            font-size: 9pt;
+            line-height: 1.6;
+            padding-left: 15px;
+            font-weight: 400;
         }
-        
+
         .answer.empty {
-            color: #9ca3af;
+            color: #cbd5e1;
             font-style: italic;
         }
-        
-        .footer {
+
+        .answer strong {
+            color: #475569;
+            font-weight: 600;
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        /* Listes */
+        ul {
+            margin: 5px 0 5px 15px;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 2px 0;
+            color: #475569;
+            font-size: 8.5pt;
+        }
+
+        /* Footer professionnel */
+        .page-footer {
             position: fixed;
             bottom: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 8pt;
-            color: #6b7280;
-            padding: 10px 0;
-            border-top: 1px solid #e5e7eb;
+            left: 0;
+            right: 0;
+            background: #1e293b;
+            color: white;
+            padding: 8px 40px;
+            font-size: 7pt;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #ff9a3c;
         }
-        
+
         .page-number:after {
             content: counter(page);
         }
-        
-        ul {
-            margin-left: 20px;
-            margin-top: 5px;
-        }
-        
-        ul li {
-            margin: 3px 0;
+
+        /* Valeurs highlight */
+        .value-highlight {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #ff6b6b;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>📋 Cahier des charges</h1>
-        <div class="subtitle">{{ specificationBook.title }}</div>
+    <!-- Header professionnel -->
+    <div class="page-header">
+        <div class="header-top">
+            <div class="doc-title">
+                <h1>CAHIER DES CHARGES</h1>
+                <div class="ref">Réf. CDC-{{ specificationBook.id }} | {{ specificationBook.createdAt|date('d/m/Y') }}</div>
+            </div>
+        </div>
+
+        <div class="header-blocks">
+            <!-- AS-Turing et Client côte à côte avec table -->
+            <table style="width: 100%; margin-bottom: 10px; border-spacing: 10px;">
+                <tr>
+                    <td style="width: 50%; vertical-align: top;">
+                        <div class="info-block">
+                            <h3>📍 AS-TURING</h3>
+                            <p><strong>Alexandre Sirop</strong></p>
+                            <p>Développeur Full-Stack</p>
+                            <p>📧 contact@as-turing.fr</p>
+                            <p>🌐 www.as-turing.fr</p>
+                        </div>
+                    </td>
+                    <td style="width: 50%; vertical-align: top;">
+                        <div class="info-block">
+                            <h3>👤 CLIENT</h3>
+                            {% set clientName = '' %}
+                            {% set clientEmail = '' %}
+                            {% set clientPhone = '' %}
+                            {% set clientCompany = '' %}
+
+                            {% for spec in allSpecifications %}
+                                {% if spec.displayOrder == 1 and answers[spec.id] is defined %}
+                                    {% set clientName = answers[spec.id] %}
+                                {% endif %}
+                                {% if spec.displayOrder == 2 and answers[spec.id] is defined %}
+                                    {% set clientName = clientName ~ ' ' ~ answers[spec.id] %}
+                                {% endif %}
+                                {% if spec.displayOrder == 3 and answers[spec.id] is defined %}
+                                    {% set clientEmail = answers[spec.id] %}
+                                {% endif %}
+                                {% if spec.displayOrder == 4 and answers[spec.id] is defined %}
+                                    {% set clientPhone = answers[spec.id] %}
+                                {% endif %}
+                                {% if spec.displayOrder == 5 and answers[spec.id] is defined %}
+                                    {% set clientCompany = answers[spec.id] %}
+                                {% endif %}
+                            {% endfor %}
+
+                            <p><strong>{{ clientName|default('Non renseigné') }}</strong></p>
+                            {% if clientCompany %}<p>{{ clientCompany }}</p>{% endif %}
+                            {% if clientEmail %}<p>📧 {{ clientEmail }}</p>{% endif %}
+                            {% if clientPhone %}<p>📱 {{ clientPhone }}</p>{% endif %}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Bloc Cadre légal sur toute la largeur -->
+            <div class="info-block">
+                <h3>⚖️ CADRE LÉGAL</h3>
+                <p>Ce document définit le périmètre du projet. <strong>Modifications importantes :</strong> Tout changement majeur nécessitera une ré-estimation du budget et des délais. <strong>Validation :</strong> À l'appréciation d'AS-Turing.</p>
+            </div>
+        </div>
     </div>
-    
-    <div class="meta-info">
-        <p><strong>Date de création :</strong> {{ specificationBook.createdAt|date('d/m/Y à H:i') }}</p>
-        {% if specificationBook.description %}
-        <p><strong>Description :</strong> {{ specificationBook.description }}</p>
-        {% endif %}
+
+    <!-- Bandeau projet -->
+    <div class="project-banner">
+        <div class="project-title">{{ specificationBook.title }}</div>
+        <div class="project-meta">
+            {% if specificationBook.description %}
+            <strong>Note :</strong> {{ specificationBook.description }}
+            {% endif %}
+        </div>
     </div>
-    
-    {% for sectionName, questionIds in sections %}
-        {% set hasAnswers = false %}
-        {% for spec in allSpecifications %}
-            {% if spec.displayOrder in questionIds and answers[spec.id] is defined and answers[spec.id] %}
-                {% set hasAnswers = true %}
+
+    <div class="container">
+        <!-- Table des matières -->
+        <div class="toc">
+            <h2>📋 Sommaire</h2>
+            <ul>
+                {% set section_count = 0 %}
+                {% for sectionName, questionIds in sections %}
+                    {% set hasAnswers = false %}
+                    {% for spec in allSpecifications %}
+                        {% if spec.displayOrder in questionIds and answers[spec.id] is defined and answers[spec.id] %}
+                            {% set hasAnswers = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if hasAnswers %}
+                        {% set section_count = section_count + 1 %}
+                        <li>{{ section_count }}. {{ sectionName }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Sections -->
+        {% set section_count = 0 %}
+        {% for sectionName, questionIds in sections %}
+            {% set hasAnswers = false %}
+            {% for spec in allSpecifications %}
+                {% if spec.displayOrder in questionIds and answers[spec.id] is defined and answers[spec.id] %}
+                    {% set hasAnswers = true %}
+                {% endif %}
+            {% endfor %}
+
+            {% if hasAnswers %}
+                {% set section_count = section_count + 1 %}
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-number">{{ section_count }}</span>
+                        {{ sectionName }}
+                    </div>
+                    <div class="section-body">
+                        {% for spec in allSpecifications %}
+                            {% if spec.displayOrder in questionIds %}
+                                <div class="question-block">
+                                    <div class="question">{{ spec.label }}</div>
+                                    <div class="answer {% if not answers[spec.id] %}empty{% endif %}">
+                                        {% if answers[spec.id] %}
+                                            {% set value = answers[spec.id] %}
+
+                                            {# Handle checkbox #}
+                                            {% if spec.type == 'checkbox' and value starts with '[' %}
+                                                {% set decodedValues = value|replace({'"': '', '[': '', ']': ''})|split(',') %}
+                                                <ul>
+                                                {% for item in decodedValues %}
+                                                    <li>{{ item }}</li>
+                                                {% endfor %}
+                                                </ul>
+
+                                            {# Handle date #}
+                                            {% elseif spec.type == 'date' %}
+                                                <span class="value-highlight">📅 {{ value|date('d/m/Y') }}</span>
+
+                                            {# Handle number #}
+                                            {% elseif spec.type == 'number' %}
+                                                <span class="value-highlight">💰 {{ value|number_format(0, ',', ' ') }} €</span>
+
+                                            {# Handle textarea #}
+                                            {% elseif spec.type == 'textarea' %}
+                                                {{ value|nl2br|raw }}
+
+                                            {# Default #}
+                                            {% else %}
+                                                <strong>{{ value }}</strong>
+                                            {% endif %}
+                                        {% else %}
+                                            <em>Non renseigné</em>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
             {% endif %}
         {% endfor %}
         
-        {% if hasAnswers %}
-        <div class="section">
-            <div class="section-title">{{ sectionName }}</div>
-            
-            {% for spec in allSpecifications %}
-                {% if spec.displayOrder in questionIds %}
-                    <div class="question-block">
-                        <div class="question">{{ spec.label }}</div>
-                        <div class="answer {% if not answers[spec.id] %}empty{% endif %}">
-                            {% if answers[spec.id] %}
-                                {% set value = answers[spec.id] %}
-                                
-                                {# Handle checkbox (JSON array) #}
-                                {% if spec.type == 'checkbox' and value starts with '[' %}
-                                    {% set decodedValues = value|replace({'"': '', '[': '', ']': ''})|split(',') %}
-                                    <ul>
-                                    {% for item in decodedValues %}
-                                        <li>{{ item }}</li>
-                                    {% endfor %}
-                                    </ul>
-                                
-                                {# Handle date #}
-                                {% elseif spec.type == 'date' %}
-                                    {% set dateValue = value|date('d/m/Y') %}
-                                    {{ dateValue }}
-                                
-                                {# Handle number #}
-                                {% elseif spec.type == 'number' %}
-                                    {{ value|number_format(0, ',', ' ') }} €
-                                
-                                {# Handle textarea - preserve line breaks #}
-                                {% elseif spec.type == 'textarea' %}
-                                    {{ value|nl2br|raw }}
-                                
-                                {# Default #}
-                                {% else %}
-                                    {{ value }}
-                                {% endif %}
-                            {% else %}
-                                <em>Non renseigné</em>
-                            {% endif %}
+        <!-- Page CGV -->
+        <div style="page-break-before: always; page-break-inside: avoid; padding-top: 40px;">
+            <div class="section" style="page-break-inside: avoid;">
+                <div style="background: #ff9a3c; color: #1a202c; padding: 8px 15px; font-size: 11pt; font-weight: 700; border-radius: 6px 6px 0 0;">
+                    <span style="background: rgba(255, 255, 255, 0.4); padding: 2px 8px; border-radius: 12px; margin-right: 8px; font-size: 9pt;">📋</span>
+                    CONDITIONS GÉNÉRALES & CADRE CONTRACTUEL
+                </div>
+                <div class="section-body" style="padding: 12px;">
+                    <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 8px; margin-bottom: 12px; border-radius: 4px;">
+                        <p style="font-size: 8.5pt; color: #78350f; margin: 0; line-height: 1.3;">
+                            <strong>⚠️ Important :</strong> Ce cahier des charges est établi sur la base des informations communiquées lors de l'entretien. 
+                            Il définit le périmètre du projet et sert de référence pour l'estimation budgétaire.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px; font-size: 9pt;">1. Modifications du projet</div>
+                        <div style="color: #64748b; font-size: 8pt; line-height: 1.4; padding-left: 10px;">
+                            Toute demande de modification majeure après validation du cahier des charges et signature du devis 
+                            pourra faire l'objet d'un devis complémentaire. Les ajustements mineurs sont inclus dans le cadre 
+                            des itérations prévues au contrat.
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
+                    
+                    <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px; font-size: 9pt;">2. Tarification & modalités de paiement</div>
+                        <div style="color: #64748b; font-size: 8pt; line-height: 1.4; padding-left: 10px;">
+                            • Un <strong>acompte de 30%</strong> est demandé à la validation du devis<br>
+                            • Le solde est réglé à <strong>30 jours fin de mois</strong> après livraison<br>
+                            • Facturation au forfait selon grille tarifaire ou sur mesure<br>
+                            • Pénalités de retard conformes à la loi (article L.441-10 du Code de commerce)
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px; font-size: 9pt;">3. Propriété intellectuelle</div>
+                        <div style="color: #64748b; font-size: 8pt; line-height: 1.4; padding-left: 10px;">
+                            Les créations livrées (code, design, contenus) sont cédées avec un droit d'usage complet et non exclusif. 
+                            La propriété intellectuelle reste celle d'AS-Turing jusqu'au paiement intégral des sommes dues.
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px; font-size: 9pt;">4. Confidentialité</div>
+                        <div style="color: #64748b; font-size: 8pt; line-height: 1.4; padding-left: 10px;">
+                            AS-Turing s'engage à la confidentialité totale des données partagées dans le cadre du projet. 
+                            Une clause de non-divulgation (NDA) peut être établie sur simple demande.
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px; font-size: 9pt;">5. Délais de réalisation</div>
+                        <div style="color: #64748b; font-size: 8pt; line-height: 1.4; padding-left: 10px;">
+                            Les délais indiqués dans le devis sont indicatifs et peuvent varier selon la disponibilité du client 
+                            à fournir les éléments nécessaires (contenus, accès, validations). Les retards causés par le client 
+                            pourront décaler la date de livraison finale.
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px; font-size: 9pt;">6. Limitation de responsabilité</div>
+                        <div style="color: #64748b; font-size: 8pt; line-height: 1.4; padding-left: 10px;">
+                            AS-Turing ne saurait être tenu responsable en cas de défaillance de services tiers 
+                            (hébergement, plugins, modules externes) utilisés dans le cadre du projet. Une assistance 
+                            technique reste assurée dans les limites contractuelles.
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid #e2e8f0; margin-top: 12px; padding-top: 10px;">
+                        <p style="font-size: 7.5pt; color: #64748b; text-align: center; margin: 0; line-height: 1.3;">
+                            <strong>CGV complètes disponibles sur :</strong> www.as-turing.fr/cgv<br>
+                            En validant ce cahier des charges, le client accepte les présentes conditions et les CGV d'AS-Turing.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% endif %}
-    {% endfor %}
-    
-    <div class="footer">
-        <p>Généré le {{ "now"|date('d/m/Y à H:i') }} - Page <span class="page-number"></span></p>
-        <p>AS Turing - Agence web & développement</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+        <div>
+            <strong>AS-Turing</strong> - Développement Web | contact@as-turing.fr
+        </div>
+        <div>
+            Généré le {{ "now"|date('d/m/Y à H:i') }} | Page <span class="page-number"></span>
+        </div>
     </div>
 </body>
 </html>

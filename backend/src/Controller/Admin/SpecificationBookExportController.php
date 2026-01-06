@@ -55,6 +55,9 @@ class SpecificationBookExportController extends AbstractController
             'allSpecifications' => $allSpecifications,
             'answers' => $answers,
             'sections' => $sections,
+            'absolute_url' => function($path) {
+                return $_SERVER['DOCUMENT_ROOT'] . $path;
+            }
         ]);
         
         // Configuration Dompdf
