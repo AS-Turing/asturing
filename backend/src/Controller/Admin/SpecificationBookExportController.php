@@ -55,15 +55,12 @@ class SpecificationBookExportController extends AbstractController
             'allSpecifications' => $allSpecifications,
             'answers' => $answers,
             'sections' => $sections,
-            'absolute_url' => function($path) {
-                return $_SERVER['DOCUMENT_ROOT'] . $path;
-            }
         ]);
         
         // Configuration Dompdf
         $options = new Options();
         $options->set('defaultFont', 'DejaVu Sans');
-        $options->set('isRemoteEnabled', true);
+        $options->set('isRemoteEnabled', false);
         
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html);
