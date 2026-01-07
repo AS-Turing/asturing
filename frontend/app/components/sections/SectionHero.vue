@@ -35,10 +35,22 @@
             </span>
           </h1>
           
+          <h2 class="text-2xl md:text-3xl font-semibold text-white/95 leading-relaxed fade-in-up" style="animation-delay: 0.25s">
+            Votre agence web de proximité dans l'Entre-deux-Mers
+          </h2>
+          
           <p class="text-xl md:text-2xl text-white/90 leading-relaxed fade-in-up" style="animation-delay: 0.3s">
-            Votre agence web de proximité dans l'Entre-deux-Mers. 
-            Sites vitrines, e-commerce et applications métier pour commerces et PME. 
-            <strong class="font-bold">Qualité professionnelle, tarifs accessibles, accompagnement personnalisé.</strong>
+            <strong class="font-bold">Sites vitrines, e-commerce et applications métier</strong> pour commerces et PME de Gironde.
+          </p>
+          
+          <p class="text-lg text-white/85 leading-relaxed fade-in-up" style="animation-delay: 0.35s">
+            Depuis 2 ans, nous accompagnons les entreprises locales dans leur transformation digitale avec des solutions sur mesure.
+            <strong class="font-semibold">Qualité professionnelle, tarifs transparents, accompagnement personnalisé et maintenance incluse.</strong>
+          </p>
+          
+          <p class="text-base text-white/75 italic fade-in-up" style="animation-delay: 0.37s">
+            Développement web moderne avec WordPress, PrestaShop, Shopify ou solutions sur mesure en Symfony et Vue.js.
+            Hébergement sécurisé, optimisation SEO, design responsive et accessibilité garantis.
           </p>
           
           <p class="text-lg text-white/80 mb-4 fade-in-up" style="animation-delay: 0.4s">
