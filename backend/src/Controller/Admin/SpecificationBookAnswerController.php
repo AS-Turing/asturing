@@ -28,6 +28,11 @@ class SpecificationBookAnswerController extends AbstractController
             $this->addFlash('success', 'Le cahier des charges a été enregistré avec succès !');
 
             // Redirection simple vers le dashboard admin
+            if ($form->isSubmitted() && !$form->isValid()) {
+                foreach ($form->getErrors(true) as $error) {
+                    $this->addFlash('error', $error->getMessage());
+                }
+            }
             return $this->redirect('/admin');
         }
 
