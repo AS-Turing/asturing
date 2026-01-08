@@ -22,10 +22,11 @@ class SpecificationBookAnswerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($specificationBook);
             $entityManager->flush();
-            
+
             $this->addFlash('success', 'Le cahier des charges a été enregistré avec succès !');
-            
+
             // Redirection simple vers le dashboard admin
             return $this->redirect('/admin');
         }
