@@ -243,17 +243,39 @@ const { data: project, error } = await useFetch(() => `/api/projects/${slug}`, {
 watch(project, (newProject) => {
   if (newProject) {
     usePremiumSeo({
-      title: `${newProject.title} - Réalisation AS-Turing`,
-      description: newProject.excerpt || newProject.description,
+      title: newProject.metaTitle || `${newProject.title} - Réalisation AS-Turing`,
+      description: newProject.metaDescription || newProject.excerpt || newProject.description,
       url: `https://www.as-turing.fr/projets/${newProject.slug}`,
-      image: newProject.imageUrl || 'https://www.as-turing.fr/images/og-projects.jpg',
+      image: newProject.ogImage || newProject.imageUrl || 'https://www.as-turing.fr/images/og-projects.jpg',
       type: 'article',
+      article: {
+        publishedTime: newProject.completedDate || new Date().toISOString(),
+        author: 'AS-Turing',
+        section: newProject.category,
+        tags: newProject.technologies || []
+      },
+      author: {
+        name: 'AS-Turing',
+        url: 'https://www.as-turing.fr'
+      },
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
         { name: 'Projets', url: '/projets' },
         { name: newProject.title, url: `/projets/${newProject.slug}` }
       ]
     })
+    
+    // Keywords meta
+    if (newProject.metaKeywords) {
+      useHead({
+        meta: [
+          {
+            name: 'keywords',
+            content: newProject.metaKeywords
+          }
+        ]
+      })
+    }
   }
 }, { immediate: true })
 

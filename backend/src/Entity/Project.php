@@ -128,6 +128,21 @@ class Project
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $metaTitle = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $metaDescription = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $metaKeywords = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $ogImage = null;
+
+    #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
+    private ?\DateTimeImmutable $completedDate = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -553,6 +568,61 @@ class Project
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+        return $this;
+    }
+
+    public function getMetaTitle(): ?string
+    {
+        return $this->metaTitle;
+    }
+
+    public function setMetaTitle(?string $metaTitle): static
+    {
+        $this->metaTitle = $metaTitle;
+        return $this;
+    }
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->metaDescription;
+    }
+
+    public function setMetaDescription(?string $metaDescription): static
+    {
+        $this->metaDescription = $metaDescription;
+        return $this;
+    }
+
+    public function getMetaKeywords(): ?string
+    {
+        return $this->metaKeywords;
+    }
+
+    public function setMetaKeywords(?string $metaKeywords): static
+    {
+        $this->metaKeywords = $metaKeywords;
+        return $this;
+    }
+
+    public function getOgImage(): ?string
+    {
+        return $this->ogImage;
+    }
+
+    public function setOgImage(?string $ogImage): static
+    {
+        $this->ogImage = $ogImage;
+        return $this;
+    }
+
+    public function getCompletedDate(): ?\DateTimeImmutable
+    {
+        return $this->completedDate;
+    }
+
+    public function setCompletedDate(?\DateTimeImmutable $completedDate): static
+    {
+        $this->completedDate = $completedDate;
         return $this;
     }
 }

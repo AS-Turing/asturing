@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 
   // Configuration de Nuxt Icon
   icon: {
@@ -38,11 +38,33 @@ export default defineNuxtConfig({
     ]
   },
 
+  // robots.txt (généré dynamiquement par @nuxtjs/robots)
+  robots: {
+    allow: ['/'],
+    disallow: ['/admin'],
+    sitemap: 'https://www.as-turing.fr/sitemap.xml'
+  },
+
   app: {
     head: {
       htmlAttrs: {
         lang: 'fr'
       },
+      
+      // SEO defaults (overridable par page)
+      title: 'AS-Turing | Agence Web Libourne - Création Sites Internet & E-commerce',
+      titleTemplate: '%s | AS-Turing',
+      
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'format-detection', content: 'telephone=no' },
+        { name: 'theme-color', content: '#1e40af' },
+        // Default description (sera override par pages)
+        { name: 'description', content: 'Agence web à Libourne. Création de sites internet et e-commerce pour PME. Qualité professionnelle, tarifs accessibles. Libourne, Saint-Émilion, Bordeaux.' },
+        // Google verification (à ajouter si tu as Search Console)
+        // { name: 'google-site-verification', content: 'YOUR_VERIFICATION_CODE' }
+      ],
 
       link: [
         // Preconnect to API for faster data fetching
@@ -50,7 +72,9 @@ export default defineNuxtConfig({
         { rel: 'dns-prefetch', href: process.env.NUXT_PUBLIC_API_BASE || 'http://symfony' },
         // Preconnect to GTM for faster loading
         { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
-        { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }
+        { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
+        // Favicon
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
   },

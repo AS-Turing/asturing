@@ -36,8 +36,18 @@
         <!-- Meta -->
         <div class="flex flex-wrap items-center gap-6 text-white/90">
           <div class="flex items-center gap-2">
+            <Icon name="mdi:account-circle" class="w-5 h-5" />
+            <span>Par AS-Turing</span>
+          </div>
+          <div class="flex items-center gap-2">
             <Icon name="mdi:calendar" class="w-5 h-5" />
-            <span>{{ formattedArticle.date }}</span>
+            <time :datetime="article?.publishedAt">{{ formattedArticle.date }}</time>
+          </div>
+          <div v-if="article?.updatedAt !== article?.publishedAt" class="flex items-center gap-2">
+            <Icon name="mdi:update" class="w-5 h-5" />
+            <time :datetime="article?.updatedAt">
+              Mis à jour le {{ new Date(article.updatedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) }}
+            </time>
           </div>
           <div class="flex items-center gap-2">
             <Icon name="mdi:clock-outline" class="w-5 h-5" />
@@ -64,6 +74,11 @@
                  blog-content"
           v-html="formattedArticle.content"
         ></div>
+
+        <!-- Author Card (E-E-A-T signal) -->
+        <div class="mt-12">
+          <BlogAuthorCard />
+        </div>
 
         <!-- Share -->
         <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
@@ -261,6 +276,10 @@ watch(formattedArticle, (newArticle) => {
         section: newArticle.category,
         tags: newArticle.tags || []
       },
+      author: {
+        name: 'AS-Turing',
+        url: 'https://www.as-turing.fr'
+      },
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
         { name: 'Blog', url: '/blog' },
@@ -268,12 +287,28 @@ watch(formattedArticle, (newArticle) => {
       ]
     })
     
-    // Keywords meta
+    // Keywords + reading time meta
     useHead({
       meta: [
         {
           name: 'keywords',
           content: newArticle.metaKeywords || `${newArticle.category}, blog développement web, ${newArticle.slug}`
+        },
+        {
+          name: 'article:published_time',
+          content: article.value?.publishedAt
+        },
+        {
+          name: 'article:modified_time',
+          content: article.value?.updatedAt
+        },
+        {
+          name: 'twitter:label1',
+          content: 'Temps de lecture'
+        },
+        {
+          name: 'twitter:data1',
+          content: `${readingTime.value} min`
         }
       ]
     })

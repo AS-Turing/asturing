@@ -57,15 +57,10 @@ class ServiceController extends AbstractController
             'heroTitle' => $service->getHeroTitle(),
             'heroSubtitle' => $service->getHeroSubtitle(),
             'auditDuration' => $service->getAuditDuration(),
-            'auditDescription' => $service->getAuditDescription(),
             'startingPrice' => $service->getStartingPrice(),
             'deliveryTime' => $service->getDeliveryTime(),
-            'features' => array_map(fn($f) => [
-                'id' => $f->getId(),
-                'title' => $f->getTitle(),
-                'description' => $f->getDescription(),
-                'icon' => $f->getIcon(),
-            ], $service->getFeatures()->toArray()),
+            'priceRange' => $service->getPriceRange(),
+            'areaServed' => $service->getAreaServed(),
             'solutions' => array_map(fn($s) => [
                 'id' => $s->getId(),
                 'title' => $s->getTitle(),

@@ -52,6 +52,23 @@ class ProjectFixtures
             $project->setPosition($data['position']);
             $project->setIsActive(true);
 
+            // SEO Meta fields
+            if (isset($data['metaTitle'])) {
+                $project->setMetaTitle($data['metaTitle']);
+            }
+            if (isset($data['metaDescription'])) {
+                $project->setMetaDescription($data['metaDescription']);
+            }
+            if (isset($data['metaKeywords'])) {
+                $project->setMetaKeywords($data['metaKeywords']);
+            }
+            if (isset($data['ogImage'])) {
+                $project->setOgImage($data['ogImage']);
+            }
+            if (isset($data['completedDate'])) {
+                $project->setCompletedDate(new \DateTimeImmutable($data['completedDate']));
+            }
+
             $manager->persist($project);
         }
 

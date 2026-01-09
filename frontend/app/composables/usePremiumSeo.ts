@@ -5,13 +5,20 @@ interface SeoConfig {
   description: string
   url?: string
   image?: string
-  type?: 'website' | 'article' | 'product'
+  type?: 'website' | 'article' | 'product' | 'service'
   article?: {
     publishedTime?: string
     modifiedTime?: string
     author?: string
     section?: string
     tags?: string[]
+  }
+  service?: {
+    name: string
+    description: string
+    provider?: string
+    areaServed?: string[]
+    priceRange?: string
   }
   breadcrumbs?: Array<{ name: string; url: string }>
   faq?: Array<{ question: string; answer: string }>
@@ -21,6 +28,10 @@ interface SeoConfig {
     description: string
     price?: string
     currency?: string
+  }
+  author?: {
+    name: string
+    url?: string
   }
 }
 
@@ -152,16 +163,24 @@ export const usePremiumSeo = (config: SeoConfig) => {
   if (config.type === 'article' && config.article) {
     schemas.push({
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting', // Plus précis que Article
       headline: config.title,
       description: config.description,
       image: image,
-      author: {
+      author: config.author ? {
         '@type': 'Organization',
-        name: config.article.author || 'AS-Turing'
+        '@id': 'https://www.as-turing.fr/#organization',
+        name: config.author.name,
+        url: config.author.url || 'https://www.as-turing.fr'
+      } : {
+        '@type': 'Organization',
+        '@id': 'https://www.as-turing.fr/#organization',
+        name: config.article.author || 'AS-Turing',
+        url: 'https://www.as-turing.fr'
       },
       publisher: {
         '@type': 'Organization',
+        '@id': 'https://www.as-turing.fr/#organization',
         name: 'AS-Turing',
         logo: {
           '@type': 'ImageObject',
@@ -173,7 +192,10 @@ export const usePremiumSeo = (config: SeoConfig) => {
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': url
-      }
+      },
+      // Ajout section/tags si disponibles
+      ...(config.article.section && { articleSection: config.article.section }),
+      ...(config.article.tags && config.article.tags.length > 0 && { keywords: config.article.tags.join(', ') })
     })
   }
   
@@ -248,11 +270,55 @@ export const usePremiumSeo = (config: SeoConfig) => {
     })
   }
   
-  // Inject all schemas
+  // WebPage Schema (pour toutes les pages)
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': url,
+    url: url,
+    name: config.title,
+    description: config.description,
+    isPartOf: {
+      '@id': 'https://www.as-turing.fr/#website'
+    },
+    about: {
+      '@id': 'https://www.as-turing.fr/#organization'
+    },
+    inLanguage: 'fr-FR',
+    potentialAction: [{
+      '@type': 'ReadAction',
+      target: [url]
+    }]
+  })
+  
+  // Service Schema (si type service)
+  if (config.type === 'service' && config.service) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: config.service.name,
+      description: config.service.description,
+      provider: {
+        '@type': 'Organization',
+        name: config.service.provider || 'AS-Turing',
+        url: 'https://www.as-turing.fr'
+      },
+      areaServed: config.service.areaServed || ['Libourne', 'Saint-Émilion', 'Bordeaux', 'Gironde'],
+      serviceType: 'Création de site internet',
+      priceRange: config.service.priceRange || '€€'
+      // Note: Pas de price numérique ici car priceRange est textuel
+    })
+  }
+  
+  // Inject all schemas in ONE script with unique key
   useHead({
-    script: schemas.map(schema => ({
+    script: [{
+      key: 'schema-org-graph',
       type: 'application/ld+json',
-      innerHTML: JSON.stringify(schema)
-    }))
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': schemas
+      })
+    }]
   })
 }

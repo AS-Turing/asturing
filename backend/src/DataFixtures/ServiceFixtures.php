@@ -66,6 +66,14 @@ class ServiceFixtures extends Fixture
                 $service->setOgImage($serviceData['ogImage']);
             }
             
+            // SEO Service schema fields
+            if (isset($serviceData['priceRange'])) {
+                $service->setPriceRange($serviceData['priceRange']);
+            }
+            if (isset($serviceData['areaServed'])) {
+                $service->setAreaServed($serviceData['areaServed']);
+            }
+            
             $manager->persist($service);
 
             // Solutions

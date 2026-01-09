@@ -5,7 +5,7 @@
   "codePostal": "33210",
   "region": "Nouvelle-Aquitaine",
   "coordinates": {
-    "latitude": 44.5550,
+    "latitude": 44.555,
     "longitude": -0.2472
   },
   "meta": {
@@ -131,9 +131,9 @@
       },
       {
         "title": "GPM Garage",
-        "location": "Libourne",
+        "location": "Bègles",
         "type": "Site vitrine associatif",
-        "url": "dev.gpm.as-turing.fr"
+        "url": "https://www.asso-gpm.fr/"
       }
     ]
   },
@@ -207,5 +207,6 @@
       "Barsac",
       "Saint-Macaire"
     ]
-  }
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/langon.jpg"
 }

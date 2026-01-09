@@ -131,9 +131,9 @@
       },
       {
         "title": "GPM Garage",
-        "location": "Libourne",
+        "location": "Bègles",
         "type": "Site vitrine associatif",
-        "url": "dev.gpm.as-turing.fr"
+        "url": "https://www.asso-gpm.fr/"
       }
     ]
   },
@@ -207,5 +207,6 @@
       "Fronsac",
       "Lalande-de-Pomerol"
     ]
-  }
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/saint-emilion.jpg"
 }

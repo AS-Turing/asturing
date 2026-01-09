@@ -334,7 +334,7 @@ watch(location, (newLocation) => {
       title: newLocation.meta.title,
       description: newLocation.meta.description,
       url: `https://www.as-turing.fr/creation-site-internet-${newLocation.slug}`,
-      image: 'https://www.as-turing.fr/images/og-location.jpg',
+      image: newLocation.ogImage || 'https://www.as-turing.fr/images/og-location.jpg',
       type: 'website',
       breadcrumbs: [
         { name: 'Accueil', url: '/' },

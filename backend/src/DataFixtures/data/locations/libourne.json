@@ -131,9 +131,9 @@
       },
       {
         "title": "GPM Garage",
-        "location": "Libourne",
+        "location": "Bègles",
         "type": "Site vitrine associatif",
-        "url": "dev.gpm.as-turing.fr"
+        "url": "dhttps://www.asso-gpm.fr/"
       }
     ]
   },
@@ -207,5 +207,6 @@
       "Puisseguin",
       "Lussac"
     ]
-  }
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/libourne.jpg"
 }

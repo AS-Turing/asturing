@@ -14,7 +14,15 @@
             "metaTitle": "Pourquoi Mettre à Jour Son Site Web Régulièrement | Guide Complet 2025",
             "metaDescription": "Découvrez pourquoi la mise à jour régulière de votre site web est essentielle : sécurité renforcée, SEO amélioré, performance optimisée, conformité RGPD. Guide complet pour TPE/PME.",
             "metaKeywords": "mise à jour site web, sécurité web, maintenance site internet, SEO performance, RGPD conformité, WordPress maintenance",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/pourquoi-mettre-a-jour-son-site-web.jpg",
+            "tags": [
+                "conseil web",
+                "guide",
+                "bonnes pratiques",
+                "mise à jour site web",
+                "sécurité web"
+            ],
+            "updatedAt": "2025-01-05"
         },
         {
             "title": "SEO Local : Comment attirer plus de clients autour de Libourne",
@@ -30,7 +38,15 @@
             "metaTitle": "SEO Local Libourne : Comment Attirer Plus de Clients à Proximité | Guide 2025",
             "metaDescription": "Optimisez votre SEO local à Libourne : Google Business, pages locales, avis clients. Stratégies simples et efficaces pour TPE/PME. Résultats mesurables en quelques semaines.",
             "metaKeywords": "SEO local Libourne, Google Business Profile, référencement local TPE, avis clients Google, citations locales, annuaires Libourne",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/seo-local-attirer-clients-libourne.jpg",
+            "tags": [
+                "référencement",
+                "seo",
+                "google",
+                "SEO local Libourne",
+                "Google Business Profile"
+            ],
+            "updatedAt": "2025-01-03"
         },
         {
             "title": "Quelle est la différence entre un site vitrine et un site e-commerce ?",
@@ -46,7 +62,15 @@
             "metaTitle": "Site Vitrine ou E-commerce : Lequel Choisir Pour Votre Entreprise ? Guide Complet 2025",
             "metaDescription": "Site vitrine ou boutique e-commerce ? Découvrez les différences, budgets, fonctionnalités et faites le bon choix pour votre activité. Comparatif détaillé pour TPE/PME.",
             "metaKeywords": "site vitrine, e-commerce, boutique en ligne, création site internet, différence vitrine ecommerce, choisir type site web",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/difference-site-vitrine-ecommerce.jpg",
+            "tags": [
+                "conseil web",
+                "guide",
+                "bonnes pratiques",
+                "site vitrine",
+                "e-commerce"
+            ],
+            "updatedAt": "2025-01-02"
         },
         {
             "title": "Pourquoi la vitesse de votre site influence vos ventes",
@@ -62,7 +86,14 @@
             "metaTitle": "Pourquoi la Vitesse de Votre Site Influence Vos Ventes",
             "metaDescription": "Découvrez comment la vitesse de votre site impacte conversion, SEO et ventes. Optimisez vos performances web.",
             "metaKeywords": "performance web, vitesse site, optimisation site, SEO technique",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/vitesse-site-influence-ventes.jpg",
+            "tags": [
+                "performance web",
+                "vitesse",
+                "optimisation",
+                "vitesse site"
+            ],
+            "updatedAt": "2025-01-01"
         },
         {
             "title": "5 raisons de passer votre site sur WordPress en 2025",
@@ -78,7 +109,15 @@
             "metaTitle": "Pourquoi Choisir WordPress en 2025 ?",
             "metaDescription": "WordPress reste la solution la plus flexible et fiable pour les TPE/PME. Découvrez ses avantages en 2025.",
             "metaKeywords": "WordPress 2025, CMS, création site WordPress",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/pourquoi-passer-a-wordpress-2025.jpg",
+            "tags": [
+                "développement web",
+                "cms",
+                "technique",
+                "WordPress 2025",
+                "CMS"
+            ],
+            "updatedAt": "2024-12-30"
         },
         {
             "title": "Automatiser vos tâches répétitives : un gain de temps énorme pour votre entreprise",
@@ -94,7 +133,15 @@
             "metaTitle": "Automatisation : Comment Gagner du Temps dans Votre TPE",
             "metaDescription": "Découvrez comment automatiser emails, CRM, facturation et tâches répétitives pour gagner du temps chaque semaine.",
             "metaKeywords": "automatisation entreprise, sync crm, gagner temps tpe",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/automatiser-taches-repetitives-gain-temps.jpg",
+            "tags": [
+                "automatisation",
+                "productivité",
+                "outils",
+                "automatisation entreprise",
+                "sync crm"
+            ],
+            "updatedAt": "2025-01-04"
         },
         {
             "title": "Combien coûte réellement un site web professionnel ?",
@@ -110,7 +157,15 @@
             "metaTitle": "Combien Coûte un Site Web Professionnel ?",
             "metaDescription": "Découvrez les vrais coûts d’un site web : design, dev, SEO, maintenance. Tarifs adaptés aux TPE/PME.",
             "metaKeywords": "prix site internet, coût site web, devis création site",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/combien-coute-site-web-professionnel.jpg",
+            "tags": [
+                "tarifs",
+                "budget",
+                "investissement",
+                "prix site internet",
+                "coût site web"
+            ],
+            "updatedAt": "2024-12-29"
         },
         {
             "title": "Pourquoi investir dans une maintenance TMA dès le lancement ?",
@@ -126,7 +181,15 @@
             "metaTitle": "Pourquoi la Maintenance TMA est Essentielle",
             "metaDescription": "Découvrez pourquoi la maintenance TMA protège votre site, améliore vos performances et prévient les pannes.",
             "metaKeywords": "maintenance TMA, support technique, sécurité site web",
-            "ogImage": null
+            "ogImage": "https://www.as-turing.fr/images/blog/pourquoi-maintenance-tma-des-lancement.jpg",
+            "tags": [
+                "maintenance",
+                "sécurité",
+                "mise à jour",
+                "maintenance TMA",
+                "support technique"
+            ],
+            "updatedAt": "2025-01-06"
         }
     ]
 }

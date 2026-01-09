@@ -29,7 +29,11 @@ usePremiumSeo({
   type: 'website',
   breadcrumbs: [
     { name: 'Accueil', url: '/' }
-  ]
+  ],
+  author: {
+    name: 'AS-Turing',
+    url: 'https://www.as-turing.fr'
+  }
 })
 
 // Geo + Keywords meta spécifiques local

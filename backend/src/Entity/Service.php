@@ -106,6 +106,12 @@ class Service
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $ogImage = null;
 
+    #[ORM\Column(type: Types::JSON, nullable: true)]
+    private ?array $areaServed = [];
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $priceRange = null;
+
     #[ORM\OneToMany(targetEntity: ServiceSolution::class, mappedBy: 'service', cascade: ['persist', 'remove'], orphanRemoval: true)]
     #[ORM\OrderBy(['position' => 'ASC'])]
     private Collection $solutions;
@@ -570,6 +576,28 @@ class Service
                 $technology->setService(null);
             }
         }
+        return $this;
+    }
+
+    public function getAreaServed(): ?array
+    {
+        return $this->areaServed;
+    }
+
+    public function setAreaServed(?array $areaServed): static
+    {
+        $this->areaServed = $areaServed;
+        return $this;
+    }
+
+    public function getPriceRange(): ?string
+    {
+        return $this->priceRange;
+    }
+
+    public function setPriceRange(?string $priceRange): static
+    {
+        $this->priceRange = $priceRange;
         return $this;
     }
 }

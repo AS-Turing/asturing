@@ -65,6 +65,9 @@ class BlogPost
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $ogImage = null;
 
+    #[ORM\Column(type: Types::JSON, nullable: true)]
+    private ?array $tags = [];
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -259,6 +262,17 @@ class BlogPost
     public function setOgImage(?string $ogImage): static
     {
         $this->ogImage = $ogImage;
+        return $this;
+    }
+
+    public function getTags(): ?array
+    {
+        return $this->tags;
+    }
+
+    public function setTags(?array $tags): static
+    {
+        $this->tags = $tags;
         return $this;
     }
 }

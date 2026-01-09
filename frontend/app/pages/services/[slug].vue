@@ -247,7 +247,7 @@ const contextGridClass = computed(() =>
     : 'md:grid-cols-1'
 )
 
-// SEO Premium AAA avec Schema Product et FAQs
+// SEO Premium AAA avec Schema Service et FAQs
 watch(service, (newService) => {
   if (newService) {
     usePremiumSeo({
@@ -255,7 +255,14 @@ watch(service, (newService) => {
       description: newService.metaDescription || newService.description || '',
       url: `https://www.as-turing.fr/services/${newService.slug}`,
       image: newService.ogImage || 'https://www.as-turing.fr/images/og-services.jpg',
-      type: 'website',
+      type: 'service',
+      service: {
+        name: newService.title,
+        description: newService.description,
+        provider: 'AS-Turing',
+        areaServed: newService.areaServed || ['Libourne', 'Saint-Émilion', 'Bordeaux', 'Gironde', 'Créon'],
+        priceRange: newService.priceRange || '€€'
+      },
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
         { name: 'Services', url: '/services' },
@@ -264,14 +271,7 @@ watch(service, (newService) => {
       faq: newService.faqs?.map((faq: any) => ({
         question: faq.question,
         answer: faq.answer
-      })),
-      product: newService.startingPrice ? {
-        name: newService.title,
-        image: newService.ogImage || 'https://www.as-turing.fr/images/og-services.jpg',
-        description: newService.description,
-        price: newService.startingPrice.replace(/[^0-9]/g, ''),
-        currency: 'EUR'
-      } : undefined
+      }))
     })
     
     // Keywords meta supplémentaires

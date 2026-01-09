@@ -86,6 +86,11 @@ class ProjectController extends AbstractController
             'linkColor' => $project->getLinkColor(),
             'featured' => $project->isFeatured(),
             'isPublished' => $project->isPublished(),
+            'metaTitle' => $project->getMetaTitle(),
+            'metaDescription' => $project->getMetaDescription(),
+            'metaKeywords' => $project->getMetaKeywords(),
+            'ogImage' => $project->getOgImage(),
+            'completedDate' => $project->getCompletedDate()?->format('Y-m-d'),
         ]);
     }
 }

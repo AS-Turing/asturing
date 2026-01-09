@@ -151,7 +151,15 @@
                 "description": "Un échange rapide permet de comprendre votre contexte et de vous dire si un audit/cadrage est pertinent. Sans engagement.",
                 "buttonText": "Valider la faisabilité (15 min)",
                 "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
-            }
+            },
+            "priceRange": "800-3000",
+            "areaServed": [
+                "Libourne",
+                "Saint-Émilion",
+                "Bordeaux",
+                "Gironde",
+                "Nouvelle-Aquitaine"
+            ]
         },
         {
             "title": "Conception & Développement Web",
@@ -333,7 +341,15 @@
                 "description": "Un premier échange permet de confirmer la solution la plus adaptée (vitrine, e-commerce, app), les délais et un ordre de budget. Sans engagement.",
                 "buttonText": "Discuter de votre besoin (15 min)",
                 "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
-            }
+            },
+            "priceRange": "1800-15000",
+            "areaServed": [
+                "Libourne",
+                "Saint-Émilion",
+                "Bordeaux",
+                "Gironde",
+                "Nouvelle-Aquitaine"
+            ]
         },
         {
             "title": "Intégrations & Automatisation",
@@ -350,7 +366,7 @@
             "heroDescription": "APIs, webhooks, automatisations serveur : transformez votre écosystème digital en machine efficace qui travaille pour vous.",
             "auditDuration": "1h30",
             "deliveryTime": "2-6 sem.",
-            "startingPrice": "1 800€",
+            "startingPrice": "1 500€",
             "solutions": [
                 {
                     "title": "Connexion Site ↔ Outils Métier",
@@ -504,7 +520,15 @@
                 "description": "En 15 minutes, on clarifie vos outils, vos flux et les automatisations à plus fort impact. Sans engagement.",
                 "buttonText": "Identifier les gains (15 min)",
                 "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
-            }
+            },
+            "priceRange": "1500-8000",
+            "areaServed": [
+                "Libourne",
+                "Saint-Émilion",
+                "Bordeaux",
+                "Gironde",
+                "Nouvelle-Aquitaine"
+            ]
         },
         {
             "title": "TMA & Support Technique",
@@ -694,7 +718,15 @@
                 "description": "On fait un point rapide sur votre situation et on vous dit quelle formule est adaptée. Sans engagement.",
                 "buttonText": "Faire un point (15 min)",
                 "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
-            }
+            },
+            "priceRange": "149-699/mois",
+            "areaServed": [
+                "Libourne",
+                "Saint-Émilion",
+                "Bordeaux",
+                "Gironde",
+                "Nouvelle-Aquitaine"
+            ]
         },
         {
             "title": "Formation & Montée en Compétences",
@@ -856,8 +888,15 @@
                 "description": "On échange 15 minutes pour comprendre votre niveau et définir un programme simple et concret. Sans engagement.",
                 "buttonText": "Définir le programme (15 min)",
                 "microReassurance": "Échange gratuit • Réponse sous 24h • Sans engagement"
-            }
-
+            },
+            "priceRange": "400-2500",
+            "areaServed": [
+                "Libourne",
+                "Saint-Émilion",
+                "Bordeaux",
+                "Gironde",
+                "Nouvelle-Aquitaine"
+            ]
         }
     ]
 }

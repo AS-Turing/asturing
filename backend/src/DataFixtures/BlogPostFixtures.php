@@ -38,6 +38,12 @@ class BlogPostFixtures
             if (isset($data['ogImage'])) {
                 $post->setOgImage($data['ogImage']);
             }
+            if (isset($data['tags'])) {
+                $post->setTags($data['tags']);
+            }
+            if (isset($data['updatedAt'])) {
+                $post->setUpdatedAt(new \DateTimeImmutable($data['updatedAt']));
+            }
 
             $manager->persist($post);
         }
