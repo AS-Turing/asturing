@@ -8,14 +8,14 @@
     </div>
     
     <!-- Particules flottantes -->
-    <!-- <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div v-for="i in 8" :key="i" class="floating-particle" :style="{ 
-        left: `${Math.random() * 100}%`, 
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div v-for="i in 8" :key="i" class="floating-particle" :style="{
+        left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
         animationDelay: `${i * 0.5}s`,
         animationDuration: `${3 + Math.random() * 2}s`
       }"></div>
-    </div> -->
+    </div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -159,7 +159,7 @@
 
 <script setup lang="ts">
 const stats = [
-  { value: '2 ans', label: 'Expérience pro' },
+  { value: '3 ans', label: 'Expérience pro' },
   { value: '100%', label: 'Clients satisfaits' },
   { value: '<24h', label: 'Réponse moyenne' },
 ]
