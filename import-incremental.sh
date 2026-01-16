@@ -1,20 +1,17 @@
 #!/bin/bash
 
 #####################################################################
-# Script de mise à jour des fixtures depuis JSON
+# Script d'import incrémental des fixtures depuis JSON
 # 
-# Ce script permet de mettre à jour les données existantes dans la BDD
-# depuis les fichiers JSON sans créer de doublons.
+# Ce script permet d'importer de nouvelles données depuis les fichiers
+# JSON sans écraser les données existantes dans la base de données.
 #
 # Fonctionnalités :
-# - Export automatique de la BDD avant mise à jour (sauvegarde)
-# - Mise à jour des données existantes uniquement
+# - Export automatique de la BDD avant import (sauvegarde)
+# - Import incrémental des données JSON (pas d'écrasement)
 # - Gestion des caches Doctrine et Symfony
 #
-# Usage : ./update-fixtures.sh [entity]
-# Exemples : 
-#   ./update-fixtures.sh              # Met à jour toutes les entités
-#   ./update-fixtures.sh location     # Met à jour uniquement les locations
+# Usage : ./import-incremental.sh
 #####################################################################
 
 set -e  # Arrêter le script en cas d'erreur
@@ -30,17 +27,11 @@ NC='\033[0m' # No Color
 BACKUP_DIR="./backups/database"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 BACKUP_FILE="asturingdb_backup_${TIMESTAMP}.sql"
-ENTITY=${1:-"all"}
 
 echo -e "${BLUE}═══════════════════════════════════════════════════${NC}"
-echo -e "${BLUE}   Mise à Jour des Données depuis JSON${NC}"
+echo -e "${BLUE}   Import Incrémental des Données depuis JSON${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════${NC}"
 echo ""
-
-if [ "$ENTITY" != "all" ]; then
-    echo -e "${YELLOW}Entité ciblée : ${ENTITY}${NC}"
-    echo ""
-fi
 
 #####################################################################
 # ÉTAPE 1 : Vérification de l'environnement
@@ -48,16 +39,18 @@ fi
 echo -e "${YELLOW}[1/5] Vérification de l'environnement...${NC}"
 
 # Vérifier que les containers sont en cours d'exécution
-SYMFONY_RUNNING=$(docker compose ps | grep -c "symfony.*running" || true)
-MYSQL_RUNNING=$(docker compose ps | grep -c "mysql.*running" || true)
-
-if [ "$SYMFONY_RUNNING" -eq 0 ] || [ "$MYSQL_RUNNING" -eq 0 ]; then
-    echo -e "${YELLOW}⚠️  Certains containers ne sont pas démarrés${NC}"
+if ! docker compose ps | grep -q "symfony.*running"; then
+    echo -e "${RED}❌ Le container Symfony n'est pas en cours d'exécution${NC}"
     echo -e "${YELLOW}Démarrage des containers...${NC}"
-    docker compose up -d > /dev/null 2>&1
-    
-    echo -e "${YELLOW}Attente du démarrage complet (15 secondes)...${NC}"
-    sleep 15
+    docker compose up -d
+    sleep 10
+fi
+
+if ! docker compose ps | grep -q "mysql.*running"; then
+    echo -e "${RED}❌ Le container MySQL n'est pas en cours d'exécution${NC}"
+    echo -e "${YELLOW}Démarrage des containers...${NC}"
+    docker compose up -d
+    sleep 10
 fi
 
 echo -e "${GREEN}✅ Environnement vérifié${NC}"
@@ -101,21 +94,17 @@ fi
 echo ""
 
 #####################################################################
-# ÉTAPE 3 : Mise à jour des données depuis JSON
+# ÉTAPE 3 : Import incrémental des données JSON
 #####################################################################
-echo -e "${YELLOW}[3/5] Mise à jour des données depuis les fichiers JSON...${NC}"
+echo -e "${YELLOW}[3/5] Import incrémental des données depuis les fichiers JSON...${NC}"
 
-# Exécuter la commande de mise à jour
-if [ "$ENTITY" = "all" ]; then
-    docker compose exec symfony php bin/console app:update-fixtures
-else
-    docker compose exec symfony php bin/console app:update-fixtures --entity="$ENTITY"
-fi
+# Exécuter la commande d'import incrémental
+docker compose exec symfony php bin/console app:import-incremental
 
 if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Mise à jour terminée avec succès${NC}"
+    echo -e "${GREEN}✅ Import incrémental terminé avec succès${NC}"
 else
-    echo -e "${RED}❌ Échec de la mise à jour${NC}"
+    echo -e "${RED}❌ Échec de l'import${NC}"
     echo -e "${YELLOW}💡 La sauvegarde est disponible dans : $BACKUP_DIR/$BACKUP_FILE${NC}"
     echo -e "${YELLOW}💡 Pour restaurer : docker compose exec -T mysql mysql -uroot -prootpass asturingdb < $BACKUP_DIR/$BACKUP_FILE${NC}"
     exit 1
@@ -158,12 +147,12 @@ echo ""
 # Résumé
 #####################################################################
 echo -e "${GREEN}═══════════════════════════════════════════════════${NC}"
-echo -e "${GREEN}   ✅ Mise à jour terminée avec succès !${NC}"
+echo -e "${GREEN}   ✅ Import incrémental terminé avec succès !${NC}"
 echo -e "${GREEN}═══════════════════════════════════════════════════${NC}"
 echo ""
 echo -e "${BLUE}📊 Résumé :${NC}"
 echo -e "   • Sauvegarde : ${GREEN}$BACKUP_DIR/$BACKUP_FILE${NC}"
-echo -e "   • Mise à jour : ${GREEN}Réussie${NC}"
+echo -e "   • Import : ${GREEN}Réussi${NC}"
 echo -e "   • Caches : ${GREEN}Nettoyés${NC}"
 echo -e "   • Services : ${GREEN}Redémarrés${NC}"
 echo ""
