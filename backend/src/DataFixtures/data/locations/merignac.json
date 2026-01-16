@@ -1,0 +1,211 @@
+{
+  "ville": "Mérignac",
+  "slug": "merignac",
+  "departement": "Gironde (33)",
+  "codePostal": "33700",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.8404,
+    "longitude": -0.6467
+  },
+  "meta": {
+    "title": "Création Site Internet Mérignac - Agence Web 33700 | AS-Turing",
+    "description": "Agence web à Mérignac (33700) : création site internet, e-commerce, applications métier. Expertise professionnelle, tarifs accessibles pour entreprises mérignacaises et aéronautique.",
+    "keywords": "création site internet mérignac, agence web mérignac, site internet 33700, développeur web mérignac, création site vitrine mérignac"
+  },
+  "hero": {
+    "title": "Agence Web à Mérignac",
+    "subtitle": "Partenaire digital des entreprises mérignacaises",
+    "description": "Agence web intervenant à Mérignac et sur Bordeaux Métropole. Nous accompagnons les entreprises, PME et commerces mérignacais dans leur transformation digitale. Sites internet professionnels, e-commerce et applications métier. Expertise technique complète et tarifs maîtrisés.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "Retours",
+        "label": "excellents clients"
+      },
+      {
+        "value": "Mérignac",
+        "label": "Intervention à"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi choisir notre agence web à Mérignac ?",
+    "intro": "Mérignac, troisième ville de Gironde, concentre entreprises aéronautiques, PME industrielles et commerces. Notre agence offre une expertise technique professionnelle avec des tarifs adaptés aux entreprises locales.",
+    "advantages": [
+      {
+        "icon": "mdi:account-tie",
+        "title": "Expertise technique complète",
+        "description": "WordPress, Symfony, Vue.js, PrestaShop, WooCommerce, applications sur-mesure... Maîtrise de toutes les technologies modernes. Sites vitrines, e-commerce complexes, plateformes métier B2B. Même niveau technique que les grandes agences bordelaises."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs transparents et maîtrisés",
+        "description": "Site vitrine pro : à partir de 1 800€. E-commerce : à partir de 4 500€. Application métier : à partir de 8 000€. Budget adapté aux entreprises mérignacaises. Devis détaillé sous 5 jours, sans engagement. Tarifs transparents, zéro surprise."
+      },
+      {
+        "icon": "mdi:lightning-bolt",
+        "title": "Proximité et réactivité locale",
+        "description": "Intervention sur Mérignac, Pessac, Le Haillan, Eysines et toute la métropole. Rendez-vous en présentiel dans vos locaux mérignacais possibles. Contact direct sans intermédiaire, décisions rapides. Agilité d'une structure légère."
+      },
+      {
+        "icon": "mdi:shield-check",
+        "title": "Standards professionnels garantis",
+        "description": "Méthodologies éprouvées, code propre et évolutif, architecture scalable, sécurité renforcée. Performance optimisée (Core Web Vitals, bonnes pratiques), SEO intégré. Standards professionnels appliqués sur tous les projets, quelle que soit leur taille."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Mérignac",
+    "intro": "Solutions digitales adaptées aux entreprises, commerces et PME industrielles de Mérignac.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité et convertit vos visiteurs. Design 100% sur-mesure responsive, optimisation SEO locale, performance maximale. Idéal pour PME, commerces et services mérignacais. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "PME industrielles, commerces, services B2B, professions libérales"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce B2C & B2B",
+        "description": "Boutique en ligne performante et sécurisée. Catalogue illimité, paiement sécurisé, gestion stocks et commandes, livraison. Mode B2B avec tarifs professionnels, devis en ligne et paiement différé. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente en ligne, marketplace, click & collect, e-commerce B2B"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus métier avec une solution 100% personnalisée. Architecture évolutive, automatisation workflows complexes, intégrations API ERP/CRM, tableaux de bord. Solution adaptée à vos besoins. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "SaaS, CRM custom, plateformes métier, portails B2B"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Votre site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes automatiques, monitoring 24/7, support technique prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications métier"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Mérignac",
+    "list": [
+      {
+        "name": "Aéronautique & Industrie",
+        "description": "Sous-traitants aéro, PME industrielles, bureaux d'études",
+        "icon": "mdi:airplane"
+      },
+      {
+        "name": "Services B2B",
+        "description": "Cabinets conseils, ESN, services aux entreprises",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Commerce & Retail",
+        "description": "Commerces, centres commerciaux, enseignes",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Artisans & BTP",
+        "description": "Artisans du bâtiment, entreprises BTP",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Cabinets médicaux, paramédicaux, cliniques",
+        "icon": "mdi:heart-pulse"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations pour des clients de la Gironde",
+    "intro": "Projets web créés pour des clients en Gironde et Bordeaux Métropole.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Bègles",
+        "type": "Site vitrine associatif",
+        "url": "https://www.asso-gpm.fr/"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Premier contact",
+        "description": "Échange par visio ou rendez-vous dans vos locaux à Mérignac pour comprendre votre projet, vos objectifs et vos contraintes métier."
+      },
+      {
+        "number": "2",
+        "title": "Devis détaillé",
+        "description": "Proposition complète sous 5 jours ouvrés : tarifs transparents, fonctionnalités détaillées, planning réaliste. Aucun engagement tant que vous ne validez pas."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Développement agile avec validations régulières. Vous suivez l'avancement et validez chaque étape : maquettes, design, fonctionnalités. Transparence totale."
+      },
+      {
+        "number": "4",
+        "title": "Livraison & Formation",
+        "description": "Mise en ligne, formation complète à la gestion autonome, documentation utilisateur et technique. Support inclus pendant un mois après lancement."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Combien coûte un site internet à Mérignac ?",
+      "answer": "Site vitrine professionnel : à partir de 1 800€. Boutique e-commerce : à partir de 4 500€. Application métier : à partir de 8 000€. Tarifs adaptés aux PME mérignacaises, transparents et détaillés. Devis gratuit sous 5 jours."
+    },
+    {
+      "question": "Vous déplacez-vous à Mérignac ?",
+      "answer": "Oui, je me déplace gratuitement à Mérignac et sur toute la métropole : Pessac, Le Haillan, Eysines, Bordeaux, Le Bouscat... Rendez-vous dans vos locaux mérignacais, dans un café, ou en visio selon vos préférences."
+    },
+    {
+      "question": "Quels délais pour créer un site web ?",
+      "answer": "Site vitrine : 4 à 6 semaines. E-commerce : 6 à 10 semaines. Application métier : 8 à 16 semaines. Délais réalistes avec méthodologie agile et points d'avancement réguliers. Livraison dans les temps garantie."
+    },
+    {
+      "question": "Le SEO local Mérignac est-il inclus ?",
+      "answer": "Oui, SEO intégré dès la conception : optimisation technique, balisage sémantique schema.org, structure SEO-friendly, balises méta locales. Visibilité travaillée sur 'Mérignac', 'aéroport Bordeaux', 'Bordeaux Métropole', 'Gironde'. Positionnement Google local optimisé."
+    },
+    {
+      "question": "Proposez-vous la maintenance après livraison ?",
+      "answer": "Oui, 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour de sécurité, sauvegardes automatiques, monitoring 24/7, support technique. Votre site toujours sécurisé, performant et à jour."
+    },
+    {
+      "question": "Quelle différence avec une grande agence bordelaise ?",
+      "answer": "Même expertise technique et qualité professionnelle, mais structure légère sans frais de structure. Vous gagnez : tarifs adaptés, proximité Mérignac, contact direct. Vous gardez : qualité pro, rigueur technique, livrables complets."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre projet web ?",
+    "description": "Discutons de votre projet. Premier échange gratuit et sans engagement, par visio ou à Mérignac.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Mérignac et Bordeaux Métropole",
+    "cities": [
+      "Mérignac",
+      "Pessac",
+      "Le Haillan",
+      "Eysines",
+      "Le Bouscat",
+      "Bordeaux",
+      "Bruges",
+      "Saint-Médard-en-Jalles"
+    ]
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/merignac.jpg"
+}

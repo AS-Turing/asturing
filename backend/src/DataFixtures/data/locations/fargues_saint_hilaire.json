@@ -1,0 +1,211 @@
+{
+  "ville": "Fargues-Saint-Hilaire",
+  "slug": "fargues-saint-hilaire",
+  "departement": "Gironde (33)",
+  "codePostal": "33370",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.7722,
+    "longitude": -0.4258
+  },
+  "meta": {
+    "title": "Création Site Internet Fargues-Saint-Hilaire | Agence Web Entre-deux-Mers",
+    "description": "Création site internet à Fargues-Saint-Hilaire (33370). Agence web locale en Entre-deux-Mers : sites vitrines, e-commerce et applications métier. Tarifs accessibles, qualité professionnelle.",
+    "keywords": "création site internet fargues-saint-hilaire, agence web fargues, site internet 33370, développeur web entre-deux-mers, création site vitrine fargues"
+  },
+  "hero": {
+    "title": "Création Site Internet à Fargues-Saint-Hilaire",
+    "subtitle": "Votre partenaire web local en Entre-deux-Mers",
+    "description": "Agence web intervenant à Fargues-Saint-Hilaire et dans l'Entre-deux-Mers. Sites internet professionnels pour commerces, artisans et PME locales. Expertise technique complète, proximité et tarifs maîtrisés pour les entreprises de la commune.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "Retours",
+        "label": "excellents clients"
+      },
+      {
+        "value": "Fargues",
+        "label": "Intervention à"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi choisir notre agence pour votre site à Fargues-Saint-Hilaire ?",
+    "intro": "À Fargues-Saint-Hilaire et dans l'Entre-deux-Mers, les entreprises ont besoin d'une présence web efficace sans se ruiner. Notre agence combine expertise professionnelle et structure légère pour des sites de qualité à prix accessible.",
+    "advantages": [
+      {
+        "icon": "mdi:account-tie",
+        "title": "Expertise technique complète",
+        "description": "Maîtrise de WordPress, PrestaShop, Shopify, WooCommerce, Symfony et développements sur-mesure. Du site vitrine simple à la boutique en ligne avancée. Même niveau technique que les grandes agences bordelaises, mais avec une vraie proximité locale."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs adaptés aux PME de l'Entre-deux-Mers",
+        "description": "Site vitrine pro : à partir de 1 800€. Boutique e-commerce : à partir de 4 500€. Application métier : à partir de 8 000€. Budget adapté aux entreprises locales. Devis transparent sous 5 jours, zéro frais caché."
+      },
+      {
+        "icon": "mdi:lightning-bolt",
+        "title": "Proximité et disponibilité",
+        "description": "Intervention sur Fargues-Saint-Hilaire, Créon, Camblanes, Latresne et toute la zone Entre-deux-Mers. Rendez-vous en présentiel possibles, contact direct sans intermédiaire. Réponses rapides et suivi personnalisé de votre projet."
+      },
+      {
+        "icon": "mdi:shield-check",
+        "title": "Qualité professionnelle garantie",
+        "description": "Code propre et maintenable, sécurité renforcée, performance optimisée (Core Web Vitals, bonnes pratiques), architecture SEO intégrée dès la conception. Standards professionnels appliqués sur tous les projets, quelle que soit leur taille."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Fargues-Saint-Hilaire",
+    "intro": "Solutions digitales adaptées aux commerces, artisans et PME de Fargues et l'Entre-deux-Mers.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne et responsive qui met en valeur votre activité locale. Design sur-mesure, optimisation SEO pour capter les recherches locales, performance maximale. Idéal pour artisans, commerces et services de proximité. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Artisans, commerces, professions libérales, associations"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "Boutique E-commerce",
+        "description": "Vendez vos produits en ligne 24h/24. Catalogue produits illimité, paiement sécurisé (CB, PayPal), gestion stocks et commandes, livraison locale ou nationale. Mode B2B et tarifs différenciés possibles. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Boutiques, producteurs locaux, artisanat, vente directe"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus métier spécifiques. Développement 100% personnalisé selon vos besoins, intégrations API, automatisation de tâches, tableaux de bord. Solution évolutive et scalable. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "CRM custom, gestion interne, portails métier, SaaS"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "Maintenance & Support",
+        "description": "Votre site toujours sécurisé et performant. 3 formules de maintenance : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes quotidiennes, monitoring, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications métier"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Fargues-Saint-Hilaire",
+    "list": [
+      {
+        "name": "Viticulture & Vignobles",
+        "description": "Domaines viticoles, châteaux, caves",
+        "icon": "mdi:bottle-wine"
+      },
+      {
+        "name": "Artisans & BTP",
+        "description": "Maçons, électriciens, plombiers, charpentiers",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Commerce & Services",
+        "description": "Commerces de proximité, services locaux",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Agriculture & Producteurs",
+        "description": "Exploitations agricoles, maraîchers",
+        "icon": "mdi:tractor"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Cabinets médicaux, paramédicaux, coachs",
+        "icon": "mdi:heart-pulse"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations pour des clients de la Gironde",
+    "intro": "Exemples de sites créés pour des clients locaux en Gironde et Entre-deux-Mers.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Bègles",
+        "type": "Site vitrine associatif",
+        "url": "https://www.asso-gpm.fr/"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Premier contact",
+        "description": "Échange par visio ou rendez-vous à Fargues-Saint-Hilaire pour analyser votre projet et définir vos objectifs."
+      },
+      {
+        "number": "2",
+        "title": "Devis détaillé",
+        "description": "Proposition complète sous 5 jours ouvrés : tarifs transparents, fonctionnalités détaillées, planning réaliste adapté à vos contraintes."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Développement agile avec validations régulières. Vous suivez l'avancement et validez chaque étape : maquettes, design, fonctionnalités."
+      },
+      {
+        "number": "4",
+        "title": "Livraison & Formation",
+        "description": "Mise en ligne, formation complète à la gestion autonome de votre site, documentation. Support inclus après le lancement."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Combien coûte un site internet à Fargues-Saint-Hilaire ?",
+      "answer": "Site vitrine professionnel : à partir de 1 800€. E-commerce complet : à partir de 4 500€. Application sur-mesure : à partir de 8 000€. Tarifs adaptés aux entreprises de l'Entre-deux-Mers, transparents et détaillés. Devis gratuit sous 5 jours."
+    },
+    {
+      "question": "Vous déplacez-vous à Fargues-Saint-Hilaire ?",
+      "answer": "Oui, je me déplace gratuitement à Fargues-Saint-Hilaire et dans toute la zone Entre-deux-Mers (Créon, Camblanes, Latresne, Sadirac...). Rendez-vous dans vos locaux, ou échange par visio selon vos préférences."
+    },
+    {
+      "question": "Quels délais pour créer mon site ?",
+      "answer": "Site vitrine : 4 à 6 semaines. Boutique e-commerce : 6 à 10 semaines. Application métier : 8 à 16 semaines. Délais réalistes avec méthodologie agile et points d'avancement réguliers. Livraison dans les temps garantie."
+    },
+    {
+      "question": "Le référencement local est-il inclus ?",
+      "answer": "Oui, le SEO est intégré dès la conception : optimisation technique, balisage sémantique, structure SEO-friendly, balises méta locales. Visibilité sur les recherches 'Fargues-Saint-Hilaire', 'Entre-deux-Mers' et territoires alentours. Positionnement Google local travaillé."
+    },
+    {
+      "question": "Proposez-vous la maintenance après livraison ?",
+      "answer": "Oui, 3 formules de maintenance disponibles : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour sécurité, sauvegardes automatiques, monitoring 24/7, support prioritaire. Votre site toujours à jour et sécurisé."
+    },
+    {
+      "question": "Différence avec une agence bordelaise classique ?",
+      "answer": "Même expertise technique et standards professionnels, mais structure légère et intervention locale. Vous gagnez : tarifs adaptés, proximité Entre-deux-Mers, contact direct. Vous gardez : qualité pro, rigueur technique, livrables complets."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre projet web ?",
+    "description": "Discutons de votre projet. Premier échange gratuit, par visio ou sur Fargues-Saint-Hilaire.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Fargues-Saint-Hilaire et Entre-deux-Mers",
+    "cities": [
+      "Fargues-Saint-Hilaire",
+      "Créon",
+      "Camblanes-et-Meynac",
+      "Latresne",
+      "Sadirac",
+      "Sallebœuf",
+      "Croignon",
+      "Lignan-de-Bordeaux"
+    ]
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/fargues-saint-hilaire.jpg"
+}

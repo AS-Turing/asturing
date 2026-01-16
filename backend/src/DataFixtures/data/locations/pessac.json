@@ -1,0 +1,211 @@
+{
+  "ville": "Pessac",
+  "slug": "pessac",
+  "departement": "Gironde (33)",
+  "codePostal": "33600",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.8063,
+    "longitude": -0.6305
+  },
+  "meta": {
+    "title": "Création Site Internet Pessac - Agence Web 33600 | AS-Turing",
+    "description": "Agence web à Pessac (33600) : création site internet professionnel, e-commerce, applications métier. Expertise technique, tarifs accessibles pour PME et commerces pessacais.",
+    "keywords": "création site internet pessac, agence web pessac, site internet 33600, développeur web pessac, création site vitrine pessac"
+  },
+  "hero": {
+    "title": "Agence Web à Pessac",
+    "subtitle": "Solutions digitales pour les entreprises pessacaises",
+    "description": "Agence web intervenant à Pessac et sur Bordeaux Métropole. Nous créons des sites internet performants pour les entreprises, commerces et PME pessacaises. Expertise professionnelle complète avec des tarifs maîtrisés et un accompagnement local de proximité.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "Retours",
+        "label": "excellents clients"
+      },
+      {
+        "value": "Pessac",
+        "label": "Intervention à"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi choisir notre agence web à Pessac ?",
+    "intro": "Pessac est la deuxième ville de Gironde avec un tissu économique dense : campus universitaire, pôle technologique, commerces et services. Notre agence accompagne les entreprises pessacaises avec qualité professionnelle et tarifs adaptés.",
+    "advantages": [
+      {
+        "icon": "mdi:account-tie",
+        "title": "Expertise technique professionnelle",
+        "description": "WordPress, WooCommerce, Symfony, Vue.js, PrestaShop, Shopify... Maîtrise complète des technologies modernes. Sites vitrines, e-commerce avancés, applications métier sur-mesure. Même niveau d'expertise que les grandes agences bordelaises."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs accessibles aux PME pessacaises",
+        "description": "Site vitrine pro : à partir de 1 800€. Boutique e-commerce : à partir de 4 500€. Application métier : à partir de 8 000€. Budget adapté aux entreprises pessacaises. Devis transparent sous 5 jours, sans frais cachés."
+      },
+      {
+        "icon": "mdi:lightning-bolt",
+        "title": "Proximité Pessac et Bordeaux Métropole",
+        "description": "Intervention sur Pessac, Talence, Gradignan, Mérignac et toute la métropole. Rendez-vous en présentiel possibles dans vos locaux pessacais, contact direct sans intermédiaire. Réactivité et flexibilité garanties."
+      },
+      {
+        "icon": "mdi:shield-check",
+        "title": "Standards professionnels garantis",
+        "description": "Code maintenable, architecture scalable, sécurité renforcée, performance optimisée (Core Web Vitals, bonnes pratiques). SEO intégré dès la conception pour capter les recherches locales Pessac et métropole. Qualité professionnelle sur tous les projets."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Pessac",
+    "intro": "Solutions digitales complètes pour les entreprises, commerces et structures de Pessac.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne et responsive qui valorise votre activité pessacaise. Design 100% sur-mesure, architecture SEO optimisée, performance maximale. Idéal pour commerces, professions libérales et services locaux. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "PME, commerces, professions libérales, start-ups"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce B2C & B2B",
+        "description": "Boutique en ligne complète et sécurisée. Catalogue produits illimité, paiement sécurisé multi-méthodes, gestion stocks et commandes, click & collect. Mode B2B avec tarifs professionnels et devis en ligne. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Boutiques, vente en ligne, marketplace, vente B2B"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus métier spécifiques. Développement 100% personnalisé, architecture évolutive, automatisation workflows, intégrations API tierces. Solution technique adaptée à vos besoins uniques. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "SaaS, CRM personnalisé, plateformes métier, portails"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours performant et sécurisé. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes quotidiennes, monitoring, support technique prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications métier"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Pessac",
+    "list": [
+      {
+        "name": "Tech & Innovation",
+        "description": "Start-ups, SaaS, entreprises tech du campus",
+        "icon": "mdi:rocket-launch"
+      },
+      {
+        "name": "Commerce & Services",
+        "description": "Commerces de proximité, enseignes, services",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Services B2B",
+        "description": "Cabinets conseils, agences, services aux entreprises",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Cabinets médicaux, paramédicaux, coachs sportifs",
+        "icon": "mdi:heart-pulse"
+      },
+      {
+        "name": "Éducation & Formation",
+        "description": "Organismes de formation, écoles privées",
+        "icon": "mdi:school"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations pour des clients de la Gironde",
+    "intro": "Exemples de sites créés pour des clients en Gironde et Bordeaux Métropole.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Bègles",
+        "type": "Site vitrine associatif",
+        "url": "https://www.asso-gpm.fr/"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Premier contact",
+        "description": "Échange par visio ou rendez-vous dans vos locaux à Pessac pour analyser votre projet, vos objectifs business et votre cible."
+      },
+      {
+        "number": "2",
+        "title": "Devis détaillé",
+        "description": "Proposition complète sous 5 jours ouvrés : tarifs transparents, fonctionnalités détaillées, planning réaliste. Aucun engagement avant validation de votre part."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Développement agile avec validations régulières. Vous suivez l'avancement et validez chaque étape : maquettes graphiques, ergonomie, fonctionnalités."
+      },
+      {
+        "number": "4",
+        "title": "Livraison & Formation",
+        "description": "Mise en ligne, formation complète à la gestion autonome de votre site, documentation utilisateur et technique. Support inclus post-lancement."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quel budget prévoir pour un site internet à Pessac ?",
+      "answer": "Site vitrine professionnel : à partir de 1 800€. E-commerce complet : à partir de 4 500€. Application métier : à partir de 8 000€. Tarifs adaptés aux PME et commerces pessacais, transparents. Devis gratuit détaillé sous 5 jours."
+    },
+    {
+      "question": "Vous déplacez-vous à Pessac pour les rendez-vous ?",
+      "answer": "Oui, je me déplace gratuitement à Pessac et sur toute la métropole : Talence, Gradignan, Mérignac, Bordeaux... Rendez-vous dans vos locaux pessacais, dans un café, ou en visio selon vos préférences. Flexibilité totale."
+    },
+    {
+      "question": "Quels sont les délais de réalisation ?",
+      "answer": "Site vitrine : 4 à 6 semaines. Boutique e-commerce : 6 à 10 semaines. Application métier : 8 à 16 semaines. Délais réalistes avec méthodologie agile et points réguliers. Livraison dans les temps garantie."
+    },
+    {
+      "question": "Le référencement local Pessac est-il inclus ?",
+      "answer": "Oui, SEO intégré dès la conception : optimisation technique, balisage schema.org, structure SEO-friendly, balises méta locales. Visibilité travaillée sur 'Pessac', 'Bordeaux Métropole', 'campus Pessac', 'Gironde'. Positionnement Google local optimisé."
+    },
+    {
+      "question": "Proposez-vous de la maintenance ?",
+      "answer": "Oui, 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour sécurité, sauvegardes automatiques quotidiennes, monitoring 24/7, support prioritaire. Votre site toujours performant et sécurisé."
+    },
+    {
+      "question": "Différence avec une grande agence bordelaise ?",
+      "answer": "Même expertise technique et standards professionnels, mais structure légère sans frais de structure lourds. Vous gagnez : tarifs adaptés, proximité Pessac, contact direct. Vous gardez : qualité pro, rigueur technique, livrables complets."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre projet web ?",
+    "description": "Discutons de votre projet. Premier échange gratuit et sans engagement, par visio ou à Pessac.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Pessac et Bordeaux Métropole",
+    "cities": [
+      "Pessac",
+      "Talence",
+      "Gradignan",
+      "Mérignac",
+      "Bordeaux",
+      "Bègles",
+      "Villenave-d'Ornon",
+      "Le Bouscat"
+    ]
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/pessac.jpg"
+}

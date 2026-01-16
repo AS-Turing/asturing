@@ -1,0 +1,211 @@
+{
+  "ville": "Villenave-d'Ornon",
+  "slug": "villenave-d-ornon",
+  "departement": "Gironde (33)",
+  "codePostal": "33140",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.7756,
+    "longitude": -0.5631
+  },
+  "meta": {
+    "title": "Création Site Internet Villenave-d'Ornon - Agence Web 33140",
+    "description": "Agence web à Villenave-d'Ornon (33140) : création site internet, e-commerce, applications métier. Expertise professionnelle, tarifs accessibles pour entreprises de la Rive Gauche.",
+    "keywords": "création site internet villenave d'ornon, agence web villenave, site internet 33140, développeur web villenave, création site vitrine villenave"
+  },
+  "hero": {
+    "title": "Agence Web à Villenave-d'Ornon",
+    "subtitle": "Solutions digitales secteur sud de Bordeaux",
+    "description": "Agence web intervenant à Villenave-d'Ornon et sur Bordeaux Métropole. Nous accompagnons les entreprises, commerces et PME de Villenave dans leur présence digitale. Sites internet professionnels, e-commerce et applications métier avec expertise technique et tarifs maîtrisés.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "Retours",
+        "label": "excellents clients"
+      },
+      {
+        "value": "Villenave",
+        "label": "Intervention à"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi choisir notre agence pour votre site à Villenave-d'Ornon ?",
+    "intro": "Villenave-d'Ornon concentre commerces, PME et zones d'activités dynamiques au sud de Bordeaux Métropole. Notre agence offre aux entreprises villenavaises une expertise professionnelle avec des tarifs accessibles et une vraie proximité locale.",
+    "advantages": [
+      {
+        "icon": "mdi:account-tie",
+        "title": "Expertise technique professionnelle",
+        "description": "WordPress, WooCommerce, Symfony, PrestaShop, Vue.js... Maîtrise complète des technologies modernes web. Sites vitrines optimisés, boutiques e-commerce performantes, applications métier sur-mesure. Même niveau technique que les grandes agences bordelaises."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs adaptés aux PME locales",
+        "description": "Site vitrine pro : à partir de 1 800€. Boutique e-commerce : à partir de 4 500€. Application métier : à partir de 8 000€. Budget adapté aux entreprises villenavaises. Devis transparent sous 5 jours, sans frais cachés."
+      },
+      {
+        "icon": "mdi:lightning-bolt",
+        "title": "Proximité secteur sud et métropole",
+        "description": "Intervention sur Villenave-d'Ornon, Bègles, Talence, Cadaujac et le secteur sud de Bordeaux Métropole. Rendez-vous en présentiel possibles dans vos locaux, contact direct sans intermédiaire. Réactivité et agilité garanties."
+      },
+      {
+        "icon": "mdi:shield-check",
+        "title": "Qualité professionnelle garantie",
+        "description": "Code propre et maintenable, sécurité renforcée, performance optimisée (Core Web Vitals, bonnes pratiques), architecture SEO intégrée. Standards professionnels appliqués sur tous les projets. Méthodologies éprouvées."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Villenave-d'Ornon",
+    "intro": "Solutions digitales complètes pour les entreprises, commerces et zones d'activités de Villenave.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne et responsive qui valorise votre activité locale. Design 100% sur-mesure, optimisation SEO pour capter les recherches locales, performance maximale. Parfait pour commerces, artisans et services de Villenave. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Commerces, artisans, PME, professions libérales"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce & Vente en Ligne",
+        "description": "Boutique en ligne complète et sécurisée. Catalogue produits illimité, paiement sécurisé (CB, PayPal, virement), gestion stocks et commandes, livraison locale/nationale. Mode B2B avec tarifs pro disponible. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente en ligne, click & collect, marketplace, B2B"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus métier avec une solution 100% personnalisée. Développement adapté à vos besoins, architecture évolutive, automatisation workflows, intégrations API. Solution technique sur-mesure. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "SaaS, CRM personnalisé, plateformes métier, portails"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour un site toujours sécurisé et performant. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes automatiques, monitoring, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications métier"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Villenave-d'Ornon",
+    "list": [
+      {
+        "name": "Commerce & Retail",
+        "description": "Commerces de proximité, enseignes, zones commerciales",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Services B2B & B2C",
+        "description": "Agences, cabinets conseils, services aux entreprises",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Artisans & BTP",
+        "description": "Artisans du bâtiment, entreprises BTP, électriciens",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Logistique & Transport",
+        "description": "Entreprises logistiques, transporteurs, entrepôts",
+        "icon": "mdi:truck"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Cabinets médicaux, paramédicaux, centres de santé",
+        "icon": "mdi:heart-pulse"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations pour des clients de la Gironde",
+    "intro": "Projets web créés pour des clients en Gironde et sur le secteur sud de Bordeaux Métropole.",
+    "featured": [
+      {
+        "title": "GPM Garage",
+        "location": "Bègles",
+        "type": "Site vitrine associatif",
+        "url": "https://www.asso-gpm.fr/"
+      },
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Premier contact",
+        "description": "Échange par visio ou rendez-vous dans vos locaux à Villenave-d'Ornon pour analyser votre projet et définir vos objectifs."
+      },
+      {
+        "number": "2",
+        "title": "Devis détaillé",
+        "description": "Proposition complète sous 5 jours ouvrés : tarifs transparents, fonctionnalités listées, planning réaliste. Aucun engagement avant validation."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Développement agile avec points réguliers. Vous validez les maquettes, l'ergonomie et les fonctionnalités au fur et à mesure. Transparence totale."
+      },
+      {
+        "number": "4",
+        "title": "Livraison & Formation",
+        "description": "Mise en ligne, formation complète à la gestion autonome de votre site, documentation utilisateur. Support inclus après le lancement."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quel budget pour créer un site à Villenave-d'Ornon ?",
+      "answer": "Site vitrine professionnel : à partir de 1 800€. E-commerce complet : à partir de 4 500€. Application métier : à partir de 8 000€. Tarifs adaptés aux entreprises locales, transparents et détaillés. Devis gratuit sous 5 jours."
+    },
+    {
+      "question": "Vous déplacez-vous à Villenave-d'Ornon ?",
+      "answer": "Oui, je me déplace gratuitement à Villenave-d'Ornon et secteur sud de Bordeaux Métropole : Bègles, Talence, Cadaujac, Gradignan, Léognan... Rendez-vous dans vos locaux villenavais, dans un café, ou en visio selon vos préférences."
+    },
+    {
+      "question": "Quels sont les délais de création ?",
+      "answer": "Site vitrine : 4 à 6 semaines. Boutique e-commerce : 6 à 10 semaines. Application métier : 8 à 16 semaines. Délais réalistes avec méthodologie agile et validations régulières. Livraison dans les temps garantie."
+    },
+    {
+      "question": "Le référencement local est-il inclus ?",
+      "answer": "Oui, SEO intégré dès la conception : optimisation technique, balisage sémantique, structure SEO-friendly, balises méta locales. Visibilité optimisée sur 'Villenave-d'Ornon', 'Bordeaux Métropole', 'secteur sud Bordeaux', 'Gironde'. Positionnement Google local travaillé."
+    },
+    {
+      "question": "Proposez-vous de la maintenance ?",
+      "answer": "Oui, 3 formules de maintenance : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour sécurité, sauvegardes automatiques, monitoring 24/7, support technique. Votre site toujours sécurisé et performant."
+    },
+    {
+      "question": "Quelle différence avec une agence bordelaise ?",
+      "answer": "Même expertise technique et standards professionnels, mais structure légère. Vous gagnez : tarifs adaptés, proximité Villenave et secteur sud, contact direct. Vous gardez : qualité pro, rigueur technique, livrables complets."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre projet web ?",
+    "description": "Discutons de votre projet. Premier échange gratuit et sans engagement, par visio ou à Villenave.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Villenave-d'Ornon et secteur sud Bordeaux Métropole",
+    "cities": [
+      "Villenave-d'Ornon",
+      "Bègles",
+      "Talence",
+      "Cadaujac",
+      "Gradignan",
+      "Floirac",
+      "Cenon",
+      "Léognan"
+    ]
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/villenave-d-ornon.jpg"
+}

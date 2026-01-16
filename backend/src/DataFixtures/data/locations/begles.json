@@ -1,0 +1,211 @@
+{
+  "ville": "Bègles",
+  "slug": "begles",
+  "departement": "Gironde (33)",
+  "codePostal": "33130",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.8072,
+    "longitude": -0.5506
+  },
+  "meta": {
+    "title": "Agence Web Bègles - Création Site Internet & E-commerce | AS-Turing",
+    "description": "Agence web à Bègles (33130) : création site internet, e-commerce, applications métier. Qualité professionnelle, tarifs accessibles. Réalisations locales en Gironde.",
+    "keywords": "création site internet bègles, agence web bègles, site internet 33130, développeur web bègles, création site vitrine bègles"
+  },
+  "hero": {
+    "title": "Agence Web à Bègles",
+    "subtitle": "Création de sites professionnels secteur sud de Bordeaux",
+    "description": "Agence web intervenant à Bègles et sur Bordeaux Métropole. Nous créons des sites internet performants pour les entreprises béglaises : commerces, artisans, PME, associations. Expertise technique complète avec des tarifs maîtrisés et un accompagnement de proximité.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "Retours",
+        "label": "excellents clients"
+      },
+      {
+        "value": "Bègles",
+        "label": "Intervention à"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Pourquoi choisir notre agence web à Bègles ?",
+    "intro": "Bègles bénéficie d'un tissu économique dynamique avec de nombreuses PME et commerces. Notre agence web accompagne les entreprises béglaises avec une offre adaptée : qualité professionnelle, tarifs accessibles et proximité garantie.",
+    "advantages": [
+      {
+        "icon": "mdi:account-tie",
+        "title": "Expertise technique complète",
+        "description": "WordPress, WooCommerce, PrestaShop, Shopify, Symfony, Vue.js... Nous maîtrisons toutes les technologies modernes. Sites vitrines, e-commerce complexes, applications métier sur-mesure. Même expertise que les grandes agences de Bordeaux centre."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs transparents et maîtrisés",
+        "description": "Site vitrine pro : à partir de 1 800€. E-commerce complet : à partir de 4 500€. Application métier : à partir de 8 000€. Budget adapté aux PME béglaises. Devis détaillé gratuit sous 5 jours, sans engagement."
+      },
+      {
+        "icon": "mdi:lightning-bolt",
+        "title": "Proximité et disponibilité locale",
+        "description": "Intervention sur Bègles, Villenave-d'Ornon, Talence et le secteur sud de Bordeaux Métropole. Rendez-vous en présentiel dans vos locaux béglais, contact direct sans intermédiaire. Réactivité et agilité d'une structure à taille humaine."
+      },
+      {
+        "icon": "mdi:shield-check",
+        "title": "Qualité professionnelle garantie",
+        "description": "Méthodologies éprouvées, code propre et maintenable, performance optimisée (Core Web Vitals, bonnes pratiques), sécurité renforcée. SEO intégré dès la conception pour capter les recherches locales. Standards professionnels sur tous nos projets."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services Web pour les entreprises de Bègles",
+    "intro": "Solutions digitales complètes pour les entreprises, commerces et associations de Bègles.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site moderne qui valorise votre activité béglaise. Design sur-mesure responsive, optimisation SEO locale, performance maximale. Parfait pour artisans, commerces de proximité et services locaux. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Commerces, artisans, professions libérales, associations"
+      },
+      {
+        "icon": "mdi:store",
+        "title": "E-commerce & Click & Collect",
+        "description": "Boutique en ligne complète et sécurisée. Catalogue illimité, paiement sécurisé, gestion stocks et commandes, click & collect pour retrait local à Bègles. Mode B2B avec tarifs pro disponible. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Boutiques, vente directe, click & collect, marketplace"
+      },
+      {
+        "icon": "mdi:cog",
+        "title": "Application Métier Sur-Mesure",
+        "description": "Digitalisez vos processus métier avec une solution technique adaptée. Développement 100% personnalisé, architecture scalable, intégrations API multiples, automatisation. Accompagnement technique complet. À partir de 8 000€ - Délai 8 à 16 semaines.",
+        "examples": "SaaS, CRM custom, plateformes métier, portails internes"
+      },
+      {
+        "icon": "mdi:headset",
+        "title": "TMA & Maintenance",
+        "description": "Maintenance complète pour garantir sécurité et performance. 3 formules : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour, sauvegardes automatiques, monitoring 24/7, support prioritaire.",
+        "examples": "Maintenance WordPress, e-commerce, applications métier"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Bègles",
+    "list": [
+      {
+        "name": "Commerce & Retail",
+        "description": "Boutiques, commerces de proximité, enseignes",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Services B2B & B2C",
+        "description": "Agences, cabinets conseils, services aux entreprises",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Artisans & BTP",
+        "description": "Artisans du bâtiment, électriciens, plombiers",
+        "icon": "mdi:hammer-wrench"
+      },
+      {
+        "name": "Associations & Culture",
+        "description": "Associations locales, structures culturelles",
+        "icon": "mdi:account-group"
+      },
+      {
+        "name": "Santé & Bien-être",
+        "description": "Cabinets médicaux, paramédicaux, coachs sportifs",
+        "icon": "mdi:heart-pulse"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Réalisations pour des clients de Gironde",
+    "intro": "Projets web réalisés pour des clients locaux, dont un projet récent à Bègles.",
+    "featured": [
+      {
+        "title": "GPM Garage",
+        "location": "Bègles",
+        "type": "Site vitrine associatif",
+        "url": "https://www.asso-gpm.fr/"
+      },
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment ça se passe ?",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Premier contact",
+        "description": "Échange par visio ou rendez-vous dans vos locaux à Bègles pour comprendre votre projet, vos objectifs et votre cible."
+      },
+      {
+        "number": "2",
+        "title": "Devis détaillé",
+        "description": "Proposition complète sous 5 jours ouvrés : tarifs transparents, fonctionnalités listées, planning réaliste. Aucun engagement avant validation."
+      },
+      {
+        "number": "3",
+        "title": "Développement",
+        "description": "Développement agile avec points réguliers. Vous validez les maquettes, l'ergonomie et les fonctionnalités au fur et à mesure. Transparence totale."
+      },
+      {
+        "number": "4",
+        "title": "Livraison & Formation",
+        "description": "Mise en ligne, formation complète à la gestion de votre site, documentation utilisateur. Support inclus pendant un mois post-lancement."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Quels sont vos tarifs pour un site web à Bègles ?",
+      "answer": "Site vitrine professionnel : à partir de 1 800€. Boutique e-commerce : à partir de 4 500€. Application métier : à partir de 8 000€. Tarifs adaptés aux PME et commerces béglais, transparents et détaillés. Devis gratuit sous 5 jours."
+    },
+    {
+      "question": "Vous déplacez-vous à Bègles pour les rendez-vous ?",
+      "answer": "Oui, je me déplace gratuitement à Bègles et secteur sud de Bordeaux Métropole : Villenave-d'Ornon, Talence, Floirac, Gradignan... Rendez-vous dans vos locaux, dans un café, ou en visio selon vos préférences. Flexibilité totale."
+    },
+    {
+      "question": "Combien de temps pour créer mon site internet ?",
+      "answer": "Site vitrine : 4 à 6 semaines. E-commerce : 6 à 10 semaines. Application métier : 8 à 16 semaines. Délais réalistes avec méthodologie agile. Points d'avancement réguliers pour validation progressive. Livraison dans les temps."
+    },
+    {
+      "question": "Le référencement local pour Bègles est-il inclus ?",
+      "answer": "Oui, SEO intégré dès la conception : optimisation technique, balisage sémantique, structure SEO-friendly, balises méta locales. Visibilité optimisée sur 'Bègles', 'Bordeaux Métropole', 'secteur sud Bordeaux', 'Gironde'. Positionnement Google local travaillé."
+    },
+    {
+      "question": "Proposez-vous de la maintenance après livraison ?",
+      "answer": "Oui, 3 formules de maintenance : Essentielle (129€/mois), Business (299€/mois), Premium (599€/mois). Mises à jour de sécurité, sauvegardes automatiques, monitoring 24/7, support technique prioritaire. Votre site toujours sécurisé et performant."
+    },
+    {
+      "question": "Quelle différence avec une grande agence bordelaise ?",
+      "answer": "Même expertise technique et qualité professionnelle, mais structure à taille humaine. Vous gagnez : tarifs adaptés, proximité locale Bègles, contact direct sans intermédiaires. Vous gardez : rigueur, qualité, livrables professionnels complets."
+    }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre projet web ?",
+    "description": "Discutons de votre projet. Premier échange gratuit et sans engagement, par visio ou à Bègles.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Bègles et secteur sud Bordeaux Métropole",
+    "cities": [
+      "Bègles",
+      "Villenave-d'Ornon",
+      "Talence",
+      "Floirac",
+      "Cenon",
+      "Lormont",
+      "Artigues-près-Bordeaux",
+      "Bouliac"
+    ]
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/begles.jpg"
+}
