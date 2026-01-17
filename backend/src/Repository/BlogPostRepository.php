@@ -16,6 +16,32 @@ class BlogPostRepository extends ServiceEntityRepository
         parent::__construct($registry, BlogPost::class);
     }
 
+    public function findPublishedOrderedByPublishedAtDesc(): array
+    {
+        $qb = $this->createQueryBuilder('b')
+            ->andWhere('b.isPublished = :published')
+            ->andWhere('b.publishedAt <= :now')
+            ->setParameter('published', true)
+            ->setParameter('now', new \DateTimeImmutable())
+            ->orderBy('b.publishedAt', 'DESC');
+
+        return $qb->getQuery()->getResult();
+    }
+
+    public function findOnePublishedBySlug(string $slug): ?BlogPost
+    {
+        $qb = $this->createQueryBuilder('b')
+            ->andWhere('b.slug = :slug')
+            ->andWhere('b.isPublished = :published')
+            ->andWhere('b.publishedAt <= :now')
+            ->setParameter('slug', $slug)
+            ->setParameter('published', true)
+            ->setParameter('now', new \DateTimeImmutable())
+            ->setMaxResults(1);
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
+
     //    /**
     //     * @return BlogPost[] Returns an array of BlogPost objects
     //     */

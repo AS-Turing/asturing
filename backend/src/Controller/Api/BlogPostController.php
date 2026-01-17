@@ -13,10 +13,7 @@ class BlogPostController extends AbstractController
     #[Route('/posts', name: 'api_blog_posts_list', methods: ['GET'])]
     public function list(BlogPostRepository $blogPostRepository): JsonResponse
     {
-        $posts = $blogPostRepository->findBy(
-            ['isPublished' => true],
-            ['publishedAt' => 'DESC']
-        );
+        $posts = $blogPostRepository->findPublishedOrderedByPublishedAtDesc();
 
         $data = array_map(function($post) {
             return [
@@ -39,7 +36,7 @@ class BlogPostController extends AbstractController
     #[Route('/posts/{slug}', name: 'api_blog_posts_show', methods: ['GET'])]
     public function show(string $slug, BlogPostRepository $blogPostRepository): JsonResponse
     {
-        $post = $blogPostRepository->findOneBy(['slug' => $slug, 'isPublished' => true]);
+        $post = $blogPostRepository->findOnePublishedBySlug($slug);
 
         if (!$post) {
             return $this->json(['error' => 'Blog post not found'], 404);
