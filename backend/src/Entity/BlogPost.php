@@ -68,6 +68,12 @@ class BlogPost
     #[ORM\Column(type: Types::JSON, nullable: true)]
     private ?array $tags = [];
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $author = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $readingTime = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -273,6 +279,28 @@ class BlogPost
     public function setTags(?array $tags): static
     {
         $this->tags = $tags;
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?string $author): static
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+    public function getReadingTime(): ?string
+    {
+        return $this->readingTime;
+    }
+
+    public function setReadingTime(?string $readingTime): static
+    {
+        $this->readingTime = $readingTime;
         return $this;
     }
 }
