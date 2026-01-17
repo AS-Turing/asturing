@@ -306,17 +306,41 @@ class ImportIncrementalCommand extends Command
             $blog->setSlug($slug);
             $blog->setExcerpt($data['excerpt']);
             $blog->setContent($data['content']);
-            $blog->setImageUrl($data['imageUrl']);
-            $blog->setAuthor($data['author']);
-            $blog->setReadingTime($data['readingTime']);
+            $blog->setImageUrl($data['imageUrl'] ?? null);
+            $blog->setAuthor($data['author'] ?? null);
+            $blog->setReadingTime($data['readingTime'] ?? null);
             $blog->setPublishedAt(new \DateTimeImmutable($data['publishedAt']));
             $blog->setIsPublished($data['isPublished'] ?? true);
 
             if (isset($data['category'])) {
                 $blog->setCategory($data['category']);
             }
+            if (isset($data['categoryClass'])) {
+                $blog->setCategoryClass($data['categoryClass']);
+            }
+            if (isset($data['imageGradient'])) {
+                $blog->setImageGradient($data['imageGradient']);
+            }
+            if (isset($data['imageText'])) {
+                $blog->setImageText($data['imageText']);
+            }
+            if (isset($data['metaTitle'])) {
+                $blog->setMetaTitle($data['metaTitle']);
+            }
+            if (isset($data['metaDescription'])) {
+                $blog->setMetaDescription($data['metaDescription']);
+            }
+            if (isset($data['metaKeywords'])) {
+                $blog->setMetaKeywords($data['metaKeywords']);
+            }
+            if (isset($data['ogImage'])) {
+                $blog->setOgImage($data['ogImage']);
+            }
             if (isset($data['tags'])) {
                 $blog->setTags($data['tags']);
+            }
+            if (isset($data['updatedAt'])) {
+                $blog->setUpdatedAt(new \DateTimeImmutable($data['updatedAt']));
             }
 
             $this->entityManager->persist($blog);
