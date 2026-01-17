@@ -1,0 +1,107 @@
+# ================================
+# Docker Compose Override - PRODUCTION (build local)
+# ================================
+
+networks:
+  traefik:
+    external: true
+
+services:
+  nuxt:
+    image: ${REGISTRY:-ghcr.io}/${IMAGE_PREFIX:-as-turing/asturing}-nuxt:${IMAGE_TAG:-production}
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+      args:
+        NUXT_PUBLIC_API_BASE: http://asturing-prod-symfony
+    container_name: asturing-prod-nuxt
+    restart: unless-stopped
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./frontend/public/images:/app/.output/public/images:ro
+    networks:
+      - traefik
+    labels:
+      - "traefik.docker.network=traefik"
+      - "traefik.enable=true"
+      - "traefik.http.routers.asturing-prod-front.rule=Host(`www.as-turing.fr`) || Host(`as-turing.fr`)"
+      - "traefik.http.routers.asturing-prod-front.entrypoints=web"
+      - "traefik.http.routers.asturing-prod-front.priority=10"
+      - "traefik.http.routers.asturing-prod-front.service=asturing-prod-front"
+      - "traefik.http.services.asturing-prod-front.loadbalancer.server.port=3000"
+      - "traefik.http.routers.asturing-prod-front-secure.rule=Host(`www.as-turing.fr`) || Host(`as-turing.fr`)"
+      - "traefik.http.routers.asturing-prod-front-secure.entrypoints=websecure"
+      - "traefik.http.routers.asturing-prod-front-secure.tls=true"
+      - "traefik.http.routers.asturing-prod-front-secure.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.asturing-prod-front-secure.priority=10"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+      NUXT_PUBLIC_API_BASE: http://asturing-prod-symfony
+      NUXT_TELEMETRY_DISABLED: 1
+
+  symfony:
+    image: ${REGISTRY:-ghcr.io}/${IMAGE_PREFIX:-as-turing/asturing}-symfony:${IMAGE_TAG:-production}
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
+    container_name: asturing-prod-symfony
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    # Volume retiré en production - on utilise le code de l'image Docker
+    # volumes:
+    #   - ./backend:/app
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.asturing-prod-backend.rule=(Host(`www.as-turing.fr`) || Host(`as-turing.fr`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.asturing-prod-backend.entrypoints=web"
+      - "traefik.http.routers.asturing-prod-backend.priority=100"
+      - "traefik.http.routers.asturing-prod-backend.service=asturing-prod-backend"
+      - "traefik.http.services.asturing-prod-backend.loadbalancer.server.port=80"
+      - "traefik.http.routers.asturing-prod-backend-secure.rule=(Host(`www.as-turing.fr`) || Host(`as-turing.fr`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.asturing-prod-backend-secure.entrypoints=websecure"
+      - "traefik.http.routers.asturing-prod-backend-secure.tls=true"
+      - "traefik.http.routers.asturing-prod-backend-secure.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.asturing-prod-backend-secure.priority=100"
+      - "traefik.http.routers.asturing-prod-backend-secure.service=asturing-prod-backend"
+      # Admin route
+      - "traefik.http.routers.asturing-prod-admin.rule=(Host(`www.as-turing.fr`) || Host(`as-turing.fr`)) && (PathPrefix(`/admin`) || PathPrefix(`/login`) || PathPrefix(`/bundles`))"
+      - "traefik.http.routers.asturing-prod-admin.entrypoints=web"
+      - "traefik.http.routers.asturing-prod-admin.priority=100"
+      - "traefik.http.routers.asturing-prod-admin.service=asturing-prod-backend"
+      - "traefik.http.routers.asturing-prod-admin-secure.rule=(Host(`www.as-turing.fr`) || Host(`as-turing.fr`)) && (PathPrefix(`/admin`) || PathPrefix(`/login`) || PathPrefix(`/bundles`))"
+      - "traefik.http.routers.asturing-prod-admin-secure.entrypoints=websecure"
+      - "traefik.http.routers.asturing-prod-admin-secure.tls=true"
+      - "traefik.http.routers.asturing-prod-admin-secure.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.asturing-prod-admin-secure.priority=100"
+      - "traefik.http.routers.asturing-prod-admin-secure.service=asturing-prod-backend"
+    environment:
+      APP_ENV: prod
+      APP_DEBUG: 1
+      APP_SECRET: 1e3a137bd69c0338c3a2b9b818d281116cb734e16507bb5a7d3dce5e3d3cc5ba
+      DATABASE_URL: mysql://asturingudb:userpass@asturing-prod-mysql:3306/asturingdb
+      TRUSTED_PROXIES: 172.18.0.0/16,172.19.0.0/16
+      TRUSTED_HOSTS: ^(www\.)?as-turing\.fr$
+      CORS_ALLOW_ORIGIN: ^https?://(www\.)?as-turing\.fr$
+      JWT_SECRET_KEY: /app/config/jwt/private.pem
+      JWT_PUBLIC_KEY: /app/config/jwt/public.pem
+      JWT_PASSPHRASE: Fw7jzpdr7!
+      UPLOAD_DIR: /app/public/uploads
+      MAILER_DSN: smtps://alexandre%40as-turing.fr:Fw7jzpdr7%21@ssl0.ovh.net:465
+      DEFAULT_URI: https://www.as-turing.fr
+
+  mysql:
+    container_name: asturing-prod-mysql
+    restart: unless-stopped
+    ports:
+      - "3311:3306"
+    volumes:
+      - asturing_prod_db_data:/var/lib/mysql
+
+volumes:
+  asturing_prod_db_data:
