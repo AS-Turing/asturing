@@ -39,17 +39,17 @@ echo ""
 echo -e "${YELLOW}[1/5] Vérification de l'environnement...${NC}"
 
 # Vérifier que les containers sont en cours d'exécution
-if ! docker compose ps | grep -q "symfony.*running"; then
+if ! docker compose ps symfony | grep -q "Up"; then
     echo -e "${RED}❌ Le container Symfony n'est pas en cours d'exécution${NC}"
     echo -e "${YELLOW}Démarrage des containers...${NC}"
-    docker compose up -d
+    docker compose up -d symfony
     sleep 10
 fi
 
-if ! docker compose ps | grep -q "mysql.*running"; then
+if ! docker compose ps mysql | grep -q "Up"; then
     echo -e "${RED}❌ Le container MySQL n'est pas en cours d'exécution${NC}"
     echo -e "${YELLOW}Démarrage des containers...${NC}"
-    docker compose up -d
+    docker compose up -d mysql
     sleep 10
 fi
 
