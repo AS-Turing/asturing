@@ -24,7 +24,14 @@
         >
           <!-- Image -->
           <div class="relative h-48 overflow-hidden">
+            <img 
+              v-if="article.ogImage"
+              :src="article.ogImage"
+              :alt="article.title"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
             <div 
+              v-else
               class="absolute inset-0 flex items-center justify-center text-white font-semibold gradient-hero"
               :class="article.imageGradient"
             >
@@ -91,6 +98,7 @@ const articles = computed(() => {
     categoryClass: 'bg-primary/10 text-primary',
     date: new Date(post.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }),
     excerpt: post.excerpt,
+    ogImage: post.ogImage,
     imageGradient: 'from-primary to-secondary',
     imageText: post.title.substring(0, 2).toUpperCase()
   }))
