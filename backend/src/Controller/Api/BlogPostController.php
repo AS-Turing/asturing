@@ -26,6 +26,7 @@ class BlogPostController extends AbstractController
                 'imageUrl' => $post->getImageUrl(),
                 'imageGradient' => $post->getImageGradient(),
                 'imageText' => $post->getImageText(),
+                'ogImage' => $post->getOgImage(),
                 'publishedAt' => $post->getPublishedAt()?->format('Y-m-d'),
             ];
         }, $posts);
@@ -53,6 +54,7 @@ class BlogPostController extends AbstractController
             'imageUrl' => $post->getImageUrl(),
             'imageGradient' => $post->getImageGradient(),
             'imageText' => $post->getImageText(),
+            'ogImage' => $post->getOgImage(),
             'publishedAt' => $post->getPublishedAt()?->format('Y-m-d'),
         ]);
     }
