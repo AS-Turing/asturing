@@ -1,0 +1,211 @@
+{
+  "ville": "Castillon-la-Bataille",
+  "slug": "castillon-la-bataille",
+  "departement": "Gironde (33)",
+  "codePostal": "33350",
+  "region": "Nouvelle-Aquitaine",
+  "coordinates": {
+    "latitude": 44.8528,
+    "longitude": -0.0406
+  },
+  "meta": {
+    "title": "Agence Web Castillon-la-Bataille - Sites Vignobles & Commerces | AS-Turing",
+    "description": "Création sites internet à Castillon-la-Bataille : domaines viticoles, commerces locaux, artisans. Spécialiste Castillon Côtes de Bordeaux et patrimoine historique. Tarifs dès 1 800€.",
+    "keywords": "création site internet castillon-la-bataille, développeur web castillon, site vitrine vignoble castillon côtes de bordeaux, agence web libournais"
+  },
+  "hero": {
+    "title": "Création de site web à Castillon-la-Bataille",
+    "subtitle": "Valorisez votre activité locale sur le web",
+    "description": "Agence web au service des entreprises, vignobles et commerces de Castillon-la-Bataille. Nous créons des sites internet modernes qui mettent en valeur votre savoir-faire local : domaines viticoles AOC Castillon Côtes de Bordeaux, commerces de proximité, artisans. Tarifs accessibles et accompagnement personnalisé.",
+    "cta": "Demander un devis gratuit",
+    "stats": [
+      {
+        "value": "5j",
+        "label": "Délai de réponse"
+      },
+      {
+        "value": "100%",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "Libournais",
+        "label": "Zone d'intervention"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Une agence qui connaît le territoire de Castillon",
+    "intro": "Castillon-la-Bataille et son vignoble méritent une communication digitale à la hauteur de leur réputation. Nous intervenons sur tout le secteur de Castillon pour accompagner les domaines viticoles, commerces et entreprises locales dans leur présence en ligne.",
+    "advantages": [
+      {
+        "icon": "mdi:web",
+        "title": "Sites viticoles multilingues",
+        "description": "Expertise spécifique pour les châteaux et domaines de l'appellation Castillon Côtes de Bordeaux : présentation patrimoine, catalogue vins, vente en ligne, réservation visites, contenus multilingues (FR/EN/CN). Valorisez votre terroir et votre histoire."
+      },
+      {
+        "icon": "mdi:store-outline",
+        "title": "Commerce local et artisanat",
+        "description": "Sites vitrines ou boutiques e-commerce pour les commerces de Castillon : boulangeries, restaurants, artisans d'art. Mettez en avant vos produits locaux et attirez touristes et habitants. Click & collect, réservations en ligne."
+      },
+      {
+        "icon": "mdi:map-marker-radius",
+        "title": "Proximité et disponibilité",
+        "description": "Intervention rapide sur Castillon-la-Bataille et communes environnantes (Sainte-Colombe, Saint-Magne-de-Castillon, Belvès-de-Castillon). Rendez-vous sur place, échanges directs, connaissance du tissu économique local."
+      },
+      {
+        "icon": "mdi:cash-multiple",
+        "title": "Tarifs adaptés aux TPE locales",
+        "description": "Budget maîtrisé pour les petites structures : site vitrine dès 1 800€, e-commerce vins à partir de 4 500€. Pas de frais cachés, devis transparent sous 5 jours. Maintenance optionnelle à partir de 129€/mois."
+      }
+    ]
+  },
+  "services": {
+    "title": "Solutions web pour Castillon-la-Bataille",
+    "intro": "Du simple site vitrine à la boutique e-commerce complexe, nous accompagnons tous types de projets digitaux.",
+    "list": [
+      {
+        "icon": "mdi:web",
+        "title": "Site Vitrine Professionnel",
+        "description": "Site internet moderne et responsive pour présenter votre activité : domaine viticole, commerce, artisan, profession libérale. Design sur-mesure, optimisé mobile, référencement local Google. À partir de 1 800€ - Délai 4 à 6 semaines.",
+        "examples": "Vignobles, restaurants, artisans, services"
+      },
+      {
+        "icon": "mdi:glass-wine",
+        "title": "Sites Viticoles & Œnotourisme",
+        "description": "Solution complète pour châteaux et domaines : histoire du domaine, présentation des cuvées, galerie photos, espace presse, réservation visites, version multilingue (anglais, chinois). À partir de 2 500€ - Délai 5 à 8 semaines.",
+        "examples": "Châteaux AOC Castillon, caves coopératives"
+      },
+      {
+        "icon": "mdi:cart-variant",
+        "title": "E-commerce & Vente de Vins",
+        "description": "Boutique en ligne sécurisée pour vendre vos vins et produits locaux : paiement CB, gestion stocks, livraison, mode B2B pour professionnels. Conformité législation vins et alcools. À partir de 4 500€ - Délai 6 à 10 semaines.",
+        "examples": "Vente directe, paniers garnis, produits terroir"
+      },
+      {
+        "icon": "mdi:wrench",
+        "title": "Maintenance & Support",
+        "description": "Gardez votre site sécurisé et performant toute l'année. Forfaits de 129€/mois à 599€/mois : mises à jour, sauvegardes quotidiennes, monitoring, corrections bugs, support téléphonique et email prioritaire.",
+        "examples": "WordPress, PrestaShop, sites sur-mesure"
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Secteurs d'activité à Castillon-la-Bataille",
+    "list": [
+      {
+        "name": "Viticulture & Œnotourisme",
+        "description": "Châteaux, domaines, caves, visites guidées",
+        "icon": "mdi:glass-wine"
+      },
+      {
+        "name": "Commerce & Artisanat",
+        "description": "Commerces de bouche, artisans, boutiques",
+        "icon": "mdi:store"
+      },
+      {
+        "name": "Tourisme & Patrimoine",
+        "description": "Hébergements, activités culturelles, guides",
+        "icon": "mdi:castle"
+      },
+      {
+        "name": "Services & Professions Libérales",
+        "description": "Notaires, avocats, experts-comptables, santé",
+        "icon": "mdi:briefcase"
+      },
+      {
+        "name": "Restauration & Hôtellerie",
+        "description": "Restaurants, chambres d'hôtes, traiteurs",
+        "icon": "mdi:silverware-fork-knife"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Nos références dans le Libournais",
+    "intro": "Découvrez quelques projets web réalisés pour des clients du secteur de Castillon-la-Bataille et environs.",
+    "featured": [
+      {
+        "title": "Château Montaiguillon",
+        "location": "Montagne-Saint-Émilion",
+        "type": "Site vitrine viticole",
+        "url": "https://chateau-montaiguillon.com"
+      },
+      {
+        "title": "GPM Garage",
+        "location": "Bègles",
+        "type": "Site vitrine associatif",
+        "url": "https://www.asso-gpm.fr/"
+      }
+    ]
+  },
+  "process": {
+    "title": "Déroulement d'un projet web",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Rencontre et cadrage",
+        "description": "Premier rendez-vous à Castillon ou en visio pour comprendre votre activité, vos besoins et vos objectifs commerciaux."
+      },
+      {
+        "number": "2",
+        "title": "Proposition commerciale",
+        "description": "Devis détaillé et transparent sous 5 jours : prix fixe, fonctionnalités listées, planning prévisionnel. Aucune surprise."
+      },
+      {
+        "number": "3",
+        "title": "Conception et développement",
+        "description": "Création des maquettes, validation avec vous, puis développement technique. Points réguliers pour suivre l'avancement."
+      },
+      {
+        "number": "4",
+        "title": "Mise en ligne et formation",
+        "description": "Tests complets, mise en production, formation à l'administration du site. Documentation fournie. Support post-lancement inclus."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Combien coûte un site internet à Castillon-la-Bataille ?",
+      "answer": "Site vitrine professionnel : à partir de 1 800€. Site viticole avec présentation des vins : à partir de 2 500€. Boutique e-commerce pour vente de vins : à partir de 4 500€. Tous nos tarifs sont fixes et transparents, pas de frais cachés. Devis personnalisé gratuit sous 5 jours."
+    },
+    {
+      "question": "Pouvez-vous créer un site multilingue pour attirer les touristes étrangers ?",
+      "answer": "Absolument ! Nous créons régulièrement des sites multilingues pour les domaines viticoles : français, anglais, chinois, allemand, espagnol... Traduction professionnelle en option ou intégration de vos textes. Interface de gestion simple pour modifier chaque langue."
+    },
+    {
+      "question": "Le site sera-t-il bien référencé sur Google ?",
+      "answer": "Oui. Tous nos sites intègrent les fondamentaux du référencement naturel (SEO) : structure technique optimale, balises sémantiques, performance mobile, optimisation locale pour Castillon-la-Bataille. Votre site sera visible sur Google et Google Maps dès la mise en ligne."
+    },
+    {
+      "question": "Peut-on vendre nos vins en ligne légalement ?",
+      "answer": "Oui, avec les bonnes mentions légales. Nous intégrons automatiquement : message sanitaire obligatoire, interdiction vente mineurs, vérification âge, conformité Loi Evin. Paiement sécurisé avec tous les moyens de paiement classiques. Gestion expédition et transporteurs."
+    },
+    {
+      "question": "Proposez-vous la maintenance du site après livraison ?",
+      "answer": "Oui, avec 3 forfaits au choix : Essentiel 129€/mois (mises à jour + sauvegardes), Business 299€/mois (+ monitoring + support), Premium 599€/mois (+ optimisations + assistance prioritaire). Sans engagement ou engagement annuel selon vos besoins."
+    },
+    {
+      "question": "Intervenez-vous uniquement à Castillon ou aussi dans les communes voisines ?",
+      "answer": "J'interviens sur tout le secteur : Castillon-la-Bataille, Sainte-Colombe, Saint-Magne-de-Castillon, Belvès-de-Castillon, Saint-Genès-de-Castillon, et plus largement le Libournais (Libourne, Saint-Émilion, Pomerol). Déplacements gratuits dans la zone."
+    }
+  ],
+  "cta": {
+    "title": "Votre projet web commence ici",
+    "description": "Échangeons sur votre projet digital. Premier contact gratuit et sans engagement, par téléphone, visio ou rendez-vous à Castillon.",
+    "primaryButton": "Demander un devis gratuit",
+    "secondaryButton": "Voir mes réalisations"
+  },
+  "contact": {
+    "zone": "Castillon-la-Bataille et le Libournais",
+    "cities": [
+      "Castillon-la-Bataille",
+      "Sainte-Colombe",
+      "Saint-Magne-de-Castillon",
+      "Belvès-de-Castillon",
+      "Saint-Genès-de-Castillon",
+      "Libourne",
+      "Saint-Émilion",
+      "Pomerol"
+    ]
+  },
+  "ogImage": "https://www.as-turing.fr/images/locations/castillon-la-bataille.jpg"
+}
