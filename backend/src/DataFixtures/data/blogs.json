@@ -22,7 +22,10 @@
                 "mise à jour site web",
                 "sécurité web"
             ],
-            "updatedAt": "2025-01-05"
+            "updatedAt": "2025-01-05",
+            "author": "Alexandre Singeot",
+            "readingTime": "5 min",
+            "imageUrl": "/images/blog/pourquoi-mettre-a-jour-son-site-web.jpg"
         },
         {
             "title": "SEO Local : Comment attirer plus de clients autour de Libourne",
@@ -46,7 +49,10 @@
                 "SEO local Libourne",
                 "Google Business Profile"
             ],
-            "updatedAt": "2025-01-03"
+            "updatedAt": "2025-01-03",
+            "author": "Alexandre Singeot",
+            "readingTime": "6 min",
+            "imageUrl": "/images/blog/seo-local-attirer-clients-libourne.jpg"
         },
         {
             "title": "Quelle est la différence entre un site vitrine et un site e-commerce ?",
@@ -70,7 +76,10 @@
                 "site vitrine",
                 "e-commerce"
             ],
-            "updatedAt": "2025-01-02"
+            "updatedAt": "2025-01-02",
+            "author": "Alexandre Singeot",
+            "readingTime": "7 min",
+            "imageUrl": "/images/blog/difference-site-vitrine-ecommerce.jpg"
         },
         {
             "title": "Pourquoi la vitesse de votre site influence vos ventes",
@@ -93,7 +102,10 @@
                 "optimisation",
                 "vitesse site"
             ],
-            "updatedAt": "2025-01-01"
+            "updatedAt": "2025-01-01",
+            "author": "Alexandre Singeot",
+            "readingTime": "5 min",
+            "imageUrl": "/images/blog/vitesse-site-influence-ventes.jpg"
         },
         {
             "title": "5 raisons de passer votre site sur WordPress en 2025",
@@ -117,7 +129,10 @@
                 "WordPress 2025",
                 "CMS"
             ],
-            "updatedAt": "2024-12-30"
+            "updatedAt": "2024-12-30",
+            "author": "Alexandre Singeot",
+            "readingTime": "7 min",
+            "imageUrl": "/images/blog/pourquoi-passer-a-wordpress-2025.jpg"
         },
         {
             "title": "Automatiser vos tâches répétitives : un gain de temps énorme pour votre entreprise",
@@ -141,7 +156,10 @@
                 "automatisation entreprise",
                 "sync crm"
             ],
-            "updatedAt": "2025-01-04"
+            "updatedAt": "2025-01-04",
+            "author": "Alexandre Singeot",
+            "readingTime": "8 min",
+            "imageUrl": "/images/blog/automatiser-taches-repetitives-gain-temps.jpg"
         },
         {
             "title": "Combien coûte réellement un site web professionnel ?",
@@ -165,7 +183,10 @@
                 "prix site internet",
                 "coût site web"
             ],
-            "updatedAt": "2024-12-29"
+            "updatedAt": "2024-12-29",
+            "author": "Alexandre Singeot",
+            "readingTime": "8 min",
+            "imageUrl": "/images/blog/combien-coute-site-web-professionnel.jpg"
         },
         {
             "title": "Pourquoi investir dans une maintenance TMA dès le lancement ?",
@@ -189,7 +210,10 @@
                 "maintenance TMA",
                 "support technique"
             ],
-            "updatedAt": "2025-01-06"
+            "updatedAt": "2025-01-06",
+            "author": "Alexandre Singeot",
+            "readingTime": "7 min",
+            "imageUrl": "/images/blog/pourquoi-maintenance-tma-des-lancement.jpg"
         },
         {
             "title": "Refonte de site web : quand la faire (et quand l’éviter)",
@@ -206,8 +230,17 @@
             "metaDescription": "Refonte totale ou amélioration continue ? Découvrez les signaux d’une refonte nécessaire, les risques SEO, et la meilleure stratégie pour TPE/PME autour de Bordeaux & Libourne.",
             "metaKeywords": "refonte site web, refonte wordpress, optimisation site internet, refonte seo, amélioration continue site web",
             "ogImage": "https://www.as-turing.fr/images/blog/refonte-site-web-quand-la-faire.jpg",
-            "tags": ["refonte", "conseil web", "seo", "ux", "tpe pme"],
-            "updatedAt": "2026-01-17"
+            "tags": [
+                "refonte",
+                "conseil web",
+                "seo",
+                "ux",
+                "tpe pme"
+            ],
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "2 min",
+            "imageUrl": "/images/blog/refonte-site-web-quand-la-faire.jpg"
         },
         {
             "title": "Google Business Profile : le levier n°1 pour être trouvé localement",
@@ -224,8 +257,17 @@
             "metaDescription": "Optimisez votre Google Business Profile (Google Maps) : catégories, avis, photos, posts, FAQ. Le levier n°1 pour attirer des clients localement autour de Libourne et Bordeaux.",
             "metaKeywords": "google business profile, google my business, seo local, google maps, avis google, visibilité locale",
             "ogImage": "https://www.as-turing.fr/images/blog/google-business-profile-seo-local.jpg",
-            "tags": ["seo local", "google maps", "avis", "tpe pme", "libourne"],
-            "updatedAt": "2026-01-17"
+            "tags": [
+                "seo local",
+                "google maps",
+                "avis",
+                "tpe pme",
+                "libourne"
+            ],
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "2 min",
+            "imageUrl": "/images/blog/google-business-profile-seo-local.jpg"
         },
         {
             "title": "Emails : SPF, DKIM, DMARC… pourquoi vos messages finissent en spam",
@@ -242,8 +284,17 @@
             "metaDescription": "Comprenez SPF, DKIM et DMARC et corrigez votre DNS pour améliorer la délivrabilité email, éviter le spam et protéger votre domaine contre l’usurpation.",
             "metaKeywords": "spf dkim dmarc, emails en spam, délivrabilité email, sécurité domaine, configuration dns",
             "ogImage": "https://www.as-turing.fr/images/blog/spf-dkim-dmarc-emails-spam.jpg",
-            "tags": ["sécurité", "email", "dns", "bonnes pratiques", "tpe pme"],
-            "updatedAt": "2026-01-17"
+            "tags": [
+                "sécurité",
+                "email",
+                "dns",
+                "bonnes pratiques",
+                "tpe pme"
+            ],
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/spf-dkim-dmarc-pourquoi-vos-emails-spam.jpg"
         },
         {
             "title": "Page “Services” : la structure qui transforme les visiteurs en demandes de devis",
@@ -260,8 +311,17 @@
             "metaDescription": "Découvrez la structure d’une page services qui convertit : promesse, méthode, preuves, FAQ, CTA. Idéal pour TPE/PME et artisans autour de Bordeaux et Libourne.",
             "metaKeywords": "page services, conversion site web, demande de devis, ux copywriting, structure page",
             "ogImage": "https://www.as-turing.fr/images/blog/page-services-structure-conversion.jpg",
-            "tags": ["conversion", "ux", "copywriting", "seo", "conseil web"],
-            "updatedAt": "2026-01-17"
+            "tags": [
+                "conversion",
+                "ux",
+                "copywriting",
+                "seo",
+                "conseil web"
+            ],
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/page-services-structure-conversion.jpg"
         },
         {
             "title": "Pourquoi travailler avec une agence web locale à Bordeaux change vraiment vos résultats",
@@ -285,7 +345,10 @@
                 "gironde",
                 "tpe pme"
             ],
-            "updatedAt": "2026-01-17"
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "2 min",
+            "imageUrl": "/images/blog/agence-web-locale-bordeaux-resultats.jpg"
         },
         {
             "title": "Création de site internet à Pessac : se démarquer dans la métropole bordelaise",
@@ -309,7 +372,10 @@
                 "bordeaux metropole",
                 "tpe pme"
             ],
-            "updatedAt": "2026-01-17"
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/creation-site-internet-pessac.jpg"
         },
         {
             "title": "Référencement local à Mérignac : comment apparaître en premier quand vos clients cherchent vos services",
@@ -333,7 +399,10 @@
                 "bordeaux metropole",
                 "tpe pme"
             ],
-            "updatedAt": "2026-01-17"
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/referencement-local-merignac.jpg"
         },
         {
             "title": "Site web et SEO local à Bègles : capter la croissance économique de la rive gauche",
@@ -357,7 +426,10 @@
                 "bordeaux metropole",
                 "tpe pme"
             ],
-            "updatedAt": "2026-01-17"
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/site-web-seo-local-begles.jpg"
         },
         {
             "title": "Développer sa visibilité locale quand on est une entreprise à Castillon-la-Bataille",
@@ -381,7 +453,10 @@
                 "tpe pme",
                 "gironde"
             ],
-            "updatedAt": "2026-01-17"
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/visibilite-locale-castillon-la-bataille.jpg"
         },
         {
             "title": "SEO local multi-villes : comment se positionner sur Bordeaux, Libourne et toute la Gironde",
@@ -405,7 +480,10 @@
                 "libourne",
                 "strategie digitale"
             ],
-            "updatedAt": "2026-01-17"
+            "updatedAt": "2026-01-17",
+            "author": "Alexandre Singeot",
+            "readingTime": "1 min",
+            "imageUrl": "/images/blog/seo-local-multi-villes-gironde.jpg"
         }
     ]
 }
