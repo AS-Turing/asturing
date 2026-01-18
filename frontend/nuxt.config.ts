@@ -117,6 +117,9 @@ export default defineNuxtConfig({
 
     // API : PAS de cache pour le moment (debug)
     '/api/**': { cache: false },
+    
+    // Images : pas de cache Nitro pour permettre ajout dynamique via volume
+    '/images/**': { cache: false },
 
     // Nuxt Icon : servir localement
     '/_nuxt_icon/**': { cache: true, headers: { 'Cache-Control': 'public, max-age=31536000' } },
